@@ -29,8 +29,9 @@ label variables:
     $ Villain = 4
 
     # Daily Life
-    $ Turn = 0
+    $ XTurn = 0
     $ Day = 0
+    $ Turn = 0
 
     # Investigation
     $ Clue1 = False
@@ -61,25 +62,59 @@ label start:
     return
 
     label menutree:
-
-        if Vigor >= 2:
-            if Turn <= 1:
-                $ Turn += 1
-                call coremenuCh1
+        if Turn == 0:
+            if Vigor >= 2:
+                "Extra vigor, yay!"
+                if XTurn < 1:
+                    $ XTurn += 1
+                    "Turn 1"
+                    jump coremenuCh1
+                elif XTurn >= 1:
+                    "No More turns."
+                    $ Turn = 1
+                    jump coremenuCh1
+                    return
             else:
-                call coremenuCh1
+                "No Extra Turn"
+                $ Turn 
+                jump coremenuCh1
+                return
+        elif Turn >= 1:
+            $ Turn = 1
+            "No Vigor"
+            jump coremenuCh1
+            return
         else:
-            call coremenuCh1
+             return
 
     label coremenuCh1:
 
         "Core Menu goes here"
+        menu:
+            "Hang out":
+                $ uRep += 1
+                call menutree
+            "Investigate":
+                $ Clue1 = True
+                call menutree
+            "Study":
+                $ Vigor += 2
+                call menutree
+
     return
 
     label Event2:
         #day1 Event 2
 
         "Event 2"
+        $ XTurn = 0
+        $ Turn = 0
+        call menutree
+        jump Event3
+    return
+
+    label Event3:
+        "Event 3"
     return
 
 
