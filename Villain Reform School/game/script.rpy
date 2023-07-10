@@ -8,7 +8,7 @@ define u = Character("Uitto Hanatabe")
 
 label variables:
 
-    # Player's Stats
+# Player's Stats
     $ Vigor = 0
     $ Vision = 0
     $ Intel = 0
@@ -28,19 +28,19 @@ label variables:
     $ Hero = 0
     $ Villain = 4
 
-    # Daily Life
-    $ CurrentTurns = 0
-    $ DefaultTurns = 1
-    $ ExtraTurns = 2
+# Daily Life
+    $ FreeActions = 0
+    $ DefaultActionCount = 1
+    $ ExtraActionCount = 2
     $ Day = 0
 
-    # Investigation
+# Investigation
     $ Clue1 = False
 
-    # Player Relationships
+# Player Relationships
     $ uRep = 0
 
-    # Character Flags
+# Character Flags
     $ uTurn = 0
 
 return
@@ -55,14 +55,14 @@ label Event1:
     #day1 Event 1
     "Event 1"
 
-    call set_turns
+    call FreeDay
     jump Event2
 
 label Event2:
     #day1 Event 2
     "Event 2"
 
-    call set_turns
+    call FreeDay
     jump Event3
 
 label Event3:
@@ -70,16 +70,18 @@ label Event3:
 
 return
 
-label set_turns:
-    if Vigor >= 2:
-        $ CurrentTurns = ExtraTurns
+label FreeDay:
+
+    # Determine Available Actions
+    if Vigor < 2:
+        $ FreeActions = DefaultActionCount
     else:
-        $ CurrentTurns = DefaultTurns
+        $ FreeActions = ExtraActionCount
 
 label menutree:
-    while CurrentTurns > 0:
-        "Current Turns: [CurrentTurns]"
-        $ CurrentTurns -= 1
+    while FreeActions > 0:
+        "Actions Remaining: [FreeActions]"
+        $ FreeActions -= 1
         call coremenuCh1
     return
 

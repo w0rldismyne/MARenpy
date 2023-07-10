@@ -1,5 +1,5 @@
-#Hotkeys & Shortcuts for VS Code
-#    Multiselect: CTRL + ALT + Up/Down Arrow Keys - Lets you edit more than a line at a time
+# Hotkeys & Shortcuts for VS Code
+#     Multiselect: CTRL + ALT + Up/Down Arrow Keys - Lets you edit more than a line at a time
 
 # JUST LOOK AT DOCUMENTATION
 #RenPy Keywords Glossary
@@ -13,7 +13,7 @@
 #scene (name of file/variable) - Show name of file/variable as background - one of these shown at a time, fits the screen
 
 #show (name of image) - Show name of image as a sprite, scaled to resolution, goes on top of other images
-#   show expression - Look it up, really
+#show expression      - Look it up, really
 #hide (name of image) - removes images from show
 
 #while - loop, constant? works differently than normal
@@ -26,11 +26,12 @@
 #       call (label name)
 #   "Choice 3":
 #       return
-#Brings up a menu with choice selection
+# Brings up a menu with choice selection
 
-#pass means do nothing
-#call goes to the block of code (label name), but continues until it finds "return" then it goes back to this point
-#jump goes to the block of code (label name)
-#return goes back to where it was called previously or ends the game if there is no previous instance
+#pass   - means do nothing
+#call   - goes to the block of code (label name), but continues until it finds "return" then it goes back to this point
+#jump   - goes to the block of code (label name)
+#return - goes back to where it was called previously or ends the game if there is no previous instance
 
-#label - new code block, can be referenced as branching code, games always starts in label start
+#label  - new code block, can be referenced as branching code, games always starts in label start
+#         Labels in other files can be jumped/called without further modifications
