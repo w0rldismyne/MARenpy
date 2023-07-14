@@ -6,6 +6,16 @@
 define n = Character("Nagen Tesuta")
 define u = Character("Uitto Hanatabe")
 
+image background1 = "Backgrounds/Courtyard.png"
+image background2 = "Backgrounds/Field.png"
+image background3 = "Backgrounds/ForestClearing.png"
+image background4 = "Backgrounds/Lake.png"
+
+image sprite 1 = "Sprites/TestSprite.png"
+image sprite 2 = "Sprites/TestSprite2.png"
+image sprite 3 = "Sprites/TestSprite3.png"
+image sprite 4 = "Sprites/TestSprite4.png"
+
 label variables:
 
 # Player's Stats
@@ -52,21 +62,34 @@ label start:
     call variables
 
 label Event1:
-    #day1 Event 1
+
+    scene background1
+    show sprite 1
     "Event 1"
 
     call FreeDay
-    jump Event2
 
 label Event2:
-    #day1 Event 2
+    
+    scene background2
+    show sprite 2
     "Event 2"
 
     call FreeDay
-    jump Event3
 
 label Event3:
+
+    scene background3
+    show sprite 3
     "Event 3"
+
+    call FreeDay
+
+label Event4:
+
+    scene background4
+    show sprite 4
+    "Event 4"
 
 return
 
