@@ -7,6 +7,7 @@
 #    Declare Variable: $ - replaces normal declarations like int, string, bool
 
 #define variable = Character("name", color = "#HEX")
+# May see init: - This is old Python code and should not be used generally
 
 #image variable = im.Scale("image name", resolution_x, resolution_y)
 

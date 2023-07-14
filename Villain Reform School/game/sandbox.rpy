@@ -1,12 +1,4 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define n = Character("Nagen Tesuta")
-define u = Character("Uitto Hanatabe")
-
-image background1 = "Backgrounds/Courtyard.png"
+﻿image background1 = "Backgrounds/Courtyard.png"
 image background2 = "Backgrounds/Field.png"
 image background3 = "Backgrounds/ForestClearing.png"
 image background4 = "Backgrounds/Lake.png"
@@ -16,50 +8,9 @@ image sprite 2 = "Sprites/TestSprite2.png"
 image sprite 3 = "Sprites/TestSprite3.png"
 image sprite 4 = "Sprites/TestSprite4.png"
 
-label variables:
-
-# Player's Stats
-    $ Vigor = 0
-    $ Vision = 0
-    $ Intel = 0
-    $ Charm = 0
-
-# PlayerData
-    $ VigorSP = 0
-    $ VigorMax = 3
-    $ VisionSP = 0
-    $ VisionMax = 3
-    $ IntelSP = 0
-    $ IntelMax = 3
-    $ CharmSP = 0
-    $ CharmMax = 3
-
-# Story Reputation Points
-    $ Hero = 0
-    $ Villain = 4
-
-# Daily Life
-    $ FreeActions = 0
-    $ DefaultActionCount = 1
-    $ ExtraActionCount = 2
-    $ Day = 0
-
-# Investigation
-    $ Clue1 = False
-
-# Player Relationships
-    $ uRep = 0
-
-# Character Flags
-    $ uTurn = 0
-
-return
-
-# The game starts here.
-
-label start:
-
-    call variables
+# THE GAMES STARTS HERE!
+label sandbox:
+    "Entering Sandbox"
 
 label Event1:
 
@@ -89,28 +40,28 @@ label Event4:
 
     scene background4
     show sprite 4
-    "Event 4"
+    "Event 4: The End"
 
 return
 
 label FreeDay:
 
-    # Determine Available Actions
+    # Determine available actions.
     if Vigor < 2:
         $ FreeActions = DefaultActionCount
     else:
         $ FreeActions = ExtraActionCount
 
-label menutree:
+    # While actions remain, perform free day activities.
     while FreeActions > 0:
         "Actions Remaining: [FreeActions]"
         $ FreeActions -= 1
-        call coremenuCh1
+        call FreeDayActivities
     return
 
-label coremenuCh1:
+label FreeDayActivities:
 
-    "Core Menu goes here"
+    #Core menu goes here
     menu:
         "Hang out":
             $ uRep += 1

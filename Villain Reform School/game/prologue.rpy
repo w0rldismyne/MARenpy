@@ -1,8 +1,4 @@
-
-label maingame:
-
 # Students
-
 define n = Character("Nagen Tesuta")
 define u = Character("Uitto Hanatabe")
 define j = Character("Jona Oshima")
@@ -31,7 +27,6 @@ define sa = Character("Sato")
 define ik = Character("Inukai")
 
 # Extras
-
 define cop = Character("Cop")
 define ka = Character("Koe Amagi")
 define mm = Character("Mai Mai")
@@ -39,18 +34,16 @@ define kan = Character("Kenzo Ando")
 define l = Character("Lethe")
 
 # Used for player instructions
-
-define g = Character("game")
+define g = Character("Game")
 
 label variables:
-
     # Player's Stats
     $ Vigor = 0
     $ Vision = 0
     $ Intel = 0
     $ Charm = 0
 
-# PlayerData
+    # Player Data
     $ VigorSP = 0
     $ VigorMax = 3
     $ VisionSP = 0
@@ -60,14 +53,14 @@ label variables:
     $ CharmSP = 0
     $ CharmMax = 3
 
-# Story Reputation Points
+    # Story Reputation Points
     $ Hero = 0
     $ Villain = 4
 
     # Daily Life
-    $ CurrentTurns = 0
-    $ DefaultTurns = 1
-    $ ExtraTurns = 2
+    $ FreeActions = 0
+    $ DefaultActionCount = 1
+    $ ExtraActionCount = 2
     $ Day = 0
 
     # Investigation
@@ -78,16 +71,15 @@ label variables:
 
     # Character Flags
     $ uTurn = 0
-
 return
 
-# The game starts here.
-
+# THE GAME STARTS HERE!
 label start:
 
-call variables
+    call variables
+    jump sandbox # (Un)Comment "jump sandbox" to switch between sandbox and the game.
 
-#Opening video goes here
+# Opening video goes here.
 
 label prologue:
 
