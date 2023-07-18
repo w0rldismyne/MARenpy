@@ -36,3 +36,11 @@
 
 #label  - new code block, can be referenced as branching code, games always starts in label start
 #         Labels in other files can be jumped/called without further modifications
+
+# str functions
+#   zfill - Fixes string length (for numbers)
+
+#screens.rpy - UI Stuff
+#screen say - Lets you put text on the UI
+#frame, hbox, vbox
+#xpos, ypos, xminimum, yminimum, xalign, yalign
