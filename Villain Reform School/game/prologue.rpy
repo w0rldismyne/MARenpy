@@ -77,11 +77,7 @@ return
 label start:
 
     call variables
-    menu:
-        "Prologue":
-            pass
-        "Sandbox":
-            jump sandbox
+    jump sandbox # (Un)Comment "jump sandbox" to switch between sandbox and the game.
 
 # Opening video goes here.
 
