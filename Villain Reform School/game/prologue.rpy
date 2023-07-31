@@ -1,39 +1,39 @@
 # Students
-define n = Character("Nagen Tesuta")
-define u = Character("Uitto Hanatabe")
-define j = Character("Jona Oshima")
-define h = Character("Hiro Manuke")
-define nk = Character("Nanase Keisan")
-define r = Character("Rise Kisaki")
-define m = Character("Mariko Genki")
-define k = Character("Kitsune")
-define kk = Character("Kazz Kataki")
-define d = Character("Dyre Okami")
 define a = Character("Apex")
-define o = Character("Odori Hato")
-define mh = Character("Momoko Heiwei")
-define y = Character("Yoku Teki")
-define mu = Character("Murakami ")
-define i = Character("Ichita")
-define t = Character("Taiga Sakurai")
 define ch = Character("Chisei Jikoma")
+define d = Character("Dyre Okami")
+define h = Character("Hiro Manuke")
+define i = Character("Ichita")
+define j = Character("Jona Oshima")
+define k = Character("Kitsune")
+define ki = Character("Kietsu")
+define kk = Character("Kazz Kataki")
+define m = Character("Mariko Genki")
+define mh = Character("Momoko Heiwei")
+define mu = Character("Murakami")
+define n = Character("Nagen Tesuta")
+define nk = Character("Nanase Keisan")
+define o = Character("Odori Hato")
+define r = Character("Rise Kisaki")
+define re = Character("Rei Watabe")
 define s = Character("Setsuna Hori")
 define sh = Character("Shoma Nishimoto")
-define ki = Character("Kietsu")
-define re = Character("Rei Watabe")
+define t = Character("Taiga Sakurai")
+define u = Character("Uitto Hanatabe")
+define y = Character("Yoku Teki")
 
 # Teachers
+define ik = Character("Inukai")
+define sa = Character("Sato Yamamoto")
 define v = Character("Vivaldi Thani")
 define ya = Character("Yaguchi")
-define sa = Character("Sato")
-define ik = Character("Inukai")
 
 # Extras
 define cop = Character("Cop")
-define ka = Character("Koe Amagi")
-define mm = Character("Mai Mai")
 define kan = Character("Kenzo Ando")
+define ka = Character("Koe Amagi")
 define l = Character("Lethe")
+define mm = Character("Mai Mai")
 
 # Used for player instructions
 define g = Character("Game")
@@ -73,6 +73,8 @@ label variables:
 
     # Character Flags
     $ uTurn = 0
+
+    # Story Checks (stuff that'll creep up)
 return
 
 # THE GAME STARTS HERE!
