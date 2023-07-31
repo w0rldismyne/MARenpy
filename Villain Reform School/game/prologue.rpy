@@ -20,6 +20,7 @@ define ch = Character("Chisei Jikoma")
 define s = Character("Setsuna Hori")
 define sh = Character("Shoma Nishimoto")
 define ki = Character("Kietsu")
+define re = Character("Rei Watabe")
 
 # Teachers
 define v = Character("Vivaldi Thani")
