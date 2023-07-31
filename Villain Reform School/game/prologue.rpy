@@ -87,8 +87,8 @@ label prologue:
 #background Interrogation Room
 
 "My whole life, I feel like I've been dragged around by my collar."
-"I guess when most adults see a kid act out of line, they’re overwhelmed with a need to control the situation."
-"Funny, seeing as that’s the very thing I’ve been fighting for: a chance to be in control of my life."
+"I guess when most adults see a kid act out of line, they're overwhelmed with a need to control the situation."
+"Funny, seeing as that's the very thing I've been fighting for: a chance to be in control of my life."
 
 cop "Please state your name and registered Proficiency."
 
@@ -102,16 +102,16 @@ n "Anything I see, hear, or experience is recorded in perfect detail."
 "I mean, some people can go their whole lives without realizing they have a Proficiency."
 "It's nothing special. The only reason I know about mine is because I was groomed to have it."
 
-cop "Look, you and I both know it’s not looking good for you."
-cop "I mean, you’ve heard the charges: premeditated murder, inciting a riot, mayhem, and menticide."
+cop "Look, you and I both know it's not looking good for you."
+cop "I mean, you've heard the charges: premeditated murder, inciting a riot, mayhem, and menticide."
 cop "These are all with a registered Proficiency which will add twenty-five more years to your sentence."
-cop "Don’t even get me started on the use of deadly weapons."
+cop "Don't even get me started on the use of deadly weapons."
 
-ka "There’s more than enough evidence to try you and your cohorts as adults."
+ka "There's more than enough evidence to try you and your cohorts as adults."
 ka "In the case of The Supreme Court vs. Lethe, vigilantism was determined to be a Class One felony."
-ka "Some of her sympathizers ‒ like you ‒ seem to think they are above the law."
+ka "Some of her sympathizers, like you, seem to think they are above the law."
 ka "If we were able to find her remaining supporters, it would be an excellent demonstration of goodwill."
-ka "We all remember–"
+ka "We all remember-"
 
 #[Screen blacks out]
 
@@ -158,19 +158,19 @@ n "We can't use the classrooms, so we meet in the park!"
 
 "But that was the me of two years ago, the kid who grew up in a glass box waiting for my veins to stop burning."
 "The unwilling test subject of the very people who stand before me claiming I'm the monster."
-"Back before the Department of Villain Prevention was a governing body under Estella’s control."
+"Back before the Department of Villain Prevention was a governing body under Estella's control."
 
-n "I know you. You were the prosecutor during Lethe’s trial."
-n "Trying to extort information out of a child for your old department? That’s surprisingly underhanded of you."
+n "I know you. You were the prosecutor during Lethe's trial."
+n "Trying to extort information out of a child for your old department? That's surprisingly underhanded of you."
 
-ka "Then you understand what you’re up against."
+ka "Then you understand what you're up against."
 ka "Choosing to represent yourself in court only gave you a fool for a client."
 
 "She's the prosecutor for my case!?"
 
-ka "I’m just doing my job, Mr. Tesuta, in ensuring I have all the information I need for my case."
+ka "I'm just doing my job, Mr. Tesuta, in ensuring I have all the information I need for my case."
 
-cop "Just make this easier on yourself and fold. It’ll be better than what your friends are going through."
+cop "Just make this easier on yourself and fold. It'll be better than what your friends are going through."
 
 #[Player Choice]
 
