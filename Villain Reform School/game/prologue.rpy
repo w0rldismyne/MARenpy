@@ -78,7 +78,11 @@ return
 label start:
 
     call variables
-    jump sandbox # (Un)Comment "jump sandbox" to switch between sandbox and the game.
+    menu:
+        "Prologue":
+            pass
+        "Sandbox":
+            jump sandbox
 
 # Opening video goes here.
 
@@ -173,7 +177,3 @@ ka "I'm just doing my job, Mr. Tesuta, in ensuring I have all the information I 
 cop "Just make this easier on yourself and fold. It'll be better than what your friends are going through."
 
 #[Player Choice]
-
-
-
-
