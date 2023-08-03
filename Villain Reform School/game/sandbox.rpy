@@ -67,9 +67,22 @@ label FreeDayActivities:
             $ uRep += 1
             pass
         "Investigate":
-            $ Clue1 = True
+            call CharacterList
             pass
         "Study":
             $ Vigor += 2
+            pass
+return
+
+label CharacterList:
+
+    menu:
+        "[m]":
+            pass
+        "[y]":
+            pass
+        "[nk]":
+            pass
+        "[u]":
             pass
 return

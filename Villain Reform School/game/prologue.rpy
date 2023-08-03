@@ -84,6 +84,8 @@ label start:
     menu:
         "Prologue":
             pass
+        "Chapter One":
+            jump chapter_one
         "Sandbox":
             jump sandbox
 
