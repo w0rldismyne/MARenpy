@@ -33,8 +33,19 @@ define ka = Character("Koe Amagi")
 define kan = Character("Kenzo Ando")
 define l = Character("Lethe")
 define mm = Character("Mai Mai")
+
 # Used for player instructions
 define g = Character("Game")
+
+#backgrounds
+image backgroundpolice = "Backgrounds/PoliceRoom.png"
+image backgroundblack = "Backgrounds/black.png"
+
+#Sprites
+
+image sprite KoeBase = "Sprites/KoeSprites/koe1.png"
+image sprite CopBase = "Sprites/Cop/cop1.png"
+image sprite MMBase = "Sprites/MaiMai/MMBase.png"
 
 label variables:
     # Player's Stats
@@ -68,6 +79,7 @@ label variables:
 
     # Player Relationships
     $ uRep = 0
+    $ hRep = 1
 
     # Character Flags
     $ uTurn = 0
@@ -78,6 +90,8 @@ label start:
 
     call variables
     menu:
+        "Chapter 1":
+            jump chapter_one
         "Prologue":
             pass
         "Sandbox":
@@ -85,13 +99,18 @@ label start:
 
     # Opening video goes here.
 
-    label prologue:
+label prologue:
+    scene backgroundpolice
 
     #background Interrogation Room
+
+    play music "music/LostWithin.mp3"
 
     "My whole life, I feel like I've been dragged around by my collar."
     "I guess when most adults see a kid act out of line, they're overwhelmed with a need to control the situation."
     "Funny, seeing as that's the very thing I've been fighting for: a chance to be in control of my life."
+
+    show sprite CopBase
 
     cop "Please state your name and registered Proficiency."
 
@@ -99,22 +118,31 @@ label start:
     n "I possess an Intelligence Proficiency."
     n "Anything I see, hear, or experience is recorded in perfect detail."
 
+    hide sprite CopBase
+
     "I tap the side of my head."
     "Having a great memory doesn't really make me smarter than anyone else, but the ability falls under the Intelligence Major."
     "People are just so determined to classify things so they can feel important, they stop asking whether it's worth the effort."
     "I mean, some people can go their whole lives without realizing they have a Proficiency."
     "It's nothing special. The only reason I know about mine is because I was groomed to have it."
 
+    show sprite CopBase
+
     cop "Look, you and I both know it's not looking good for you."
     cop "I mean, you've heard the charges: premeditated murder, inciting a riot, mayhem, and menticide."
     cop "These are all with a registered Proficiency which will add twenty-five more years to your sentence."
     cop "Don't even get me started on the use of deadly weapons."
+
+    show sprite KoeBase
 
     ka "There's more than enough evidence to try you and your cohorts as adults."
     ka "In the case of The Supreme Court vs. Lethe, vigilantism was determined to be a Class One felony."
     ka "Some of her sympathizers, like you, seem to think they are above the law."
     ka "If we were able to find her remaining supporters, it would be an excellent demonstration of goodwill."
     ka "We all remember-"
+
+    hide sprite KoeBase
+    scene backgroundblack
 
     #[Screen blacks out]
 
@@ -131,6 +159,8 @@ label start:
 
     #[CG: Young Odori with Lethe]
 
+    play music "music/Sappheiros.mp3"
+
     o "Gladiators! You'll never believe the guest speaker I found for today's meeting!"
 
     #[Pan out, Lethe is standing behind her, smiling]
@@ -146,6 +176,17 @@ label start:
     n "Not like a hobby… or anything… We meet everyday after school, and even longer on weekends."
     n "We can't use the classrooms, so we meet in the park!"
 
+    "I started gathering the draft papers, but when I looked up at her face, she seemed so sad."
+    "She took a seat at the table in silence."
+
+    l "I ask this of all my fans, just as a formality..." 
+
+    stop music
+
+    l "Do you feel safe at home?"
+
+    play music "music/Voyage.mp3"
+
     "I became painfully aware of the IV that hid under my sleeve."
     "Had she noticed it? Was she going to tell anyone?"
     "If anyone found out, I could be taken away, or worse. What if she had already told someone?"
@@ -159,6 +200,10 @@ label start:
 
     #[BG: Interrogation Room]
 
+    scene backgroundpolice
+
+    play music "music/LostWithin.mp3"
+
     "But that was the me of two years ago, the kid who grew up in a glass box waiting for my veins to stop burning."
     "The unwilling test subject of the very people who stand before me claiming I'm the monster."
     "Back before the Department of Villain Prevention was a governing body under Estella's control."
@@ -166,19 +211,26 @@ label start:
     n "I know you. You were the prosecutor during Lethe's trial."
     n "Trying to extort information out of a child for your old department? That's surprisingly underhanded of you."
 
+    show sprite KoeBase
+
     ka "Then you understand what you're up against."
     ka "Choosing to represent yourself in court only gave you a fool for a client."
 
     "She's the prosecutor for my case!?"
 
     ka "I'm just doing my job, Mr. Tesuta, in ensuring I have all the information I need for my case."
+    
+    hide sprite KoeBase
+    show sprite CopBase
 
     cop "Just make this easier on yourself and fold. It'll be better than what your friends are going through."
+    hide sprite CopBase
 
     #[Player Choice]
 
     menu:
         "Confess everything": #(-Hiro)
+            $ hRep -= 1
             n "Yeah, I did it, everything you said is true."
             n "I helped start the riots to take down Estella and her talent mills."
             n "You want the names of all the adults that worked with her, right?"
@@ -197,7 +249,11 @@ label start:
     n "I'm sorry, it's going to take more than a movie cliché to get me to tell anyone anything."
     n "Also, I was never read my rights, so unless you want a mistrial, I suggest you start treating me like an adult before trying me like one."
 
+    show sprite CopBase
     cop "That's not how the system works, kid."
+
+    hide sprite CopBase
+    show sprite KoeBase
 
     ka "No, he has a valid point. You want to be talked to like an adult? Fine."
     ka "Mr. Tesuta, if you don't give us the information we need, there will be no 'deal'."
@@ -205,10 +261,14 @@ label start:
 
     "So it's her way or no way, hunh? Fine, whatever, she has her reasons; I have mine."
 
+    hide sprite KoeBase
+
     #[Player Choice]
 
     menu:
         "I have to protect my teammates": #(+Hero, +Vis)
+            $ Hero += 1
+            $ Vision += 1
             n "I'll plead guilty in court, but I and I alone am guilty of these charges."
             n "I cannot say the same of my friends; they genuinely believed in what Lethe told them..."
 
@@ -218,10 +278,14 @@ label start:
             call interrogation_2
 
         "I don't have a choice": #(+Villian, +Vig)
+            $ Villain += 1
+            $ Vigor += 1
             n "Under the advice of my legal counsel, I will."
 
             "Maimai would be heartbroken if I got locked away. She's been through this before."
             "I practically have a walkthrough written on my sleeve."
+
+            show sprite CopBase
 
             cop "Do you believe you are guilty of these crimes?"
 
@@ -229,9 +293,12 @@ label start:
 
             "I've talked too much already. Isn't the confession enough?"
 
+            hide sprite CopBase
+
             call interrogation_2
 
         "It's all part of the plan": #(+Int)
+            $ Intel += 1
             n "I'll cooperate."
 
             "It's too dangerous to make a move now. Best to play along for now."
@@ -239,6 +306,7 @@ label start:
             call interrogation_2
 
         "I need to lighten my sentence": #(+Chr)
+            $ Charm += 1
             n "...okay..."
 
             "I hang my head at a 30-degree angle and feign the slightest tremor in my shoulders."
@@ -253,6 +321,8 @@ label start:
     n "I fully understood the ramifications of my actions and stand at the mercy of the court."
     n "I aided in the brainwashing of my classmates and tried to conquer the Guwon Province for my own benefit."
 
+    show sprite CopBase
+
     cop "That's all we need to hear."
 
     ka "Not quite. I still have a few questions for Mr. Tesuta."
@@ -260,10 +330,13 @@ label start:
     ka "And yet, no one can tell us whose fault this was."
     ka "In your estimation, who was the leader during the attack?"
 
+    hide sprite CopBase
+
     #[Player Choice]
 
     menu:
         "The one who told us to kill": #(+Chr)
+            $ Charm += 1
             n "Lethe was. She wanted to create a group of youth vigilantes to gain back public support."
             n "It wasn't until after she died that we realized she was the one who started the chaos."
 
@@ -277,6 +350,8 @@ label start:
             call interrogation_3
 
         "The one who gathered the army": #(+Hero, +Vig)
+            $ Hero += 1
+            $ Vigor += 1
             n "Hiro Morine was our leader. He insisted on it constantly."
             n "If it wasn't for him, we wouldn't have gathered nearly as much support."
 
@@ -288,6 +363,7 @@ label start:
             call interrogation_3
 
         "The one who planned the attack": #(+Int)
+            $ Intel += 1
             n "I was. I deliberately withheld information from my peers, knowing it would sway their decision to stay."
             n "In the end, I was the only one standing."
 
@@ -298,11 +374,14 @@ label start:
             call interrogation_3
 
         "The club president": #(+Vis)
+            $ Vision += 1
             n "Odori Hato was our leader. She's the one who brought Lethe's attention to our club."
             n "Odori just wanted to help us and a cheesy superhero club was her answer."
 
             "After Lethe died, she insisted we continue with our plans so that everyone would be happy again."
             "It's amazing how far out of hand things got."
+
+            show sprite CopBase
 
             cop "Do you know where Ms. Hato is?"
 
@@ -310,10 +389,14 @@ label start:
 
             "I want to believe she's still out there, but…"
 
+            hide sprite CopBase
+
             call interrogation_3
 
     #[Return to Main Branch]
     label interrogation_3:
+
+    show sprite KoeBase
 
     ka "You were apprehended by Vivaldi Thani before you were able to carry out your plan to completion, correct?"
 
@@ -321,12 +404,18 @@ label start:
 
     ka "What did you intend to do once you took over the city?"
 
+    hide KoeBase
+
     #[Player Choice]
 
     menu:
         "Fortify the city against my enemies": #(+Villain, +Vig)
+            $ Villain += 1
+            $ Vigor += 1
             n "I just wanted a place where I could feel safe. Anyone there was free to leave, but they chose to stay."
             n "They took up arms, and I had to defend myself."
+
+            show sprite KoeBase
 
             ka "According to eyewitness testimonies, you sought out innocent civilians who were in hiding and killed them on sight."
             ka "We found seventeen assault rifles in your room. Were these also for your defense?"
@@ -342,11 +431,17 @@ label start:
 
             n "Yes."
 
+            hide sprite KoeBase
+
             call interrogation_4
 
         "Rebuild the city": #(+Hero, +Int)
+            $ Hero += 1
+            $ Intel += 1
             n "Before making any plans, I would have had to reverse the damage that had been done."
             n "I was in command of over five hundred people; they needed a place to live once the dust settled."
+
+            show sprite KoeBase
 
             ka "That's all?"
 
@@ -362,14 +457,20 @@ label start:
 
             "I tried my best to keep everyone safe, even if it meant lying. I can't let them down now."
 
+            hide sprite KoeBase
+
             call interrogation_4
 
         "Rebuild society in my vision": #(+Villain, +Vis)
+            $ Villain += 1
+            $ Vision += 1
             n "Guwon was an experiment to see if we truly were capable of reshaping society."
             n "It was supposed to show the might of our nation's youth, that we were something bigger than everyone else said we were."
             n "The experiment failed."
 
             "I would have loved to see it spread past Guwon, but the opportunity never presented itself."
+
+            show sprite KoeBase
 
             ka "Lethe had similar ideals. She thought that turning citizens against each other would weed out the weak."
 
@@ -381,15 +482,24 @@ label start:
             "In order to take it down, you have to integrate into its life cycle and prevent it from reproducing."
             "I just tried to do so from the wrong angle. Next time, I won't be so sloppy."
 
+            hide sprite KoeBase
+
             call interrogation_4
 
         "I don't know": #(+Hero, +Chr)
+            $ Hero += 1
+            $ Charm += 1
             n "....."
+
+            show sprite CopBase
 
             cop "Mr. Tesuta, please answer the question."
 
             n "...I didn't. I mean, part of me thought it would never work... I just... did what I always did..."
             n "I never questioned why or what came next."
+
+            hide sprite CopBase
+            show sprite KoeBase
 
             ka "And what would that be?"
 
@@ -400,10 +510,15 @@ label start:
             "That's just not how the world works. There is no 'after'."
             "Just now and everything that has since passed. I have to do what I can so that 'now' doesn't get me killed."
 
+            hide sprite KoeBase
+
             call interrogation_4
 
     #[Return to Main Branch]
     label interrogation_4:
+
+    show sprite KoeBase
+
 
     ka "And what exactly was your end goal in all of this?"
 
@@ -416,13 +531,18 @@ label start:
 
     ka "Why?"
 
+    hide sprite KoeBase
+
     #[Player Choice]
 
     menu:
         "It was corrupt": #(+Hero)
+            $ Hero += 1
             n "Guwon's entire economy was based around the manufacturing and propagation of Proficiencies."
             n "They treated us like livestock! We were paraded about as status symbols and meal tickets"
             n "No one cared what happened to us."
+
+            show sprite KoeBase
 
             ka "There is no need for dramatics, Mr. Tesuta."
 
@@ -446,11 +566,16 @@ label start:
             "She was the one who told us to stand up and fight for what we believed in."
             "That when the dust settled, the strongest would be left standing. Even if I lost, I'm still here."
 
+            hide sprite KoeBase
+
             call interrogation_end
 
         "It was convenient": #(+Villain)
+            $ Villain += 1
             n "Where else was I supposed to start? Guwon was my home."
             n "I had never been outside of my hometown and it was as good a place as any."
+
+            show sprite KoeBase
 
             ka "For what?"
 
@@ -470,11 +595,16 @@ label start:
             n "Quite the opposite, as it was your technology we were using."
             n "So before questioning how I used it, shouldn't you be asking why it was made in the first place?"
 
+            hide sprite KoeBase
+
             call interrogation_end
 
         "It was safest": #(+Villain)
+            $ Villain += 1
             n "Guwon is water locked, it would be the easiest to fortify."
             n "With what Odori had planned, we couldn't just set up shop anywhere. It had to be someplace secure."
+
+            show spirte KoeBase
 
             ka "What exactly did she have planned?"
 
@@ -493,12 +623,17 @@ label start:
             n "It was the most pragmatic decision."
             n "I believed Lethe had our best interests in mind, same as you believe she was a monster."
 
+            hide sprite KoeBase
+
             call interrogation_end
         "To end the war": #(+Hero)
+            $ Hero += 1
             n "Everyone was fighting each other, not just us."
             n "This is just an isolated incident among many that happened during the battle between Lethe and the Karmic Gladiators."
             n "Even after she was gone, people were still fighting each other."
             n "I believe it's the entire reason your department exists, madam Vice President."
+
+            show sprite KoeBase
 
             ka "Our department exists to regain peace, not to insight riots in the streets."
 
@@ -514,8 +649,12 @@ label start:
 
             n "Casualties were bound to happen, you're assuming our activities caused more."
 
+            hide sprite KoeBase
+
     #[Return to Main Branch]
     label interrogation_end:
+
+    show sprite KoeBase
 
     ka "I rest my case. It is clear that Nagen Tesuta is guilty of all crimes, and shows no remorse for what he has done."
 
@@ -523,11 +662,17 @@ label start:
 
     n "Objection."
 
+    hide sprite KoeBase
+    show sprite CopBase
+
     cop "That's not how an interrogation works, Mr. Tesuta."
 
     n "S-sorry. It's just, wasn't the purpose of this case to determine whether or not the Junior Gladiators lead to people dying?"
     n "None of the prosecution's questions have been relevant to the charges at hand; they've been about my character."
     n "In fact, all of Ms. Amagi's questions were about proving that my group was malicious and dangerous to society."
+
+    hide sprite CopBase
+    show sprite KoeBase
 
     ka "This is outrageous and highly unprofessional."
 
@@ -585,6 +730,9 @@ label start:
 
     "*It's not like I really have a choice anyway.*"
 
+    hide sprite KoeBase
+    show sprite CopBase
+
     cop "Then it's settled. A follow-up hearing will be scheduled in one year to document your progress."
     cop "In the meantime, you will be appointed a guardian from the DVP to take care of you during your time in the program."
 
@@ -594,9 +742,13 @@ label start:
 
     cop "Your guardian is waiting."
 
+    hide spirte CopBase
+
     #Life at the House (scene 2)
 
     #[BG: Car Exterior]
+
+    play music "music/leaf.mp3"
 
     "A black limo is waiting for me out back."
     "What's the point of sneaking me out with the trash if they're going to send a nice car?"
@@ -608,6 +760,8 @@ label start:
     n "Maimai?"
 
     #[Sprite: Maimai]
+
+    show sprite MMBase
 
     mm "The one and only."
 
@@ -641,10 +795,15 @@ label start:
     mm "After those DVP schmucks found out my methodology, I had to retire from stuffing orchids down criminals' windpipes and ditch the costume."
     mm "Besides, it wasn't suitable for my new role."
 
+    hide sprite MMBase
+
     #[Player Choice]
 
     menu:
         "New role?": #(+Chr)
+            $ Charm += 1
+            show sprite MMBase
+
             mm "Pantsuit, short hair, dorky accessories; I'm one minivan away from perfection."
 
             "This is her idea of what a mom looks like?"
@@ -666,9 +825,14 @@ label start:
 
             n "I think the dead body would be safer."
 
+            hide sprite MMBase
+
             call life_1
 
         "Where are we going?": #(+Int)
+            $ Intel += 1
+            show sprite MMBase
+
             mm "Someplace safe."
             mm "The DVP would like you to believe the best place for you is with them; they're only half right."
 
@@ -688,11 +852,15 @@ label start:
 
             mm "I'm not a monster! It's more complicated than that. You just gotta trust me."
 
+            hide sprite MMBase
+
             call life_1
 
     #[Return to Main Branch]
     label life_1:
 
+    show sprite MMBase
+    
     mm "I had to cash in an old favor to get us out of this mess."
     mm "I was hoping to leave his debt dangling over his head for a few more years, but this is more important."
     mm "You need a proper guardian and as much as I'd love to take care of you myself..."
