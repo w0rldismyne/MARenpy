@@ -44,3 +44,16 @@
 #screen say - Lets you put text on the UI
 #frame, hbox, vbox
 #xpos, ypos, xminimum, yminimum, xalign, yalign
+
+#init python
+# run python at beginning of the game
+# class(object)
+#    def __init__(variables)
+#        self.variable
+
+# WISHLIST:
+# Text animation (typewriter)
+# Image gallery
+# Battle system
+# Skip API for mechanics
+# Investigation stuff
