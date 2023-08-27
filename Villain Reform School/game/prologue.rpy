@@ -29,6 +29,7 @@ define ya = Character("Yaguchi")
 
 # Extras
 define cop = Character("Cop")
+define Everyone = Character("Everyone")
 define ka = Character("Koe Amagi")
 define kan = Character("Kenzo Ando")
 define l = Character("Lethe")
@@ -80,6 +81,7 @@ label variables:
     # Player Relationships
     $ uRep = 0
     $ hRep = 1
+    $ jRep = 0
 
     # Character Flags
     $ uTurn = 0
