@@ -715,17 +715,17 @@ label Day_1Event_2:
 
     "The hallways swarm with a stampede of students. No doubt many of my classmates had also packed up several minutes before the bell, waiting for the floodgates to open. As I wade through the crowd to meet up with my friends, the PA system sparks to life."
 
-    PA: "Attention all students."
+    PA "Attention all students."
 
     "That voice isn't human. Or, if it is, it’s distorted beyond recognition. The disturbing pitch is enough to interrupt everyone's conversations."
 
-    PA: "I would like to commend you all for overcoming your fears to be here today. Many of us are still recovering from the Guwon Riots. Our bodies, families, and minds have been torn apart, which is why it pains me to announce this school is not the safe haven it appears to be. No doubt you've noticed the surrounding town has been abandoned, evacuated, no signs of reconstruction for miles. It's the ideal place to put a school; if you don't want your students to leave."
+    PA "I would like to commend you all for overcoming your fears to be here today. Many of us are still recovering from the Guwon Riots. Our bodies, families, and minds have been torn apart, which is why it pains me to announce this school is not the safe haven it appears to be. No doubt you've noticed the surrounding town has been abandoned, evacuated, no signs of reconstruction for miles. It's the ideal place to put a school; if you don't want your students to leave."
 
     "A staff member bolts out of the classroom and down the hall."
 
     "Mr. Yaguchi tries to cover the voice from the PA with his own instructions, but it’s too late."
 
-    PA: "Nagen Tesuta, Uitto Hanatabe, Jona Oshima; you have five days to turn in your leader, Hiromichi Morine. If he is not restrained on the practice field by then, the punishment will be tenfold. Only the valiant shall escape the shore of corpses."
+    PA "Nagen Tesuta, Uitto Hanatabe, Jona Oshima; you have five days to turn in your leader, Hiromichi Morine. If he is not restrained on the practice field by then, the punishment will be tenfold. Only the valiant shall escape the shore of corpses."
 
     "The message cuts out. I assume, on blind faith alone, that whoever is responsible will be caught. Everyone is staring. Everyone knows. They may not have beforehand, but now it’s like being under a spotlight."
 
@@ -834,13 +834,23 @@ label Day_1Event_2:
 
     g "Click on items to see if it leads to any clues."
 
-    CD: "I can't make sense of this organizational system. Why aren't they alphabetized?"
+    # Player clicks on CD
 
-    Computer: "Nothing is queued to play. The browser history isn't terribly exciting. Just a bunch of Google searches on troubleshooting home assistants."
+    "I can't make sense of this organizational system. Why aren't they alphabetized?"
 
-    Microphone: "It's wired directly into the school's speakers. There's no way to record with it as it is."
+    # Player clicks on Computer
+    
+    "Nothing is queued to play. The browser history isn't terribly exciting. Just a bunch of Google searches on troubleshooting home assistants."
 
-    Announcement List: "A list of morning announcements. It matches everything Kazz read this morning, including the club ads."
+    # Player clicks on Microphone
+
+    "It's wired directly into the school's speakers. There's no way to record with it as it is."
+
+    # Player clicks on Announcement List
+
+    "A list of morning announcements. It matches everything Kazz read this morning, including the club ads."
+
+    #Once every object as been interacted with return to main branch
 
     #[Return to Main Branch]
     u "There's not much here."
@@ -873,19 +883,19 @@ label Day_1Event_2:
 
     "I’ve done a decent job distracting myself today, but it's getting late. Everyone I know has gone to bed. My arms are tired from recreating the oldest recognized constellations on my ceiling with glow in the dark stickers. I lay there, tracing the patterns with my eyes until the stickers lose their glow. In the darkness, I fall victim to my overactive mind."
 
-    Dark: "Everything is ruined. They're coming after Hiro and then you're next."
+    Dark "Everything is ruined. They're coming after Hiro and then you're next."
 
     "My chest burns."
 
-    Dark: "You need a new plan. Then a plan for when that one fails and then another."
+    Dark "You need a new plan. Then a plan for when that one fails and then another."
 
     "I need to sleep. I have class in six hours. Just stop thinking and sleep already."
 
-    Dark: "You don't deserve sleep. Not until you fix everything you've broken."
+    Dark "You don't deserve sleep. Not until you fix everything you've broken."
 
     "The pain is sudden. It feels like I've been stabbed with a screwdriver. I search my chest, but nothing looks any different than yesterday."
 
-    Dark: "Even your body's broken."
+    Dark "Even your body's broken."
 
     "Even though I know it's my imagination, I turn on the light and check again, just in case."
 
@@ -1129,15 +1139,15 @@ label Day_1Event_2:
     #[BG: Nagen's Room Night]
     "Another day has come and gone. I try to drown out my thoughts with the tinny music on my phone, but not too far in, my mind wanders. Why target Hiro?"
 
-    Dark: "He was the leader of our army."
+    Dark "He was the leader of our army."
 
     "But he wasn't terrible. He at least tried to make an effort to call people by name, even when they couldn't respond."
 
-    Dark: "He never listened."
+    Dark "He never listened."
 
     "As the days went by, Uitto started reporting the wounded to me. He wouldn't take his headphones off and she didn't feel like fighting with him over bad news. I was the strategist anyway; his duty as a recruiter had long since finished."
 
-    Dark: "Something was off."
+    Dark "Something was off."
 
     "He never changed into the uniform we gave him. All of us were still mourning Lethe at the time... but I don't think he changed his clothes at all after his first mission."
 
@@ -1197,8 +1207,9 @@ label Day_1Event_2:
 
     "The two go on an hour-long tangent about the odd uniform restrictions, completely forgetting about Hiro. Hiro breathes a sigh of relief."
 
-    Day 3 Event 2
-    [BG: Nurse's' Office]
+    #Day 3 Event 2
+    #[BG: Nurse's' Office]
+
     "I can't keep putting off going to the nurse. The pain in my chest won't go away and it's started to climb up my neck and shoulder. When I finally work up the courage to go to the office, I don't see the nurse, just him."
 
     mu "What's the matter? You look pale. Well, paler than usual."
@@ -1253,14 +1264,14 @@ label Day_1Event_2:
 
     "He nods and dials the nurse on speaker phone. Of course, the first thing she tells him to do is grab an inch-long needle. The minute I see a glimmer of silver, I feel my knees give out."
 
-    Nurse: "What happened?"
+    Nurse "What happened?"
 
-    mu (panicked) "I forgot to make him sit down. I'm so sorry."
+    mu "I forgot to make him sit down. I'm so sorry."
 
     "He keeps waving the damn thing in the air as he panics. When I wake up again, I have two lines coming out of my chest and an antibiotic running above my head. He sheepishly informs me that the nurse will be by in two days to see me in person."
 
-    Day 3 Event 3
-    [BG: Hallway]
+    #Day 3 Event 3
+    #[BG: Hallway]
     "As I drop off the last of my stuff into my locker, I hear an ear shattering screech."
 
     m "Really? Like, for real for real, you'll do it?"
@@ -1296,15 +1307,15 @@ label Day_1Event_2:
     
     "My shoulder is still kinda sore, but I can rest a little easier knowing that I’m not crazy. I honestly expect people to have formed a lynch mob or something by now. Granted, being casually avoided doesn't feel great either, but it's better than what I expected. If you had told us when we ran away we would have come here, I think Hiro would’ve been the only one to go through with it."
 
-    Dark: "He couldn't sneak out."
+    Dark "He couldn't sneak out."
 
     "A week after we ran away, we realized he only brought a few things in his backpack. He said it was because he forgot when we were leaving. That's when Lethe asked if he left a note."
 
-    Dark: "They made him go back."
+    Dark "They made him go back."
 
     "He was too scared to grab his stuff, of course he didn't leave a note. I emptied out one of my pistols and lent it to him so he could feel safe. Odori even checked the cylinder to make sure. The house should have been empty when he went."
 
-    Dark: "He came back empty handed."
+    Dark "He came back empty handed."
 
     "I tried asking him what happened, but he wouldn't answer me. Everything became about saving as many of our classmates as he could. He didn't want anyone to get hurt again."
 
@@ -1511,15 +1522,15 @@ label Day_1Event_2:
 
     "Over the last few days, it’s felt like things are almost normal now. At least, for me it feels normal. None of the kids really wanted to hang out with the 'teacher's pet'. The things I wanted to talk about didn't make sense to other kids and I couldn't figure out how to find common ground. It's why I was so jealous of Hiro when we were kids. He didn't have to try to make friends. He just had them. I lashed out so much back then."
 
-    Dark: "He never fought back."
+    Dark "He never fought back."
 
     "No matter how much I fought or yelled, he'd just smile at me like whatever we were fighting over wasn't a big deal. It frustrated the hell out of me that I couldn't shake him. Our arguments got so bad, the school had to get involved."
 
-    Dark: "I watched him drive off with his dad."
+    Dark "I watched him drive off with his dad."
 
     "That night, he had called me, asking for my help fixing something. I don't know why Odori gave him my number, but I had the upper hand for once. I'm ashamed now at how long I let him dangle. How could I have known? All he asked for was a needle and thread, I didn't know why it was so urgent that I met up with him. I thought he ripped his pants or something."
 
-    Dark: "He never told me what happened."
+    Dark "He never told me what happened."
 
     "His face... it was unrecognizable. He wanted me to give him stitches, like I'd seen in a documentary, but bones were broken. We should have gone to the ER, but he was afraid of getting in trouble."
 
@@ -1529,7 +1540,7 @@ label Day_1Event_2:
 
     h "I can't keep getting into fights at school, Nagen."
 
-    Dark: "It's the only scar he has."
+    Dark "It's the only scar he has."
 
     "By Monday, all that was left was a gash where the stitches hadn't lined up quite right. No one at school thought anything of it when he said he fell. I wonder how often he got hurt and we just didn't know."
 
@@ -1538,7 +1549,11 @@ label Day_1Event_2:
 
     "For the first time since school began, I wake up to the radio blaring at top volume."
 
-    kk "Good morning, amibros! That’s right, we're back on the air! Thank you to everyone who sent in requests while we worked out the kinks. It's going to take me a while to go through all of them, but I promise I'll do my best to get to each one. Starting us off, we've got a request from the heart. "Hurt"by Midday Maniacs."
+    kk "Good morning, amibros!"
+    kk "That’s right, we're back on the air!"
+    kk "Thank you to everyone who sent in requests while we worked out the kinks."
+    kk "It's going to take me a while to go through all of them, but I promise I'll do my best to get to each one."
+    kk "Starting us off, we've got a request from the heart. 'Hurt' by Midday Maniacs."
 
     "I drag myself out of bed and remind myself it's just one more day of classes before the weekend."
 
@@ -1940,10 +1955,11 @@ label Day_1Event_2:
 
     re "Greatest memory in the world and you always seem to forget that. Besides, there's no rule against going in at night, so technically, it's okay. It beats lying awake in the dorms, that's for sure."
 
-    [IF Vigor < ?]
-    n "I guess that's true. I'll think about it."
+    # Currently this portion of the game is now a stretch goal.
+    #[IF Vigor < ?]
+    #n "I guess that's true. I'll think about it."
 
-    [Else] 
+    #[Else] 
     n "I'd like to, but I like to sleep more."
 
     "Vigor Majors can be almost inhuman sometimes."
@@ -3721,9 +3737,9 @@ label Day_1Event_2:
 
     s "We had the same suspicions. Well, most of us did."
 
-    m (To her friends) "This has nothing to do with you, Setsuna; it’s between me and them."
+    m "This has nothing to do with you, Setsuna; it’s between me and them."
 
-    (To Nagen) "Even though Hiro’s not with you, I’ll still forgive you, if you were planning on giving him to me. After all, it’s not your fault someone else beat you to the punch."
+    m "Even though Hiro’s not with you, I’ll still forgive you, if you were planning on giving him to me. After all, it’s not your fault someone else beat you to the punch."
 
     n "We’d never do something like that!"
 
@@ -3733,7 +3749,7 @@ label Day_1Event_2:
 
     re "Mariko, this is enough! You’re scaring me."
 
-    m (Genuine) "...I’m sorry."
+    m "...I’m sorry."
 
     "She snaps her fingers and with solemn expressions, the other girls turn to us. Uitto and Jona end up pinned before I know it."
 
@@ -3745,15 +3761,15 @@ label Day_1Event_2:
 
     #[If Mariko > 5]
     
-    m (Genuine) "Please, I don’t want to fight you."
+    m "Please, I don’t want to fight you."
 
     n "If you don’t want to fight me, then let them go."
 
     m "Sorry, but I don’t exactly trust your ‘friends’ right now."
 
-    j (From the ground) "That’s fair."
+    j "That’s fair."
 
-    u (Crushed under Rei’s weight) "Do not agree with the psycho head cheerleader!"
+    u "Do not agree with the psycho head cheerleader!"
 
     m "I think that might be why I was chosen. I don’t have anyone to rely on other than Rei and they still found us."
 
@@ -4227,7 +4243,7 @@ label Day_1Event_2:
 
     "I slide the tape in and watch as static peels away to reveal a grainy image of a familiar logo."
 
-    ???: "Mariko Genki, your bravery during the riots has not gone unnoticed. We would like to give you the support to protect the people you care about most. All you have to do is help us eliminate a loose end that threatens our operation. You deserve to be recognized as a true hero. We know you'll make the right choice. Sincerely, Apex of the Karmic Gladiators."
+    q "Mariko Genki, your bravery during the riots has not gone unnoticed. We would like to give you the support to protect the people you care about most. All you have to do is help us eliminate a loose end that threatens our operation. You deserve to be recognized as a true hero. We know you'll make the right choice. Sincerely, Apex of the Karmic Gladiators."
 
     "The video is consumed by static once more."
 
@@ -4390,18 +4406,18 @@ label Day_1Event_2:
     "I always used to think I was invincible, but my parents treated me like I was made of glass. I couldn't go anywhere without them shadowing me. That meant no sports, no clubs, and no school with friends for six whole years."
 
     #[Mariko on the couch in front of a TV. Tall shadows stretch behind her and over her head. As Estella talks, the background shifts to a lighter grey and the shadows shrink.]
-    Estella (on TV): "So you think your child has exceptional abilities? At Estella Academy, we tailor our curriculum around your child's... special attributes."
+    e "So you think your child has exceptional abilities? At Estella Academy, we tailor our curriculum around your child's... special attributes."
 
     "Finally released from my bubble, I leapt at the chance to talk to kids my own age."
 
     #[Mariko surrounded by silhouettes of the cheer squad]
     "Most of the girls in my class were in cheer, so I joined too. Even without auditioning, I was named captain of the squad."
 
-    Hiyoko: "We can test out the moves to make sure it's safe before you try."
+    Hiyoko "We can test out the moves to make sure it's safe before you try."
 
-    Ty: "I'll be your spotter!"
+    Ty "I'll be your spotter!"
 
-    Kiki: "Everything will come naturally if you practice right."
+    Kiki "Everything will come naturally if you practice right."
 
     re "I can tell you when you've hurt yourself if you tell me when I should take a break; deal?"
 
@@ -4411,7 +4427,7 @@ label Day_1Event_2:
     
     m "If you walk out this door, you're off the team!"
 
-    Kanon: "Who cares!? The only reason you were made captain was because your parents didn't want you doing any routines!"
+    Kanon "Who cares!? The only reason you were made captain was because your parents didn't want you doing any routines!"
 
     re "Everyone's scared. If Hiro found some place safer to hide, then I think we should believe him."
 

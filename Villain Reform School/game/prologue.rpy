@@ -29,11 +29,20 @@ define ya = Character("Yaguchi")
 
 # Extras
 define cop = Character("Cop")
+define Dark = Character("Nagen Tesuta")
+define e = Character("Estella")
 define Everyone = Character("Everyone")
+define Hiyoko = Character("Hiyoko")
 define ka = Character("Koe Amagi")
 define kan = Character("Kenzo Ando")
+define Kanon = Character("Kanon")
+define Kiki = Character("Kiki")
 define l = Character("Lethe")
 define mm = Character("Mai Mai")
+define Nurse = Character("School Nurse")
+define PA = Character("PA")
+define q = Character ("???")
+define Ty = Character("Ty")
 
 # Used for player instructions
 define g = Character("Game")
