@@ -50,12 +50,89 @@ define g = Character("Game")
 #backgrounds
 image backgroundpolice = "Backgrounds/PoliceRoom.png"
 image backgroundblack = "Backgrounds/black.png"
+image backgroundamp = "Backgrounds/ampetheater.jpg"
+image backgroundbad = "Backgrounds/badforrest.png"
+image backgroundcafex = "Backgrounds/cafeexterior.jpg"
+image backgroundcafexn = "Backgrounds/cafeexteriorn.jpg"
+image backgroundcafe = "Backgrounds/cafeint.jpg"
+image backgroundcar = "Backgrounds/Car.jpg"
+image backgroundcarin = "Backgrounds/CarInt.jpg"
+image backgroundcharm = "Backgrounds/CharmClass.png"
+image backgroundclass = "Backgrounds/class.jpeg"
+image backgroundcourtyard = "Backgrounds/Courtyard.png"
+image backgrounddorm = "Backgrounds/Dorms.jpeg"
+image backgroundfield = "Backgrounds/Field.png"
+image backgroundclearing = "Backgrounds/ForestClearing.png"
+image backgroundhall1 = "Backgrounds/hallway1.jpeg"
+image backgroundhall2 = "Backgrounds/hallway2.jpeg"
+image backgroundlake = "Backgrounds/Lake.png"
+image backgroundlibrary = "Backgrounds/Library.png"
+image backgroundmariko = "Backgrounds/MarikoStage.png"
+image backgroundroom = "Backgrounds/NagensRoom.png"
+image backgroundroomn = "Backgrounds/NagensRoomN.png"
+image backgroundnhouse = "Backgrounds/nagenhouse.jpg"
+image backgroundnurse = "Backgrounds/NursesOffice.png"
+image backgroundpond = "Backgrounds/Pond.jpg"
+image backgroundroof = "Background/roof.jpg"
+image backgroundhide = "Background/RoofHideout.png"
+image backgroundparty = "Background/roofparty.jpg"
+image backgroundschool = "Background/School.png"
+image backgroundlab = "Background/science.jpg"
+image backgroundsew = "Background/sew.jpg"
+image backgroundstage = "Background/stage.png"
+image backgroundstuco = "Backgrounds/stuco.png"
 
 #Sprites
 
+#Koe
 image sprite KoeBase = "Sprites/KoeSprites/koe1.png"
+#Cop
 image sprite CopBase = "Sprites/Cop/cop1.png"
+#Maimai
 image sprite MMBase = "Sprites/MaiMai/MMBase.png"
+#Apex
+image sprite ABase = "Sprites/Apex/Apexspritebase.png"
+image sprite ASad = "Sprites/Apex/Apexspritesad.png"
+#Chisei
+image sprite ChBase = "Sprites/Chisei/Chiseibase.png"
+#Ichita
+image sprite IBase = "Sprites/Ichita/ichitabase.png"
+#Kenzo
+image sprite KanBase = "Sprties/Kenzo/kenzoSprite.png"
+#Kitsune
+image sprite KBase = "Sprites/Kitsune/KitsuneN.png"
+#Mariko
+image sprite MBase = "Sprites/Mariko/Marikobase.png"
+#Momoko
+image sprite MhBase = "Sprites/Momoko/momokobase.png"
+#Mu
+image sprite MuBase = "Sprites/Mu/Mu1.png"
+#Rei
+image sprite ReBase = "Sprites/Rei/Rei.png"
+#Setsuna
+image sprite SBase = "Sprites/Setsuna/setsunabase.png"
+#Shoma
+image sprite ShBase = "Sprites/Shoma/ShomaN.png"
+
+#Teachers
+#Sato
+image sprite SaBase = "Sprites/Fox/basespritesox.png"
+#Vivaldi
+image sprite VBase = "Sprites/Vivaldi/ViBase.png"
+
+#CGs
+
+image backgroundfb1 = "FB/HFB1.jpg"
+image backgroundfb2 = "FB/HFB2.jpg"
+image backgroundfb3 = "FB/HFB3.jpg"
+image backgroundfb4 = "FB/HFB4.jpg"
+image backgroundfb5 = "FB/HFB5.jpg"
+image backgroundfb6 = "FB/HFB6.jpg"
+image backgroundfb7 = "FB/HFB7.jpg"
+image backgroundfb8 = "FB/HFB8.jpg"
+image backgroundfb9 = "FB/HFB9.jpg"
+image backgroundfb10 = "FB/HFB10.jpg"
+image backgroundfb11 = "FB/HFB11.jpg"
 
 label variables:
     # Player's Stats
@@ -88,11 +165,45 @@ label variables:
     $ Clue1 = False
 
     # Player Relationships
-    $ uRep = 0
-    $ hRep = 1
+    $ chRep = 0
+    $ dRep = 0
+    $ hRep = 0
+    $ iRep = 0
     $ jRep = 0
+    $ kRep = 0
+    $ kkRep = 0
+    $ kiRep = 0
+    $ mRep = 0
+    $ mhRep = 0
+    $ muRep = 0
+    $ nkRep = 0
+    $ rRep = 0
+    $ reRep = 0
+    $ sRep = 0
+    $ shRep = 0
+    $ tRep = 0
+    $ yRep = 0
+    $ uRep = 0
 
     # Character Flags
+    $ chTurn = 0
+    $ dTurn = 0
+    $ hTurn = 0
+    $ iTurn = 0
+    $ jTurn = 0
+    $ kTurn = 0
+    $ kkTurn = 0
+    $ kiTurn = 0
+    $ mTurn = 0
+    $ mhTurn = 0
+    $ muTurn = 0
+    $ nkTurn = 0
+    $ rTurn = 0
+    $ reTurn = 0
+    $ sTurn = 0
+    $ shTurn = 0
+    $ tTurn = 0
+    $ yTurn = 0
     $ uTurn = 0
 return
 
@@ -112,8 +223,6 @@ label start:
 
 label prologue:
     scene backgroundpolice
-
-    #background Interrogation Room
 
     play music "music/LostWithin.mp3"
 
@@ -209,8 +318,6 @@ label prologue:
     "We didn't have the luxury to make a boot camp with the city up in flames."
     "We worked with what we had, in the time we had…"
 
-    #[BG: Interrogation Room]
-
     scene backgroundpolice
 
     play music "music/LostWithin.mp3"
@@ -252,6 +359,7 @@ label prologue:
             call interrogation_end
 
         "Refuse": #(Fast forwards past all choices, all points put in Intelligence)
+            $ Intel += 4
             call interrogation_1
 
     label interrogation_1:
@@ -615,7 +723,7 @@ label prologue:
             n "Guwon is water locked, it would be the easiest to fortify."
             n "With what Odori had planned, we couldn't just set up shop anywhere. It had to be someplace secure."
 
-            show spirte KoeBase
+            show sprite KoeBase
 
             ka "What exactly did she have planned?"
 
@@ -663,6 +771,8 @@ label prologue:
             hide sprite KoeBase
 
     #[Return to Main Branch]
+
+    # Error, if we run out of story, it leads us back here?
     label interrogation_end:
 
     show sprite KoeBase
@@ -732,6 +842,10 @@ label prologue:
     "I mean, yeah I wanted to get my friends out of this, but I didn't want to make them into guinea pigs like me."
     "There's no telling what these people might do for the sake of 'science'."
 
+
+    hide sprite KoeBase
+    show sprite CopBase
+
     cop "The terms have been set."
     cop "If the Junior Gladiators complete the DVP's Villain Prevention Program and can prove they can integrate back into society, they will be issued a full pardon."
     cop "If they are unable to do so, they will be tried as adults for their crimes in Guwon."
@@ -740,9 +854,6 @@ label prologue:
     n "Yes."
 
     "*It's not like I really have a choice anyway.*"
-
-    hide sprite KoeBase
-    show sprite CopBase
 
     cop "Then it's settled. A follow-up hearing will be scheduled in one year to document your progress."
     cop "In the meantime, you will be appointed a guardian from the DVP to take care of you during your time in the program."
@@ -759,6 +870,8 @@ label prologue:
 
     #[BG: Car Exterior]
 
+    scene backgroundcar
+
     play music "music/leaf.mp3"
 
     "A black limo is waiting for me out back."
@@ -767,6 +880,8 @@ label prologue:
     "Regardless of my hesitation, I'm ushered into the back seat by the bailiffs and greeted by none other than the Medusa Killer."
 
     #[BG: Car interior]
+
+    scene backgroundcarin
 
     n "Maimai?"
 
@@ -905,3 +1020,6 @@ label prologue:
     mm "Nagen honey, remember to breathe. We're not going to get out of the car until you're ready."
 
     #[BG: Manor Exterior]
+    
+
+    scene backgroundnhouse
