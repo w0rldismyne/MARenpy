@@ -53,6 +53,7 @@ image backgroundblack = "Backgrounds/black.png"
 image backgroundamp = "Backgrounds/ampetheater.jpg"
 image backgroundbad = "Backgrounds/badforrest.png"
 image backgroundcafex = "Backgrounds/cafeexterior.jpg"
+image backgroundcafexn = "Backgrounds/cafeexteriorn.jpg"
 image backgroundcafe = "Backgrounds/cafeint.jpg"
 image backgroundcar = "Backgrounds/Car.jpg"
 image backgroundcarin = "Backgrounds/CarInt.jpg"
@@ -68,6 +69,7 @@ image backgroundlake = "Backgrounds/Lake.png"
 image backgroundlibrary = "Backgrounds/Library.png"
 image backgroundmariko = "Backgrounds/MarikoStage.png"
 image backgroundroom = "Backgrounds/NagensRoom.png"
+image backgroundroomn = "Backgrounds/NagensRoomN.png"
 image backgroundnhouse = "Backgrounds/nagenhouse.jpg"
 image backgroundnurse = "Backgrounds/NursesOffice.png"
 image backgroundpond = "Backgrounds/Pond.jpg"
@@ -88,6 +90,9 @@ image sprite KoeBase = "Sprites/KoeSprites/koe1.png"
 image sprite CopBase = "Sprites/Cop/cop1.png"
 #Maimai
 image sprite MMBase = "Sprites/MaiMai/MMBase.png"
+#Kenzo
+image sprie KenzoBase = "Sprites/Kenzo/kenzoSprite"
+
 #Apex
 image sprite ABase = "Sprites/Apex/Apexspritebase.png"
 image sprite ASad = "Sprites/Apex/Apexspritesad.png"
@@ -117,6 +122,20 @@ image sprite ShBase = "Sprites/Shoma/ShomaN.png"
 image sprite SaBase = "Sprites/Fox/basespritesox.png"
 #Vivaldi
 image sprite VBase = "Sprites/Vivaldi/ViBase.png"
+
+#CGs
+
+image backgroundfb1 = "FB/HFB1.jpg"
+image backgroundfb2 = "FB/HFB2.jpg"
+image backgroundfb3 = "FB/HFB3.jpg"
+image backgroundfb4 = "FB/HFB4.jpg"
+image backgroundfb5 = "FB/HFB5.jpg"
+image backgroundfb6 = "FB/HFB6.jpg"
+image backgroundfb7 = "FB/HFB7.jpg"
+image backgroundfb8 = "FB/HFB8.jpg"
+image backgroundfb9 = "FB/HFB9.jpg"
+image backgroundfb10 = "FB/HFB10.jpg"
+image backgroundfb11 = "FB/HFB11.jpg"
 
 label variables:
     # Player's Stats
@@ -1005,5 +1024,483 @@ label prologue:
 
     #[BG: Manor Exterior]
     
+    "As we step out of the car, I can smell the faint, eerie scent of velvet kiss growing up by the walkway."
+    "The dreary gray estate looms in front of me. Utterly unwelcoming."
+
+    mm "Now we just gotta find a way in!"
+
+    "Maimai's exuberance clashes with the apathetic surroundings."
+    "Her violently pink attire is giving me a migraine."
+
+    n "He is expecting us, right?"
+    n "You didn't just stalk the man... did you?"
+
+    mm "No... kind of."
+
+    "Of course. Why would I expect any different?"
+    "I stumble after her through the leaves."
+    "With her bottom lip clenched between her teeth, she fishes a metal chain out of the overgrowth of trees and pulls."
+    "The building groans as a sizable bell rings from a tower above the gate."
+    "When the door opens, I begin to understand why Maimai described my appointed guardian as a potato."
+
+    mm "Surprise!"
+
+    hide sprite MMBase
+    show sprite KenzoBase
+
+    kan "What part of this arrangement involved you coming here?"
+
+    n "I knew it! He wasn't expecting us at all!"
+
+    hide sprite KenzoBase
+    show sprite MMBase
+
+    mm "Well, he was expecting you."
+
+    hide sprite MMBase
+    show sprite KenzoBase
+
+    kan "...that's the kid?"
+
+    hide sprite KenzoBase
+    show sprite MMBase
+
+    mm "He claims otherwise, but yes, this is him."
+    mm "Don't worry, in this big ol' house, you'll hardly notice us."
+
+    hide sprite MMBase
+    show sprite KenzoBase
+
+    kan "Us?"
+    kan "You're the one who insisted on abandoning your old identity and with it, any connection to me."
+    kan "You made that very clear."
+
+    hide sprite KenzoBase
+    show sprite MMBase
+
+    mm "I'm not going to leave my kid in some strange place all by himself."
+
+    n "I'm not you kid! And you're not a mom."
+
+    mm "Of course I'm a mom."
+    mm "We'll work out the details later."
+    mm "I have a full day ahead of me dropping off the rest of the rugrat felons, but I'll be back before you know it."
+
+    hide sprite MMBase
+    show sprite KenzoBase
+
+    kan "I agreed to claim to be taking care of the child."
+    kan "You said nothing about living here."
+
+    hide sprite KenzoBase
+    show sprite MMBase
+
+    mm "I feel like you're hearing me, but you're not understanding."
+    mm "I am a new mom and we will talk about this later."
+    mm "I'll see you soon, Nagen."
+
+    hide sprite MMBase
+
+    "What happened to not leaving me alone in a strange place?"
+    "The man sighs and lets me in anyway."
+    "Everything I own now fits inside my backpack, but I’m not sure where to put it."
+    "He just stares at the closed door, potentially regretting his decision to let me in.
+
+    #BG Interior
+
+    menu:
+
+        "Where am I starying?"
+
+            show sprite KenzoBase
+
+            kan "Here, apparently."
+
+            n "...In the hallway?"
+
+            kan "Second floor, east wing, third room on the left side."
+            kan "It should have nothing terribly breakable in it."
+            kan "Just don't touch anything outside of that room."
+
+            n "...okay."
+
+            "I go to leave, but he stops me."
+
+            kan "She didn't mention there were... others."
+
+            n "That's... kind of a long story."
+
+            ken "Follow me, we need to talk."
+
+            call prologue2
+
+        "Who are you?"
+
+            kan "I'm a software engineer."
+
+            n "That's it?"
+            n "I find it really hard to believe Maimai would obsessively pursue some software engineer."
+        
+            kan "...that was my own doing."
+            kan "I made the mistake of confusing a dark-web serial killer with an ARG and tried to set a trap for her so to speak."
+
+            n "You asked Maimai to target you on purpose!?"
+
+            kan "In a way, yes. Though it's usually incredibly difficult to get her to show herself."
+            kan "The question is, why is she risking that for you and your friends?"
+
+            call prologue2
+
+        "Why are you doing this?"
+
+            n "Are they paying you to babysit me?"
+            n "Or is it just because Maimai's blackmailing you?"
+
+            kan "That woman couldn't blackmail me if she tried."
+            kan "No one would listen to her."
+
+            n "Then why are you doing it?"
+
+            "He looks me over in disgust."
+
+            kan "Occasionally her ramblings have merit."
+
+            n "She mentioned you owing her a favor."
+
+            kan "She got me off Lethe's radar, I made the mistake of thanking her; now you're here."
+
+            "Lethe was after him too?"
+
+            kan "You seem confused."
+            kan "Follow me, we have a lot to talk about."
+
+            call prologue2
+
+label prologue2:
+
+    "I follow him into a cluttered study"
+    "He takes a long drink of coffee before he sits down."
+    "He prompts me to find a seat with a casual wave of his hand."
+
+    kan "Liberation Army, hunh?"
+
+    n "Liberation Front."
+
+    kan "Same difference."
+
+    n "No, it's the Liberation Front, get it right."
+
+    "The computer next to him roars to life."
+    "He has no keyboard or mouse, yet it seems to be working just fine."
+    "He stares me down across his empty desk."
+
+    kan "You seem pretty proud of that."
+
+    n "Five kids bringing down an entire province is pretty impressive in my book."
+    n "I was our lead strategist, so their success is my success."
+
+    kan "Hmm..."
+
+    n "Odori was our leader."
+    n "She was the one that saw potential in all of us."
+    n "We trusted her with our lives and we let her down."
+    n "She never wanted to be our leader, but Hiro and I basically made her be."
+    n "Now she’s gone."
+
+    "I hate saying it like that."
+    "I hate thinking about it like that, but after everything we lost, what we did had to mean something."
+
+    n "I know she’s out there somewhere, she has to be."
+    n "She physically couldn’t have run away, and no one can tell me where she is."
+    n "So the least you could do is not treat me like some dumb kid while I’m waiting to hear if my friend is dead."
+    n "For god’s sake, we took over a whole damn province together!"
+
+    kan "Are you finished?"
+
+    n "Uhh..."
+
+    kan "Maimai's assumption is correct in one regard."
+    kan "You are a child if you think anything you did in Guwon is worth celebrating."
+    kan "Violence like that may be effective in the short term, but the damage always radiates far beyond your intended target."
+
+    n "What else was I supposed to do, just accept my life as a lab rat?"
+
+    kan "You need to divorce your attack on Guwon with your anger at Estella."
+    kan "The two are not connected."
+
+    n "Guwon profited off of Estella's caste system for generations."
+
+    kan "Then you intended to harm countless innocents in your reenactment of Children of the Corn?"
+
+    n "No! It isn't that simple."
+
+    kan "Then I suggest you think long and hard about what it was you were trying to accomplish before you defend your actions."
+    kan "Your methods clearly haven't taken you to where you wanted to go."
+
+    "I just got here and he's already lecturing me about how disappointed he is in me."
+    "At least we're on the same page about how much I want to be here."
+
+    n "Is that all you want me to do?"
+
+    kan "Keep a low profile for a month until school starts."
+    kan "You'll be staying at the dorms where they'll be able to keep a closer eye on you."
+
+    n "Boarding school? Really!?"
+    n "Guwon's government and supply chain is in shambles but hey, at least we still have boarding school."
+
+    kan "McCarthy Academy is overseen by an old friend of mine."
+    kan "It promises to be a safe place for survivors like yourself."
+
+    n "I thought you were supposed to be doing that."
+
+    "Great, I'm going to spend the next year getting shuffled around like old luggage."
+
+    kan "I have to rebuild my company from the ground up since someone managed to break through our security system."
+
+    "Oh shit, don't tell me..."
+
+    n "By company, you wouldn't happen to mean Ando Electronics... would you?"
+
+    kan "Seeing as I'm the founder, yes. I was told you can be quite intelligent when you want to be."
+    kan "For your sake, I hope that's true. I don't enjoy gambling."
+
+    "Gambling on what? What's this guy's deal?"
+    "Maimai, why on Earth did you think this was going to be a good idea?"
+
+    kan "It's been a long day. Go unpack your things, Maimai will handle the rest."
+
+    "He proceeds to ignore me, opting to focus on his computer screen instead."
+
+    n "Umm... where-"
+
+    "He groans, rubbing his temples."
+
+    kan "Second floor, east wing, third door on the left side."
+
+    n "Right."
+
+    "I high-tail it out of his office, eager to escape the oppressive air."
+    "The room I’ve been given shares a striking resemblance to the one I grew up in as a kid.* 
+    "It’s not quite the same shade of blue and the books are too new to be mine."
+    "It’s equally eerie and comforting."
 
     scene backgroundnhouse
+
+    "The lingering winter nips at my cheeks as I watch the last of my things get packed into the cab."
+    "A familiar feeling of helplessness washes over me."
+    "There’s nothing else I can do."
+
+    mm "Hey, it’s going to be okay. Boarding school isn’t that bad."
+
+    n "You don’t know that."
+
+    mm "Excuse me mister, but I have been to my fair share of reform schools."
+
+    n "Clearly they worked wonders."
+
+    kan "All the more reason not to be scared."
+    kan "This is only to show the courts you can behave for a long period of time."
+
+    n "...can’t I just stay here with you guys instead?"
+
+    kan "I thought you hated being cooped up here."
+
+    "I do."
+    "I do hate it, but at least I know what to expect when I’m here."
+
+    mm "You can come back during the break and I’ll be going with you the first day to make sure the place is on the up and up."
+
+    kan "I assure you, it’s a legitimate establishment."
+    kan "I wouldn’t send him off if I wasn’t familiar with the staff."
+
+    "That’s supposed to make me feel better?"
+
+    scene backgroundcar
+
+    n "I hate this."
+
+    mm "I know. Come on, the year will be over before you know it."
+
+    "She herds me into the car with a forced smile on her face."
+
+    scene backgroundcarin
+
+    "We drive a few hours to get to the school."
+    "It’s one of the few buildings that survived the riots."
+
+    scene backgroundschool
+
+    "I heard it was a library donated to the DVP for renovation and now it’s become this."
+    "I would have preferred the library.*
+    "It’s no surprise, really, that this is where they planned to test their stupid program."
+    "What confuses me is that I’m expected to act like an ordinary student."
+    "I mean, our names were never released to the public, so it could work."
+    "Something just seems... off"
+
+    scene backgroundhall1
+
+    "Each classroom has a transparent door with an electronic display built-in."
+    "It feels more like an observation tank than a classroom."
+
+    mm "The building had been a library since the 1600s."
+    mm "I never got to see the inside because the previous owner was such a nut job."
+
+    n "That’s supposed to make me feel better?"
+
+    mm "No, but do you think these bowties proofread every book in the building before bringing you in here?"
+    mm "Who knows what you could find!"
+
+    "I appreciate she’s trying to make this sound like an adventure, but it doesn’t change how... empty the school feels. *
+    "The second floor is for more specialized classes."
+    "Along the west corridor are rooms for the fine arts and along the east is a giant computer lab."
+    "Large bay windows look out to the central courtyard."
+    "We finally arrive at a large mahogany office door."
+
+    mm "This is it."
+    mm "Promise you’ll be on your best behavior?"
+
+    n "...why are you asking me that now?"
+
+    "She searches for the right words to say."
+
+    mm "I didn’t want you to spend your time at the mansion worrying about school."
+    mm "This place is the safest place for you to be right now, even if it’s upsetting at times."
+    mm "Until they grant me full guardianship, my hands are tied."
+
+    n "...I promise I’ll try."
+
+    "Maimai escorts me into the office."
+    # Principal office
+    "A woman gestures for us to sit down. She takes her place behind a massive desk with a stack of forms for us to review.*
+    "The nameplate in front of her reads in gold letters 'Principal Vivaldi Tahani'"
+
+    n "....."
+
+    "Vivaldi Tahani, the chief officer sent to hunt down Lethe and her conspirators."
+    "She was at the scene when Lethe... when she died."
+    "I wouldn't have come if I knew she'd be here."
+    "She's the last person I want to talk to."
+
+    v "Is something wrong?"
+
+    "It's like she doesn't even care."
+
+    mm "He’s just nervous because it’s a new school."
+    mm "You know teenagers, all salty about change and stuff."
+
+    "The principal is cold and composed, much like a statue."
+    "I can’t help glaring at her. The DVP had handed me over to the woman who set up Lethe and sabotaged our siege of Guwon."
+    "How could she be so indifferent? Doesn’t she recognize me at all?!"
+
+    mm "So you’re the principal?"
+    mm "That’s uh, quite a shift from being a police officer."
+
+    "I've never seen Maimai so nervous before."
+    "Is she scared of this woman? Or just psychics in general?
+    "She hands us papers to sign, with Maimai trying to stay as far away from the woman's hands as possible."
+    "My phone is confiscated and replaced with a cheap knock-off to use while on campus."
+
+    v  "Detective. I grew tired of locating criminals after they committed crimes."
+
+    "Locating? Is that what she calls what she did? Locating criminals?"
+    "Lethe was- She watched them kill her with that indifferent stare on live television."
+    "We get up to leave. I can’t hold my tongue any longer."
+
+    n "You ruined my life."
+
+    mm "Nagen, please."
+
+    n "No, because of her stupid feud, I lost both my mentor and my best friend in one night."
+    n "Just because I have to be here doesn’t mean I have to play along with her revenge fantasy."
+
+    v "This isn’t supposed to be a punishment, Mr. Tesuta. Your school life will be what you make of it."
+    v "I trust you will do everything in your power to avoid ending up in my office again. Good day to you both."
+
+    "I practically get pushed out of the room by Maimai."
+    "The wooden doors slam shut, but her hands never leave my shoulders."
+
+    mm "I know you’re a smart kid, so please... please don’t go starting fights you can’t finish."
+
+    n "You can’t leave me here with her- You knew she’d be here!"
+
+    mm "It's part of your plea bargain, I can't pull you out even if I wanted to."
+    mm "I'm not your legal guardian yet."
+
+    n "She’s going to set me up to fail."
+    n "You can’t expect me to believe she’s okay with helping someone who trashed their hometown."
+
+    mm "I don’t. That’s why you need to be careful."
+    mm "These people stand more to gain from your success than your failure, but I can’t guarantee their motives are good-intentioned."
+    mm "We have to meet them halfway."
+
+    n "You know I don’t like being alone."
+
+    mm "I’m sorry."
+    mm "I’m sure there are a lot of troubled kids who could benefit from a school like this."
+
+    "Each word is slow and deliberate."
+
+    mm "I’m sure you’ll find some good friends here."
+
+    "She finishes with a wink and finally I understand."
+    "My old teammates could be here too."
+
+    n "Are they really-"
+
+    "Still, to cut me off like that, it must mean I was right."
+    "They’re here. Somewhere in this god-forsaken reform school, I’ll find my friends."
+
+    mm "You got this."
+
+    "We go back to the car to get the last of my things."
+    "She wraps me in a huge hug and I become very aware of the car coming up to the roundabout."
+
+    n "Maimai, please-"
+
+    mm "Be safe. Call me if anything happens."
+    mm "I want to hear from you at least once a week, mister."
+    mm "I mean it. Don’t go forgetting about me, okay?"
+
+    n "Okay, okay, people are staring."
+
+    "I brush her off and collect my bags."
+
+    n "I’ll miss you too."
+
+    "I really don’t want to go, but I can’t keep putting it off."
+    "We say our final goodbyes and I watch as the car drives off. Tomorrow will be my first day of school."
+    "I can see other kids unloading their luggage and milling about the grounds. Now would be a good chance to find my friends."
+
+    #insert nanase intro here
+
+    g "You will be given the opportunity to explore the school and look for your friends."
+    g "This is a good chance to meet your future classmates as well."
+
+    # New Game +
+
+    g "Of course, you can always skip ahead to the next scene."
+    g "But this will give you a baseline affinity of 0 with all students"
+
+    # Else
+
+label FindPeople
+
+    menu:
+        "Lecture Hall"
+        "Field"
+        "Hallway"
+        "Courtyard"
+        "Stage"
+        "AV Room"
+        "Nurse's Office"
+        "Pond"
+        "Roof"
+        "Library"
+        "Studio"
+        "Gym"
+        "Cafe"
+        "Lab"
+        "Classroom"
+        "Stuco Room"
+        "Forbidden Door"
+        "Ampitheater"
