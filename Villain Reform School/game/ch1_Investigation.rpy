@@ -4,6 +4,9 @@
     #[BG: Inner Stage]
     #-Intro-
 
+label Yokuinvestigation:
+
+
     y "Careful wh-where you step!"
 
     "I freeze, foot in the air, with the door to the stage half open. The floor is littered from end to end with carefully overlapped pieces of sheet music. I slowly open the door and find a safe place to stand. Yoku is in the center of it, a little more disheveled than usual."

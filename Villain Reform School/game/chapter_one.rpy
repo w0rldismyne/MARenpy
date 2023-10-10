@@ -2485,7 +2485,7 @@ label Day_1Event_2:
     "Before I can get a word in, they run off. By now, he should be at the field where we were supposed to surrender."
     "The question is, who's behind this?"
 
-label Ch1BossBattle
+label Ch1BossBattle:
     
     #[Fungus Cutscene]
     #[BG: Field at Night]
@@ -2959,7 +2959,7 @@ label Ch1BossBattle
     
     "How long have I been running in circles?"
 
-label Ch1TapeScene
+label Ch1TapeScene:
     #[BG: Outside the Dorm]
     
     "After all was said and done, Mariko was the one who got in trouble and the rest of us were let go. We still haven’t told them about the tape. After all, we don't even know what’s on it. I wanted a chance to talk to Hiro before the others come meet up with us to watch it. Hiro doesn't seem so thrilled."

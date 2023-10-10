@@ -73,13 +73,13 @@ image backgroundroomn = "Backgrounds/NagensRoomN.png"
 image backgroundnhouse = "Backgrounds/nagenhouse.jpg"
 image backgroundnurse = "Backgrounds/NursesOffice.png"
 image backgroundpond = "Backgrounds/Pond.jpg"
-image backgroundroof = "Background/roof.jpg"
-image backgroundhide = "Background/RoofHideout.png"
-image backgroundparty = "Background/roofparty.jpg"
-image backgroundschool = "Background/School.png"
-image backgroundlab = "Background/science.jpg"
-image backgroundsew = "Background/sew.jpg"
-image backgroundstage = "Background/stage.png"
+image backgroundroof = "Backgrounds/roof.jpg"
+image backgroundhide = "Backgrounds/RoofHideout.png"
+image backgroundparty = "Backgrounds/roofparty.jpg"
+image backgroundschool = "Backgrounds/School.png"
+image backgroundlab = "Backgrounds/science.jpg"
+image backgroundsew = "Backgrounds/sew.jpg"
+image backgroundstage = "Backgrounds/stage.png"
 image backgroundstuco = "Backgrounds/stuco.png"
 
 #Sprites
@@ -91,7 +91,7 @@ image sprite CopBase = "Sprites/Cop/cop1.png"
 #Maimai
 image sprite MMBase = "Sprites/MaiMai/MMBase.png"
 #Kenzo
-image sprie KenzoBase = "Sprites/Kenzo/kenzoSprite"
+image sprite KenzoBase = "Sprites/Kenzo/kenzoSprite.png"
 
 #Apex
 image sprite ABase = "Sprites/Apex/Apexspritebase.png"
@@ -100,8 +100,6 @@ image sprite ASad = "Sprites/Apex/Apexspritesad.png"
 image sprite ChBase = "Sprites/Chisei/Chiseibase.png"
 #Ichita
 image sprite IBase = "Sprites/Ichita/ichitabase.png"
-#Kenzo
-image sprite KanBase = "Sprties/Kenzo/kenzoSprite.png"
 #Kitsune
 image sprite KBase = "Sprites/Kitsune/KitsuneN.png"
 #Mariko
@@ -956,7 +954,7 @@ label prologue:
 
             hide sprite MMBase
 
-            call life_1
+            jump life_1
 
         "Where are we going?": #(+Int)
             $ Intel += 1
@@ -983,7 +981,7 @@ label prologue:
 
             hide sprite MMBase
 
-            call life_1
+            jump life_1
 
     #[Return to Main Branch]
     label life_1:
@@ -1023,7 +1021,8 @@ label prologue:
     mm "Nagen honey, remember to breathe. We're not going to get out of the car until you're ready."
 
     #[BG: Manor Exterior]
-    
+    scene backgroundnhouse
+
     "As we step out of the car, I can smell the faint, eerie scent of velvet kiss growing up by the walkway."
     "The dreary gray estate looms in front of me. Utterly unwelcoming."
 
@@ -1104,13 +1103,13 @@ label prologue:
     "What happened to not leaving me alone in a strange place?"
     "The man sighs and lets me in anyway."
     "Everything I own now fits inside my backpack, but I’m not sure where to put it."
-    "He just stares at the closed door, potentially regretting his decision to let me in.
+    "He just stares at the closed door, potentially regretting his decision to let me in."
 
     #BG Interior
 
     menu:
 
-        "Where am I starying?"
+        "Where am I staying?":
 
             show sprite KenzoBase
 
@@ -1130,11 +1129,11 @@ label prologue:
 
             n "That's... kind of a long story."
 
-            ken "Follow me, we need to talk."
+            kan "Follow me, we need to talk."
 
-            call prologue2
+            jump prologue2
 
-        "Who are you?"
+        "Who are you?":
 
             kan "I'm a software engineer."
 
@@ -1149,9 +1148,9 @@ label prologue:
             kan "In a way, yes. Though it's usually incredibly difficult to get her to show herself."
             kan "The question is, why is she risking that for you and your friends?"
 
-            call prologue2
+            jump prologue2
 
-        "Why are you doing this?"
+        "Why are you doing this?":
 
             n "Are they paying you to babysit me?"
             n "Or is it just because Maimai's blackmailing you?"
@@ -1174,7 +1173,7 @@ label prologue:
             kan "You seem confused."
             kan "Follow me, we have a lot to talk about."
 
-            call prologue2
+            jump prologue2
 
 label prologue2:
 
@@ -1280,9 +1279,9 @@ label prologue2:
     n "Right."
 
     "I high-tail it out of his office, eager to escape the oppressive air."
-    "The room I’ve been given shares a striking resemblance to the one I grew up in as a kid.* 
-    "It’s not quite the same shade of blue and the books are too new to be mine."
-    "It’s equally eerie and comforting."
+    "The room I've been given shares a striking resemblance to the one I grew up in as a kid."
+    "It's not quite the same shade of blue and the books are too new to be mine."
+    "It's equally eerie and comforting."
 
     scene backgroundnhouse
 
@@ -1331,7 +1330,7 @@ label prologue2:
     scene backgroundschool
 
     "I heard it was a library donated to the DVP for renovation and now it’s become this."
-    "I would have preferred the library.*
+    "I would have preferred the library."
     "It’s no surprise, really, that this is where they planned to test their stupid program."
     "What confuses me is that I’m expected to act like an ordinary student."
     "I mean, our names were never released to the public, so it could work."
@@ -1350,7 +1349,7 @@ label prologue2:
     mm "No, but do you think these bowties proofread every book in the building before bringing you in here?"
     mm "Who knows what you could find!"
 
-    "I appreciate she’s trying to make this sound like an adventure, but it doesn’t change how... empty the school feels. *
+    "I appreciate she’s trying to make this sound like an adventure, but it doesn’t change how... empty the school feels."
     "The second floor is for more specialized classes."
     "Along the west corridor are rooms for the fine arts and along the east is a giant computer lab."
     "Large bay windows look out to the central courtyard."
@@ -1371,7 +1370,7 @@ label prologue2:
 
     "Maimai escorts me into the office."
     # Principal office
-    "A woman gestures for us to sit down. She takes her place behind a massive desk with a stack of forms for us to review.*
+    "A woman gestures for us to sit down. She takes her place behind a massive desk with a stack of forms for us to review."
     "The nameplate in front of her reads in gold letters 'Principal Vivaldi Tahani'"
 
     n "....."
@@ -1396,7 +1395,7 @@ label prologue2:
     mm "That’s uh, quite a shift from being a police officer."
 
     "I've never seen Maimai so nervous before."
-    "Is she scared of this woman? Or just psychics in general?
+    "Is she scared of this woman? Or just psychics in general?"
     "She hands us papers to sign, with Maimai trying to stay as far away from the woman's hands as possible."
     "My phone is confiscated and replaced with a cheap knock-off to use while on campus."
 
@@ -1483,9 +1482,9 @@ label prologue2:
 
     # Else
 
-label FindPeople
+label FindPeople:
 
-    menu:
+    #menu:
         "Lecture Hall"
         "Field"
         "Hallway"
