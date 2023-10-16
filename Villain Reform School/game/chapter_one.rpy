@@ -205,7 +205,7 @@ label chapter_one:
     
     "Mariko buries her face into Rei’s back as she’s carried off stage."
     "Everyone claps out of pity. The second hand embarrassment is palpable."
- #( Vision Bonus Day 1, Immediately following Opening Ceremony)
+    #( Vision Bonus Day 1, Immediately following Opening Ceremony)
     
     n "Watching people flounder like that never gets less painful."
 
@@ -2485,7 +2485,7 @@ label Day_1Event_2:
     "Before I can get a word in, they run off. By now, he should be at the field where we were supposed to surrender."
     "The question is, who's behind this?"
 
-label Ch1BossBattle
+label Ch1BossBattle:
     
     #[Fungus Cutscene]
     #[BG: Field at Night]
@@ -2900,7 +2900,7 @@ label Ch1BossBattle
 
     #[Move to Tape Scene] 
 
- #(Chapter 1, prior to the tape scene? If Mariko = MAX)
+    #(Chapter 1, prior to the tape scene? If Mariko = MAX)
     #[BG: Grey watercolor. POV Mariko.]
     
     "I always used to think I was invincible, but my parents treated me like I was made of glass. I couldn't go anywhere without them shadowing me. That meant no sports, no clubs, and no school with friends for six whole years."
@@ -2959,7 +2959,7 @@ label Ch1BossBattle
     
     "How long have I been running in circles?"
 
-label Ch1TapeScene
+label Ch1TapeScene:
     #[BG: Outside the Dorm]
     
     "After all was said and done, Mariko was the one who got in trouble and the rest of us were let go. We still haven’t told them about the tape. After all, we don't even know what’s on it. I wanted a chance to talk to Hiro before the others come meet up with us to watch it. Hiro doesn't seem so thrilled."

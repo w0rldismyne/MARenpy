@@ -11,7 +11,7 @@ define ki = Character("Kietsu")
 define m = Character("Mariko Genki")
 define mh = Character("Momoko Yoshino")
 define mu = Character("Oshin Murakami")
-define n = Character("Nagen Tesuta")
+define n = Character("Nagen Tesuta", window_background = "gui/Textboxes/NagenText.png")
 define nk = Character("Nanase Keisan")
 define o = Character("Odori Hato")
 define r = Character("Rise Kisaki")
@@ -856,7 +856,7 @@ label prologue:
 
     n "Yes."
 
-    "*It's not like I really have a choice anyway.*"
+    "It's not like I really have a choice anyway."
 
     cop "Then it's settled. A follow-up hearing will be scheduled in one year to document your progress."
     cop "In the meantime, you will be appointed a guardian from the DVP to take care of you during your time in the program."
@@ -867,7 +867,7 @@ label prologue:
 
     cop "Your guardian is waiting."
 
-    hide spirte CopBase
+    hide sprite CopBase
 
     #Life at the House (scene 2)
 
@@ -1104,13 +1104,13 @@ label prologue:
     "What happened to not leaving me alone in a strange place?"
     "The man sighs and lets me in anyway."
     "Everything I own now fits inside my backpack, but I’m not sure where to put it."
-    "He just stares at the closed door, potentially regretting his decision to let me in.
+    "He just stares at the closed door, potentially regretting his decision to let me in."
 
     #BG Interior
 
     menu:
 
-        "Where am I starying?"
+        "Where am I starying?":
 
             show sprite KenzoBase
 
@@ -1134,7 +1134,7 @@ label prologue:
 
             call prologue2
 
-        "Who are you?"
+        "Who are you?":
 
             kan "I'm a software engineer."
 
@@ -1151,7 +1151,7 @@ label prologue:
 
             call prologue2
 
-        "Why are you doing this?"
+        "Why are you doing this?":
 
             n "Are they paying you to babysit me?"
             n "Or is it just because Maimai's blackmailing you?"
@@ -1280,7 +1280,7 @@ label prologue2:
     n "Right."
 
     "I high-tail it out of his office, eager to escape the oppressive air."
-    "The room I’ve been given shares a striking resemblance to the one I grew up in as a kid.* 
+    "The room I’ve been given shares a striking resemblance to the one I grew up in as a kid."
     "It’s not quite the same shade of blue and the books are too new to be mine."
     "It’s equally eerie and comforting."
 
@@ -1331,7 +1331,7 @@ label prologue2:
     scene backgroundschool
 
     "I heard it was a library donated to the DVP for renovation and now it’s become this."
-    "I would have preferred the library.*
+    "I would have preferred the library."
     "It’s no surprise, really, that this is where they planned to test their stupid program."
     "What confuses me is that I’m expected to act like an ordinary student."
     "I mean, our names were never released to the public, so it could work."
@@ -1350,7 +1350,7 @@ label prologue2:
     mm "No, but do you think these bowties proofread every book in the building before bringing you in here?"
     mm "Who knows what you could find!"
 
-    "I appreciate she’s trying to make this sound like an adventure, but it doesn’t change how... empty the school feels. *
+    "I appreciate she’s trying to make this sound like an adventure, but it doesn’t change how... empty the school feels."
     "The second floor is for more specialized classes."
     "Along the west corridor are rooms for the fine arts and along the east is a giant computer lab."
     "Large bay windows look out to the central courtyard."
@@ -1371,7 +1371,7 @@ label prologue2:
 
     "Maimai escorts me into the office."
     # Principal office
-    "A woman gestures for us to sit down. She takes her place behind a massive desk with a stack of forms for us to review.*
+    "A woman gestures for us to sit down. She takes her place behind a massive desk with a stack of forms for us to review."
     "The nameplate in front of her reads in gold letters 'Principal Vivaldi Tahani'"
 
     n "....."
@@ -1396,7 +1396,7 @@ label prologue2:
     mm "That’s uh, quite a shift from being a police officer."
 
     "I've never seen Maimai so nervous before."
-    "Is she scared of this woman? Or just psychics in general?
+    "Is she scared of this woman? Or just psychics in general?"
     "She hands us papers to sign, with Maimai trying to stay as far away from the woman's hands as possible."
     "My phone is confiscated and replaced with a cheap knock-off to use while on campus."
 
@@ -1483,24 +1483,42 @@ label prologue2:
 
     # Else
 
-label FindPeople
+label FindPeople:
 
     menu:
-        "Lecture Hall"
-        "Field"
-        "Hallway"
-        "Courtyard"
-        "Stage"
-        "AV Room"
-        "Nurse's Office"
-        "Pond"
-        "Roof"
-        "Library"
-        "Studio"
-        "Gym"
-        "Cafe"
-        "Lab"
-        "Classroom"
-        "Stuco Room"
-        "Forbidden Door"
-        "Ampitheater"
+        "Lecture Hall":
+            pass
+        "Field":
+            pass
+        "Hallway":
+            pass
+        "Courtyard":
+            pass
+        "Stage":
+            pass
+        "AV Room":
+            pass
+        "Nurse's Office":
+            pass
+        "Pond":
+            pass
+        "Roof":
+            pass
+        "Library":
+            pass
+        "Studio":
+            pass
+        "Gym":
+            pass
+        "Cafe":
+            pass
+        "Lab":
+            pass
+        "Classroom":
+            pass
+        "Stuco Room":
+            pass
+        "Forbidden Door":
+            pass
+        "Ampitheater":
+            pass

@@ -1,4 +1,5 @@
-     #INVESTIGATION SCENES 
+label investigation:
+    #INVESTIGATION SCENES 
     #[These scenes can be played during freetime by selecting the character from the investigation menu.]
     #Yoku Interrogation
     #[BG: Inner Stage]
