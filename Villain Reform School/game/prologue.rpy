@@ -1,148 +1,11 @@
-# Students
-define a = Character("Apex")
-define ch = Character("Chisei Jikoma")
-define d = Character("Dyre Okami")
-define h = Character("Hiro Manuke")
-define i = Character("Ichita Kinoshita")
-define j = Character("Jona Oshima")
-define k = Character("Kitsune")
-define kk = Character("Kazz Kataki")
-define ki = Character("Kietsu")
-define m = Character("Mariko Genki")
-define mh = Character("Momoko Yoshino")
-define mu = Character("Oshin Murakami")
-define n = Character("Nagen Tesuta")
-define nk = Character("Nanase Keisan")
-define o = Character("Odori Hato")
-define r = Character("Rise Kisaki")
-define re = Character("Rei Watabe")
-define s = Character("Setsuna Hori")
-define sh = Character("Shoma Nishimoto")
-define t = Character("Taiga Sakurai")
-define y = Character("Yoku Teki")
-define u = Character("Uitto Hanatabe")
-# Teachers
-define ik = Character("Inukai")
-define sa = Character("Sato")
-define v = Character("Vivaldi Thani")
-define ya = Character("Yaguchi")
-
-# Extras
-define cop = Character("Cop")
-define Dark = Character("Nagen Tesuta")
-define e = Character("Estella")
-define Everyone = Character("Everyone")
-define Hiyoko = Character("Hiyoko")
-define ka = Character("Koe Amagi")
-define kan = Character("Kenzo Ando")
-define Kanon = Character("Kanon")
-define Kiki = Character("Kiki")
-define l = Character("Lethe")
-define mm = Character("Mai Mai")
-define Nurse = Character("School Nurse")
-define PA = Character("PA")
-define q = Character ("???")
-define Ty = Character("Ty")
-
-# Used for player instructions
-define g = Character("Game")
-
-#backgrounds
-image backgroundpolice = "Backgrounds/PoliceRoom.png"
-image backgroundblack = "Backgrounds/black.png"
-image backgroundamp = "Backgrounds/ampetheater.jpg"
-image backgroundbad = "Backgrounds/badforrest.png"
-image backgroundcafex = "Backgrounds/cafeexterior.jpg"
-image backgroundcafexn = "Backgrounds/cafeexteriorn.jpg"
-image backgroundcafe = "Backgrounds/cafeint.jpg"
-image backgroundcar = "Backgrounds/Car.jpg"
-image backgroundcarin = "Backgrounds/CarInt.jpg"
-image backgroundcharm = "Backgrounds/CharmClass.png"
-image backgroundclass = "Backgrounds/class.jpeg"
-image backgroundcourtyard = "Backgrounds/Courtyard.png"
-image backgrounddorm = "Backgrounds/Dorms.jpeg"
-image backgroundfield = "Backgrounds/Field.png"
-image backgroundclearing = "Backgrounds/ForestClearing.png"
-image backgroundhall1 = "Backgrounds/hallway1.jpeg"
-image backgroundhall2 = "Backgrounds/hallway2.jpeg"
-image backgroundlake = "Backgrounds/Lake.png"
-image backgroundlibrary = "Backgrounds/Library.png"
-image backgroundmariko = "Backgrounds/MarikoStage.png"
-image backgroundroom = "Backgrounds/NagensRoom.png"
-image backgroundroomn = "Backgrounds/NagensRoomN.png"
-image backgroundnhouse = "Backgrounds/nagenhouse.jpg"
-image backgroundnurse = "Backgrounds/NursesOffice.png"
-image backgroundpond = "Backgrounds/Pond.jpg"
-image backgroundroof = "Backgrounds/roof.jpg"
-image backgroundhide = "Backgrounds/RoofHideout.png"
-image backgroundparty = "Backgrounds/roofparty.jpg"
-image backgroundschool = "Backgrounds/School.png"
-image backgroundlab = "Backgrounds/science.jpg"
-image backgroundsew = "Backgrounds/sew.jpg"
-image backgroundstage = "Backgrounds/stage.png"
-image backgroundstuco = "Backgrounds/stuco.png"
-
-#Sprites
-
-#Koe
-image sprite KoeBase = "Sprites/KoeSprites/koe1.png"
-#Cop
-image sprite CopBase = "Sprites/Cop/cop1.png"
-#Maimai
-image sprite MMBase = "Sprites/MaiMai/MMBase.png"
-#Kenzo
-image sprite KenzoBase = "Sprites/Kenzo/kenzoSprite.png"
-
-#Apex
-image sprite ABase = "Sprites/Apex/Apexspritebase.png"
-image sprite ASad = "Sprites/Apex/Apexspritesad.png"
-#Chisei
-image sprite ChBase = "Sprites/Chisei/Chiseibase.png"
-#Ichita
-image sprite IBase = "Sprites/Ichita/ichitabase.png"
-#Kitsune
-image sprite KBase = "Sprites/Kitsune/KitsuneN.png"
-#Mariko
-image sprite MBase = "Sprites/Mariko/Marikobase.png"
-#Momoko
-image sprite MhBase = "Sprites/Momoko/momokobase.png"
-#Mu
-image sprite MuBase = "Sprites/Mu/Mu1.png"
-#Rei
-image sprite ReBase = "Sprites/Rei/Rei.png"
-#Setsuna
-image sprite SBase = "Sprites/Setsuna/setsunabase.png"
-#Shoma
-image sprite ShBase = "Sprites/Shoma/ShomaN.png"
-
-#Teachers
-#Sato
-image sprite SaBase = "Sprites/Fox/basespritesox.png"
-#Vivaldi
-image sprite VBase = "Sprites/Vivaldi/ViBase.png"
-
-#CGs
-
-image backgroundfb1 = "FB/HFB1.jpg"
-image backgroundfb2 = "FB/HFB2.jpg"
-image backgroundfb3 = "FB/HFB3.jpg"
-image backgroundfb4 = "FB/HFB4.jpg"
-image backgroundfb5 = "FB/HFB5.jpg"
-image backgroundfb6 = "FB/HFB6.jpg"
-image backgroundfb7 = "FB/HFB7.jpg"
-image backgroundfb8 = "FB/HFB8.jpg"
-image backgroundfb9 = "FB/HFB9.jpg"
-image backgroundfb10 = "FB/HFB10.jpg"
-image backgroundfb11 = "FB/HFB11.jpg"
-
-label variables:
-    # Player's Stats
+label newgame:
+# Player's Stats
     $ Vigor = 0
     $ Vision = 0
     $ Intel = 0
     $ Charm = 0
 
-    # Player Data
+# Player Data
     $ VigorSP = 0
     $ VigorMax = 3
     $ VisionSP = 0
@@ -152,20 +15,20 @@ label variables:
     $ CharmSP = 0
     $ CharmMax = 3
 
-    # Story Reputation Points
+# Story Reputation Points
     $ Hero = 0
     $ Villain = 4
 
-    # Daily Life
+# Daily Life
     $ FreeActions = 0
     $ DefaultActionCount = 1
     $ ExtraActionCount = 2
     $ Day = 0
 
-    # Investigation
+# Investigation
     $ Clue1 = False
 
-    # Player Relationships
+# Player Relationships
     $ chRep = 0
     $ dRep = 0
     $ hRep = 0
@@ -186,7 +49,7 @@ label variables:
     $ yRep = 0
     $ uRep = 0
 
-    # Character Flags
+# Character Flags
     $ chTurn = 0
     $ dTurn = 0
     $ hTurn = 0
@@ -206,19 +69,11 @@ label variables:
     $ tTurn = 0
     $ yTurn = 0
     $ uTurn = 0
+
+# Prologue Only
+
+    $ friend = 0
 return
-
-# THE GAME STARTS HERE!
-label start:
-
-    call variables
-    menu:
-        "Chapter 1":
-            jump chapter_one
-        "Prologue":
-            pass
-        "Sandbox":
-            jump sandbox
 
     # Opening video goes here.
 
@@ -307,6 +162,8 @@ label prologue:
     l "Do you feel safe at home?"
 
     play music "music/Voyage.mp3"
+
+    scene backgroundP2
 
     "I became painfully aware of the IV that hid under my sleeve."
     "Had she noticed it? Was she going to tell anyone?"
@@ -854,7 +711,7 @@ label prologue:
 
     n "Yes."
 
-    "*It's not like I really have a choice anyway.*"
+    "It's not like I really have a choice anyway."
 
     cop "Then it's settled. A follow-up hearing will be scheduled in one year to document your progress."
     cop "In the meantime, you will be appointed a guardian from the DVP to take care of you during your time in the program."
@@ -865,7 +722,7 @@ label prologue:
 
     cop "Your guardian is waiting."
 
-    hide spirte CopBase
+    hide sprite CopBase
 
     #Life at the House (scene 2)
 
@@ -954,7 +811,7 @@ label prologue:
 
             hide sprite MMBase
 
-            jump life_1
+            call life_1
 
         "Where are we going?": #(+Int)
             $ Intel += 1
@@ -981,7 +838,7 @@ label prologue:
 
             hide sprite MMBase
 
-            jump life_1
+            call life_1
 
     #[Return to Main Branch]
     label life_1:
@@ -1021,8 +878,9 @@ label prologue:
     mm "Nagen honey, remember to breathe. We're not going to get out of the car until you're ready."
 
     #[BG: Manor Exterior]
-    scene backgroundnhouse
 
+    scene backgroundnhouse
+    
     "As we step out of the car, I can smell the faint, eerie scent of velvet kiss growing up by the walkway."
     "The dreary gray estate looms in front of me. Utterly unwelcoming."
 
@@ -1102,7 +960,7 @@ label prologue:
 
     "What happened to not leaving me alone in a strange place?"
     "The man sighs and lets me in anyway."
-    "Everything I own now fits inside my backpack, but I'm not sure where to put it."
+    "Everything I own now fits inside my backpack, but I’m not sure where to put it."
     "He just stares at the closed door, potentially regretting his decision to let me in."
 
     #BG Interior
@@ -1131,9 +989,11 @@ label prologue:
 
             kan "Follow me, we need to talk."
 
-            jump prologue2
+            call prologue2
 
         "Who are you?":
+
+            show sprite KenzoBase
 
             kan "I'm a software engineer."
 
@@ -1148,9 +1008,11 @@ label prologue:
             kan "In a way, yes. Though it's usually incredibly difficult to get her to show herself."
             kan "The question is, why is she risking that for you and your friends?"
 
-            jump prologue2
+            call prologue2
 
         "Why are you doing this?":
+
+            show sprite KenzoBase
 
             n "Are they paying you to babysit me?"
             n "Or is it just because Maimai's blackmailing you?"
@@ -1173,7 +1035,7 @@ label prologue:
             kan "You seem confused."
             kan "Follow me, we have a lot to talk about."
 
-            jump prologue2
+            call prologue2
 
 label prologue2:
 
@@ -1204,15 +1066,15 @@ label prologue2:
     n "She was the one that saw potential in all of us."
     n "We trusted her with our lives and we let her down."
     n "She never wanted to be our leader, but Hiro and I basically made her be."
-    n "Now she's gone."
+    n "Now she’s gone."
 
     "I hate saying it like that."
     "I hate thinking about it like that, but after everything we lost, what we did had to mean something."
 
-    n "I know she's out there somewhere, she has to be."
-    n "She physically couldn't have run away, and no one can tell me where she is."
-    n "So the least you could do is not treat me like some dumb kid while I'm waiting to hear if my friend is dead."
-    n "For god's sake, we took over a whole damn province together!"
+    n "I know she’s out there somewhere, she has to be."
+    n "She physically couldn’t have run away, and no one can tell me where she is."
+    n "So the least you could do is not treat me like some dumb kid while I’m waiting to hear if my friend is dead."
+    n "For god’s sake, we took over a whole damn province together!"
 
     kan "Are you finished?"
 
@@ -1279,40 +1141,52 @@ label prologue2:
     n "Right."
 
     "I high-tail it out of his office, eager to escape the oppressive air."
-    "The room I've been given shares a striking resemblance to the one I grew up in as a kid."
-    "It's not quite the same shade of blue and the books are too new to be mine."
-    "It's equally eerie and comforting."
+    "The room I’ve been given shares a striking resemblance to the one I grew up in as a kid."
+    "It’s not quite the same shade of blue and the books are too new to be mine."
+    "It’s equally eerie and comforting."
 
     scene backgroundnhouse
 
     "The lingering winter nips at my cheeks as I watch the last of my things get packed into the cab."
     "A familiar feeling of helplessness washes over me."
-    "There's nothing else I can do."
+    "There’s nothing else I can do."
 
-    mm "Hey, it's going to be okay. Boarding school isn't that bad."
+    hide sprite KenzoBase
+    show sprite MMBase
 
-    n "You don't know that."
+    mm "Hey, it’s going to be okay. Boarding school isn’t that bad."
+
+    n "You don’t know that."
 
     mm "Excuse me mister, but I have been to my fair share of reform schools."
 
     n "Clearly they worked wonders."
 
+    hide sprite MMBase
+    show sprite KenzoBase
+
     kan "All the more reason not to be scared."
     kan "This is only to show the courts you can behave for a long period of time."
 
-    n "...can't I just stay here with you guys instead?"
+    n "...can’t I just stay here with you guys instead?"
 
     kan "I thought you hated being cooped up here."
 
+    hide sprite KenzoBase
+    show sprite MMBase
+
     "I do."
-    "I do hate it, but at least I know what to expect when I'm here."
+    "I do hate it, but at least I know what to expect when I’m here."
 
-    mm "You can come back during the break and I'll be going with you the first day to make sure the place is on the up and up."
+    mm "You can come back during the break and I’ll be going with you the first day to make sure the place is on the up and up."
 
-    kan "I assure you, it's a legitimate establishment."
-    kan "I wouldn't send him off if I wasn't familiar with the staff."
+    hide sprite MMBase
+    show sprite KenzoBase
 
-    "That's supposed to make me feel better?"
+    kan "I assure you, it’s a legitimate establishment."
+    kan "I wouldn’t send him off if I wasn’t familiar with the staff."
+
+    "That’s supposed to make me feel better?"
 
     scene backgroundcar
 
@@ -1320,19 +1194,21 @@ label prologue2:
 
     mm "I know. Come on, the year will be over before you know it."
 
+    hide sprite MMBase
+
     "She herds me into the car with a forced smile on her face."
 
     scene backgroundcarin
 
     "We drive a few hours to get to the school."
-    "It's one of the few buildings that survived the riots."
+    "It’s one of the few buildings that survived the riots."
 
     scene backgroundschool
 
-    "I heard it was a library donated to the DVP for renovation and now it's become this."
+    "I heard it was a library donated to the DVP for renovation and now it’s become this."
     "I would have preferred the library."
-    "It's no surprise, really, that this is where they planned to test their stupid program."
-    "What confuses me is that I'm expected to act like an ordinary student."
+    "It’s no surprise, really, that this is where they planned to test their stupid program."
+    "What confuses me is that I’m expected to act like an ordinary student."
     "I mean, our names were never released to the public, so it could work."
     "Something just seems... off"
 
@@ -1341,34 +1217,38 @@ label prologue2:
     "Each classroom has a transparent door with an electronic display built-in."
     "It feels more like an observation tank than a classroom."
 
+    show sprite MMBase
+
     mm "The building had been a library since the 1600s."
     mm "I never got to see the inside because the previous owner was such a nut job."
 
-    n "That's supposed to make me feel better?"
+    n "That’s supposed to make me feel better?"
 
     mm "No, but do you think these bowties proofread every book in the building before bringing you in here?"
     mm "Who knows what you could find!"
 
-    "I appreciate she's trying to make this sound like an adventure, but it doesn't change how... empty the school feels."
+    "I appreciate she’s trying to make this sound like an adventure, but it doesn’t change how... empty the school feels."
     "The second floor is for more specialized classes."
     "Along the west corridor are rooms for the fine arts and along the east is a giant computer lab."
     "Large bay windows look out to the central courtyard."
     "We finally arrive at a large mahogany office door."
 
     mm "This is it."
-    mm "Promise you'll be on your best behavior?"
+    mm "Promise you’ll be on your best behavior?"
 
     n "...why are you asking me that now?"
 
     "She searches for the right words to say."
 
-    mm "I didn't want you to spend your time at the mansion worrying about school."
-    mm "This place is the safest place for you to be right now, even if it's upsetting at times."
+    mm "I didn’t want you to spend your time at the mansion worrying about school."
+    mm "This place is the safest place for you to be right now, even if it’s upsetting at times."
     mm "Until they grant me full guardianship, my hands are tied."
 
-    n "...I promise I'll try."
+    n "...I promise I’ll try."
 
     "Maimai escorts me into the office."
+
+    hide sprite MMBase
     # Principal office
     "A woman gestures for us to sit down. She takes her place behind a massive desk with a stack of forms for us to review."
     "The nameplate in front of her reads in gold letters 'Principal Vivaldi Tahani'"
@@ -1380,66 +1260,83 @@ label prologue2:
     "I wouldn't have come if I knew she'd be here."
     "She's the last person I want to talk to."
 
+    show sprite VBase
+
     v "Is something wrong?"
 
     "It's like she doesn't even care."
 
-    mm "He's just nervous because it's a new school."
+    hide sprite VBase
+    show sprite MMBase
+
+    mm "He’s just nervous because it’s a new school."
     mm "You know teenagers, all salty about change and stuff."
 
     "The principal is cold and composed, much like a statue."
-    "I can't help glaring at her. The DVP had handed me over to the woman who set up Lethe and sabotaged our siege of Guwon."
-    "How could she be so indifferent? Doesn't she recognize me at all?!"
+    "I can’t help glaring at her. The DVP had handed me over to the woman who set up Lethe and sabotaged our siege of Guwon."
+    "How could she be so indifferent? Doesn’t she recognize me at all?!"
 
-    mm "So you're the principal?"
-    mm "That's uh, quite a shift from being a police officer."
+    mm "So you’re the principal?"
+    mm "That’s uh, quite a shift from being a police officer."
+
+    hide sprite MMBase
 
     "I've never seen Maimai so nervous before."
     "Is she scared of this woman? Or just psychics in general?"
     "She hands us papers to sign, with Maimai trying to stay as far away from the woman's hands as possible."
     "My phone is confiscated and replaced with a cheap knock-off to use while on campus."
 
+    show sprite VBase
+
     v  "Detective. I grew tired of locating criminals after they committed crimes."
+
+    hide sprite VBase
 
     "Locating? Is that what she calls what she did? Locating criminals?"
     "Lethe was- She watched them kill her with that indifferent stare on live television."
-    "We get up to leave. I can't hold my tongue any longer."
+    "We get up to leave. I can’t hold my tongue any longer."
+
+    scene backgroundP3
 
     n "You ruined my life."
 
     mm "Nagen, please."
 
     n "No, because of her stupid feud, I lost both my mentor and my best friend in one night."
-    n "Just because I have to be here doesn't mean I have to play along with her revenge fantasy."
+    n "Just because I have to be here doesn’t mean I have to play along with her revenge fantasy."
 
-    v "This isn't supposed to be a punishment, Mr. Tesuta. Your school life will be what you make of it."
+    v "This isn’t supposed to be a punishment, Mr. Tesuta. Your school life will be what you make of it."
     v "I trust you will do everything in your power to avoid ending up in my office again. Good day to you both."
+
+    scene backgroundhall2
 
     "I practically get pushed out of the room by Maimai."
     "The wooden doors slam shut, but her hands never leave my shoulders."
 
-    mm "I know you're a smart kid, so please... please don't go starting fights you can't finish."
+    show sprite MMBase
 
-    n "You can't leave me here with her- You knew she'd be here!"
+    mm "I know you’re a smart kid, so please... please don’t go starting fights you can’t finish."
+
+    n "You can’t leave me here with her- You knew she’d be here!"
 
     mm "It's part of your plea bargain, I can't pull you out even if I wanted to."
     mm "I'm not your legal guardian yet."
 
-    n "She's going to set me up to fail."
-    n "You can't expect me to believe she's okay with helping someone who trashed their hometown."
+    n "She’s going to set me up to fail."
+    n "You can’t expect me to believe she’s okay with helping someone who trashed their hometown."
 
-    mm "I don't. That's why you need to be careful."
-    mm "These people stand more to gain from your success than your failure, but I can't guarantee their motives are good-intentioned."
+    mm "I don’t. That’s why you need to be careful."
+    mm "These people stand more to gain from your success than your failure, but I can’t guarantee their motives are good-intentioned."
     mm "We have to meet them halfway."
 
-    n "You know I don't like being alone."
+    n "You know I don’t like being alone."
 
-    mm "I'm sorry."
-    mm "I'm sure there are a lot of troubled kids who could benefit from a school like this."
+    mm "I’m sorry."
+    mm "I’m sure there are a lot of troubled kids who could benefit from a school like this."
 
     "Each word is slow and deliberate."
 
-    mm "I'm sure you'll find some good friends here."
+    mm "I’m sure you’ll find some good friends here."
 
     "She finishes with a wink and finally I understand."
     "My old teammates could be here too."
@@ -1447,7 +1344,7 @@ label prologue2:
     n "Are they really-"
 
     "Still, to cut me off like that, it must mean I was right."
-    "They're here. Somewhere in this god-forsaken reform school, I'll find my friends."
+    "They’re here. Somewhere in this god-forsaken reform school, I’ll find my friends."
 
     mm "You got this."
 
@@ -1458,21 +1355,24 @@ label prologue2:
 
     mm "Be safe. Call me if anything happens."
     mm "I want to hear from you at least once a week, mister."
-    mm "I mean it. Don't go forgetting about me, okay?"
+    mm "I mean it. Don’t go forgetting about me, okay?"
 
     n "Okay, okay, people are staring."
 
     "I brush her off and collect my bags."
 
-    n "I'll miss you too."
+    n "I’ll miss you too."
 
-    "I really don't want to go, but I can't keep putting it off."
+    hide sprite MMBase
+
+    "I really don’t want to go, but I can’t keep putting it off."
     "We say our final goodbyes and I watch as the car drives off. Tomorrow will be my first day of school."
     "I can see other kids unloading their luggage and milling about the grounds. Now would be a good chance to find my friends."
 
     #insert nanase intro here
-
     scene backgroundschool
+
+    show sprite NBase
 
     nk "Good morning!"
 
@@ -1569,10 +1469,14 @@ label prologue2:
 
                     n "To each their own, I guess."
 
+                    hide sprite NBase
+
                     jump nk_intro
 
-    label nk_intro:
+label nk_intro:
     
+    scene backgroundroom
+
     "I get to the room and set down my things."
     "I'm not sure what I can expect from this school, but I do know one thing."
     "By the end of the year, the student body will be in the palm of my hand."
@@ -1592,15 +1496,36 @@ label prologue2:
 
 label FindPeople:
 
-    #menu:
+scene backgroundschool
+
+#If Friends = 3  show menu keep looking or go to meeting
+if friend >= 3:
+    menu:
+        "Keep Looking Around":
+            call FindPeople1
+        "Start Meeting":
+            jump Meeting
+else:
+        call FindPeople1
+
+#else show menus
+label FindPeople1:
+    menu:
         "Lecture Hall":
             #[BG: Lecture Hall or Charm Class]
+
+            scene backgroundcharm
+
+            $ friend += 1
+        
 
             "I arrive at the room where the student council meets."
             "Everything looks too new, too clean, like no one has set foot in here since the school opened."
             "I stand for a while, admiring the leather office chair at the end of the table possibly meant for the student council president."
             "I would give anything to be in charge and shape the future of this school."
             "It may take a while, but I'm sure I can get there."
+
+            show sprite HBase
 
             h "Nagen? Nagen, is that you?"
 
@@ -1749,26 +1674,61 @@ label FindPeople:
 
             label h_intro:
             
+            hide sprite HBase
+
             "I've spent way too long listening to what other people tell me to do."
             "Once I've finished scoping out the school, I'm breaking out the strategy board."
             "I should get going. There's still more of the school to see."
 
             call FindPeople
+        "Field":
+            pass
+        "Hallway":
+            pass
+        "Courtyard":
+            pass
+        "Stage":
+            pass
+        "AV Room":
+            pass
+        "Nurse's Office":
+            pass
+        "Next":
+            call FindPeople2
 
-        "Field"
-        "Hallway"
-        "Courtyard"
-        "Stage"
-        "AV Room"
-        "Nurse's Office"
-        "Pond"
-        "Roof"
-        "Library"
-        "Studio"
-        "Gym"
-        "Cafe"
-        "Lab"
-        "Classroom"
-        "Stuco Room"
-        "Forbidden Door"
-        "Ampitheater"
+label FindPeople2:
+    menu:
+        "Back":
+            call FindPeople1
+        "Pond":
+            pass
+        "Roof":
+            pass
+        "Library":
+            pass
+        "Studio":
+            pass
+        "Gym":
+            pass
+        "Cafe":
+            pass
+        "Next":
+            call FindPeople3
+
+label FindPeople3:
+    menu:
+        "Back":
+            call FindPeople2
+        "Lab":
+            pass
+        "Classroom":
+            pass
+        "Stuco Room":
+            pass
+        "Forbidden Door":
+            pass
+        "Ampitheater":
+            pass
+
+label Meeting:
+    pass

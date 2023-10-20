@@ -34,27 +34,49 @@ label chapter_one:
     "Jona could only restrain one of Hiro’s arms at a time."
     "It was a valiant effort, but he could be dragged wherever Hiro wanted to go."
 
+    show sprite JFrustrated
+
     j "Where’s your school stuff?"
 
     n "In my locker, you nut case."
 
+    hide sprite JFrustrated
+    show sprite JDepressed
+
     j "Sorry."
 
+    hide sprite JDepressed
+    show sprite HBase
+
     h "Come on, Uitto’s saving us a spot with her giraffe legs. We gotta go."
+
+    hide sprite HBase
 
     scene backgroundamp
 
     "I’m hoping that means she’s ready to talk to me, but when we get to the amphitheater, Hiro and Jona immediately sit on either side of her."
     "She’s ignoring me in favor of her own reflection."
 
+    show sprite HBase
+
     h "You can sit next to me."
+
+    hide sprite HBase
+    show sprite UBase
 
     u "Did you get ready together or something? What took you so long?"
 
+    hide sprite UBase
+    show sprite JDepressed
+
     j "I didn’t unpack anything yesterday, sorry."
+
+    hide sprite JDepressed
+    show sprite UBase
 
     u "Next time, just send someone ahead. You know I hate-"
 
+    hide sprite UBase
     show sprite KBase
 
     k "Well well well, your entourage is real after all."
@@ -64,22 +86,27 @@ label chapter_one:
     k "Though I suppose anyone can catch attention with the amount of makeup you put on. Careful not to touch, boys, I heard she doesn’t use sealing spray."
 
     hide sprite KBase
+    show sprite UBase
 
     u "They could care less what I’m wearing, and so should you. This thing you’re doing, it’s not cute. Just go sit down somewhere, these seats are clearly taken."
     
     "She sounds so tired. I’m able to grab her attention and silently ask if she knows this girl from before."
     "Uitto pantomimes a long winded ‘no’. Kitsune, completely oblivious, sits on Jona’s other side."
 
+    hide sprite UBase
     show sprite KBase
 
     k "I could have my fans follow me around all the time, but I was afraid it would make me too unapproachable."
     k "People could get the wrong idea and think I’m a stuck up attention hog."
 
     hide sprite KBase
+    show sprite UBase
     
     u "People will think a lot of things no matter what you do. I retired so I could stop worrying about my image."
     
     "I can practically hear the wheels turn as Kitsune tries to think of a comeback."
+
+    hide sprite UBase
 
     n "Did you want to watch the assembly with us?"
 
@@ -103,13 +130,23 @@ label chapter_one:
 
     "She gets up quietly and leaves to sit with some other girls."
 
+    show sprite UBase
+
     u "Thank god. I seriously don’t know what I’d do without you guys."
 
+    hide sprite UBase
+    show sprite HBase
+
     h "Why didn’t you just tell her to go away?"
+
+    hide sprite HBase
+    show sprite UBase
 
     u "It’s the first day of school."
     u "I’m not going to shit on someone’s self esteem for seeking validation, that’d be pointlessly cruel."
     u "It just sucks that the one person who wanted to talk to me just wanted to compete."
+
+    hide sprite UBase
 
     "We’re interrupted by a comical scale of trumpets as the vice principal bounds on stage. Principal Vivaldi follows close behind in silence."
     
@@ -205,29 +242,53 @@ label chapter_one:
     
     "Mariko buries her face into Rei’s back as she’s carried off stage."
     "Everyone claps out of pity. The second hand embarrassment is palpable."
- #( Vision Bonus Day 1, Immediately following Opening Ceremony)
+    #( Vision Bonus Day 1, Immediately following Opening Ceremony)
+
+    if Vision >= 10:
     
-    n "Watching people flounder like that never gets less painful."
+        n "Watching people flounder like that never gets less painful."
 
-    h "Hey, she tried her best. Hopefully she gets some more members soon."
+        show sprite HBase
 
-    n "You're seriously going to support her?"
+        h "Hey, she tried her best. Hopefully she gets some more members soon."
 
-    h "...yeah? You got something against cheerleaders?"
+        n "You're seriously going to support her?"
 
-    u "To be fair, that was a pretty cringey performance. Can you imagine a whole team of that?"
+        h "...yeah? You got something against cheerleaders?"
 
-    j "I'd stop skipping pep rallies if it was just watching people fall on their faces. Maybe they could add pies or something."
+        hide sprite HBase
+        show sprite UBase
 
-    u "No. You just described clowns. I don't do clowns."
+        u "To be fair, that was a pretty cringey performance. Can you imagine a whole team of that?"
 
-    n "....."
+        hide sprite UBase
+        show sprite JHappy
 
-    h "Hey, you okay, man?"
+        j "I'd stop skipping pep rallies if it was just watching people fall on their faces. Maybe they could add pies or something."
 
-    n "Yeah... yeah, I just... it felt weird coming from you is all. Sorry."
+        hide sprite JHappy
+        show sprite UBase
 
+        u "No. You just described clowns. I don't do clowns."
+
+        hide sprite UBase
+
+        n "....."
+
+        show sprite HBase
+
+        h "Hey, you okay, man?"
+
+        hide sprite HBase
+
+        n "Yeah... yeah, I just... it felt weird coming from you is all. Sorry."
+    else:
+        jump Day_1Event_1
+    
 #main branch
+label Day_1Event_1:
+
+    scene backgroundschool
 
     "After the assembly, we’re handed our class schedules. I’m stuck with English, P.E., Science, and Proficiency Management."
     "They wanted me to take the Intelligence course, but I can always switch it if I want to."
@@ -428,6 +489,7 @@ label VigorClass1:
     Everyone "...the body?"
     
     ik "We'll keep working on that."
+
     call Day_1Event_2
         
 label VisionClass1:
@@ -438,17 +500,22 @@ label VisionClass1:
     "The first thing that strikes me about the Vision class is how small it is."
     "I thought the courses would be more evenly distributed."
     "There are only four other students and all of them notice me immediately."
+
+    show sprite JHappy
     
     j "Nagen, did you get lost?"
     
+    hide sprite JHappy
     show sprite ChBase
 
     ch "Maybe he is a fellow brood parasite."
 
     hide sprite ChBase
+    show sprite JDepressed
     
     j "I don't think he's here to lay eggs, Chisei."
 
+    hide sprite JDepressed
     show sprite IBase
     
     i "He better not be."
@@ -472,12 +539,19 @@ label VisionClass1:
     ch "And I thought my ability was intrusive, you poor thing."
 
     hide sprite ChBase
+    show sprite JFrustrated
     
     j "Who's thoughts have you been reading, young man?"
     
     n "N-no, I don't- There's no rule that says I can't be here."
+
+    hide sprite JFrustrated
+    show sprite JMad
     
     j "So you have tried to read my mind then."
+
+    hide sprite JMad
+    show sprite KiBase
     
     ki "Lay off the new kid, guys, he'll tell us in his own time. You're makin' him uncomfortable by swarmin' him like that."
     
@@ -485,6 +559,7 @@ label VisionClass1:
     
     ki "’Fraid so. There might be a few border-liners who could qualify, but this is more than I was expectin' to be honest."
 
+    hide sprite KiBase
     show sprite VBase
     
     v "Indeed, it can be quite difficult for people to acknowledge the abnormal nature of their abilities."
@@ -561,11 +636,14 @@ label VisionClass1:
     hide sprite ChBase
     
     "I can't help but laugh. Jona grabs my shoulders."
+
+    show sprite JHappy
         
     j "Dude, did you plan this?"
     
     n "No, man, Hiro must have sent me something after I checked it."
 
+    hide sprite JHappy
     show sprite VBase
     
     v "That's enough, Takahara."
@@ -626,8 +704,12 @@ label VisionClass1:
     hide sprite VBase
     
     "Jona stares at his piece of paper for a long time before taping on my shoulder."
+
+    show sprite JDepressed
     
     j "Do you, uh, could you trade with me?"
+
+    hide sprite JDepressed
 
     menu:
         "Trade":
@@ -718,8 +800,11 @@ label CharmClass1:
     sa "Two of you will talk while the third records any patterns of effective communication, like touch or mirroring."
 
     hide sprite SaBase
+    show sprite NBase
     
     nk "What do you mean mirroring?"
+
+    hide sprite NBase
     
     "Ms. Yamamoto points to the blackboard."
     call Day_1Event_2
@@ -965,8 +1050,6 @@ label IntelClass1:
 
 label Day_1Event_2:
 
-    #NEW STUFF
-
     scene backgroundhall1
     
     #BG: Hallway
@@ -999,7 +1082,7 @@ label Day_1Event_2:
     "I assume, on blind faith alone, that whoever is responsible will be caught."
     "Everyone is staring. Everyone knows. They may not have beforehand, but now it’s like being under a spotlight."
 
-    show sprite ReBase
+    scene backgroundC1
 
     re "It's not true, is it?"
 
@@ -1007,13 +1090,7 @@ label Day_1Event_2:
 
     re "Guys, tell them you had nothing to do with riots. There has to be a mistake. We were all together. We-"
 
-    hide sprite ReBase
-    show sprite MuBase
-
     mu "Why did you think they were missing during the evacuation?"
-
-    hide sprite MuBase
-    show sprite ReBase
 
     re "Nagen was sick, and I saw Hiro."
 
@@ -1021,11 +1098,11 @@ label Day_1Event_2:
 
     re "He came back to get us. The gym wasn't safe so we had to relocate, isn't that right? Hiro, tell them, please. Tell them the truth."
 
-    hide sprite ReBase
-
     j "Do you want him to tell the truth or tell them he wasn't involved? He can't do both."
 
     n "Jona, stop helping."
+
+    scene backgroundhall1
 
     show sprite ReBase
 
@@ -1037,7 +1114,11 @@ label Day_1Event_2:
 
     n "There were no 'others', it was just us."
 
+    show sprite DBase
+
     d "All of you knew. You knew, and then you just show up here like nothing happened? How long were you planning to lie to us?"
+
+    hide sprite DBase
 
     t "Does it matter? What's done is done."
 
@@ -1050,7 +1131,7 @@ label Day_1Event_2:
 
     ch "Violence begets more violence."
     ch "Demanding retribution will only further the cycle, no matter how deserved."
-    vh "Deliverance should only have been provided to the ones it was owed."
+    ch "Deliverance should only have been provided to the ones it was owed."
 
     hide sprite ChBase
 
@@ -1069,25 +1150,51 @@ label Day_1Event_2:
     "Rei pleads with her last bit of hope. Everyone else looks on with a mixture of grief and loathing."
     "Uitto stands between us, acting as a rage-filled human shield. I can hear staff thundering down the stairs after us."
 
+    menu:
+
     #[Player Choice]
-    #A. Apologize (+Rei)
+        "Apologize":
+            $ reRep += 1
+            $ jRep -= 1
 
-    n "Rei, I never meant to hurt you guys, I swear. I'm sorry."
+            n "Rei, I never meant to hurt you guys, I swear. I'm sorry."
 
-    j "But it's not our fault they have survivor's guilt."
+            show sprite JMad
 
-    n "Seriously dude, not helping."
+            j "But it's not our fault they have survivor's guilt."
 
-    #B. Stay silent (-Rep)
-    n "....."
+            hide sprite JMad
 
-    h "I'm the one that owes you an apology."
+            n "Seriously dude, not helping."
 
-    u "Hiro, no."
+            jump Day_1Event_2_2
 
-    h "But they're right; I failed as your leader. I should have taken better care of you all. I'm sorry."
+        "Stay silent":
+            $ Reputation -= 1
+
+            n "....."
+
+            show sprite HBase
+
+            h "I'm the one that owes you an apology."
+
+            hide sprite HBase
+            show sprite UBase
+
+            u "Hiro, no."
+
+            hide sprite UBase
+            show sprite HBase
+
+            h "But they're right; I failed as your leader. I should have taken better care of you all. I'm sorry."
+
+            hide sprite HBase
+
+            jump Day_1Event_2_2
 
     #[Main Branch] 
+
+label Day_1Event_2_2:
 
     show sprite VBase
 
@@ -1101,6 +1208,8 @@ label Day_1Event_2:
 
     n "I'm going to find who did this."
 
+    show sprite UBase
+
     u "Good. Then we'll be able to show them what happens when you fuck with the 'bad' kids."
 
     n "We?"
@@ -1111,11 +1220,23 @@ label Day_1Event_2:
 
     u "I don't hate you, dummy. Yeah, I'm still pissed that you ratted on us, but no one gets away with threatening my friends."
 
+    hide sprite UBase
+    show sprite HBase
+
     h "Guys, we can't go around talking like this, people hate us enough as is. We're supposed to be laying low, remember?"
+
+    hide sprite HBase
+    show sprite JFrustrated
 
     j "We've already been exposed and you're their main target, Hiro. Are you suggesting we sit back and watch you get attacked?"
 
+    hide sprite JFrustrated
+    show sprite HBase
+
     h "No one said anything about being attacked."
+
+    hide sprite HBase
+    show sprite UBase
 
     u "Either way, a bounty's on your head, and it made everyone think it was okay to come for you."
 
@@ -1125,18 +1246,33 @@ label Day_1Event_2:
 
     u "The lil' bitch gotta pay."
 
+    hide sprite UBase
+    show sprite HBase
+
     h "You two are impossible."
+
+    hide sprite HBase
+    show sprite JDepressed
 
     j "I'm not against helping, if you have a use for me that is."
 
+    hide sprite JDepressed
+    show sprite habit
+
     h "Guys... Okay, fine. But no one gets hurt. We got a reputation to fix."
+
+    hide sprite HBase
 
     g "Reputation can be gained or lost during events. You can increase your reputation by helping other students."
     g "This is not the same as alignment. A villainous character can have a good reputation."
 
     n "I make no promises. The message had to go through the PA system. We should start there."
 
+    show sprite NBase
+
     nk "....."
+
+    hide sprite NBase
 
     #Ch1 Investigation
     #[BG: PA Room (interior)]
@@ -1166,6 +1302,9 @@ label Day_1Event_2:
     #Once every object as been interacted with return to main branch
 
     #[Return to Main Branch]
+
+    scene backgroundhall2
+
     u "There's not much here."
 
     j "The teachers' might have confiscated everything already."
@@ -2489,6 +2628,8 @@ label Ch1BossBattle:
     
     #[Fungus Cutscene]
     #[BG: Field at Night]
+
+    scene backgroundB1
     
     "I run to the practice field with all my might while keeping my phone close, hoping that at any moment, Hiro will answer my calls. As the grass caves under my boots, I see three girls arguing amongst themselves. For a brief second, I thought I had made it in time. After all, it isn’t uncommon for the cheerleaders to monopolize the field. However…"
 
@@ -2531,6 +2672,8 @@ label Ch1BossBattle:
     re "Mariko, this is enough! You’re scaring me."
 
     m "...I’m sorry."
+
+    scene backgroundmariko
 
     "She snaps her fingers and with solemn expressions, the other girls turn to us. Uitto and Jona end up pinned before I know it."
 
@@ -2610,7 +2753,7 @@ label Ch1BossBattle:
 
     "She snaps her fingers again, signaling to Rei and Setsuna to go to the scoreboard."
 
-    u (Off the ground) "About time. What’s their damage anyway?"
+    u "About time. What’s their damage anyway?"
 
     m "I’m not allowed to say. Honestly, if Hiro hadn’t cooperated, I would have been in more trouble than I already am."
 
@@ -2723,6 +2866,8 @@ label Ch1BossBattle:
 
     m "Oh? But I’ve come too far to give up now. It’s not like you’re my target anyway. I just need you to teach him a very important lesson."
 
+    scene backgroundB2
+
     "The scoreboard that overlooks the field lights up, revealing where Hiro had been bound and gagged."
 
     m "How does it feel, Morine? Watching your friends get injured while you’re helpless to do anything about it?"
@@ -2731,24 +2876,42 @@ label Ch1BossBattle:
 
     h "Mpmph!"
 
-    m "Pretty neat, hunh? Anytime I get hit, he feels it instead. Finally, my Proficiency will let me do something other than shield myself from reality. I can make him feel what they felt. What it was like to be one of your mindless minions."
+    m "Pretty neat, hunh?"
+    m "Anytime I get hit, he feels it instead."
+    m "Finally, my Proficiency will let me do something other than shield myself from reality."
+    m "I can make him feel what they felt."
+    m "What it was like to be one of your mindless minions."
 
     n "This isn’t the same thing."
 
-    m "But it feels the same. We were awake inside those voiceless meat shields you turned us into. My squad felt every wound they took for you only to lie nameless in the streets. The world treats them like a footnote in your casefile! I will not let their deaths be treated like a cautionary tale while the people at fault get to move on with their lives. They should have been here! Don’t you understand that?! Hiro sent them off to die because he was too scared to fight for himself and I will NEVER forgive him for that."
+    scene backgroundmariko
+
+    m "But it feels the same."
+    m "We were awake inside those voiceless meat shields you turned us into."
+    m "My squad felt every wound they took for you only to lie nameless in the streets."
+    m "The world treats them like a footnote in your casefile!"
+    m "I will not let their deaths be treated like a cautionary tale while the people at fault get to move on with their lives."
+    m "They should have been here! Don’t you understand that?!"
+    m "Hiro sent them off to die because he was too scared to fight for himself and I will NEVER forgive him for that."
 
     n "He didn’t know."
 
     #[If Hero > Villain]
     #[CG of Hiro’s Injury]
+
+    scene backgroundFB11
     
     "Hiro never wanted anyone to get hurt. He would sooner get himself killed than let others fight for him. No matter how awful people were, he’d always make excuses for them. He wanted everyone to be happy."
 
     #[CG of Odori and Nagen flanking young Hiro, offering a gun.]
+
+    scene backgroundFB5
     
     "So we lied to him about Lethe’s predictions. We told him no one would get hurt as long as he did exactly what we told him. As crazy as our plan was, he never could figure out how to tell us no."
 
     #[CG of Hiro blocking out the world with headphones]
+
+    scene backgroundFB2
     
     "After people started to die, he shut everyone out. Despite our best efforts to hide the truth, I could see him counting how many people made it back every night. He blamed himself for everything going to shit."
 
@@ -2757,12 +2920,16 @@ label Ch1BossBattle:
     "When the Proficiency Management Committee demanded for our leader to surrender, Lethe met them in his stead."
 
     #[Same CG in full color, with scribbled out scenes]
+
+    scene backgroundB3
     
-    "-censored/jumbled line-"
+    "HIe bdloanmtewd hainmtsteolsf feoer htehr diesa!t!h."
 
     #[Return to previous CG]
     
     "He tried to face the people responsible head on... and lost. I thought I’d never see him again."
+
+    scene backgroundmariko
 
     #[Return to Boss Battle arena]
     
@@ -2900,7 +3067,7 @@ label Ch1BossBattle:
 
     #[Move to Tape Scene] 
 
- #(Chapter 1, prior to the tape scene? If Mariko = MAX)
+    #(Chapter 1, prior to the tape scene? If Mariko = MAX)
     #[BG: Grey watercolor. POV Mariko.]
     
     "I always used to think I was invincible, but my parents treated me like I was made of glass. I couldn't go anywhere without them shadowing me. That meant no sports, no clubs, and no school with friends for six whole years."
