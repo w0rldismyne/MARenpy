@@ -1,54 +1,54 @@
 # Students
-define a  = Character("Apex",             window_background = "gui/textboxes/ApexText.png")
-define ch = Character("Chisei Jikoma",    window_background = "gui/textboxes/ChiseiText.png")
-define d  = Character("Dyre Okami",       window_background = "gui/textboxes/DyreText.png")
-define h  = Character("Hiro Manuke",      window_background = "gui/textboxes/HiroText.png")
-define i  = Character("Ichita Kinoshita", window_background = "gui/textboxes/IchitaText.png")
-define j  = Character("Jona Oshima",      window_background = "gui/textboxes/JonaText.png")
-define kk = Character("Kazz Kataki",      window_background = "gui/textboxes/KazzText.png")
-define ki = Character("Kietsu Himura",    window_background = "gui/textboxes/KietsuText.png")
-define k  = Character("Kitsune Sumizome", window_background = "gui/textboxes/KitsuneText.png")
-define m  = Character("Mariko Genki",     window_background = "gui/textboxes/MarikoText.png")
-define mh = Character("Momoko Yoshino",   window_background = "gui/textboxes/MomokoText.png")
-define mu = Character("Oshin Murakami",   window_background = "gui/textboxes/NagenText.png")
-define n  = Character("Nagen Tesuta",     window_background = "gui/textboxes/NagenText.png")
-define nk = Character("Nanase Keisan",    window_background = "gui/textboxes/NanaseText.png")
-define o  = Character("Odori Hato",       window_background = "gui/textboxes/ApexText.png")
-define re = Character("Rei Watabe",       window_background = "gui/textboxes/ReiText.png")
-define r  = Character("Rise Kisaki",      window_background = "gui/textboxes/RiseText.png")
-define s  = Character("Setsuna Hori",     window_background = "gui/textboxes/SetsunaText.png")
-define sh = Character("Shoma Nishimoto",  window_background = "gui/textboxes/ShomaText.png")
-define t  = Character("Taiga Sakurai",    window_background = "gui/textboxes/taigatext.png")
-define u  = Character("Uitto Hanatabe",   window_background = "gui/textboxes/UittoText.png")
-define y  = Character("Yoku Teki",        window_background = "gui/textboxes/YokuText.png")
+define a        = Character("Apex",             window_background = "gui/textboxes/ApexText.png")
+define ch       = Character("Chisei Jikoma",    window_background = "gui/textboxes/ChiseiText.png")
+define d        = Character("Dyre Okami",       window_background = "gui/textboxes/DyreText.png")
+define h        = Character("Hiro Manuke",      window_background = "gui/textboxes/HiroText.png")
+define i        = Character("Ichita Kinoshita", window_background = "gui/textboxes/IchitaText.png")
+define j        = Character("Jona Oshima",      window_background = "gui/textboxes/JonaText.png")
+define kk       = Character("Kazz Kataki",      window_background = "gui/textboxes/KazzText.png")
+define ki       = Character("Kietsu Himura",    window_background = "gui/textboxes/KietsuText.png")
+define k        = Character("Kitsune Sumizome", window_background = "gui/textboxes/KitsuneText.png")
+define m        = Character("Mariko Genki",     window_background = "gui/textboxes/MarikoText.png")
+define mh       = Character("Momoko Yoshino",   window_background = "gui/textboxes/MomokoText.png")
+define mu       = Character("Oshin Murakami",   window_background = "gui/textboxes/NagenText.png")
+define n        = Character("Nagen Tesuta",     window_background = "gui/textboxes/NagenText.png")
+define nk       = Character("Nanase Keisan",    window_background = "gui/textboxes/NanaseText.png")
+define o        = Character("Odori Hato",       window_background = "gui/textboxes/ApexText.png")
+define re       = Character("Rei Watabe",       window_background = "gui/textboxes/ReiText.png")
+define r        = Character("Rise Kisaki",      window_background = "gui/textboxes/RiseText.png")
+define s        = Character("Setsuna Hori",     window_background = "gui/textboxes/SetsunaText.png")
+define sh       = Character("Shoma Nishimoto",  window_background = "gui/textboxes/ShomaText.png")
+define t        = Character("Taiga Sakurai",    window_background = "gui/textboxes/TaigaText.png")
+define u        = Character("Uitto Hanatabe",   window_background = "gui/textboxes/UittoText.png")
+define y        = Character("Yoku Teki",        window_background = "gui/textboxes/YokuText.png")
 
-# Unused - Monologue, 
+# Unused - Monologue
 
 # Teachers
-define ik = Character("Inukai",           window_background = "gui/textboxes/InukaiText.png")
-define sa = Character("Sato",             window_background = "gui/textboxes/SatoText.png")
-define v  = Character("Vivaldi Thani",    window_background = "gui/textboxes/VivaldiText.png")
-define ya = Character("Yaguchi",          window_background = "gui/textboxes/YaguchiText.png")
+define ik       = Character("Inukai",           window_background = "gui/textboxes/InukaiText.png")
+define sa       = Character("Sato",             window_background = "gui/textboxes/SatoText.png")
+define v        = Character("Vivaldi Thani",    window_background = "gui/textboxes/VivaldiText.png")
+define ya       = Character("Yaguchi",          window_background = "gui/textboxes/YaguchiText.png")
 
 # Extras
-define cop      = Character("Cop",        window_background = "gui/textboxes/othertext.png")
+define cop      = Character("Cop",              window_background = "gui/textboxes/OtherText.png")
 define Dark     = Character("Nagen Tesuta")
-define e        = Character("Estella" ,   window_background = "gui/textboxes/othertext.png")
-define Everyone = Character("Everyone",   window_background = "gui/textboxes/othertext.png")
-define Hiyoko   = Character("Hiyoko",     window_background = "gui/textboxes/othertext.png")
-define ka       = Character("Koe Amagi",  window_background = "gui/textboxes/othertext.png")
-define kan      = Character("Kenzo Ando", window_background = "gui/textboxes/othertext.png")
-define Kanon    = Character("Kanon",      window_background = "gui/textboxes/othertext.png")
-define Kiki     = Character("Kiki",       window_background = "gui/textboxes/othertext.png")
-define l        = Character("Lethe",      window_background = "gui/textboxes/othertext.png")
-define mm       = Character("Mai Mai",    window_background = "gui/textboxes/othertext.png")
-define Nurse    = Character("School Nurse",   window_background = "gui/textboxes/othertext.png")
-define PA       = Character("PA",         window_background = "gui/textboxes/othertext.png")
-define q        = Character ("???",       window_background = "gui/textboxes/othertext.png")
-define Ty       = Character("Ty",         window_background = "gui/textboxes/othertext.png")
+define e        = Character("Estella" ,         window_background = "gui/textboxes/OtherText.png")
+define Everyone = Character("Everyone",         window_background = "gui/textboxes/OtherText.png")
+define Hiyoko   = Character("Hiyoko",           window_background = "gui/textboxes/OtherText.png")
+define ka       = Character("Koe Amagi",        window_background = "gui/textboxes/OtherText.png")
+define kan      = Character("Kenzo Ando",       window_background = "gui/textboxes/OtherText.png")
+define Kanon    = Character("Kanon",            window_background = "gui/textboxes/OtherText.png")
+define Kiki     = Character("Kiki",             window_background = "gui/textboxes/OtherText.png")
+define l        = Character("Lethe",            window_background = "gui/textboxes/OtherText.png")
+define mm       = Character("Mai Mai",          window_background = "gui/textboxes/OtherText.png")
+define Nurse    = Character("School Nurse",     window_background = "gui/textboxes/OtherText.png")
+define PA       = Character("PA",               window_background = "gui/textboxes/OtherText.png")
+define q        = Character("???",              window_background = "gui/textboxes/OtherText.png")
+define Ty       = Character("Ty",               window_background = "gui/textboxes/OtherText.png")
 
-# Used for player instructions
-define g = Character("Game",              window_background = "gui/textboxes/narratorkun.png")
+# Used for player instructions - Possibly different way to do this?
+define g        = Character("Game",             window_background = "gui/textboxes/narratorkun.png")
 
 #backgrounds
 image backgroundpolice    = "Backgrounds/PoliceRoom.png"
@@ -237,6 +237,9 @@ label variables:
     $ tTurn = 0
     $ yTurn = 0
     $ uTurn = 0
+
+    # Prologue Variable
+    $ friend = 0
 return
 
 # THE GAME STARTS HERE!

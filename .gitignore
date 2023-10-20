@@ -22,4 +22,9 @@ saves/
 log.txt
 errors.txt
 traceback.txt
-files.txt
+.vscode/settings.json
+Villain Reform School/game/.vscode/settings.json
+Villain Reform School/log.txt
+Villain Reform School/game/cache/screens.rpyb
+Villain Reform School/game/saves/navigation.json
+Villain Reform School/game/saves/persistent
