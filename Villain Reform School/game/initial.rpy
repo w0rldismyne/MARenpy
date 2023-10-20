@@ -6,23 +6,23 @@ define h  = Character("Hiro Manuke",      window_background = "gui/textboxes/Hir
 define i  = Character("Ichita Kinoshita", window_background = "gui/textboxes/IchitaText.png")
 define j  = Character("Jona Oshima",      window_background = "gui/textboxes/JonaText.png")
 define kk = Character("Kazz Kataki",      window_background = "gui/textboxes/KazzText.png")
-define ki = Character("Kietsu",           window_background = "gui/textboxes/KietsuText.png")
-define k  = Character("Kitsune",          window_background = "gui/textboxes/KitsuneText.png")
+define ki = Character("Kietsu Himura",    window_background = "gui/textboxes/KietsuText.png")
+define k  = Character("Kitsune Sumizome", window_background = "gui/textboxes/KitsuneText.png")
 define m  = Character("Mariko Genki",     window_background = "gui/textboxes/MarikoText.png")
 define mh = Character("Momoko Yoshino",   window_background = "gui/textboxes/MomokoText.png")
 define mu = Character("Oshin Murakami",   window_background = "gui/textboxes/NagenText.png")
 define n  = Character("Nagen Tesuta",     window_background = "gui/textboxes/NagenText.png")
 define nk = Character("Nanase Keisan",    window_background = "gui/textboxes/NanaseText.png")
-define o  = Character("Odori Hato")
+define o  = Character("Odori Hato",       window_background = "gui/textboxes/ApexText.png")
 define re = Character("Rei Watabe",       window_background = "gui/textboxes/ReiText.png")
 define r  = Character("Rise Kisaki",      window_background = "gui/textboxes/RiseText.png")
 define s  = Character("Setsuna Hori",     window_background = "gui/textboxes/SetsunaText.png")
 define sh = Character("Shoma Nishimoto",  window_background = "gui/textboxes/ShomaText.png")
-define t  = Character("Taiga Sakurai")
+define t  = Character("Taiga Sakurai",    window_background = "gui/textboxes/taigatext.png")
 define u  = Character("Uitto Hanatabe",   window_background = "gui/textboxes/UittoText.png")
 define y  = Character("Yoku Teki",        window_background = "gui/textboxes/YokuText.png")
 
-# Unused - Monologue, narratorkun, othertext
+# Unused - Monologue, 
 
 # Teachers
 define ik = Character("Inukai",           window_background = "gui/textboxes/InukaiText.png")
@@ -31,24 +31,24 @@ define v  = Character("Vivaldi Thani",    window_background = "gui/textboxes/Viv
 define ya = Character("Yaguchi",          window_background = "gui/textboxes/YaguchiText.png")
 
 # Extras
-define cop      = Character("Cop")
+define cop      = Character("Cop",        window_background = "gui/textboxes/othertext.png")
 define Dark     = Character("Nagen Tesuta")
-define e        = Character("Estella")
-define Everyone = Character("Everyone")
-define Hiyoko   = Character("Hiyoko")
-define ka       = Character("Koe Amagi")
-define kan      = Character("Kenzo Ando")
-define Kanon    = Character("Kanon")
-define Kiki     = Character("Kiki")
-define l        = Character("Lethe")
-define mm       = Character("Mai Mai")
-define Nurse    = Character("School Nurse")
-define PA       = Character("PA")
-define q        = Character ("???")
-define Ty       = Character("Ty")
+define e        = Character("Estella" ,   window_background = "gui/textboxes/othertext.png")
+define Everyone = Character("Everyone",   window_background = "gui/textboxes/othertext.png")
+define Hiyoko   = Character("Hiyoko",     window_background = "gui/textboxes/othertext.png")
+define ka       = Character("Koe Amagi",  window_background = "gui/textboxes/othertext.png")
+define kan      = Character("Kenzo Ando", window_background = "gui/textboxes/othertext.png")
+define Kanon    = Character("Kanon",      window_background = "gui/textboxes/othertext.png")
+define Kiki     = Character("Kiki",       window_background = "gui/textboxes/othertext.png")
+define l        = Character("Lethe",      window_background = "gui/textboxes/othertext.png")
+define mm       = Character("Mai Mai",    window_background = "gui/textboxes/othertext.png")
+define Nurse    = Character("School Nurse",   window_background = "gui/textboxes/othertext.png")
+define PA       = Character("PA",         window_background = "gui/textboxes/othertext.png")
+define q        = Character ("???",       window_background = "gui/textboxes/othertext.png")
+define Ty       = Character("Ty",         window_background = "gui/textboxes/othertext.png")
 
 # Used for player instructions
-define g = Character("Game")
+define g = Character("Game",              window_background = "gui/textboxes/narratorkun.png")
 
 #backgrounds
 image backgroundpolice    = "Backgrounds/PoliceRoom.png"
@@ -76,13 +76,13 @@ image backgroundroomn     = "Backgrounds/NagensRoomN.png"
 image backgroundnhouse    = "Backgrounds/nagenhouse.jpg"
 image backgroundnurse     = "Backgrounds/NursesOffice.png"
 image backgroundpond      = "Backgrounds/Pond.jpg"
-image backgroundroof      = "Background/roof.jpg"
-image backgroundhide      = "Background/RoofHideout.png"
-image backgroundparty     = "Background/roofparty.jpg"
-image backgroundschool    = "Background/School.png"
-image backgroundlab       = "Background/science.jpg"
-image backgroundsew       = "Background/sew.jpg"
-image backgroundstage     = "Background/stage.png"
+image backgroundroof      = "Backgrounds/roof.jpg"
+image backgroundhide      = "Backgrounds/RoofHideout.png"
+image backgroundparty     = "Backgrounds/roofparty.jpg"
+image backgroundschool    = "Backgrounds/School.png"
+image backgroundlab       = "Backgrounds/science.jpg"
+image backgroundsew       = "Backgrounds/sew.jpg"
+image backgroundstage     = "Backgrounds/stage.png"
 image backgroundstuco     = "Backgrounds/stuco.png"
 
 #Sprites
@@ -94,17 +94,28 @@ image sprite CopBase = "Sprites/Cop/cop1.png"
 #Maimai
 image sprite MMBase = "Sprites/MaiMai/MMBase.png"
 #Kenzo
-image sprie KenzoBase = "Sprites/Kenzo/kenzoSprite"
+image sprite KenzoBase = "Sprites/Kenzo/kenzoSprite.png"
 
 #Apex
 image sprite ABase = "Sprites/Apex/Apexspritebase.png"
 image sprite ASad = "Sprites/Apex/Apexspritesad.png"
 #Chisei
 image sprite ChBase = "Sprites/Chisei/Chiseibase.png"
+#Dyre
+image sprite DBase = "Sprites/Dyre/Dyrebase.png"
+#Hiro
+image sprite HBase = "Sprites/Hiro/Hirobase.png"
 #Ichita
 image sprite IBase = "Sprites/Ichita/ichitabase.png"
-#Kenzo
-image sprite KanBase = "Sprties/Kenzo/kenzoSprite.png"
+#Jona
+image sprite JDepressed = "Sprites/Jona/JonaDepressed.png"
+image sprite JFrustrated = "Sprites/Jona/JonaFrustrated.png"
+image sprite JHappy = "Sprites/Jona/JonaHappy.png"
+image sprite JMad = "Sprites/Jona/JonaMad.png"
+image sprite JRelax = "Sprites/Jona/JonaRelax.png"
+
+#Kietsu
+image sprite KiBase = "Sprites/Kietsu/k2.png"
 #Kitsune
 image sprite KBase = "Sprites/Kitsune/KitsuneN.png"
 #Mariko
@@ -113,12 +124,18 @@ image sprite MBase = "Sprites/Mariko/Marikobase.png"
 image sprite MhBase = "Sprites/Momoko/momokobase.png"
 #Mu
 image sprite MuBase = "Sprites/Mu/Mu1.png"
+#Nanase
+image sprite NBase = "Sprites/Nanase/nanasebase.png"
 #Rei
 image sprite ReBase = "Sprites/Rei/Rei.png"
+#Rise
+image sprite RBase = "Sprites/Rise/Rise1.png"
 #Setsuna
 image sprite SBase = "Sprites/Setsuna/setsunabase.png"
 #Shoma
 image sprite ShBase = "Sprites/Shoma/ShomaN.png"
+#Uitto
+image sprite UBase = "Sprites/Uitto/Uittobase.png"
 
 #Teachers
 #Sato
@@ -127,6 +144,14 @@ image sprite SaBase = "Sprites/Fox/basespritesox.png"
 image sprite VBase = "Sprites/Vivaldi/ViBase.png"
 
 #CGs
+image backgroundP2 = "CGs/Prologue_2.png"
+image backgroundP3 = "CGs/Prologue_3.png"
+image backgroundC1 = "CGs/Ch1_1.png"
+image backgroundB1 = "CGs/Boss1_1.png"
+image backgroundB2 = "CGs/Boss1_2.png"
+image backgroundB3 = "CGs/Boss1_3.png"
+
+#Hiros Flashbacks
 
 image backgroundfb1 = "FB/HFB1.jpg"
 image backgroundfb2 = "FB/HFB2.jpg"
@@ -160,6 +185,7 @@ label variables:
     # Story Reputation Points
     $ Hero = 0
     $ Villain = 4
+    $ Reputation = 0
 
     # Daily Life
     $ FreeActions = 0

@@ -1,11 +1,11 @@
-label variables:
-    # Player's Stats
+label newgame:
+# Player's Stats
     $ Vigor = 0
     $ Vision = 0
     $ Intel = 0
     $ Charm = 0
 
-    # Player Data
+# Player Data
     $ VigorSP = 0
     $ VigorMax = 3
     $ VisionSP = 0
@@ -15,20 +15,20 @@ label variables:
     $ CharmSP = 0
     $ CharmMax = 3
 
-    # Story Reputation Points
+# Story Reputation Points
     $ Hero = 0
     $ Villain = 4
 
-    # Daily Life
+# Daily Life
     $ FreeActions = 0
     $ DefaultActionCount = 1
     $ ExtraActionCount = 2
     $ Day = 0
 
-    # Investigation
+# Investigation
     $ Clue1 = False
 
-    # Player Relationships
+# Player Relationships
     $ chRep = 0
     $ dRep = 0
     $ hRep = 0
@@ -49,7 +49,7 @@ label variables:
     $ yRep = 0
     $ uRep = 0
 
-    # Character Flags
+# Character Flags
     $ chTurn = 0
     $ dTurn = 0
     $ hTurn = 0
@@ -69,6 +69,10 @@ label variables:
     $ tTurn = 0
     $ yTurn = 0
     $ uTurn = 0
+
+# Prologue Only
+
+    $ friend = 0
 return
 
     # Opening video goes here.
@@ -158,6 +162,8 @@ label prologue:
     l "Do you feel safe at home?"
 
     play music "music/Voyage.mp3"
+
+    scene backgroundP2
 
     "I became painfully aware of the IV that hid under my sleeve."
     "Had she noticed it? Was she going to tell anyone?"
@@ -872,6 +878,8 @@ label prologue:
     mm "Nagen honey, remember to breathe. We're not going to get out of the car until you're ready."
 
     #[BG: Manor Exterior]
+
+    scene backgroundnhouse
     
     "As we step out of the car, I can smell the faint, eerie scent of velvet kiss growing up by the walkway."
     "The dreary gray estate looms in front of me. Utterly unwelcoming."
@@ -959,7 +967,7 @@ label prologue:
 
     menu:
 
-        "Where am I starying?":
+        "Where am I staying?":
 
             show sprite KenzoBase
 
@@ -979,11 +987,13 @@ label prologue:
 
             n "That's... kind of a long story."
 
-            ken "Follow me, we need to talk."
+            kan "Follow me, we need to talk."
 
             call prologue2
 
         "Who are you?":
+
+            show sprite KenzoBase
 
             kan "I'm a software engineer."
 
@@ -1001,6 +1011,8 @@ label prologue:
             call prologue2
 
         "Why are you doing this?":
+
+            show sprite KenzoBase
 
             n "Are they paying you to babysit me?"
             n "Or is it just because Maimai's blackmailing you?"
@@ -1139,6 +1151,9 @@ label prologue2:
     "A familiar feeling of helplessness washes over me."
     "There’s nothing else I can do."
 
+    hide sprite KenzoBase
+    show sprite MMBase
+
     mm "Hey, it’s going to be okay. Boarding school isn’t that bad."
 
     n "You don’t know that."
@@ -1147,6 +1162,9 @@ label prologue2:
 
     n "Clearly they worked wonders."
 
+    hide sprite MMBase
+    show sprite KenzoBase
+
     kan "All the more reason not to be scared."
     kan "This is only to show the courts you can behave for a long period of time."
 
@@ -1154,10 +1172,16 @@ label prologue2:
 
     kan "I thought you hated being cooped up here."
 
+    hide sprite KenzoBase
+    show sprite MMBase
+
     "I do."
     "I do hate it, but at least I know what to expect when I’m here."
 
     mm "You can come back during the break and I’ll be going with you the first day to make sure the place is on the up and up."
+
+    hide sprite MMBase
+    show sprite KenzoBase
 
     kan "I assure you, it’s a legitimate establishment."
     kan "I wouldn’t send him off if I wasn’t familiar with the staff."
@@ -1169,6 +1193,8 @@ label prologue2:
     n "I hate this."
 
     mm "I know. Come on, the year will be over before you know it."
+
+    hide sprite MMBase
 
     "She herds me into the car with a forced smile on her face."
 
@@ -1190,6 +1216,8 @@ label prologue2:
 
     "Each classroom has a transparent door with an electronic display built-in."
     "It feels more like an observation tank than a classroom."
+
+    show sprite MMBase
 
     mm "The building had been a library since the 1600s."
     mm "I never got to see the inside because the previous owner was such a nut job."
@@ -1219,6 +1247,8 @@ label prologue2:
     n "...I promise I’ll try."
 
     "Maimai escorts me into the office."
+
+    hide sprite MMBase
     # Principal office
     "A woman gestures for us to sit down. She takes her place behind a massive desk with a stack of forms for us to review."
     "The nameplate in front of her reads in gold letters 'Principal Vivaldi Tahani'"
@@ -1230,9 +1260,14 @@ label prologue2:
     "I wouldn't have come if I knew she'd be here."
     "She's the last person I want to talk to."
 
+    show sprite VBase
+
     v "Is something wrong?"
 
     "It's like she doesn't even care."
+
+    hide sprite VBase
+    show sprite MMBase
 
     mm "He’s just nervous because it’s a new school."
     mm "You know teenagers, all salty about change and stuff."
@@ -1244,16 +1279,24 @@ label prologue2:
     mm "So you’re the principal?"
     mm "That’s uh, quite a shift from being a police officer."
 
+    hide sprite MMBase
+
     "I've never seen Maimai so nervous before."
     "Is she scared of this woman? Or just psychics in general?"
     "She hands us papers to sign, with Maimai trying to stay as far away from the woman's hands as possible."
     "My phone is confiscated and replaced with a cheap knock-off to use while on campus."
 
+    show sprite VBase
+
     v  "Detective. I grew tired of locating criminals after they committed crimes."
+
+    hide sprite VBase
 
     "Locating? Is that what she calls what she did? Locating criminals?"
     "Lethe was- She watched them kill her with that indifferent stare on live television."
     "We get up to leave. I can’t hold my tongue any longer."
+
+    scene backgroundP3
 
     n "You ruined my life."
 
@@ -1265,8 +1308,12 @@ label prologue2:
     v "This isn’t supposed to be a punishment, Mr. Tesuta. Your school life will be what you make of it."
     v "I trust you will do everything in your power to avoid ending up in my office again. Good day to you both."
 
+    scene backgroundhall2
+
     "I practically get pushed out of the room by Maimai."
     "The wooden doors slam shut, but her hands never leave my shoulders."
+
+    show sprite MMBase
 
     mm "I know you’re a smart kid, so please... please don’t go starting fights you can’t finish."
 
@@ -1316,11 +1363,126 @@ label prologue2:
 
     n "I’ll miss you too."
 
+    hide sprite MMBase
+
     "I really don’t want to go, but I can’t keep putting it off."
     "We say our final goodbyes and I watch as the car drives off. Tomorrow will be my first day of school."
     "I can see other kids unloading their luggage and milling about the grounds. Now would be a good chance to find my friends."
 
     #insert nanase intro here
+    scene backgroundschool
+
+    show sprite NBase
+
+    nk "Good morning!"
+
+    n "AH!"
+
+    #[Nanase sprite]
+
+    nk "I'm sorry, I didn't mean to startle you."
+    nk "My name's Nanase Keisan. I'm helping with orientation during move in week."
+    nk "Will you be staying on campus this year?"
+
+    n "....."
+
+    "Good god man, have you forgotten how to talk to people like a normal human being?"
+    "Don't just stand there, say something!"
+
+    menu:
+        "Say something witty":
+            $ Charm += 1
+
+            n "Well, all my stuff is here already, so I might as well."
+
+            "I motion to my garishly decorated luggage; my guardians said I needed more than my usual duffle bag of necessities."
+            "Pretty sure I have more bags than clothes. They would have been a nice way to carry my rifles... had they let me keep them."
+
+            nk "R-right, of course."
+
+            "She sighs."
+
+            nk "You'll want to head to Classroom E-103."
+            nk "Let me know if you need any help."
+
+            n "Thanks, I got it."
+
+            jump nk_intro
+        
+        "Just answer the question":
+            $ Vigor += 1
+
+            n "Yeees..."
+
+            "Did that sound weird? I feel like it sounded super weird."
+            "I'm drawing a blank. Why did I only get four hours of sleep last night? This is a nightmare."
+
+            nk "Alright, then head over to Classroom E-103."
+
+            n "She points to a towering building a few yards west."
+
+            "103, that'll probably be on the ground floor. I grab my many bags, fumbling a little."
+
+            nk "Do you need any help?"
+
+            "Have I taken too long? I really can handle it, it'll just be a little awkward balancing five bags."
+            "Though now that I think of it, I most certainly don't own enough junk to warrant this much luggage."
+
+            jump nk_intro
+
+        "Introduce yourself":
+            $ Intel += 1
+
+            n "My name's Nagen Tesuta. Orientation is in E-103, right?"
+
+            "I memorized today's schedule well in advance."
+            "If I get there early, I'll have five hours to try and finish Dracula."
+
+            nk "Yep. Do you need any help?"
+
+            menu:
+                "No":
+                    n "I'm fine, really. Thanks anyways."
+
+                    nk "O-okay then."
+
+                    "She doesn't seem convinced, but I'm in a bit of a hurry."
+
+                    jump nk_intro
+
+                "Yes":
+                    $ nkRep += 1
+                    n "Actually, yeah, I could use an extra pair of hands."
+
+                    nk "Great, I'll walk with you! What do you need me to carry?"
+
+                    "She insists on taking three of the five bags, which is more than I actually need."
+                    "But she seems happy to have someone to talk to."
+                    "I notice other students helping with orientation are in red volunteer shirts, but she doesn't have one."
+                    "Is she actually helping with orientation?"
+
+                    n "You seem pretty new here yourself. How'd you get to be a volunteer?"
+
+                    nk "Hunh? Oh, no, I;m not with them."
+                    nk "I got here yesterday night, but I figured helping out was better than just standing around waiting for the meeting."
+                    nk "Not much to do around here other than unpacking and wandering around the school."
+
+                    n "To each their own, I guess."
+
+                    hide sprite NBase
+
+                    jump nk_intro
+
+label nk_intro:
+    
+    scene backgroundroom
+
+    "I get to the room and set down my things."
+    "I'm not sure what I can expect from this school, but I do know one thing."
+    "By the end of the year, the student body will be in the palm of my hand."
+    "I mean, why else does someone become student body president, resume material? I think not."
+    "I may not be able to clear my name through the DVP, but if I make enough of an impression, they can't just lock me away and pretend nothing happened."
+    "After I've gotten settled, I'll take a look around the school."
 
     g "You will be given the opportunity to explore the school and look for your friends."
     g "This is a good chance to meet your future classmates as well."
@@ -1334,9 +1496,191 @@ label prologue2:
 
 label FindPeople:
 
+scene backgroundschool
+
+#If Friends = 3  show menu keep looking or go to meeting
+if friend >= 3:
+    menu:
+        "Keep Looking Around":
+            call FindPeople1
+        "Start Meeting":
+            jump Meeting
+else:
+        call FindPeople1
+
+#else show menus
+label FindPeople1:
     menu:
         "Lecture Hall":
-            pass
+            #[BG: Lecture Hall or Charm Class]
+
+            scene backgroundcharm
+
+            $ friend += 1
+        
+
+            "I arrive at the room where the student council meets."
+            "Everything looks too new, too clean, like no one has set foot in here since the school opened."
+            "I stand for a while, admiring the leather office chair at the end of the table possibly meant for the student council president."
+            "I would give anything to be in charge and shape the future of this school."
+            "It may take a while, but I'm sure I can get there."
+
+            show sprite HBase
+
+            h "Nagen? Nagen, is that you?"
+
+            "I turn and see one of the last people I expected to see. My former teammate and rival, Hiro Morine."
+            "I mean, I say rival, but it was purely for Odori's attention."
+            "He cheated off all my tests while leaving me in the dust when it came to sports or fighting."
+            "Any way you slice it, it was never a fair competition. One of us would always have an advantage over the other."
+            "But I'd be lying if I said I wasn't bitter that everyone liked hanging out with him at recess."
+            "I'm getting off track."
+
+            n "It's good to see you, I uh, haven't seen you since before..."
+
+            "I trail off. There's no way of knowing how much he knows about the deal that was cut with the DVP."
+            "If I say the wrong thing, I could jeopardize his chance at getting pardoned."
+
+            h "Yeah, I'm surprised they're letting us go to school together."
+            h "My lawyer said they were going to separate us and we weren't allowed to see each other again. I wonder what changed?"
+
+            menu:
+                "Pretend to speculate":
+                    $ Intel += 1
+
+                    n "I don't know, maybe Uitto worked her magic and cried us into a lighter sentence."
+
+                    h "We could do that? Shoot, if I'da knew, I woulda taken a lemon into the courtroom or something."
+                    h "I mean, yeah I was kinda scared, but I totally coulda cried my way to freedom."
+
+                    "He's as determined as ever."
+
+                    n "I was thinking more along the lines of using her Proficiency. It was Diplomacy, remember?"
+
+                    "He stares at me blankly."
+
+                    n "She could talk people into doing things for her."
+
+                    h "Right, she was a Charisma major at the time."
+                    h "Oh! That reminds me."
+                    h "There's been a rumor going around that you can change your Major, have you heard anything about that?"
+
+                    n "No, I haven't."
+
+                    h "Oh, that sucks. I was hoping you could explain it to me."
+                    h "Something to do with how Proficiencies can apply to different Majors depending on how they're used."
+                    h "But I just don't get injured easily. I don't see how that would make me smarter or more likable."
+
+                    "That is odd, I'll have to look into that."
+
+                    jump h_intro
+
+                "Ask how he's doing":
+                    $ Charm += 1
+                    $ hRep += 1
+
+                    n "Crazy, right? But it's good to see you. How have you been?"
+
+                    h "I'm living in a group home right now. It's not too bad, a little cramped, but they were willing to take me."
+
+                    n "That's kinda surprising."
+
+                    h "Well, I mean, it's like a rehab center for troubled kids."
+                    h "We have to go to classes, and therapy sessions, and they;ve got this little reward system and junk."
+                    h "I had to work really hard just to be able to leave the building on my own."
+
+                    n "Oh, well, I mean that's good to hear. Is it nice?"
+
+                    h "I only have the bottom half of a bedroom door, and one of the other kids punched a hole in the wall last week."
+                    h "But the grown-ups are nice, they give me plenty of space... But it's like a respect thing, not 'cause they're scared."
+
+                    "Well that's good. He has a bad habit of lashing out if people get too close too suddenly."
+                    "That thing about the kid punching the wall kinda concerns me though."
+
+                    n "I'm glad that's working out for you."
+                    n "My foster family's a little... strange. They live in this huge house, but they don't really take care of it."
+                    n "It's like living in a museum. Lots of dusty old expensive things I'm not allowed to touch."
+
+                    jump h_intro
+
+                "Lawyers are dumb":
+                    n "Why would they tell you that?"
+                    n "It wasn't a standard case, it's not like he could flip through a handbook and find the standard punishment on taking over a city."
+                    
+                    h "Well, no, I guess not."
+
+                    n "He was probably trying to scare you or something. That's so unethical..."
+                    n "I think."
+                    n "I'm not sure to be honest. See, this is why I chose to represent myself."
+
+                    h "You shoulda been my lawyer instead, I'm sure you were awesome."
+
+                    n "I hope so."
+
+                    h "What do you mean? You're here, aren't you? That means you won, right?"
+
+                    n "Something like that; I'm on probation. Do you think the others are here?"
+
+                    h "I mean, it's possible. They had Proficiencies too... Maybe we could start our club back up!?"
+
+                    menu:
+                        "Maybe":
+                            $ Hero += 1
+
+                            n "As tempting as that sounds, it'd be best if we lay low for a while. At least wait and see how things pan out for us here."
+
+                            h "What's bread got to do with this?"
+
+                            "I must look like I'm about to clock him or something because he starts laughing like a mad man."
+
+                            h "Dude, I;m just kidding, cool your jets."
+
+                            n "You know how I feel about puns."
+
+                            h "Yeah, yeah; look I can't make any promises, but I'll try."
+
+                            n "To knock it off with the puns, or to keep out of trouble?"
+
+                            h "Both."
+
+                            jump h_intro
+
+                        "No":
+                            n "I don't know. I mean, we can't use the same group name, and it wouldn't feel right without Odori anyway."
+
+                            h "Yeah, that's true."
+
+                            "Odori was the one who brought us all together in the first place."
+                            "The Liberation Front was her dream, and a part of it died with her."
+
+                            h "Hey man, are you okay?"
+
+                            jump h_intro
+                        
+                        "Yes":
+                            $ Villain += 1
+
+                            n "Shh, keep your voice down. We can't have the DVP finding out about this."
+
+                            h "I gotcha. Well, let me know if anything changes. I got your back, man."
+
+                            n "Oh, and Hiro?"
+
+                            h "Hmm?"
+
+                            n "This time we're doing things my way."
+
+                            jump h_intro
+
+            label h_intro:
+            
+            hide sprite HBase
+
+            "I've spent way too long listening to what other people tell me to do."
+            "Once I've finished scoping out the school, I'm breaking out the strategy board."
+            "I should get going. There's still more of the school to see."
+
+            call FindPeople
         "Field":
             pass
         "Hallway":
@@ -1349,6 +1693,13 @@ label FindPeople:
             pass
         "Nurse's Office":
             pass
+        "Next":
+            call FindPeople2
+
+label FindPeople2:
+    menu:
+        "Back":
+            call FindPeople1
         "Pond":
             pass
         "Roof":
@@ -1361,6 +1712,13 @@ label FindPeople:
             pass
         "Cafe":
             pass
+        "Next":
+            call FindPeople3
+
+label FindPeople3:
+    menu:
+        "Back":
+            call FindPeople2
         "Lab":
             pass
         "Classroom":
@@ -1371,3 +1729,6 @@ label FindPeople:
             pass
         "Ampitheater":
             pass
+
+label Meeting:
+    pass
