@@ -32,7 +32,7 @@ define ya       = Character("Yaguchi",          window_background = "gui/textbox
 
 # Extras
 define cop      = Character("Cop",              window_background = "gui/textboxes/OtherText.png")
-define Dark     = Character("Nagen Tesuta")
+define Dark     = Character("Nagen Tesuta",     window_background = "gui/textboxes/NagenTextDark.png")
 define e        = Character("Estella" ,         window_background = "gui/textboxes/OtherText.png")
 define Everyone = Character("Everyone",         window_background = "gui/textboxes/OtherText.png")
 define Hiyoko   = Character("Hiyoko",           window_background = "gui/textboxes/OtherText.png")
