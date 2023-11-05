@@ -1,73 +1,158 @@
 label investigation:
     #INVESTIGATION SCENES 
     #[These scenes can be played during freetime by selecting the character from the investigation menu.]
+    #Clues from Ch1... 
+        #CDs, Computer, Microphone, Announcement List
+    #Clues to find in Investigation... 
+        #Mysterious Noise, Prank, Brag, PA Access, ID Account, Second locker, Missing Phone, Alexa Commands (might replace with more ID Account), Baton Pass
+    scene NagensRoom
+    menu:
+        "Ask For Help":
+            call Ask_For_Help
+        "Yoku":
+            call YokuInv1
+        "Rei":
+            call ReiInv1
+        "Momoko":
+            call MomokoInv1
+        "Rise":
+            call RiseInv1
+        "Nanase":
+            call NanaseInv1
+        "Kietsu":
+            call KietsuInv1
+        "Next":
+            call investigation2
+
+label investigation2:
+
+    menu:
+        "Back":
+            call investigation
+        "Taiga":
+            call TaigaInv1
+        "Dyre":
+            call DyreInv1
+        "Chisei":
+            call ChiseiInv1
+        "Shoma":
+            call ShomaInv1
+        "Ichita":
+            call IchitaInv1
+        "Setsuna":
+            call SetsunaInv1
+        "Next":
+            call investiagation3
+
+label investiagation3
+
+    menu:
+        "Back":
+            call investigation2
+        "Kitsune":
+        "Mu":
+        "Kazz":
+        "Mariko":
+
+label Ask_For_Help
+
+    menu:
+        "Back":
+            call investigation
+        "Uitto":
+            call UittoInv1
+        "Jona":
+            call JonaInv1
+        "Hiro":
+            call HiroInv1
+
+
+label YokuInv1
     #Yoku Interrogation
     #[BG: Inner Stage]
     #-Intro-
+    scene backgroundstage
 
     y "Careful wh-where you step!"
 
-    "I freeze, foot in the air, with the door to the stage half open. The floor is littered from end to end with carefully overlapped pieces of sheet music. I slowly open the door and find a safe place to stand. Yoku is in the center of it, a little more disheveled than usual."
+    "I freeze, foot in the air, with the door to the stage half open."
+    "The floor is littered from end to end with carefully overlapped pieces of sheet music."
+    "I slowly open the door and find a safe place to stand."
+    "Yoku is in the center of it, a little more disheveled than usual."
 
     n "Are you... okay?"
 
-    y "I- Well, I guess it does look per-ertuburbing to an outsider. Th-there is a method to the madness, I assure you."
+    y "I- Well, I guess it does look per-ertuburbing to an outsider."
+    y "Th-there is a method to the madness, I assure you."
 
     n "I hope so. Is this all from the library?"
 
     y "It holds a sur-rprising wealth of reference material."
 
-    n "Does the staff know you pulled out all these pages? I'm pretty sure the collections are supposed to be 'intact' while we're here."
+    n "Does the staff know you pulled out all these pages?"
+    n "I'm pretty sure the collections are supposed to be 'intact' while we're here."
 
     y "....."
-
     y "They fell out."
 
     "I’m trying so hard to keep a straight face, but I think he can hear me stifling a laugh."
 
     y "Clearly you can see I'm preoccupied at the mo-oment. What did you want?"
+labelYokuChoice1
 
-    #-Alibi-
+    menu:
+        "Alibi":
+            y "That morning, I had to report to the classroom early to perform my duties as class representative."
+            y "It ssseems I'm the only one that wants to come into class twenty minutes early."
 
-    y "That morning, I had to report to the classroom early to perform my duties as class representative. It ssseems I'm the only one that wants to come into class twenty minutes early."
+            n "You got that right."
 
-    n "You got that right."
+            y "Re-reguardless, that morning there was an alarm coming from one of the lockers on the second floor."
+            y "It was from one of those dubstep/crunk songs that were everywhere befor-re the riots."
+            y "Very irritating."
+            y "I asked the council to take care of it. I haven't heard it since."
 
-    y "Re-reguardless, that morning there was an alarm coming from one of the lockers on the second floor. It was from one of those dubstep/crunk songs that were everywhere befor-re the riots. Very irritating. I asked the council to take care of it. I haven't heard it since."
+            "A ringtone maybe?"
 
-    "A ringtone maybe?"
+            n "What are you doing exactly?"
 
-    n "What are you doing exactly?"
+            "He looks up unamused."
 
-    "He looks up unamused."
+            y "Name on-ne person outside of this room that would have a use for sheet music."
 
-    y "Name on-ne person outside of this room that would have a use for sheet music."
+            n "What about Kazz?"
 
-    n "What about Kazz?"
+            y "Ha! That wannabe disc jockey couldn't tell B major from G shhharp minor."
 
-    y "Ha! That wannabe disc jockey couldn't tell B major from G shhharp minor."
+            n "...what's the difference?"
 
-    n "...what's the difference?"
+            y "There is none, he wouldn't know tha-at either. His idea of writing music is dragging and dr-ropping sound clips. Which is... fffine. I just doubt he'd use these over his machines."
 
-    y "There is none, he wouldn't know tha-at either. His idea of writing music is dragging and dr-ropping sound clips. Which is... fffine. I just doubt he'd use these over his machines."
+            n "I suppose that's fair." #(+Mysterious noise)
 
-    n "I suppose that's fair." #(+Mysterious noise)
-    
-    #-CDs-
+            call labelYokuChoice1
+        "Show Evidence":
+                "I show Yoku a photo I took of the CDs"
 
-    n "This is going to sound silly, but would you be able to look at this picture and tell me if there's anything special about how these CDs are organized?"
+                n "This is going to sound silly, but would you be able to look at this picture and tell me if there's anything special about how these CDs are organized?"
 
-    y "No."
+                y "No."
 
-    n "I was afraid that was the case."
+                n "I was afraid that was the case."
 
-    y "There's no or-rder to them at all. Either that or they were arranged with person-nal taste in mind. Where did you take this picture?"
+                y "There's no or-rder to them at all."
+                y "Either that or they were arranged with person-nal taste in mind. Where did you take this picture?"
 
-    n "The AV room."
+                n "The AV room."
 
-    y "That's why. Kazz let his friends pick ou-ut what they wanted to hear before he star-rted accepting requests. One of the perks of bein-ng a DJ. It'll be June before I hear any cl-lassical music on the air."
+                y "That's why. Kazz let his friends pick ou-ut what they wanted to hear before he star-rted accepting requests."
+                y "One of the perks of bein-ng a DJ."
+                y "It'll be June before I hear any cl-lassical music on the air."
 
-    #-Outro-
+                call labelYokuChoice1
+        "Leave":
+            call YokuOutro
+label YokuOutro
 
     n "Well, thank you for taking time out of... whatever this is to talk to me."
 
@@ -82,6 +167,10 @@ label investigation:
     n "Sorry, I-"
 
     "Shit, I better get out of here."
+
+    pass # Should call Ch1 equivilent of Freeday from the sandbox
+
+label ReiInv1
 
     #Rei Investigation
     #[BG: Amphitheater]
@@ -254,6 +343,8 @@ label investigation:
 
     re "I'll see you around, Nagen."
 
+label MomokoInv1
+
     #Momoko Investigation 
     #[BG: Lab]
     #-Intro-
@@ -329,6 +420,8 @@ label investigation:
     mh "Now I have to start from scratch! ...maybe that's why the lashes were melting instead of gluing..."
 
     "I should probably go."
+
+label RiseInv1
 
     #Rise Investigation
     #[BG: Courtyard]
@@ -409,6 +502,8 @@ label investigation:
     r "Do not be too disheartened, Nagen. I know you are smart enough to figure this out."
 
     "With that, she leaves."
+
+label NanaseInv1
 
     #Nanase Investigation
     #[BG: Cafe]
@@ -492,76 +587,101 @@ label investigation:
 
     "It's so weird to think the announcement pissed off people who weren't even involved. I wonder if there are others who felt threatened by it."
 
+label KietsuInv1
+    scene backgroundstuco
     #Kietsu Investigation
     #[BG: Office]
     
-    "I find Kietsu buried under a pile of paperwork. Everything is sorted into color-coded piles, but chaotically so. Every few seconds, he pauses to write something on a stray sticky note."
+    "I find Kietsu buried under a pile of paperwork."
+    "Everything is sorted into color-coded piles, but chaotically so."
+    "Every few seconds, he pauses to write something on a stray sticky note."
 
     n "Hey, do you have a minute?"
 
-    "No response. He must really be in the zone. I turn to leave, but opening the door catches his attention."
+    "No response. He must really be in the zone."
+    "I turn to leave, but opening the door catches his attention."
 
-    ki "Sorry man, didn't mean to ignore you. Have a seat. I need a break from this mess anyway."
+    ki "Sorry man, didn't mean to ignore you."
+    ki "Have a seat."
+    Ki "I need a break from this mess anyway."
 
     n "What is all this?"
 
-    ki "...I'm not exactly sure. Some of it's stuff to help the teachers, some of it's fundraisin’ ideas, some of it's random stuff we could do. Nanase's the one who organized them for me, but then the piles hit the floor... It's gonna take a fortnight to sift through. Anyway, what can I do for you?"
+    ki "...I'm not exactly sure."
+    ki "Some of it's stuff to help the teachers, some of it's fundraisin’ ideas, some of it's random stuff we could do."
+    ki "Nanase's the one who organized them for me, but then the piles hit the floor..."
+    ki "It's gonna take a fortnight to sift through."
+    ki "Anyway, what can I do for you?"
+label KietsuChoice
+        menu:
+            "Evidence":
+                menu:
+                    "Announcement List":
+                        n "You were in charge of approving the club ads, weren't you?"
 
-    #-Announcement List-
-    
-    n "You were in charge of approving the club ads, weren't you?"
+                        ki "Hmm... yeah, I guess I was."
+                        ki "I didn't read any of them though."
+                        ki "I figured if there was anything y'know, bad, Kazz would catch it before readin’ it."
+                        ki "Anyone who wanted to run a club I let borrow the AV room key so they could drop off their ad."
+                        ki "At least this way, everyone gets a fair shot at gatherin’ members to get their club approved by the teachers."
 
-    ki "Hmm... yeah, I guess I was. I didn't read any of them though. I figured if there was anything y'know, bad, Kazz would catch it before readin’ it. Anyone who wanted to run a club I let borrow the AV room key so they could drop off their ad. At least this way, everyone gets a fair shot at gatherin’ members to get their club approved by the teachers."
+                        n "Wait, you just let anyone go in the AV room?"
 
-    n "Wait, you just let anyone go in the AV room?"
+                        ki "Only people who really wanted to get a club ad in before the first mornin’ announcements. Seriously, some kids are really intense when it comes to after school activities."
 
-    ki "Only people who really wanted to get a club ad in before the first mornin’ announcements. Seriously, some kids are really intense when it comes to after school activities."
+                        n "Who all did you give the key to?"
 
-    n "Who all did you give the key to?"
+                        ki "Chisei, at like, 6AM. And then Mariko twenty minutes later. After that, Kazz took the key so he could go straight to the AV room after first period."
 
-    ki "Chisei, at like, 6AM. And then Mariko twenty minutes later. After that, Kazz took the key so he could go straight to the AV room after first period."
+                        n "Was anyone else with them when they asked for the key?"
 
-    n "Was anyone else with them when they asked for the key?"
+                        ki "Not that I could see."
 
-    ki "Not that I could see."
+                        "Kazz doesn't seem like the type to let people in."
+                        "It might be a good idea to check with the others." #PAAccess = True
 
-    "Kazz doesn't seem like the type to let people in. It might be a good idea to check with the others."(+PA Access)
-    
-    #-Other-
-    
-    ki "It'd be weirder if that wasn't there, wouldn't it?"
+                        call KietsuChoice
 
-    n "I guess..."
+                    "CDs":
+                    #-Other-   
+                        ki "It'd be weirder if that wasn't there, wouldn't it?"
 
-    ki "Kazz knows that booth better than me. If something went missin’, then he'd know."
+                        n "I guess..."
 
-    #-Alibi-
-    
-    n "What were you doing before the broadcast?"
+                        ki "Kazz knows that booth better than me. If something went missin’, then he'd know."
+            "Alibi":
+                n "What were you doing before the broadcast?"
 
-    ki "Broadcast?"
+                ki "Broadcast?"
 
-    n "....."
+                n "....."
 
-    n "The broadcast; creepy robot voice saying the school is dangerous and my friends should get expelled. It went off after first period."
+                n "The broadcast; creepy robot voice saying the school is dangerous and my friends should get expelled. It went off after first period."
 
-    ki "Is that what people are talkin’ about? I could barely hear it at the time. That really blows, man. No wonder you're freakin’ out."
+                ki "Is that what people are talkin’ about? I could barely hear it at the time. That really blows, man. No wonder you're freakin’ out."
 
-    n "I- Umm... I wouldn't say I'm 'freaking out'. I'm just, really curious what people were up to before that happened."
+                n "I- Umm... I wouldn't say I'm 'freaking out'. I'm just, really curious what people were up to before that happened."
 
-    "There's really no way to question people about this without sounding paranoid as all get out. Doesn't seem to bother him much though."
+                "There's really no way to question people about this without sounding paranoid as all get out. Doesn't seem to bother him much though."
 
-    ki "I was in class... before that was the council meeting... nothing seemed out of the ordinary."
+                ki "I was in class... before that was the council meeting... nothing seemed out of the ordinary."
 
-    n "What happened during the meeting?"
+                n "What happened during the meeting?"
 
-    ki "Setsuna rejected all my proposals and stormed off. Nanase went to follow her in a panic. It seems like that's normal for both of them though."
+                ki "Setsuna rejected all my proposals and stormed off. Nanase went to follow her in a panic. It seems like that's normal for both of them though."
 
-    n "I see."
+                n "I see."
 
+                call KietsuChoice
+
+            "Leave":
+
+                call KietsuOutro
+label KietsuOutro
     #-Outro-
-    
-    ki "Sorry I can't help you out more, but if I want to be able to host any school events, I need to have a fool-proof plan of attack against the penny-pinchin’ treasurer. If anything’ about what happened makes it through the student council, I'll let you know."
+    ki "Sorry I can't help you out more, but if I want to be able to host any school events.
+    ki "I need to have a fool-proof plan of attack against the penny-pinchin’ treasurer."
+    ki "If anything’ about what happened makes it through the student council, I'll let you know."
 
     n "Thanks."
 
@@ -569,24 +689,31 @@ label investigation:
 
     n "Yeah?"
 
-    ki "Don't let this whole thing dominate your head space. If people find out one message is enough to send you in a tailspin, more people will try to use it to mess with you. It can be really easy to let fear cloud your judgment."
+    ki "Don't let this whole thing dominate your head space."
+    ki "If people find out one message is enough to send you in a tailspin, more people will try to use it to mess with you."
+    ki "It can be really easy to let fear cloud your judgment."
 
-    "For a second there, he sounded so grown up. But just as quickly, his gaze wanders and he starts fretting over the disorganized piles on his desk."
+    "For a second there, he sounded so grown up."
+    "But just as quickly, his gaze wanders and he starts fretting over the disorganized piles on his desk."
 
     ki "Things will get easier once we get everythin’ under control."
 
     n "...we?"
 
-    ki "Hnh? Oh yeah. You're the one who sent in a council application form, right? That means we could be workin’ together for the rest of the year."
+    ki "Hnh? Oh yeah. You're the one who sent in a council application form, right?"
+    ki "That means we could be workin’ together for the rest of the year."
 
     n "Yeah. That's true."
 
-    "I guess they really do need all the help they can get. Still, it's nice to know not everyone thinks I'm a monster on sight."
+    "I guess they really do need all the help they can get."
+    "Still, it's nice to know not everyone thinks I'm a monster on sight."
 
     n "I'll talk to you later."
 
     "There's still more people I have to see."
+    pass # Should call Ch1 equivilent of Freeday from the sandbox
 
+label TaigaInv1
     #Taiga Investigation
     #[BG: Courtyard]
     #-Intro-
@@ -659,6 +786,7 @@ label investigation:
 
     t "Exactly. But good luck getting people to like you. It's a lot less fun liking someone than spreading rumors."
 
+label DyreInv1
     #Dyre Investigation 
     #[BG: Roof]
     
@@ -752,6 +880,7 @@ label investigation:
 
     "He brushes past me, leaving me alone on the roof. Just who does he think he is anyway? I can't let him get to me. I should leave before I get caught."
 
+label ChiseiInv1
     #Chisei Investigation
     #[BG: Amphitheater]
     #-Intro-
@@ -852,6 +981,7 @@ label investigation:
 
     "I came here looking for answers, but Chisei ended up cheering me up instead."
 
+label ShomaInv1
     #Shoma Investigation
     #[BG: Studio]
     
@@ -963,6 +1093,7 @@ label investigation:
 
     "I think I've gotten everything I can get from him. I best get moving."
 
+label IchitaInv1
     #Ichita Investigation
     #[BG: Pond]
     
@@ -1078,6 +1209,8 @@ label investigation:
 
     "Damn, that was fast. I should go now."
 
+label SetsunaInv1
+
     #Setsuna Investigation
     #[BG: Cafe Exterior]
     
@@ -1186,6 +1319,8 @@ label investigation:
     "She turns her attention back to the overgrowth."
 
     s "In the meantime, I'll need a pair of scissors."
+
+label KitsuneInv1
 
     #Kitsune Investigation
     #[BG: Library]
@@ -1298,6 +1433,7 @@ label investigation:
 
     "She hobbles out of the room and leaves me behind. I’m the only one left in the library."
 
+label MuInv1
     #Mu Investigation
     #[BG: Courtyard] 
     
@@ -1394,6 +1530,8 @@ label investigation:
     "He gets up to leave."
 
     mu "I'm sorry things ended up like this. I thought I could trust my own friends."
+
+label KazzInv1
 
     #Kazz Investigation
     #[BG: Roof]
@@ -1607,6 +1745,8 @@ label investigation:
     kk "Sorry bro, can't say you're the one I was worried about."
 
     "He shoves his hands in his pockets and leaves without another word. Does he think I'm not going to fight or does he just not care what happens to me? Whatever, I got what I needed anyway."
+
+label MarikoInv1
 
     #Mariko Investigation
     #[BG: Classroom]
@@ -1940,8 +2080,10 @@ label investigation:
     
     "There's no way I can talk to everyone before the deadline. Maybe one of the guys overheard something in one of their classes. At the very least, it'll give me a place to start."
 
-    #{Uitto}
-    
+
+
+label UittoInv1
+    #Uitto
     "I ask Uitto if she was able to dig up anything."
 
     u "I can't believe you wanted me to talk to Kitsune for you."
@@ -1959,6 +2101,8 @@ label investigation:
     u "Exactly. Who knows how long they were going to be playing musical chairs with his stuff? That would drive me bananas."
 
     n "Thanks, Uitto." #(+Mystery Noise, +Prank)
+
+label JonaInv1
     
     #{Jona}
     
@@ -1973,6 +2117,8 @@ label investigation:
     n "Well that narrows it down a little."
 
     j "Oh good." #(+PA Access)
+
+label HiroInv1
     
     #{Hiro}
     
