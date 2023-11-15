@@ -249,6 +249,7 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
+            textbutton _("Inventory") action Show("inventory")
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
@@ -961,7 +962,6 @@ style history_label:
 
 style history_label_text:
     xalign 0.5
-
 
 ## Help screen #################################################################
 ##

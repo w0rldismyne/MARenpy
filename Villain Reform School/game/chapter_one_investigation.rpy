@@ -42,19 +42,24 @@ label investigation2:
         "Setsuna":
             call SetsunaInv1
         "Next":
-            call investiagation3
+            call investigation3
 
-label investiagation3
+label investigation3:
 
     menu:
         "Back":
             call investigation2
         "Kitsune":
+            pass
+        # Temporary "Pass"es added so it could run
         "Mu":
+            pass
         "Kazz":
+            pass
         "Mariko":
+            pass
 
-label Ask_For_Help
+label Ask_For_Help:
 
     menu:
         "Back":
@@ -67,7 +72,7 @@ label Ask_For_Help
             call HiroInv1
 
 
-label YokuInv1
+label YokuInv1:
     #Yoku Interrogation
     #[BG: Inner Stage]
     #-Intro-
@@ -98,7 +103,7 @@ label YokuInv1
     "I’m trying so hard to keep a straight face, but I think he can hear me stifling a laugh."
 
     y "Clearly you can see I'm preoccupied at the mo-oment. What did you want?"
-labelYokuChoice1
+label YokuChoice1:
 
     menu:
         "Alibi":
@@ -130,7 +135,7 @@ labelYokuChoice1
 
             n "I suppose that's fair." #(+Mysterious noise)
 
-            call labelYokuChoice1
+            call YokuChoice1
         "Show Evidence":
                 "I show Yoku a photo I took of the CDs"
 
@@ -149,10 +154,10 @@ labelYokuChoice1
                 y "One of the perks of bein-ng a DJ."
                 y "It'll be June before I hear any cl-lassical music on the air."
 
-                call labelYokuChoice1
+                call YokuChoice1
         "Leave":
             call YokuOutro
-label YokuOutro
+label YokuOutro:
 
     n "Well, thank you for taking time out of... whatever this is to talk to me."
 
@@ -170,7 +175,7 @@ label YokuOutro
 
     pass # Should call Ch1 equivilent of Freeday from the sandbox
 
-label ReiInv1
+label ReiInv1:
 
     #Rei Investigation
     #[BG: Amphitheater]
@@ -343,7 +348,7 @@ label ReiInv1
 
     re "I'll see you around, Nagen."
 
-label MomokoInv1
+label MomokoInv1:
 
     #Momoko Investigation 
     #[BG: Lab]
@@ -421,7 +426,7 @@ label MomokoInv1
 
     "I should probably go."
 
-label RiseInv1
+label RiseInv1:
 
     #Rise Investigation
     #[BG: Courtyard]
@@ -503,7 +508,7 @@ label RiseInv1
 
     "With that, she leaves."
 
-label NanaseInv1
+label NanaseInv1:
 
     #Nanase Investigation
     #[BG: Cafe]
@@ -587,7 +592,7 @@ label NanaseInv1
 
     "It's so weird to think the announcement pissed off people who weren't even involved. I wonder if there are others who felt threatened by it."
 
-label KietsuInv1
+label KietsuInv1:
     scene backgroundstuco
     #Kietsu Investigation
     #[BG: Office]
@@ -612,7 +617,7 @@ label KietsuInv1
     ki "Nanase's the one who organized them for me, but then the piles hit the floor..."
     ki "It's gonna take a fortnight to sift through."
     ki "Anyway, what can I do for you?"
-label KietsuChoice
+label KietsuChoice:
         menu:
             "Evidence":
                 menu:
@@ -677,9 +682,9 @@ label KietsuChoice
             "Leave":
 
                 call KietsuOutro
-label KietsuOutro
+label KietsuOutro:
     #-Outro-
-    ki "Sorry I can't help you out more, but if I want to be able to host any school events.
+    ki "Sorry I can't help you out more, but if I want to be able to host any school events."
     ki "I need to have a fool-proof plan of attack against the penny-pinchin’ treasurer."
     ki "If anything’ about what happened makes it through the student council, I'll let you know."
 
@@ -713,7 +718,7 @@ label KietsuOutro
     "There's still more people I have to see."
     pass # Should call Ch1 equivilent of Freeday from the sandbox
 
-label TaigaInv1
+label TaigaInv1:
     #Taiga Investigation
     #[BG: Courtyard]
     #-Intro-
@@ -786,7 +791,7 @@ label TaigaInv1
 
     t "Exactly. But good luck getting people to like you. It's a lot less fun liking someone than spreading rumors."
 
-label DyreInv1
+label DyreInv1:
     #Dyre Investigation 
     #[BG: Roof]
     
@@ -880,7 +885,7 @@ label DyreInv1
 
     "He brushes past me, leaving me alone on the roof. Just who does he think he is anyway? I can't let him get to me. I should leave before I get caught."
 
-label ChiseiInv1
+label ChiseiInv1:
     #Chisei Investigation
     #[BG: Amphitheater]
     #-Intro-
@@ -981,7 +986,7 @@ label ChiseiInv1
 
     "I came here looking for answers, but Chisei ended up cheering me up instead."
 
-label ShomaInv1
+label ShomaInv1:
     #Shoma Investigation
     #[BG: Studio]
     
@@ -1093,7 +1098,7 @@ label ShomaInv1
 
     "I think I've gotten everything I can get from him. I best get moving."
 
-label IchitaInv1
+label IchitaInv1:
     #Ichita Investigation
     #[BG: Pond]
     
@@ -1209,7 +1214,7 @@ label IchitaInv1
 
     "Damn, that was fast. I should go now."
 
-label SetsunaInv1
+label SetsunaInv1:
 
     #Setsuna Investigation
     #[BG: Cafe Exterior]
@@ -1320,7 +1325,7 @@ label SetsunaInv1
 
     s "In the meantime, I'll need a pair of scissors."
 
-label KitsuneInv1
+label KitsuneInv1:
 
     #Kitsune Investigation
     #[BG: Library]
@@ -1433,7 +1438,7 @@ label KitsuneInv1
 
     "She hobbles out of the room and leaves me behind. I’m the only one left in the library."
 
-label MuInv1
+label MuInv1:
     #Mu Investigation
     #[BG: Courtyard] 
     
@@ -1531,7 +1536,7 @@ label MuInv1
 
     mu "I'm sorry things ended up like this. I thought I could trust my own friends."
 
-label KazzInv1
+label KazzInv1:
 
     #Kazz Investigation
     #[BG: Roof]
@@ -1746,7 +1751,7 @@ label KazzInv1
 
     "He shoves his hands in his pockets and leaves without another word. Does he think I'm not going to fight or does he just not care what happens to me? Whatever, I got what I needed anyway."
 
-label MarikoInv1
+label MarikoInv1:
 
     #Mariko Investigation
     #[BG: Classroom]
@@ -2082,7 +2087,7 @@ label MarikoInv1
 
 
 
-label UittoInv1
+label UittoInv1:
     #Uitto
     "I ask Uitto if she was able to dig up anything."
 
@@ -2102,7 +2107,7 @@ label UittoInv1
 
     n "Thanks, Uitto." #(+Mystery Noise, +Prank)
 
-label JonaInv1
+label JonaInv1:
     
     #{Jona}
     
@@ -2118,7 +2123,7 @@ label JonaInv1
 
     j "Oh good." #(+PA Access)
 
-label HiroInv1
+label HiroInv1:
     
     #{Hiro}
     
