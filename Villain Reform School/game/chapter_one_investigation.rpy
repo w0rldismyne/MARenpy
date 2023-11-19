@@ -176,11 +176,15 @@ label YokuOutro:
     pass # Should call Ch1 equivilent of Freeday from the sandbox
 
 label ReiInv1:
+    scene backgroundamp
 
     #Rei Investigation
     #[BG: Amphitheater]
 
-    "Rei might not want to talk to me, but if I want a clear picture, I need to talk to everyone. I find Rei practicing her old floor routine on the outdoor stage. She juggles her plastic sword mechanically, focusing on throwing it as high as she can. Normally she moves with more grace and joy."
+    "Rei might not want to talk to me, but if I want a clear picture, I need to talk to everyone."
+    "I find Rei practicing her old floor routine on the outdoor stage."
+    "She juggles her plastic sword mechanically, focusing on throwing it as high as she can."
+    "Normally she moves with more grace and joy."
 
     n "Hey, can we talk?"
 
@@ -191,130 +195,176 @@ label ReiInv1:
     "I think that's as close as I'll get to a yes."
 
     #-Negotiation-
-    g "There will come times when people won't want to talk to you. You'll have one chance to convince them you're worth their time, though Charisma Majors may have more luck."
+    g "There will come times when people won't want to talk to you."
+    g "You'll have one chance to convince them you're worth their time, though Charisma Majors may have more luck."
     
     #[Player Choice]
     #A. What's wrong?
+label ReiChoice1:
+    menu:
+        "What's wrong?":
+            n "You only practice like this when you're upset."
+
+            re "Am I not allowed to be angry?"
+
+            n "That's not what I said. I'm just concerned is all."
+
+            re "Well, I'm glad when you see me face to face, I'm worthy of your concern."
+            re "For a second there, I thought you'd become a total sociopath."
+
+            n "Rei-"
+
+            re "I don't even know how to fully process this, okay?"
+            re "Just- I'm trying to be mature and not mean, but it's hard."
+            re "I don't know if I should trust you again."
+            re "I'll- I'll see you later."
+
+            #(Fail, Rei’s scene is now locked)
+            pass
+        "I didn't know...":
     
-    n "You only practice like this when you're upset."
+            n "I never meant to hurt you or any of the other kids at school."
+            n "I'm sorry things turned out like this."
 
-    re "Am I not allowed to be angry?"
+            re "I just feel so stupid."
+            re "We were all in the same class together for four years."
+            re "It was like having a second family to me."
+            re "I constantly worried about how we were going to stay together when we got older only to find you don't think about me at all."
 
-    n "That's not what I said. I'm just concerned is all."
+            n "Rei, it's not like that-"
 
-    re "Well, I'm glad when you see me face to face, I'm worthy of your concern. For a second there, I thought you'd become a total sociopath."
+            re "It's not just you. No one here-"
+            re "I think I'm the only one that thought we were all friends."
 
-    n "Rei-"
+            "There are definitely people here I could have gone my whole life without seeing again."
+            "I don't think there's anything I can say to make this right, but..."
 
-    re "I don't even know how to fully process this, okay? Just- I'm trying to be mature and not mean, but it's hard. I don't know if I should trust you again. I'll- I'll see you later."
+            n "I wanted to keep everyone safe too."
+            n "That's why I couldn't leave you behind."
+            n "I really was relieved to see you again, even if you don't want to talk to me again."
 
-    #(Fail, Rei’s scene is now locked)
-    #[Skip past rest of the scene to next event]
-    #B. I didn't know...
+            re "I don't want to be mad at you. I really don't."
+            re "If we're going to stay friends, you can't hide stuff from me."
+            re "You gotta show me the same trust I showed you."
+
+            "I didn't realize how close Rei felt to everyone."
+            "Maybe it wouldn't be so bad to have someone this loyal on my side."
+
+            n "The truth is, I'm trying to find who spread the message over the PA system."
+            n "If you have any ideas, it'd help me a lot."
+
+            call ReiChoice2
+label ReiChoice2:  
+    menu:
+        "Alibi":
     
-    n "I never meant to hurt you or any of the other kids at school. I'm sorry things turned out like this."
+            re "I've been mostly helping Mariko revive the cheer squad."
+            re "We've been making posters, working on banners; we even got a spot on the announcements!"
 
-    re "I just feel so stupid. We were all in the same class together for four years. It was like having a second family to me. I constantly worried about how we were going to stay together when we got older only to find you don't think about me at all."
+            n "What about flag line? That's why you brought all your armaments, isn't it?"
+            n "There isn't a lot of opportunity for you to dance if you’re a cheerleader."
 
-    n "Rei, it's not like that-"
+            re "Most of my stuff's been confiscated."
+            re "It'll take weeks to make decent prop replacements."
+            re "Besides, cheer is more accessible to rookies than twirling."
 
-    re "It's not just you. No one here- I think I'm the only one that thought we were all friends."
+            n "That sounds like Mariko talking, not you."
 
-    "There are definitely people here I could have gone my whole life without seeing again. I don't think there's anything I can say to make this right, but..."
+            re "She needs this more than I need flag line."
+            re "Anything to make this place feel like a normal school, a place to make new friends, will help her."
+            re "She's really starting to worry me."
 
-    n "I wanted to keep everyone safe too. That's why I couldn't leave you behind. I really was relieved to see you again, even if you don't want to talk to me again."
+            n "She doesn't seem that different to me."
 
-    re "I don't want to be mad at you. I really don't. If we're going to stay friends, you can't hide stuff from me. You gotta show me the same trust I showed you."
+            re "Ever since we got here, even before we found out there could only be three clubs, she's been pushing herself without rest to form the squad."
+            re "I've never seen her fumble during a performance like she did during the opening ceremony."
+            re "I'm pretty sure a fall like that shouldn't break your ankle, but it's still purple."
+            re "She refused to suspend practice until she's recovered."
+            re "It's like all the joy has been sucked out of her."
+            re "Helping her with the squad feels like the only way I can help."
 
-    "I didn't realize how close Rei felt to everyone. Maybe it wouldn't be so bad to have someone this loyal on my side."
+            "Rei would know best if Mariko's acting odd. Still, there's a high chance this is all coincidence."
 
-    n "The truth is, I'm trying to find who spread the message over the PA system. If you have any ideas, it'd help me a lot."
+            n "I'm sure she appreciates it."
 
-    #(Success: Unlocks Ask options)
-    #-Missing Phone-
+            re "It's such a hopeless feeling watching her like this when I know something's wrong."
+            re "I keep hoping she'll tell me what's really bothering her, but I'm not sure she knows how to."
+
+            n "Don't forget to take care of yourself too."
+            n "Coming here has been hard for everyone."
+            #+ Cheer Ad
+
+            call ReiChoice2
+        "Show Evidence":
+            menu:
+                "Computer":
+                    re "Kazz had one of those Echo thingies."
+                    re "Wouldn't he be the one to look it up? They were both in his booth after all."
+
+                    n "Kazz could have just logged into his account through the computer and programmed new commands through that, but this page is talking about how to use the app."
+                    n "Plus, his phone was missing during that time. It's the only other way to program the thing."
+
+                    re "Maybe someone was borrowing it from him."
+
+                    n "Then they would have asked him first and he'd tell them how to use it..."
+
+                    "Why is she acting so defensive?"
+
+                    n "Rei, did someone tell you they were borrowing his stuff?"
+
+                    re "They didn't have to. He made it perfectly clear that anyone could use his stuff whenever they wanted."
+
+                    "But not without permission. Whoever it was, they must be close to Kazz and Rei." #(+Brag)
+                    call ReiChoice2
+                "Missing Phone":
+                    re "Yeah, I've seen it."
+                    re "But why? Kazz should have gotten it back by now."
+
+                    n "Where did you find it?"
+
+                    re "Kitsune brought it to practice looking for the owner."
+                    re "Mariko recognized it right away and said she'd take it back to him."
+                    re "Maybe she hasn't been able to track him down yet; he's been literally all over the place lately..."
+
+                    "Still, it wouldn't be hard to leave a note on his dorm or something."
+
+                    n "So you didn't see her give it to him?"
+
+                    re "No. But I don't see why she'd lie to me."
+                    re "Besides, the two of them are friends, sort of..."
+
+                    "Even she doesn't seem totally convinced by that explanation." #(+Baton Pass)
+                    call ReiChoice2
+                "CDs":
     
-    re "Yeah, I've seen it. But why? Kazz should have gotten it back by now."
+                    re "Between everyone here, that's not a bad collection."
+                    re "Too bad he's not accepting MP3s. I might have some old music on a thumb drive somewhere."
 
-    n "Where did you find it?"
+                    n "I didn't realize it was a community effort."
 
-    re "Kitsune brought it to practice looking for the owner. Mariko recognized it right away and said she'd take it back to him. Maybe she hasn't been able to track him down yet; he's been literally all over the place lately..."
+                    re "Oh yeah. Next semester, I'll be sure to bring a whole bunch of stuff."
 
-    "Still, it wouldn't be hard to leave a note on his dorm or something."
-
-    n "So you didn't see her give it to him?"
-
-    re "No. But I don't see why she'd lie to me. Besides, the two of them are friends, sort of..."
-
-    "Even she doesn't seem totally convinced by that explanation." #(+Baton Pass)
+                    call ReiChoice2
+                "Announcement List":
     
-    #-Alabi-
-    
-    re "I've been mostly helping Mariko revive the cheer squad. We've been making posters, working on banners; we even got a spot on the announcements!"
+                    re "We're dead last on the list? That doesn't seem right."
 
-    n "What about flag line? That's why you brought all your armaments, isn't it? There isn't a lot of opportunity for you to dance if you’re a cheerleader."
+                    n "Spots were first come, first serve. Was Mariko in there before the other girls?"
 
-    re "Most of my stuff's been confiscated. It'll take weeks to make decent prop replacements. Besides, cheer is more accessible to rookies than twirling."
+                    re "Dyre had pulled her aside wanting to sneak something into the booth."
+                    re "I had assumed that she dropped off the ad when she helped Dyre."
+                    re "Maybe something came up?"
+                    
+                    n "At least you got in on time."
 
-    n "That sounds like Mariko talking, not you."
-
-    re "She needs this more than I need flag line. Anything to make this place feel like a normal school, a place to make new friends, will help her. She's really starting to worry me."
-
-    n "She doesn't seem that different to me."
-
-    re "Ever since we got here, even before we found out there could only be three clubs, she's been pushing herself without rest to form the squad. I've never seen her fumble during a performance like she did during the opening ceremony. I'm pretty sure a fall like that shouldn't break your ankle, but it's still purple. She refused to suspend practice until she's recovered. It's like all the joy has been sucked out of her. Helping her with the squad feels like the only way I can help."
-
-    "Rei would know best if Mariko's acting odd. Still, there's a high chance this is all coincidence."
-
-    n "I'm sure she appreciates it."
-
-    re "It's such a hopeless feeling watching her like this when I know something's wrong. I keep hoping she'll tell me what's really bothering her, but I'm not sure she knows how to."
-
-    n "Don't forget to take care of yourself too. Coming here has been hard for everyone."
-
-    #(+Cheer Ad)
-    #-Computer-
-    
-    re "Kazz had one of those Echo thingies. Wouldn't he be the one to look it up? They were both in his booth after all."
-
-    n "Kazz could have just logged into his account through the computer and programmed new commands through that, but this page is talking about how to use the app. Plus, his phone was missing during that time. It's the only other way to program the thing."
-
-    re "Maybe someone was borrowing it from him."
-
-    n "Then they would have asked him first and he'd tell them how to use it..."
-
-    "Why is she acting so defensive?"
-
-    n "Rei, did someone tell you they were borrowing his stuff?"
-
-    re "They didn't have to. He made it perfectly clear that anyone could use his stuff whenever they wanted."
-
-    "But not without permission. Whoever it was, they must be close to Kazz and Rei." #(+Brag)
-    
-    #-CD-
-    
-    re "Between everyone here, that's not a bad collection. Too bad he's not accepting MP3s. I might have some old music on a thumb drive somewhere."
-
-    n "I didn't realize it was a community effort."
-
-    re "Oh yeah. Next semester, I'll be sure to bring a whole bunch of stuff."
-
-    #-Announcement List-
-    
-    re "We're dead last on the list? That doesn't seem right."
-
-    n "Spots were first come, first serve. Was Mariko in there before the other girls?"
-
-    re "Dyre had pulled her aside wanting to sneak something into the booth. I had assumed that she dropped off the ad when she helped Dyre. Maybe something came up?"
-
-    n "At least you got in on time."
-
-    re "....."
-    re "Yeah."
-
-    "She's really not happy about it though."
-
-    #-Outro-
-    
+                    re "....."
+                    re "Yeah."
+                    
+                    "She's really not happy about it though."
+                    call ReiChoice2
+        "Leave":
+            call ReiOutro
+label ReiOutro:      
     re "After all this drama, I don't think I'll sleep well tonight."
 
     n "Sleep? What's sleep?"
@@ -327,15 +377,19 @@ label ReiInv1:
 
     "She hesitates and fumbles with her baton."
 
-    re "You know, some of us like to hang out in the cafe at night. If you came alone, I don't think people would chase you away."
+    re "You know, some of us like to hang out in the cafe at night."
+    re "If you came alone, I don't think people would chase you away."
 
     n "Quite the compelling pitch you got there."
 
-    re "I'm just saying, if you have the energy, maybe you should drop by. It could be a good way to make new friends."
+    re "I'm just saying, if you have the energy, maybe you should drop by."
+    re "It could be a good way to make new friends."
 
     n "You're asking me to ignore curfew and participate in a ritual B and E? You really are a troublemaker, aren't you?"
 
-    re "Greatest memory in the world and you always seem to forget that. Besides, there's no rule against going in at night, so technically, it's okay. It beats lying awake in the dorms, that's for sure."
+    re "Greatest memory in the world and you always seem to forget that."
+    re "Besides, there's no rule against going in at night, so technically, it's okay."
+    re "It beats lying awake in the dorms, that's for sure."
 
     # Currently this portion of the game is now a stretch goal.
     #[IF Vigor < ?]
@@ -347,18 +401,20 @@ label ReiInv1:
     "Vigor Majors can be almost inhuman sometimes."
 
     re "I'll see you around, Nagen."
+    pass #connect to loop here
 
 label MomokoInv1:
-
-    #Momoko Investigation 
-    #[BG: Lab]
-    #-Intro-
+    scene backgroundlab
     
-    "Momoko's music is so loud I can hear it down the hall. I peer in through the window to make sure she isn't handling any chemicals before opening the door."
+    "Momoko's music is so loud I can hear it down the hall."
+    "I peer in through the window to make sure she isn't handling any chemicals before opening the door."
 
     n "Momo?"
 
-    "No good, she can't hear me. I flick one of the light switches on and off. She jumps, but the minute she sees me a huge smile spreads across her face. I can see her lips moving, but all I hear is the music."
+    "No good, she can't hear me."
+    "I flick one of the light switches on and off."
+    "She jumps, but the minute she sees me a huge smile spreads across her face."
+    "I can see her lips moving, but all I hear is the music."
 
     n "Where's the stereo!? THE STEREO?"
 
@@ -368,50 +424,66 @@ label MomokoInv1:
 
     n "Glad to see you're not trying to avoid me."
 
-    mh "Eh, what's the point when you could find me anyway? We're stuck in this fish bowl together for the next four years, why make enemies now?"
+    mh "Eh, what's the point when you could find me anyway?"
+    mh "We're stuck in this fish bowl together for the next four years, why make enemies now?"
 
     n "...thanks."
 
     mh "You're welcome! Did you need something?"
+label MomokoChoice1:
+    menu:
+        "Alibi":
+            mh "The first day of school... I was here."
+            mh "Every lab has a system for where things go."
+            mh "Now it's my system and I plan to keep it that way."
+            mh "All my time is in my log book."
 
-    #-Alibi-
+            n "Anybody come by the lab?"
 
-    mh "The first day of school... I was here. Every lab has a system for where things go. Now it's my system and I plan to keep it that way. All my time is in my log book."
+            mh "Kazz helped me set up the stereo. That was nice."
+            mh "Especially since I could just give him my club ad in person."
+            mh "The more I can avoid the stairs, the better."
 
-    n "Anybody come by the lab?"
+            "Right, the skates. It's probably a pain to take them off every time she wants to go to a different floor."
 
-    mh "Kazz helped me set up the stereo. That was nice. Especially since I could just give him my club ad in person. The more I can avoid the stairs, the better."
+            n "I take it you haven't gone to the third floor then."
 
-    "Right, the skates. It's probably a pain to take them off every time she wants to go to a different floor."
+            mh "There's nothing for me there."
+            call MomokoChoice1
+        "Show Evidence":
+            "I show Momoko the computer."
 
-    n "I take it you haven't gone to the third floor then."
+            mh "Well, they certainly weren't shopping for an Alexa, no one's willing to drive this far for small deliveries."
+            mh "Trust me, the next shipment of lighter fluid won't be here for two months."
 
-    mh "There's nothing for me there."
+            n "Then someone must have snuck one in from the outside."
+            n "But how? I thought the teachers confiscated all tech when we got here."
 
-    #-Computer-
-    
-    mh "Well, they certainly weren't shopping for one, no one's willing to drive this far for small deliveries. Trust me, the next shipment of lighter fluid won't be here for two months."
+            mh "It's a speaker with bluetooth. It's not that hard to cut it off from the internet."
+            mh "Setsuna and Kazz have tried to get me to connect them to the internet multiple times."
 
-    n "Then someone must have snuck one in from the outside. But how? I thought the teachers confiscated all tech when we got here."
+            n "Really?"
 
-    mh "It's a speaker with bluetooth. It's not that hard to cut it off from the internet. Trust me; Setsuna and Kazz have tried to get me to connect them to the internet multiple times."
+            mh "Yeah, I'm like; hello, chemistry and technology are two different zones."
+            mh "'Oh Momo, you're smart, you must know–' No! I only know chemicals."
 
-    n "Really?"
+            n "You think anyone else has one?"
 
-    mh "Yeah, I'm like; hello, chemistry and technology are two different zones. Oh Momo, you're smart, you must know– No, I only know chemicals."
+            mh "Not likely. Or if they do, they're smart enough to actually hide it."
+            mh "After this, we'll be lucky to keep our school phones."
+            mh "It should show who's logged into it if you ask."#+ID Account
 
-    n "You think anyone else has one?"
-
-    mh "Not likely. Or if they do, they're smart enough to actually hide it. After this, we'll be lucky to keep our school phones. It should show who's logged into it if you ask."(+ID Account)
-    
+            call MomokoChoice1
+        "Leave":
+            call MomokoOutro
     #-Else-
     
-    mh "That doesn't sound out of place, Nagen. Sounds like you're over thinking things again."
+    #mh "That doesn't sound out of place, Nagen. Sounds like you're over thinking things again."
 
-    n "There has to be something. I refuse to believe this is a 'perfect crime'."
+    #n "There has to be something. I refuse to believe this is a 'perfect crime'."
 
     #-Outro-
-    
+label MomokoOutro: 
     n "...is that beaker supposed to be smoking?"
 
     mh "Spinach-laced-ridilin, turn off the lights!"
@@ -425,100 +497,126 @@ label MomokoInv1:
     mh "Now I have to start from scratch! ...maybe that's why the lashes were melting instead of gluing..."
 
     "I should probably go."
+    pass #connect to loop
 
 label RiseInv1:
-
-    #Rise Investigation
-    #[BG: Courtyard]
-    #-Intro-
-    
+    scene backgroundcourtyard
     "I find Rise enjoying a cup of tea in the courtyard."
 
     n "I hope I'm not interrupting."
 
-    r "Perish the thought. Please, have a seat. There is something I would like to discuss with you."
+    r "Perish the thought."
+    r "Please, have a seat."
+    r "There is something I would like to discuss with you."
 
     "How does she manage to flip the script so quickly?"
 
-    r "If it is not too much trouble, could you do something about your little friend? Ever since I became class representative, they have been disrupting class with their... jokes."
+    r "If it is not too much trouble, could you do something about your little friend?"
+    r "Ever since I became class representative, they have been disrupting class with their... jokes."
 
-    "Uitto could care less about who was cleaning erasers and checking attendance logs. However, she's not too keen on people telling her what to do."
+    "Uitto could care less about who was cleaning erasers and checking attendance logs."
+    "However, she's not too keen on people telling her what to do."
 
-    r "It is one thing to whine about my popularity giving me 'unfair' advantages, but it is another to bring my bust size into the conversation. That, and when we were voting for class president, she submitted a rather vulgar drawing of a... phallic-looking thing and asked me to 'suck it'."
+    r "It is one thing to whine about my popularity giving me 'unfair' advantages, but it is another to bring my bust size into the conversation."
+    r "That, and when we were voting for class president, she submitted a rather vulgar drawing of a... phallic-looking thing and asked me to 'suck it'."
 
     n "Just ignore her."
 
-    r "This kind of behavior is unacceptable. Her actions reflect on you as well, seeing as you are still friends with her."
+    r "This kind of behavior is unacceptable."
+    r "Her actions reflect on you as well, seeing as you are still friends with her."
 
-    n "I know, and I can apologize for her if that's what you want, but talking to her will just make it worse. Either go completely stone faced or get a teacher involved. I can't reign her in like I can with Hiro."
+    n "I know, and I can apologize for her if that's what you want, but talking to her will just make it worse."
+    n "Either go completely stone faced or get a teacher involved."
+    n "I can't reign her in like I can with Hiro."
 
-    r "I see... That is disappointing. Well then, I suppose that addresses my concerns, but I believe there was something you wished to discuss?"
+    r "I see... That is disappointing."
+    r "Well then, I suppose that addresses my concerns, but I believe there was something you wished to discuss?"
+label RiseChoice1:
+    menu:
+        "Alibi": 
+            r "I overheard what happened during the announcement."
+            r "How utterly mortifying it must have been to be thrust into the spotlight like that."
 
-    #-Alibi-
-    
-    r "I overheard what happened during the announcement. How utterly mortifying it must have been to be thrust into the spotlight like that."
+            n "I didn't ask how you felt about it, I asked if you had anything to do with it."
 
-    n "I didn't ask how you felt about it, I asked if you had anything to do with it."
+            r "Forgive me, I do not have an alibi."
 
-    r "Forgive me, I do not have an alibi."
+            n "Ahah!"
 
-    n "Ahah!"
+            "She raises a solitary hand and waits for me to close my mouth."
 
-    "She raises a solitary hand and waits for me to close my mouth."
+            r "I cannot offer an alibi for a vague period of time when I am not even sure how it was done in the first place."
+            r "Everyone was accounted for in my class up until the bell rang."
+            r "I am certain that remains true for the other classes."
 
-    r "I cannot offer an alibi for a vague period of time when I am not even sure how it was done in the first place. Everyone was accounted for in my class up until the bell rang. I am certain that remains true for the other classes."
+            n "Oh."
 
-    n "Oh."
+            r "I am sorry I cannot be of more help."
+            r "If there is something more specific you would like to ask me about, I would love to help if possible."
+        "Show Evidence":
+            menu:
+                "Announcement List":
+                    r "I am not a club leader, so I do not have access to the recording booth."
+                    r "I am only a class representitve, not a council member."
 
-    r "I am sorry I cannot be of more help. If there is something more specific you would like to ask me about, I would love to help if possible."
+                    n "Know of anyone who'd have access in your class?"
 
-    #-Announcement List-
-    
-    r "I am not a club leader, so I do not have access to the recording booth. I am only a class representitve, not a council member."
+                    r "Someone on the council might, but that is only speculation."
+                    r "You may try asking Nanase or Setsuna if they have access."
+                    r "No one in the Charm Department is a club leader, oddly enough."
+                    r "Everyone seems content to wait until there are more students."
 
-    n "Know of anyone who'd have access in your class?"
+                    n "I see, thank you." #(+PA Access)
+                    call RiseChoice1
 
-    r "Someone on the council might, but that is only speculation. You may try asking Nanase or Setsuna if they have access. No one in the Charm Department is a club leader, oddly enough. Everyone seems content to wait until there are more students."
+                "Missing Phone":
+                    r "We have hardly been here a week and people have already started stealing? How distasteful."
 
-    n "I see, thank you." #(+PA Access)
-    
-    #-Missing Phone-
-    
-    r "We have hardly been here a week and people have already started stealing? How distasteful."
+                    n "You haven't seen anything suspicious, have you?"
 
-    n "You haven't seen anything suspicious, have you?"
+                    r "That odd girl Kitsune asked if I knew how to get into a phone that had been locked."
+                    r "I assumed she just forgot her password, but none of my tricks seemed to work."
+                    r "I did not know it was possible to have an alternate model, otherwise I would have demanded an upgrade myself."
 
-    r "That odd girl Kitsune asked if I knew how to get into a phone that had been locked. I assumed she just forgot her password, but none of my tricks seemed to work. I did not know it was possible to have an alternate model, otherwise I would have demanded an upgrade myself."
+                    n "You're positive it wasn't the school model she was running around with?"
 
-    n "You're positive it wasn't the school model she was running around with?"
-
-    r "Definitely, though she was unable to use it, so I doubt it did her much good. I would be surprised if she held onto it."
-
-    #-Outro-
-    
-    r "I am sorry I was not more helpful. I have not been around long enough to get a feel for how everyone gets along nowadays. We may have grown up with each other, but a lot can change in two years."
+                    r "Definitely, though she was unable to use it, so I doubt it did her much good."
+                    r "I would be surprised if she held onto it."
+                    call RiseChoice1
+        "Leave":
+            call RiseOutro
+label RiseOutro:
+    r "I am sorry I was not more helpful."
+    r "I have not been around long enough to get a feel for how everyone gets along nowadays."
+    r "We may have grown up with each other, but a lot can change in two years."
 
     n "You could help me talk to other people."
 
-    r "And risk my position as neutral observer? I think not. There are too many unknown factors for me to go choosing sides just yet. Quite frankly, your reputation puts you at a disadvantage. Find me after the dust settles and ask who I would invest my time in and you might be pleased with the answer."
+    r "And risk my position as neutral observer? I think not."
+    r "There are too many unknown factors for me to go choosing sides just yet."
+    r "Quite frankly, your reputation puts you at a disadvantage."
+    r "Find me after the dust settles and ask who I would invest my time in and you might be pleased with the answer."
 
-    "Is she... rooting for me? If so, she has a strange way of showing it. She packs up her set into an old cigar box with a sigh."
+    "Is she... rooting for me?"
+    "If so, she has a strange way of showing it."
+    "She packs up her set into an old cigar box with a sigh."
 
-    r "Do not be too disheartened, Nagen. I know you are smart enough to figure this out."
+    r "Do not be too disheartened, Nagen."
+    r "I know you are smart enough to figure this out."
 
     "With that, she leaves."
+    pass #connect to loop
 
 label NanaseInv1:
-
-    #Nanase Investigation
-    #[BG: Cafe]
-    #-Intro-
-    
-    "Nanase was more than happy to meet with me, but she told me she was working on something at the cafe. I arrive to find various ingredients out, with tinny music playing from a burner phone. Nanase is running around from table to book to fridge covered in what smells like cocoa powder."
+    scene backgroundcafe
+    "Nanase was more than happy to meet with me, but she told me she was working on something at the cafe."
+    "I arrive to find various ingredients out, with tinny music playing from a burner phone."
+    "Nanase is running around from table to book to fridge covered in what smells like cocoa powder."
 
     n "Wow, I didn't know we were allowed to use the kitchen."
 
-    nk "Eep! Gah, I mean, hi. Yeah, you can use the cafe during off hours with instructor supervision."
+    nk "Eep! Gah, I mean, hi."
+    nk "Yeah, you can use the cafe during off hours with instructor supervision."
 
     n "I don't see anyone here."
 
@@ -528,9 +626,11 @@ label NanaseInv1:
 
     "Creepy. She’s about to dust herself off when she looks up."
 
-    nk "Umm... You don't have any allergies, do you? I didn't think about that before inviting you over."
+    nk "Umm... You don't have any allergies, do you?"
+    nk "I didn't think about that before inviting you over."
 
-    n "Eggs and, uhh, maybe marshmallows. Although that might be because I tried to eat a whole bag in under a minute."
+    n "Eggs and, uhh, maybe marshmallows."
+    n "Although that might be because I tried to eat a whole bag in under a minute once."
 
     nk "Eggs?"
 
@@ -539,50 +639,61 @@ label NanaseInv1:
     n "I'll be fine as long as I don't eat them."
 
     nk "Right... Anyways, what did you want to talk about?"
+label NanaseChoice1:
+    menu:
+        "Alibi":
+            n "I don't remember seeing you during the broadcast. What were you doing?"
 
-    #-Alibi-
-    
-    n "I don't remember seeing you during the broadcast. What were you doing?"
+            nk "In the morning, before classes, we had our first council meeting."
+            nk "That's when we heard sirens in the hallways."
+            nk "It was so scary! The school was still empty at the time and all the teachers were preparing for first period, so it was just this ominous screeching in the dark hallways."
+            nk "Eventually, we found it was coming from one of the lockers."
 
-    nk "In the morning, before classes, we had our first council meeting. That's when we heard sirens in the hallways. It was so scary! The school was still empty at the time and all the teachers were preparing for first period, so it was just this ominous screeching in the dark hallways. Eventually, we found it was coming from one of the lockers."
+            n "I don't remember hearing anything during class."
 
-    n "I don't remember hearing anything during class."
+            nk "Setsuna snuck out during first period after she got the locker combinations from Professor Inukai."
+            nk "She thought it was odd for Mu to have such a noisy ringtone and turned it into the lost and found."
+            nk "Though if it's from the outside, it might have been confiscated."
 
-    nk "Setsuna snuck out during first period after she got the locker combinations from Professor Inukai. She thought it was odd for Mu to have such a noisy ringtone and turned it into the lost and found. Though if it's from the outside, it might have been confiscated."
+            n "Did you see her turn it in?"
 
-    n "Did you see her turn it in?"
+            nk "Well... no. I stayed in class to cover for her."
 
-    nk "Well... no. I stayed in class to cover for her."
+            n "Does she have everyone's locker combinations or just Mu's?"
 
-    n "Does she have everyone's locker combinations or just Mu's?"
+            nk "Everyone's... we couldn't tell who's locker it was from the outside, it wasn't decorated or anything." #(+Locker Combo)
+            call NanaseChoice1
+        "Show Evidence":
+            "I showed her the announcement list"
 
-    nk "Everyone's... we couldn't tell who's locker it was from the outside, it wasn't decorated or anything." #(+Locker Combo)
-    
-    #-Announcement List-
-    
-    nk "Kietsu's the one who's been handling club requests. Though it seems like he's approving anyone who applies. I'm not even sure there's enough interest to maintain four clubs at this school. We barely have enough for a functioning student council."
+            nk "Kietsu's the one who's been handling club requests."
+            nk "Though it seems like he's approving anyone who applies."
+            nk "I'm not even sure there's enough interest to maintain four clubs at this school."
+            nk "We barely have enough for a functioning student council."
 
-    n "You wouldn't happen to know who the club leaders are, would you?"
+            n "You wouldn't happen to know who the club leaders are, would you?"
 
-    nk "No, sorry."
-
+            nk "No, sorry."
+            call NanaseChoice1
+        "Leave":
+            call NanaseOutro
     #-Other-
     
-    nk "Well, it isn't odd that those things would be in the PA room. I don't see anything... incriminating about it."
+    #nk "Well, it isn't odd that those things would be in the PA room. I don't see anything... incriminating about it."
 
-    "She probably thinks I'm being paranoid."
-
-    #-Outro-
-    
+    #"She probably thinks I'm being paranoid."
+label NanaseOutro:
     nk "Umm... are you doing okay? "
 
     n "Hunh?"
 
-    nk "I mean, that message over the PA was really scary. I can't imagine what it would feel like to get bullied the first day of school."
+    nk "I mean, that message over the PA was really scary."
+    nk "I can't imagine what it would feel like to get bullied the first day of school."
 
     n "It's... I've got things under control. It's fine. I'm surprised that you, you know, care?"
 
-    nk "I'm not heartless. Besides, starting rumors anonymously over the air like that is so irresponsible. I just want you to know not everyone here buys into that witch-hunt mentality."
+    nk "I'm not heartless. Besides, starting rumors anonymously over the air like that is so irresponsible."
+    nk "I just want you to know not everyone here buys into that witch-hunt mentality."
 
     n "Uhh... thanks."
 
@@ -590,7 +701,9 @@ label NanaseInv1:
 
     n "Sure."
 
-    "It's so weird to think the announcement pissed off people who weren't even involved. I wonder if there are others who felt threatened by it."
+    "It's so weird to think the announcement pissed off people who weren't even involved."
+    "I wonder if there are others who felt threatened by it."
+    pass #connect to loop
 
 label KietsuInv1:
     scene backgroundstuco
@@ -619,7 +732,7 @@ label KietsuInv1:
     ki "Anyway, what can I do for you?"
 label KietsuChoice:
         menu:
-            "Evidence":
+            "Show Evidence":
                 menu:
                     "Announcement List":
                         n "You were in charge of approving the club ads, weren't you?"
@@ -654,6 +767,7 @@ label KietsuChoice:
                         n "I guess..."
 
                         ki "Kazz knows that booth better than me. If something went missin’, then he'd know."
+                        call KietsuChoice
             "Alibi":
                 n "What were you doing before the broadcast?"
 
@@ -722,8 +836,10 @@ label TaigaInv1:
     #Taiga Investigation
     #[BG: Courtyard]
     #-Intro-
-    
-    "I find Taiga doing stretches in the courtyard. Next to him is a wide pen for his rabbits to enjoy the fresh air. It's strange to see him this awake."
+    scene backgroundcourtyard
+    "I find Taiga doing stretches in the courtyard."
+    "Next to him is a wide pen for his rabbits to enjoy the fresh air."
+    "It's strange to see him this awake."
 
     t "....."
     t "How long have you been watching me?"
@@ -739,49 +855,63 @@ label TaigaInv1:
     n "That's fair..."
 
     t "You gonna tell me why you came looking for me or did you come to see my assistants again?"
+label TaigaChoice:
+    menu:
+        "Alibi": 
+            t "I've never had to wake up before ten until I came here."
+            t "I would have stayed in my dorm, but the red headed nurse's assistant dragged my ass to homeroom."
 
-    #-Alibi-
+            n "You mean Mu?"
+
+            t "Yeah, him. I was practically a zombie all morning."
+            t "He wouldn't even let me sleep while he was getting his stuff."
+
+            n "What, you tried to lay down in the hallway?"
+
+            t "What? No, man, he keeps his stuff in the nurse's office."
+            t "There's a perfectly good bed there too and he wouldn't let me crash there."
+
+            n "What's wrong with his locker?"
+
+            t "Nothing really."
+            t "I guess he's making some extra scratch renting it to Mariko for all her club stuff."
+
+            "Isn't that extortion? Surely the school would have given her space to store club stuff if she asked."
+            "Why go so far to rent someone else's locker?" #(+Genki's Second Locker)
     
-    t "I've never had to wake up before ten until I came here. I would have stayed in my dorm, but the red headed nurse's assistant dragged my ass to homeroom."
+            n "Anyone else know about this?"
 
-    n "You mean Mu?"
+            t "Probably the cheerleaders. I didn't ask though; didn't think it mattered."
+            call TaigaChoice
+        "Show Evidence":
+            "I showed him the CDs"
+ 
+            t "Man, Kazz has the worst taste in music."
+            t "This is why no one listens to his radio shows."
 
-    t "Yeah, him. I was practically a zombie all morning. He wouldn't even let me sleep while he was getting his stuff."
+            n "My alarm's stuck on it. Every morning I have to fight with it."
 
-    n "What, you tried to lay down in the hallway?"
+            t "Hunh, then I wonder why they used the PA system?"
+            t "Kazz's stuff is automatically set to the radio."
+            t "If they want to send a threat to you, it'd be easier to reach you there."
 
-    t "What? No, man, he keeps his stuff in the nurse's office. There's a perfectly good bed there too and he wouldn't let me crash there."
+            n "To embarrass us. Well, not embarrass, that's not it. Expose. That's the word."
 
-    n "What's wrong with his locker?"
+            t "Seems like a lot of risk and effort for little reward."
 
-    t "Nothing really. I guess he's making some extra scratch renting it to Mariko for all her club stuff."
-
-    "Isn't that extortion? Surely the school would have given her space to store club stuff if she asked. Why go so far to rent someone else's locker?"(+Genki's Second Locker)
-    n "Anyone else know about this?"
-
-    t "Probably the cheerleaders. I didn't ask though; didn't think it mattered."
-
-    #-CDs-
-    
-    t "Man, Kazz has the worst taste in music. This is why no one listens to his radio shows."
-
-    n "My alarm's stuck on it. Every morning I have to fight with it."
-
-    t "Hunh, then I wonder why they used the PA system? Kazz's stuff is automatically set to the radio. If they want to send a threat to you, it'd be easier to reach you there."
-
-    n "To embarrass us. Well, not embarrass, that's not it. Expose. That's the word."
-
-    t "Seems like a lot of risk and effort for little reward."
-
-    "He has a point though. It's odd someone would make a move like that in front of the faculty. Why wouldn't they try to be more secretive about it?"
-
-    #-Outro-
-    
+            "He has a point though. It's odd someone would make a move like that in front of the faculty."
+            "Why wouldn't they try to be more secretive about it?"
+            call TaigaChoice
+        "Leave":
+            call TaigaOutro
+label TaigaOutro:
     t "You really care what all those kids think, don't you?"
 
     n "Well, yeah, don't you?"
 
-    t "Not particularly. They've all tangled their roots in city living, so I won't see any of them after graduation. Plus, most of them are too busy tending to their own yards to look over the fence. Not that it makes them bad people, but why bother to perform for an audience that's not watching, y'know?"
+    t "Not particularly. They've all tangled their roots in city living, so I won't see any of them after graduation."
+    t "Plus, most of them are too busy tending to their own yards to look over the fence."
+    t "Not that it makes them bad people, but why bother to perform for an audience that's not watching, y'know?"
 
     n "You don't know that for sure."
 
@@ -789,13 +919,15 @@ label TaigaInv1:
 
     n "....."
 
-    t "Exactly. But good luck getting people to like you. It's a lot less fun liking someone than spreading rumors."
+    t "Exactly. But good luck getting people to like you."
+    t "It's a lot less fun liking someone than spreading rumors."
+    pass #connect to loop
 
 label DyreInv1:
-    #Dyre Investigation 
-    #[BG: Roof]
-    
-    "Technically, students aren't supposed to come to areas that are under construction. But since the roof's unlocked, some people have been treating it like free game. Dyre is one of those people. He’s dragging old beat-up furniture around a stack of busted palettes, just out of eye-line from the stairs."
+    scene backgroundroof
+    "Technically, students aren't supposed to come to areas that are under construction."
+    "But since the roof's unlocked, some people have been treating it like free game."
+    "Dyre is one of those people. He’s dragging old beat-up furniture around a stack of busted palettes, just out of eye-line from the stairs."
 
     n "What are you doing?"
 
@@ -805,159 +937,206 @@ label DyreInv1:
 
     n "But why here? It's basically outdoors."
 
-    d "It's also one of the few places without security cameras. None of the teachers have time to come up here, so it's the perfect spot to set up shop. Metaphorically speaking that is."
+    d "It's also one of the few places without security cameras."
+    d "None of the teachers have time to come up here, so it's the perfect spot to set up shop. Metaphorically speaking that is."
 
-    "Dyre's a master at throwing me down rabbit holes when I come looking for something else. I gotta stay focused."
+    "Dyre's a master at throwing me down rabbit holes when I come looking for something else."
+    "I gotta stay focused."
 
     n "Cool. Look, I actually came to talk to you about something else."
 
-    d "Oooh, let me guess, you're playing detective and want to cross examine me as a witness. Are you going for a Sherlock vibe or Batman?"
+    d "Oooh, let me guess, you're playing detective and want to cross examine me as a witness."
+    d "Are you going for a Sherlock vibe or Batman?"
 
     n "This is serious, Dyre."
 
-    d "I'm just trying to figure out how long this is going to take. No need to take it so personally."
+    d "I'm just trying to figure out how long this is going to take."
+    d "No need to take it so personally."
+label DyreChoice:
+    menu:
+        "Alibi":
+            d "It was the first day of school; there was a bunch of 'get to know you' lectures and other nonsense."
+            d "Huge waste of time, but everyone saw me in class."
+            d "There's no way I had the time to set all that up."
 
-    #-Alibi-
-    
-    d "It was the first day of school; there was a bunch of 'get to know you' lectures and other nonsense. Huge waste of time, but everyone saw me in class. There's no way I had the time to set all that up."
+            n "You honestly expect me to believe you didn't mess with anyone?"
 
-    n "You honestly expect me to believe you didn't mess with anyone?"
+            d "I didn't say that."
 
-    d "I didn't say that."
+            "He says with a knowing smile, then sighs."
 
-    "He says with a knowing smile, then sighs."
+            d "I'm sure you've heard by now, but Kazz brought in a bunch of contraband into the school."
+            d "It's a bunch of tech stuff, which I wanted to be able to borrow, but he wouldn't shut up about having it."
+            d "So, I got worried it'd get confiscated or stolen."
 
-    d "I'm sure you've heard by now, but Kazz brought in a bunch of contraband into the school. It's a bunch of tech stuff, which I wanted to be able to borrow, but he wouldn't shut up about having it. So, I got worried it'd get confiscated or stolen."
+            n "What did you do?"
 
-    n "What did you do?"
+            d "I had Genki hide his Echo in the recording booth when she was dropping off her club request form."
+            d "I thought it'd be funny to have him freak out for a bit just to have it be right under his nose."
+            d "Y'know, teach him a lesson before he got his stuff taken away."
+            d "Turns out I was a little late for that."
 
-    d "I had Genki hide his Echo in the recording booth when she was dropping off her club request form. I thought it'd be funny to have him freak out for a bit just to have it be right under his nose. Y'know, teach him a lesson before he got his stuff taken away. Turns out I was a little late for that."
+            n "So Mariko's the last one to touch his echo?"
 
-    n "So Mariko's the last one to touch his echo?"
+            d "We don't know that. Any other club leader could have found it in there." #(+Prank)
+            call DyreChoice
+        "Show Evidence":
+            menu:
+                "Computer":
+                    n "Someone was having trouble getting the echo to do what they wanted."
+                    n "The history is full of searches on how to leave a recorded message."
 
-    d "We don't know that. Any other club leader could have found it in there."(+Prank)
-    
-    #-Computer-
-    
-    n "Someone was having trouble getting the echo to do what they wanted. The history is full of searches on how to leave a recorded message."
+                    d "...that idiot."
 
-    d "...that idiot."
+                    n "So you know who it is?"
 
-    n "So you know who it is?"
+                    d "I was making a general statement."
+                    d "Whoever left without clearing their internet history is an idiot."
 
-    d "I was making a general statement. Whoever left without clearing their internet history is an idiot."
+                    "What a liar!"
+                    "But, if he's willing to cover for them, it might be someone he's close to."
+                    "At the very least, I know it's not him."
+                    call DyreChoice
+                "Announcment List": 
+                    d "That many people want to start a club, hunh?"
+                    d  "No wonder Mariko's been so competitive with recruiting."
 
-    "What a liar! But, if he's willing to cover for them, it might be someone he's close to. At the very least, I know it's not him."
+                    n "What do you mean?"
 
-    #-Announcement List-
-    
-    d "That many people want to start a club, hunh? No wonder Mariko's been so competitive with recruiting."
+                    d "Well, there's only four teachers, right?"
+                    d "That means unless they have time, they'll only be able to supervise one club each."
+                    d "The first four to get enough members will probably be the only legitimate clubs this year."
+                    call DyreChoice
+                "CDs":
+                    d "Kazz already gave me a tour of the booth. I don't need a second."
 
-    n "What do you mean?"
+                    n "Nothing looks different to you?"
 
-    d "Well, there's only four teachers, right? That means unless they have time, they'll only be able to supervise one club each. The first four to get enough members will probably be the only legitimate clubs this year."
-
-    #-Other-
-    
-    d "Kazz already gave me a tour of the booth. I don't need a second."
-
-    n "Nothing looks different to you?"
-
-    d "Nope. That's what it's supposed to look like."
-
-    #-Outro-
-    
-    "By this point, Dyre has completely abandoned his attempt to rearrange the roof. He regards me with the same amount of intrigue and confusion one might have toward a foreign commercial."
+                    d "Nope. That's what it's supposed to look like."
+                    call DyreChoice
+        "Leave":
+            call DyreOutro
+label DyreOutro
+    "By this point, Dyre has completely abandoned his attempt to rearrange the roof."
+    "He regards me with the same amount of intrigue and confusion one might have toward a foreign commercial."
 
     d "You really had a hand in the riots, didn't you?"
 
     n "Yeah. I think everyone has made that abundantly clear."
 
-    d "Forgive me for doubting, I just didn't want to believe it, even though the truth was so obvious. It's just so disappointing to see how low you've sunk."
+    d "Forgive me for doubting, I just didn't want to believe it, even though the truth was so obvious."
+    d "It's just so disappointing to see how low you've sunk."
 
     "Honestly, I don't know what to say. He doesn't even look that mad."
 
-    d "You need to figure out real quick what you stand for or you're not going to like the results. No one's going to wait around for you to make up your mind."
+    d "You need to figure out real quick what you stand for or you're not going to like the results."
+    d "No one's going to wait around for you to make up your mind."
 
-    n "What are you talking about? I know what happened wasn't ideal, but it was the only way to protect my friends."
+    n "What are you talking about?"
+    n "I know what happened wasn't ideal, but it was the only way to protect my friends."
 
     d "If you really believed that, you wouldn't be here."
 
-    "He brushes past me, leaving me alone on the roof. Just who does he think he is anyway? I can't let him get to me. I should leave before I get caught."
+    "He brushes past me, leaving me alone on the roof."
+    "Just who does he think he is anyway? I can't let him get to me."
+    "I should leave before I get caught."
+    pass #connect to loop
 
 label ChiseiInv1:
-    #Chisei Investigation
-    #[BG: Amphitheater]
-    #-Intro-
-    
-    "Chisei is puttering around the stage with a tape measure and a package of chalk. She has a piece on the ground and is trying to drag it along the ground with the ball of her foot."
+    scene backgroundstage
+    "Chisei is puttering around the stage with a tape measure and a package of chalk."
+    "She has a piece on the ground and is trying to drag it along the ground with the ball of her foot."
 
     n "Need some help?"
 
-    ch "I suppose. Do I look that silly?"
+    ch "I suppose."
+    ch "Do I look that silly?"
 
     n "No... I mean, I don't know what you're trying to do, but it seems purposeful."
 
-    "I pick up the chalk. Before I can hand it to her, she points at the ground."
+    "I pick up the chalk."
+    "Before I can hand it to her, she points at the ground."
 
     ch "A line, please. I need the size of the stage."
 
     n "Why?"
 
-    ch "If we have enough members, the drama club can put on plays. I want to know what space I have to work with."
+    ch "If we have enough members, the drama club can put on plays."
+    ch "I want to know what space I have to work with."
 
     n "Can't you get the dimensions from the teachers?"
 
-    ch "The plans are 'around here somewhere'. I can measure it all myself before Mr. Inukai can hunt it down... You can laugh. I know I am slow."
+    ch "The plans are 'around here somewhere'."
+    ch "I can measure it all myself before Mr. Inukai can hunt it down..."
+    ch "You can laugh. I know I am slow."
 
     n "Oh. Sorry, I had something on my mind."
 
     ch "What is it?"
+label ChiseiChoice1:
+    menu:
+        "Alibi":   
+            n "What were you doing the day before the first day of class?"
 
-    #-Alibi-
-    
-    n "What were you doing the day before the first day of class?"
+            ch "I wanted to find some potential plays for the drama club before drafting the recruitment announcement."
+            ch "So that night, I went to look around the shelves on the first floor."
+            ch "However, I got scared and did not find anything in time."
 
-    ch "I wanted to find some potential plays for the drama club before drafting the recruitment announcement. So that night, I went to look around the shelves on the first floor. However, I got scared and did not find anything in time."
+            n "The hallways do get really eerie at night."
 
-    n "The hallways do get really eerie at night."
+            ch "Exactly! The lack of artificial light at night is welcoming to the stars, but it shrouds the interior in shadows."
+            ch "Confronting sirens, armed only with a flashlight, I felt my heart stop for a second."
 
-    ch "Exactly! The lack of artificial light at night is welcoming to the stars, but it shrouds the interior in shadows. Confronting sirens, armed only with a flashlight, I felt my heart stop for a second."
+            n "Metaphorical sirens or weird noises?"
 
-    n "Metaphorical sirens or weird noises?"
+            ch "A loud series of noises, around the lockers, I think."
+            ch "I did not pursue the matter further."
+            ch "Though seeing as I have not gotten in trouble for wandering the grounds at night, I do not think it was something I triggered."
+            #(+Mysterious Noise)
 
-    ch "A loud series of noises, around the lockers, I think. I did not pursue the matter further. Though seeing as I have not gotten in trouble for wandering the grounds at night, I do not think it was something I triggered."(+Mysterious Noise)
-    n "Have you heard it since?"
+            n "Have you heard it since?"
 
-    ch "Thankfully, no. A number of our peers find such noises upsetting."
+            ch "Thankfully, no. A number of our peers find such noises upsetting."
 
-    "I think most people find loud noises upsetting. Especially when they come out of nowhere in the middle of the night."
+            "I think most people find loud noises upsetting."
+            "Especially when they come out of nowhere in the middle of the night."
 
-    #-Announcement List-
-    
-    ch "I am glad Ms. Yamamoto is a patron of the arts. Without her support, I would not have been granted approval for the drama club. Now it is just a matter of gathering members."
+            call ChiseiChoice1
+        "Show Evidence":
+            "I show her the announcement list."
+ 
+            ch "I am glad Ms. Yamamoto is a patron of the arts."
+            ch "Without her support, I would not have been granted approval for the drama club."
+            ch "Now it is just a matter of gathering members."
 
-    n "Does that mean she submitted your ad for you?"
+            n "Does that mean she submitted your ad for you?"
 
-    ch "No, I had to sign out a key from the student council. I managed to get my ad in after Momoko, but before the head cheerleader."
+            ch "No, I had to sign out a key from the student council."
+            ch "I managed to get my ad in after Momoko, but before the head cheerleader."
 
-    n "Was Kazz's echo in there the whole time?"
+            n "Was Kazz's echo in there the whole time?"
 
-    ch "I did not think to check, I am sorry."
+            ch "I did not think to check, I am sorry."
 
-    #-Outro-
-    
+            call ChiseiChoice1
+        "Leave":
+            call ChiseiOutro
+label ChiseiOutro:   
     ch "....."
 
     "She bites her lip, looking at the string of lines we made on the stage."
 
-    ch "This is your first time coming to this building, right? You and your friends did not come here before it was school, did you?"
+    ch "This is your first time coming to this building, right?"
+    ch "You and your friends did not come here before it was a school, did you?"
 
     n "I mean, I didn't. I can't imagine the others coming all the way out here... why?"
 
     "She holds up her left hand with a frown."
 
-    ch "I thought if I was far enough from civilization, I would stop getting messages. They are not as frequent, but today... There is something still trying to use me. I was hoping it was not something that followed me here."
+    ch "I thought if I was far enough from civilization, I would stop getting messages."
+    ch "They are not as frequent, but today..."
+    ch "There is something still trying to use me."
+    ch "I was hoping it was not something that followed me here."
 
     n "What did it say, if you don't mind me asking?"
 
@@ -966,25 +1145,31 @@ label ChiseiInv1:
 
     n "Is that like 'don't bite the hand that feeds you'?"
 
-    ch "I cannot find any record of it anywhere. The closest thing that comes up is 'Damnatio ad bestias'; death by beasts. It was used as a punishment for instigators of rebellion."
+    ch "I cannot find any record of it anywhere."
+    ch "The closest thing that comes up is 'Damnatio ad bestias'; death by beasts."
+    ch "It was used as a punishment for instigators of rebellion."
 
     n "The only thing around here is Taiga's rabbit and pigeons."
 
-    ch "I hope it is nothing. I never know what to do with anonymous messages, especially cryptic ones. All it does is bum people out, but then I wonder if I have a moral obligation to share?"
+    ch "I hope it is nothing. I never know what to do with anonymous messages, especially cryptic ones."
+    ch "All it does is bum people out, but then I wonder if I have a moral obligation to share?"
 
     n "Well, it's not like your hand predicts the future."
 
     ch "No. I have no clue who these words come from."
 
-    n "Then don't worry too much about it. You're not a spiritual post office."
+    n "Then don't worry too much about it."
+    n "You're not a spiritual post office."
 
-    ch "Y-yeah. Yeah! I am not everyone's personal fortune cookie, I am a different kind of snack."
+    ch "Y-yeah."
+    ch "Yeah! I am not everyone's personal fortune cookie, I am a different kind of snack."
 
     "Her sudden burst of energy catches me off guard and I can’t help myself; I laugh."
 
     ch "I finally got you to smile!"
 
     "I came here looking for answers, but Chisei ended up cheering me up instead."
+    pass #connect to loop
 
 label ShomaInv1:
     #Shoma Investigation
