@@ -1512,13 +1512,10 @@ else:
 label FindPeople1:
     menu:
         "Lecture Hall":
-            #[BG: Lecture Hall or Charm Class]
-
             scene backgroundcharm
 
             $ friend += 1
         
-
             "I arrive at the room where the student council meets."
             "Everything looks too new, too clean, like no one has set foot in here since the school opened."
             "I stand for a while, admiring the leather office chair at the end of the table possibly meant for the student council president."
@@ -1681,10 +1678,350 @@ label FindPeople1:
             "I should get going. There's still more of the school to see."
 
             call FindPeople
+
         "Field":
-            pass
+            scene backgroundfield
+
+            "A few years ago, I probably wouldn't be anywhere near here. Maybe this year will be different."
+            "In the corner of my eye, I see a girl in black spandex bound over, a pile of papers in her hands."
+
+            show sprite Marikobase
+
+            m "Hold on a second!"
+            m "Hey, the name's Mariko Genki, I'm gathering signatures to start up a Cheer Squad!"
+            m "Some may say it's a little early, but it's never too early to start practic-"
+
+            "Her chipper demeanor falters once she looks up. It's as if the life has been sucked right out of her."
+            "She shifts, using her papers as a physical barrier between us."
+            "Floundering for a proper social response, she goes with the first thing I imagine comes to mind."
+
+            m "You wouldn't happen to be interested in being a cheerleader, would you?"
+
+            "Her tone is tight, her smile forced. I'd judge, but I have always been awkward around people myself."
+            "Being an ex-villain just makes things that more difficult, I guess."
+
+            menu:
+                "Try to calm her down":
+                    $ mRep += 1
+
+                    n "I'm not against the idea, but do you actually want me on your team?"
+
+                    "Her defensiveness eases, but it's clear she's still wary."
+                    "Not that I blame her, she was once a member of my army. One of the more resistant."
+                    "I don't know if it was her Proficiency or pure determination, but she had fought the brainwashing harder than anyone else."
+                    "With an ability like being unable to feel pain, it can be tricky figuring out if she should be a Vigor or Intelligence major."
+                    "Well I say my army, but Hiro was the one that gathered and directed everyone."
+                    "I kinda just watched from rooftops and corrected his orders through radio and the like."
+                    "If it had actually been my army, things might have gone smoother."
+
+                    m "I mean, anyone's allowed to join. I just never took you for the 'cheery' type. You've always been so..."
+
+                    menu:
+                        "Dreary":
+                            $ Charm += 1
+
+                            "She smiles that polite, forced smile one receives out of pity."
+                            "To be fair, I wasn't exactly the most outgoing kid in the world and I didn't have the best lasting impression on her."
+
+                            m "Hey, uh, rhyming is a key ingredient to cheer."
+
+                            "That was the roughest shift in a conversation I've heard since my dad."
+                            "A lot of examples come to mind, but I have to focus on the task at hand."
+
+                            n "Good luck with the cheer thing. I'm... really sorry about what happened."
+
+                            "Her face hardens."
+
+                            m "Sorry isn't going to fix anything."
+
+                            "She takes a deep breath."
+
+                            m "But it helps... I just- I'm not going to let my girls down this time. And guys. Really, uh, really should recruit more-"
+
+                            "Her eyes drift to me, then shaking her head."
+
+                            m "I've got to go."
+
+                            "She hurries off. Not that I blame her."
+
+                            jump m_intro
+
+                        "Hostile":
+                            $ Vigor += 1
+
+                            m "I should have seen it coming."
+
+                            "She shakes her head, regret evident on her face."
+                            "When Hiro had gone around recruiting our first members, Mariko declined."
+                            "She was the only cheerleader who declined, and her position as the captain didn't matter to anyone when Guwon was already in chaos."
+
+                            n "I was just trying to protect everyone."
+
+                            m "No, I was trying to protect everyone; you wanted to fight back!"
+
+                            n "Fighting is what kept us alive. It's what kept you alive."
+                            n "You fought longer and harder than any of us, it was quite impressive."
+                            n "You'd have made an excellent general."
+
+                            m "A general hunh?"
+
+                            "She laughs bitterly."
+
+                            m "They don't give medals of honor to villains, Tesuta."
+
+                            n "You're only the villain once you lose."
+
+                            "She may be done fighting, but I'm not. I'll keep pushing forward until there's nothing of me left."
+
+                            n "It was good to see you again. You know, to know that you're okay."
+
+                            "Though I'm surprised she's here considering what I was sent here to do. I'm sure she had hoped to never see me again."
+                            "Does that mean there are other kids from the Liberation Front at this school?"
+
+                            jump m_intro
+
+                        "Uninterested":
+                            $ Intelligence += 1
+
+                            n "I never really had a lot of free time back then."
+
+                            "Between Odori's hero club and my dad's endless examinations, I didn't have a lot of time for anything."
+                            "I was constantly underslept to the point that anything involving standing seemed taxing."
+
+                            m "Right, I don't suppose your mind has changed all of a sudden either?"
+
+                            n "Not especially, no."
+
+                            "She breathes a huge sigh of relief. Still a little anxious, but no longer petrified."
+
+                            m "Then I'll be on my way. Byeee!"
+
+                            "She immediately turns around and leaves. I doubt she'll be coming my way anytime soon."
+
+                            jump m_intro
+
+                "Say anything to make her go away":
+
+                    n "Not interested."
+
+                    "She clearly recognizes me from the Guwon Riots."
+                    "Mariko had been a member of my army, and not of her own volition. She was one of the last who fell under our control."
+                    "I doubt she'd want anything to do with me, and I'm not going to pretend I like the idea of seeing her anyway."
+                    "What were they thinking, sending both of us to the same school?" 
+                    "The whole point of witness protection is to maintain a normal life, and she is an obvious threat."
+
+                    m "Good, then you'll have no business being around my girls."
+
+                    n "Excuse me? I was minding my own business, you were the one who came running up to me."
+                    n "I'm not out here to get anyone, I'm trying to live a normal school life."
+
+                    "She sputters in outrage. There are a million things I'm sure she wants to say to me, but it wouldn't change anything."
+                    "I don't have time for her to collect her thoughts."
+                    "As I begin to walk away, she shouts after me."
+
+                    m "I don't want any trouble from you, Tesuta."
+                    m "Anyone wearing this emblem is under my protection, you understand?"
+
+                    "She gestures to her earrings like I'm going to look at every girls' ears before talking to them."
+                    
+                    m "If you try anything-"
+
+                    n "The only thing I'm trying to do is start over."
+                    n "I don't have the time nor desire to mess around with a handful of powder puffs." 
+                    n "I've got my own problems to deal with."
+
+                    m "Just don't drag my squad into it."
+
+                    "It's almost admirable how fervently she defends this so-called 'squad' when she hasn't even gotten permission to lead one in the first place."
+                    "Old habits die hard, I suppose."
+                    "Though she wasn't a terribly good leader. All bark and no bite."
+
+                    jump m_intro
+            
+            label m_intro:
+
+            "I should look around some more."
+
+            call FindPeople
+
         "Hallway":
-            pass
+            scene backgroundhall1
+
+            "The grounds of this school are a lot larger than I anticipated."
+            "I'll need at least an hour before classes start in order to figure out where I'm going."
+            "I wander into a back hallway on the second floor."
+            "I assume all of the art classes will be taking place based on the glass display cases."
+            "With all the classrooms locked, there isn't much to see right now."
+            "Though I don't seem to be the only person wandering around campus right now."
+            "He has a beaten-up piece of paper in his hand and seems lost."
+            "When he looks up at me, I feel a chill run down my spine."
+
+            #[Show Yoku sprite]
+
+            y "Oh, it's you..."
+
+            n "What's that supposed to mean?"
+
+            "A few things come to mind, most tracing back to the last two years."
+            "In the course of a year, Odori and I had raised an army of three hundred with the education collars."
+            "They essentially hijacked a person's body through their central nervous system."
+            "With it, we could train our troops in a matter of hours."
+            "However, not everyone was as keen on this idea. Most of the soldiers had been students at our school."
+            "Granted, I never came in contact with a lot of recruits, so the question is, how does this kid know me?"
+            "I recognize him from the posters at Estella back when we were kids, a real wiz-kid with a piano."
+            "We never crossed paths since I spent most of my time studying in my room."
+            "My room, of course, being an anti-social hotspot."
+
+            y "What are you doing here?"
+
+            menu:
+                "None of your business":
+                    $ yRep -= 1
+
+                    n "Just looking for where my new classes are going to be. And talking to you, I guess."
+
+                    y "...you can't be serious."
+
+                    n "What?"
+
+                    y "I thought this was supposed to be a school for the e-e-elite, not a co-common murderer."
+
+                    n "First of all; common!? I know having a good memory isn't the most exciting Proficiency, but it's better than your Music Man."
+                    n "Secondly, being involved in the Guwon Riots has nothing to do with how capable I am as a student."
+                    n "The definition of 'elite' here is slightly above average, don't delude yourself."
+
+                    y "So defensive over your Pr-proficiency, yet you're going to g-ggloss over the murderer comment?"
+
+                    n "....."
+
+                    "Okay, so I'm a little self-conscious about my so-called 'powers'."
+                    "But it isn't like I think being able to remember everything is pointless or lame, it's served me fairly well."
+                    "The thing is, my Proficiency is artificial."
+                    "Unlike child prodigies like Yoku, my father had to spend every waking moment forcing my brain to process memories the way it does."
+
+                    y "Hh-ow long are you going to keep staring into space?"
+
+                    n "Sorry, that happens sometimes."
+
+                    y "As much as I'd like to continue this ffffascinating discussion, I have business eh-elsewhere."
+                    y "Until next time."
+
+                    jump y_intro
+
+                "I'm lost":
+                    $ yRep += 1
+
+                    y "...obviously."
+
+                    n "Hey! You're wandering around here too! You're probably more lost than I am."
+
+                    "He freezes."
+
+                    y "You... you don't know that."
+
+                    n "Really, then where are we?"
+
+                    "His face pinches up, as if his lower lip is trying to retreat up his nose."
+
+                    y "First-"
+
+                    "I shake my head as he speaks."
+
+                    y "Lower-"
+
+                    n "Getting colder. We're on the second floor."
+
+                    y "If you kn-know that, how a-re you lost?"
+
+                    n "I'm trying to find the dorms. These are not dorms."
+
+                    "I'll be fine once I map out the entire school, but my cheapo emergency phone is almost dead and Maimai will flip if she calls and I don't answer."
+
+                    n "Also I have to ask..."
+
+                    menu:
+                        "How do you know me?":
+                            $ Charisma += 1
+
+                            y "You really don't know?"
+                            y "W-well, whe-ere do I start..."
+
+                            "That's never a good phrase to hear."
+
+                            y "Professor Tesuta co-constantly talked about you at galla sssocials, and everyone was dying to kn-know what you'd been up to desp..des..de-"
+
+                            "He sighs."
+
+                            y "Despite never being invited."
+                            y "You got in detention mu-m-multiple times for fighting, and you t-took o-over the city."
+
+                            n "Well, yeah, but... how did you know that was me?"
+
+                            y "You didn't even do something as simple as wear a mask. What p-possibly made you think no one would recognize you?"
+
+                            n "I was really good at hiding."
+
+                            y "Y-you were good at camping, that isn't the same thing."
+                            y "Honestly, I can't believe you were capable of a-anything on that large a scale."
+                            y "I assume you had additional help."
+
+                            n "HEY!"
+
+                            "Granted, I shouldn't be proud of the things I did, but it's okay to feel a little insulted by this, right?"
+                            "I'm just mad he's calling me stupid."
+
+                            jump y_intro
+
+                        "What are you doing here?":
+                            $ Intelligence += 1
+
+                            y "I was looking for the auditorium, I he-heard that this school was going to provide a Wurlitzer."
+                            y "As the future's leading co-com-composer, I'd like to find it."
+
+                            n "A Wurlitzer?"
+
+                            y "Like a giant music box, an orchestra without... people."
+
+                            "I've never seen someone so disgusted at the mention of other human beings. And I thought I was antisocial, dang."
+
+                            n "What do you need a Wurlitzer for?"
+
+                            y "I've composed for a number of high scale events, but it's been a while since I've had a steady stream of clientele."
+                            y "Making everything on my own will expedite the progress."
+
+                            jump y_intro
+
+                        "Is your hair naturally green?":
+                            $ Vision += 1
+
+                            y "....."
+
+                            n "I've seen a couple of people at this school with crazy hair colors. I just had to ask."
+                            n "Mine isn't. In case you were curious."
+
+                            y "....."
+
+                            n "So is it? I feel like it'd be a pain to dye it and do the little buzz thing."
+                            n "Not that it looks bad, it just sends a certain message y'know."
+
+                            y "I'm going."
+
+                            n "Was it something I said?"
+
+                            "He just walks off, shaking his head."
+                            "I don't think I said anything that weird. People ask me about my hair all the time... I think."
+                            "It's been a while since I've talked to people on relatively friendly terms. Maybe crazy is the new normal."
+                            "If that's true, my friends might actually have a shot at freedom."
+
+                            jump y_intro
+
+            label y_intro:
+
+            "He didn't seem to have that much to say to me. That's fine, I'm not here to make new friends."
+            "The sooner I can find a way out of here, the better." 
+
+            call FindPeople
+
         "Courtyard":
             pass
         "Stage":
