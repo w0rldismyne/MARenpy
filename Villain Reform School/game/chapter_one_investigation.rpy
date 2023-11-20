@@ -1016,7 +1016,7 @@ label DyreChoice:
                     call DyreChoice
         "Leave":
             call DyreOutro
-label DyreOutro
+label DyreOutro:
     "By this point, Dyre has completely abandoned his attempt to rearrange the roof."
     "He regards me with the same amount of intrigue and confusion one might have toward a foreign commercial."
 
@@ -1177,7 +1177,7 @@ label ShomaInv1:
     
     "Shoma is in his hovel of a sewing room. The place is a little more organized than before, but strung up lights can't block out the dungeon vibe I get whenever I walk in."
 
-    ?: "Emerge from oblivion, O' weary traveler."
+    q "Emerge from oblivion, O' weary traveler."
 
     "What the- Where did that come from?"
 
@@ -1231,7 +1231,8 @@ label ShomaInv1:
 
     sh "Computer, identify account."
 
-    Alexa: "Setsuna the Bomb Digity is logged in."
+    # Does this work?
+    Alexa "Setsuna the Bomb Digity is logged in."
 
     n "....."
 
@@ -1665,7 +1666,8 @@ label MuInv1:
 
     mu "During move-in day."
 
-    "So the Echo was already in the booth by the time club submissions were open. That means anyone who could get in the booth would have access to it."(+Brag) (+Prank)
+    "So the Echo was already in the booth by the time club submissions were open. That means anyone who could get in the booth would have access to it."
+    #(+Brag) (+Prank)
     
     #-Alabi-
     
