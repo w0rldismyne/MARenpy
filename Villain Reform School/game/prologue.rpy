@@ -1369,7 +1369,6 @@ label prologue2:
     "We say our final goodbyes and I watch as the car drives off. Tomorrow will be my first day of school."
     "I can see other kids unloading their luggage and milling about the grounds. Now would be a good chance to find my friends."
 
-    #insert nanase intro here
     scene backgroundschool
 
     show sprite NBase
@@ -1377,8 +1376,6 @@ label prologue2:
     nk "Good morning!"
 
     n "AH!"
-
-    #[Nanase sprite]
 
     nk "I'm sorry, I didn't mean to startle you."
     nk "My name's Nanase Keisan. I'm helping with orientation during move in week."
@@ -2023,13 +2020,719 @@ label FindPeople1:
             call FindPeople
 
         "Courtyard":
-            pass
+            scene backgroundcourtyard
+
+            "I decide to check the back of the school."
+            "Sun pours down into the center of the courtyard. It should feel warm and inviting."
+            "Devoid of any activity, it's unsettling. I feel like I shouldn't be here."
+            "I'm not alone, though. In the corner of my eye, I see a girl with a brilliant stream of scarlet hair."
+            "She's looking out towards the sky with a forlorn grimace."
+
+            n "Hey... uh, come here often?"
+
+            u "No way, Nagen!?"
+
+            "Her voice is definitely familiar. She turns on me with a wicked grin."
+
+            show sprite UBase
+
+            u "Did you seriously just hit on me? Good god, man, keep it together. You've been here, what, one day?"
+
+            "Oh no."
+
+            n "Uitto, I didn't realize it was you!"
+
+            u "That's supposed to make me feel better?"
+
+            n "No. I mean kinda. I wasn't even flirting, I just-"
+
+            u "Stop, stop. You're just digging yourself deeper, short stack."
+
+            n "I'm not that short!"
+
+            u "Still shorter than me."
+
+            n "You're in heels!"
+
+            u "I'm 5' 7” without them."
+
+            n "....."
+
+            u "That's what I thought."
+
+            n "You're evil."
+
+            u "Only when I want to be."
+
+            "I'll be honest, out of everyone, I'm not surprised she made it."
+            "When we were kids, they used to call her 'The Closer'."
+            "She could talk her way into and out of any situation and was a headliner in the pageant circuit."
+            "It's not surprising she's taller than me either, just disappointing."
+            "I had hoped to be taller than at least one of my friends."
+
+            u "Oh quit pouting. Size isn't everything, y'know."
+
+            n "Knock it off, wench."
+
+            u "Oooh, 'wench', going old English on me are we? What's next, 'harlot' or hauling myself to a nunnery?"
+
+            n "Don't tempt me."
+
+            u "With a sharp tongue like that, I'm surprised you're here."
+            
+            n "Really? You were worried about me?"
+
+            u "I'm serious, between the three of you, you're the last person I expected to see on the outside."
+            u "Jona's an idiot and Hiro's basically harmless, but you?"
+            u "You're smart and you're really bad about pretending to be nice."
+
+            n "Yeah, well, so are you."
+
+            u "Yes, but I'm a poor defenseless girly that was bossed around by a scary guy with piercings and torn up pants."
+
+            n "You're hideously manipulative. Is that really the story you went with?"
+
+            u "Story? It's the truth."
+            u "You're the one that pitched a fit over not being leader, you should be flattered I gave you credit."
+            u "Unless you told them something else..."
+
+            menu:
+                "I missed you":
+                    $ uRep += 1
+
+                    u "Ugh, don't be gross."
+
+                    n "I'm serious! I thought I'd never see you again."
+
+                    u "Yeah, me too..."
+                    u "Listen, if anything I said got you in trouble, I'm sorry."
+                    u "I was just trying to think of what you guys would probably say and stick with the most common stuff."
+                    u "Well, you and Hiro. I figured you both would probably lie to protect the other."
+
+                    n "So you lied to protect us?"
+
+                    u "And Jona would just lie to lie. All of us were doomed, it was just a matter of damage control."
+
+                    n "Well that's a defeatist attitude."
+
+                    u "Yeah, being defeated tends to do that to a person."
+
+                    jump u_intro
+
+                "It doesn't matter":
+                    $ uRep -= 1
+
+                    n "We're all here now, so why does it matter?"
+
+                    u "All of us?"
+
+                    n "Yeah; you, me, Hiro, and Jona."
+
+                    u "That's not... How do you know they're here?"
+
+                    n "Didn't they tell you?"
+
+                    u "They? Please tell me this is one of your paranoid delusions."
+
+                    n "No, the DVP's Secretary of BS told me during her dumb monologue."
+                    
+                    u "....."
+
+                    n "Didn't she talk to you?"
+
+                    u "....."
+
+                    jump u_intro
+
+                "Of course I did":
+                    $ Charm += 1
+
+                    n "You were not a defenseless girly that was bossed around by a scary dude with awesome piercings."
+                    n "And these are my favorite jeans!"
+
+                    u "You're right! Who'd believe you?"
+
+                    n "Nah, I went with the silent, brooding approach. The less you say, the better."
+
+                    u "You're joking, right? Brooding definitely, but silent?"
+
+                    n "Hey, I'm hella stoic."
+
+                    u "Nagen, your oversharing's one evil laugh away from a cartoon monologue. I mean, seriously, you need help. No offense."
+
+                    n "You wound me. My fragile ego can not handle an ounce of criticism."
+                    n "End your vicious slander or I shall end you. Muahahaha."
+
+                    u "I wilt not be-est tamed or commanded, foul villain. I wilt doeth what I wanteth."
+
+                    jump u_intro
+
+            label u_intro:
+            
+            n "We'll be meeting in the office room on the third floor."
+
+            u "We?"
+
+            n "I'm looking for the others right now. We're going to talk about our next move."
+
+            u "Nagen, what are you talking about? We shouldn't be doing anything right now."
+            u "You know what's on the line."
+
+            n "Uitto, you gotta trust me on this, I know what I'm doing."
+
+            #[Vision Branch]
+
+            n "Well, yeah... Uitto, is something wrong?"
+
+            u "How did you know where to find me?"
+
+            n "Well, I didn't know you were here. I've just been kinda wandering around." 
+            n "We're meeting in 313 by four at the latest. Make sure you're there."
+
+            u "...yeah... whatever you say."
+
+            #[Return to Main Branch]
+
+            hide sprite UBase
+
+            "There are still other places to look at. I should go."
+
+            call FindPeople
+
         "Stage":
-            pass
+            #[BG: Theater]
+
+            "I'm honestly surprised they bothered to build this when there was a functional amphitheater on the grounds."
+            "There's only enough seating for twenty to thirty people, but the walls are decorated to create the illusion of a vast balcony."
+            "At least they didn't fill the fake seats with human silhouettes."
+            "The stage itself is polished and well lit. It has more than enough space for rehearsals."
+
+            show sprite KBase
+
+            k "Isn't it beautiful?"
+            k "I was so worried when they picked this place that they'd shove us into a dingy room and call it 'rehearsal' space."
+
+            n "It's a little small, don't you think?"
+
+            k "Compared to the pathetic platform most bars offer, this is an opera house."
+            k "There's even changing stalls! We'll be able to do great things with it."
+
+            n "We?"
+
+            k "Aren't you a fellow performer? You're all dressed up and studying the stage."
+            k "What else am I supposed to think; that you're just some Intelligence Major?"
+
+            n "I {i}am{/i} an Intelligence Major."
+
+            k "Oh..."
+
+            n "Nagen Tesuta, proficient in memorization, can't get more common than that."
+
+            k "N-nagen!? I- Oh my goodness, I didn't know it was you."
+            k "I'm so sorry, you must think I'm a monster."
+
+            "No harm was done, but it would be fun to mess with her a bit."
+
+            n "It's okay. Since we're going with blind assumptions, I'm guessing Charisma Major?"
+
+            k "You mean you don't recognize me?"
+
+            n "No, why would I? Have we met or something?"
+
+            "I never forget a face, but she's wearing so much makeup it's hard to tell where her face starts and the contouring ends."
+
+            k "W-well, I'm a rising star, everyone at this school should recognize me."
+            k "Like a phoenix from the ashes, I will guide our nation's culture with my brilliant light!"
+            k "You are looking at living, breathing art; the face and voice of the future."
+
+            "Good god did I hit the nail on the head with this one."
+            "I'd bet money she rehearsed that speech in the mirror while brushing her hair."
+
+            n "Right... and what is it you do exactly?"
+
+            k "I am Kitsune."
+
+            "This girl is full of nothing answers, isn't she?"
+
+            menu:
+                "That's not a talent":
+                    $ kRep -= 1
+
+                    k "Excuse me? Do you know how many years it took to perfect this?"
+                    k "I woke up at 4AM to get ready and your only takeaway is 'she has no talent'!?"
+
+                    n "They don't hand out Proficiency scholarships for being yourself." 
+                    n "Not that you're even doing that."
+
+                    k "I have enough class and good taste to pick out shoes brighter than your future."
+                    k "You keep insulting people like that and someone's going to punch you so hard your piercings will get drilled into your gums."
+
+                    "What the ever-loving fuck did I do to her?"
+
+                    k "But my dainty hands belong wrapped around a mic, so you're safe. For now."
+                    k "I dazzle audiences with my angelic voice and you..."
+                    k "Well, I suppose most people would be impressed by an 'iron clad' memory for a few minutes."
+                    k "Even without my Proficiency, people would rather be me."
+
+                    "She seems to have calmed down now, but what was that? Does she want to fight me or not?"
+
+                    jump k_intro
+
+                "Like the fox spirit?":
+                    $ kRep += 1
+
+                    "I only know Uitto by her stage name; maybe this girl picked out her own?"
+
+                    k "Exactly! It embodies everything I am; enchanting, elusive and practically unkillable."
+
+                    n "Why not go by Tenko then? Aren't they more powerful or something?"
+
+                    k "They're old and wise; neither of which has ever been used to describe me, let alone powerful."
+
+                    n "You'll get there eventually... in a thousand years."
+
+                    k "Hey! I am a star right now. Just ask anyone who's gone to my show."
+
+                    n "I thought you were a fox?"
+
+                    k "Not literally! It's a metaphor. You know, to invoke imagery and imagination."
+
+                    n "I imagine wise old men when people talk about fox spirits."
+
+                    k "Maybe it does suit you. You already have the white hair."
+
+                    k "Mom always said my white hair made me look elegant."
+
+                    "Shoot, I didn't mean to upset her. Gotta backtrack."
+
+                    n "You saying old people aren't elegant? That's ageist."
+
+                    k "...is that your backwards way of complimenting me?"
+
+                    n "I can forwards compliment you too if you want. You're just so fun to mess with, it's hard not to."
+
+                    k "Fun? After you've seen one of my performances, you may compliment me."
+                    k "O-otherwise it would just feel like empty pandering."
+
+                    "Says the person who was fishing for compliments five minutes ago."
+
+                    jump k_intro
+
+                "And your Proficiency is...":
+                    $ Vigor += 1
+
+                    k "I specialize in vocal manipulation. My range is A0 to C8 in relation to a piano."
+                    k "No other singer can compare to me without the use of technology."
+
+                    n "That doesn't sound like a Charm Proficiency."
+
+                    k "Because it's not."
+                    k "Not every Vigor Major you meet is going to be some meathead jock."
+                    k "Still, I'm trying to see if they'll let me switch courses."
+                    k "I feel like Ms. Sato would help me become a more successful idol."
+
+                    n "I don't think this is that kind of school. You should focus on vocal training."
+
+                    k "I'm almost too old to start making my debut."
+                    k "If I want to get anywhere, I have to start building my fan base now."
+                    k "Vocal training and dance lessons can happen while I'm on tour."
+
+                    n "That sounds backwards and exhausting."
+
+                    k "It's part and parcel with being in the industry."
+
+                    n "But why even bother?"
+
+                    k "I like the attention."
+
+                    "At least she's honest. Seems like a lot of work for little reward."
+                    "There's no guarantee she'll ever get any fans."
+
+                    jump k_intro
+
+            label k_intro:
+            
+            k "I can tell you still have your doubts, but you'll be pleased to know I've already started working on my first album."
+            k "Make good use of this insider info, because people are going to eat it up!"
+
+            n "With what? I thought all file sharing electronics were banned."
+
+            k "With CDs of course!"
+
+            n "I don't own anything that plays CDs."
+
+            k "Y-you don't? The school issued laptops, didn't they?"
+
+            n "Yeah, but they don't have CD drives."
+
+            k "Then how do you listen to music?"
+
+            n "Normally I'd use my phone and listen to stuff for free online."
+            n "Now I'm stuck with whatever came on the burner phone."
+
+            k "Free!? Oh no, that's no good."
+
+            n "It's pretty standard nowadays."
+
+            k "Well I'll just need to find a way to get music into the school."
+            k "Maybe they'll allow older models of MP3 players and I could have the album on that?"
+
+            n "That's not a horrible idea."
+
+            k "Great! I'll put you down for a preorder then."
+
+            n "I didn't mean-"
+
+            k "I'm sending your confirmation number through the school messenger aaaand, you're all set."
+            k "The release date will be next spring."
+
+            hide sprite KBase
+
+            "She blows me a kiss and runs off before I can finish objecting."
+
+            call FindPeople
+        
         "AV Room":
-            pass
+            #[BG: AV Room]
+
+            "I stumble across a dingy room tucked in the back of the second floor."
+            "The furniture here is considerably older than the classrooms and in worse condition."
+            "If it wasn't for a small, glass-paneled recording booth, I would have assumed this room was for storage."
+            "Through the windows, I can see purple egg crate walls lined with foam."
+            "A mic dangles from the booth's ceiling, hooked up to three different computers."
+            "I try to go inside, but the door is locked."
+
+            #[Show Kazz Sprite]
+
+            kk "What are you doing here? No one's supposed to be here, bromigo."
+
+            n "You're here, aren't you?"
+
+            kk "I asked if I could check out the recording booth before I finished setting up in my room."
+            kk "I guess there are rules against soundproofing the dorms."
+            kk "I'll be so bummed if the quality of my content worsens 'cause of cheap equipment."
+
+            n "What does that have to do with me being here?"
+
+            kk "If something breaks or goes missing, I'll be the first person they blame."
+            kk "I didn't mean to offend you, but my faith in humanity took a bummer turn by at least 46% this year."
+            kk "As long as I can record my show and no one leaves a mess for me to clean up, I'll make due."
+
+            n "You plan on making videos?"
+
+            kk "Hell no, editing's boring and I look weird on camera. I'm trying to do an independent radio show."
+            kk "It's half audience engagement, half whatever the hell I feel like."
+            kk "I only have six listeners right now, but hopefully I'll be able to double that by this fall."
+            kk "If you're interested, I could always use another editor."
+
+            n "Radio isn't really my thing, but I'll, uhh, let you know later."
+
+            kk "Right on! The name's Kazz by the way, Kataki, if that matters."
+
+            "It very much does matter if he is who I think he is."
+            "Professor Kataki worked as an administrator at Estella alongside my father."
+            "His research in neuroscience perpetuated the illusion that Estella Prep was helping people."
+            "If this kid's his son, he could be one of the students that made competing for top marks a living hell."
+            "Especially since he was proficient in math."
+
+            kk "You look hella familiar."
+
+            n "I used to go to Estella."
+
+            kk "That's right! You're the kid that bailed on the nerd ward to hang out with all the criminals."
+            kk "I heard someone threw a desk at you the first day."
+
+            n "...yeah."
+
+            "I had gotten into a fight with Hiro on my first day and I flipped a desk over in the process."
+            "It's a wonder we ever became friends."
+
+            kk "That's so cool! We never had anything interesting happen in our class."
+            kk "I kept hoping I'd get to join you guys, but my dad wouldn't let them transfer me."
+
+            menu:
+                "What did you do?":
+                    $ kkRep += 1
+
+                    kk "The correct question is, what didn't I do?"
+
+                    n "....."
+
+                    kk "My homework. I didn't do my homework, any of it."
+                    kk "They never reported me, so I turned myself in, but they kept trying to sweep the whole thing under the rug."
+                    
+                    n "You stopped doing your homework to move to Special Ed?"
+
+                    kk "Oh, I never did it to begin with."
+                    kk "Busy work like that is just fluff that diversifies the grad points so one bad exam doesn't force you to repeat a grade."
+                    kk "I did fine on exams, the assignments were a waste of everyone's time."
+                    kk "I gave my homework to a willing volunteer and just copied their work in my handwriting."
+                    kk "But apparently, that wasn't a 'real' problem."
+
+                    n "To be fair, that doesn't seem like a transferable occurrence."
+                    n "Not everyone in my class cheated on tests or had bad grades."
+
+                    kk "I guess that's true, but it seemed logical at the time."
+                    kk "Dyre was an argumentative shit-head, all the teachers hated him, but they couldn't get rid of him because of his grades."
+                    kk "Still, I hope this place won't be boring. The least they could do after busing us here is to make it interesting."
+
+                    jump kk_intro
+
+                "I didn't bail":
+                    $ kkRep -= 1
+
+                    n "They didn't give me a choice when they moved me. I would have gladly stayed in Regular Ed."
+
+                    "Granted, I wasn't terribly close with anyone in my old class."
+                    "It was more the embarrassment of being removed I hoped to avoid."
+
+                    n "Most of the kids were brought in for causing trouble at other schools."
+                    n "I was friends with the few normal kids in my class, the rest of it was a gigantic headache."
+                    n "It wasn't 'so cool'."
+
+                    kk "Woah there, Edgar Allen Bro, no need to be a downer. That was forever ago."
+
+                    n "It's barely been two years."
+
+                    kk "Exactly, it's all in the past."
+                    kk "If talking about this is going to bring up an ocean of salt, then forget I said anything."
+
+                    n "My point was just that-"
+
+                    kk "No, I get it, middle school sucked donkey nards, sorry."
+
+                    "I can't argue with that."
+
+                    jump kk_intro
+
+                "Why not?":
+                    $ Intel += 1
+
+                    kk "I'm not sure."
+                    kk "Even after they knew I was plagiarizing all my work, they still kept giving me full points."
+                    kk "I turned in a paper that was the same page twelve times and I got an A."
+
+                    n "That's some dedicated nepotism right there."
+
+                    "Why couldn't I reap the benefits of being a teacher's kid?"
+
+                    kk "Anything bad I did ended up making my dad look bad."
+                    kk "My only guess is that he donated his time to the school in exchange for their silence."
+                    kk "The more boring answer would be that they didn't care enough to do anything."
+
+                    n "No, the school cared way too much about their image to let a loose nail go unhammered."
+
+                    kk "I don't enjoy getting hammered. If I'm gonna party, I want to remember it."
+
+                    n "That's not even remotely related to what we were talking about."
+
+                    kk "Yeah, but it was funny."
+
+                    n "....."
+
+                    kk "You know, like a play on words."
+
+                    n "....."
+
+                    kk "I'm sure you're a blast at parties."
+
+                    jump kk_intro
+
+            label kk_intro:
+            
+            kk "It's so trippy though, 91% of the people I've met here used to go to Estella."
+            kk "Most high schools pull in students from four to fifteen different primary schools."
+            kk "I should have found more people from different places by now."
+
+            "No, no way. There can't be that many people from Estella here."
+            "These people didn't just seek us out based on where we came from, did they?"
+
+            n "This is basically like a private school, right? Maybe it just appeals to similar types of families."
+            n "I'm sure there are plenty of kids here from other places."
+            n "Or maybe it's so remote, the average commuter student can't go. Or... or-"
+
+            "We're being collected here on purpose."
+            "Why do they want us all in one place? What are they planning?"
+            "There has to be a reason."
+
+            n "I'm fine. I just need some fresh air."
+
+            "I gotta move. I have to breathe."
+            "Focus on walking. Kazz looks scared."
+            "I need to calm down."
+            "Shit!"
+
+            kk "Do you need to go to the nurse?"
+
+            n "NO! I mean, no, I'm fine. I promise."
+            n "I won't mess with your shit in the recording booth."
+            n "I'm sorry, I'm fine, really."
+            
+            #[Hide sprite]
+
+            "He still looks worried, but I'm already out the door."
+
+            call FindPeople
+
         "Nurse's Office":
-            pass
+            scene backgroundnurse
+
+            "The nurse's office is small, to say the least."
+            "It can barely fit two pennies in between all the filing cabinets and office supplies."
+            "There's no needles out, which is good, sharps freak me out."
+            "In fact, even the smell of latex and hand sanitiser can sometimes set me off, but this place reeks of something else."
+            "Like bitter, musty salad that rotted in a pool of Ax body spray." 
+            "Do people still even use that stuff?"
+
+            mu "For the love of- Where on Earth did that lighter go?"
+
+            "That doesn't sound like a nurse." 
+            "I see rustling behind the curtain of the back cot. It couldn't be..."
+
+            n "Are you seriously smoking in here? Who's dumb enough to try and smoke in the nurse's office?"
+
+            "The curtain flies back and I have to say, I am severely disappointed."
+            show sprite MuBase
+            "If you're going to break the rules, at least look cool doing it."
+            "Or shower first."
+            "He used to take so much pride in 'knowing' more than me in biology and anatomy; I wonder if he still has that competitive streak."
+
+            mu "Some nurse's office. I can't find a single compression wrap or ice pack, let alone an O2 tank."
+            mu "Granted, that means the building isn't at risk for exploding right now, but I feel bad for anyone with asthma."
+            mu "They're screwed."
+
+            n "You're going to give someone asthma smelling like that. Besides, we both know that's not why you're here."
+
+            mu "As the nurse's assistant, it's my job to take inventory. So yeah, that's why I'm here."
+            mu "What I do on my fifteen-minute break is another matter."
+
+            n "You're the nurse's aid?"
+
+            mu "For part of the day."
+            mu "They don't have a sports medicine program, so shadowing the school nurse was the only way I could use my Proficiency in biology here."
+            mu "Well, it was that or be a TA for the Intel Professor during science lectures but... blegh, I hate theory."
+            mu "I came here to learn, not to grade papers."
+
+            "That's something I can sympathize with as a fellow Intelligence Major. When they ran out of things to teach you, they'd give you busy work."
+            "So this is the limit to having a Medicine Proficiency."
+            "When he'd go off in class about internal organs, I thought he'd grow up to be a serial killer, not a stoner."
+            "Still, he isn't the first person I'd choose to patch my wounds."
+
+            n "Let me guess, you get paid in 'experience'."
+
+            mu "And college credit."
+
+            menu:
+                "You should have TA'd":
+                    $ muRep -= 1
+
+                    n "Sure you'd have to grade papers and junk, but it's less work for the same grade."
+                    
+                    mu "Didn't you hear me? I hate theory, and explaining the theory to the uneducated- Ugh!"
+                    mu "Every part of the human body is connected, you can't understand one of them without knowing the others."
+                    mu "Unless someone knows the basics, I can't begin to help them and no one knows the basics."
+
+                    n "Your idea of basic is above average. It can't be that bad."
+
+                    mu "I was in class with someone who asked if you could get pregnant through your stomach."
+                    mu "I couldn't help it. I laughed at the poor girl, but she was serious."
+
+                    n "...why'd a girl ask you that?"
+
+                    mu "I. Don't. Know."
+                    mu "People hear my Proficiency and think it's permission to ask and show me all the gross things they're too scared to talk to an actual doctor about."
+
+                    n "Oh."
+
+                    mu "People will ask me weird stuff no matter what I do."
+                    mu "At least this way it's less people and I won't have to read essays."
+
+                    jump mu_intro
+
+                "Are you going to use it?":
+                    $ Intel += 1
+
+                    mu "Maybe. I mean, I guess it'd cover A and P, but..."
+                    mu "I don't know if it's worth the money or effort."
+                    mu "If I'm taking on heaps of debt, I need to be certain it's for something I actually want to do."
+                    mu "Med school doesn't look kindly on the uncertain."
+
+                    n "What else would you do?"
+
+                    mu "Homeopathy, pharmacology, farming; whatever's easiest."
+
+                    n "Farming?"
+
+                    mu "Yeah."
+
+                    "He blows out a cloud of smoke."
+
+                    mu "Agricultural farming."
+
+                    n "Must be nice to have so many options."
+
+                    mu "Yeah, if only those options didn't cost the same as a new house."
+
+                    jump mu_intro
+                
+                "Need any help?":
+                    $ MuRep += 1
+
+                    mu "What do you know about medicine?"
+
+                    "Ironically, I know quite a bit about medicine."
+                    "My father was particularly enchanted with using me as a test subject for all his patent drugs."
+                    "Most of what he made were stimulants or Proficiency enhancers, neither of which would be applicable here."
+                    "However..."
+
+                    n "I meant with finding your lighter."
+                    n "I didn't hear anything fall, so it's probably on the bed somewhere."
+
+                    mu "Oh dang, yeah. It's not mine though. It's the nurse's."
+
+                    n "What would they need a lighter for?"
+
+                    mu "You really think I'd be smoking in here without permission?"
+
+                    n "Well, no, but I assumed you didn't care. I didn't think you'd ask-"
+
+                    mu "Of course I'd tell the nurse if I was smoking; she's the one I'd have to go to if I overdo it."
+                    mu "Found it!"
+
+                    "He holds aloft a small lighter with a skeleton on it."
+
+                    jump mu_intro
+
+            label mu_intro:
+
+            mu "Why did you come here anyway? Have any allergies or scripts the nurse needs?"
+
+            n "No. Just figuring out where everything is."
+            n "If they make us participate in P.E., I'll end up here eventually."
+            n "I have a strange knack for getting hit in the face with sports equipment."
+
+            mu "Wait, no way. Were you the kid that got a bloody nose from a sprout ball?"
+
+            n "They're harder than they look."
+
+            mu "They're made of yarn, man, it doesn't get cushier than that man."
+            mu "I thought Dyre was exaggerating all those times. That's too rich."
+
+            "I don't think he's going to stop laughing any time soon."
+
+            n "Well, now I know where the nurse is supposed to be. I'll be going now."
+
+            mu "Hey, hey; watch out for flying pompoms. Wouldn't want you to have to check in on your first day."
+
+            n "Hilarious."
+
+            "nfortunately, I've been injured by less threatening objects."
+            "What he said in jest could very well happen if I run into the wrong cheerleader."
+
+            hide sprite MuBase
+
+            call FindPeople
+
         "Next":
             call FindPeople2
 
