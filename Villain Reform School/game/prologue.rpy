@@ -1,80 +1,3 @@
-label newgame:
-# Player's Stats
-    $ Vigor = 0
-    $ Vision = 0
-    $ Intel = 0
-    $ Charm = 0
-
-# Player Data
-    $ VigorSP = 0
-    $ VigorMax = 3
-    $ VisionSP = 0
-    $ VisionMax = 3
-    $ IntelSP = 0
-    $ IntelMax = 3
-    $ CharmSP = 0
-    $ CharmMax = 3
-
-# Story Reputation Points
-    $ Hero = 0
-    $ Villain = 4
-
-# Daily Life
-    $ FreeActions = 0
-    $ DefaultActionCount = 1
-    $ ExtraActionCount = 2
-    $ Day = 0
-
-# Investigation
-    $ Clue1 = False
-
-# Player Relationships
-    $ chRep = 0
-    $ dRep = 0
-    $ hRep = 0
-    $ iRep = 0
-    $ jRep = 0
-    $ kRep = 0
-    $ kkRep = 0
-    $ kiRep = 0
-    $ mRep = 0
-    $ mhRep = 0
-    $ muRep = 0
-    $ nkRep = 0
-    $ rRep = 0
-    $ reRep = 0
-    $ sRep = 0
-    $ shRep = 0
-    $ tRep = 0
-    $ yRep = 0
-    $ uRep = 0
-
-# Character Flags
-    $ chTurn = 0
-    $ dTurn = 0
-    $ hTurn = 0
-    $ iTurn = 0
-    $ jTurn = 0
-    $ kTurn = 0
-    $ kkTurn = 0
-    $ kiTurn = 0
-    $ mTurn = 0
-    $ mhTurn = 0
-    $ muTurn = 0
-    $ nkTurn = 0
-    $ rTurn = 0
-    $ reTurn = 0
-    $ sTurn = 0
-    $ shTurn = 0
-    $ tTurn = 0
-    $ yTurn = 0
-    $ uTurn = 0
-
-# Prologue Only
-
-    $ friend = 0
-return
-
     # Opening video goes here.
 
 label prologue:
@@ -1369,6 +1292,7 @@ label prologue2:
     "We say our final goodbyes and I watch as the car drives off. Tomorrow will be my first day of school."
     "I can see other kids unloading their luggage and milling about the grounds. Now would be a good chance to find my friends."
 
+    #insert nanase intro here
     scene backgroundschool
 
     show sprite NBase
@@ -1376,6 +1300,8 @@ label prologue2:
     nk "Good morning!"
 
     n "AH!"
+
+    #[Nanase sprite]
 
     nk "I'm sorry, I didn't mean to startle you."
     nk "My name's Nanase Keisan. I'm helping with orientation during move in week."
@@ -1509,10 +1435,13 @@ else:
 label FindPeople1:
     menu:
         "Lecture Hall":
+            #[BG: Lecture Hall or Charm Class]
+
             scene backgroundcharm
 
             $ friend += 1
         
+
             "I arrive at the room where the student council meets."
             "Everything looks too new, too clean, like no one has set foot in here since the school opened."
             "I stand for a while, admiring the leather office chair at the end of the table possibly meant for the student council president."
@@ -1675,14 +1604,13 @@ label FindPeople1:
             "I should get going. There's still more of the school to see."
 
             call FindPeople
-
         "Field":
             scene backgroundfield
 
             "A few years ago, I probably wouldn't be anywhere near here. Maybe this year will be different."
             "In the corner of my eye, I see a girl in black spandex bound over, a pile of papers in her hands."
 
-            show sprite Marikobase
+            show sprite Mbase
 
             m "Hold on a second!"
             m "Hey, the name's Mariko Genki, I'm gathering signatures to start up a Cheer Squad!"
@@ -1836,7 +1764,7 @@ label FindPeople1:
                     jump m_intro
             
             label m_intro:
-
+            hide sprite Mbase
             "I should look around some more."
 
             call FindPeople
@@ -1853,7 +1781,7 @@ label FindPeople1:
             "He has a beaten-up piece of paper in his hand and seems lost."
             "When he looks up at me, I feel a chill run down my spine."
 
-            #[Show Yoku sprite]
+            show sprite YBase
 
             y "Oh, it's you..."
 
@@ -2013,6 +1941,7 @@ label FindPeople1:
                             jump y_intro
 
             label y_intro:
+            hide sprite YBase
 
             "He didn't seem to have that much to say to me. That's fine, I'm not here to make new friends."
             "The sooner I can find a way out of here, the better." 
@@ -2029,6 +1958,8 @@ label FindPeople1:
             "She's looking out towards the sky with a forlorn grimace."
 
             n "Hey... uh, come here often?"
+
+            show sprite UBase
 
             u "No way, Nagen!?"
 
@@ -2180,19 +2111,22 @@ label FindPeople1:
 
             n "Uitto, you gotta trust me on this, I know what I'm doing."
 
-            #[Vision Branch]
+            if $ Vision >= 10
 
-            n "Well, yeah... Uitto, is something wrong?"
+                n "Well, yeah... Uitto, is something wrong?"
 
-            u "How did you know where to find me?"
+                u "How did you know where to find me?"
 
-            n "Well, I didn't know you were here. I've just been kinda wandering around." 
-            n "We're meeting in 313 by four at the latest. Make sure you're there."
+                n "Well, I didn't know you were here. I've just been kinda wandering around." 
+                n "We're meeting in 313 by four at the latest. Make sure you're there."
 
-            u "...yeah... whatever you say."
+                u "...yeah... whatever you say."
+                call Uittoleave
 
-            #[Return to Main Branch]
+            else
+                call Uittoleave
 
+label Uittoleave:
             hide sprite UBase
 
             "There are still other places to look at. I should go."
@@ -2201,7 +2135,7 @@ label FindPeople1:
 
         "Stage":
             #[BG: Theater]
-
+            scene backgroundstage
             "I'm honestly surprised they bothered to build this when there was a functional amphitheater on the grounds."
             "There's only enough seating for twenty to thirty people, but the walls are decorated to create the illusion of a vast balcony."
             "At least they didn't fill the fake seats with human silhouettes."
@@ -2391,7 +2325,7 @@ label FindPeople1:
             "She blows me a kiss and runs off before I can finish objecting."
 
             call FindPeople
-        
+
         "AV Room":
             #[BG: AV Room]
 
@@ -2402,7 +2336,7 @@ label FindPeople1:
             "A mic dangles from the booth's ceiling, hooked up to three different computers."
             "I try to go inside, but the door is locked."
 
-            #[Show Kazz Sprite]
+            show sprite Kkbase
 
             kk "What are you doing here? No one's supposed to be here, bromigo."
 
@@ -2568,7 +2502,7 @@ label FindPeople1:
             n "I won't mess with your shit in the recording booth."
             n "I'm sorry, I'm fine, really."
             
-            #[Hide sprite]
+            hide sprite kkbase
 
             "He still looks worried, but I'm already out the door."
 
@@ -2741,7 +2675,7 @@ label FindPeople2:
         "Back":
             call FindPeople1
         "Pond":
-            #[BG: Front Entrance]
+            scene backgroundpond
 
             "When I think of high school, I imagine a gray cement building with crowded halls and an oppressive air about the place."
             "The kind that's earned from decades of kids grinding gum into the pavement."
@@ -2903,9 +2837,9 @@ label FindPeople2:
             "However, the palettes and busted shelves are too carefully arranged to say they were abandoned."
             "Looking out over the expansive grounds is a kid in loose-fitting festival robes."
             "He gives me a passing glance and resumes glaring at the horizon."
-            "There's no fencing to stop students from sitting on the edge."
+            "There's an obligatory fence, but nothing to stop students from sitting on the edge."
 
-            #Show sprite
+            show sprite Tbase
 
             t "Looking for a way out too?"
             t "If you were thinking of running off into that there forest, you best forget about it."
@@ -3069,6 +3003,8 @@ label FindPeople2:
 
             t "It's going to be a long couple of years."
 
+            hide sprite Tbase
+
             "I couldn't agree more, but this conversation's kind of bumming me out. Not that I blame him, but I should go."
 
             call FindPeople
@@ -3082,7 +3018,7 @@ label FindPeople2:
             "To think that the whole building once looked like this."
             "Hidden amongst the shelves is a girl with dark hair."
 
-            #[Chisei back sprite]
+            show sprite Chbase
 
             ch "Am I in your way?"
 
@@ -3206,17 +3142,17 @@ label FindPeople2:
             n "Has this 'thing' told you anything about me?"
 
             #[If Hero > Villian]
+            if $ Hero >= $ Villain:
+                ch "...yes."
+                ch "It does not want me to believe what others may say about you; that you are a good friend and an honest person."
 
-            ch "...yes."
-            ch "It does not want me to believe what others may say about you; that you are a good friend and an honest person."
-
-            "Not exactly the creepy mentalist stuff I was expecting."
-
+                "Not exactly the creepy mentalist stuff I was expecting."
+            else
             #[If Villian > Hero]
 
-            ch "....."
-            ch "Sometimes I think my mind is playing tricks on me." 
-            ch "Maybe the teachers will see that and put me back with the normal Intelligence Majors."
+                ch "....."
+                ch "Sometimes I think my mind is playing tricks on me." 
+                ch "Maybe the teachers will see that and put me back with the normal Intelligence Majors."
 
             #[Return to Main Branch]
 
@@ -3232,6 +3168,8 @@ label FindPeople2:
             ch "Well then, I must be off. Good day, Nagen. I hope you are able to find what you are looking for."
 
             "She shuffles away, carrying with her a heavy black book... I never told her my name."
+
+            hide sprite Chbase
 
             call FindPeople
 
@@ -3399,7 +3337,7 @@ label FindPeople2:
             "I should get going too."
 
             call FindPeople
-            
+
         "Gym":
             #[BG: Gym]
 
@@ -3553,7 +3491,7 @@ label FindPeople2:
             "I chase after her, but by the time I get outside, she's nowhere to be found."
 
             call FindPeople
-            
+
         "Cafe":
             scene backgroundcafe
 
@@ -3731,7 +3669,7 @@ label FindPeople2:
             "The food's all gone. I should keep moving forward."
 
             call FindPeople
-            
+
         "Next":
             call FindPeople3
 
@@ -3740,7 +3678,7 @@ label FindPeople3:
         "Back":
             call FindPeople2
         "Lab":
-            #[BG: Lab]
+            scene backgroundlab
 
             "As I make my way to the third floor, I hear a huge crash at the end of the hall."
             "The door to the school lab is slightly ajar. I rush in to see a girl with multicolored hair standing in the middle of the room."
@@ -4444,7 +4382,6 @@ label FindPeople3:
             "I really don't want to stick around, not that I believed a word he said. I should look elsewhere."
 
             call FindPeople
-
         "Ampitheater":
             scene backgroundamp
 
@@ -4452,7 +4389,7 @@ label FindPeople3:
             "Hidden behind rows of planters is a small concrete stage"
             "It looks like it hasn't been long since the poppies were watered. The earth smells damp and cool."
 
-            show sprite JBase
+            show sprite JRelax
 
             j "....."
 
@@ -4476,12 +4413,18 @@ label FindPeople3:
 
             n "...right..."
 
+            hide sprite JRelax
+            show sprite JFrustrated
+
             j "Nagen, it's me, Jona."
 
             "That makes more sense. Jona was the most withdrawn and awkward member of our gang."
             "Looks like he covered himself head to toe the moment he got a chance. That explains why he's so calm right now."
 
             n "You certainly got your hands on a lot of... accessories since we last talked."
+
+            hide sprite JFrustrated
+            show sprite JRelax
 
             j "I made them myself! Well, I can't sew or blow glass, but you get the idea."
 
@@ -4498,6 +4441,9 @@ label FindPeople3:
             "There's one right answer."
 
             n "Yeah, kinda."
+
+            hide sprite JRelax
+            show sprite JHappy
 
             j "Then it's kinda working!"
             j "I'm glad you're here. I was starting to think I'd have to track everyone down myself."
@@ -4527,6 +4473,9 @@ label FindPeople3:
 
                     n "N-no."
 
+                    hide sprite JHappy
+                    show sprite JRelax
+
                     j "Really? But you're stuttering and your face is changing colors."
                     j "Hiro said that happens when you're flustered."
 
@@ -4536,13 +4485,18 @@ label FindPeople3:
                     j "I'm still upset there are no strawberry milk cows. The chocolate cows must be lonely."
 
                     "Just let it go, Nagen. You don't want to go down that road again."
+                    hide sprite JRelax
 
                     jump j_intro
 
                 "To start a fight":
                     $ jRep += 1
-
-                    j "!!! Why!?"
+                    
+                    hide sprite JHappy
+                    show sprite JFrustrated
+                    j "!!!"
+                    
+                    j "Why!?"
 
                     n "You kept staring at me. I figured you were trying to start something."
 
@@ -4550,6 +4504,9 @@ label FindPeople3:
 
                     n "What? ...no, I meant- Nevermind."
                     n "You just can't stare at people non-stop like that. People'll get the wrong idea."
+
+                    hide sprite JFrustrated
+                    show sprite JRelax
 
                     j "I was just drawing."
 
@@ -4565,7 +4522,11 @@ label FindPeople3:
 
                     "I know he's not talking about me when he goes off on tangents like this."
 
-                    j "Maybe if you stop acting as you cared, you'd be more self-confident... or conceited..."
+                    j "Maybe if you stop acting as if you cared, you'd be more self-confident... or conceited..."
+
+                    hide sprite JRelax
+                    show sprite JFrustrated
+
                     j "Or is it conceited to assume people are looking at you at all?"
                     j "I forgot where I was going with this."
 
@@ -4579,6 +4540,8 @@ label FindPeople3:
 
                     n "You really don't have to."
 
+                    hide sprite JFrustrated
+
                     jump j_intro
 
                 "Look for an exit":
@@ -4588,6 +4551,9 @@ label FindPeople3:
 
                     "I rarely hung out with Jona one on one. For one, this is the kid that carved up desks for fun."
                     "The other was, well, he reminds me of my mom for some reason..."
+
+                    hide sprite JHappy
+                    show sprite JRelax
 
                     j "I suppose I did talk to you first. Are the others here?"
 
@@ -4601,6 +4567,9 @@ label FindPeople3:
 
                     "He tries to hide the notebooks in his bag."
 
+                    hide sprite JRelax
+                    show sprite JFrustrated
+
                     j "Bad weird or good weird?"
 
                     n "I didn't mean either. Weird is just an adjective."
@@ -4608,6 +4577,9 @@ label FindPeople3:
                     j "People always say that, but they mean 'good' weird or 'bad' weird. Even I can figure that out."
 
                     n "Aahhh... Good weird! I meant good weird."
+
+                    hide sprite JFrustrated
+                    show sprite JHappy
 
                     j "...hunh. Well, you gotta show me your class schedule so I can update your book. My JG logs are pretty dated."
 
@@ -4622,13 +4594,17 @@ label FindPeople3:
 
                     j "Okay!"
 
+                    hide sprite JHappy
+
                     jump j_intro
 
             label j_intro:
 
             n "Anyway, everyone's going to be meeting in room 313 at four."
 
-            j "Everyone, everone!?"
+            show sprite JHappy
+
+            j "Everyone, everyone!?"
 
             n "Yeah. But, uh, you can't come with me, we'll stick out too much walking around together." 
             n "It's gotta be a secret meeting."
@@ -4639,49 +4615,81 @@ label FindPeople3:
 
             j "....."
 
-            hide sprite JBase
+            hide sprite JHappy
 
             call FindPeople
 
-
 label Meeting:
-    #[Cues after player finds all childhood friends. Player does have the option to continue exploring the school before the meeting]
-
     scene backgroundstuco
 
     "I walk into the room to find Hiro and Jona waiting for me. Uitto comes in silently behind me."
     "The last time we were all together, it was to tell everyone that Lethe had passed."
 
+    show sprite JRelax
+
     j "So, who's leading the meeting?"
 
+    hide sprite JRelax
+    show sprite HBase
+
     h "Whadya mean?"
+
+    hide sprite HBase
+    show sprite JRelax
 
     j "Well, usually Odori tells us what to do, but I don't see her here."
     j "I haven't seen her since she called for a cease-fire. Hiro, you were supposed to be guarding the base, where-"
 
+    hide sprite JRelax
+    show sprite HBase
+
     h "So Nagen, what's the plan?"
+
+    hide sprite HBase
+    show sprite JMad
 
     j "Why are you avoiding the question?"
 
+    hide sprite JMad
+
     n "Focus guys, both of you. I never 'said' anything about a plan."
+
+    show sprite HBase
 
     h "So you wanted to hold a meeting and there isn't even a plan?"
 
+    hide sprite HBase
+    show sprite JFrustrated
+
     j "I am so confused."
 
+    hide sprite JFrustrated
+
     n "Guys, I know you're wondering why I called you here."
+
+    show sprite UBase
 
     u "Just spit it out, Nagen. You knew I was here, I'm sure the same went for the others too."
     u "So, where the hell's Odori? Did she just not make the cut or did she stop participating in life too?"
 
+    hide sprite UBase
+    show sprite HBase
+
     h "Uitto!"
 
+    hide sprite HBase
+    show sprite JRelax
+
     j "Well, Nagen, do you know what happened to her?"
+
+    hide sprite JRelax
 
     n "She's... still missing. No one's found her."
 
     "Hiro doesn't look surprised, but he's definitely avoiding Jona's almost accusatory turn towards him."
     "It's hard to tell with the goggles. Uitto keeps glaring at me."
+
+    show sprite UBase
 
     u "That's what I thought..."
     u "So, when are you going to beg for our forgiveness? Or are you going to keep acting like {i}you're{/i} not the one who sold us out?"
@@ -4691,24 +4699,45 @@ label Meeting:
     u "I'm talking about how, despite pleading not-guilty, I ended up in reform school!"
     u "You're the one that knew we'd all be here, so you have to be in their pockets!"
 
+    hide sprite UBase
+    show sprite HBase
+
     h "Quit calling him manipulative! Not everyone is good at talking people into believing lies like you."
     h "We should just be happy we're together again..."
 
+    hide sprite HBase
+    show sprite JMad
+
     j "Of course you would say that, you coward. If it were up to you, we'd be groveling on our bellies years ago."
 
+    hide sprite JMad
+
     n "Now hold on..."
+
+    show sprite HBase
 
     h "You're one to talk! They were asking me about the doomsday cult we supposedly started."
     h "I wonder who's pet project that could have been?"
     h "Your stupid stories probably got us into more trouble than we should have been in."
     h "And you're running around the school looking like a freaking serial killer! Are you trying to get us targeted!?"
 
+    hide sprite HBase
+    show sprite JFrustrated
+
     j "Steampunk is art! Quit acting like my art is hurting people."
+
+    hide sprite JFrustrated
+    show sprite JMad
+
     j "You're the one that left Odori alone with people on our tail!"
+
+    hide sprite JMad
 
     n "Guys! Look, I know things aren't ideal right now, but that's why I called you here."
     n "We got separated on purpose, and all of us were forced to do things we didn't want to do to get by."
     n "But we're together now, and we need to figure out what to do next."
+
+    show sprite UBase
 
     u "Oh really, and why should we listen to you? You sold us out to the DVP!"
 
@@ -4722,7 +4751,13 @@ label Meeting:
     n "They wanted us to turn on each other and make their boarding school look good."
     n "They're afraid of what we accomplish when we work together."
 
+    hide sprite UBase
+    show sprite JDepressed
+
     j "Well, yeah. A faceless organization is ten times scarier than a handful of teens."
+
+    hide JDepressed
+    show HBase
 
     h "I'd have to disagree. Faceless organizations don't punch you in the junk in the middle of the night."
 
@@ -4730,16 +4765,25 @@ label Meeting:
 
     h "My foster brother's an asshole."
 
+    hide sprite HBase
+    show sprite UBase
+
     u "...right. So, you were saying..."
 
     n "If we work together, all of us can get the hell out of here, for good."
     n "It's going to be lame, but if we can play the part for a year and play it well, they've got nothing on us."
     n "We make them think we're model students and we gain support from the students here to prove our innocence."
 
+    hide sprite UBase
+    show sprite JDepressed
+
     j "How's that any different from what they told us to do?"
 
     n "Because the whole student body will be in the palm of our hands and they'll be none the wiser."
     n "I'm going to take control of whatever passes for a student council and... well that's all I got for now."
+
+    hide sprite JDepressed
+    show sprite HBase
 
     h "...cool..."
 
@@ -4747,7 +4791,13 @@ label Meeting:
 
     h "Yes! Good! I like this plan!"
 
+    hide sprite HBase
+    show sprite JHappy
+
     j "That isn't exactly a plan, but it doesn't sound like it'll get us in trouble..."
+
+    hide sprite JHappy
+    show sprite UBase
 
     u "So, we get stuck here for a year, make nice and live happily ever after?"
 
@@ -4755,7 +4805,13 @@ label Meeting:
 
     u "Not interested."
 
+    hide sprite UBase
+    show sprite JFrustrated
+
     j "What are you talking about?"
+
+    hide sprite JFrustrated
+    show sprite UBase
 
     u "You all can act like the last few years didn't happen and live in a fantasy world, but I'm not interested in lying to the randos at this school."
     u "I'm a wanted criminal, I ruined people's lives, and no amount of crocodile tears will make that okay."
@@ -4765,13 +4821,24 @@ label Meeting:
 
     u "Some of us actually want a normal adult to say we were right instead of begging for probation."
 
+    hide sprite UBase
+    show sprite HBase
+
     h "Come on, guys, arguing will get us nowhere."
 
+    hide sprite HBase
+    show sprite UBase
+
     u "I'll see you later, Hiro... maybe. I shouldn't be here..."
+
+    hide sprite UBase
+    show sprite JFrustrated
 
     j "Uitto, wait!"
 
     "She leaves without another word."
+
+    hide sprite JFrustrated
 
     menu:
         "Forget her":
@@ -4780,13 +4847,20 @@ label Meeting:
 
             n "Who needs her anyways? It's not like she ever did anything important."
 
+            show sprite HBase
+
             h "Come on man, I know you're pissed-"
 
             n "No, she wants to throw her little diva tantrum, that's fine."
 
+            hide sprite HBase
+            show sprite JRelax
+
             j "Doesn't her ditching throw off your master plan?"
 
             n "Every experiment has an outlier. As long as the majority of the school believes us, nothing will change."
+
+            hide sprite JRelax
 
             jump meet_main
 
@@ -4796,16 +4870,24 @@ label Meeting:
 
             n "She just needs some time to get over it. She will get over it, won't she?"
 
+            show sprite HBase
+
             h "Ehh... hard to say."
             h "She still refuses to watch Avenger League ever since it took the time slot of her favorite show."
+
+            hide sprite HBase
 
             n "Empire of the Lost did not deserve to be canceled and I support her decision."
             n "But this is something entirely different. This is about our lives."
             n "She could end up with a life sentence. She knows that, right?"
 
+            show sprite JDepressed
+
             j "I don't know. She didn't look mad at us, not enough to hold a grudge."
             j "I don't care what her aura looked like to you."
             j "Nagen's right, she's not going to hold a grudge over this forever. We just have to wait."
+
+            hide sprite JDepressed
 
             jump meet_main
 
@@ -4817,6 +4899,8 @@ label Meeting:
             scene backgroundhall1 #Not sure if this is the right one
 
             "Has she been crying?"
+
+            show sprite UBase
 
             u "What?"
 
@@ -4831,7 +4915,10 @@ label Meeting:
 
             n "Okay. If there's anything I can do-"
 
-            u "You'll try and fix it, I know. This is just a little too much right now. I'll see you later."
+            u "You'll try and fix it, I know."
+            u "This is just a little too much right now. I'll see you later."
+
+            hide sprite UBase
 
             "So she isn't actually mad at me. I guess that's good, but I'm still worried."
             
@@ -4843,7 +4930,7 @@ label Meeting:
         "As for Uitto... I know we're all upset getting shoved into reform school, but it didn't seem like she had a better idea than mine."
         "I can't postpone returning to my dorm any longer."
 
-        scene backgrounddrom
+        scene backgrounddroom
 
         "Part of my aversion comes from how barren and sterile the rooms are."
         "I'd compare this place to a prison, but at least prisons are fully indoors."
@@ -4851,3 +4938,7 @@ label Meeting:
         "I hope it's well-ventilated. I cringe to think of how hot this place could get in the summer."
         "I don't have the energy to unpack yet. I shrug out off my jacket and collapse on the bare mattress."
         "As I drift off to sleep, I desperately try to convince myself everything will work out in the end."
+call chapter_one
+
+label Meeting:
+    pass
