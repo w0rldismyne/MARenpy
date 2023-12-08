@@ -6,7 +6,8 @@ init python:
             self.Name = Name
             self.Description = Description
             self.Show = False
-    
+
+        @property
         def GetDescription(self):
             return self.Description
 
@@ -41,6 +42,7 @@ init python:
 
 default inventory = Inventory()
 default description = "Place Holder Text 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8"
+default page = 1
 
 label inventory:
 
@@ -73,33 +75,94 @@ label inventory:
 screen inventory(inventory = inventory):
     
     modal True
+
+    # Background
     image "images/Clues/Cork.png"
 
-    $ width = 3
-    $ height = 3
-    # height = 1 + int(inventory.Count/3)
-
+    # Inventory Banner - X 40.0%-60.0%, Y 2.5%-12.5% + M 2.5% = 5.0%-15.0%
     image "images/Clues/Tape.png":
-        xalign 0.5
-        yoffset 27
-        xsize 1280
-        ysize 120
+        xanchor 0.5
+        yanchor 0.5
+
+        # 50%
+        xpos 960
+
+        # 7.5%
+        ypos 81
+
+        # 20%
+        xsize 384
+
+        # 10%
+        ysize 108
 
     text "INVENTORY":
-        xalign 0.5
-        yoffset 54
+        xanchor 0.5
+        yanchor 0.5
+
+        # 50%
+        xpos 960
+
+        # 7.5%
+        ypos 81
+
         size(50)
         italic True
-#5 15 2.5 15 2.5 15 5 40
+
+    # Description Box - X 70.0%-100% + M (-54) = 67%~-97%~, Y 20.0%-95.0% + M(10%) = 15.0%-100%
     image "images/Clues/Paper.png":
-        xalign 1.0
-        yalign 1.0
-        xsize 768
-        ysize 864
-#5 20 5 20 5 20 5
+        xanchor 0.5
+        yanchor 0.5
+
+        # 85% -> 82.1875%~
+        xpos 1632
+        xoffset -54
+
+        # 56.25%~
+        ypos 607
+
+        # 30%
+        xsize 576
+
+        # 77.5%
+        ysize 837
+
     image "images/Clues/PushPin.png":
+        xanchor 0.5
+        yanchor 0.5
+
+        xpos 1632
+        xoffset -54
+
+        ypos 243
+
+    frame:
+        xpos 1609
+        ypos 604
+        xanchor 0.5
+        yanchor 0.5
+        xsize 450
+        ysize 641
+
+
+    text "[description]":
         xpos 1536
-        ypos 216
+        ypos 366
+        xsize 500
+        ysize 691
+        xanchor 0.5
+        yanchor 0.5
+
+    # Return Button
+    textbutton _("Return") action Hide("inventory"):
+        xalign 1.0
+        yalign 0.0
+
+
+    # Clue Arrangement
+    $ width = 3
+    $ height = 2
+    # height = 1 + int(inventory.Count/3)
 
     grid width height:
         spacing 64
@@ -108,38 +171,63 @@ screen inventory(inventory = inventory):
         xpos 576
         ypos 648
         
+        $ list_tracker = 0
+        $ list_page_minimum = (page - 1) * width * height
+        $ list_page_maximum = page * width * height
+
         for clue in inventory.Clues:
+
             if (clue.Show is True):
-                imagebutton:
-                    xsize 192
-                    ysize 216
-                    idle "images/Clues/Cluecard_blank_small.jpg"
-                    hover "images/Clues/Cluecard_hover_small.jpg"
-                    action Hide("inventory_description"), SetVariable("description", clue.GetDescription()), Show("inventory_description")
-                #image "images/Clues/[clue.Name].png":
-                #    xsize 192
-                #    ysize 216
+
+                $ list_tracker += 1
+
+                if (list_tracker > list_page_minimum and list_tracker <= list_page_maximum):
+                    imagebutton:
+                        xsize 192
+                        ysize 216
+                        idle "images/Clues/Cluecard_blank_small.jpg"
+                        hover "images/Clues/Cluecard_hover_small.jpg"
+                        action SetVariable("description", clue.GetDescription), renpy.restart_interaction
+                
+                else:
+                    continue
 
     grid width height:
-        xspacing 170
-        yspacing 201
+        spacing 64
         xanchor 0.5
         yanchor 0.5
         xpos 576
-        ypos 540
+        ypos 648
+
+        $ list_tracker = 0
 
         for clue in inventory.Clues:
-            if (clue.Show is True):
-                image "images/Clues/PushPin.png":
-                    xsize 91
-                    ysize 60
 
-screen inventory_description:
-    modal False
-    text "[description]":
-        xpos 1536
-        ypos 366
-        xsize 500
-        ysize 691
-        xanchor 0.5
-        yanchor 0.5
+            if (clue.Show is True):
+
+                $ list_tracker += 1
+
+                if (list_tracker > list_page_minimum and list_tracker <= list_page_maximum):
+                    image "images/Clues/PushPin.png":
+                        xsize 91
+                        ysize 60
+                        
+                else:
+                    continue
+
+    # Page Controls
+    textbutton _("Previous Page"):
+        xalign 0.0
+        yalign 1.0
+        if (page > 1):
+            action SetVariable("page", page - 1), renpy.restart_interaction
+
+    text "[page]":
+        xalign 0.5
+        yalign 0.5
+
+    textbutton _("Next Page"):
+        xalign 1.0
+        yalign 1.0
+        if (page < inventory.Count / 6):
+            action SetVariable("page", page + 1), renpy.restart_interaction
