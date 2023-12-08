@@ -149,6 +149,8 @@ label chapter_one:
     hide sprite UBase
 
     "We’re interrupted by a comical scale of trumpets as the vice principal bounds on stage. Principal Vivaldi follows close behind in silence."
+
+    show sprite IkBase
     
     ik "Welcome, everyone! I hope you all had a good night’s sleep!"
 
@@ -157,6 +159,7 @@ label chapter_one:
     ik "We’ll work on that later. Right now, we wanted to remind you all of a few important school rules before classes start."
     ik "With a lot of hard work, we hope this place can become like home to you."
 
+    hide sprite IkBase
     show sprite VBase
     
     v "All students are to remain on campus at all times."
@@ -164,10 +167,12 @@ label chapter_one:
     v "It’s easy to get lost out there and we don’t want anyone to get hurt."
 
     hide sprite VBase
+    show sprite IkBase
     
     ik "There is a zero tolerance policy toward anyone who commits an act of violence or aggression."
     ik "Hurting another student, or threatening another student, will result in immediate detention."
 
+    hide sprite IkBase
     show sprite VBase
     
     v "Finally, no student is allowed in the computer lab without an instructor present."
@@ -178,9 +183,12 @@ label chapter_one:
     hide sprite VBase
     
     "They didn’t even let me transfer my music onto their cheap burner phone. At least I know my stuff’s safe with Maimai."
+
+    show sprite IkBase
     
     ik "Now to end on a happier note, here’s Mariko with some announcements about school clubs."
 
+    hide sprite IkBase
     show sprite MBase
     
     m "How’s everyone feeling this morning!?"
@@ -318,17 +326,22 @@ label VigorClass1:
     "Due to the good weather, class is being held outside."
     "No pencils or paper or devices, just all of us gathered in the first two rows while he tries to focus his ideas into an hour and a half."
     "It’s only the first day of class and there’s already a classroom wide brawl."
+
+    show sprite HBase
      
     h "Nagen, thank god! See, I told you guys there are more people on my side."
 
+    hide sprite HBase
     show sprite MBase
      
     m "Cyberdork isn't a Vigor Major, he doesn't count."
     
     hide sprite MBase
+    show sprite HBase
 
     h "He does too! Now that we have even teams, we can go back to normal exercises."
 
+    hide sprite HBase
     show sprite MBase
     
     m "Group team building is normal! Us girls have always had to pick up the slack around here. The least you could do in return is fall in line."
@@ -361,26 +374,35 @@ label VigorClass1:
     hide sprite KBase
     
     "Shoma nods. I feel out of place sitting alongside them. Second guessing my decision, I go to leave, but Hiro calls out to me again."
+
+    show sprite HBase
     
     h "Wait, Nagen, don't go! You gotta stay. I didn't mean to ignore you."
     
     n "Dude, I don't think I belong here, the culture shock alone..."
-    
+
+    hide sprite HBase
+    show sprite IkBase
+
     ik "This isn't going to be a traditional Vigor class. That means no 'teams' or competitions."
 
+    hide sprite IkBase
     show sprite MBase
     
     m "But, but what about nationals-"
 
     hide sprite MBase
+    show sprite HBase
     
     h "You have to be joking!"
 
+    hide sprite HBase
     show sprite KBase
     
     k "Then what's the point-"
 
     hide sprite KBase
+    show sprite IkBase
     
     ik "Now, now guys, I'm sure we can find a way to make everyone happy."
     
@@ -391,27 +413,39 @@ label VigorClass1:
     n "Don't you have a lesson plan or something?"
     
     ik "I have a few ideas, but there's not a lot in the books to base them on. So I don't know-"
+
+    hide sprite IkBase
+    show sprite HBase
      
     h "This is supposed to be the fun 'no homework' class. Y'know, strength training and junk."
 
+    hide sprite HBase
     show sprite MBase
     
     m "We're the school's breadwinners. That's why we use class time to prepare for competitions."
 
     hide sprite MBase
+    show sprite IkBase
     
     ik "There actually won't-"
-    
-    h "We're all going to get stuck doing the same thing. That's why it should be something fun, not repeating the same flips and twists over and over again!"
 
+    hide sprite IkBase
+    show sprite HBase
+    
+    h "We're all going to get stuck doing the same thing."
+    h "That's why it should be something fun, not repeating the same flips and twists over and over again!"
+
+    hide sprite HBase
     show sprite MBase
     
     m "I never said we had to do cheer."
 
     hide sprite MBase
+    show sprite HBase
     
     h "You were thinking it!"
 
+    hide sprite HBase
     show sprite ReBase
     
     re "Guys, please."
@@ -422,36 +456,52 @@ label VigorClass1:
     k "What a colossal waste of time. I knew I should have ditched."
 
     hide sprite KBase
+    show sprite IkBase
     
     ik "Please don't!"
     
-    "This is a nightmare. The teacher is in way over his head and clearly doesn't know how to hold a class... Hiro, please forgive me for what I'm about to do."
+    "This is a nightmare. The teacher is in way over his head and clearly doesn't know how to hold a class..."
+    "Hiro, please forgive me for what I'm about to do."
     
     n "What's going to be on the test?"
     
     "I feel three different people glare at me. Rei watches on with pity in her eyes."
+
+    hide sprite IkBase
+    show sprite HBase
     
     h "Dude!"
 
+    hide sprite HBase
     show sprite ShBase
     
     sh "Test? What test?"
 
     hide sprite ShBase
+    show sprite IkBase
     
-    ik "Excellent questions! Umm, since there's no curriculum guidelines for what I want to do, I'm having to make everything from scratch. So we're kinda playing it by ear."
+    ik "Excellent questions! Umm, since there's no curriculum guidelines for what I want to do, I'm having to make everything from scratch."
+    ik "So we're kinda playing it by ear."
     
     n "But there is going to be a test?"
+
+    hide sprite IkBase
+    show sprite HBase
     
     h "DUDE!"
+
+    hide sprite HBase
+    show sprite IkBase
     
     ik "Yes. Today we'll be assessing how bad the damage is."
 
+    hide sprite IkBase
     show sprite ReBase
     
     re "Damage!?"
 
     hide sprite ReBase
+    show sprite IkBase
      
     ik "Not like that. Sorry, poor word choice. Umm, you all were chosen by Estella for your unique abilities and were forced to put all your eggs in one basket."
     ik "And then they sold the baskets like they were their eggs."
@@ -489,6 +539,8 @@ label VigorClass1:
     Everyone "...the body?"
     
     ik "We'll keep working on that."
+
+    hide sprite IkBase
 
     call Day_1Event_2
         
@@ -817,9 +869,16 @@ label IntelClass1:
     "I arrive at my class as printed on my schedule."
     "Intelligence Majors typically dominate most academic institutions, so it’s especially odd to have us all crammed in the same class together like this."
     
+    show sprite KkBase
+
     kk "And Nagen makes five; that's everyone then."
+
+    hide sprite KkBase
+    show sprite YBase
     
     y "Judging by the setting, I suppo-ose this will be more of a theory than i-independent practice."
+
+    hide sprite YBase
     
     "He begrudgingly shoves his instrument case under the table."
 
@@ -846,25 +905,37 @@ label IntelClass1:
     mu "At least psych would be useful."
 
     hide sprite MuBase
+    show sprite YBase
     
     y "Not for Chisei, or any other creatives for that matter. How un-nfortunate."
+
+    hide sprite YBase
+    show sprite KkBase
     
     kk "Umm, dudes, where's the teacher?"
+
+    hide sprite KkBase
     
-    "Class should have started ten minutes ago. We look around, but we can't find any evidence of the teacher's stuff either. We are in the right room, I’m sure of it."
+    "Class should have started ten minutes ago. We look around, but we can't find any evidence of the teacher's stuff either."
+    "We are in the right room, I’m sure of it."
     
     show sprite MhBase
 
     mh "Maybe Yaguchi's just late?"
 
     hide sprite MhBase
+    show sprite YBase
     
     y "Unacceptable. Every-y teacher has the ability to directly contact us. If he was running behind, he shhhhould have told us."
     
+    hide sprite YBase
+    show sprite KkBase
+
     kk "So, like, free period then?"
     
     n "No, hell no, if we have to be here, so does he."
 
+    hide sprite KkBase
     show sprite MuBase
     
     mu "Worried you'll get a zero are you?"
@@ -878,20 +949,31 @@ label IntelClass1:
     mh "Maybe he's in his office? Let's go catch him red-handed!"
 
     hide sprite MhBase
+    show sprite KkBase
     
     kk "Red handed doing what?"
+
+    hide sprite KkBase
+    show sprite YBase
     
     y "Neglecting his duties."
+
+    hide sprite YBase
+    show sprite KkBase
     
     kk "You guys really want to provoke a brotentate of this place over grades?"
 
+    hide sprite KkBase
     show sprite MuBase
     
     mu "Nagen, you know where everything is, right? Where's his office at?"
 
     hide sprite MuBase
+    show sprite KkBase
     
     kk "We're really doing this?"
+
+    hide sprite KkBase
     
     n "I'm bad at giving directions, but I can show you where it is."
     
@@ -904,6 +986,8 @@ label IntelClass1:
     "He can't be that much older than us. He doesn't ever bother to look up from his work as we burst into his office."
     
     n "This looks like a security office."
+
+    show sprite YaBase
     
     ya "That's because it's what I was hired for. I agreed to babysit you until they found proper tutors that wanted to work with you."
     
@@ -913,11 +997,24 @@ label IntelClass1:
     
     "He continues working on a large hard drive, soldering bits of copper to each other in incomprehensible patterns."
     
+    hide sprite YaBase
+    show sprite YBase
+
     y "Is that all?"
+
+    hide sprite YBase
+    show sprite YaBase
     
-    ya "Yeah. I'm not going to assign a bunch of busy work for you to finish just to see if you will. Just stay out of trouble. Go study whatever you want, or don't."
+    ya "Yeah. I'm not going to assign a bunch of busy work for you to finish just to see if you will."
+    ya "Just stay out of trouble. Go study whatever you want, or don't."
+
+    hide sprite YaBase
+    show sprite YBase
     
     y "Aren't you g-going to... teach us?"
+
+    hide sprite YBase
+    show sprite YaBase
     
     ya "What the hell could I teach you? I'm a metal head engineer, none of that fits under your umbrellas. And y'all too specialized to pick one to study up on."
     ya "So what am I supposed to do if you ask a question, Google it? You could do that yourself and cut out the middle man."
@@ -944,25 +1041,38 @@ label IntelClass1:
     ya "What good is understanding astrophysics when what makes you happy is making sandwiches?"
     ya "That's what being smart is, figuring out what makes you happy and how to get it."
     
+    hide sprite YaBase
     show sprite MuBase
 
     mu "What would make me happy is a teacher who does his job."
     
     hide sprite MuBase
+    show sprite YaBase
 
-    ya "Jesus, college kids would just take the day off when their teacher's absent. Can't you just take a day off?"
+    ya "Jesus, college kids would just take the day off when their teacher's absent."
+    ya "Can't you just take a day off?"
+
+    hide sprite YaBase
+    show sprite YBase
     
     y "....."
 
+    hide sprite YBase
     show sprite MhBase
     
     mh "....."
 
     hide sprite MhBase
     
-    "No one's answering, which in itself is an answer, I guess. I'm just glad I'm not the only one that feels guilty if I'm not working on something."
+    "No one's answering, which in itself is an answer, I guess."
+    "I'm just glad I'm not the only one that feels guilty if I'm not working on something."
     
+    show sprite KkBase
+
     kk "Is that gonna be an essay prompt or something?"
+
+    hide sprite KkBase
+    show sprite YaBase
     
     ya "Sit down, all of you."
     ya "I'm going to ask you something, and I'm afraid I already know the answer."
@@ -990,33 +1100,44 @@ label IntelClass1:
     ya "It took me almost a decade to undo what that kind of thinking did to me."
     ya "The least I can do is put a tourniquet on your bleeding hearts before you completely fall apart in your thirties."
     
+    hide sprite YaBase
     show sprite MuBase
 
     mu "And how do you plan to do that?"
 
     hide sprite MuBase
+    show sprite YaBase
     
     ya "For starters, getting you to do things outside of your Proficiency."
+
+    hide sprite YaBase
+    show sprite YBase
     
     y "Uh... w-what?"
     
     n "You're putting all your self-esteem into one thing. That's a shit idea. God forbid you go deaf, what would you do?"
     
     "Yoku visibly pales."
+
+    hide sprite YBase
+    show sprite YaBase
     
     ya "That's an extreme example, but you get the idea."
     ya "Having a Proficiency should be a perk, not a life sentence."
     ya "So we're going to mix it up, each of you is going to pick a random thing and we'll all look into it together."
     ya "It can literally be anything-"
 
+    hide sprite YaBase
     show sprite MhBase
     
     mh "Cosmetology!"
 
     hide sprite MhBase
+    show sprite YaBase
     
     ya "....."
 
+    hide sprite YaBase
     show sprite MhBase
     
     mh "I, uh, please? It's just a hobby right now, but I'd like to be able to do more than dye extensions if I could."
@@ -1024,27 +1145,35 @@ label IntelClass1:
     hide sprite MhBase
     
     n "I don't think-"
+
+    show sprite YaBase
     
     ya "Perfect, we'll start with that."
 
+    hide sprite YaBase
     show sprite MuBase
     
     mu "...really?"
 
     hide sprite MuBase
+    show sprite YaBase
     
     ya "She had an idea first. If you come up with anything, send it my way and we'll rotate through the year."
     
     "I have no idea what to pick. At least Kazz and Momoko have some idea of what they want to learn. That'll buy me a few weeks."
 
+    hide sprite YaBase
     show sprite MuBase
     
     mu "I don't understand how this is better than studying in the nurse's office."
 
     hide sprite MuBase
+    show sprite YBase
     
     y "Be-ethoven went deaf a-and continued to compo-ose. As long as I can see and fffeel, I can still write mu-usic."
     
+    hide sprite YBase
+
     "This is going to be a long year."
     call Day_1Event_2
 
@@ -1109,8 +1238,11 @@ label Day_1Event_2:
     re "You lied to us!?"
 
     hide sprite ReBase
+    show sprite YBase
 
     y "So wher-re are the other-rs?"
+
+    hide sprite YBase
 
     n "There were no 'others', it was just us."
 
@@ -1119,9 +1251,11 @@ label Day_1Event_2:
     d "All of you knew. You knew, and then you just show up here like nothing happened? How long were you planning to lie to us?"
 
     hide sprite DBase
+    show sprite TBase
 
     t "Does it matter? What's done is done."
 
+    hide sprite TBase
     show sprite IBase
 
     i "Do you want to take your licks all at once or in small doses throughout the year?"
@@ -1134,6 +1268,7 @@ label Day_1Event_2:
     ch "Deliverance should only have been provided to the ones it was owed."
 
     hide sprite ChBase
+    show sprite UBase
 
     u "We don't owe you shit."
     u "You don't like that we're here? Fine!"
@@ -1141,6 +1276,7 @@ label Day_1Event_2:
     u "We didn't come here to start shit, we came because we were forced to."
     u "If anyone lays a hand on Hiro, I'll claw your eyes out."
 
+    hide sprite UBase
     show sprite ReBase
 
     re "...you're not even going to apologize?"
@@ -1305,13 +1441,27 @@ label Day_1Event_2_2:
 
     scene backgroundhall2
 
+    show sprite UBase
+
     u "There's not much here."
+
+    hide sprite UBase
+    show sprite JFrustrated
 
     j "The teachers' might have confiscated everything already."
 
+    hide sprite JFrustrated
+    show sprite KkBase
+
     kk "Nonononono; what are you doing!? No one's allowed in the booth!"
 
+    hide sprite KkBase
+    show sprite JDepressed
+
     j "I'm very much outside the booth. It's too small to fit all of us."
+
+    hide sprite JDepressed
+    show sprite KkBase
 
     kk "Bro, just, okay?"
 
@@ -1319,11 +1469,22 @@ label Day_1Event_2_2:
 
     kk "I get you're ticked off, but don't drag my equipment into this. I already lost half my tech today, I can't lose Pepper too."
 
+    hide sprite KkBase
+    show sprite UBase
+
     u "Pepper?"
+
+    hide sprite UBase
+    show sprite KkBase
 
     kk "My boom mic. Now get out. I'm the only one who's managed to keep PA privileges and I plan to keep it that way."
 
+    hide sprite KkBase
+    show sprite HBase
+
     h "Alright, fine. We'll leave you alone with... Pepper."
+
+    hide sprite HBase
 
     "I think I have enough to start questioning people, but where to start?"
 
@@ -1372,11 +1533,18 @@ label Day_1Event_2_2:
 
     "By the time I look presentable, first period is over and everyone's milling about the halls."
 
+    show sprite JHappy
+
     j "You're alive! No one else wanted to pair up with me, I had to work in a group of three because of you."
+
+    hide sprite JHappy
+    show sprite UBase
 
     u "If you're going to ditch, you could at least text us first. We were worried about you."
 
     n "Sorry, I set my alarm, but-"
+
+    hide sprite UBase
 
     "Across the hall someone slams a locker door shut. Kazz is pacing around while his friends watch with varying degrees of interest."
 
@@ -1385,34 +1553,52 @@ label Day_1Event_2_2:
     m "Seriously, Kazz, what's with killing the broadcast? I was almost late to class because of you."
 
     hide sprite MBase
+    show sprite KkBase
 
     kk "I appreciate your concern, but you're at an eight and I need you at a five or less, my dude. We can't all be eights. Mu, please try again."
 
+    hide sprite KkBase
     show sprite MuBase
 
     mu "I am trying. I've called, like, ten times. It's not down here."
 
     hide sprite MuBase
+    show sprite KkBase
 
     kk "Have you actually called ten times or are you estimating?"
+
+    hide sprite KkBase
+    show sprite TBase
 
     t "He could call forty and it wouldn't matter if it died in the middle of the night."
     t "I'm sure it'll turn up eventually. You can live a few days without your phone, can't you?"
 
+    hide sprite TBase
+    show sprite KkBase
+
     kk "I can see my life flash before my eyes. So many choice memes."
 
+    hide sprite KkBase
     show sprite KBase
 
     k "...my demo reels."
 
     hide sprite KBase
+    show sprite KkBase
 
     kk "...the embarrassing pictures of Dyre."
 
+    hide sprite KkBase
+    show sprite TBase
+
     t "How embarrassing?"
+
+    hide sprite TBase
+    show sprite KkBase
 
     kk "Don't know; he hasn't seen them yet... I think."
 
+    hide sprite KkBase
     show sprite KBase
 
     k "Dyre didn't take your phone, ding dong, it's obviously one of them."
@@ -1426,14 +1612,17 @@ label Day_1Event_2_2:
     m "Let's not jump to thinking it's stolen. It's probably under his pillow or something stupid."
 
     hide sprite MBase
+    show sprite HBase
 
     h "Exactly, there's no reason for us to take Kazz's phone. All of us have the same crappy model anyway."
 
+    hide sprite HBase
     show sprite KBase
 
     k "She would. She's been so jelly of me ever since we got here and now she's trying to sabotage my debut a second time!"
 
     hide sprite KBase
+    show sprite UBase
 
     u "....."
 
@@ -1445,16 +1634,21 @@ label Day_1Event_2_2:
 
     u "Well, if Nagen doesn't remember it, it didn't happen."
 
-    "Kitsune trembles, her jaw clenched tight."
-
+    hide sprite UBase
     show sprite KBase
+
+    "Kitsune trembles, her jaw clenched tight."
 
     k "You take that back, you self-centered harlot."
 
     hide sprite KBase
+    show sprite UBase
 
     u "Honey, it's not a bit we're doing."
     u "I honestly don't remember what you're talking about and we have zero interest in that nerd's little trinket."
+
+    hide sprite UBase
+    show sprite HBase
 
     "Hiro steps between the two feuding girls with a stern expression."
 
@@ -1462,18 +1656,23 @@ label Day_1Event_2_2:
     h "If you want our help looking for Kazz's phone, that's one thing, but don't go blaming us for everything that goes wrong just because you can."
     h "Kazz, what does it look like?"
 
+    hide sprite HBase
+    show sprite KkBase
+
     kk "Black with an hourglass full of skulls on the back."
+
+    hide sprite KkBase
 
     #[Player Choice]
     #A. We'll keep an eye out ( No quest for now, we gotta slim down the scope )
 
-    kk "Really? Thanks so much, really, that thing's the second most important thing in the world to me."
+    #kk "Really? Thanks so much, really, that thing's the second most important thing in the world to me."
 
-    t "What's the first, friendship?"
+    #t "What's the first, friendship?"
 
-    kk "If you're going to make fun of my brolosophy, you'll never earn the power of friendship."
+    #kk "If you're going to make fun of my brolosophy, you'll never earn the power of friendship."
 
-    #B. Haven't seen it
+    n "I haven't seen it."
 
     show sprite MuBase
 
@@ -1493,22 +1692,41 @@ label Day_1Event_2_2:
 
     "The bell rings, leaving us only five minutes until our next class. As the others depart, Jona shakes his head."
 
+    show sprite JDepressed
+
     j "Things would be so much easier if some of us were nicer."
+
+    hide sprite JDepressed
+    show sprite HBase
 
     h "Hey!"
 
-    j "I'm not bagging on you, man, but I'm not spending any of my breaks looking for someone else's stuff. One of you two should do it, you were the meanest."
+    hide sprite HBase
+    show sprite JFrustrated
+
+    j "I'm not bagging on you, man, but I'm not spending any of my breaks looking for someone else's stuff."
+    j "One of you two should do it, you were the meanest."
 
     n "What did I do?"
 
-    u "Defended me it seems, but hey, I'm not complaining. Anyway, Jona, no one promised we'd find it."
+    hide sprite JFrustrated
+    show sprite UBase
+
+    u "Defended me it seems, but hey, I'm not complaining."
+    u "Anyway, Jona, no one promised we'd find it."
+
+    hide sprite UBase
 
     #[If Quest 1 = Y]
 
     # g "During your time at school, some students will ask for your help. Helping other students is a great way to improve your reputation. Some students will have rewards in exchange for your help." 
     #[Main Branch]
 
+    show sprite NBase
+
     nk "....."
+
+    hide sprite NBase
 
     "We splinter off into our respective classes. I do my best not to nod off during Ms. Sato's lecture on symbolism."
 
@@ -1520,6 +1738,8 @@ label Day_1Event_2_2:
     "Jona and I have found a quiet corner to hide in for science."
     "It’s just far enough away from the teacher to overlook, but not so far away we'll get targeted for being 'too quiet'."
 
+    show sprite JMad
+
     j "...I'm just saying if I wanted a handwritten font, I would just write by hand."
 
     n "I don't know what to tell you, man, I'm not the one who typed up the syllabus."
@@ -1527,6 +1747,9 @@ label Day_1Event_2_2:
     "He gets hung up on the strangest things."
 
     n "I got other things to worry about."
+
+    hide sprite JMad
+    show sprite JRelax
 
     j "Like that girl that's been following you around?"
 
@@ -1536,6 +1759,10 @@ label Day_1Event_2_2:
 
     n "Well what did she look like?"
 
+    hide sprite JRelax
+    show sprite JDepressed
+
+    J "....."
     j "Purple blob."
 
     n "Everything looks purple through your goggles."
@@ -1544,6 +1771,9 @@ label Day_1Event_2_2:
 
     "I peer out the doorway of the classroom and see a handful of kids lingering in the hallway."
     "I pull out my phone, ready to dial Hiro. If someone was following me then-"
+
+    hide sprite JDepressed
+    show sprite JHappy
 
     j "Gotcha!"
 
@@ -1555,11 +1785,17 @@ label Day_1Event_2_2:
 
     "He shakes his head."
 
+    hide sprite JHappy
+    show sprite JRelax
+
     j "Why would someone follow you around? All you do is sit around on the computer all day."
 
     n "I do other stuff!"
 
-    "The asshole keeps laughing as we pack up our stuff to leave. He runs out the door and before I can catch up to him, I feel my arm jerk back."
+    hide sprite JRelax
+
+    "The asshole keeps laughing as we pack up our stuff to leave."
+    "He runs out the door and before I can catch up to him, I feel my arm jerk back."
 
     #[BG: Hallway] 
     scene backgroundhall1
@@ -1575,6 +1811,8 @@ label Day_1Event_2_2:
     hide sprite SBase
 
     "I’m confused until her friend scurries up next to her. With shaking hands, she holds out a to-go cup to me."
+
+    show sprite NBase
 
     nk "The, uh, the cafe gave me the wrong order."
 
@@ -1596,27 +1834,35 @@ label Day_1Event_2_2:
 
     "Oh."
 
+    hide sprite NBase
     show sprite SBase
 
     s "That's what you wanted to ask him?"
 
     hide sprite SBase
+    show sprite NBase
 
     nk "We got your application form."
     nk "The rest of us are running unopposed, so we've already started as acting chairs, it should be the same for everyone."
     nk "So, since you're also unopposed, we were wondering-"
 
+    hide sprite NBase
     show sprite SBase
 
     s "No. No. No. We weren't wondering anything."
     s "Kietsu and I have things under control and we've already received multiple application forms for president, so it isn't the same."
 
     hide sprite SBase
+    show sprite NBase
 
     nk "'Not Nagen' isn't a viable candidate, no matter how many times people submit it!"
 
+    hide sprite NBase
+    show sprite KiBase
+
     ki "I don't see what the big deal is."
 
+    hide sprite KiBase
     show sprite SBase
 
     s "Really!? You don't see-"
@@ -1625,6 +1871,8 @@ label Day_1Event_2_2:
 
     #(Setsuna and Kietsu, feel free to adlib here. Setsuna against Nagen joining, Kietsu for Nagen joining. At least 3-4 sentences.) 
     "As the two start fighting, Nanase pulls me aside and speaks in a rushed whisper."
+
+    show sprite NBase
 
     nk "We haven't been able to get anything done since the start of school."
     nk "Every time the vice chair has an idea, the treasurer shuts it down."
@@ -1648,22 +1896,31 @@ label Day_1Event_2_2:
 
     nk "Working together will be so fun, I'm so glad you joined us!"
 
+    hide sprite NBase
     show sprite SBase
 
     s "Now wait a second, we didn't vote."
 
     hide sprite SBase
+    show sprite NBase
 
     nk "Rules are rules. If running unopposed, any member of the council can assume their role before the election."
     nk "We don't get a say in who that is. Our hands are tied."
 
+    hide sprite NBase
+    show sprite SBase
+
     s "We don't even have official meetings yet."
+
+    hide sprite SBase
+    show sprite KiBase
 
     ki "We never had enough members to need to."
     ki "I can add him to the group text."
     ki "Madam historian can help you with the rest."
     ki "We're trying to think of something to bring up morale around campus like a banquet or-"
 
+    hide sprite KiBase
     show sprite SBase
 
     s "We don't have enough money for any of that."
@@ -1673,33 +1930,54 @@ label Day_1Event_2_2:
     "As Nanase herds the two away, she looks back over her shoulder and winks. I hope I'm not making a mistake."
 
     #(Vision Bonus: Day 2 Event 2, After Nanase say 'Our hands are tied'.)
-    #[BG: Unknown]
+    if $ Vision >= 10:
     
-    n "Hey, how's the leg doing?"
+        n "Hey, how's the leg doing?"
 
-    nk "My leg?"
+        show sprite NBase
 
-    "She looks at her knees with a frown, then whispers."
+        nk "My leg?"
 
-    nk "Is it that noticeable?"
+        "She looks at her knees with a frown, then whispers."
 
-    s "I thought so, come on Kietsu. Let's leave 'em alone for now."
+        nk "Is it that noticeable?"
 
-    ki "Nanase, make sure to add him to the group chat for me, okay?"
+        hide sprite NBase
+        show sprite SBase
 
-    s "What group chat? Even if there was a group chat, we haven't agreed he's on the council yet!"
+        s "I thought so, come on Kietsu. Let's leave 'em alone for now."
 
-    "They keep bickering as they walk away."
+        hide sprite SBase
+        show sprite KiBase
 
-    nk "As long as I don't run, I should be fine. I'll just have to speed walk in gym for a while. But, um, could you not mention it in front of other people? It's kind of embarrassing and I don't want everyone to start worrying about me."
+        ki "Nanase, make sure to add him to the group chat for me, okay?"
 
-    n "Yeah, no problem."
+        hide sprite KiBase
+        show sprite SBase
 
-    "She leaves, taking small, methodic steps as she goes. It must still hurt pretty bad, but why is she keeping it a secret?"
+        s "What group chat? Even if there was a group chat, we haven't agreed he's on the council yet!"
+
+        hide sprite SBase
+
+        "They keep bickering as they walk away."
+
+        show sprite NBase
+
+        nk "As long as I don't run, I should be fine. I'll just have to speed walk in gym for a while."
+        nk "But, um, could you not mention it in front of other people?"
+        nk "It's kind of embarrassing and I don't want everyone to start worrying about me."
+
+        n "Yeah, no problem."
+
+        hide sprite NBase
+
+        "She leaves, taking small, methodic steps as she goes. It must still hurt pretty bad, but why is she keeping it a secret?"
+    else:
+        call Day2E3
 
     #Day 2 Event 3
     #[BG: Nurse's Office]
-
+label Day2E3:
     scene backgroundnurse
     "I hover around the door to the nurse's office; it doesn't look like anyone's inside."
     "Well, I don't feel like I'm going to die or anything."
@@ -1756,6 +2034,8 @@ label Day_1Event_2_2:
     "After class gets out, I’m left with two options; feel gross the rest of the day or shower in public..."
     "I’m in the middle of regretting my decision at the lunch table when Uitto snaps her fingers in front of me."
 
+    show sprite UBase
+
     u "Essays! If you help Hiro with his writing assignments, I will consider that an adequate apology."
 
     n "Hunh? Really, that's the blackmail you're going to go with? I expected you to draw out the silent treatment a little longer."
@@ -1784,18 +2064,37 @@ label Day_1Event_2_2:
 
     u "Excuse me?"
 
+    hide sprite UBase
+    show sprite HBase
+
     h "Uitto, I told you I’m fine."
 
+    hide sprite HBase
+    show sprite JHappy
+
     j "Considering how often you correct Word, I think she's justified in her efforts."
+
+    hide sprite JHappy
 
     n "And just because I agreed to do something doesn't mean I'm going to lie about why I'm doing it."
     n "You are blackmailing me, and I'm not going to risk taking the blame if he doesn't want my help."
 
+    show sprite UBase
+
     u "But there shouldn't be a problem with accepting help from a friend, right Hiro?"
+
+    hide sprite UBase
+    show sprite HBase
 
     h "...no. Which means there's nothing more to talk about."
 
+    hide sprite HBase
+    show sprite JMad
+
     j "You're ly-"
+
+    hide sprite JMad
+    show sprite HBase
 
     h "Nothing more to talk about, Jona. Nothing."
 
@@ -1803,12 +2102,23 @@ label Day_1Event_2_2:
 
     n "Whose idea was it to put P.E. at the beginning of the day? Now half the class is going to reek and be sore all day."
 
+    hide sprite HBase
+    show sprite JMad
+
     j "The uniforms have no sleeves!"
     j "It's so freaking cold, but they won't let me wear my jacket because it's not school appropriate gym wear."
 
+    hide sprite JMad
+    show sprite UBase
+
     u "It is basically a trench coat."
 
+    hide sprite UBase
+    show sprite JHappy
+
     j "Exactly! It covers more than half of what the girls wear. How is that inappropriate?"
+
+    hide sprite JHappy
 
     "The two go on an hour-long tangent about the odd uniform restrictions, completely forgetting about Hiro. Hiro breathes a sigh of relief."
 
@@ -1975,6 +2285,7 @@ label Day_1Event_2_2:
     n "I know she's looking for a club to join, but so far she's had problems finding a place to fit in."
     n "Talking to new people doesn't come naturally to her."
 
+    hide sprite MBase
     show sprite SBase
 
     s "She does avoid the other girls in our class like the plague."
@@ -2035,6 +2346,8 @@ label Day_1Event_2_2:
     "Jona has run off to work on god knows what and Uitto is getting chased around by the cheer squad."
     "That leaves me alone in the courtyard with Hiro."
     "He’s bouncing around, boxing his shadows, carefree as ever."
+
+    show sprite HBase
 
     h "You know what I miss the most? Fricken Naga Rangers."
     h "I've looked all over the stupid library-school thing and there isn't a single movie or comic book to be found."
@@ -2124,7 +2437,11 @@ label Day_1Event_2_2:
 
     h "Hardy-har, Nagen, reading's only fun for you because you think it's easy."
 
-    "What's that supposed to mean? As vast as the collection is, there is quite a number of fictional books. And I've even found something from his favorite series. It seems I'll have to find something else to hold his attention."
+    "What's that supposed to mean? As vast as the collection is, there is quite a number of fictional books."
+
+    hide sprite HBase
+
+    "And I've even found something from his favorite series. It seems I'll have to find something else to hold his attention."
 
     #Day 4 Event 2
     #[BG: Classroom]
@@ -2140,19 +2457,23 @@ label Day_1Event_2_2:
     mh "But it'll only work if we have enough members."
 
     hide sprite MhBase
+    show sprite UBase
 
     u "I don't think anyone will join if we're in your club, no offense."
 
     n "Why don't you ask some of the Charisma Majors?"
 
+    hide sprite UBase
     show sprite MhBase
 
     mh "I already tried, but they hear 'gaming club' and think it's for dorks."
 
     hide sprite MhBase
+    show sprite HBase
 
     h "Gaming? Like video games?"
 
+    hide sprite HBase
     show sprite MhBase
 
     mh "I asked the teachers if I could bring my old GameStation collection, y'know, since it predates the internet."
@@ -2179,19 +2500,23 @@ label Day_1Event_2_2:
     mh "This isn't one of your plays. All's fair in love and war, baby."
 
     hide sprite MhBase
+    show sprite UBase
 
     u "Don't we get a say in this?"
 
+    hide sprite UBase
     show sprite MhBase
 
     mh "I just need names to put on a paper. You don't even have to show up. It's the least you could do."
 
     hide sprite MhBase
+    show sprite HBase
 
     h "What's that supposed to mean?"
 
     "Oh no. That's not good."
 
+    hide sprite HBase
     show sprite MhBase
 
     mh "What, I'm not allowed to bring up that you're a criminal at all now? It was just a joke."
@@ -2207,9 +2532,11 @@ label Day_1Event_2_2:
     mh "My guy, you put mind control devices on people, that's gotta be a crime. Just own it."
 
     hide sprite MhBase
+    show sprite HBase
 
     h "We were trying to protect people."
 
+    hide sprite HBase
     show sprite MhBase
 
     mh "Yeah, we all felt really protected wearing bombs. Just ask Chisei."
@@ -2252,31 +2579,38 @@ label Day_1Event_2_2:
     "Honestly, I’m mostly in shock and I can sense the others were as well."
     "The Education Collar was never meant to do that kind of damage. There shouldn't have been anything in it that could do that."
 
+    show sprite HBase
+
     h "What club are you running?"
 
     "Leave it to Hiro to just side step around a heavy topic."
 
+    hide sprite HBase
     show sprite ChBase
 
     ch "You do not have to ask just because you feel sorry for me."
 
     hide sprite ChBase
+    show sprite HBase
 
     h "You're a writer aren't you? Is it a reading club or something?"
 
     "He soldiers on, and eventually her mood lightens."
 
+    hide sprite HBase
     show sprite ChBase
 
     ch "No, a drama club."
 
     hide sprite ChBase
+    show sprite HBase
 
     h "So you need actors and junk? I could do that, if you actually want me in your club."
 
     "She pulls out a crumpled piece of paper from her backpack."
     "All things considered, it seems she has more than enough people to form her club."
 
+    hide sprite HBase
     show sprite ChBase
 
     ch "We do not have a set meeting time yet, but I would like to accommodate everyone's schedule if I can."
@@ -2285,11 +2619,22 @@ label Day_1Event_2_2:
 
     "She collects his signature and leaves with a small smile on her face."
 
+    show sprite JDepressed
+
     j "Were they only interested in Hiro? I guess some things never change."
+
+    hide sprite JDepressed
+    show sprite HBase
 
     h "What do you mean? We're all going to join again, aren't we?"
 
+    hide sprite HBase
+    show sprite JFrustrated
+
     j "Do I want to repaint the same sets over and over again? Not for free."
+
+    hide sprite JFrustrated
+    show sprite HBase
 
     n "I was never in drama club to begin with. It was just you guys."
 
@@ -2297,23 +2642,38 @@ label Day_1Event_2_2:
     h "Right!"
     h "You had that weird performance anxiety thing."
 
+    hide sprite HBase
+    show sprite UBase
+
     u "Pfft."
 
     n "SOCIAL anxiety."
     n "Thousands of eyes, all pointed at you, actively judging every syllable you say. Not for me. I get enough of that at home."
 
+    hide sprite UBase
+    show sprite HBase
+
     h "Whatever, point is you clam up in front of a crowd."
     h "I guess it's just me and Uitto this time."
+
+    hide sprite HBase
+    show sprite UBase
 
     u "Actually, I'm with Nagen on this one."
     u "I'm not just retiring from the pageant circuit, I'm retiring from performing entirely."
     u "One of the reasons I'm here is the school can't use me on the stage or in photos."
+
+    hide sprite UBase
+    show sprite HBase
 
     h "Oh... So it's just going to be me?"
 
     n "It'll be okay. By the time they want to meet up, we'll have caught your anonymous attacker."
 
     h "That's... okay, I guess."
+
+    hide sprite HBase
+    show sprite UBase
 
     u "You'll be fine, you'll see!"
 
@@ -2460,10 +2820,20 @@ label Day_1Event_2_2:
 
     n "Thanks... I think."
 
+    if $ Vision >= 10:
+        call VisionDay5
+    else:
+        call Day5E3
+
+label VisionDay5:
+
     #(Vision Bonus: Day 5, Between Event 2 and Event 3)
     #[BG: Courtyard]
     
-    "I still have a little time before lunch. For some reason, there’s something bothering me about the cheerleaders. Rei might still be mad at me, so my best option is Setsuna."
+    "I still have a little time before lunch. For some reason, there’s something bothering me about the cheerleaders."
+    "Rei might still be mad at me, so my best option is Setsuna."
+
+    show sprite SBase
 
     n "Hey, you joined the cheerleaders, didn't you?"
 
@@ -2473,11 +2843,13 @@ label Day_1Event_2_2:
 
     s "...yeah. Why?"
 
-    "She shows me her fresh piercings; a bright red star within a glittered bead. Inside was a pinpoint dot that easily could be mistaken for the stem of the earring."
+    "She shows me her fresh piercings; a bright red star within a glittered bead."
+    "Inside was a pinpoint dot that easily could be mistaken for the stem of the earring."
 
     n "Your ears were already pierced, why didn't she just hand you a pair?"
 
-    s "She insisted. Besides, I thought it would be cool to have another set. It was like, a right of passage or whatever. I can always take them out in a few weeks once they've healed."
+    s "She insisted. Besides, I thought it would be cool to have another set."
+    s "It was like, a right of passage or whatever. I can always take them out in a few weeks once they've healed."
 
     n "DON'T!"
 
@@ -2485,7 +2857,8 @@ label Day_1Event_2_2:
 
     n "Whatever you do, don't take those out. How many girls did she pierce with that thing?"
 
-    s "I don't know, at least the whole team. A few chickened out halfway through. Why? Did someone get an infection or something?"
+    s "I don't know, at least the whole team. A few chickened out halfway through."
+    s "Why? Did someone get an infection or something?"
 
     n "No, not exactly. It's just a gut feeling I have... do you think you can get that piercing gun to Nocturn?"
 
@@ -2497,19 +2870,25 @@ label Day_1Event_2_2:
 
     n "What do you mean?"
 
-    s "You're acting like we're friends. I mean, we've known each other less than a week. You didn't seem the type to be so... familiar."
+    s "You're acting like we're friends. I mean, we've known each other less than a week."
+    s "You didn't seem the type to be so... familiar."
 
     n "I'm just... trying my best to be a good student council president."
 
-    "I can't explain exactly why, but I feel like she's someone I can trust to look into this. At least she seems to buy my excuse."
+    "I can't explain exactly why, but I feel like she's someone I can trust to look into this."
+    "At least she seems to buy my excuse."
 
     n "Thanks for hearing me out."
 
+    jump Day5E3
 
+label Day5E3:
     #Day 5 Event 3
     #[BG: Lecture Hall]
 
     scene backgroundcharm
+
+    show sprite UBase
 
     u "NAGEN!"
 
@@ -2561,40 +2940,46 @@ label Day_1Event_2_2:
 
     u "Don't push it, Tesuta."
 
-    #[IF Vision = Y]
+    if $ Vision >= 10:
+        n "Did they pick out a set of earrings for you too?"
 
-    n "Did they pick out a set of earrings for you too?"
+        u "Ugh, they tried, but they're so not my style."
+        u "Besides, they have this weird right of passage thing where they do the piercing themselves."
+        u "I saw what happened when Jona pierced your lip; no way I'm letting an amateur anywhere near my ears."
 
-    u "Ugh, they tried, but they're so not my style."
-    u "Besides, they have this weird right of passage thing where they do the piercing themselves."
-    u "I saw what happened when Jona pierced your lip; no way I'm letting an amateur anywhere near my ears."
+        n "If you didn't get them, then how..."
 
-    n "If you didn't get them, then how..."
+        u "How what? How'd I wear earrings as a kid?"
+        u "Clip ons or super glue; sometimes both."
+        u "You're not the only one who hates needles."
+        u "I'm just a better fighter than you. Why'd you want to know?"
 
-    u "How what? How'd I wear earrings as a kid?"
-    u "Clip ons or super glue; sometimes both."
-    u "You're not the only one who hates needles."
-    u "I'm just a better fighter than you. Why'd you want to know?"
+        n "I just could have sworn you had piercings."
 
-    n "I just could have sworn you had piercings."
+        u "...Nagen, I can't believe I'm saying this, but your memory's wrong. See for yourself."
 
-    u "...Nagen, I can't believe I'm saying this, but your memory's wrong. See for yourself."
+        "Sure enough, there’s not a single hole."
 
-    "Sure enough, there’s not a single hole."
+        u "Are you feeling okay?"
 
-    u "Are you feeling okay?"
+        n "I have been feeling kind of sick lately. Maybe I've been spiking a temp without realizing it."
 
-    n "I have been feeling kind of sick lately. Maybe I've been spiking a temp without realizing it."
+        u "Maybe you should get some rest."
 
-    u "Maybe you should get some rest."
+        "Never in a million years have I misremembered something. What's wrong with me?"
+        call Day5E3_2
 
-    "Never in a million years have I misremembered something. What's wrong with me?"
+    else:
+        call Day5E3_2
 
+label Day5E3_2:
     #[Return to Main Branch]
 
     n "Are they being nice to you at least?"
 
     u "...yeah, annoyingly so. At least I know you set them up to it instead of some ulterior motive."
+
+    hide sprite UBase
 
     #Day 5 Event 4
     #(Right before the BB)
@@ -2602,11 +2987,21 @@ label Day_1Event_2_2:
 
     scene backgroundcafexn
 
-    "Jona and I are on the way to the cafeteria when we run into Uitto. She seems scared."
+    "Jona and I are on the way to the cafeteria when we run into Uitto."
+
+    show sprite UBase
+    
+    "She seems scared."
 
     u "Where's Hiro?"
 
+    hide sprite UBase
+    show sprite JRelax
+
     j "He's supposed to be with you. You're the one that shares last period with him."
+
+    hide sprite JRelax
+    show sprite UBase
 
     u "I know that, but he didn't show. I thought he ditched class to hide with you guys."
 
@@ -2617,9 +3012,17 @@ label Day_1Event_2_2:
 
     "Uitto goes pale."
 
+    hide sprite UBase
+    show sprite JRelax
+
     j "I'm sure someone has seen him. Before we panic, we should try finding him first."
 
+    hide sprite JRelax
+    show sprite UBase
+
     u "Right, we'll cover more ground if we split up. Whoever finds him should call the others."
+
+    hide sprite UBase
 
     "Before I can get a word in, they run off. By now, he should be at the field where we were supposed to surrender."
     "The question is, who's behind this?"
@@ -2631,7 +3034,9 @@ label Ch1BossBattle:
 
     scene backgroundB1
     
-    "I run to the practice field with all my might while keeping my phone close, hoping that at any moment, Hiro will answer my calls. As the grass caves under my boots, I see three girls arguing amongst themselves. For a brief second, I thought I had made it in time. After all, it isn’t uncommon for the cheerleaders to monopolize the field. However…"
+    "I run to the practice field with all my might while keeping my phone close, hoping that at any moment, Hiro will answer my calls."
+    "As the grass caves under my boots, I see three girls arguing amongst themselves. For a brief second, I thought I had made it in time."
+    "After all, it isn’t uncommon for the cheerleaders to monopolize the field. However…"
 
     s "Answer the question." #(Irritated)
     
@@ -2653,67 +3058,101 @@ label Ch1BossBattle:
 
     m "Is that so? Then were you planning on bringing him to me as well?"
 
+    scene backgroundmariko
+
+    show sprite UBase
+
     u "You backstabbing little-"
+
+    hide sprite UBase
+    show sprite ReBase
 
     re "It’s not like that! I noticed Hiro wasn’t in class and…"
 
+    hide sprite ReBase
+    show sprite SBase
+
     s "We had the same suspicions. Well, most of us did."
+
+    hide sprite SBase
+    show sprite MBase
 
     m "This has nothing to do with you, Setsuna; it’s between me and them."
 
-    m "Even though Hiro’s not with you, I’ll still forgive you, if you were planning on giving him to me. After all, it’s not your fault someone else beat you to the punch."
+    m "Even though Hiro’s not with you, I’ll still forgive you, if you were planning on giving him to me."
+    m "After all, it’s not your fault someone else beat you to the punch."
 
     n "We’d never do something like that!"
 
+    hide sprite MBase
+    show sprite JMad
+
     j "...where is he?"
 
-    m "How disappointing. I really wanted to avoid hurting other people. But if you’re going to continue to defend him, then you’re just as guilty."
+    hide sprite JMad
+    show sprite MBase
+
+    m "How disappointing. I really wanted to avoid hurting other people."
+    m "But if you’re going to continue to defend him, then you’re just as guilty."
+
+    hide sprite MBase
+    show sprite ReBase
 
     re "Mariko, this is enough! You’re scaring me."
 
-    m "...I’m sorry."
+    hide sprite ReBase
+    show sprite MBase
 
-    scene backgroundmariko
+    m "...I’m sorry."
 
     "She snaps her fingers and with solemn expressions, the other girls turn to us. Uitto and Jona end up pinned before I know it."
 
     m "This wouldn’t have happened if you just listened to me in the first place."
 
+    hide sprite MBase
+    show sprite UBase
+
     u "Nagen, don’t just stand there, do something!"
 
-    m "This is your chance to wash your hands of this whole mess, Nagen. Turn tail and run. Run as far away as you can from this place. Show me how far you can really make it on your own."
+    hide sprite UBase
 
-    #[If Mariko > 5]
-    
-    m "Please, I don’t want to fight you."
+    m "This is your chance to wash your hands of this whole mess, Nagen. Turn tail and run. Run as far away as you can from this place."
+    m "Show me how far you can really make it on your own."
 
-    n "If you don’t want to fight me, then let them go."
+    if $ mRep >= 5: 
+        m "Please, I don’t want to fight you."
 
-    m "Sorry, but I don’t exactly trust your ‘friends’ right now."
+        n "If you don’t want to fight me, then let them go."
 
-    j "That’s fair."
+        m "Sorry, but I don’t exactly trust your ‘friends’ right now."
 
-    u "Do not agree with the psycho head cheerleader!"
+        j "That’s fair."
 
-    m "I think that might be why I was chosen. I don’t have anyone to rely on other than Rei and they still found us."
+        u "Do not agree with the psycho head cheerleader!"
 
-    n "...who’s they?"
+        m "I think that might be why I was chosen. I don’t have anyone to rely on other than Rei and they still found us."
 
-    m "I’m not sure, but they seem to know a lot about you. I think it’s the people you used to work for."
+        n "...who’s they?"
 
-    "Could it be Lethe’s old allies? But then why target us?"
+        m "I’m not sure, but they seem to know a lot about you. I think it’s the people you used to work for."
 
-    m "Nagen, when you turned yourselves in, they wanted me to- I’m supposed to be Hiro’s replacement. What do you think they’ll do to me if I refuse to go through with this?"
+        "Could it be Lethe’s old allies? But then why target us?"
 
-    "His... replacement?"
+        m "Nagen, when you turned yourselves in, they wanted me to- I’m supposed to be Hiro’s replacement."
+        m "What do you think they’ll do to me if I refuse to go through with this?"
 
-    m "Nagen, please. Run."
+        "His... replacement?"
 
-    #[If Mariko MAX]
-    
-    m "I promised, didn’t I? ‘No matter what happens, I’ll protect you.’ This is the only thing I can do right now."
+        m "Nagen, please. Run."
 
-    #[Skip to Mariko Ally End]
+    else if $ mRep >= 10:
+        m "I promised, didn’t I? ‘No matter what happens, I’ll protect you.’"
+        m "This is the only thing I can do right now."
+
+        call MarikoBonus
+
+
+
     #[Main Branch]
     #-It seems your opponent doesn’t want to fight you. This is your chance to convince them to join your side. One wrong move and combat will begin.-
     
@@ -2813,6 +3252,7 @@ label Ch1BossBattle:
     n "And right now, we gotta figure out who's behind this. Hopefully, that tape will give us some answers."
 
     #[Skip to Dorm Scene]
+label Precombat1:
     #[Pre-Combat 1]
     
     m "I gave you a chance to run. It’s not my fault you didn’t listen to me."
@@ -2836,7 +3276,7 @@ label Ch1BossBattle:
     n "I don’t want to fight you."
 
     m "I’m afraid you don’t have a choice."
-
+label combat1:
     #Combat 1
     #[Unity Puzzle Level]
     #(The following will be an RPG style puzzle fight where the goal is to not attack and block every round. The enemy has 2 health bars: one for HP and one for energy. Each round, energy will dip by 1/10.) 
@@ -2858,6 +3298,7 @@ label Ch1BossBattle:
 
     "Wait, does she... want me to hit her?"
 
+label midfight cutscene:
     #[Once Energy or Health is at ½]
     #Midfight Cutscene
     #[Fungus Scene]
@@ -2960,7 +3401,7 @@ label Ch1BossBattle:
     n "It’s not Hiro’s fault people trusted him more than you, Mariko. You’re only making things worse by picking a fight you will lose."
 
     m "As long as I breathe, I’m not done fighting. I'll leave you with scars that will outlive me."
-
+label combat2:
     #Combat 2
     #[Unity Puzzle]
     #(The following lines play in between rounds. At this point, Mariko is fully mourning her loss, trying to draw on her memories from the past for strength. However, the damage that’s been done is evident, as she’s been battling survivor’s guilt this whole time.)
@@ -2979,6 +3420,7 @@ label Ch1BossBattle:
 
     "But I know she isn’t talking to me."
 
+label MarikoSpare:
     #[Transition to Fungus scene. The player will get to choose what happens to the villain.]
     #A. Spare (+Rep)(+Hero)
     
@@ -3015,7 +3457,9 @@ label Ch1BossBattle:
     m "Nagen, school is the least of our worries."
 
     "The teachers quickly detain Mariko and her friends for questioning."
+    call Ch1TapeScene
 
+label MarikoPunish:
     #[Move to Tape Scene]
     #B. Punish (+Villain)
     
@@ -3065,20 +3509,24 @@ label Ch1BossBattle:
 
     "I don’t think I’m in trouble, at least not directly, but I’m definitely worried she’ll call my fosters and tell them what happened."
 
+    call Ch1TapeScene
     #[Move to Tape Scene] 
+
+label MarikoBonus:
 
     #(Chapter 1, prior to the tape scene? If Mariko = MAX)
     #[BG: Grey watercolor. POV Mariko.]
     
-    "I always used to think I was invincible, but my parents treated me like I was made of glass. I couldn't go anywhere without them shadowing me. That meant no sports, no clubs, and no school with friends for six whole years."
+    m "I always used to think I was invincible, but my parents treated me like I was made of glass."
+    m "I couldn't go anywhere without them shadowing me. That meant no sports, no clubs, and no school with friends for six whole years."
 
     #[Mariko on the couch in front of a TV. Tall shadows stretch behind her and over her head. As Estella talks, the background shifts to a lighter grey and the shadows shrink.]
     e "So you think your child has exceptional abilities? At Estella Academy, we tailor our curriculum around your child's... special attributes."
 
-    "Finally released from my bubble, I leapt at the chance to talk to kids my own age."
+    M"Finally released from my bubble, I leapt at the chance to talk to kids my own age."
 
     #[Mariko surrounded by silhouettes of the cheer squad]
-    "Most of the girls in my class were in cheer, so I joined too. Even without auditioning, I was named captain of the squad."
+    M"Most of the girls in my class were in cheer, so I joined too. Even without auditioning, I was named captain of the squad."
 
     Hiyoko "We can test out the moves to make sure it's safe before you try."
 
@@ -3088,7 +3536,7 @@ label Ch1BossBattle:
 
     re "I can tell you when you've hurt yourself if you tell me when I should take a break; deal?"
 
-    "But when the riots started…"
+    m "But when the riots started…"
 
     #[Same formation, but Mariko's blocking the exit to a building. There's fire outside.]
     
@@ -3100,31 +3548,42 @@ label Ch1BossBattle:
 
     m "Fine, don't listen to me! I don't want a bunch of liars on my team anyway!"
 
-    "I can't physically feel pain."
-
     #[Scene fades; Mariko's running through the city.]
+
+    m "I can't physically feel pain."
     
-    "But when I found Kanon, it felt like a shotgun to the chest. With each breath I took, the shrapnel dug into my lungs and my resolve shattered. My mind became like a broken record."
+    m "But when I found Kanon, it felt like a shotgun to the chest."
+    m "With each breath I took, the shrapnel dug into my lungs and my resolve shattered."
+    m "My mind became like a broken record."
 
-    "Move."
+    m "Move."
 
-    "Survive."
+    m "Survive."
 
-    "Find them."
+    m "Find them."
 
-    "As each of my friends became a name on a list, I struggled to form rational thought."
+    m "As each of my friends became a name on a list, I struggled to form rational thought."
 
-    "Move."
+    m "Move."
 
-    "Survive."
+    m "Survive."
 
     #[Mariko at the school, still running]
     
-    "We were rescued, those of us left, and I was asked to find a 'new normal'. The shattered feeling dulled, but it never left. I combed through my old phone looking for their voices, for evidence they were there. Anything as long as I kept moving. Except I didn't know what I was moving toward anymore. When did the enemy I had to fight become my own body? When did my will to fight gain a will of its own? How do I make the pieces of my life fall back into place?"
+    m "We were rescued, those of us left, and I was asked to find a 'new normal'."
+    m "The shattered feeling dulled, but it never left."
+    m "I combed through my old phone looking for their voices, for evidence they were there."
+    m "Anything as long as I kept moving."
+    m "Except I didn't know what I was moving toward anymore."
+    m "When did the enemy I had to fight become my own body?"
+    m "When did my will to fight gain a will of its own?"
+    m "How do I make the pieces of my life fall back into place?"
 
     #[CG of Mariko in a hospital looking room, mirroring the CG of her on the couch.]
     
-    "How long have I been running in circles?"
+    m "How long have I been running in circles?"
+
+    call MarikoSpare
 
 label Ch1TapeScene:
     #[BG: Outside the Dorm]

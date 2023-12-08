@@ -22,7 +22,7 @@ define t        = Character("Taiga Sakurai",    window_background = "gui/text_bo
 define u        = Character("Uitto Hanatabe",   window_background = "gui/text_boxes/UittoText.png")
 define y        = Character("Yoku Teki",        window_background = "gui/text_boxes/YokuText.png")
 
-# Unused - Monologue, WhiteBox
+# Unused - Monologue
 
 # Teachers
 define ik       = Character("Inukai",           window_background = "gui/text_boxes/InukaiText.png")
@@ -113,7 +113,8 @@ image sprite JFrustrated = "Sprites/Jona/JonaFrustrated.png"
 image sprite JHappy = "Sprites/Jona/JonaHappy.png"
 image sprite JMad = "Sprites/Jona/JonaMad.png"
 image sprite JRelax = "Sprites/Jona/JonaRelax.png"
-
+#Kazz
+image sprite KkBase = "Sprites/Kazz/Kazz1.png"
 #Kietsu
 image sprite KiBase = "Sprites/Kietsu/k2.png"
 #Kitsune
@@ -134,14 +135,22 @@ image sprite RBase = "Sprites/Rise/Rise1.png"
 image sprite SBase = "Sprites/Setsuna/setsunabase.png"
 #Shoma
 image sprite ShBase = "Sprites/Shoma/ShomaN.png"
+#Taiga
+image sprite TBase = "Sprites/Taiga/TaigaN.png"
 #Uitto
 image sprite UBase = "Sprites/Uitto/Uittobase.png"
+#Yoku
+image sprite YBase = "Sprites/Yoku/YokuN.png"
 
 #Teachers
+#Inukai
+image sprite IkBase = "Sprites/Inukai/inuN.png"
 #Sato
 image sprite SaBase = "Sprites/Fox/basespritesox.png"
 #Vivaldi
 image sprite VBase = "Sprites/Vivaldi/ViBase.png"
+#Yaguchi
+image sprite YaBase = "Sprites/Yaguchi/yaguchibase.png"
 
 #CGs
 image backgroundP2 = "CGs/Prologue_2.png"
@@ -247,10 +256,12 @@ label start:
 
     call variables
     call inventory
-    
+
     menu:
         "Prologue":
             jump prologue
+        "Meet Students":
+            jump FindPeople
         "Chapter One":
             jump chapter_one
         "Sandbox":
