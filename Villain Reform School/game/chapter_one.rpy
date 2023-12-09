@@ -3145,7 +3145,7 @@ label Ch1BossBattle:
 
         m "Nagen, please. Run."
 
-    else if $ mRep >= 10:
+    elif $ mRep >= 10:
         m "I promised, didn’t I? ‘No matter what happens, I’ll protect you.’"
         m "This is the only thing I can do right now."
 
@@ -3298,7 +3298,7 @@ label combat1:
 
     "Wait, does she... want me to hit her?"
 
-label midfight cutscene:
+label midfight_cutscene:
     #[Once Energy or Health is at ½]
     #Midfight Cutscene
     #[Fungus Scene]

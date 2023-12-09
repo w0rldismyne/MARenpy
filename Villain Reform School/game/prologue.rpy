@@ -2111,7 +2111,7 @@ label FindPeople1:
 
             n "Uitto, you gotta trust me on this, I know what I'm doing."
 
-            if $ Vision >= 10
+            if $ Vision >= 10:
 
                 n "Well, yeah... Uitto, is something wrong?"
 
@@ -2123,7 +2123,7 @@ label FindPeople1:
                 u "...yeah... whatever you say."
                 call Uittoleave
 
-            else
+            else:
                 call Uittoleave
 
 label Uittoleave:
@@ -2133,7 +2133,7 @@ label Uittoleave:
 
             call FindPeople
 
-        "Stage":
+            "Stage"
             #[BG: Theater]
             scene backgroundstage
             "I'm honestly surprised they bothered to build this when there was a functional amphitheater on the grounds."
@@ -2326,7 +2326,7 @@ label Uittoleave:
 
             call FindPeople
 
-        "AV Room":
+            "AV Room"
             #[BG: AV Room]
 
             "I stumble across a dingy room tucked in the back of the second floor."
@@ -2508,7 +2508,7 @@ label Uittoleave:
 
             call FindPeople
 
-        "Nurse's Office":
+            "Nurse's Office"
             scene backgroundnurse
 
             "The nurse's office is small, to say the least."
@@ -2667,7 +2667,7 @@ label Uittoleave:
 
             call FindPeople
 
-        "Next":
+            "Next"
             call FindPeople2
 
 label FindPeople2:
@@ -3147,7 +3147,7 @@ label FindPeople2:
                 ch "It does not want me to believe what others may say about you; that you are a good friend and an honest person."
 
                 "Not exactly the creepy mentalist stuff I was expecting."
-            else
+            else:
             #[If Villian > Hero]
 
                 ch "....."
@@ -4938,7 +4938,4 @@ label Meeting:
         "I hope it's well-ventilated. I cringe to think of how hot this place could get in the summer."
         "I don't have the energy to unpack yet. I shrug out off my jacket and collapse on the bare mattress."
         "As I drift off to sleep, I desperately try to convince myself everything will work out in the end."
-call chapter_one
-
-label Meeting:
-    pass
+    call chapter_one
