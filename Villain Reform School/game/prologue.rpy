@@ -20,7 +20,7 @@ label prologue:
     hide sprite CopBase
 
     "I tap the side of my head."
-    "Having a great memory doesn't really make me smarter than anyone else, but the ability falls under the Intelligence Major."
+    "Having a great memory doesn't really make me smarter than anyone else, but the ability falls under the Intelligence major."
     "People are just so determined to classify things so they can feel important, they stop asking whether it's worth the effort."
     "I mean, some people can go their whole lives without realizing they have a Proficiency."
     "It's nothing special. The only reason I know about mine is because I was groomed to have it."
@@ -41,9 +41,10 @@ label prologue:
     ka "We all remember-"
 
     hide sprite KoeBase
+
     scene backgroundblack
 
-    #[Screen blacks out]
+    # Change soundtrack
 
     "Remember? No one is truly capable of remembering."
     "Well, if you want to get technical, remembering is just being aware of something."
@@ -225,12 +226,14 @@ label prologue:
 
     cop "That's all we need to hear."
 
+    show sprite KoeBase
+
     ka "Not quite. I still have a few questions for Mr. Tesuta."
     ka "The Junior Gladiators started as a club at your school, later to fall down a path of destruction."
     ka "And yet, no one can tell us whose fault this was."
     ka "In your estimation, who was the leader during the attack?"
 
-    hide sprite CopBase
+    hide sprite KoeBase
 
     #[Player Choice]
 
@@ -244,7 +247,7 @@ label prologue:
             "She tried to get people to lynch anyone who was above average at... well... anything."
             "It nearly destroyed the nation."
             "Of course, if you really look at it, she wasn't wrong."
-            "Proficiencies were dangerous to the general public, but so is a pen if you use it right."
+            "Proficiencies were dangerous to the general public, but so is a pen if you use it correctly."
             "These people, however, just want to confirm what they already believe, so I'll just tell them what they want to hear."
 
             call interrogation_3
@@ -304,7 +307,7 @@ label prologue:
 
     ka "What did you intend to do once you took over the city?"
 
-    hide KoeBase
+    hide sprite KoeBase
 
     #[Player Choice]
 
@@ -419,7 +422,6 @@ label prologue:
 
     show sprite KoeBase
 
-
     ka "And what exactly was your end goal in all of this?"
 
     n "Excuse me?"
@@ -439,7 +441,7 @@ label prologue:
         "It was corrupt": #(+Hero)
             $ Hero += 1
             n "Guwon's entire economy was based around the manufacturing and propagation of Proficiencies."
-            n "They treated us like livestock! We were paraded about as status symbols and meal tickets"
+            n "They treated us like livestock! We were paraded about as status symbols and meal tickets."
             n "No one cared what happened to us."
 
             show sprite KoeBase
@@ -526,6 +528,7 @@ label prologue:
             hide sprite KoeBase
 
             call interrogation_end
+
         "To end the war": #(+Hero)
             $ Hero += 1
             n "Everyone was fighting each other, not just us."
@@ -562,7 +565,9 @@ label prologue:
 
     "Wait a minute, that's it!"
 
-    n "Objection."
+    # Add SFX
+
+    n "Objection!"
 
     hide sprite KoeBase
     show sprite CopBase
@@ -587,7 +592,7 @@ label prologue:
 
     n "I want to change the terms of the deal."
 
-    ka "You mean plea bargain?"
+    ka "You mean the plea bargain?"
 
     n "Right, that. I know that my friends and I, we're good people deep down."
     n "We just got caught up in something bigger and scarier than us and we did what we could to stay alive."
@@ -771,20 +776,19 @@ label prologue:
     mm "I had to cash in an old favor to get us out of this mess."
     mm "I was hoping to leave his debt dangling over his head for a few more years, but this is more important."
     mm "You need a proper guardian and as much as I'd love to take care of you myself..."
-    mm " I don't have a legal job, or house, or any of the tools that would let the state give me guardianship."
+    mm "I don't have a legal job, or house, or any of the tools that would let the state give me guardianship."
 
     n "I'm not a child."
     n "I appreciate everything you've done for me, but you'll have to forgive me for not fully trusting you or this other person."
-    #^This line has a slight edit, previously said "your former target", changed to "this other person" to fit with both choices, feel free to change it ofc
 
     mm "I just want what's best for you. Please, just give this guy a chance."
     mm "I will be with you the whole time. He's... he's a bit of a potato, but he'll treat us well."
 
-    n "...potato?"
+    n "...Potato?"
 
     mm "Boring, acidic, lives somewhere dark and hard to find. A potato."
 
-    n "...right..."
+    n "...Right..."
     n "Has anyone heard from Odori?"
 
     mm "No, I'm sorry."
@@ -792,6 +796,8 @@ label prologue:
     n "You sure it's not classified or something?"
 
     mm "If it was classified, I would have told you it's classified."
+
+    # Needs new song queue, something sad?
 
     "A month. She's been missing for over a month."
     "At this point, they're not looking for {i}her{/i} anymore, they're looking for a body."
@@ -823,6 +829,8 @@ label prologue:
     "The building groans as a sizable bell rings from a tower above the gate."
     "When the door opens, I begin to understand why Maimai described my appointed guardian as a potato."
 
+    show sprite MMBase
+
     mm "Surprise!"
 
     hide sprite MMBase
@@ -840,7 +848,7 @@ label prologue:
     hide sprite MMBase
     show sprite KenzoBase
 
-    kan "...that's the kid?"
+    kan "...That's the kid?"
 
     hide sprite KenzoBase
     show sprite MMBase
@@ -902,7 +910,7 @@ label prologue:
             kan "It should have nothing terribly breakable in it."
             kan "Just don't touch anything outside of that room."
 
-            n "...okay."
+            n "...Okay."
 
             "I go to leave, but he stops me."
 
@@ -962,7 +970,7 @@ label prologue:
 
 label prologue2:
 
-    "I follow him into a cluttered study"
+    "I follow him into a cluttered study."
     "He takes a long drink of coffee before he sits down."
     "He prompts me to find a seat with a casual wave of his hand."
 
@@ -1074,7 +1082,6 @@ label prologue2:
     "A familiar feeling of helplessness washes over me."
     "There’s nothing else I can do."
 
-    hide sprite KenzoBase
     show sprite MMBase
 
     mm "Hey, it’s going to be okay. Boarding school isn’t that bad."
@@ -1091,7 +1098,7 @@ label prologue2:
     kan "All the more reason not to be scared."
     kan "This is only to show the courts you can behave for a long period of time."
 
-    n "...can’t I just stay here with you guys instead?"
+    n "...Can’t I just stay here with you guys instead?"
 
     kan "I thought you hated being cooped up here."
 
@@ -1133,7 +1140,7 @@ label prologue2:
     "It’s no surprise, really, that this is where they planned to test their stupid program."
     "What confuses me is that I’m expected to act like an ordinary student."
     "I mean, our names were never released to the public, so it could work."
-    "Something just seems... off"
+    "Something just seems... off."
 
     scene backgroundhall1
 
@@ -1142,10 +1149,10 @@ label prologue2:
 
     show sprite MMBase
 
-    mm "The building had been a library since the 1600s."
-    mm "I never got to see the inside because the previous owner was such a nut job."
+    mm "The building had been a library since the 1600's."
+    mm "I never got to see the inside, because the previous owner was such a nut job."
 
-    n "That’s supposed to make me feel better?"
+    n "Why should I care?"
 
     mm "No, but do you think these bowties proofread every book in the building before bringing you in here?"
     mm "Who knows what you could find!"
@@ -1159,12 +1166,12 @@ label prologue2:
     mm "This is it."
     mm "Promise you’ll be on your best behavior?"
 
-    n "...why are you asking me that now?"
+    n "...Why are you asking me that now?"
 
     "She searches for the right words to say."
 
     mm "I didn’t want you to spend your time at the mansion worrying about school."
-    mm "This place is the safest place for you to be right now, even if it’s upsetting at times."
+    mm "This is the safest place for you to be right now, even if it’s upsetting at times."
     mm "Until they grant me full guardianship, my hands are tied."
 
     n "...I promise I’ll try."
@@ -1172,13 +1179,14 @@ label prologue2:
     "Maimai escorts me into the office."
 
     hide sprite MMBase
+
     # Principal office
     "A woman gestures for us to sit down. She takes her place behind a massive desk with a stack of forms for us to review."
-    "The nameplate in front of her reads in gold letters 'Principal Vivaldi Tahani'"
+    "The nameplate in front of her reads in gold letters 'Principal Vivaldi Thani'."
 
     n "....."
 
-    "Vivaldi Tahani, the chief officer sent to hunt down Lethe and her conspirators."
+    "Vivaldi Thani, the chief officer sent to hunt down Lethe and her conspirators."
     "She was at the scene when Lethe... when she died."
     "I wouldn't have come if I knew she'd be here."
     "She's the last person I want to talk to."
@@ -1211,7 +1219,7 @@ label prologue2:
 
     show sprite VBase
 
-    v  "Detective. I grew tired of locating criminals after they committed crimes."
+    v "Detective. I grew tired of locating criminals after they committed crimes."
 
     hide sprite VBase
 
@@ -1271,6 +1279,8 @@ label prologue2:
 
     mm "You got this."
 
+    # New Background showing around the outside here
+
     "We go back to the car to get the last of my things."
     "She wraps me in a huge hug and I become very aware of the car coming up to the roundabout."
 
@@ -1300,8 +1310,6 @@ label prologue2:
     nk "Good morning!"
 
     n "AH!"
-
-    #[Nanase sprite]
 
     nk "I'm sorry, I didn't mean to startle you."
     nk "My name's Nanase Keisan. I'm helping with orientation during move in week."
@@ -1413,7 +1421,7 @@ label nk_intro:
     # New Game +
 
     g "Of course, you can always skip ahead to the next scene."
-    g "But this will give you a baseline affinity of 0 with all students"
+    g "But this will give you a baseline affinity of 0 with all students."
 
     # Else
 
@@ -1441,7 +1449,6 @@ label FindPeople1:
 
             $ friend += 1
         
-
             "I arrive at the room where the student council meets."
             "Everything looks too new, too clean, like no one has set foot in here since the school opened."
             "I stand for a while, admiring the leather office chair at the end of the table possibly meant for the student council president."
@@ -1473,7 +1480,7 @@ label FindPeople1:
 
                     n "I don't know, maybe Uitto worked her magic and cried us into a lighter sentence."
 
-                    h "We could do that? Shoot, if I'da knew, I woulda taken a lemon into the courtroom or something."
+                    h "We could do that? Shoot, if I'da known that, I woulda taken a lemon into the courtroom or something."
                     h "I mean, yeah I was kinda scared, but I totally coulda cried my way to freedom."
 
                     "He's as determined as ever."
@@ -1486,12 +1493,12 @@ label FindPeople1:
 
                     h "Right, she was a Charisma major at the time."
                     h "Oh! That reminds me."
-                    h "There's been a rumor going around that you can change your Major, have you heard anything about that?"
+                    h "There's been a rumor going around that you can change your major, have you heard anything about that?"
 
                     n "No, I haven't."
 
                     h "Oh, that sucks. I was hoping you could explain it to me."
-                    h "Something to do with how Proficiencies can apply to different Majors depending on how they're used."
+                    h "Something to do with how Proficiencies can apply to different majors depending on how they're used."
                     h "But I just don't get injured easily. I don't see how that would make me smarter or more likable."
 
                     "That is odd, I'll have to look into that."
@@ -1604,13 +1611,14 @@ label FindPeople1:
             "I should get going. There's still more of the school to see."
 
             call FindPeople
+
         "Field":
             scene backgroundfield
 
             "A few years ago, I probably wouldn't be anywhere near here. Maybe this year will be different."
             "In the corner of my eye, I see a girl in black spandex bound over, a pile of papers in her hands."
 
-            show sprite Mbase
+            show sprite MBase
 
             m "Hold on a second!"
             m "Hey, the name's Mariko Genki, I'm gathering signatures to start up a Cheer Squad!"
@@ -1775,7 +1783,7 @@ label FindPeople1:
             "The grounds of this school are a lot larger than I anticipated."
             "I'll need at least an hour before classes start in order to figure out where I'm going."
             "I wander into a back hallway on the second floor."
-            "I assume all of the art classes will be taking place based on the glass display cases."
+            "I assume all of the art classes will be taking place here based on the glass display cases."
             "With all the classrooms locked, there isn't much to see right now."
             "Though I don't seem to be the only person wandering around campus right now."
             "He has a beaten-up piece of paper in his hand and seems lost."
@@ -1805,17 +1813,17 @@ label FindPeople1:
 
                     n "Just looking for where my new classes are going to be. And talking to you, I guess."
 
-                    y "...you can't be serious."
+                    y "...You can't be serious."
 
                     n "What?"
 
                     y "I thought this was supposed to be a school for the e-e-elite, not a co-common murderer."
 
-                    n "First of all; common!? I know having a good memory isn't the most exciting Proficiency, but it's better than your Music Man."
+                    n "First of all; common!? I know having a good memory isn't the most exciting Proficiency, but it's better than you Mr. Music Man."
                     n "Secondly, being involved in the Guwon Riots has nothing to do with how capable I am as a student."
                     n "The definition of 'elite' here is slightly above average, don't delude yourself."
 
-                    y "So defensive over your Pr-proficiency, yet you're going to g-ggloss over the murderer comment?"
+                    y "So defensive over your Pr-proficiency, yet you're going to g-gloss over the murderer comment?"
 
                     n "....."
 
@@ -2111,7 +2119,7 @@ label FindPeople1:
 
             n "Uitto, you gotta trust me on this, I know what I'm doing."
 
-            if $ Vision >= 10:
+            if Vision >= 10:
 
                 n "Well, yeah... Uitto, is something wrong?"
 
@@ -2154,9 +2162,9 @@ label Uittoleave:
             n "We?"
 
             k "Aren't you a fellow performer? You're all dressed up and studying the stage."
-            k "What else am I supposed to think; that you're just some Intelligence Major?"
+            k "What else am I supposed to think; that you're just some Intelligence major?"
 
-            n "I {i}am{/i} an Intelligence Major."
+            n "I {i}am{/i} an Intelligence major."
 
             k "Oh..."
 
@@ -2167,7 +2175,7 @@ label Uittoleave:
 
             "No harm was done, but it would be fun to mess with her a bit."
 
-            n "It's okay. Since we're going with blind assumptions, I'm guessing Charisma Major?"
+            n "It's okay. Since we're going with blind assumptions, I'm guessing Charisma major?"
 
             k "You mean you don't recognize me?"
 
@@ -2261,7 +2269,7 @@ label Uittoleave:
                     n "That doesn't sound like a Charm Proficiency."
 
                     k "Because it's not."
-                    k "Not every Vigor Major you meet is going to be some meathead jock."
+                    k "Not every Vigor major you meet is going to be some meathead jock."
                     k "Still, I'm trying to see if they'll let me switch courses."
                     k "I feel like Ms. Sato would help me become a more successful idol."
 
@@ -2547,7 +2555,7 @@ label Uittoleave:
             mu "Well, it was that or be a TA for the Intel Professor during science lectures but... blegh, I hate theory."
             mu "I came here to learn, not to grade papers."
 
-            "That's something I can sympathize with as a fellow Intelligence Major. When they ran out of things to teach you, they'd give you busy work."
+            "That's something I can sympathize with as a fellow Intelligence major. When they ran out of things to teach you, they'd give you busy work."
             "So this is the limit to having a Medicine Proficiency."
             "When he'd go off in class about internal organs, I thought he'd grow up to be a serial killer, not a stoner."
             "Still, he isn't the first person I'd choose to patch my wounds."
@@ -3101,25 +3109,25 @@ label FindPeople2:
 
                     jump ch_intro
 
-                "What's your Major?":
+                "What's your major?":
                     $ Vision += 1
 
                     "It's basic small talk, so why does she look so down?"
 
                     ch "I am a playwright."
 
-                    n "I thought you were an Intelligence Major?"
+                    n "I thought you were an Intelligence major?"
 
                     ch "I should be." 
                     ch "I should be in classes that help me improve my skills as a writer and collaborate with other creatives."
                     ch "But Guwon does not recognize 'dual' proficiencies so it does not matter how good my writing skills are anymore."
-                    ch "Because something strange sometimes happens to me, I had to change Majors."
+                    ch "Because something strange sometimes happens to me, I had to change majors."
 
-                    n "...you're a Vision Major?"
+                    n "...you're a Vision major?"
 
                     ch "Not by choice. Until I can gain full control of my other hand, I am stuck there."
 
-                    "Having a prosthetic shouldn't affect your Major. Maybe she can't write as well with her left hand?"
+                    "Having a prosthetic shouldn't affect your major. Maybe she can't write as well with her left hand?"
 
                     jump ch_intro
 
@@ -3142,7 +3150,7 @@ label FindPeople2:
             n "Has this 'thing' told you anything about me?"
 
             #[If Hero > Villian]
-            if $ Hero >= $ Villain:
+            if Hero >= Villain:
                 ch "...yes."
                 ch "It does not want me to believe what others may say about you; that you are a good friend and an honest person."
 
@@ -3152,7 +3160,7 @@ label FindPeople2:
 
                 ch "....."
                 ch "Sometimes I think my mind is playing tricks on me." 
-                ch "Maybe the teachers will see that and put me back with the normal Intelligence Majors."
+                ch "Maybe the teachers will see that and put me back with the normal Intelligence majors."
 
             #[Return to Main Branch]
 
@@ -3192,7 +3200,7 @@ label FindPeople2:
             sh "Having no uniform restrictions has really opened my eyes to what our classmates are comfortable wearing."
 
             "Eyes... Oh, this is that kid from the Vigor program that Hiro always told me about."
-            "All the Vigor Majors he'd met before gravitated towards sports, but not him."
+            "All the Vigor majors he'd met before gravitated towards sports, but not him."
             "The guy's got eyes able zoom in and out like a camera."
             "He used to sit in the back of the class, a bit of a loner type."
 
@@ -3205,7 +3213,7 @@ label FindPeople2:
             n "But it's good to see you. The more kids I find from our old homeroom, the better I feel."
 
             sh "Yeah, I know what you mean. I'm kinda glad there's more crossover classes than just homeroom."
-            sh "Hopefully, it will help all the Majors get along better. It's gotten so competitive lately."
+            sh "Hopefully, it will help all the majors get along better. It's gotten so competitive lately."
 
             n "So what are you doing here?"
 
@@ -3375,7 +3383,7 @@ label FindPeople2:
             s "I'm told I'm basically invisible; people don't notice me or remember me as much as other people."
             s "I prefer the term Social Chameleon, but the bow-ties in charge of labels don't want to change my status without a retest."
 
-            "A Charisma Major that specializes in being unnoticed, how odd."
+            "A Charisma major that specializes in being unnoticed, how odd."
 
             s "Having the wrong label has its perks though."
             s "As long as I act like I belong, I can go pretty much anywhere I want."
@@ -3528,7 +3536,7 @@ label FindPeople2:
             ki "Like this? Nah. I've been in n' out of a couple... ah, what do they call 'em?"
             ki "'Guided Learning Programs'. I've been to a bunch of those."
 
-            "Camps designed to stop kids from developing 'unnatural' abilities that could label them as a Vision Major."
+            "Camps designed to stop kids from developing 'unnatural' abilities that could label them as a Vision major."
             "Some of those places could be downright criminal, and none of them worked. I didn't know they were still around."
 
             n "I can't believe your parents would do that to you."
@@ -3560,7 +3568,7 @@ label FindPeople2:
                     "He rubs his temples."
 
                     ki "Why. Why would you ask that? Did I do something upsettin' of y'think..."
-                    ki "You a Vision Major, or do you hate 'em?"
+                    ki "You a Vision major, or do you hate 'em?"
 
                     n "You just kept trailing off and forgetting what you were saying."
 
@@ -3581,7 +3589,7 @@ label FindPeople2:
                 "Your old school":
                     $ kiRep += 1
 
-                    ki "Right, well they said being a Vision Major, I'm a Vision Major, they said it made my case too complex."
+                    ki "Right, well they said being a Vision major, I'm a Vision major, they said it made my case too complex."
 
                     n "What does that mean?"
 
@@ -3781,7 +3789,7 @@ label FindPeople3:
 
                     n "I'm not jealous. You're jealous."
 
-                    mh "D'aw, cheer up Nagen, it'll be okay. I mean, you're still an Intel Major, yeah?"
+                    mh "D'aw, cheer up Nagen, it'll be okay. I mean, you're still an Intel major, yeah?"
 
                     n "Well, yeah..."
 
@@ -4032,7 +4040,7 @@ label FindPeople3:
             "Every piece of furniture clashes despite the effort to match colors."
             "By the large bay window sits a poised girl with a tea set."
             "Rise Kisaki, her Proficiency is Allure, which I never fully understood."
-            "According to Uitto, it means she;s a people magnet, like a lot of Charisma Majors."
+            "According to Uitto, it means she;s a people magnet, like a lot of Charisma majors."
             "With me being in the “bad kids” class, I never really talked to her."
             "Her far off stare reminds me of a china doll. Across from her is an empty cup and chair."
 
