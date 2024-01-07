@@ -48,7 +48,7 @@ define q        = Character("???",              window_background = "gui/text_bo
 define Ty       = Character("Ty",               window_background = "gui/text_boxes/OtherText.png")
 
 # Used for player instructions - Possibly different way to do this?
-define g        = Character("Game",             window_background = "gui/text_boxes/narratorkun.png")
+define g        = Character("",                 window_background = "gui/text_boxes/narratorkun.png")
 
 #backgrounds
 image backgroundpolice    = "Backgrounds/PoliceRoom.png"

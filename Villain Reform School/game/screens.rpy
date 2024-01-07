@@ -101,7 +101,7 @@ screen say(who, what):
     window:
         id "window"
 
-        if who is not None:
+        if who is not None and who is not "":
 
             window:
                 id "namebox"
@@ -124,7 +124,7 @@ init python:
 style window is default
 style say_label is default
 style say_dialogue is default
-style say_thought is say_dialogue
+#style say_thought is say_dialogue
 
 style namebox is default
 style namebox_label is say_label
@@ -160,7 +160,20 @@ style say_dialogue:
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
 
-    adjust_spacing False
+    adjust_spacing True
+
+style say_thought:
+    properties gui.text_properties("dialogue")
+
+    textalign 0.5
+    min_width 1728
+    layout "subtitle"
+
+    xpos gui.dialogue_xpos
+    xsize gui.dialogue_width
+    ypos gui.dialogue_ypos
+
+    adjust_spacing True
 
 ## Input screen ################################################################
 ##
@@ -249,6 +262,7 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
+            #textbutton _("Stats") action Show("")
             textbutton _("Inventory") action Show("inventory")
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
