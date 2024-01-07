@@ -48,7 +48,7 @@ define q        = Character("???",              window_background = "gui/text_bo
 define Ty       = Character("Ty",               window_background = "gui/text_boxes/OtherText.png")
 
 # Used for player instructions - Possibly different way to do this?
-define g        = Character("",                 window_background = "gui/text_boxes/narratorkun.png")
+define g        = Character("Game",             window_background = "gui/text_boxes/narratorkun.png")
 
 #backgrounds
 image backgroundpolice    = "Backgrounds/PoliceRoom.png"
@@ -88,74 +88,82 @@ image backgroundstuco     = "Backgrounds/stuco.png"
 #Sprites
 
 #Koe
-image sprite KoeBase = "Sprites/KoeSprites/koe1.png"
+image KoeBase = "Sprites/KoeSprites/koe1.png"
 #Cop
-image sprite CopBase = "Sprites/Cop/cop1.png"
+image CopBase = "Sprites/Cop/cop1.png"
 #Maimai
-image sprite MMBase = "Sprites/MaiMai/MMBase.png"
+image MMBase = "Sprites/MaiMai/MMBase.png"
 #Kenzo
-image sprite KenzoBase = "Sprites/Kenzo/kenzoSprite.png"
+image KenzoBase = "Sprites/Kenzo/kenzoSprite.png"
 
 #Apex
-image sprite ABase = "Sprites/Apex/Apexspritebase.png"
-image sprite ASad = "Sprites/Apex/Apexspritesad.png"
+image ABase = "Sprites/Apex/Apexspritebase.png"
+image ASad = "Sprites/Apex/Apexspritesad.png"
 #Chisei
-image sprite ChBase = "Sprites/Chisei/Chiseibase.png"
+image ChBase = "Sprites/Chisei/Chiseibase.png"
 #Dyre
-image sprite DBase = "Sprites/Dyre/Dyrebase.png"
+image DBase = "Sprites/Dyre/Dyrebase.png"
 #Hiro
-image sprite HBase = "Sprites/Hiro/Hirobase.png"
+image HBase = "Sprites/Hiro/Hirobase.png"
 #Ichita
-image sprite IBase = "Sprites/Ichita/ichitabase.png"
+image IBase = "Sprites/Ichita/ichitabase.png"
 #Jona
-image sprite JDepressed = "Sprites/Jona/JonaDepressed.png"
-image sprite JFrustrated = "Sprites/Jona/JonaFrustrated.png"
-image sprite JHappy = "Sprites/Jona/JonaHappy.png"
-image sprite JMad = "Sprites/Jona/JonaMad.png"
-image sprite JRelax = "Sprites/Jona/JonaRelax.png"
+image JDepressed = "Sprites/Jona/JonaDepressed.png"
+image JFrustrated = "Sprites/Jona/JonaFrustrated.png"
+image JHappy = "Sprites/Jona/JonaHappy.png"
+image JMad = "Sprites/Jona/JonaMad.png"
+image JRelax = "Sprites/Jona/JonaRelax.png"
 #Kazz
-image sprite KkBase = "Sprites/Kazz/Kazz1.png"
+image KkBase = "Sprites/Kazz/Kazz1.png"
 #Kietsu
-image sprite KiBase = "Sprites/Kietsu/k2.png"
+image KiBase = "Sprites/Kietsu/k2.png"
 #Kitsune
-image sprite KBase = "Sprites/Kitsune/KitsuneN.png"
+image KBase = "Sprites/Kitsune/KitsuneN.png"
 #Mariko
-image sprite MBase = "Sprites/Mariko/Marikobase.png"
+image MBase = "Sprites/Mariko/Marikobase.png"
 #Momoko
-image sprite MhBase = "Sprites/Momoko/momokobase.png"
+image MhBase = "Sprites/Momoko/momokobase.png"
 #Mu
-image sprite MuBase = "Sprites/Mu/Mu1.png"
+image MuBase = "Sprites/Mu/Mu1.png"
 #Nanase
-image sprite NBase = "Sprites/Nanase/nanasebase.png"
+image NBase = "Sprites/Nanase/nanasebase.png"
 #Rei
-image sprite ReBase = "Sprites/Rei/Rei.png"
+image ReBase = "Sprites/Rei/Rei.png"
 #Rise
-image sprite RBase = "Sprites/Rise/Rise1.png"
+image RBase = "Sprites/Rise/Rise1.png"
 #Setsuna
-image sprite SBase = "Sprites/Setsuna/setsunabase.png"
+image SBase = "Sprites/Setsuna/setsunabase.png"
 #Shoma
-image sprite ShBase = "Sprites/Shoma/ShomaN.png"
+image ShBase = "Sprites/Shoma/ShomaN.png"
 #Taiga
-image sprite TBase = "Sprites/Taiga/TaigaN.png"
+image TBase = "Sprites/Taiga/TaigaN.png"
 #Uitto
-image sprite UBase = "Sprites/Uitto/Uittobase.png"
+image UBase = "Sprites/Uitto/Uittobase.png"
 #Yoku
-image sprite YBase = "Sprites/Yoku/YokuN.png"
+image YBase = "Sprites/Yoku/YokuN.png"
 
 #Teachers
 #Inukai
-image sprite IkBase = "Sprites/Inukai/inuN.png"
+image IkBase = "Sprites/Inukai/inuN.png"
 #Sato
-image sprite SaBase = "Sprites/Fox/basespritesox.png"
+image SaBase = "Sprites/Fox/basespritesox.png"
 #Vivaldi
-image sprite VBase = "Sprites/Vivaldi/ViBase.png"
+image VBase = "Sprites/Vivaldi/ViBase.png"
 #Yaguchi
-image sprite YaBase = "Sprites/Yaguchi/yaguchibase.png"
+image YaBase = "Sprites/Yaguchi/yaguchibase.png"
+
+#Clues
 
 #CGs
+image backgroundP1 = "Cgs/Prologue_1.png"
 image backgroundP2 = "CGs/Prologue_2.png"
 image backgroundP3 = "CGs/Prologue_3.png"
-image backgroundC1 = "CGs/Ch1_1.png"
+image backgroundPT = "CGs/Prologue_T.png"
+image backgroundC1_1 = "CGs/Ch1_1.png"
+image backgroundC1_2 = "CGs/Ch1_2.png"
+image backgroundC1_3 = "CGs/Ch1_3.png"
+image backgroundC1_T = "CGs/Ch1_T.png"
+image backgroundC1_E = "CGs/Ch1_E.png"
 image backgroundB1 = "CGs/Boss1_1.png"
 image backgroundB2 = "CGs/Boss1_2.png"
 image backgroundB3 = "CGs/Boss1_3.png"
