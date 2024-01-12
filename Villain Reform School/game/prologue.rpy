@@ -2656,7 +2656,7 @@ label prologue_kazz:
     n "What does that have to do with me being here?"
 
     kk "If something breaks or goes missing, I'll be the first person they blame."
-    kk "I didn't mean to offend you, but my faith in humanity took a bummer turn by at least 46% this year."
+    kk "I didn't mean to offend you, but my faith in humanity took a bummer turn by at least 46%% this year."
     kk "As long as I can record my show and no one leaves a mess for me to clean up, I'll make due."
 
     n "You plan on making videos?"
@@ -2707,7 +2707,7 @@ label prologue_kazz:
             n "You stopped doing your homework to move to Special Ed?"
 
             kk "Oh, I never did it to begin with."
-            kk "Busy work like that is just fluff that diversifies the grad points so one bad exam doesn't force you to repeat a grade."
+            kk "Busy work like that is just fluff that diversifies the grade points so one bad exam doesn't force you to repeat a grade."
             kk "I did fine on exams, the assignments were a waste of everyone's time."
             kk "I gave my homework to a willing volunteer and just copied their work in my handwriting."
             kk "But apparently, that wasn't a 'real' problem."
@@ -2717,7 +2717,7 @@ label prologue_kazz:
 
             kk "I guess that's true, but it seemed logical at the time."
             kk "Dyre was an argumentative shit-head, all the teachers hated him, but they couldn't get rid of him because of his grades."
-            kk "Still, I hope this place won't be boring. The least they could do after busing us here is to make it interesting."
+            kk "Still, I hope this place won't be boring. The least they could do after bussing us here is to make it interesting."
             
         "I didn't bail":
 
@@ -2777,7 +2777,7 @@ label prologue_kazz:
 
             kk "I'm sure you're a blast at parties."
     
-    kk "It's so trippy though, 91% of the people I've met here used to go to Estella."
+    kk "It's so trippy though, 91%% of the people I've met here used to go to Estella."
     kk "Most high schools pull in students from four to fifteen different primary schools."
     kk "I should have found more people from different places by now."
 
@@ -2951,7 +2951,7 @@ label prologue_oshin:
 
     n "They're harder than they look."
 
-    mu "They're made of yarn, man, it doesn't get cushier than that man."
+    mu "They're made of yarn, man, it doesn't get cushier than that."
     mu "I thought Dyre was exaggerating all those times. That's too rich."
 
     "I don't think he's going to stop laughing any time soon."
@@ -3020,7 +3020,7 @@ label prologue_ichita:
 
         "I wasn't scared!":
 
-            $ Vison += 1
+            $ Vision += 1
 
             i "You were making a little scared face." 
             i "Your eyes got all wide and you kept looking at my teeth. You're like an open book."
@@ -3425,7 +3425,7 @@ label prologue_chisei:
 
     #[If Hero > Villian]
     if Hero >= Villain:
-        ch "...yes."
+        ch "...Yes."
         ch "It does not want me to believe what others may say about you; that you are a good friend and an honest person."
         "Not exactly the creepy mentalist stuff I was expecting."
     else:
@@ -3476,7 +3476,7 @@ label prologue_shoma:
     "The guy's got eyes able zoom in and out like a camera."
     "He used to sit in the back of the class, a bit of a loner type."
 
-    sh "oma Nishimoto, but you probably remember that, hunh?"
+    sh "Shoma Nishimoto, but you probably remember that, hunh?"
 
     n "Yeah, though this is probably the longest we've ever talked."
 
@@ -3630,7 +3630,7 @@ label prologue_setsuna:
 
     "What the- where did that come from?"
 
-    s "...you weren't talking to me, were you?"
+    s "...You weren't talking to me, were you?"
 
     n "I didn't realize you were here, sorry."
 

@@ -58,3 +58,5 @@
 # Battle system
 # Skip API for mechanics
 # Investigation stuff
+
+# Memory feature for prologue menu
