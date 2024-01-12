@@ -1,5 +1,6 @@
 # Hotkeys & Shortcuts for VS Code
 #     Multiselect: CTRL + ALT + Up/Down Arrow Keys - Lets you edit more than a line at a time
+#     Wrap: ALT + Z
 
 # JUST LOOK AT DOCUMENTATION
 #RenPy Keywords Glossary

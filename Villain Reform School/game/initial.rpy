@@ -47,13 +47,14 @@ define PA       = Character("PA",               window_background = "gui/text_bo
 define q        = Character("???",              window_background = "gui/text_boxes/OtherText.png")
 define Ty       = Character("Ty",               window_background = "gui/text_boxes/OtherText.png")
 
-# Used for player instructions - Possibly different way to do this?
-define g        = Character("Game",             window_background = "gui/text_boxes/narratorkun.png")
+# Needs to be empty for the namebox to not show up
+define g        = Character("",             window_background = "gui/text_boxes/narratorkun.png")
 
 #backgrounds
 image backgroundpolice    = "Backgrounds/PoliceRoom.png"
 image backgroundblack     = "Backgrounds/black.png"
 image backgroundamp       = "Backgrounds/ampetheater.jpg"
+image backgroundavroom    = "Backgrounds/AVRoom.jpg"
 image backgroundbad       = "Backgrounds/badforrest.png"
 image backgroundcafex     = "Backgrounds/cafeexterior.jpg"
 image backgroundcafexn    = "Backgrounds/cafeexteriorn.jpg"
@@ -64,6 +65,7 @@ image backgroundcharm     = "Backgrounds/CharmClass.png"
 image backgroundclass     = "Backgrounds/class.jpeg"
 image backgroundcourtyard = "Backgrounds/Courtyard.png"
 image backgrounddorm      = "Backgrounds/Dorms.jpeg"
+image backgrounddoor      = "Backgrounds/Door.jpg"
 image backgroundfield     = "Backgrounds/Field.png"
 image backgroundclearing  = "Backgrounds/ForestClearing.png"
 image backgroundhall1     = "Backgrounds/hallway1.jpeg"
@@ -255,8 +257,28 @@ label variables:
     $ yTurn = 0
     $ uTurn = 0
 
-    # Prologue Variable
-    $ friend = 0
+    # Prologue Variables
+    $ prologueSearches = 0
+    $ prologueFriendsFound = 0
+    $ prologueHiroMet  = False
+    $ prologueJonaMet  = False
+    $ prologueUittoMet = False
+    $ prologueMarikoMet = False
+    $ prologueYokuMet = False
+    $ prologueKitsuneMet = False
+    $ prologueKazzMet = False
+    $ prologueOshinMet = False
+    $ prologueIchitaMet = False
+    $ prologueTaigaMet = False
+    $ prologueChiseiMet = False
+    $ prologueShomaMet = False
+    $ prologueSetsunaMet = False
+    $ prologueKietsuMet = False
+    $ prologueMomokoMet = False
+    $ prologueReiMet = False
+    $ prologueRiseMet = False
+    $ prologueDyreMet = False
+
 return
 
 # THE GAME STARTS HERE!
@@ -268,8 +290,8 @@ label start:
     menu:
         "Prologue":
             jump prologue
-        "Meet Students":
-            jump FindPeople
+        "Meet Students/Find Friends":
+            jump prologue_meet_students
         "Chapter One":
             jump chapter_one
         "Sandbox":
