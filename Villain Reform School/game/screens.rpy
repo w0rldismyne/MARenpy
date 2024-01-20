@@ -262,7 +262,7 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            #textbutton _("Stats") action Show("")
+            textbutton _("Stats") action Show("stats")
             textbutton _("Inventory") action Show("inventory")
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')

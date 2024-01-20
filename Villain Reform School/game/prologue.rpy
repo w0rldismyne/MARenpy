@@ -1459,8 +1459,15 @@ label prologue_meet_students:
     else:
         "Where should I look now?"
 
+    if prologueLocationsPage is 2:
+        jump prologue_locations_2
+    elif prologueLocationsPage is 3:
+        jump prologue_locations_3
+
 
 label prologue_locations_1:
+
+    $ prologueLocationsPage = 1
 
     menu:
         extend ""
@@ -1480,6 +1487,9 @@ label prologue_locations_1:
             jump prologue_locations_2
 
 label prologue_locations_2:
+
+    $ prologueLocationsPage = 2
+
     menu:
         extend ""
         "Nurse's Office":
@@ -1499,6 +1509,9 @@ label prologue_locations_2:
 
 
 label prologue_locations_3:
+
+    $ prologueLocationsPage = 3
+
     menu:
         extend ""
         "Cafe":

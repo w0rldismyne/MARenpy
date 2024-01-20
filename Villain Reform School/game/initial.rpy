@@ -260,6 +260,7 @@ label variables:
     # Prologue Variables
     $ prologueSearches = 0
     $ prologueFriendsFound = 0
+    $ prologueLocationsPage = 1
     $ prologueHiroMet  = False
     $ prologueJonaMet  = False
     $ prologueUittoMet = False
