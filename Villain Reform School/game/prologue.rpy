@@ -4693,7 +4693,7 @@ label prologue_jona:
 
     n "Does the gas mask work?"
 
-    j "...what do you mean 'does it work'?"
+    j "...What do you mean 'does it work'?"
 
     "Jona has a habit of repurposing things for art without knowing what they are."
     "He had tried inventing things, but always valued aesthetics over functionality."
@@ -4859,6 +4859,8 @@ label prologue_jona:
             j "Okay!"
 
             hide JHappy
+
+    # Not safe dialogue if someone comes here before finding anyone
 
     n "Anyway, everyone's going to be meeting in room 313 at four."
 
@@ -5028,7 +5030,7 @@ label Meeting:
     hide HBase
     show UBase
 
-    u "...right. So, you were saying..."
+    u "...Right. So, you were saying..."
 
     n "If we work together, all of us can get the hell out of here, for good."
     n "It's going to be lame, but if we can play the part for a year and play it well, they've got nothing on us."
@@ -5045,7 +5047,7 @@ label Meeting:
     hide JDepressed
     show HBase
 
-    h "...cool..."
+    h "...Cool..."
 
     n "And in the end, we'll get a lighter sentence and still get to be heroes."
 

@@ -298,6 +298,11 @@ label start:
         "Meet Students/Find Friends":
             jump prologue_meet_students
         "Chapter One":
-            jump chapter_one
+            menu:
+                extend "Where in Chapter One?"
+                "Beginning":
+                    jump chapter_one
+                "Investigation":
+                    jump investigation
         "Sandbox":
             jump sandbox
