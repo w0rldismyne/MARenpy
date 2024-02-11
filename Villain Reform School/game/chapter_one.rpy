@@ -30,6 +30,9 @@ label chapter_one:
     h "Open the doooor."
 
     "I get dressed in record time and slip out before either of my friends can barge in."
+
+    scene backgrounddorm
+
     "Jona could only restrain one of Hiro’s arms at a time."
     "It was a valiant effort, but he could be dragged wherever Hiro wanted to go."
 
@@ -113,6 +116,8 @@ label chapter_one:
 
     k "....."
 
+    hide KBase
+
     "She gets up quietly and leaves to sit with some other girls."
 
     u "Thank god. I seriously don’t know what I’d do without you guys."
@@ -123,8 +128,8 @@ label chapter_one:
     u "I’m not going to shit on someone’s self esteem for seeking validation, that’d be pointlessly cruel."
     u "It just sucks that the one person who wanted to talk to me just wanted to compete."
 
+    show HBase at right
     hide UBase
-    hide KBase
 
     "We’re interrupted by a comical scale of trumpets as the vice principal bounds on stage. Principal Vivaldi follows close behind in silence."
 
@@ -162,7 +167,7 @@ label chapter_one:
     hide IkBase
     hide VBase
     hide MBase
-    show Mbase at center
+    show MBase at center
     
     "We murmur amongst ourselves with one brave soul demanding more sleep."
     
@@ -311,57 +316,55 @@ label VigorClass1:
 
     m "Group team building is normal! Us girls have always had to pick up the slack around here. The least you could do in return is fall in line."
 
-    show ReBase
+    show ReBase at center
     
     re "That wasn't the nicest way to put it, but she's right."
 
     hide ReBase
+    hide MBase
+    hide HBase
     
     "Hiro tears away from me to argue. They’re talking over Professor Inukai the whole time."
     "Completely lost, I gravitate to the two people who aren't up in arms."
     
     n "Shoma, what the hell's going on?"
 
-    show ShBase
+    show ShBase at center
     
     sh "Well, Mariko and Hiro used to be class reps, but there's not enough students to justify splitting the class by gender."
     sh "So now they're trying to figure out who gets to be in charge."
-
-    hide ShBase
     
     n "That's not good."
     
-    show KBase
+    show KBase at left
 
     k "Says you. Every minute they argue is another minute we don't have to do lunges or mindless exercises. This course was always a joke."
-
-    hide KBase
     
     "Shoma nods. I feel out of place sitting alongside them. Second guessing my decision, I go to leave, but Hiro calls out to me again."
+
+    hide KBase
+    hide ShBase
+    show HBase at center
     
     h "Wait, Nagen, don't go! You gotta stay. I didn't mean to ignore you."
     
     n "Dude, I don't think I belong here, the culture shock alone..."
 
-    hide HBase
-    show IkBase
+    move HBase at right
+    show IkBase at center
 
     ik "This isn't going to be a traditional Vigor class. That means no 'teams' or competitions."
     
     m "But, but what about nationals-"
 
-    show HBase at right
-    
     h "You have to be joking!"
 
-    hide HBase
-    show KBase at right
+    show KBase at left
     
     k "Then what's the point-"
 
     hide KBase
-    hide Mbase
-    show IkBase
+    hide MBase
     
     ik "Now, now guys, I'm sure we can find a way to make everyone happy."
     
@@ -373,7 +376,6 @@ label VigorClass1:
     
     ik "I have a few ideas, but there's not a lot in the books to base them on. So I don't know-"
 
-    hide IkBase
     show HBase at right
      
     h "This is supposed to be the fun 'no homework' class. Y'know, strength training and junk."
@@ -381,8 +383,6 @@ label VigorClass1:
     show MBase at left
     
     m "We're the school's breadwinners. That's why we use class time to prepare for competitions."
-
-    show IkBase
     
     ik "There actually won't-"
     
@@ -393,8 +393,8 @@ label VigorClass1:
     
     h "You were thinking it!"
 
-    hide IkBase
-    show ReBase
+    hide HBase
+    show ReBase at right
     
     re "Guys, please."
 
@@ -435,7 +435,6 @@ label VigorClass1:
     
     n "But there is going to be a test?"
 
-
     show HBase at right
     
     h "DUDE!"
@@ -474,7 +473,8 @@ label VigorClass1:
     
     "He waits patiently for everyone to calm down."
     
-    ik "Competitions, while they make for good advertising for schools, they're hell on your body. I'll text you this week's homework once I've finished crunching the numbers. What is smarter when things are okay?"
+    ik "Competitions, while they make for good advertising for schools, they're hell on your body. I'll text you this week's homework once I've finished crunching the numbers."
+    ik "What is smarter when things are okay?"
     
     Everyone "?????"
     
@@ -1127,7 +1127,7 @@ label Day_1Event_2:
     "I assume, on blind faith alone, that whoever is responsible will be caught."
     "Everyone is staring. Everyone knows. They may not have beforehand, but now it’s like being under a spotlight."
 
-    scene backgroundC1
+    scene backgroundC1_1
 
     re "It's not true, is it?"
 
@@ -1309,7 +1309,7 @@ label Day_1Event_2_2:
     j "I'm not against helping, if you have a use for me that is."
 
     hide JDepressed
-    show habit
+    show HBase
 
     h "Guys... Okay, fine. But no one gets hurt. We got a reputation to fix."
 
@@ -1325,6 +1325,8 @@ label Day_1Event_2_2:
     nk "....."
 
     hide NBase
+
+    scene backgroundavroom
 
     #Ch1 Investigation
     #[BG: PA Room (interior)]
@@ -1678,7 +1680,7 @@ label Day_1Event_2_2:
     hide JRelax
     show JDepressed
 
-    J "....."
+    j "....."
     j "Purple blob."
 
     n "Everything looks purple through your goggles."
@@ -1846,7 +1848,7 @@ label Day_1Event_2_2:
     "As Nanase herds the two away, she looks back over her shoulder and winks. I hope I'm not making a mistake."
 
     #(Vision Bonus: Day 2 Event 2, After Nanase say 'Our hands are tied'.)
-    if $ Vision >= 10:
+    if Vision >= 10:
     
         n "Hey, how's the leg doing?"
 
@@ -1941,6 +1943,14 @@ label Day2E3:
 
     "He never changed into the uniform we gave him."
     "All of us were still mourning Lethe at the time... but I don't think he changed his clothes at all after his first mission."
+   
+    scene backgroundblack
+    with fade
+
+    scene backgroundroom
+
+    "Uggh"
+    "I have gym today."
 
     scene backgroundcafe
     #Day 3 Event 1
@@ -2106,7 +2116,7 @@ label Day2E3:
 
     mu "Is it hurting?"
 
-    hide sprie MuBase
+    hide sprite MuBase
 
     n "Why do you care? I thought you hated me."
 
@@ -2176,7 +2186,7 @@ label Day2E3:
     s "I can't guarantee I'll be any good at it, but if all you need is a third person, I can fill in until you find someone that wants to be a cheerleader."
 
     hide SBase
-    show sprie MBase
+    show sprite MBase
 
     m "Thank you!"
 
@@ -2237,13 +2247,15 @@ label Day2E3:
 
     Dark "He couldn't sneak out."
 
-    "A week after we ran away, we realized he only brought a few things in his backpack. He said it was because he forgot when we were leaving. That's when Lethe asked if he left a note."
+    "A week after we ran away, we realized he only brought a few things in his backpack. He said it was because he forgot when we were leaving."
+    "That's when Lethe asked if he left a note."
 
     scene backgroundfb5
 
     Dark "They made him go back."
 
-    "He was too scared to grab his stuff, of course he didn't leave a note. I emptied out one of my pistols and lent it to him so he could feel safe. Odori even checked the cylinder to make sure. The house should have been empty when he went."
+    "He was too scared to grab his stuff, of course he didn't leave a note. I emptied out one of my pistols and lent it to him so he could feel safe."
+    "Odori even checked the cylinder to make sure. The house should have been empty when he went."
 
     scene backgroundfb6
 
@@ -2252,6 +2264,14 @@ label Day2E3:
     "I tried asking him what happened, but he wouldn't answer me."
     "Everything became about saving as many of our classmates as he could."
     "He didn't want anyone to get hurt again."
+
+    scene backgroundblack
+    with fade
+
+    scene backgrounddorm
+
+    "As annoying as it was, I kind of miss Kazz's broadcast."
+    "It beats waking up to an empty room knowing I have to read old Shakespeare in front of everyone."
 
     #Day 4 Event 1
     #[BG: Courtyard]
@@ -2293,7 +2313,7 @@ label Day2E3:
     h "I'm not going to give some rando the satisfaction of scaring me. If they really wanted to face me, they should have stepped forward and said it to my face."
 
     #[If Hero]
-    if villain <= hero:
+    if Villain <= Hero:
 
         h "I'll be fine, you guys worry too much. I don't need to be guarded 24/7."
 
@@ -2652,6 +2672,9 @@ label Day2E3:
     "No one at school thought anything of it when he said he fell."
     "I wonder how often he got hurt and we just didn't know."
 
+    scene backgroundblack
+    with fade
+
     #Day 5 Event 1
     #[BG: Nagen's room]
 
@@ -2736,7 +2759,7 @@ label Day2E3:
 
     n "Thanks... I think."
 
-    if $ Vision >= 10:
+    if  Vision >= 10:
         call VisionDay5
     else:
         call Day5E3
@@ -2856,7 +2879,7 @@ label Day5E3:
 
     u "Don't push it, Tesuta."
 
-    if $ Vision >= 10:
+    if Vision >= 10:
         n "Did they pick out a set of earrings for you too?"
 
         u "Ugh, they tried, but they're so not my style."
@@ -3515,62 +3538,66 @@ label Ch1TapeScene:
     h "Mariko's already taken care of, so can you please put away the kid gloves?"
 
     h "We've been apart for two years, but you all act like you're the only ones who got older."
+    if Villain > Hero:
+        n "I figured you'd run your ideas by us before running off and doing something stupid, y'know, like you're supposed to."
 
-    #[If Villain]
-    
-    n "I figured you'd run your ideas by us before running off and doing something stupid, y'know, like you're supposed to."
+        h "And I figured you'd respect the decisions of your old commander instead of undermining me at every turn."
 
-    h "And I figured you'd respect the decisions of your old commander instead of undermining me at every turn."
+        h "I'm not stupid, Nagen, I know what you've been up to."
 
-    h "I'm not stupid, Nagen, I know what you've been up to."
+        n "What do you mean?"
 
-    n "What do you mean?"
+        "He looks so disappointed, then swallows like he took a bitter pill."
 
-    "He looks so disappointed, then swallows like he took a bitter pill."
+        h "We came here for a fresh start."
 
-    h "We came here for a fresh start."
+        h "I really don't like seeing you act like this when there's no one to impress. It makes it really hard to defend you."
 
-    h "I really don't like seeing you act like this when there's no one to impress. It makes it really hard to defend you."
+        n "Why are you lecturing me? No one got hurt in the end, not permanently. I just wanted to make sure you were safe."
 
-    n "Why are you lecturing me? No one got hurt in the end, not permanently. I just wanted to make sure you were safe."
+        h "....."
 
-    h "....."
+        n "Hiro, come on, I'd never do something if I thought it would put you in real danger."
 
-    n "Hiro, come on, I'd never do something if I thought it would put you in real danger."
+        h "I know."
 
-    h "I know."
+        n "We won. Now's the time to celebrate."
 
-    n "We won. Now's the time to celebrate."
+        h "...yeah."
 
-    h "...yeah."
+        "He's not back to his usual self yet. Maybe that girl roughed him up more than I realized."
 
-    "He's not back to his usual self yet. Maybe that girl roughed him up more than I realized."
+        h "I really hope things change."
 
-    h "I really hope things change."
-
-    n "Of course they will. Everything just takes a little time."
+        n "Of course they will. Everything just takes a little time."
 
     #[Return to Main Branch]
     #[If Hero]
-    
-    n "Well, someone's gotta look out for your wellbeing. You're practically addicted to taking the blame for things that have nothing to do with you. You're not responsible for everyone's happiness, especially if trying to make everyone happy is going to get you hurt."
+    else:
+        n "Well, someone's gotta look out for your wellbeing. You're practically addicted to taking the blame for things that have nothing to do with you."
+        n "You're not responsible for everyone's happiness, especially if trying to make everyone happy is going to get you hurt."
 
-    h "Says the guy who jumped into a fight that had nothing to do with him."
+        h "Says the guy who jumped into a fight that had nothing to do with him."
 
-    n "That's different. She said all our names on the intercom and... and I never told you the truth about what the brainwashing would do. I didn't want to scare you away from the plan."
+        "That's different. She said all our names on the intercom and... and I never told you the truth about what the brainwashing would do."
+        "I didn't want to scare you away from the plan."
 
-    h "......"
-    h "I'm not stupid, Nagen."
-    h "I knew what we were doing was bad. I just- I wanted to believe the ends would justify the means."
-    h "In the end, it looks like we hurt more people than we helped."
+        h "......"
+        h "I'm not stupid, Nagen."
+        h "I knew what we were doing was bad. I just- I wanted to believe the ends would justify the means."
+        h "In the end, it looks like we hurt more people than we helped."
 
-    n "We'll never know that for sure. Nothing would have changed if we didn't do something. I think we helped people, and we still can, even now. That's why we can't let this shake our resolve. Wishing you could do better, that's how you know you can do better in the future."
+        n "We'll never know that for sure. Nothing would have changed if we didn't do something."
+        n "I think we helped people, and we still can, even now. That's why we can't let this shake our resolve."
+        n "Wishing you could do better, that's how you know you can do better in the future."
 
-    h "No one cares that we're trying."
+        h "No one cares that we're trying."
 
-    n "You care, don't you? That's all that should matter. Fuck the people too impatient to wait."
+        n "You care, don't you? That's all that should matter. Fuck the people too impatient to wait."
 
     #[Main Branch]
+
+    scene backgroundroomn
     
     u "Knock, knock! Ready for 'movie' night?"
 
@@ -3616,7 +3643,8 @@ label Ch1TapeScene:
 
     n "You're the only human being alive that's comfortable all the time."
 
-    "Everyone crams themselves into my tiny dorm. Because, of course, after only a week of being here, I have the cleanest room. We fight to find an outlet for the TV, opting to balance it on a pile of textbooks so everyone can see."
+    "Everyone crams themselves into my tiny dorm. Because, of course, after only a week of being here, I have the cleanest room."
+    "We fight to find an outlet for the TV, opting to balance it on a pile of textbooks so everyone can see."
 
     h "We'll get the spooky tape out of the way and then have fun, right?"
 
@@ -3626,7 +3654,9 @@ label Ch1TapeScene:
 
     "I slide the tape in and watch as static peels away to reveal a grainy image of a familiar logo."
 
-    q "Mariko Genki, your bravery during the riots has not gone unnoticed. We would like to give you the support to protect the people you care about most. All you have to do is help us eliminate a loose end that threatens our operation. You deserve to be recognized as a true hero. We know you'll make the right choice. Sincerely, Apex of the Karmic Gladiators."
+    q "Mariko Genki, your bravery during the riots has not gone unnoticed. We would like to give you the support to protect the people you care about most."
+    q "All you have to do is help us eliminate a loose end that threatens our operation. You deserve to be recognized as a true hero."
+    q "We know you'll make the right choice. Sincerely, Apex of the Karmic Gladiators."
 
     "The video is consumed by static once more."
 
@@ -3651,20 +3681,35 @@ label Ch1TapeScene:
     h "A new leader that doesn't like us... that can't be good."
 
     "The tape sputters and then a curtain displays on the screen. Slowly a girl, suspended by ribbons, is lowered into the frame."
-
+    if Villain > Hero:
     #[If Villain]
     
-    a "Hello, my lovelies. If you're seeing this, then that means my first champion failed. Well, I guess she's not much of a champion anymore, is she? It takes more than a kind heart to be a true hero, I suppose. We need more heroes; brilliant beacons that act as ideal examples of who we should be. It feels like, somewhere along the way, we started to abandon those ideals in favor of more 'interesting' role models. Well, look where that's gotten us. We've tolerated awful, toxic people for so long for the sake of entertainment. Bad guys think they get to be heroes just because they tell us they are. Well, no more! I'm going to start over, with new heroes, better heroes. Once they've proven to me they can face injustice head on, they will be welcomed as the true guardians of Valhalla. As for you... Well, if you truly regret the harm you've caused, you'll accept your punishment with dignity."
-
+        a "Hello, my lovelies. If you're seeing this, then that means my first champion failed. Well, I guess she's not much of a champion anymore, is she?"
+        a "It takes more than a kind heart to be a true hero, I suppose. We need more heroes; brilliant beacons that act as ideal examples of who we should be."
+        a "It feels like, somewhere along the way, we started to abandon those ideals in favor of more 'interesting' role models."
+        a "Well, look where that's gotten us. We've tolerated awful, toxic people for so long for the sake of entertainment."
+        a "Bad guys think they get to be heroes just because they tell us they are. Well, no more! I'm going to start over, with new heroes, better heroes."
+        a "Once they've proven to me they can face injustice head on, they will be welcomed as the true guardians of Valhalla."
+        a "As for you... Well, if you truly regret the harm you've caused, you'll accept your punishment with dignity."
+    else:
     #[Move to Main Branch] 
     #[If Hero]
-    
-    a "Hello, my lovelies. Congratulations are in order. After all, you brave young heroes just fought your first villain! I should have known that broken thing was unsuited for the job. I do hope it was a little fun for you at least. Think of her like a salad, a promissory note of more to come. With everyone so out of practice, it's only fair to start small. How I long for the days when costumed heroes and villains could battle for dominance in broad daylight. All this sneaking around that has to be done now, just to keep others from intervening, it's demeaning to both of us. One day, there will be a place where real heroes receive the respect they deserve. I wonder; will you ever be worthy of Valhalla, or will my champions steal your places in paradise? After all, if you can't figure out how to entertain me, you're of no use to anyone."
+        a "Hello, my lovelies. Congratulations are in order."
+        a "After all, you brave young heroes just fought your first villain!"
+        a "I should have known that broken thing was unsuited for the job. I do hope it was a little fun for you at least."
+        a "Think of her like a salad, a promissory note of more to come. With everyone so out of practice, it's only fair to start small."
+        a "How I long for the days when costumed heroes and villains could battle for dominance in broad daylight."
+        a "All this sneaking around that has to be done now, just to keep others from intervening, it's demeaning to both of us."
+        a "One day, there will be a place where real heroes receive the respect they deserve."
+        a "I wonder; will you ever be worthy of Valhalla, or will my champions steal your places in paradise?"
+        a "After all, if you can't figure out how to entertain me, you're of no use to anyone."
 
     #[Move to Main Branch]
     #[Main Branch]
     
-    a "For now, false heroes, I bid you adieu. ...oh, and Mariko, since you're watching this too. Just know, there's a lot of people counting on you to fail. Au Revoir."
+    a "For now, false heroes, I bid you adieu. ...oh, and Mariko, since you're watching this too."
+    a "Just know, there's a lot of people counting on you to fail."
+    a "Au Revoir."
 
     "She disappears behind the static. We sit there drowning in white noise for a few moments before Uitto turns off the TV."
 
@@ -3690,5 +3735,6 @@ label Ch1TapeScene:
 
     "We marathon B-grade movies long into the night. The next day, we find out that Mariko won’t be coming back to class for a long time."
 
+    scene backgroundC1_E
 
     return

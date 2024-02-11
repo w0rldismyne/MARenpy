@@ -5,7 +5,7 @@ label investigation:
         #CDs, Computer, Microphone, Announcement List
     #Clues to find in Investigation... 
         #Mysterious Noise, Prank, Brag, PA Access, ID Account, Second locker, Missing Phone, Alexa Commands (might replace with more ID Account), Baton Pass
-    scene NagensRoom
+    scene backgroundroom
     menu:
         "Ask For Help":
             call Ask_For_Help
@@ -134,6 +134,8 @@ label YokuChoice1:
             y "There is none, he wouldn't know tha-at either. His idea of writing music is dragging and dr-ropping sound clips. Which is... fffine. I just doubt he'd use these over his machines."
 
             n "I suppose that's fair." #(+Mysterious noise)
+
+            $ inventory.AddClue(clue_mysterious_noise)
 
             call YokuChoice1
         "Show Evidence":
@@ -337,7 +339,9 @@ label ReiChoice2:
                     re "No. But I don't see why she'd lie to me."
                     re "Besides, the two of them are friends, sort of..."
 
-                    "Even she doesn't seem totally convinced by that explanation." #(+Baton Pass)
+                    "Even she doesn't seem totally convinced by that explanation."
+                    $ inventory.ShowClue(clue_baton_pass)
+
                     call ReiChoice2
                 "CDs":
     
@@ -479,7 +483,9 @@ label MomokoChoice1:
 
             mh "Not likely. Or if they do, they're smart enough to actually hide it."
             mh "After this, we'll be lucky to keep our school phones."
-            mh "It should show who's logged into it if you ask."#+ID Account
+            mh "It should show who's logged into it if you ask."
+            
+            $ inventory.ShowClue(clue_account)
 
             call MomokoChoice1
         "Leave":
@@ -579,6 +585,7 @@ label RiseChoice1:
                     r "Everyone seems content to wait until there are more students."
 
                     n "I see, thank you." #(+PA Access)
+                    $ inventory.AddClue(clue_pa_access)
                     call RiseChoice1
 
                 "Missing Phone":
@@ -901,8 +908,9 @@ label TaigaChoice:
             t "I guess he's making some extra scratch renting it to Mariko for all her club stuff."
 
             "Isn't that extortion? Surely the school would have given her space to store club stuff if she asked."
-            "Why go so far to rent someone else's locker?" #(+Genki's Second Locker)
-    
+            "Why go so far to rent someone else's locker?" 
+            $ inventory.AddClue(clue_second_locker)
+
             n "Anyone else know about this?"
 
             t "Probably the cheerleaders. I didn't ask though; didn't think it mattered."
@@ -1125,7 +1133,8 @@ label ChiseiChoice1:
             ch "A loud series of noises, around the lockers, I think."
             ch "I did not pursue the matter further."
             ch "Though seeing as I have not gotten in trouble for wandering the grounds at night, I do not think it was something I triggered."
-            #(+Mysterious Noise)
+
+            $ inventory.AddClue(clue_mysterious_noise)
 
             n "Have you heard it since?"
 
@@ -1291,7 +1300,7 @@ label ShomaChoice1:
             "So anyone logged into the same account can give it commands."
             "That's good to know. There was no login page in the computer's history and I doubt that someone would leave behind the search history if they were covering their tracks."
             "They must have some other way to log in."
-            #(+ID Account)
+            $ inventory.ShowClue(clue_account)
         "Leave":
             call ShomaOutro
     #-Other-
@@ -1429,6 +1438,8 @@ label IchitaChoice1:
             i "Well, no, but the thing was basically a paperweight without a passcode."
             i "I can't imagine it'd be too useful to anyone other than Kazz."
             #(+Found Phone)
+            $ inventory.ShowClue(clue_baton_pass)
+
             call IchitaChoice1
         "Leave":
             call IchitaOutro
@@ -1580,6 +1591,10 @@ label SetsunaChoice1:
 
             "That sure sounds like Kazz's phone alright. I should let him know where it is. "
             #(+Locker, +Phone)
+            #clue_baton_pass
+            #clue_missing_phone
+            #clue_second_locker
+
             call SetsunaChoice1
         "Leave":
             call SetsunaOutro
@@ -1724,6 +1739,8 @@ label KitsuneChoice1:
 
                     "Maybe she knows something about him I don't."
                     "As far as I can tell, he's one of the most trusting people here."
+                    $ inventory.ShowClue(clue_baton_pass)
+
                     call KitsuneChoice1
         "Leave":
             call KitsuneOutro
@@ -1834,6 +1851,9 @@ label MuChoice1:
                     "So the Echo was already in the booth by the time club submissions were open."
                     "That means anyone who could get in the booth would have access to it."
                     #(+Brag) (+Prank)
+                    $ inventory.ShowClue(clue_brag)
+                    $ inventory.AddClue(clue_prank)
+
                     call MuChoice1
                 "Computer":
                     "When I show him the search history, his face darkens."
@@ -1852,7 +1872,9 @@ label MuChoice1:
 
                     n "Is there a way to tell who gave it new commands?"
 
-                    mu "No. It can tell you what account it's logged into and what date it was added, but that's about it." #(+ID Account)
+                    mu "No. It can tell you what account it's logged into and what date it was added, but that's about it."
+                    $ inventory.ShowClue(clue_account)
+
                     call MuChoice1
         "Leave":
             call MuOutro
@@ -2035,6 +2057,9 @@ label KazzChoice1:
 
             kk "Anyway, I haven't done much other than that."
 
+            $ inventory.ShowClue(clue_brag)
+            $ inventory.AddClue(clue_missing_phone)
+
             #(+Brag, +PA Access, +Missing Phone)
             call KazzChoice1
         "Show Evidence":
@@ -2055,6 +2080,8 @@ label KazzChoice1:
                     kk "It would completely defeat the purpose of their recruitment ad."
                     kk "Besides, Mariko was the last one in there, and she'd have told me if something was out of place." 
                     #(+Cheer Ad, +PA Access)
+                    $ inventory.AddClue(clue_pa_access)
+
                     call KazzChoice1
                 "CDs":
                     kk "This school had a really crummy selection when we came in."
@@ -2091,7 +2118,10 @@ label KazzChoice1:
                     n "That could be anyone, but I'm guessing you and Setsuna would already know how to do that."
                     n "Someone new to the device was trying to get it to play that message automatically."
 
-                    "And that could be anyone." #(+ID Account, +Alexa Commands)
+                    "And that could be anyone." 
+                    
+                    $ inventory.ShowClue(clue_account)
+
                     call KazzChoice1
                 "Microphone":
                     kk "What about Pepper?"
@@ -2111,8 +2141,9 @@ label KazzChoice1:
                     #[B/W CG of Rei confronting Nagen]
     
                     "It would have been impossible to make it back in time without being out of breath."
-
+                    $ inventory.AddClue(clue_friends_list)
                     #[Rei, Mu, Yoku, Dyre, Taiga, Ichita, and Chisei have been removed from the suspect list]
+                    "Rei, Mu, Yoku, Dyre, Taiga, Ichita and Chisei... they're not the one's responsible."
                     call KazzChoice1
         "Leave":
             call KazzOutro
@@ -2349,7 +2380,7 @@ label Mariko4A:
     m "All of this is just gossip, Nagen. Even if Kietsu kept track of when the club leaders had the key, none of that proves I was ever in the booth."
     # Choose Clue Menu goes here
 label Mariko5A:
-    #[5A: Cheer Ad OR Announcement List]
+    #[5A: Cheer Ad]
     
     n "This is your ad, right here, and it was turned in after the other club leaders."
     n "You were the last person in the booth before the announcement went off."
@@ -2611,6 +2642,8 @@ label UittoInv1:
     u "That would drive me bananas."
 
     n "Thanks, Uitto." #(+Mystery Noise, +Prank)
+    $ inventory.ShowClue(clue_mysterious_noise)
+    $ inventory.ShowClue(clue_prank)
 
     hide sprite UBase
     pass #connect to main game loop
@@ -2641,6 +2674,8 @@ label JonaInv1:
 
     j "Oh good." #(+PA Access)
 
+    $ inventory.AddClue(clue_pa_access)
+
     hide sprite JHappy
     pass #connect to main game loop
 
@@ -2670,7 +2705,9 @@ label HiroInv1:
     h "I also overheard a few Intel Majors going off about Kazz bringing in a bunch of banned stuff."
     h "You might want to try asking him about what happened. It sounds like he might be a victim in this too."
 
-    n "I'll definitely keep that in mind. Thanks for the info." #(+ID Account, +Brag) 
+    n "I'll definitely keep that in mind. Thanks for the info." 
+    $ inventory.ShowClue(clue_account)
+    $ inventory.ShowClue(clue_brag)
 
     hide sprite HBase
     pass #connect to main game loop
