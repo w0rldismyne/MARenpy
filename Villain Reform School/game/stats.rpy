@@ -42,6 +42,45 @@ screen stats():
         text "Charm: [Charm]"
         text "Alignment - Hero: [Hero]"
         text "Alignment - Villain: [Villain]"
+        text "Reputation / Popularity: [Reputation]"
+
+screen stats_char_reputation():
+
+    modal True
+    image "images/Clues/Cork.png"
+
+    # Return Button
+    textbutton _("Return") action Hide("stats_char_reputation"):
+        xalign 1.0
+        yalign 0.0
+        text_color "#FF0000"
+        text_hover_color "#000000"
+
+    vbox:
+        xanchor 0.0
+        yanchor 0.5
+        xpos 0.0
+        ypos 0.5
+
+        text "Chisei Reputation: [chRep]"
+        text "Dyre Reputation: [dRep]"
+        text "Hiro Reputation: [hRep]"
+        text "Ichita Reputation: [iRep]"
+        text "Jona Reputation: [jRep]"
+        text "Kitsune Reputation: [kRep]"
+        text "Kazz Reputation: [kkRep]"
+        text "Kietsu Reputation: [kiRep]"
+        text "Mariko Reputation: [mRep]"
+        text "Momoko Reputation: [mhRep]"
+        text "Oshin Reputation: [muRep]"
+        text "Nanase Reputation: [nkRep]"
+        text "Rei Reputation: [rRep]"
+        text "Rise Reputation: [reRep]"
+        text "Setsuna Reputation: [sRep]"
+        text "Shoma Reputation: [shRep]"
+        text "Taiga Reputation: [tRep]"
+        text "Yoku Reputation: [yRep]"
+        text "Uitto Reputation: [uRep]"
 
 screen stats_prologue():
 
@@ -81,3 +120,6 @@ screen stats_chapter_one():
         yanchor 0.5
         xpos 0.0
         ypos 0.5
+
+        text "Day: [chapter1_day]"
+        text "Event: [chapter1_event]"

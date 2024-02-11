@@ -280,6 +280,10 @@ label variables:
     $ prologueRiseMet = False
     $ prologueDyreMet = False
 
+    # Chapter 1 Variables
+    $ chapter1_day = 1
+    $ chapter1_event = 1
+
 return
 
 # THE GAME STARTS HERE!
