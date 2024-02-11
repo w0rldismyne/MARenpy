@@ -10,7 +10,7 @@ define ki       = Character("Kietsu Himura",    window_background = "gui/text_bo
 define k        = Character("Kitsune Sumizome", window_background = "gui/text_boxes/KitsuneText.png")
 define m        = Character("Mariko Genki",     window_background = "gui/text_boxes/MarikoText.png")
 define mh       = Character("Momoko Yoshino",   window_background = "gui/text_boxes/MomokoText.png")
-define mu       = Character("Oshin Murakami",   window_background = "gui/text_boxes/NagenText.png")
+define mu       = Character("Oshin Murakami",   window_background = "gui/text_boxes/MuText.png")
 define n        = Character("Nagen Tesuta",     window_background = "gui/text_boxes/NagenText.png")
 define nk       = Character("Nanase Keisan",    window_background = "gui/text_boxes/NanaseText.png")
 define o        = Character("Odori Hato",       window_background = "gui/text_boxes/ApexText.png")
