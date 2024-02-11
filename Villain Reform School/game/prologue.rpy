@@ -4752,7 +4752,6 @@ label prologue_jona:
             "Just let it go, Nagen. You don't want to go down that road again."
 
             hide JRelax
-            jump j_intro
 
         "To start a fight":
 
@@ -5191,7 +5190,7 @@ label Meeting:
         "As for Uitto... I know we're all upset getting shoved into reform school, but it didn't seem like she had a better idea than mine."
         "I can't postpone returning to my dorm any longer."
 
-        scene backgrounddroom
+        scene backgroundroomn
 
         "Part of my aversion comes from how barren and sterile the rooms are."
         "I'd compare this place to a prison, but at least prisons are fully indoors."
