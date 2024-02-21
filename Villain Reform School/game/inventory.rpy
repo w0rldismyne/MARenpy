@@ -7,18 +7,23 @@ style Inventory:
 
 init python:
     class Clue:
-        def __init__(self, Name, Description):
-            self.Name = Name
-            self.Description = Description
+        def __init__(self, Identifier, Name, Description):
+            self._Identifier = Identifier
+            self._Name = Name
+            self._Description = Description
             self.Show = False
 
         @property
+        def GetID(self):
+            return self._Identifier
+        
+        @property
         def GetName(self):
-            return self.Name
+            return self._Name
         
         @property
         def GetDescription(self):
-            return self.Description
+            return self._Description
 
     class Inventory:
         def __init__(self):
@@ -33,21 +38,21 @@ init python:
 
         def ShowClue(self, Clue):
             for clue in self.Clues:
-                if (clue.Name is Clue.Name):
+                if (clue.GetName is Clue.GetName):
                     clue.Show = True
                     self.Count += 1
                     break
 
         def HideClue(self, Clue):
             for clue in self.Clues:
-                if (clue.Name is Clue.Name):
+                if (clue.GetName is Clue.GetName):
                     clue.Show = False
                     self.Count -= 1
                     break
 
         def CheckClue(self, Clue):
             for clue in self.Clues:
-                if (clue.Name is Clue.Name):
+                if (clue.GetName is Clue.GetName):
                     if(Clue.Show is True):
                         return True
                     else:
@@ -59,8 +64,8 @@ init python:
             self.Count = 0
 
 default inventory = Inventory()
-default selected_clue_name = "Name"
-default selected_clue_description = "Place Holder Text 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8"
+default selected_clue_name = ""
+default selected_clue_description = ""
 default page = 1
 
 
@@ -68,16 +73,15 @@ label inventory:
 
     # Test Inventory
 
-    define clue_account = Clue("Account", "There's a number of students with echo accounts.")
-    define clue_baton_pass = Clue("Baton Pass", "Kazz's phone got passed around by a few people.")
-    define clue_brag = Clue("Brag", "Kazz told anyone who'd listen about the tech he smuggled in.")
-    define clue_friends_list = Clue("Friend's List", "Everyone knows someone.")
-    define clue_missing_phone = Clue("Missing Phone", "Kazz claims it's stolen.")
-    define clue_mysterious_noise = Clue("Mysterious Noise", "At the early hours, something was alarming at school.")
-    define clue_pa_access = Clue("PA Access", "Only a few people were allowed in the AV Room.")
-    define clue_prank = Clue("Prank", "Kazz's friends thought messing with his stuff was funny.")
-    define clue_second_locker = Clue("Second Locker", "Someone took Mu's locker for themselves.")
-    # $ clue10 = Clue("Clue10", "This is Clue 10")
+    define clue_account = Clue("clue_account", "Account", "There's a number of students with echo accounts.")
+    define clue_baton_pass = Clue("clue_baton_pass", "Baton Pass", "Kazz's phone got passed around by a few people.")
+    define clue_brag = Clue("clue_brag", "Brag", "Kazz told anyone who'd listen about the tech he smuggled in.")
+    define clue_friends_list = Clue("clue_friends_list","Friend's List", "Everyone knows someone.")
+    define clue_missing_phone = Clue("clue_missing_phone", "Missing Phone", "Kazz claims it's stolen.")
+    define clue_mysterious_noise = Clue("clue_mysterious_noise", "Mysterious Noise", "At the early hours, something was alarming at school.")
+    define clue_pa_access = Clue("clue_pa_access", "PA Access", "Only a few people were allowed in the AV Room.")
+    define clue_prank = Clue("clue_prank", "Prank", "Kazz's friends thought messing with his stuff was funny.")
+    define clue_second_locker = Clue("clue_second_locker", "Second Locker", "Someone took Mu's locker for themselves.")
     # $ clue11 = Clue("Clue11", "This is Clue 11")
     # $ clue12 = Clue("Clue12", "This is Clue 12")
     # $ clue13 = Clue("Clue13", "This is Clue 13")
@@ -121,8 +125,8 @@ label inventory:
     #$ inventory.ShowClue(clue_prank)
     $ inventory.AddClue(clue_second_locker)
     #$ inventory.ShowClue(clue_second_locker)
-    # $ inventory.AddClue(clue10)
-    # $ inventory.ShowClue(clue10)
+    #$ inventory.AddClue(clue10)
+    #$ inventory.ShowClue(clue10)
     # $ inventory.AddClue(clue11)
     # $ inventory.ShowClue(clue11)
     # $ inventory.AddClue(clue12)
@@ -249,7 +253,7 @@ screen inventory(inventory = inventory):
         ysize 540
 
     # Return Button
-    textbutton _("Return") action Hide("inventory"):
+    textbutton _("Return") action SetVariable("selected_clue_name", ""), SetVariable("selected_clue_description", ""), Hide("inventory"):
         xalign 1.0
         yalign 0.0
         text_style "Inventory"
@@ -320,9 +324,10 @@ screen inventory(inventory = inventory):
             if (clue.Show is True):
 
                 $ list_tracker += 1
-
+                
                 if (list_tracker > list_page_minimum and list_tracker <= list_page_maximum):
                     imagebutton:
+                        foreground f"images/Clues/{clue.GetID}.png"
                         xanchor 0.0
                         yanchor 0.0
                         idle "images/Clues/Cluecard_blank_small.jpg"

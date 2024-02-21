@@ -282,7 +282,10 @@ label variables:
 
     # Chapter 1 Variables
     $ chapter1_day = 1
-    $ chapter1_event = 1
+    $ chapter1_event = -1
+    $ chapter1_free_time_morning_break = 0
+    $ chapter1_free_time_after_school = 1
+    $ chapter1_free_time_evening = 2
 
 return
 
@@ -299,7 +302,7 @@ label start:
             jump prologue_meet_students
         "Chapter One":
             menu:
-                extend "Where in Chapter One?"
+                g "Where in Chapter One?"
                 "Beginning":
                     jump chapter_one
                 "Investigation":
