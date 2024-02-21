@@ -23,6 +23,7 @@ label investigation:
             call KietsuInv1
         "Next":
             call investigation2
+    return
 
 label investigation2:
 
@@ -71,7 +72,6 @@ label Ask_For_Help:
         "Hiro":
             call HiroInv1
 
-
 label YokuInv1:
     #Yoku Interrogation
     scene backgroundstage
@@ -103,7 +103,8 @@ label YokuInv1:
     "I’m trying so hard to keep a straight face, but I think he can hear me stifling a laugh."
 
     y "Clearly you can see I'm preoccupied at the mo-oment. What did you want?"
-label YokuChoice1:
+
+    # Choices
 
     menu:
         "Alibi":
@@ -137,7 +138,6 @@ label YokuChoice1:
 
             $ inventory.AddClue(clue_mysterious_noise)
 
-            call YokuChoice1
         "Show Evidence":
                 "I show Yoku a photo I took of the CDs"
 
@@ -156,10 +156,10 @@ label YokuChoice1:
                 y "One of the perks of bein-ng a DJ."
                 y "It'll be June before I hear any cl-lassical music on the air."
 
-                call YokuChoice1
         "Leave":
-            call YokuOutro
-label YokuOutro:
+            pass
+
+    #Outro
 
     n "Well, thank you for taking time out of... whatever this is to talk to me."
 
@@ -177,7 +177,7 @@ label YokuOutro:
 
     "Shit, I better get out of here."
 
-    pass # Should call Ch1 equivilent of Freeday from the sandbox
+    return
 
 label ReiInv1:
     scene backgroundamp
