@@ -1,77 +1,3 @@
-label investigation:
-    #INVESTIGATION SCENES 
-    #[These scenes can be played during freetime by selecting the character from the investigation menu.]
-    #Clues from Ch1... 
-        #CDs, Computer, Microphone, Announcement List
-    #Clues to find in Investigation... 
-        #Mysterious Noise, Prank, Brag, PA Access, ID Account, Second locker, Missing Phone, Alexa Commands (might replace with more ID Account), Baton Pass
-    scene backgroundroom
-    menu:
-        "Ask For Help":
-            call Ask_For_Help
-        "Yoku":
-            call YokuInv1
-        "Rei":
-            call ReiInv1
-        "Momoko":
-            call MomokoInv1
-        "Rise":
-            call RiseInv1
-        "Nanase":
-            call NanaseInv1
-        "Kietsu":
-            call KietsuInv1
-        "Next":
-            call investigation2
-    return
-
-label investigation2:
-
-    menu:
-        "Back":
-            call investigation
-        "Taiga":
-            call TaigaInv1
-        "Dyre":
-            call DyreInv1
-        "Chisei":
-            call ChiseiInv1
-        "Shoma":
-            call ShomaInv1
-        "Ichita":
-            call IchitaInv1
-        "Setsuna":
-            call SetsunaInv1
-        "Next":
-            call investigation3
-
-label investigation3:
-
-    menu:
-        "Back":
-            call investigation2
-        "Kitsune":
-            call KitsuneInv1
-        # Temporary "Pass"es added so it could run
-        "Mu":
-            call MuInv1
-        "Kazz":
-            pass
-        "Mariko":
-            pass
-
-label Ask_For_Help:
-
-    menu:
-        "Back":
-            call investigation
-        "Uitto":
-            call UittoInv1
-        "Jona":
-            call JonaInv1
-        "Hiro":
-            call HiroInv1
-
 label YokuInv1:
     #Yoku Interrogation
     scene backgroundstage
@@ -180,6 +106,7 @@ label YokuInv1:
     return
 
 label ReiInv1:
+
     scene backgroundamp
 
     #Rei Investigation
@@ -204,10 +131,8 @@ label ReiInv1:
     g "There will come times when people won't want to talk to you."
     g "You'll have one chance to convince them you're worth their time, though Charisma Majors may have more luck."
     
-    #[Player Choice]
-    #A. What's wrong?
-label ReiChoice1:
     menu:
+
         "What's wrong?":
             n "You only practice like this when you're upset."
 
@@ -226,7 +151,8 @@ label ReiChoice1:
             re "I'll- I'll see you later."
 
             #(Fail, Rei’s scene is now locked)
-            pass
+            return
+
         "I didn't know...":
     
             n "I never meant to hurt you or any of the other kids at school."
@@ -259,9 +185,10 @@ label ReiChoice1:
             n "The truth is, I'm trying to find who spread the message over the PA system."
             n "If you have any ideas, it'd help me a lot."
 
-            call ReiChoice2
-label ReiChoice2:  
+label ReiInterrogation1:
+
     menu:
+
         "Alibi":
     
             re "I've been mostly helping Mariko revive the cheer squad."
@@ -300,7 +227,8 @@ label ReiChoice2:
             n "Coming here has been hard for everyone."
             #+ Cheer Ad
 
-            call ReiChoice2
+            jump ReiInterrogation1
+
         "Show Evidence":
             menu:
                 "Computer":
@@ -321,7 +249,7 @@ label ReiChoice2:
                     re "They didn't have to. He made it perfectly clear that anyone could use his stuff whenever they wanted."
 
                     "But not without permission. Whoever it was, they must be close to Kazz and Rei." #(+Brag)
-                    call ReiChoice2
+
                 "Missing Phone":
                     re "Yeah, I've seen it."
                     re "But why? Kazz should have gotten it back by now."
@@ -342,7 +270,6 @@ label ReiChoice2:
                     "Even she doesn't seem totally convinced by that explanation."
                     $ inventory.ShowClue(clue_baton_pass)
 
-                    call ReiChoice2
                 "CDs":
     
                     re "Between everyone here, that's not a bad collection."
@@ -352,7 +279,6 @@ label ReiChoice2:
 
                     re "Oh yeah. Next semester, I'll be sure to bring a whole bunch of stuff."
 
-                    call ReiChoice2
                 "Announcement List":
     
                     re "We're dead last on the list? That doesn't seem right."
@@ -369,10 +295,12 @@ label ReiChoice2:
                     re "Yeah."
                     
                     "She's really not happy about it though."
-                    call ReiChoice2
+
+            jump ReiInterrogation1
+
         "Leave":
-            call ReiOutro
-label ReiOutro:      
+            pass
+  
     re "After all this drama, I don't think I'll sleep well tonight."
 
     n "Sleep? What's sleep?"
@@ -411,9 +339,11 @@ label ReiOutro:
     re "I'll see you around, Nagen."
 
     hide sprite ReBase
-    pass #connect to loop here
+
+    return #connect to loop here
 
 label MomokoInv1:
+
     scene backgroundlab
     
     "Momoko's music is so loud I can hear it down the hall."
@@ -439,12 +369,16 @@ label MomokoInv1:
     mh "Eh, what's the point when you could find me anyway?"
     mh "We're stuck in this fish bowl together for the next four years, why make enemies now?"
 
-    n "...thanks."
+    n "...Thanks."
 
     mh "You're welcome! Did you need something?"
-label MomokoChoice1:
+
+label MomokoInterrogation1:
+
     menu:
+
         "Alibi":
+
             mh "The first day of school... I was here."
             mh "Every lab has a system for where things go."
             mh "Now it's my system and I plan to keep it that way."
@@ -461,8 +395,11 @@ label MomokoChoice1:
             n "I take it you haven't gone to the third floor then."
 
             mh "There's nothing for me there."
-            call MomokoChoice1
+
+            jump MomokoInterrogation1
+
         "Show Evidence":
+
             "I show Momoko the computer."
 
             mh "Well, they certainly weren't shopping for an Alexa, no one's willing to drive this far for small deliveries."
@@ -487,9 +424,12 @@ label MomokoChoice1:
             
             $ inventory.ShowClue(clue_account)
 
-            call MomokoChoice1
+            jump MomokoInterrogation1
+
         "Leave":
-            call MomokoOutro
+
+            pass
+
     #-Else-
     
     #mh "That doesn't sound out of place, Nagen. Sounds like you're over thinking things again."
@@ -497,8 +437,8 @@ label MomokoChoice1:
     #n "There has to be something. I refuse to believe this is a 'perfect crime'."
 
     #-Outro-
-label MomokoOutro: 
-    n "...is that beaker supposed to be smoking?"
+
+    n "...Is that beaker supposed to be smoking?"
 
     mh "Spinach-laced-ridilin, turn off the lights!"
 
@@ -513,9 +453,11 @@ label MomokoOutro:
     hide sprite MhBase
 
     "I should probably go."
-    pass #connect to loop
+
+    return #connect to loop
 
 label RiseInv1:
+
     scene backgroundcourtyard
     "I find Rise enjoying a cup of tea in the courtyard."
 
@@ -549,9 +491,13 @@ label RiseInv1:
 
     r "I see... That is disappointing."
     r "Well then, I suppose that addresses my concerns, but I believe there was something you wished to discuss?"
-label RiseChoice1:
+
+label RiseInterrogation1:
+
     menu:
-        "Alibi": 
+
+        "Alibi":
+
             r "I overheard what happened during the announcement."
             r "How utterly mortifying it must have been to be thrust into the spotlight like that."
 
@@ -571,9 +517,15 @@ label RiseChoice1:
 
             r "I am sorry I cannot be of more help."
             r "If there is something more specific you would like to ask me about, I would love to help if possible."
+
+            jump RiseInterrogation1
+
         "Show Evidence":
+
             menu:
+
                 "Announcement List":
+
                     r "I am not a club leader, so I do not have access to the recording booth."
                     r "I am only a class representitve, not a council member."
 
@@ -585,8 +537,8 @@ label RiseChoice1:
                     r "Everyone seems content to wait until there are more students."
 
                     n "I see, thank you." #(+PA Access)
+
                     $ inventory.AddClue(clue_pa_access)
-                    call RiseChoice1
 
                 "Missing Phone":
                     r "We have hardly been here a week and people have already started stealing? How distasteful."
@@ -601,10 +553,12 @@ label RiseChoice1:
 
                     r "Definitely, though she was unable to use it, so I doubt it did her much good."
                     r "I would be surprised if she held onto it."
-                    call RiseChoice1
+
+            jump RiseInterrogation1
+
         "Leave":
-            call RiseOutro
-label RiseOutro:
+            pass
+
     r "I am sorry I was not more helpful."
     r "I have not been around long enough to get a feel for how everyone gets along nowadays."
     r "We may have grown up with each other, but a lot can change in two years."
@@ -626,9 +580,11 @@ label RiseOutro:
     hide sprite RBase
 
     "With that, she leaves."
-    pass #connect to loop
+
+    return #connect to loop
 
 label NanaseInv1:
+
     scene backgroundcafe
     "Nanase was more than happy to meet with me, but she told me she was working on something at the cafe."
     "I arrive to find various ingredients out, with tinny music playing from a burner phone."
@@ -662,9 +618,13 @@ label NanaseInv1:
     n "I'll be fine as long as I don't eat them."
 
     nk "Right... Anyways, what did you want to talk about?"
-label NanaseChoice1:
+
+label NanaseInterrogation1:
+
     menu:
+
         "Alibi":
+
             n "I don't remember seeing you during the broadcast. What were you doing?"
 
             nk "In the morning, before classes, we had our first council meeting."
@@ -685,8 +645,11 @@ label NanaseChoice1:
             n "Does she have everyone's locker combinations or just Mu's?"
 
             nk "Everyone's... we couldn't tell who's locker it was from the outside, it wasn't decorated or anything." #(+Locker Combo)
-            call NanaseChoice1
+            
+            jump NanaseInterrogation1
+
         "Show Evidence":
+
             "I showed her the announcement list"
 
             nk "Kietsu's the one who's been handling club requests."
@@ -697,15 +660,16 @@ label NanaseChoice1:
             n "You wouldn't happen to know who the club leaders are, would you?"
 
             nk "No, sorry."
-            call NanaseChoice1
+
+            jump NanaseInterrogation1
+
         "Leave":
-            call NanaseOutro
+            pass
     #-Other-
     
     #nk "Well, it isn't odd that those things would be in the PA room. I don't see anything... incriminating about it."
 
     #"She probably thinks I'm being paranoid."
-label NanaseOutro:
     nk "Umm... are you doing okay? "
 
     n "Hunh?"
@@ -728,10 +692,13 @@ label NanaseOutro:
 
     "It's so weird to think the announcement pissed off people who weren't even involved."
     "I wonder if there are others who felt threatened by it."
-    pass #connect to loop
+
+    return #connect to loop
 
 label KietsuInv1:
+
     scene backgroundstuco
+
     #Kietsu Investigation
     #[BG: Office]
     
@@ -757,73 +724,80 @@ label KietsuInv1:
     ki "Nanase's the one who organized them for me, but then the piles hit the floor..."
     ki "It's gonna take a fortnight to sift through."
     ki "Anyway, what can I do for you?"
-label KietsuChoice:
-        menu:
-            "Show Evidence":
-                menu:
-                    "Announcement List":
-                        n "You were in charge of approving the club ads, weren't you?"
 
-                        ki "Hmm... yeah, I guess I was."
-                        ki "I didn't read any of them though."
-                        ki "I figured if there was anything y'know, bad, Kazz would catch it before readin’ it."
-                        ki "Anyone who wanted to run a club I let borrow the AV room key so they could drop off their ad."
-                        ki "At least this way, everyone gets a fair shot at gatherin’ members to get their club approved by the teachers."
+label KietsuInterogation1:
 
-                        n "Wait, you just let anyone go in the AV room?"
+    menu:
 
-                        ki "Only people who really wanted to get a club ad in before the first mornin’ announcements. Seriously, some kids are really intense when it comes to after school activities."
+        "Show Evidence":
 
-                        n "Who all did you give the key to?"
+            menu:
 
-                        ki "Chisei, at like, 6AM. And then Mariko twenty minutes later. After that, Kazz took the key so he could go straight to the AV room after first period."
+                "Announcement List":
 
-                        n "Was anyone else with them when they asked for the key?"
+                    n "You were in charge of approving the club ads, weren't you?"
 
-                        ki "Not that I could see."
+                    ki "Hmm... yeah, I guess I was."
+                    ki "I didn't read any of them though."
+                    ki "I figured if there was anything y'know, bad, Kazz would catch it before readin’ it."
+                    ki "Anyone who wanted to run a club I let borrow the AV room key so they could drop off their ad."
+                    ki "At least this way, everyone gets a fair shot at gatherin’ members to get their club approved by the teachers."
 
-                        "Kazz doesn't seem like the type to let people in."
-                        "It might be a good idea to check with the others." #PAAccess = True
+                    n "Wait, you just let anyone go in the AV room?"
 
-                        call KietsuChoice
+                    ki "Only people who really wanted to get a club ad in before the first mornin’ announcements. Seriously, some kids are really intense when it comes to after school activities."
 
-                    "CDs":
-                    #-Other-   
-                        ki "It'd be weirder if that wasn't there, wouldn't it?"
+                    n "Who all did you give the key to?"
 
-                        n "I guess..."
+                    ki "Chisei, at like, 6AM. And then Mariko twenty minutes later. After that, Kazz took the key so he could go straight to the AV room after first period."
 
-                        ki "Kazz knows that booth better than me. If something went missin’, then he'd know."
-                        call KietsuChoice
-            "Alibi":
-                n "What were you doing before the broadcast?"
+                    n "Was anyone else with them when they asked for the key?"
 
-                ki "Broadcast?"
+                    ki "Not that I could see."
 
-                n "....."
+                    "Kazz doesn't seem like the type to let people in."
+                    "It might be a good idea to check with the others." #PAAccess = True
 
-                n "The broadcast; creepy robot voice saying the school is dangerous and my friends should get expelled. It went off after first period."
+                "CDs":
+                #-Other-   
+                    ki "It'd be weirder if that wasn't there, wouldn't it?"
 
-                ki "Is that what people are talkin’ about? I could barely hear it at the time. That really blows, man. No wonder you're freakin’ out."
+                    n "I guess..."
 
-                n "I- Umm... I wouldn't say I'm 'freaking out'. I'm just, really curious what people were up to before that happened."
+                    ki "Kazz knows that booth better than me. If something went missin’, then he'd know."
 
-                "There's really no way to question people about this without sounding paranoid as all get out. Doesn't seem to bother him much though."
+            jump KietsuInterogation1
 
-                ki "I was in class... before that was the council meeting... nothing seemed out of the ordinary."
+        "Alibi":
 
-                n "What happened during the meeting?"
+            n "What were you doing before the broadcast?"
 
-                ki "Setsuna rejected all my proposals and stormed off. Nanase went to follow her in a panic. It seems like that's normal for both of them though."
+            ki "Broadcast?"
 
-                n "I see."
+            n "....."
 
-                call KietsuChoice
+            n "The broadcast; creepy robot voice saying the school is dangerous and my friends should get expelled. It went off after first period."
 
-            "Leave":
+            ki "Is that what people are talkin’ about? I could barely hear it at the time. That really blows, man. No wonder you're freakin’ out."
 
-                call KietsuOutro
-label KietsuOutro:
+            n "I- Umm... I wouldn't say I'm 'freaking out'. I'm just, really curious what people were up to before that happened."
+
+            "There's really no way to question people about this without sounding paranoid as all get out. Doesn't seem to bother him much though."
+
+            ki "I was in class... before that was the council meeting... nothing seemed out of the ordinary."
+
+            n "What happened during the meeting?"
+
+            ki "Setsuna rejected all my proposals and stormed off. Nanase went to follow her in a panic. It seems like that's normal for both of them though."
+
+            n "I see."
+
+            jump KietsuInterrogation1
+
+        "Leave":
+
+            pass
+
     #-Outro-
     ki "Sorry I can't help you out more, but if I want to be able to host any school events."
     ki "I need to have a fool-proof plan of attack against the penny-pinchin’ treasurer."
@@ -844,7 +818,7 @@ label KietsuOutro:
 
     ki "Things will get easier once we get everythin’ under control."
 
-    n "...we?"
+    n "...We?"
 
     ki "Hnh? Oh yeah. You're the one who sent in a council application form, right?"
     ki "That means we could be workin’ together for the rest of the year."
@@ -859,13 +833,16 @@ label KietsuOutro:
     hide sprite KiBase
 
     "There's still more people I have to see."
-    pass # Should call Ch1 equivilent of Freeday from the sandbox
+
+    return # Should call Ch1 equivilent of Freeday from the sandbox
 
 label TaigaInv1:
+
     #Taiga Investigation
     #[BG: Courtyard]
     #-Intro-
     scene backgroundcourtyard
+
     "I find Taiga doing stretches in the courtyard."
     "Next to him is a wide pen for his rabbits to enjoy the fresh air."
     "It's strange to see him this awake."
@@ -886,9 +863,13 @@ label TaigaInv1:
     n "That's fair..."
 
     t "You gonna tell me why you came looking for me or did you come to see my assistants again?"
-label TaigaChoice:
+
+label TaigaInterrogation1:
+
     menu:
-        "Alibi": 
+
+        "Alibi":
+
             t "I've never had to wake up before ten until I came here."
             t "I would have stayed in my dorm, but the red headed nurse's assistant dragged my ass to homeroom."
 
@@ -909,13 +890,17 @@ label TaigaChoice:
 
             "Isn't that extortion? Surely the school would have given her space to store club stuff if she asked."
             "Why go so far to rent someone else's locker?" 
+
             $ inventory.AddClue(clue_second_locker)
 
             n "Anyone else know about this?"
 
             t "Probably the cheerleaders. I didn't ask though; didn't think it mattered."
-            call TaigaChoice
+
+            jump TaigaInterrogation1
+
         "Show Evidence":
+
             "I showed him the CDs"
  
             t "Man, Kazz has the worst taste in music."
@@ -933,10 +918,13 @@ label TaigaChoice:
 
             "He has a point though. It's odd someone would make a move like that in front of the faculty."
             "Why wouldn't they try to be more secretive about it?"
-            call TaigaChoice
+            
+            jump TaigaInterrogation1
+
         "Leave":
-            call TaigaOutro
-label TaigaOutro:
+
+            pass
+
     t "You really care what all those kids think, don't you?"
 
     n "Well, yeah, don't you?"
@@ -956,9 +944,10 @@ label TaigaOutro:
 
     hide sprite Tbase
 
-    pass #connect to loop
+    return #connect to loop
 
 label DyreInv1:
+
     scene backgroundhide
     "Technically, students aren't supposed to come to areas that are under construction."
     "But since the roof's unlocked, some people have been treating it like free game."
@@ -989,9 +978,13 @@ label DyreInv1:
 
     d "I'm just trying to figure out how long this is going to take."
     d "No need to take it so personally."
-label DyreChoice:
+
+label DyreInterrogation1:
+
     menu:
+
         "Alibi":
+
             d "It was the first day of school; there was a bunch of 'get to know you' lectures and other nonsense."
             d "Huge waste of time, but everyone saw me in class."
             d "There's no way I had the time to set all that up."
@@ -1016,10 +1009,15 @@ label DyreChoice:
             n "So Mariko's the last one to touch his echo?"
 
             d "We don't know that. Any other club leader could have found it in there." #(+Prank)
-            call DyreChoice
+
+            jump DyreInterrogation1
+
         "Show Evidence":
+
             menu:
+
                 "Computer":
+
                     n "Someone was having trouble getting the echo to do what they wanted."
                     n "The history is full of searches on how to leave a recorded message."
 
@@ -1033,7 +1031,7 @@ label DyreChoice:
                     "What a liar!"
                     "But, if he's willing to cover for them, it might be someone he's close to."
                     "At the very least, I know it's not him."
-                    call DyreChoice
+
                 "Announcment List": 
                     d "That many people want to start a club, hunh?"
                     d  "No wonder Mariko's been so competitive with recruiting."
@@ -1043,17 +1041,20 @@ label DyreChoice:
                     d "Well, there's only four teachers, right?"
                     d "That means unless they have time, they'll only be able to supervise one club each."
                     d "The first four to get enough members will probably be the only legitimate clubs this year."
-                    call DyreChoice
+
                 "CDs":
                     d "Kazz already gave me a tour of the booth. I don't need a second."
 
                     n "Nothing looks different to you?"
 
                     d "Nope. That's what it's supposed to look like."
-                    call DyreChoice
+
+            jump DyreInterrogation1
+
         "Leave":
-            call DyreOutro
-label DyreOutro:
+
+            pass
+
     "By this point, Dyre has completely abandoned his attempt to rearrange the roof."
     "He regards me with the same amount of intrigue and confusion one might have toward a foreign commercial."
 
@@ -1079,10 +1080,13 @@ label DyreOutro:
     "He brushes past me, leaving me alone on the roof."
     "Just who does he think he is anyway? I can't let him get to me."
     "I should leave before I get caught."
-    pass #connect to loop
+
+    return #connect to loop
 
 label ChiseiInv1:
+
     scene backgroundstage
+
     "Chisei is puttering around the stage with a tape measure and a package of chalk."
     "She has a piece on the ground and is trying to drag it along the ground with the ball of her foot."
 
@@ -1114,9 +1118,13 @@ label ChiseiInv1:
     n "Oh. Sorry, I had something on my mind."
 
     ch "What is it?"
-label ChiseiChoice1:
+
+label ChiseiInterrogation1:
+
     menu:
-        "Alibi":   
+
+        "Alibi":
+
             n "What were you doing the day before the first day of class?"
 
             ch "I wanted to find some potential plays for the drama club before drafting the recruitment announcement."
@@ -1143,8 +1151,10 @@ label ChiseiChoice1:
             "I think most people find loud noises upsetting."
             "Especially when they come out of nowhere in the middle of the night."
 
-            call ChiseiChoice1
+            jump ChiseiInterrogation1
+
         "Show Evidence":
+
             "I show her the announcement list."
  
             ch "I am glad Ms. Yamamoto is a patron of the arts."
@@ -1160,10 +1170,11 @@ label ChiseiChoice1:
 
             ch "I did not think to check, I am sorry."
 
-            call ChiseiChoice1
+            jump ChiseiInterrogation1
+
         "Leave":
-            call ChiseiOutro
-label ChiseiOutro:   
+            pass
+
     ch "....."
 
     "She bites her lip, looking at the string of lines we made on the stage."
@@ -1213,9 +1224,11 @@ label ChiseiOutro:
     hide sprite Chbase
 
     "I came here looking for answers, but Chisei ended up cheering me up instead."
-    pass #connect to loop
+
+    return #connect to loop
 
 label ShomaInv1:
+
     scene backgroundsew
     
     "Shoma is in his hovel of a sewing room."
@@ -1238,9 +1251,13 @@ label ShomaInv1:
     sh "Now if only I could find a diffuser that wasn't also a fire hazard, I'd be set."
 
     n "I know you've been busy getting set up, but I had a few things I wanted to ask you."
-label ShomaChoice1:
+
+label ShomaInterrogation1:
+
     menu:
+
         "Alibi":
+
             sh "I've been spending most of my freetime unpacking. It's a long way from here to the dorms."
             sh "Rei sort of lent a hand, but she's been getting dragged around to help with the cheer squad so..."
 
@@ -1266,7 +1283,9 @@ label ShomaChoice1:
             sh "He's been fighting with someone at odd hours."
 
             "That explains how someone could sneak around at night without getting noticed. I wonder who he's fighting with."
-            call ShomaChoice1
+
+            jump ShomaInterrogation1
+
         "Show Evidence":
 
             "I showed Shoma a pictture of the computer."
@@ -1284,8 +1303,11 @@ label ShomaChoice1:
             "He turned his head toward the door."
 
             sh "Computer, identify account."
-            call ShomaChoice1
+
+            jump ShomaInterrogation1
+
         "Who's logged in?":
+
             Alexa "Setsuna the Bomb Digity is logged in."
 
             n "....."
@@ -1300,13 +1322,14 @@ label ShomaChoice1:
             "So anyone logged into the same account can give it commands."
             "That's good to know. There was no login page in the computer's history and I doubt that someone would leave behind the search history if they were covering their tracks."
             "They must have some other way to log in."
+
             $ inventory.ShowClue(clue_account)
+
         "Leave":
-            call ShomaOutro
+            pass
     #-Other-
     #sh "Kazz takes requests for what plays on the school radio. I've suggested a bunch of stuff, but he hasn't played them yet. I wonder if his friends got top priority."
     #"I should try asking about something else."
-label ShomaOutro:
     
     n "Why go through all this trouble just for a glorified door bell?"
 
@@ -1326,7 +1349,7 @@ label ShomaOutro:
 
     n "You think maybe that meant hide it for her?"
 
-    sh "...oh."
+    sh "...Oh."
 
     n "Yeah, maybe don't have it set to motion control."
 
@@ -1346,12 +1369,13 @@ label ShomaOutro:
     hide sprite ShBase
 
     "I think I've gotten everything I can get from him. I best get moving."
-    pass #connect to loop
+    return #connect to loop
 
 label IchitaInv1:
     #Ichita Investigation
     #[BG: Pond]
     scene backgroundpond
+
     "I find Ichita by the large pond behind the amphitheater."
     "He’s sitting on the dock and staring into the water intently."
     "It’s so murky, you can’t see the bottom, but every now and then, I swear I see a fish."
@@ -1388,9 +1412,13 @@ label IchitaInv1:
     n "I don't know, literally anything noteworthy or out of the ordinary."
 
     i "I mean, I'll try, but I don't make any promises."
-label IchitaChoice1:
+
+label IchitaInterrogation1:
+
     menu:
-        "Alibi":              
+
+        "Alibi":
+
             i "I spend every chance I get outside. The grounds here are huge; I still haven't seen everything yet."
             i "Besides, the school building's kinda creepy, don't you think?"
 
@@ -1420,8 +1448,11 @@ label IchitaChoice1:
             n "Not helping."
 
             "Please god, don't let there be a camera in my room."
-            call IchitaChoice1
+
+            jump IchitaInterrogation1
+
         "Show Evidence":
+
             "I asked Nagen about the missing phone."
             
             i "Wait, that was Kazz's. I think I might know where it is?"
@@ -1440,12 +1471,13 @@ label IchitaChoice1:
             #(+Found Phone)
             $ inventory.ShowClue(clue_baton_pass)
 
-            call IchitaChoice1
+            jump IchitaInterrogation1
+
         "Leave":
-            call IchitaOutro
+            pass
     #-Other-   
     #i "You're guess is probably better than mine. That doesn't seem out of place to me."
-label IchitaOutro:
+
     #-Outro-
     i "What exactly are you going to do when you figure out who it is?"
 
@@ -1457,7 +1489,7 @@ label IchitaOutro:
 
     i "Like hell it isn't! That bastard scared the shit out of everybody with that announcement, going off like we're trapped here. It's making people stir crazy."
 
-    "...is that why he's out here?"
+    "...Is that why he's out here?"
 
     i "We have to be here for at least three years and they start us out with this nightmare-fuel calling card, what an asshole."
 
@@ -1465,7 +1497,7 @@ label IchitaOutro:
 
     i "I'm not and I still plan on kicking your ass as soon as a single hit won't kill you."
 
-    n "...great."
+    n "...Great."
 
     i "But, I'm also not going to support a hypocrite that wants to drag everyone into their drama. As far as I'm concerned, you're both the same. If I ever find them, I will shove them into a locker."
 
@@ -1485,9 +1517,10 @@ label IchitaOutro:
 
     hide sprite IBase
 
-    pass # connect to main game loop
+    return # connect to main game loop
 
 label SetsunaInv1:
+
     scene backgroundcafexn
     #Setsuna Investigation
     #[BG: Cafe Exterior]
@@ -1519,9 +1552,13 @@ label SetsunaInv1:
     n "I just wanted to ask you some questions about the PA incident."
 
     s "Oh. You actually wanted to talk to me... Sure, I'll bite. What did you want to know?"
-label SetsunaChoice1:
+
+label SetsunaInterrogation1:
+
     menu:
-        "Announcement List": 
+
+        "Announcement List":
+
             s "We thought making clubs first-come first-serve would make things easier."
             s "That way it didn't seem personal when we told people no."
 
@@ -1543,7 +1580,9 @@ label SetsunaChoice1:
             "And yet she can't understand why people think she's biased."
 
             s "I may be an opportunist, but I accept all opportunities equally." #(+Club Leader List)
-            call SetsunaChoice1
+
+            jump SetsunaInterrogation1
+
         "Computer":
 
             s "Well there's two reasons the computer's search history's like that."
@@ -1564,7 +1603,8 @@ label SetsunaChoice1:
             "People forget their passwords all the time, but if they had access to something that already had access..."
 
             n "I'll keep that in mind."
-            call SetsunaChoice1
+
+            jump SetsunaInterrogation1
     #-Other-
     
     #s "That's supposed to be there, it was donated to the school."
@@ -1595,10 +1635,12 @@ label SetsunaChoice1:
             #clue_missing_phone
             #clue_second_locker
 
-            call SetsunaChoice1
+            jump SetsunaInterrogation1
+
         "Leave":
-            call SetsunaOutro
-label SetsunaOutro:
+
+            pass
+
     s "You've been surprisingly level headed about this whole thing. I'm starting to see why Nanase wants you on the Council so badly."
 
     n "Are you actually warming up to the idea of me being Student Council President?"
@@ -1629,9 +1671,11 @@ label SetsunaOutro:
     s "In the meantime, I'll need a pair of scissors."
 
     hide sprite SBase
-    pass #connect to game loop
+
+    return #connect to game loop
 
 label KitsuneInv1:
+
     scene backgroundlibrary
  
     "I find Kitsune in the library with her head down on one of the desks."
@@ -1668,9 +1712,13 @@ label KitsuneInv1:
     "Yeah, she's definitely feeling better."
 
     k "Well, I did say I would owe you, so what exactly were you hoping to talk to me about?"
-label KitsuneChoice1:
+
+label KitsuneInterrogation1:
+
     menu:
+
         "Alibi":
+
             "Why do I get the feeling I'm going to regret asking this?"
 
             n "What were you doing before classes started on the first day of school?"
@@ -1688,10 +1736,15 @@ label KitsuneChoice1:
             k "Shoma caught me trying to dispose of the evidence and was kind enough to salvage my mess into this."
             k "Though I wish he'd just teach me instead of forcing me to pay him every time I need a new outfit."
             k "I can't afford to be indebted to someone like that."
-            call KitsuneChoice1
+            
+            jump KitsuneInterrogation1
+
         "Show Evidence":
+
             menu:
-                "Microphone":   
+
+                "Microphone":
+
                     k "It's a shame, isn't it?"
                     k "There's no recording equipment available to the students."
                     k "But what you heard didn't use any of that."
@@ -1711,7 +1764,9 @@ label KitsuneChoice1:
 
                     "It wouldn't be hard to tip an anxious person like him over the edge as a distraction."
                     "But I can't ignore that Kitsune has a personal reason for wanting to keep him out of trouble."#(+Alexa Commands)
+
                 "Missing Phone":
+
                     k "I should have known that was his, he's the only person I know who's snuck in tech they shouldn't have."
                     k "I just didn't take him for a skull kind of guy."
 
@@ -1739,12 +1794,15 @@ label KitsuneChoice1:
 
                     "Maybe she knows something about him I don't."
                     "As far as I can tell, he's one of the most trusting people here."
+
                     $ inventory.ShowClue(clue_baton_pass)
 
-                    call KitsuneChoice1
+            jump KitsuneInterrogation1
+
         "Leave":
-            call KitsuneOutro
-label KitsuneOutro:
+
+            pass
+
     "She gently tugs at her hair, threading her thumbs through her pigtails."
     "I think something's still bothering her."
 
@@ -1779,7 +1837,8 @@ label KitsuneOutro:
 
     "She hobbles out of the room and leaves me behind."
     "I’m the only one left in the library."
-    pass #connect to loop
+
+    return #connect to loop
 
 label MuInv1:
     scene backgroundcourtyard
@@ -1809,7 +1868,8 @@ label MuInv1:
     n "I suppose that's fair."
 
     "It never ceases to amaze me how small I feel next to this guy, even when he's sitting down."
-label MuChoice1:
+
+label MuInterrogation1:
     menu:
         "Alibi":
             mu "When I haven't been hanging out with Kazz and Dyre, I've been talking to you."
@@ -1823,7 +1883,9 @@ label MuChoice1:
             n "I don't think the goblin on the PA system was hazing us."
 
             mu "Wasn't thinking about that. Buuut, can you really rule out the possibility?"
-            call MuChoice1
+
+            jump MuInterrogation1
+
         "Show Evidence":
             menu:
                 "Missing Phone":  
@@ -1854,7 +1916,8 @@ label MuChoice1:
                     $ inventory.ShowClue(clue_brag)
                     $ inventory.AddClue(clue_prank)
 
-                    call MuChoice1
+                    jump MuInterrogation1
+
                 "Computer":
                     "When I show him the search history, his face darkens."
 
@@ -1875,16 +1938,18 @@ label MuChoice1:
                     mu "No. It can tell you what account it's logged into and what date it was added, but that's about it."
                     $ inventory.ShowClue(clue_account)
 
-                    call MuChoice1
+                    jump MuInterrogation1
+
         "Leave":
-            call MuOutro
+
+            pass
 
     #-Other-
     
     #mu "Kazz and I have a deal. I don't touch his junk, he doesn't touch mine."
 
     #"I'm just going to let that one go."
-label MuOutro:
+
     #-Outro-
     
     "I think it's fair to say that someone he's close with is involved."
@@ -1910,7 +1975,7 @@ label MuOutro:
     mu "I thought I could trust my own friends."
 
     hide sprite MuBase
-    pass #connect to loop
+    return #connect to loop
 
 label KazzInv1:
     scene backgroundhide
@@ -1963,7 +2028,8 @@ label KazzInv1:
     n "It'll help us both if we can find who actually did it. They might still have your phone."
 
     kk "That's- Alright. What'd you need from me?"
-label KazzChoice1:
+
+label KazzInterrogation1:
     menu:
         "Missing Phone":
             #[If Phone = -]
@@ -2017,7 +2083,9 @@ label KazzChoice1:
             "Maybe I should try collecting them again."
 
             kk "Glad you like it!" #(+Memento Mori Card)
-            call KazzChoice1
+            
+            jump KazzInterrogation1
+
         "Alibi":
             kk "What was I up to during move in?"
             kk "I don't know man, moving in? Meeting new people and trying to make a good impression, you know, normal stuff."
@@ -2061,7 +2129,9 @@ label KazzChoice1:
             $ inventory.AddClue(clue_missing_phone)
 
             #(+Brag, +PA Access, +Missing Phone)
-            call KazzChoice1
+
+            jump KazzInterrogation1
+
         "Show Evidence":
             menu:
                 "Announcement List":  
@@ -2082,7 +2152,8 @@ label KazzChoice1:
                     #(+Cheer Ad, +PA Access)
                     $ inventory.AddClue(clue_pa_access)
 
-                    call KazzChoice1
+                    jump KazzInterrogation1
+
                 "CDs":
                     kk "This school had a really crummy selection when we came in."
                     kk "It was all instructional tapes and hot garbage."
@@ -2102,8 +2173,10 @@ label KazzChoice1:
                     kk "I just try my best not to give him the opportunity to screw with me."
 
                     "Even so, maybe Dyre has done other things to mess with Kazz. I'll have to give it a look." #(+Prank)
-                    call KazzChoice1
-                "Computer":    
+
+                    jump KazzInterrogation1
+
+                "Computer":
                     n "Your Echo was in there too, but it got confiscated before I could get there."
 
                     kk "It shouldn't have been in there at all."
@@ -2122,7 +2195,8 @@ label KazzChoice1:
                     
                     $ inventory.ShowClue(clue_account)
 
-                    call KazzChoice1
+                    jump KazzInterrogation1
+
                 "Microphone":
                     kk "What about Pepper?"
 
@@ -2141,13 +2215,18 @@ label KazzChoice1:
                     #[B/W CG of Rei confronting Nagen]
     
                     "It would have been impossible to make it back in time without being out of breath."
+
                     $ inventory.AddClue(clue_friends_list)
+
                     #[Rei, Mu, Yoku, Dyre, Taiga, Ichita, and Chisei have been removed from the suspect list]
                     "Rei, Mu, Yoku, Dyre, Taiga, Ichita and Chisei... they're not the one's responsible."
-                    call KazzChoice1
+
+                    jump KazzInterrogation1
+
         "Leave":
-            call KazzOutro
-label KazzOutro:  
+
+            pass
+
     n "Thanks for talking with me. I think I have a bit more to go on now."
 
     kk "That's good, I guess. Still, what a crazy first week."
@@ -2187,9 +2266,11 @@ label KazzOutro:
 
     "He shoves his hands in his pockets and leaves without another word."
     "Does he think I'm not going to fight or does he just not care what happens to me? Whatever, I got what I needed anyway."
-    pass #connect to game loop
+    
+    return #connect to game loop
 
 label MarikoInv1:
+
     scene backgroundclass
     #Mariko Investigation
     #[BG: Classroom]
@@ -2225,9 +2306,11 @@ label MarikoInv1:
     m "Well, go ahead, grab a seat. No point in haunting the doorway now."
 
     "I clear a spot for myself under her watchful eye."
-label MarikoChoice1:
+
+label MarikoInterrogation1:
+
     menu:
-        "Alabi":
+        "Alibi":
             m "It was a long drive out here, so I didn't have as much time to practice for the assembly as I would have liked."
             m "Trying to remember a three year old routine while everyone stares at you silently- It was a nightmare."
             m "And then to have Mu and Rei drag me off the stage? I've never been so humiliated."
@@ -2242,7 +2325,9 @@ label MarikoChoice1:
             m "Only club leaders are allowed in Kazz's precious booth."
             m "At least, that's what I was told. Though I'm sure if he had it his way, no one would be allowed in."
             m "Thank goodness he trusts me in there." #(+Cheer Ad)
-            call MarikoChoice1
+
+            jump MarikoInterrogation1
+
         "Missing Phone":
             "Mariko falters and looks away."
 
@@ -2263,15 +2348,16 @@ label MarikoChoice1:
             "She refused to look at me the entire time she spoke."
             #-Other-   
             #m "That's Kazz's, I don't know much about it."
-            call MarikoChoice1
+
+            jump MarikoInvestigation1
+
         "Leave":
-            call MarikoCheck
-label MarikoCheck:
-    if $ Intel >= 3:
-        call MarikoInt
-    else:
-        call MarikoOutro
-label MarikoOutro:
+
+            pass
+
+    if Intel >= 3:
+        jump MarikoAccusation
+
     m "Sorry I couldn't be more help."
     m "I've been so busy with my own stuff, I haven't had time to really look around or talk to people."
 
@@ -2295,8 +2381,10 @@ label MarikoOutro:
     "If I stick around any longer, I'll get roped into making posters for a club I'm not in. I should go."
 
     hide sprite Mbase
-    pass #connect to main game loop
-label MarikoInt:
+
+    return #connect to main game loop
+
+label MarikoAccusation:
     #[Boss Accusation]
     #[IF Intel > ? This option will be available to the player]
     #(If from Mariko Interrogation)
@@ -2317,6 +2405,7 @@ label MarikoInt:
 
     "No good. I'll have to work backwards then and show proof someone thinks they're close to her."
     # Choose clue goes here
+
 label Mariko1:
     #[1: Friends List]
     n "You're friends with Kazz and his group too."
@@ -2483,9 +2572,10 @@ label Mariko7:
     n "If it wasn't, she might not have given it to the teachers at all."
     n "Both of them thought the locker still belonged to Mu, which I'm sure you were counting on."
     n "Also it's weird it was locked considering Kazz doesn't lock his phone."
-    call MarikoSuccess
+    jump MarikoSuccess
 
-label MarikoSuccess:  
+label MarikoSuccess:
+
     m "So?"
 
     n "That's all you have to say for yourself?"
@@ -2606,7 +2696,7 @@ label MarikoSuccess:
 
     hide sprite Mbase
 
-    pass #call main game loop
+    return #call main game loop
 
     #(Enemy Agitated) 
     #Investigation Helper Scenes 
@@ -2614,8 +2704,8 @@ label MarikoSuccess:
     #"There's no way I can talk to everyone before the deadline. Maybe one of the guys overheard something in one of their classes. At the very least, it'll give me a place to start."
 
 
-
 label UittoInv1:
+
     scene backgroundstuco
     "I ask Uitto if she was able to dig up anything."
 
@@ -2623,7 +2713,7 @@ label UittoInv1:
 
     u "I can't believe you wanted me to talk to Kitsune for you."
 
-    n "...did you?"
+    n "...Did you?"
 
     u "I could tell you exactly what she'd say. 'Memememe and also me.'"
     u "There you go, you got the full experience."
@@ -2646,9 +2736,10 @@ label UittoInv1:
     $ inventory.ShowClue(clue_prank)
 
     hide sprite UBase
-    pass #connect to main game loop
+    return #connect to main game loop
 
 label JonaInv1:
+
     scene backgroundamp
     "Jona doesn't really like talking to people alone, so I appreciate he was willing to do this for me."
 
@@ -2677,9 +2768,11 @@ label JonaInv1:
     $ inventory.AddClue(clue_pa_access)
 
     hide sprite JHappy
-    pass #connect to main game loop
+
+    return #connect to main game loop
 
 label HiroInv1:
+
     scene backgroundamp
     "I felt a little nervous sending Hiro out on his own. Still, he insisted and when he returned..."
 
@@ -2710,5 +2803,5 @@ label HiroInv1:
     $ inventory.ShowClue(clue_brag)
 
     hide sprite HBase
-    pass #connect to main game loop
+    return #connect to main game loop
    

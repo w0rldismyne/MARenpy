@@ -22,8 +22,6 @@ define t        = Character("Taiga Sakurai",    window_background = "gui/text_bo
 define u        = Character("Uitto Hanatabe",   window_background = "gui/text_boxes/UittoText.png")
 define y        = Character("Yoku Teki",        window_background = "gui/text_boxes/YokuText.png")
 
-# Unused - Monologue
-
 # Teachers
 define ik       = Character("Inukai",           window_background = "gui/text_boxes/InukaiText.png")
 define sa       = Character("Sato",             window_background = "gui/text_boxes/SatoText.png")
@@ -87,70 +85,96 @@ image backgroundsew       = "Backgrounds/sew.jpg"
 image backgroundstage     = "Backgrounds/stage.png"
 image backgroundstuco     = "Backgrounds/stuco.png"
 
-#Sprites
+### Character Sprites ###
 
 #Koe
 image KoeBase = "Sprites/KoeSprites/koe1.png"
+
 #Cop
 image CopBase = "Sprites/Cop/cop1.png"
+
 #Maimai
 image MMBase = "Sprites/MaiMai/MMBase.png"
+
 #Kenzo
 image KenzoBase = "Sprites/Kenzo/kenzoSprite.png"
 
 #Apex
 image ABase = "Sprites/Apex/Apexspritebase.png"
 image ASad = "Sprites/Apex/Apexspritesad.png"
+
 #Chisei
 image ChBase = "Sprites/Chisei/Chiseibase.png"
+
 #Dyre
 image DBase = "Sprites/Dyre/Dyrebase.png"
+
 #Hiro
 image HBase = "Sprites/Hiro/Hirobase.png"
+
 #Ichita
 image IBase = "Sprites/Ichita/ichitabase.png"
+
 #Jona
 image JDepressed = "Sprites/Jona/JonaDepressed.png"
 image JFrustrated = "Sprites/Jona/JonaFrustrated.png"
 image JHappy = "Sprites/Jona/JonaHappy.png"
 image JMad = "Sprites/Jona/JonaMad.png"
 image JRelax = "Sprites/Jona/JonaRelax.png"
+
 #Kazz
 image KkBase = "Sprites/Kazz/Kazz1.png"
+
 #Kietsu
 image KiBase = "Sprites/Kietsu/k2.png"
+
 #Kitsune
 image KBase = "Sprites/Kitsune/KitsuneN.png"
+
 #Mariko
 image MBase = "Sprites/Mariko/Marikobase.png"
+
 #Momoko
 image MhBase = "Sprites/Momoko/momokobase.png"
+
 #Mu
 image MuBase = "Sprites/Mu/Mu1.png"
+
 #Nanase
 image NBase = "Sprites/Nanase/nanasebase.png"
+
 #Rei
 image ReBase = "Sprites/Rei/Rei.png"
+
 #Rise
 image RBase = "Sprites/Rise/Rise1.png"
+
 #Setsuna
 image SBase = "Sprites/Setsuna/setsunabase.png"
+
 #Shoma
 image ShBase = "Sprites/Shoma/ShomaN.png"
+
 #Taiga
 image TBase = "Sprites/Taiga/TaigaN.png"
+
 #Uitto
 image UBase = "Sprites/Uitto/Uittobase.png"
+
 #Yoku
 image YBase = "Sprites/Yoku/YokuN.png"
 
-#Teachers
+### Teachers ###
+
 #Inukai
 image IkBase = "Sprites/Inukai/inuN.png"
+
 #Sato
 image SaBase = "Sprites/Fox/basespritesox.png"
+
 #Vivaldi
 image VBase = "Sprites/Vivaldi/ViBase.png"
+
 #Yaguchi
 image YaBase = "Sprites/Yaguchi/yaguchibase.png"
 
@@ -184,115 +208,101 @@ image backgroundfb9 = "FB/HFB9.jpg"
 image backgroundfb10 = "FB/HFB10.jpg"
 image backgroundfb11 = "FB/HFB11.jpg"
 
-label variables:
-    # Player's Stats
-    $ Vigor = 0
-    $ Vision = 0
-    $ Intel = 0
-    $ Charm = 0
+# Player's Stats
+default Vigor = 0
+default Vision = 0
+default Intel = 0
+default Charm = 0
 
-    # Player Data
-    $ VigorSP = 0
-    $ VigorMax = 3
-    $ VisionSP = 0
-    $ VisionMax = 3
-    $ IntelSP = 0
-    $ IntelMax = 3
-    $ CharmSP = 0
-    $ CharmMax = 3
+# Story Reputation Points
+default Hero = 0
+default Villain = 0
+default Reputation = 0
 
-    # Story Reputation Points
-    $ Hero = 0
-    $ Villain = 4
-    $ Reputation = 0
+# Daily Life
+default FreeActions = 0
+define DefaultActionCount = 1
+define ExtraActionCount = 2
+default Day = 0
 
-    # Daily Life
-    $ FreeActions = 0
-    $ DefaultActionCount = 1
-    $ ExtraActionCount = 2
-    $ Day = 0
+# Investigation
+default Clue1 = False
 
-    # Investigation
-    $ Clue1 = False
+# Player Relationships
+default chRep = 0
+default dRep = 0
+default hRep = 0
+default iRep = 0
+default jRep = 0
+default kRep = 0
+default kkRep = 0
+default kiRep = 0
+default mRep = 0
+default mhRep = 0
+default muRep = 0
+default nkRep = 0
+default rRep = 0
+default reRep = 0
+default sRep = 0
+default shRep = 0
+default tRep = 0
+default yRep = 0
+default uRep = 0
 
-    # Player Relationships
-    $ chRep = 0
-    $ dRep = 0
-    $ hRep = 0
-    $ iRep = 0
-    $ jRep = 0
-    $ kRep = 0
-    $ kkRep = 0
-    $ kiRep = 0
-    $ mRep = 0
-    $ mhRep = 0
-    $ muRep = 0
-    $ nkRep = 0
-    $ rRep = 0
-    $ reRep = 0
-    $ sRep = 0
-    $ shRep = 0
-    $ tRep = 0
-    $ yRep = 0
-    $ uRep = 0
+# Character Flags
+default chTurn = 0
+default dTurn = 0
+default hTurn = 0
+default iTurn = 0
+default jTurn = 0
+default kTurn = 0
+default kkTurn = 0
+default kiTurn = 0
+default mTurn = 0
+default mhTurn = 0
+default muTurn = 0
+default nkTurn = 0
+default rTurn = 0
+default reTurn = 0
+default sTurn = 0
+default shTurn = 0
+default tTurn = 0
+default yTurn = 0
+default uTurn = 0
 
-    # Character Flags
-    $ chTurn = 0
-    $ dTurn = 0
-    $ hTurn = 0
-    $ iTurn = 0
-    $ jTurn = 0
-    $ kTurn = 0
-    $ kkTurn = 0
-    $ kiTurn = 0
-    $ mTurn = 0
-    $ mhTurn = 0
-    $ muTurn = 0
-    $ nkTurn = 0
-    $ rTurn = 0
-    $ reTurn = 0
-    $ sTurn = 0
-    $ shTurn = 0
-    $ tTurn = 0
-    $ yTurn = 0
-    $ uTurn = 0
+# Prologue Variables
+default prologueSearches = 0
+default prologueFriendsFound = 0
+define  prologueLocationsPage = 1
+default prologueHiroMet    = False
+default prologueJonaMet    = False
+default prologueUittoMet   = False
+default prologueMarikoMet  = False
+default prologueYokuMet    = False
+default prologueKitsuneMet = False
+default prologueKazzMet    = False
+default prologueOshinMet   = False
+default prologueIchitaMet  = False
+default prologueTaigaMet   = False
+default prologueChiseiMet  = False
+default prologueShomaMet   = False
+default prologueSetsunaMet = False
+default prologueKietsuMet  = False
+default prologueMomokoMet  = False
+default prologueReiMet     = False
+default prologueRiseMet    = False
+default prologueDyreMet    = False
 
-    # Prologue Variables
-    $ prologueSearches = 0
-    $ prologueFriendsFound = 0
-    $ prologueLocationsPage = 1
-    $ prologueHiroMet  = False
-    $ prologueJonaMet  = False
-    $ prologueUittoMet = False
-    $ prologueMarikoMet = False
-    $ prologueYokuMet = False
-    $ prologueKitsuneMet = False
-    $ prologueKazzMet = False
-    $ prologueOshinMet = False
-    $ prologueIchitaMet = False
-    $ prologueTaigaMet = False
-    $ prologueChiseiMet = False
-    $ prologueShomaMet = False
-    $ prologueSetsunaMet = False
-    $ prologueKietsuMet = False
-    $ prologueMomokoMet = False
-    $ prologueReiMet = False
-    $ prologueRiseMet = False
-    $ prologueDyreMet = False
-
-    # Chapter 1 Variables
-    $ chapter1_day = 1
-    $ chapter1_event = -1
-    $ chapter1_free_time_morning_break = 0
-    $ chapter1_free_time_after_school = 1
-    $ chapter1_free_time_evening = 2
-
-return
+# Chapter 1 Variables
+default chapter1_day = 1
+default chapter1_event = -1
+define chapter1_free_time_morning_break = 0
+define chapter1_free_time_after_school = 1
+define chapter1_free_time_evening = 2
 
 # THE GAME STARTS HERE!
 label start:
 
-    call variables
     call inventory
 
     menu:

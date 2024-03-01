@@ -349,7 +349,7 @@ label chapter1_day1_event1_classes_vigor:
     
     n "Dude, I don't think I belong here, the culture shock alone..."
 
-    move HBase at right
+    show HBase at right
     show IkBase at center
 
     ik "This isn't going to be a traditional Vigor class. That means no 'teams' or competitions."

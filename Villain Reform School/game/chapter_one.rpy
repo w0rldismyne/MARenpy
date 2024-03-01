@@ -1,6 +1,6 @@
 label chapter_one:
 
-    #1111111111
+    ### 1 ###
     $ chapter1_day = 1
 
     call chapter1_day1_event_morning
@@ -19,7 +19,7 @@ label chapter_one:
 
     call chapter1_day1_event_night
 
-    #2222222222
+    ### 2 ###
     $ chapter1_day = 2
 
     call chapter1_day2_event_morning
@@ -41,7 +41,7 @@ label chapter_one:
 
     call chapter1_day2_event_night
 
-    #3333333333
+    ### 3 ###
     $ chapter1_day = 3
 
     call chapter1_day3_event_morning
@@ -63,7 +63,7 @@ label chapter_one:
 
     call chapter1_day3_event_night
 
-    #4444444444
+    ### 4 ###
     $ chapter1_day = 4
 
     call chapter1_day4_event_morning
@@ -84,7 +84,7 @@ label chapter_one:
 
     call chapter1_day4_event_night
 
-    #5555555555
+    ### 5 ###
     $ chapter1_day = 5
 
     call chapter1_day5_event_morning
@@ -117,7 +117,6 @@ label chapter1_freetime:
     menu:
         "Freetime"
         "Hang Out":
-            #call chapter1_freetime_hangout
             menu:
                 "Uitto":
                     pass
@@ -133,6 +132,108 @@ label chapter1_freetime:
                     pass
 
         "Investigate":
-            call investigation
+            call chapter1_investigation
+
+    return
+
+label chapter1_investigation:
+    #INVESTIGATION SCENES 
+    #[These scenes can be played during freetime by selecting the character from the investigation menu.]
+    #Clues from Ch1... 
+        #CDs, Computer, Microphone, Announcement List
+    #Clues to find in Investigation... 
+        #Mysterious Noise, Prank, Brag, PA Access, ID Account, Second locker, Missing Phone, Alexa Commands (might replace with more ID Account), Baton Pass
+    scene backgroundroom
+    menu:
+
+        "Ask For Help":
+            jump Ask_For_Help
+
+        "Yoku":
+            call YokuInv1
+
+        "Rei":
+            call ReiInv1
+
+        "Momoko":
+            call MomokoInv1
+
+        "Rise":
+            call RiseInv1
+
+        "Nanase":
+            call NanaseInv1
+
+        "Next Page":
+            jump chapter1_investigation2
+
+    return
+
+label chapter1_investigation2:
+
+    menu:
+
+        "Kietsu":
+            call KietsuInv1
+
+        "Taiga":
+            call TaigaInv1
+
+        "Dyre":
+            call DyreInv1
+
+        "Chisei":
+            call ChiseiInv1
+
+        "Shoma":
+            call ShomaInv1
+
+        "Ichita":
+            call IchitaInv1
+
+        "Next Page":
+            jump chapter1_investigation3
+
+    return
+
+label chapter1_investigation3:
+
+    menu:
+
+        "Setsuna":
+            call SetsunaInv1
+
+        "Kitsune":
+            call KitsuneInv1
+            
+        "Mu":
+            call MuInv1
+
+        "Kazz":
+            pass
+
+        "Mariko":
+            pass
+
+        "Next Page":
+            jump chapter1_investigation
+
+    return
+
+label Ask_For_Help:
+
+    menu:
+
+        "Change Your Mind":
+            jump chapter1_investigation
+
+        "Uitto":
+            call UittoInv1
+
+        "Jona":
+            call JonaInv1
+            
+        "Hiro":
+            call HiroInv1
 
     return

@@ -1443,15 +1443,18 @@ label nk_intro:
 
 label prologue_meet_students:
 
+    $ config.menu_include_disabled = True
+
     scene backgroundschool
     if prologueFriendsFound is 3:
         "Well, I found all my friends, should I go start the meeting?"
 
         menu:
             extend ""
-            "Keep Looking Around":
+            "Keep Looking Around" if prologueSearches is not 18:
                 pass
             "Start the Meeting":
+                $ config.menu_include_disabled = False
                 jump Meeting
 
     if prologueSearches is 0:
@@ -1471,17 +1474,17 @@ label prologue_locations_1:
 
     menu:
         extend ""
-        "Lecture Hall":
+        "Lecture Hall" if prologueHiroMet is False:
             jump prologue_lecture_hall
-        "Field":
+        "Field" if prologueMarikoMet is False:
             jump prologue_field
-        "Hallway":
+        "Hallway" if prologueYokuMet is False:
             jump prologue_hallway
-        "Courtyard":
+        "Courtyard" if prologueUittoMet is False:
             jump prologue_courtyard
-        "Stage":
+        "Stage" if prologueKitsuneMet is False:
             jump prologue_stage
-        "Audio Visual Room":
+        "Audio Visual Room" if prologueKazzMet is False:
             jump prologue_av
         "Other Locations":
             jump prologue_locations_2
@@ -1492,17 +1495,17 @@ label prologue_locations_2:
 
     menu:
         extend ""
-        "Nurse's Office":
+        "Nurse's Office" if prologueOshinMet is False:
             jump prologue_nurse_office
-        "Pond":
+        "Pond" if prologueIchitaMet is False:
             jump prologue_pond
-        "Roof":
+        "Roof" if prologueTaigaMet is False:
             jump prologue_roof
-        "Library":
+        "Library" if prologueChiseiMet is False:
             jump prologue_library
-        "Sewing Room":
+        "Sewing Room" if prologueShomaMet is False:
             jump prologue_sewing_room
-        "Gymnasium":
+        "Gymnasium" if prologueSetsunaMet is False:
             jump prologue_gym
         "Other Locations":
             jump prologue_locations_3
@@ -1514,17 +1517,17 @@ label prologue_locations_3:
 
     menu:
         extend ""
-        "Cafe":
+        "Cafe" if prologueKietsuMet is False:
             jump prologue_cafe
-        "Lab":
+        "Lab" if prologueMomokoMet is False:
             jump prologue_lab
-        "Classroom":
+        "Classroom" if prologueReiMet is False:
             jump prologue_classroom
-        "Student Council Room":
+        "Student Council Room" if prologueRiseMet is False:
             jump prologue_student_council_room
-        "Forbidden Door":
+        "Forbidden Door" if prologueDyreMet is False:
             jump prologue_forbidden_door
-        "Ampitheater":
+        "Ampitheater" if prologueJonaMet is False:
             jump prologue_ampitheater
         "Other Locations":
             jump prologue_locations_1
@@ -1536,7 +1539,12 @@ label prologue_lecture_hall:
     scene backgroundcharm
 
     if prologueHiroMet is False:
+        
+        $ prologueFriendsFound += 1
+        $ prologueHiroMet = True
+        
         call prologue_hiro
+
     else:
         "Hiro isn't here anymore."
 
@@ -1549,6 +1557,9 @@ label prologue_field:
     scene backgroundfield
 
     if prologueMarikoMet is False:
+        
+        $ prologueMarikoMet = True
+
         call prologue_mariko
     else:
         "There seems to be nobody here anymore."
@@ -1562,6 +1573,9 @@ label prologue_hallway:
     scene backgroundhall1
 
     if prologueYokuMet is False:
+
+        $ prologueYokuMet = True
+
         call prologue_yoku
     else:
         "There seems to be nobody here anymore."
@@ -1575,6 +1589,10 @@ label prologue_courtyard:
     scene backgroundcourtyard
 
     if prologueUittoMet is False:
+
+        $ prologueFriendsFound += 1
+        $ prologueUittoMet = True
+
         call prologue_uitto
     else:
         "Uitto isn't here anymore."
@@ -1588,6 +1606,9 @@ label prologue_stage:
     scene backgroundstage
 
     if prologueKitsuneMet is False:
+
+        $ prologueKitsuneMet = True
+
         call prologue_kitsune
     else:
         "There seems to be nobody here anymore."
@@ -1601,6 +1622,9 @@ label prologue_av:
     scene backgroundavroom
 
     if prologueKazzMet is False:
+
+        $ prologueKazzMet = True
+
         call prologue_kazz
     else:
         "There seems to be nobody here anymore."
@@ -1614,6 +1638,9 @@ label prologue_nurse_office:
     scene backgroundnurse
 
     if prologueOshinMet is False:
+        
+        $ prologueOshinMet = True
+
         call prologue_oshin
     else:
         "There seems to be nobody here anymore."
@@ -1627,6 +1654,9 @@ label prologue_pond:
     scene backgroundpond
 
     if prologueIchitaMet is False:
+        
+        $ prologueIchitaMet = True
+
         call prologue_ichita
     else:
         "There seems to be nobody here anymore."
@@ -1640,6 +1670,9 @@ label prologue_roof:
     scene backgroundroof
 
     if prologueTaigaMet is False:
+        
+        $ prologueTaigaMet = True
+
         call prologue_taiga
     else:
         "There seems to be nobody here anymore."
@@ -1653,6 +1686,9 @@ label prologue_library:
     scene backgroundlibrary
 
     if prologueChiseiMet is False:
+        
+        $ prologueChiseiMet = True
+
         call prologue_chisei
     else:
         "There seems to be nobody here anymore."
@@ -1666,6 +1702,9 @@ label prologue_sewing_room:
     scene backgroundsew
 
     if prologueShomaMet is False:
+        
+        $ prologueShomaMet = True
+
         call prologue_shoma
     else:
         "There seems to be nobody here anymore."
@@ -1679,6 +1718,9 @@ label prologue_gym:
     # BG:Gym
 
     if prologueSetsunaMet is False:
+
+        $ prologueSetsunaMet = True
+
         call prologue_setsuna
     else:
         "There seems to be nobody here anymore."
@@ -1692,6 +1734,9 @@ label prologue_cafe:
     scene backgroundcafe
 
     if prologueKietsuMet is False:
+        
+        $ prologueKietsuMet = True
+
         call prologue_kietsu
     else:
         "There seems to be nobody here anymore."
@@ -1705,6 +1750,9 @@ label prologue_lab:
     scene backgroundlab
 
     if prologueMomokoMet is False:
+        
+        $ prologueMomokoMet = True
+
         call prologue_momoko
     else:
         "There seems to be nobody here anymore."
@@ -1718,6 +1766,9 @@ label prologue_classroom:
     scene backgroundclass
 
     if prologueReiMet is False:
+        
+        $ prologueReiMet = True
+
         call prologue_rei
     else:
         "There seems to be nobody here anymore."
@@ -1731,6 +1782,9 @@ label prologue_student_council_room:
     scene backgroundstuco
 
     if prologueRiseMet is False:
+        
+        $ prologueRiseMet = True
+        
         call prologue_rise
     else:
         "There seems to be nobody here anymore."
@@ -1744,6 +1798,9 @@ label prologue_forbidden_door:
     scene backgrounddoor
 
     if prologueDyreMet is False:
+        
+        $ prologueDyreMet = True
+
         call prologue_dyre
     else:
         "There seems to be nobody here anymore."
@@ -1757,6 +1814,10 @@ label prologue_ampitheater:
     scene backgroundamp
 
     if prologueJonaMet is False:
+        
+        $ prologueFriendsFound += 1
+        $ prologueJonaMet = True
+        
         call prologue_jona
     else:
         "Jona isn't here anymore."
@@ -1764,9 +1825,6 @@ label prologue_ampitheater:
     jump prologue_meet_students
 
 label prologue_hiro:
-
-    $ prologueFriendsFound += 1
-    $ prologueHiroMet = True
         
     "I arrive at the room where the student council meets."
     "Everything looks too new, too clean, like no one has set foot in here since the school opened."
@@ -1924,7 +1982,7 @@ label prologue_hiro:
     h "Wait, no way, are the other’s here too?"
 
     # Has Nagen found someone?
-    if prologueFriendsFound is 1:
+    if prologueFriendsFound is 2:
         n "I don’t know for sure, but I’m looking for them. Until then, play it cool."
     else:
 
@@ -1939,8 +1997,6 @@ label prologue_hiro:
     return
 
 label prologue_mariko:
-
-    $ prologueMarikoMet = True
             
     "A few years ago, I probably wouldn't be anywhere near here. Maybe this year will be different."
     "In the corner of my eye, I see a girl in black spandex bound over, a pile of papers in her hands."
@@ -2043,7 +2099,7 @@ label prologue_mariko:
                     
                 "Uninterested":
 
-                    $ Intelligence += 1
+                    $ Intel += 1
 
                     n "I never really had a lot of free time back then."
 
@@ -2103,8 +2159,6 @@ label prologue_mariko:
     return
 
 label prologue_yoku:
-
-    $ prologueYokuMet = True
 
     "The grounds of this school are a lot larger than I anticipated."
     "I'll need at least an hour before classes start in order to figure out where I'm going."
@@ -2234,7 +2288,7 @@ label prologue_yoku:
 
                 "What are you doing here?":
 
-                    $ Intelligence += 1
+                    $ Intel += 1
 
                     y "I was looking for the auditorium, I he-heard that this school was going to provide a Wurlitzer."
                     y "As the future's leading co-com-composer, I'd like to find it."
@@ -2281,9 +2335,6 @@ label prologue_yoku:
     return
 
 label prologue_uitto:
-
-    $ prologueFriendsFound += 1
-    $ prologueUittoMet = True
 
     "I decide to check the back of the school."
     "Sun pours down into the center of the courtyard. It should feel warm and inviting."
@@ -2455,8 +2506,6 @@ label prologue_uitto:
     return
 
 label prologue_kitsune:
-
-    $ prologueKitsuneMet = True
 
     scene backgroundstage
 
@@ -2647,8 +2696,6 @@ label prologue_kitsune:
 
 label prologue_kazz:
 
-    $ prologueKazzMet = True
-
     "I stumble across a dingy room tucked in the back of the second floor."
     "The furniture here is considerably older than the classrooms and in worse condition."
     "If it wasn't for a small, glass-paneled recording booth, I would have assumed this room was for storage."
@@ -2825,8 +2872,6 @@ label prologue_kazz:
     return
 
 label prologue_oshin:
-
-    $ prologueOshinMet = True
     
     "The nurse's office is small, to say the least."
     "It can barely fit two pennies in between all the filing cabinets and office supplies."
@@ -2984,8 +3029,6 @@ label prologue_oshin:
 
 label prologue_ichita:
 
-    $ prologueIchitaMet = True
-
     "When I think of high school, I imagine a gray cement building with crowded halls and an oppressive air about the place."
     "The kind that's earned from decades of kids grinding gum into the pavement."
     "Maybe it's because this place hasn't been a school for very long, but the entryway doesn't feel haunted."
@@ -3131,8 +3174,6 @@ label prologue_ichita:
     return
 
 label prologue_taiga:
-    
-    $ prologueTaigaMet = True
 
     "I make my way to the uppermost floor of the main building."
     "The entryway to the stairs is blocked off with piles of wood and neglected supplies strewn about."
@@ -3311,8 +3352,6 @@ label prologue_taiga:
     return
 
 label prologue_chisei:
-    
-    $ prologueChiseiMet = True
 
     "Out of all the rooms in the whole school, this is the only one that hasn't been remodeled."
     "The bookshelves are molded into the walls, floor to ceiling."
@@ -3466,8 +3505,6 @@ label prologue_chisei:
     return
 
 label prologue_shoma:
-
-    $ prologueShomaMet = True
 
     "As I exit the third floor, I see light trickling through the bottom of an unmarked door."
     "Curiosity gets the better of me and I take a step inside. The air is thick and humid."
@@ -3629,8 +3666,6 @@ label prologue_shoma:
 
 label prologue_setsuna:
 
-    $ prologueSetsunaMet = True
-
     "My footsteps squeak as the smell of floor polish and vinyl hits me in the face."
     "It must have been built recently for the place to be so clean."
     "I had heard there was supposed to be a pool here, but this is clearly a basketball court."
@@ -3779,8 +3814,6 @@ label prologue_setsuna:
     return
 
 label prologue_kietsu:
-
-    $ prologueKietsuMet = True
 
     "I follow a dirt path that branches off to the right of the school's entrance."
     "It wraps around to a brick storage shed. Inside is a café lined with wall to wall bookshelves."
@@ -3955,8 +3988,6 @@ label prologue_kietsu:
     return
 
 label prologue_momoko:
-
-    $ prologueMomokoMet = True
 
     "As I make my way to the third floor, I hear a huge crash at the end of the hall."
     "The door to the school lab is slightly ajar. I rush in to see a girl with multicolored hair standing in the middle of theroom"
@@ -4156,8 +4187,6 @@ label prologue_momoko:
 
 label prologue_rei:
 
-    $ prologueReiMet = True
-
     "The classrooms are filled with wall to wall shelves of books."
     "The main floor has been tidied up to make room for the rows of antique tables."
     "At the back of the room is a hologram projection of a blackboard with a welcome message hastily scribbled on it."
@@ -4295,8 +4324,6 @@ label prologue_rei:
     return
 
 label prologue_rise:
-
-    $ prologueRiseMet = True
 
     "There's only a few rooms open on the top floor."
     "This appears to be a meeting place of some sort, but it's glaringly apparent that everything in the room has never been used."
@@ -4480,8 +4507,6 @@ label prologue_rise:
 
 label prologue_dyre:
 
-    $ prologueDyreMet = True
-
     "At the end of the first-floor hallway is a solid metal door with 'Computer Lab' written on it."
     "I can't get it to open, no matter how hard I try."
     "It's not like I need a computer that bad, but I had hoped maybe they had access to the internet."
@@ -4644,9 +4669,6 @@ label prologue_dyre:
     return
 
 label prologue_jona:
-
-    $ prologueFriendsFound += 1
-    $ prologueJonaMet = True
 
     "I follow a paved walkway behind the field to a sparsely wooded area."
     "Hidden behind rows of planters is a small concrete stage"
