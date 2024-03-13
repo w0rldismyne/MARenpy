@@ -160,6 +160,17 @@ image TBase = "Sprites/Taiga/TaigaN.png"
 
 #Uitto
 image UBase = "Sprites/Uitto/Uittobase.png"
+image UBase = "Sprites/Uitto/Uittocringe.png"
+image UBase = "Sprites/Uitto/Uittoembarrassed.png"
+image UBase = "Sprites/Uitto/Uittogurl.png"
+image UBase = "Sprites/Uitto/Uittoiguess.png"
+image UBase = "Sprites/Uitto/Uittosad.png"
+image UBase = "Sprites/Uitto/Uittosadtalk.png"
+image UBase = "Sprites/Uitto/Uittosmile.png"
+image UBase = "Sprites/Uitto/Uittosmirk.png"
+image UBase = "Sprites/Uitto/Uittotalk.png"
+image UBase = "Sprites/Uitto/Uittotongue.png"
+image UBase = "Sprites/Uitto/Uittoyell.png"
 
 #Yoku
 image YBase = "Sprites/Yoku/YokuN.png"
@@ -316,6 +327,6 @@ label start:
                 "Beginning":
                     jump chapter_one
                 "Investigation":
-                    jump investigation
+                    jump chapter1_investigation
         "Sandbox":
             jump sandbox

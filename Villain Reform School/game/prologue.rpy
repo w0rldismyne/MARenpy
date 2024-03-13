@@ -3,7 +3,7 @@
 label prologue:
     scene backgroundpolice
 
-    play music "music/LostWithin.mp3"
+    play music "music/Undertow.mp3"
 
     "My whole life, I feel like I've been dragged around by my collar."
     "I guess when most adults see a kid act out of line, they're overwhelmed with a need to control the situation."
@@ -45,6 +45,7 @@ label prologue:
     scene backgroundblack
 
     # Change soundtrack
+    play music "music/WhereS.mp3"
 
     "Remember? No one is truly capable of remembering."
     "Well, if you want to get technical, remembering is just being aware of something."
@@ -101,7 +102,7 @@ label prologue:
         linear 4 crop (0, 0, 1920, 1080)
 
 
-    play music "music/Voyage.mp3"
+    play music "music/Nostalgia.mp3"
 
     scene backgroundP2
 
@@ -118,7 +119,7 @@ label prologue:
 
     scene backgroundpolice
 
-    play music "music/LostWithin.mp3"
+    play music "music/Undertow.mp3"
 
     "But that was the me of two years ago, the kid who grew up in a glass box waiting for my veins to stop burning."
     "The unwilling test subject of the very people who stand before me claiming I'm the monster."
@@ -814,6 +815,7 @@ label prologue:
     mm "If it was classified, I would have told you it's classified."
 
     # Needs new song queue, something sad?
+    play music "music/Still.mp3"
 
     "A month. She's been missing for over a month."
     "At this point, they're not looking for {i}her{/i} anymore, they're looking for a body."
@@ -825,6 +827,7 @@ label prologue:
     #[BG: Manor Exterior]
 
     scene backgroundnhouse
+    play music "music/LateNights.mp3"
     
     "As we step out of the car, I can smell the faint, eerie scent of velvet kiss growing up by the walkway."
     "The dreary gray estate looms in front of me. Utterly unwelcoming."
@@ -1093,6 +1096,7 @@ label prologue2:
     "It’s equally eerie and comforting."
 
     scene backgroundnhouse
+    play music "music/TheLoyalist.mp3"
 
     "The lingering winter nips at my cheeks as I watch the last of my things get packed into the cab."
     "A familiar feeling of helplessness washes over me."
@@ -1150,6 +1154,7 @@ label prologue2:
     "It’s one of the few buildings that survived the riots."
 
     scene backgroundschool
+    play music "music/TheySay.mp3"
 
     "I heard it was a library donated to the DVP for renovation and now it’s become this."
     "I would have preferred the library."
@@ -1195,6 +1200,7 @@ label prologue2:
     "Maimai escorts me into the office."
 
     hide MMBase
+    play music "music/Still.mp3"
 
     # Principal office
     "A woman gestures for us to sit down. She takes her place behind a massive desk with a stack of forms for us to review."
@@ -1321,6 +1327,8 @@ label prologue2:
     #insert nanase intro here
     scene backgroundschool
 
+    play music "music/CryingOverYou.mp3"
+
     show NBase
 
     nk "Good morning!"
@@ -1446,6 +1454,7 @@ label prologue_meet_students:
     $ config.menu_include_disabled = True
 
     scene backgroundschool
+    play music "music/CosimoFogg.mp3"
     if prologueFriendsFound is 3:
         "Well, I found all my friends, should I go start the meeting?"
 
@@ -1825,6 +1834,8 @@ label prologue_ampitheater:
     jump prologue_meet_students
 
 label prologue_hiro:
+
+    play music "music/WeAre.mp3"
         
     "I arrive at the room where the student council meets."
     "Everything looks too new, too clean, like no one has set foot in here since the school opened."
@@ -2335,6 +2346,8 @@ label prologue_yoku:
     return
 
 label prologue_uitto:
+
+    play music "music/CoolNights.mp3"
 
     "I decide to check the back of the school."
     "Sun pours down into the center of the courtyard. It should feel warm and inviting."
@@ -4325,6 +4338,8 @@ label prologue_rei:
 
 label prologue_rise:
 
+    play music "music/TriuphantReturn.mp3"
+
     "There's only a few rooms open on the top floor."
     "This appears to be a meeting place of some sort, but it's glaringly apparent that everything in the room has never been used."
     "Every piece of furniture clashes despite the effort to match colors."
@@ -4670,6 +4685,8 @@ label prologue_dyre:
 
 label prologue_jona:
 
+    play music "music/SpeedWins.mp3"
+
     "I follow a paved walkway behind the field to a sparsely wooded area."
     "Hidden behind rows of planters is a small concrete stage"
     "It looks like it hasn't been long since the poppies were watered. The earth smells damp and cool."
@@ -4904,6 +4921,7 @@ label prologue_jona:
     return
 
 label Meeting:
+    play music "music/Unconditionally.mp3"
     scene backgroundstuco
 
     "I walk into the room to find Hiro and Jona waiting for me. Uitto comes in silently behind me."
@@ -5176,6 +5194,7 @@ label Meeting:
             jump meet_main
 
         "Go after her":
+            play music "music/CoolNights.mp3"        
             $ uRep += 1
 
             n "Uitto, wait!"
@@ -5209,6 +5228,8 @@ label Meeting:
             jump meet_main
     
     label meet_main:
+
+        play music "music/Undertow.mp3"
         
         "I managed to get the guys to agree to join me. They may question my methods, but at least they're on board."
         "As for Uitto... I know we're all upset getting shoved into reform school, but it didn't seem like she had a better idea than mine."

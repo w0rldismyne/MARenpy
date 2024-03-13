@@ -2,6 +2,8 @@
 label chapter1_day1_event_morning:
     scene backgroundroom
 
+    play music "music/CryingOverYou.mp3"
+
     kk "Good morning, brotato chips!"
     kk "We’re going to start this school year with a banging opening ceremony in the amphitheater before classes start."
     kk "You got one hour to be up and ready this morning."
@@ -13,6 +15,8 @@ label chapter1_day1_event_morning:
     n "Ugh, where’s the off switch on this thing?"
 
     "From outside my door, I can hear a rush of activity and a loud bang."
+
+    play music "music/TheChase.mp3"
 
     h "Come on, Nagen, we got to get going if we want to sit together."
 
@@ -55,6 +59,7 @@ label chapter1_day1_event_morning:
     hide JDepressed
 
     scene backgroundamp
+    play music "music/TheLoyalist.mp3"
 
     "I’m hoping that means she’s ready to talk to me, but when we get to the amphitheater, Hiro and Jona immediately sit on either side of her."
     "She’s ignoring me in favor of her own reflection."
@@ -76,6 +81,8 @@ label chapter1_day1_event_morning:
 
     hide JDepressed
     show KBase at right
+
+    play music "music/WeAre.mp3"
 
     k "Well well well, your entourage is real after all."
 
@@ -116,6 +123,8 @@ label chapter1_day1_event_morning:
     k "....."
 
     hide KBase
+
+    play music "music/TheLoyalist.mp3"
 
     "She gets up quietly and leaves to sit with some other girls."
 
@@ -162,6 +171,8 @@ label chapter1_day1_event_morning:
     show MBase at right
     
     m "How’s everyone feeling this morning!?"
+
+    play music "music/leaf.mp3"
 
     hide IkBase
     hide VBase
@@ -228,6 +239,8 @@ label chapter1_day1_event_morning:
     "Everyone claps out of pity. The second hand embarrassment is palpable."
     #( Vision Bonus Day 1, Immediately following Opening Ceremony)
 
+    play music "music/TheLoyalist.mp3"
+
     if Vision >= 10:
     
         n "Watching people flounder like that never gets less painful."
@@ -271,6 +284,8 @@ label chapter1_day1_event_morning:
 
 label chapter1_day1_event1:
     scene backgroundschool
+
+    play music "music/Lights.mp3"
 
     "After the assembly, we’re handed our class schedules. I’m stuck with English, P.E., Science, and Proficiency Management."
     "They wanted me to take the Intelligence course, but I can always switch it if I want to."
@@ -660,7 +675,9 @@ label chapter1_day1_event1_classes_intelligence:
     
     n "I'm bad at giving directions, but I can show you where it is."
     
-    #[BG Office]
+    scene backgroundyoffice
+
+    play music "music/TheChase.mp3"
     
     "Everyone gathers behind me as we march into Mr. Yaguchi's office."
     "The place is littered with pieces of scrap metal and welding equipment."
@@ -756,6 +773,8 @@ label chapter1_day1_event1_classes_intelligence:
 
     hide KkBase
     show YaBase
+
+    play music "music/Lights.mp3"
     
     ya "Sit down, all of you."
     ya "I'm going to ask you something, and I'm afraid I already know the answer."
@@ -1087,6 +1106,7 @@ label chapter1_day1_event1_classes_vision:
 label chapter1_day1_event2:
     scene backgroundhall1
     
+    play music "music/Interloper.mp3"
     #BG: Hallway
     "It’s surreal being thrown back into school life without my friends in every class."
     "Back at Estella, we had been clumped together for everything year after year. Hearing the bell ring is a relief."
@@ -1231,6 +1251,8 @@ label chapter1_day1_event2:
 
     show VBase
 
+    play music "music/Still.mp3"
+
     v "Children, please disperse. If you have any concerns with your current situation, you are to bring them to me. That goes for all of you."
 
     hide VBase
@@ -1310,6 +1332,7 @@ label chapter1_day1_event2:
     return
 
 label chapter1_day1_event3:
+    play music "music/leaf.mp3"
     scene backgroundavroom
 
     #[BG: PA Room (interior)]
@@ -1398,6 +1421,7 @@ label chapter1_day1_event3:
 
 label chapter1_day1_event_night:
     scene backgroundroomn
+    play music "music/WhereS.mp3"
 
     #(AN: A black text box with blue writing will be used for a nameless dialog titled "Dark". These lines are not voiced, but are part of Nagen's internal dialogue.)
     #[BG: Nagen's room Night]
@@ -1427,6 +1451,7 @@ label chapter1_day1_event_night:
 
 #22222
 label chapter1_day2_event_morning:
+    play music "music/CryingOverYou.mp3"
     scene backgroundroom
 
     "I don't remember falling asleep. The room is eerily quiet. Did I seriously wake up before my alarm? I roll over and stared blankly at the clock... Nine thirty..."
@@ -1438,6 +1463,7 @@ label chapter1_day2_event_morning:
     return
 
 label chapter1_day2_event1:
+    play music "music/TheLoyalist.mp3"
     scene backgroundhall2
 
     "By the time I look presentable, first period is over and everyone's milling about the halls."
@@ -1640,6 +1666,7 @@ label chapter1_day2_event1:
     return
 
 label chapter1_day2_event2:
+    play music "music/Lights.mp3"
     scene backgroundclass
 
     "Jona and I have found a quiet corner to hide in for science."
@@ -1882,6 +1909,7 @@ label chapter1_day2_event2:
     return
 
 label chapter1_day2_event3:
+    play music "music/TheySay.mp3"
     scene backgroundnurse
 
     "I hover around the door to the nurse's office; it doesn't look like anyone's inside."
@@ -1904,6 +1932,7 @@ label chapter1_day2_event3:
     return
 
 label chapter1_day2_event_night:
+    play music "music/WhereS.mp3"
     scene backgroundroomn
 
     "Another day has come and gone."
@@ -1938,6 +1967,7 @@ label chapter1_day2_event_night:
 
 #33333
 label chapter1_day3_event_morning:
+    play music "music/CryingOverYou.mp3"
     scene backgroundroom
 
     "Uggh"
@@ -1946,6 +1976,7 @@ label chapter1_day3_event_morning:
     return
 
 label chapter1_day3_event1:
+    play music "music/CoolNights.mp3"
     scene backgroundcafe
 
     "P.E. is always the worst."
@@ -2044,6 +2075,7 @@ label chapter1_day3_event1:
     return
 
 label chapter1_day3_event2:
+    play music "music/Sappheiros.mp3"
     scene backgroundnurse
 
     "I can't keep putting off going to the nurse."
@@ -2149,6 +2181,7 @@ label chapter1_day3_event2:
 
     "He nods and dials the nurse on speaker phone."
     "Of course, the first thing she tells him to do is grab an inch-long needle."
+    play music "music/WeAre.mp3"
     "The minute I see a glimmer of silver, I feel my knees give out."
 
     Nurse "What happened?"
@@ -2166,6 +2199,7 @@ label chapter1_day3_event2:
     return
 
 label chapter1_day3_event3:
+    play music "music/CosimoFogg.mp3"
     scene backgroundhall2
 
     "As I drop off the last of my stuff into my locker, I hear an ear shattering screech."
@@ -2230,6 +2264,7 @@ label chapter1_day3_event3:
     return
 
 label chapter1_day3_event_night:
+    play music "music/WhereS.mp3"
     scene backgroundroomn
     
     "My shoulder is still kinda sore, but I can rest a little easier knowing that I’m not crazy."
@@ -2266,6 +2301,7 @@ label chapter1_day3_event_night:
 
 #44444
 label chapter1_day4_event_morning:
+    play music "music/CryingOverYou.mp3"
     scene backgrounddorm
 
     "As annoying as it was, I kind of miss Kazz's broadcast."
@@ -2274,6 +2310,7 @@ label chapter1_day4_event_morning:
     return
 
 label chapter1_day4_event1:
+    play music "music/WeAre.mp3"
     scene backgroundcourtyard
 
     "I decide to eat lunch early today."
@@ -2309,6 +2346,8 @@ label chapter1_day4_event1:
     "He laughs a bit."
 
     h "I'm not going to give some rando the satisfaction of scaring me. If they really wanted to face me, they should have stepped forward and said it to my face."
+
+    play music "music/Still.mp3"
 
     if Villain <= Hero:
 
@@ -2377,6 +2416,7 @@ label chapter1_day4_event1:
     return
 
 label chapter1_day4_event2:
+    play music "music/Lights.mp3"
     scene backgroundcharm
 
     "I didn't think too many people would be interested in clubs, especially with so few students here."
@@ -2612,6 +2652,7 @@ label chapter1_day4_event2:
     return
 
 label chapter1_day4_event_night:
+    play music "music/Nostalgia.mp3"
     scene backgroundroomn
 
     "Over the last few days, it’s felt like things are almost normal now."
@@ -2675,6 +2716,7 @@ label chapter1_day4_event_night:
 
 #55555
 label chapter1_day5_event_morning:
+    play music "music/CryingOverYou.mp3"
     scene backgroundroom
 
     "For the first time since school began, I wake up to the radio blaring at top volume."
@@ -2690,6 +2732,7 @@ label chapter1_day5_event_morning:
     return
 
 label chapter1_day5_event1:
+    play music "music/TheLoyalist.mp3"
     scene backgroundhall1
 
     "I’m on my way to lunch when I catch Kitsune in the halls."
@@ -2760,6 +2803,7 @@ label chapter1_day5_event1:
 
 label chapter1_day5_event2:
     if Vision >= 10:
+        play music "music/TheySay.mp3"
         #[BG: Courtyard]
 
         "I still have a little time before lunch. For some reason, there’s something bothering me about the cheerleaders."
@@ -2815,6 +2859,7 @@ label chapter1_day5_event2:
     return
 
 label chapter1_day5_event3:
+    play music "music/CoolNights.mp3"
     scene backgroundcharm
 
     show UBase
@@ -2904,6 +2949,7 @@ label chapter1_day5_event3:
     hide UBase
 
 label chapter1_day5_event4:
+    play music "music/Interloper.mp3"
     scene backgroundcafexn
 
     "Jona and I are on the way to the cafeteria when we run into Uitto."
@@ -2949,6 +2995,7 @@ label chapter1_day5_event4:
     return
 
 label chapter1_day5_event_night:
+    play music "music/TheySay.mp3"
     scene backgroundroomn
     
     u "Knock, knock! Ready for 'movie' night?"
@@ -3032,7 +3079,12 @@ label chapter1_day5_event_night:
 
     h "A new leader that doesn't like us... that can't be good."
 
+    play music "music/VHS.mp3"
+
     "The tape sputters and then a curtain displays on the screen. Slowly a girl, suspended by ribbons, is lowered into the frame."
+
+    play music "music/#28.mp3"
+
     if Villain > Hero:
     #[If Villain]
     
@@ -3063,13 +3115,19 @@ label chapter1_day5_event_night:
     a "Just know, there's a lot of people counting on you to fail."
     a "Au Revoir."
 
+    play music "music/VHS.mp3"
+
     "She disappears behind the static. We sit there drowning in white noise for a few moments before Uitto turns off the TV."
+
+    play music "music/INeedTo.mp3"
 
     u "'False Heroes', just who does she think she is?"
 
     h "She kept saying 'they', does that mean there's going to be more threats?"
 
     n "...it's entirely possible, but we're not going to get any answers stressing out about it tonight."
+
+    play music "music/WeAre.mp3"
 
     u "Right!? This could be the only night we get away with this, so we gotta make the most of it!"
 
