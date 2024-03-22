@@ -17,6 +17,8 @@ label sandbox:
             pass
         "Character Test":
             jump CharacterTest
+        "Minigame":
+            jump mini_game
 
 label Event1:
 

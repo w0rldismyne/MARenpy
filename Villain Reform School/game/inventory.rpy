@@ -84,9 +84,9 @@ label inventory:
     # Test Inventory
 
     $ inventory.AddClue(clue_account)
-    #$ inventory.ShowClue(clue_account)
+    $ inventory.ShowClue(clue_account)
     $ inventory.AddClue(clue_baton_pass)
-    #$ inventory.ShowClue(clue_baton_pass)
+    $ inventory.ShowClue(clue_baton_pass)
     $ inventory.AddClue(clue_brag)
     #$ inventory.ShowClue(clue_brag)
     $ inventory.AddClue(clue_friends_list)
@@ -268,12 +268,15 @@ screen inventory(inventory = inventory):
                     continue
 
     grid width height:
-        xanchor 0.0
-        yanchor 0.0
+        xanchor 0.5
+        yanchor 0.5
         xpos 0.3359375
-        ypos 0.575
+        ypos 0.61
         xsize 0.671875
-        ysize 0.85
+        ysize 0.58
+
+        xspacing 0.028125
+        yspacing 0.05
 
         $ list_tracker = 0
 
