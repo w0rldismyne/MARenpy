@@ -181,7 +181,7 @@ image YBase = "Sprites/Yoku/YokuN.png"
 image IkBase = "Sprites/Inukai/inuN.png"
 
 #Sato
-image SaBase = "Sprites/Fox/basespritesox.png"
+image SaBase = "Sprites/Fox/basespriteox.png"
 
 #Vivaldi
 image VBase = "Sprites/Vivaldi/ViBase.png"
@@ -316,6 +316,11 @@ default check_book = False
 default check_cd = False
 default check_mic = False
 default check_laptop = False
+
+#audio
+
+init python:
+    config.auto_voice = "characters/Uitto/{id}.ogg"
 
 # THE GAME STARTS HERE!
 label start:
