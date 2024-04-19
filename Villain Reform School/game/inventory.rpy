@@ -84,9 +84,9 @@ label inventory:
     # Test Inventory
 
     $ inventory.AddClue(clue_account)
-    $ inventory.ShowClue(clue_account)
+    #$ inventory.ShowClue(clue_account)
     $ inventory.AddClue(clue_baton_pass)
-    $ inventory.ShowClue(clue_baton_pass)
+    #$ inventory.ShowClue(clue_baton_pass)
     $ inventory.AddClue(clue_brag)
     #$ inventory.ShowClue(clue_brag)
     $ inventory.AddClue(clue_friends_list)
@@ -164,7 +164,7 @@ screen inventory(inventory = inventory):
 
         xpos 0.821875
 
-        ypos 0.225
+        ypos 0.3
 
     text "[selected_clue_name]":
         xanchor 0.0
@@ -288,8 +288,8 @@ screen inventory(inventory = inventory):
 
                 if (list_tracker > list_page_minimum and list_tracker <= list_page_maximum):
                     image "images/Clues/PushPin.png":
-                        xanchor 0.5
-                        yanchor 0.5
+                        xanchor 0.0
+                        yanchor 0.0
                         
                 else:
                     continue

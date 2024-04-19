@@ -1343,25 +1343,7 @@ label chapter1_day1_event3:
 
     g "Click on items to see if it leads to any clues."
 
-    # Player clicks on CD
-
-    "I can't make sense of this organizational system. Why aren't they alphabetized?"
-
-    # Player clicks on Computer
-    
-    "Nothing is queued to play. The browser history isn't terribly exciting. Just a bunch of Google searches on troubleshooting home assistants."
-
-    # Player clicks on Microphone
-
-    "It's wired directly into the school's speakers. There's no way to record with it as it is."
-
-    # Player clicks on Announcement List
-
-    "A list of morning announcements. It matches everything Kazz read this morning, including the club ads."
-
-    #Once every object as been interacted with return to main branch
-
-    #[Return to Main Branch]
+    call chapter1_point_and_click
 
     scene backgroundhall2
 
@@ -1418,6 +1400,69 @@ label chapter1_day1_event3:
     g "Each Major has different strengths; experiment to see which works best for you."
 
     return
+
+label chapter1_point_and_click:
+    while check_book is False or check_cd is False or check_mic is False or check_laptop is False:
+        call screen chapter1_point_and_click_objects
+        label chapter1_point_and_click_interaction_complete:
+            pass
+    return
+
+screen chapter1_point_and_click_objects:
+
+    modal True
+
+    if check_book is False:
+        imagebutton:
+            focus_mask True
+            idle "images/Interactables/announcementlistidle.png"
+            hover "images/Interactables/announcementlist.png"
+            action SetVariable("check_book", True), Hide("chapter1_point_and_click_objects"), Jump("chapter1_point_and_click_objects_book")
+
+    if check_cd is False:
+        imagebutton:
+            focus_mask True
+            idle "images/Interactables/cdsidle.png"
+            hover "images/Interactables/cds.png"
+            action SetVariable("check_cd", True), Hide("chapter1_point_and_click_objects"), Jump("chapter1_point_and_click_objects_cd")
+
+    if check_mic is False:
+        imagebutton:
+            focus_mask True
+            idle "images/Interactables/microphoneidle.png"
+            hover "images/Interactables/microphone.png"
+            action SetVariable("check_mic", True), Hide("chapter1_point_and_click_objects"), Jump("chapter1_point_and_click_objects_mic")
+
+    if check_laptop is False:
+        imagebutton:
+            focus_mask True
+            idle "images/Interactables/laptopidle.png"
+            hover "images/Interactables/laptop.png"
+            action SetVariable("check_laptop", True), Hide("chapter1_point_and_click_objects"), Jump("chapter1_point_and_click_objects_laptop")
+
+label chapter1_point_and_click_objects_book:
+
+    "A list of morning announcements. It matches everything Kazz read this morning, including the club ads."
+
+    jump chapter1_point_and_click_interaction_complete
+
+label chapter1_point_and_click_objects_cd:
+
+    "I can't make sense of this organizational system. Why aren't they alphabetized?"
+
+    jump chapter1_point_and_click_interaction_complete
+
+label chapter1_point_and_click_objects_mic:
+
+    "It's wired directly into the school's speakers. There's no way to record with it as it is."
+
+    jump chapter1_point_and_click_interaction_complete
+
+label chapter1_point_and_click_objects_laptop:
+
+    "Nothing is queued to play. The browser history isn't terribly exciting. Just a bunch of Google searches on troubleshooting home assistants."
+    
+    jump chapter1_point_and_click_interaction_complete
 
 label chapter1_day1_event_night:
     scene backgroundroomn

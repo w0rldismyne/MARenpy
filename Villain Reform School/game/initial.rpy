@@ -311,6 +311,12 @@ define chapter1_free_time_morning_break = 0
 define chapter1_free_time_after_school = 1
 define chapter1_free_time_evening = 2
 
+    # Minigame
+default check_book = False
+default check_cd = False
+default check_mic = False
+default check_laptop = False
+
 # THE GAME STARTS HERE!
 label start:
 

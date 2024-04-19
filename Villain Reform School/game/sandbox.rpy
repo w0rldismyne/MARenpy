@@ -10,13 +10,13 @@ image sprite 4 = "Sprites/TestSprite4.png"
 
 # THE GAMES STARTS HERE!
 label sandbox:
+    
     "Entering Sandbox"
     "What are we testing?"
+
     menu:
         "Event Loop":
             pass
-        "Character Test":
-            jump CharacterTest
         "Minigame":
             jump mini_game
 
@@ -94,16 +94,3 @@ label CharacterList:
         "[u]":
             pass
 return
-
-label CharacterTest:
-    "Two Different Show"
-    show sprite 1 at left
-    show sprite 2 at right
-    "Next"
-    hide sprite 1
-    hide sprite 2
-    "Double Show"
-    show sprite 1 at center
-    show sprite 1 at right
-    "Done"
-    return
