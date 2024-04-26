@@ -17,8 +17,10 @@ label sandbox:
     menu:
         "Event Loop":
             pass
-        "Minigame":
-            jump mini_game
+        "Menu":
+            jump new_menu
+        "Battle":
+            pass
 
 label Event1:
 
@@ -94,3 +96,44 @@ label CharacterList:
         "[u]":
             pass
 return
+
+label new_menu:
+
+    $ choice_many_choices = True
+    menu:
+        "Location 01":
+            pass
+        "Location 02":
+            pass
+        "Location 03":
+            pass
+        "Location 04":
+            pass
+        "Location 05":
+            pass
+        "Location 06":
+            pass
+        "Location 07":
+            pass
+        "Location 08":
+            pass
+        "Location 09":
+            pass
+        "Location 10":
+            pass
+        "Location 11":
+            pass
+        "Location 12":
+            pass
+        "Location 13":
+            pass
+        "Location 14":
+            pass
+        "Location 15":
+            pass
+
+    $ choice_many_choices = False
+return
+
+label fight:
+    pass

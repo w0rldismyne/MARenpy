@@ -3,6 +3,8 @@
 ################################################################################
 
 init offset = -1
+init:
+    $ choice_many_choices = False
 
 
 ################################################################################
@@ -221,10 +223,23 @@ style input:
 screen choice(items):
     style_prefix "choice"
 
-    vbox:
-        for i in items:
-            textbutton i.caption action i.action
+    if choice_many_choices is False:
 
+        vbox:
+            for i in items:
+                textbutton i.caption action i.action
+
+    else:
+        grid 5 4:
+            xalign 0.5
+            ypos 405
+            yanchor 0.5
+
+            spacing gui.choice_spacing
+            for i in items:
+                textbutton i.caption:
+                    action i.action
+                    xsize 200
 
 style choice_vbox is vbox
 style choice_button is button
