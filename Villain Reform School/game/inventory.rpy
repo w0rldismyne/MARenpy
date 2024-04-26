@@ -77,6 +77,7 @@ define clue_mysterious_noise = Clue("clue_mysterious_noise", "Mysterious Noise",
 define clue_pa_access = Clue("clue_pa_access", "PA Access", "Only a few people were allowed in the AV Room.")
 define clue_prank = Clue("clue_prank", "Prank", "Kazz's friends thought messing with his stuff was funny.")
 define clue_second_locker = Clue("clue_second_locker", "Second Locker", "Someone took Mu's locker for themselves.")
+define clue_cheerad = Clue("clue_cheerad", "Club Ad", "A radio announcement submitted to Kazz.")
 
 
 label inventory:
@@ -101,6 +102,7 @@ label inventory:
     #$ inventory.ShowClue(clue_prank)
     $ inventory.AddClue(clue_second_locker)
     #$ inventory.ShowClue(clue_second_locker)
+    $ inventory.AddClue(clue_cheerad)
 
     return
 

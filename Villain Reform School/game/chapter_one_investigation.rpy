@@ -232,6 +232,7 @@ label ReiInterrogation1:
             n "Don't forget to take care of yourself too."
             n "Coming here has been hard for everyone."
             #+ Cheer Ad
+            $ inventory.ShowClue(clue_cheerad)
 
             jump ReiInterrogation1
 
@@ -2157,6 +2158,7 @@ label KazzInterrogation1:
                     kk "Besides, Mariko was the last one in there, and she'd have told me if something was out of place." 
                     #(+Cheer Ad, +PA Access)
                     $ inventory.ShowClue(clue_pa_access)
+                    $ inventory.ShowClue(clue_cheerad)
 
                     jump KazzInterrogation1
 
@@ -2276,7 +2278,6 @@ label KazzInterrogation1:
     return #connect to game loop
 
 label MarikoInv1:
-
     scene backgroundclass
     #Mariko Investigation
     #[BG: Classroom]
@@ -2312,9 +2313,7 @@ label MarikoInv1:
     m "Well, go ahead, grab a seat. No point in haunting the doorway now."
 
     "I clear a spot for myself under her watchful eye."
-
-label MarikoInterrogation1:
-
+label MarikoChoice1:
     menu:
         "Alibi":
             m "It was a long drive out here, so I didn't have as much time to practice for the assembly as I would have liked."
@@ -2331,9 +2330,8 @@ label MarikoInterrogation1:
             m "Only club leaders are allowed in Kazz's precious booth."
             m "At least, that's what I was told. Though I'm sure if he had it his way, no one would be allowed in."
             m "Thank goodness he trusts me in there." #(+Cheer Ad)
-
-            jump MarikoInterrogation1
-
+            $ inventory.ShowClue(clue_cheerad)
+            call MarikoChoice1
         "Missing Phone":
             "Mariko falters and looks away."
 
@@ -2354,16 +2352,15 @@ label MarikoInterrogation1:
             "She refused to look at me the entire time she spoke."
             #-Other-   
             #m "That's Kazz's, I don't know much about it."
-
-            jump MarikoInvestigation1
-
+            call MarikoChoice1
         "Leave":
-
-            pass
-
-    if Intel >= 3:
-        jump MarikoAccusation
-
+            call MarikoCheck
+label MarikoCheck:
+    if $ Intel >= 3:
+        call MarikoInt
+    else:
+        call MarikoOutro
+label MarikoOutro:
     m "Sorry I couldn't be more help."
     m "I've been so busy with my own stuff, I haven't had time to really look around or talk to people."
 
@@ -2387,10 +2384,9 @@ label MarikoInterrogation1:
     "If I stick around any longer, I'll get roped into making posters for a club I'm not in. I should go."
 
     hide Mbase
-
     return #connect to main game loop
 
-label MarikoAccusation:
+label MarikoInt:
     #[Boss Accusation]
     #[IF Intel > ? This option will be available to the player]
     #(If from Mariko Interrogation)
@@ -2411,7 +2407,6 @@ label MarikoAccusation:
 
     "No good. I'll have to work backwards then and show proof someone thinks they're close to her."
     # Choose clue goes here
-
 label Mariko1:
     #[1: Friends List]
     n "You're friends with Kazz and his group too."
@@ -2422,6 +2417,17 @@ label Mariko1:
 
     "She's trying to downplay their connection, but it explains some things."
     "If they knew each other before, it's make sense that he'd want to impress her."
+
+    menu:
+        "Brag":
+            call Mariko2
+        "Prank":
+            call MarikoFail
+        "PA Access":
+            call MarikoFail
+        "Club Ad":
+            call MarikoFail
+
     # Choose clue goes here
 label Mariko2:
     #[2: Brag]
@@ -2434,6 +2440,16 @@ label Mariko2:
     m "Besides, that has nothing to do with me. There isn't any proof the stuff that was in there belonged to Kazz in the first place."
 
     "I'm positive the recording device was Kazz's."
+
+    menu:
+        "PA Access":
+            call MarikoFail
+        "ID Account":
+            call Mariko3B
+        "Prank":
+            call Mariko3A
+        "Missing Phone":
+            call MarikoFail
     # Choose clue goes here
 label Mariko3A:
     #[3A: Prank]
@@ -2453,6 +2469,16 @@ label Mariko3A:
     m "N-no. I hid it somewhere else. Like I said, none of us could get in."
 
     "Now that's just a bold-faced lie."
+
+    menu: 
+        "Club Ad": 
+            call MarikoFail
+        "ID Account":
+            call MarikoFail
+        "PA Access":
+            call Mariko4A
+        "Brag":
+            call MarikoFail
     # Choose Clue Menu goes here
 label Mariko4A:
     #[4A: PA Access]
@@ -2474,6 +2500,16 @@ label Mariko4A:
 
     m "All of this is just gossip, Nagen. Even if Kietsu kept track of when the club leaders had the key, none of that proves I was ever in the booth."
     # Choose Clue Menu goes here
+
+    menu:
+        "Cheer Ad":
+            call Mariko5A
+        "Alexa Commands":
+            call MarikoFail
+        "Baton Pass":
+            call MarikoFail
+        "Locker Number":
+            call MarikoFail
 label Mariko5A:
     #[5A: Cheer Ad]
     
@@ -2502,6 +2538,15 @@ label Mariko3B:
 
     "Without it, there'd be no way for her to have used the PA mic without getting caught."
     # Choose Clue Menu goes here
+    menu:
+        "Alexa Commands":
+            call Mariko4B
+        "Baton Pass":
+            call MarikoFail
+        "Missing Phone":
+            call MarikoFail
+        "Mystery Noise":
+            call MarikoFail
 label Mariko4B:
     #[4B: Alexa Commands]
     
@@ -2519,6 +2564,15 @@ label Mariko4B:
 
     "Interesting she brought her up, since their stories contradict each other."
     # Choose Clue Menu goes here
+    menu:
+        "Mystery Noise":
+            call MarikoFail
+        "Baton Pass":
+            call Mariko5B
+        "Missing Phone":
+            call MarikoFail
+        "Brag":
+            call MarikoFail
 label Mariko5B:
     #[5B: Baton Pass]
     n "She's been telling everyone she gave it to you."
@@ -2539,6 +2593,15 @@ label Mariko5B:
     "She's just going to keep denying stuff until I spell it out for her. I know for a fact it didn't go 'straight to the teachers'."
     "Multiple people have said as much."
     # Choose Clue Menu goes here
+    menu:
+        "Missing Phone":
+            call MarikoFail
+        "Baton Pass":
+            call MarikoFail
+        "Mystery Noise":
+            call Mariko6B
+        "Second Locker":
+            call Mariko6C
 label Mariko6B:
     #[6B: Mystery Noise]
     
@@ -2554,6 +2617,15 @@ label Mariko6B:
 
     m "Knock it off with the smug act. I don't care how many coincidences or testimonies you found, none of that proves I did it."
     #Choose Clue Menu goes here
+    menu: 
+        "Locker Number":
+            call Mariko7
+        "Baton Pass":
+            call MarikoFail
+        "Prank":
+            call MarikoFail
+        "Brag":
+            call MarikoFail
 label Mariko6C:
     #[6C: Second Locker]
     
@@ -2569,6 +2641,15 @@ label Mariko6C:
 
     m "So what if it is? It's like you said, I'm using it to hold club supplies."
     m "Even if you told the teachers, I wouldn't get in trouble over that."
+    menu: 
+        "Locker Number":
+            call Mariko7
+        "Baton Pass":
+            call MarikoFail
+        "Prank":
+            call MarikoFail
+        "Brag":
+            call MarikoFail
 label Mariko7:
     #[7B+C: Locker #] 
     
@@ -2578,10 +2659,9 @@ label Mariko7:
     n "If it wasn't, she might not have given it to the teachers at all."
     n "Both of them thought the locker still belonged to Mu, which I'm sure you were counting on."
     n "Also it's weird it was locked considering Kazz doesn't lock his phone."
-    jump MarikoSuccess
+    call MarikoSuccess
 
-label MarikoSuccess:
-
+label MarikoSuccess:  
     m "So?"
 
     n "That's all you have to say for yourself?"
@@ -2690,6 +2770,8 @@ label MarikoSuccess:
 
     call MarikoOutro
 
+label MarikoFail:
+
     #[If Accusation = Fail]
     
     m "It's your word versus mine, Nagen and let's face it, people trust me more than they trust you."
@@ -2710,8 +2792,8 @@ label MarikoSuccess:
     #"There's no way I can talk to everyone before the deadline. Maybe one of the guys overheard something in one of their classes. At the very least, it'll give me a place to start."
 
 
-label UittoInv1:
 
+label UittoInv1:
     scene backgroundstuco
     "I ask Uitto if she was able to dig up anything."
 
@@ -2719,7 +2801,7 @@ label UittoInv1:
 
     u "I can't believe you wanted me to talk to Kitsune for you."
 
-    n "...Did you?"
+    n "...did you?"
 
     u "I could tell you exactly what she'd say. 'Memememe and also me.'"
     u "There you go, you got the full experience."
@@ -2745,7 +2827,6 @@ label UittoInv1:
     return #connect to main game loop
 
 label JonaInv1:
-
     scene backgroundamp
     "Jona doesn't really like talking to people alone, so I appreciate he was willing to do this for me."
 
@@ -2771,14 +2852,12 @@ label JonaInv1:
 
     j "Oh good." #(+PA Access)
 
-    $ inventory.ShowClue(clue_pa_access)
+    $ inventory.AddClue(clue_pa_access)
 
     hide JHappy
-
     return #connect to main game loop
 
 label HiroInv1:
-
     scene backgroundamp
     "I felt a little nervous sending Hiro out on his own. Still, he insisted and when he returned..."
 

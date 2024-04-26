@@ -89,12 +89,17 @@ image backgroundstuco     = "Backgrounds/stuco.png"
 
 #Koe
 image KoeBase = "Sprites/KoeSprites/koe1.png"
+image KoeEh = "Sprites/KoeSprites/koeeh.png"
+image KoeHmm = "Sprites/KoeSprites/koehmm.png"
+image KoeSmirk = "Sprites/KoeSprites/koesmirk.png"
 
 #Cop
 image CopBase = "Sprites/Cop/cop1.png"
 
 #Maimai
 image MMBase = "Sprites/MaiMai/MMBase.png"
+image MMO = "Sprites/MaiMai/MMO.png"
+image MMSmile = "Sprites/MaiMai/MMSmile.png"
 
 #Kenzo
 image KenzoBase = "Sprites/Kenzo/kenzoSprite.png"
@@ -160,17 +165,17 @@ image TBase = "Sprites/Taiga/TaigaN.png"
 
 #Uitto
 image UBase = "Sprites/Uitto/Uittobase.png"
-image UBase = "Sprites/Uitto/Uittocringe.png"
-image UBase = "Sprites/Uitto/Uittoembarrassed.png"
-image UBase = "Sprites/Uitto/Uittogurl.png"
-image UBase = "Sprites/Uitto/Uittoiguess.png"
-image UBase = "Sprites/Uitto/Uittosad.png"
-image UBase = "Sprites/Uitto/Uittosadtalk.png"
-image UBase = "Sprites/Uitto/Uittosmile.png"
-image UBase = "Sprites/Uitto/Uittosmirk.png"
-image UBase = "Sprites/Uitto/Uittotalk.png"
-image UBase = "Sprites/Uitto/Uittotongue.png"
-image UBase = "Sprites/Uitto/Uittoyell.png"
+image Uittocringe = "Sprites/Uitto/Uittocringe.png"
+image Uittoembarrassed= "Sprites/Uitto/Uittoembarrassed.png"
+image Uittogurl = "Sprites/Uitto/Uittogurl.png"
+image Uittoiguess = "Sprites/Uitto/Uittoiguess.png"
+image Uittosad = "Sprites/Uitto/Uittosad.png"
+image Uittosadtalk = "Sprites/Uitto/Uittosadtalk.png"
+image Uittosmile = "Sprites/Uitto/Uittosmile.png"
+image Uittosmirk = "Sprites/Uitto/Uittosmirk.png"
+image Uittotalk = "Sprites/Uitto/Uittotalk.png"
+image Uittotongue = "Sprites/Uitto/Uittotongue.png"
+image Uittoyell = "Sprites/Uitto/Uittoyell.png"
 
 #Yoku
 image YBase = "Sprites/Yoku/YokuN.png"
@@ -195,6 +200,7 @@ image YaBase = "Sprites/Yaguchi/yaguchibase.png"
 image backgroundP1 = "Cgs/Prologue_1.png"
 image backgroundP2 = "CGs/Prologue_2.png"
 image backgroundP3 = "CGs/Prologue_3.png"
+image backgroundP4 = "CGs/Prologue_4.png"
 image backgroundPT = "CGs/Prologue_T.png"
 image backgroundC1_1 = "CGs/Ch1_1.png"
 image backgroundC1_2 = "CGs/Ch1_2.png"
@@ -204,6 +210,7 @@ image backgroundC1_E = "CGs/Ch1_E.png"
 image backgroundB1 = "CGs/Boss1_1.png"
 image backgroundB2 = "CGs/Boss1_2.png"
 image backgroundB3 = "CGs/Boss1_3.png"
+image backgroundUPath = "CGs/UPath.png"
 
 #Hiros Flashbacks
 
@@ -317,10 +324,8 @@ default check_cd = False
 default check_mic = False
 default check_laptop = False
 
-#audio
-
 init python:
-    config.auto_voice = "characters/Uitto/{id}.ogg"
+    config.auto_voice = "audio/Uitto/{id}.ogg"
 
 # THE GAME STARTS HERE!
 label start:

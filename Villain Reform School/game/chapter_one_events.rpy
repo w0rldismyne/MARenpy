@@ -285,7 +285,7 @@ label chapter1_day1_event_morning:
 label chapter1_day1_event1:
     scene backgroundschool
 
-    play music "music/Lights.mp3"
+    play music "music/Lights.wav"
 
     "After the assembly, we’re handed our class schedules. I’m stuck with English, P.E., Science, and Proficiency Management."
     "They wanted me to take the Intelligence course, but I can always switch it if I want to."
@@ -774,7 +774,7 @@ label chapter1_day1_event1_classes_intelligence:
     hide KkBase
     show YaBase
 
-    play music "music/Lights.mp3"
+    play music "music/Lights.wav"
     
     ya "Sit down, all of you."
     ya "I'm going to ask you something, and I'm afraid I already know the answer."
@@ -1711,7 +1711,7 @@ label chapter1_day2_event1:
     return
 
 label chapter1_day2_event2:
-    play music "music/Lights.mp3"
+    play music "music/Lights.wav"
     scene backgroundclass
 
     "Jona and I have found a quiet corner to hide in for science."
@@ -2186,7 +2186,7 @@ label chapter1_day3_event2:
 
     mu "Is it hurting?"
 
-    hide sprite MuBase
+    hide MuBase
 
     n "Why do you care? I thought you hated me."
 
@@ -2259,7 +2259,7 @@ label chapter1_day3_event3:
     s "I can't guarantee I'll be any good at it, but if all you need is a third person, I can fill in until you find someone that wants to be a cheerleader."
 
     hide SBase
-    show sprite MBase
+    show MBase
 
     m "Thank you!"
 
@@ -2461,7 +2461,7 @@ label chapter1_day4_event1:
     return
 
 label chapter1_day4_event2:
-    play music "music/Lights.mp3"
+    play music "music/Lights.wav"
     scene backgroundcharm
 
     "I didn't think too many people would be interested in clubs, especially with so few students here."
