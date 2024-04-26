@@ -326,6 +326,10 @@ default check_laptop = False
 
 init python:
     config.auto_voice = "audio/Uitto/{id}.ogg"
+    config.auto_voice = "audio/Apex/{id}.ogg"
+    config.auto_voice = "audio/Sato/{id}.ogg"
+    config.auto_voice = "audio/Inukai/{id}.ogg"
+    config.auto_voice = "audio/Cop/{id}.ogg"
 
 # THE GAME STARTS HERE!
 label start:

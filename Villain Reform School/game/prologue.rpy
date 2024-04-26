@@ -3986,7 +3986,7 @@ label prologue_kietsu:
 
             "He rubs his temples."
 
-            ki "Why. Why would you ask that? Did I do something upsettin' of y'think..."
+            ki "Why. Why would you ask that? Did I do something upsettin' if y'think..."
             ki "You a Vision major, or do you hate 'em?"
 
             n "You just kept trailing off and forgetting what you were saying."
@@ -5366,4 +5366,38 @@ label Meeting:
         "I hope it's well-ventilated. I cringe to think of how hot this place could get in the summer."
         "I don't have the energy to unpack yet. I shrug out off my jacket and collapse on the bare mattress."
         "As I drift off to sleep, I desperately try to convince myself everything will work out in the end."
-    call chapter_one
+
+        if Vision >= 4:
+            #CG teachers
+            ya "So, what's the plan?"
+
+            sa "Darling, this was the plan."
+
+            v "For now, we will proceed as originally intended. This just means we'll have to devote more energy to security."
+
+            ya "With what time?"
+
+            sa "The four of us are burnt out as it is. We need manpower. If you would just let me call a few people..."
+
+            ik "Man, hearing you guys bicker like this really reminds me of the old days."
+            ik "Still..."
+
+            #CG note
+
+            g "Dear Fallen Heroes,"
+            g "I have reason to believe you are making use of revealing information deemed inaccurate and unfounded in nature."
+            g "It is required that you cease and desist the following; holding registered Proficiency Users against their will, utilizing Proficiency-based education for personal benefit."
+            g "If you fail to comply within fourteen days, I will have no choice but to pursue the matter personally."
+            g "Sincerely, Estella O'Laurel."
+
+            #CG teachers
+
+            ik "This is a little too eloquent for a student to be responsible, don't you think Viv?"
+
+            v "We can't exclude any possibility at this point."
+
+            ya "For your sake, I hope it's some dumb kid."
+
+            call chapter_one
+        else:
+            call chapter_one
