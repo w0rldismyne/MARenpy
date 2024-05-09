@@ -1,15 +1,17 @@
     # Opening video goes here.
 
 label prologue:
-    scene backgroundpolice
 
     play music "music/Undertow.mp3"
+    scene backgroundpolice
 
     "My whole life, I feel like I've been dragged around by my collar."
     "I guess when most adults see a kid act out of line, they're overwhelmed with a need to control the situation."
     "Funny, seeing as that's the very thing I've been fighting for: a chance to be in control of my life."
 
     show CopBase
+
+    voice "audio/cop/prologue_b121c771.ogg"
 
     cop "Please state your name and registered Proficiency."
 
@@ -27,9 +29,20 @@ label prologue:
 
     show CopBase
 
+    voice "audio/cop/prologue_3787084e.ogg"
+
     cop "Look, you and I both know it's not looking good for you."
+
+    voice "audio/cop/prologue_c616cfd6.ogg"
+
     cop "I mean, you've heard the charges: premeditated murder, inciting a riot, mayhem, and menticide."
+
+    voice "audio/cop/prologue_279523b4.ogg"
+
     cop "These are all with a registered Proficiency which will add twenty-five more years to your sentence."
+
+    voice "audio/cop/prologue_559297ff.ogg"
+
     cop "Don't even get me started on the use of deadly weapons."
 
     show KoeBase
@@ -64,7 +77,7 @@ label prologue:
     scene backgroundP1 with fade:
         size (1920, 1080) crop (300, 400, 640, 360)
 
-    play music "music/Sappheiros.mp3"
+    voice "audio/Apex/prologue_2bfa7b67.ogg"
 
     o "Gladiators! You'll never believe the guest speaker I found for today's meeting!"
 
@@ -103,8 +116,6 @@ label prologue:
 
 
     play music "music/Nostalgia.mp3"
-
-    scene backgroundP2
 
     "I became painfully aware of the IV that hid under my sleeve."
     "Had she noticed it? Was she going to tell anyone?"
@@ -3927,11 +3938,14 @@ label prologue_kietsu:
     "A heavenly aroma of breakfast wafts through the air."
     "At one of the tables, a kid in trashed clothes is sitting with his head in his arms, muttering something to himself."
 
-    show KiBase
+    show Kisad
 
     n "...Um... You okay, dude?"
 
     "I nudge the leg of his chair with my foot and he jumps up with a start."
+
+    hide Kisad
+    show Kihunh
 
     ki "Hunh!? Oh, sorry, didja want to sit here or somethin'?"
 
@@ -3939,17 +3953,34 @@ label prologue_kietsu:
 
     n "I was just making sure you're okay."
 
+    hide Kihunh
+    show Kisympathy
+
     ki "Thanks man. I've been better, but y'know, who hasn't?"
+
+    hide Kisympathy
+    show KiBase
+
     ki "At least this place has cheese curds, y'want a cheese curd?"
 
     "I can't resist the call of free food. I join him at his table."
     "It seems like the first thing he did when he got here was figure out where to eat."
     "A big plate of fried appetizers is set between us."
 
+    hide KiBase
+    show Kidontworry
+
     ki "You can tell a lot about a place by the food they serve their people." 
+
+    hide Kidontworry
+    show Kimildlyupset
+
     ki "Crap food means you'll get treated like crap."
 
     n "You've been to a school like this before?"
+
+    hide Kimildlyupset
+    show Kidontworry
 
     ki "Like this? Nah. I've been in n' out of a couple... ah, what do they call 'em?"
     ki "'Guided Learning Programs'. I've been to a bunch of those."
@@ -3959,83 +3990,147 @@ label prologue_kietsu:
 
     n "I can't believe your parents would do that to you."
 
+    hide Kidontworry
+    show Kimischeif
+
     ki "My parents...? Nah, I signed myself up."
 
     n "You can do that? Why would you do that?"
 
+    hide Kimischeif
+    show Kisympathy
+
     ki "Thought it'd work better than choking on sage and makin' my mom cry. I even tried bootcamp."
     ki "It was actually really cool, but..."
+
+    hide Kisympathy
+    show Kicringe
 
     "He trails off. With his sunglasses, it's hard to tell if he's looking at me or totally zoning out."
     "I check behind me, just to be sure, but we're the only people in the lobby."
     "I wave at him to get his attention."
 
+    hide Kicringe
+    show Kihunh
+
     ki "Sorry, what was I talkin' about?"
+
+    hide Kihunh
 
     menu:
         "What's wrong with you?":
 
             $ kiRep - 1
 
+            show Kihey
+
             ki "That's a loaded question."
 
             "He drums on the table with his knuckles."
+
+            hide Kihey
+            show Kiveryconcerned
 
             ki "See, we just met, so I don't know what you think 'right' is."
             ki "Conversations like this are just for you to figure out how similar I am to you when you've already decided we're nothin' alike."
 
             "He rubs his temples."
 
+            hide Kiveryconcerned
+            show Kidude
+
             ki "Why. Why would you ask that? Did I do something upsettin' if y'think..."
             ki "You a Vision major, or do you hate 'em?"
 
             n "You just kept trailing off and forgetting what you were saying."
 
+            hide Kidude
+            show Kireallyupset
+
             ki "That's normal."
 
             n "No dude, it's not."
+
+            hide Kireallyupset
+            show Kiunpleasentsurpise
 
             ki "It's normal for me. Are you one of those people who like irritatin' people?"
 
             n "I-Uh."
 
+            hide Kiunpleasentsurpise
+            show Kihey
+
             ki "'Cause that was hella rude. What's wrong with you?"
 
             n "I didn't mean it like that."
+            hide Kihey
 
         "Your old school":
 
             $ kiRep + 1
 
+            show Kisadtalk
+
             ki "Right, well they said being a Vision major, I'm a Vision major, they said it made my case too complex."
 
             n "What does that mean?"
 
+            hide Kisadtalk
+            show Kihey
+
             ki "I know, right? I was so pumped to have a goal other than 'stay out of trouble' too."
+            
+            hide Kihey
+            show Kisympathy
+
             ki "Everythin' was super structured, it was kinda nice. I don't know what to do with myself now."
+
+            hide Kisympathy
+            show Kisad
 
             "He's zoning out again, but I can tell he's still somewhat present."
 
             n "At least we have decent food."
 
+            hide Kisad
+            show KiBase
+
             ki "Oh yeah, and real plates too. They said we might be able to get music pumped in here after classes."
 
             "He seems genuinely happy to be here, and the food is good."
+
+            hide KiBase
+            show Kisympathy
 
             ki "Thanks for sittin' with me by the way."
 
             n "Hunh? Oh, yeah, no problem."
 
+            hide Kisympathy
+            show Kimildlyupset
+
             ki "It feels like everyone here already knows each other."
+
+            hide Kimildlyupset
+            show Kisympathy
+
             ki "It's hella uncomfortable, so it's cool to have someone who wants to talk to me."
 
-        "Eating sage":
+            hide Kisympathy
+
+        "Eating sage?":
 
             $ Vision + 1
+
+            show Kicringe
 
             ki "I mean, you can, but I don't see why you'd want to eat that stuff plain."
 
             n "You said you choked on sage?"
+
+            hide Kicringe
+            show Kibwahaha
 
             ki "Sage smoke, man, not a plate of it. You burn sage to ward off evil spirits."
             ki "Not the nicest way to wake up in the mornin'."
@@ -4044,19 +4139,44 @@ label prologue_kietsu:
 
             n "How does that work? Do they not like the smell of it or something? Can spirits even smell?"
 
+            hide Kibwahaha
+            show Kimischeif
+
             ki "Hunh... Never thought about it like that before, I guess they don't."
+
+            hide Kimischeif
+            show Kisadtalk
+
             ki "You'd hate the smell of it too if someone shoved ten smudge sticks in your face."
+
+            hide Kisadtalk
+            show Kibwahaha
+
             ki "Never had to eat it though."
 
             n "I guess that makes more sense."
 
+            hide Kibwahaha
+            show KiBase
+
             ki "Makes more sense than half the stuff you find online. At least it's harmless."
 
+            hide KiBase
+
+    show Kidude
+
     ki "Have you seen how big this place is?"
+
+    hide Kidude
+    show Kiteasing
+    
     ki "When I heard only twenty-some kids would be here, I thought it was going to be super small."
     ki "No wonder the waitlist is so long."
 
     n "There's a waitlist to get in? Already?"
+
+    hide Kiteasing
+    show Kitalk
 
     ki "Well, yeah, any place that takes teens gets packed right away."
     ki "But the requirements here are really specific. I was lucky to get in."
@@ -4065,8 +4185,19 @@ label prologue_kietsu:
 
     n "Did you get questioned by a red-headed lady in a bad pantsuit?"
 
+    hide Kitalk
+    show Kicringe
+
     ki "Ahh... no. It was, umm... she had a scarf and really big earrings."
+
+    hide Kicringe
+    show KiBase
+
     ki "I ended up writing everything I could fit in the comment section of the application and it earned me a scholarship."
+
+    hide KiBase
+    show Kisadtalk
+
     ki "The interview was hard, but I managed to get through it. Sounds like you got a mean one."
 
     n "Yeah, a real piece of work."
@@ -4075,18 +4206,27 @@ label prologue_kietsu:
 
     n "But it's not like she's part of the faculty here, so I don't think we'll be seeing her."
 
+    hide Kisadtalk
+    show KiBase
+
     ki "That's good. And hey, we get a huge place all to ourselves. No upperclassmen either."
     ki "We should make the most of this year."
 
     n "Yeah, I guess so."
 
+    hide KiBase
+    show Kitalk
+
     ki "I'm gonna go stretch my legs. Don't worry about the bill, my meal plan will cover it."
 
     "There are only three cheese curds left. I barely had any. Where did they all go?"
 
+    hide Kitalk
+    show Kidontworry
+
     ki "Oh, and thanks for checking on me. You'd be surprised how many people would have just walked away."
 
-    hide KiBase
+    hide Kidontworry
 
     "He shoots a couple finger guns at me before walking away..."
     "The food's all gone. I should keep moving forward."
