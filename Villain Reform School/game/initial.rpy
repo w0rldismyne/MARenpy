@@ -341,12 +341,25 @@ default check_mic = False
 default check_laptop = False
 
 init python:
-    config.auto_voice = "audio/Uitto/{id}.ogg"
-    config.auto_voice = "audio/Apex/{id}.ogg"
-    config.auto_voice = "audio/Sato/{id}.ogg"
-    config.auto_voice = "audio/Inukai/{id}.ogg"
-    config.auto_voice = "audio/{id}.ogg"
-    config.auto_voice = "audio/Kietsu/{id}.ogg"
+    listOfDirectories = ["Apex",
+        "Cop",
+        "Inukai",
+        "Kietsu",
+        "Koe",
+        "Lethe",
+        "Odori",
+        "Sato",
+        "Uitto"
+    ]
+
+    def extendedSearchVoice(id):
+        for directory in listOfDirectories:
+            if renpy.loadable(f"audio/{directory}/{id}.ogg"):
+                return f"audio/{directory}/{id}.ogg"
+        
+        return f"audio/{id}.ogg"
+
+    config.auto_voice = extendedSearchVoice
     
 
 # THE GAME STARTS HERE!
