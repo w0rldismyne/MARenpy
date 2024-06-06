@@ -90,7 +90,7 @@ label Ch1BossBattle:
     m "This is your chance to wash your hands of this whole mess, Nagen. Turn tail and run. Run as far away as you can from this place."
     m "Show me how far you can really make it on your own."
 
-    if $ mRep >= 5: 
+    if mRep >= 5: 
         m "Please, I don’t want to fight you."
 
         n "If you don’t want to fight me, then let them go."
@@ -372,6 +372,9 @@ label midfight_cutscene:
     n "It’s not Hiro’s fault people trusted him more than you, Mariko. You’re only making things worse by picking a fight you will lose."
 
     m "As long as I breathe, I’m not done fighting. I'll leave you with scars that will outlive me."
+
+    return
+
 label combat2:
     #Combat 2
     #[Unity Puzzle]

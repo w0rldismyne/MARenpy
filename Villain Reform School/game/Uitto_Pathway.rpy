@@ -1,15 +1,15 @@
 
 label UittoVisit:
 
-    if uTurn = 0:
+    if uTurn == 0:
         jump Uitto1
-    elif uTurn = 1:
+    elif uTurn == 1:
         jump Uitto2
-    elif uTurn = 2:
+    elif uTurn == 2:
         jump Uitto3
-    elif uTurn = 3:
+    elif uTurn == 3:
         jump Uitto4
-    elif uTurn = 4:
+    elif uTurn == 4:
         jump Uitto5
     else:
         jump UittoF

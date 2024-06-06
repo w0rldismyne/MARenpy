@@ -119,7 +119,7 @@ label chapter1_freetime:
         "Hang Out":
             menu:
                 "Uitto":
-                    pass
+                    call UittoVisit
                 "Jona":
                     pass
                 "Hiro":

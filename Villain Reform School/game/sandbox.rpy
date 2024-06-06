@@ -141,10 +141,11 @@ default boss_attack = "images/Sprites/Mariko/4.png"
 default boss_hurt = "images/Sprites/Mariko/3.png"
 
 default nagen_health = 10
-default mariko_health = 10
+default mariko_health = 12
+
 default turns_passed = 0
 default mariko_halfway = False
-
+default mariko_fatigue = 0
 default turn_order = 0
 default nagen_turn = 0
 default mariko_turn = 1
@@ -163,9 +164,14 @@ label fight:
     n "It's starting!"
 
     $ nagen_current_health = 10
-    $ mariko_current_health = 10
+    $ mariko_current_health = 12
+    $ mariko_fatigue = 0
     $ turns_passed = 0
     $ mariko_halfway = False
+    $ mariko_halfway_post_turns = 0
+    $ mariko_attack_type = -1
+    $ nagen_damage = 0
+    $ mariko_damage = 0
 
     $ turn_order = nagen_turn
     $ fight_end_state = -1
@@ -183,10 +189,12 @@ label fight_loop:
         if turn_order is nagen_turn:
 
             call your_turn
+            call post_nagen_turn
 
         elif turn_order is mariko_turn:
 
             call opponent_turn
+            call post_mariko_turn
 
             $ turns_passed += 1
 
@@ -205,7 +213,8 @@ screen fight_background:
     image "[boss_active]":
         xanchor 0.5
         yanchor 0.5
-        pos 0.5, 0.5
+        pos 0.5, 0.7
+        xysize 949, 1401
 
 screen fight_health:
 
@@ -223,7 +232,6 @@ screen fight_health:
         range nagen_health
 
     text "Mariko":
-        color "#000000"
         xanchor 0.5
         yanchor 0.5
         pos 1500, 350
@@ -241,7 +249,7 @@ screen fight_menu:
         xanchor 0.5
         yanchor 0.5
         pos 0.5, 0.85
-        spacing 0.1
+        spacing 0.25
         xsize 0.5
 
         textbutton _("Attack"):
@@ -275,9 +283,11 @@ label nagen_attacks:
 
     $ boss_active = boss_hurt
 
-    $ mariko_current_health -= 1
+    $ nagen_damage = renpy.random.randint(1, 3)
 
-    g "Hit Mariko for 1 Damage!"
+    $ mariko_current_health -= nagen_damage
+
+    g "Hit Mariko for [nagen_damage] Damage!"
 
     jump your_turn_end
 
@@ -290,25 +300,27 @@ label nagen_defends:
     jump your_turn_end
 
 label check_conditions:
+
     if nagen_current_health <= 0:
 
         $ turn_order = fight_end
         $ fight_end_state = lose
 
-    if mariko_current_health <= 5:
+    if mariko_current_health <= 6 or mariko_fatigue >= 50:
 
         if mariko_halfway is False:
             
             $ mariko_halfway = True
+            $ mariko_halfway_post_turns = turns_passed
 
-            jump fight_mid_cutscene
+            jump midfight_cutscene
         
         if mariko_current_health <= 0:
 
             $ turn_order = fight_end
             $ fight_end_state = lose
 
-    if turns_passed >= 10:
+    if mariko_fatigue >= 100:
 
         $ turn_order = fight_end
         $ fight_end_state = win
@@ -319,7 +331,15 @@ label opponent_turn:
 
     $ boss_active = boss_attack
 
-    g "Mariko attacks!"
+    $ mariko_attack_type = renpy.random.randint(1, 2)
+
+    if mariko_attack_type == 1:
+
+        g "Mariko attacks!"
+
+    elif mariko_attack_type == 2:
+
+        g "Mariko makes a strong attack!"
 
     if defending is True:
 
@@ -328,16 +348,25 @@ label opponent_turn:
         g "Nagen was prepared and blocks the attack!"
 
     else:
+        
+        if mariko_attack_type == 1:
 
-        $ nagen_current_health -= 1
+            $ mariko_damage = renpy.random.randint(1, 2)
 
-        g "Nagen is hit for 1 damage!"
+        elif mariko_attack_type == 2:
+        
+            $ mariko_damage = renpy.random.randint(3, 4)
 
+        $ nagen_current_health -= mariko_damage
+
+        g "Nagen is hit for [mariko_damage] damage!"
+
+    $ mariko_fatigue += 10
     $ turn_order = nagen_turn
 
     return
 
-label fight_mid_cutscene:
+label fight_mid_cutscene: #Temp
     
     g "Nagen and Mariko yapped."
     
@@ -365,4 +394,69 @@ label evaluate_result:
 
             g "You Lose!"
     
+    return
+
+label post_nagen_turn:
+    $ boss_active = boss_idle
+
+    if mariko_halfway is False:
+
+        if turns_passed == 0:
+
+            m "It doesn’t matter what you do, Nagen, I won’t feel a thing."
+
+            "But just because she can’t feel it, doesn’t mean she can’t be injured."
+
+        elif turns_passed == 1:
+
+            m "This is nothing compared to cheer camp. Do you know how many broken bones I’ve walked off? What’s the matter, Nagen, scared to fight a girl?"
+
+            "Why is she purposely egging me on?"
+
+    elif mariko_halfway is True:
+        if turns_passed == mariko_halfway_post_turns + 2:
+
+            m "Hiyoko would probably be scolding me alongside Rei."
+
+        elif turns_passed == mariko_halfway_post_turns + 3:
+
+            m "Ty and Kiki… They stayed together the whole time, brainwashing be damned..."
+
+        elif turns_passed == mariko_halfway_post_turns + 4:
+
+            "Mariko’s ankle gives out beneath her. A tangled mess of belts and heels lays helpless on the ground."
+
+    return
+
+label post_mariko_turn:
+    $ boss_active = boss_idle
+
+    if mariko_halfway is False:
+        if turns_passed == 3:
+
+            m "You’re making this too easy. Even the bottom left of the pyramid could deck you with one punch."
+
+            "She says that, but she can barely move in that costume."
+
+        elif turns_passed == 4:
+
+            m "This isn’t going to work if you don’t fight back. C’mon! Don’t you want to save your friend?"
+
+            "Wait, does she... want me to hit her?"
+
+    elif mariko_halfway is True:
+        if turns_passed == mariko_halfway_post_turns + 1:
+
+            m "Kanon would have gone for your eyes."
+        
+        elif turns_passed == mariko_halfway_post_turns + 3:
+
+            m "Did any of them think of me at all while I was looking for them? If I can just... take you down. They’ll forgive me... they’ll have to forgive me."
+
+        elif turns_passed == mariko_halfway_post_turns + 4:
+
+            m "Please... forgive me."
+
+            "But I know she isn’t talking to me."
+
     return
