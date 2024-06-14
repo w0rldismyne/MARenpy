@@ -1,20 +1,20 @@
 label MarikoVisit:
 
     if mTurn == 0:
-        jump Mariko1
+        jump MarikoP1
     elif mTurn == 1:
-        jump Mariko2
+        jump MarikoP2
     elif mTurn == 2:
-        jump Mariko3
+        jump MarikoP3
     elif mTurn == 3:
-        jump Mariko4
+        jump MarikoP4
     else:
-        jump MarikoF
+        jump MarikoPF
 
-label Mariko1:
+define food = False
+
+label MarikoP1:
     scene backgroundfield
-
-    default food == false
 
     "I know Mariko said she didn’t want any trouble from me, but I wonder if she’s doing alright."
     "It wouldn’t hurt to drop by and say hi, would it? During lunch break, I found her on the practice field with a gaggle of other girls."
@@ -164,21 +164,21 @@ label Mariko1:
 
     return
 
-label Mariko2:
+label Mariko2P:
 
     scene backgroundfield
 
     m "Well, well, well; look who came back girls?"
 
-        if food == true:
-            m "Alright everybody, break time!"
+    if food == True:
+        m "Alright everybody, break time!"
             
-            "After she finished barking her orders I got swarmed."
+        "After she finished barking her orders I got swarmed."
         
-        else:
-    m "So, what is it this time?"
+    else:
+        m "So, what is it this time?"
 
-    n "What do you mean?"
+        n "What do you mean?"
 
     m "You honestly expect me to believe you’re hanging around here just for the fun of it?"
 
@@ -302,7 +302,7 @@ label Mariko2:
 
     return
 
-label Mariko3:
+label Mariko3P:
 
     scene backgroundfield
 
@@ -485,7 +485,7 @@ label Mariko3:
 
     return
 
-label Mariko4:
+label MarikoP4:
     scene backgroundfield
 
     "After the last time we talked, I started dropping by Mariko’s cheer practice a couple times a week."
@@ -634,7 +634,7 @@ label Mariko4:
 
     if mRep >= 2:
         m "What’s the most important quality for a person to have?"
-            menu:
+        menu:
                 "Bravery":
                     $ Intel += 1
                 "Insight":
@@ -680,7 +680,7 @@ label Mariko4:
         "She dragged herself out of the cot and left me behind."
 
         return
-label MarikoF:
+label MarikoPF:
     scene backgroundfield
 
     m "Nothing's changed Nagen. Go talk to someone else."
