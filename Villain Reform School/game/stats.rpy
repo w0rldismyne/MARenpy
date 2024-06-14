@@ -1,3 +1,20 @@
+init python:
+    grades = ["D", "C", "B", "A"]
+
+    def get_grades(convert):
+        if convert >= 3:
+            return "A"
+        elif convert <= 0:
+            return "D"
+        else:
+            return grades(convert)
+
+    def get_rep():
+        if Reputation > 0:
+            return "Pass"
+        else:
+            return "Fail"
+
 style Stats:
     color "#000000"
     hover_color "#1215CF"
@@ -7,6 +24,8 @@ screen stats():
     modal True
     image "images/Clues/Cork.png"
 
+    image "images/Backgrounds/Progress Report.png"
+
     # Return Button
     textbutton _("Return") action Hide("stats"):
         xalign 1.0
@@ -14,35 +33,119 @@ screen stats():
         text_color "#FF0000"
         text_hover_color "#000000"
 
-    vbox:
-        xanchor 0.0
+    text "Reputation":
+        xanchor 0.5
         yanchor 0.5
-        xpos 0.0
-        ypos 0.5
+        xpos 1577
+        ypos 367
 
-        textbutton _("Prologue"):
-            xanchor 0.0
-            yanchor 0.5
-            xpos 0.0
-            ypos 0.5
-            text_style "Stats"
-            action Show("stats_prologue")
+    text "Subject":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 464
+        ypos 230
 
-        textbutton _("Chapter One"):
-            xanchor 0.0
-            yanchor 0.5
-            xpos 0.0
-            ypos 0.5
-            text_style "Stats"
-            action Show("stats_chapter_one")
+    text "MASTERY":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 997
+        ypos 230
 
-        text "Vigor: [Vigor]"
-        text "Vision: [Vision]"
-        text "Intel: [Intel]"
-        text "Charm: [Charm]"
-        text "Alignment - Hero: [Hero]"
-        text "Alignment - Villain: [Villain]"
-        text "Reputation / Popularity: [Reputation]"
+    text "Intelligence":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 464
+        ypos 374
+
+    text "[Intel]":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 997
+        ypos 374
+
+    text "Charisma":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 464
+        ypos 519
+
+    text "[Charm]":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 997
+        ypos 519
+
+    text "Vigor":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 464
+        ypos 664
+
+    text "[Vigor]":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 997
+        ypos 664
+
+    text "Vision":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 464
+        ypos 809
+
+    text "[Vision]":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 997
+        ypos 809
+
+    text "Recovery":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 464
+        ypos 954
+
+    text "[Reputation]":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 997
+        ypos 954
+
+    image "images/Icons/Intelligence.png":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 128
+        ypos 374
+        xysize 144, 108
+
+    image "images/Icons/Charm.png":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 128
+        ypos 519
+        xysize 144, 108
+
+    image "images/Icons/Vigor.png":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 128
+        ypos 664
+        xysize 144, 108
+
+    image "images/Icons/Vision.png":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 128
+        ypos 809
+        xysize 144, 108
+
+    image "images/Icons/Shield with Outline V3 O1 (game icon).png":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 128
+        ypos 954
+        xysize 144, 108
+
 
 screen stats_char_reputation():
 

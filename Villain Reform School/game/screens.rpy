@@ -5,6 +5,8 @@
 init offset = -1
 init:
     $ choice_many_choices = False
+    $ choice_width = 6
+    $ choice_height = 3
 
 
 ################################################################################
@@ -230,16 +232,18 @@ screen choice(items):
                 textbutton i.caption action i.action
 
     else:
-        grid 5 4:
+        grid choice_width choice_height:
             xalign 0.5
             ypos 405
             yanchor 0.5
 
             spacing gui.choice_spacing
+
             for i in items:
                 textbutton i.caption:
                     action i.action
                     xsize 200
+
 
 style choice_vbox is vbox
 style choice_button is button
