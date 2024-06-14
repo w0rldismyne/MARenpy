@@ -62,6 +62,7 @@ image backgroundcarin     = "Backgrounds/CarInt.jpg"
 image backgroundcharm     = "Backgrounds/CharmClass.png"
 image backgroundclass     = "Backgrounds/class.jpeg"
 image backgroundcourtyard = "Backgrounds/Courtyard.png"
+image backgroundtown      = "Backgrounds/devestation.png"
 image backgrounddorm      = "Backgrounds/Dorms.jpeg"
 image backgrounddoor      = "Backgrounds/Door.jpg"
 image backgroundfield     = "Backgrounds/Field.png"
@@ -76,6 +77,7 @@ image backgroundroomn     = "Backgrounds/NagensRoomN.png"
 image backgroundnhouse    = "Backgrounds/nagenhouse.jpg"
 image backgroundnurse     = "Backgrounds/NursesOffice.png"
 image backgroundpond      = "Backgrounds/Pond.jpg"
+image backgroundprincipal = "Backgrounds/POffice.jpg"
 image backgroundroof      = "Backgrounds/roof.jpg"
 image backgroundhide      = "Backgrounds/RoofHideout.png"
 image backgroundparty     = "Backgrounds/roofparty.jpg"
@@ -116,6 +118,37 @@ image DBase = "Sprites/Dyre/Dyrebase.png"
 
 #Hiro
 image HBase = "Sprites/Hiro/Hirobase.png"
+image HBeans = "Sprites/Hiro/Hirobeans.png"
+image HBlush = "Sprites/Hiro/Hiroblush.png"
+image HConfess = "Sprites/Hiro/Hiroconfess.png"
+image HCurseword = "Sprites/Hiro/Hirocurseword.png"
+image HEmbarrassed = "Sprites/Hiro/Hiroembarrassed.png"
+image HFINE = "Sprites/Hiro/HiroFINE.png"
+image HGrump = "Sprites/Hiro/Hirogrump.png"
+image HGuilt = "Sprites/Hiro/Hiroguilt.png"
+image HHappy = "Sprites/Hiro/Hirohappy.png"
+image HHeadempty = "Sprites/Hiro/Hiroheadempty.png"
+image HHmmm = "Sprites/Hiro/Hirohmm.png"
+image HInsulted = "Sprites/Hiro/Hiroinsulted.png"
+image HJudge = "Sprites/Hiro/Hirojudge.png"
+image HMad = "Sprites/Hiro/Hiromad.png"
+image HPout = "Sprites/Hiro/Hiropout.png"
+image HPuppy = "Sprites/Hiro/Hiropuppy.png"
+image HSmile = "Sprites/Hiro/Hirosmile.png"
+image HTalk = "Sprites/Hiro/Hirotalk.png"
+image HSadSmile = "Sprites/Hiro/Hirosadsmile.png"
+image HSadtalk = "Sprites/Hiro/Hirosadtalk.png"
+image HSass = "Sprites/Hiro/Hirosass.png"
+image HSerious = "Sprites/Hiro/Hiroserious.png"
+image HShame = "Sprites/Hiro/Hiroshame.png"
+image HSmirk = "Sprites/Hiro/Hirosmirk.png"
+image HSmug = "Sprites/Hiro/Hirosmug.png"
+image HSulk = "Sprites/Hiro/Hirosulk.png"
+image HSuppress = "Sprites/Hiro/Hirosupress.png"
+image HTALK1 = "Sprites/Hiro/HiroTALK1.png"
+image HTALK2 = "Sprites/Hiro/HiroTALK2.png"
+image HThisisfine = "Sprites/Hiro/Hirothisisfine.png"
+image HWait = "Sprites/Hiro/Hirowaitaminute.png"
 
 #Ichita
 image IBase = "Sprites/Ichita/ichitabase.png"
@@ -227,6 +260,12 @@ image backgroundB1 = "CGs/Boss1_1.png"
 image backgroundB2 = "CGs/Boss1_2.png"
 image backgroundB3 = "CGs/Boss1_3.png"
 image backgroundUPath = "CGs/UPath.png"
+image backgroundHPath = "CGs/HPath.png"
+image backgroundHPath2 = "CGs/HPath2.png"
+image backgroundMPath = "CGs/MPath.png"
+image backgroundMPath2 = "CGs/MPath2.png"
+image backgroundNPath = "CGs/NPath.png"
+image backgroundYPath = "CGs/YPath.png"
 
 #Hiros Flashbacks
 
@@ -349,7 +388,9 @@ init python:
         "Lethe",
         "Odori",
         "Sato",
-        "Uitto"
+        "Uitto",
+        "Hiro",
+        "Jona"
     ]
 
     def extendedSearchVoice(id):

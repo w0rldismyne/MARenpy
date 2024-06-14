@@ -158,7 +158,7 @@ label prologue:
 
     menu:
         "Confess everything": #(-Hiro)
-            $ hRep - 1
+            $ hRep -= 1
             n "Yeah, I did it, everything you said is true."
             n "I helped start the riots to take down Estella and her talent mills."
             n "You want the names of all the adults that worked with her, right?"
@@ -169,7 +169,7 @@ label prologue:
             call interrogation_end
 
         "Refuse": #(Fast forwards past all choices, all points put in Intelligence)
-            $ Intel + 4
+            $ Intel += 4
             call interrogation_1
 
     label interrogation_1:
@@ -196,8 +196,8 @@ label prologue:
 
     menu:
         "I have to protect my teammates": #(+Hero, +Vis)
-            $ Hero + 1
-            $ Vision + 1
+            $ Hero += 1
+            $ Vision += 1
             n "I'll plead guilty in court, but I and I alone am guilty of these charges."
             n "I cannot say the same of my friends; they genuinely believed in what Lethe told them..."
 
@@ -207,8 +207,8 @@ label prologue:
             call interrogation_2
 
         "I don't have a choice": #(+Villian, +Vig)
-            $ Villain + 1
-            $ Vigor + 1
+            $ Villain += 1
+            $ Vigor += 1
             n "Under the advice of my legal counsel, I will."
 
             "Maimai would be heartbroken if I got locked away. She's been through this before."
@@ -227,7 +227,7 @@ label prologue:
             call interrogation_2
 
         "It's all part of the plan": #(+Int)
-            $ Intel + 1
+            $ Intel += 1
             n "I'll cooperate."
 
             "It's too dangerous to make a move now. Best to play along for now."
@@ -235,7 +235,7 @@ label prologue:
             call interrogation_2
 
         "I need to lighten my sentence": #(+Chr)
-            $ Charm + 1
+            $ Charm += 1
             n "...okay..."
 
             "I hang my head at a 30-degree angle and feign the slightest tremor in my shoulders."
@@ -267,7 +267,7 @@ label prologue:
 
     menu:
         "The one who told us to kill": #(+Chr)
-            $ Charm + 1
+            $ Charm += 1
             n "Lethe was. She wanted to create a group of youth vigilantes to gain back public support."
             n "It wasn't until after she died that we realized she was the one who started the chaos."
 
@@ -281,8 +281,8 @@ label prologue:
             call interrogation_3
 
         "The one who gathered the army": #(+Hero, +Vig)
-            $ Hero + 1
-            $ Vigor + 1
+            $ Hero += 1
+            $ Vigor += 1
             n "Hiro Morine was our leader. He insisted on it constantly."
             n "If it wasn't for him, we wouldn't have gathered nearly as much support."
 
@@ -294,7 +294,7 @@ label prologue:
             call interrogation_3
 
         "The one who planned the attack": #(+Int)
-            $ Intel + 1
+            $ Intel += 1
             n "I was. I deliberately withheld information from my peers, knowing it would sway their decision to stay."
             n "In the end, I was the only one standing."
 
@@ -305,7 +305,7 @@ label prologue:
             call interrogation_3
 
         "The club president": #(+Vis)
-            $ Vision + 1
+            $ Vision += 1
             n "Odori Hato was our leader. She's the one who brought Lethe's attention to our club."
             n "Odori just wanted to help us and a cheesy superhero club was her answer."
 
@@ -341,8 +341,8 @@ label prologue:
 
     menu:
         "Fortify the city against my enemies": #(+Villain, +Vig)
-            $ Villain + 1
-            $ Vigor + 1
+            $ Villain += 1
+            $ Vigor += 1
             n "I just wanted a place where I could feel safe. Anyone there was free to leave, but they chose to stay."
             n "They took up arms, and I had to defend myself."
 
@@ -367,8 +367,8 @@ label prologue:
             call interrogation_4
 
         "Rebuild the city": #(+Hero, +Int)
-            $ Hero + 1
-            $ Intel + 1
+            $ Hero += 1
+            $ Intel += 1
             n "Before making any plans, I would have had to reverse the damage that had been done."
             n "I was in command of over five hundred people; they needed a place to live once the dust settled."
 
@@ -393,8 +393,8 @@ label prologue:
             call interrogation_4
 
         "Rebuild society in my vision": #(+Villain, +Vis)
-            $ Villain + 1
-            $ Vision + 1
+            $ Villain += 1
+            $ Vision += 1
             n "Guwon was an experiment to see if we truly were capable of reshaping society."
             n "It was supposed to show the might of our nation's youth, that we were something bigger than everyone else said we were."
             n "The experiment failed."
@@ -418,8 +418,8 @@ label prologue:
             call interrogation_4
 
         "I don't know": #(+Hero, +Chr)
-            $ Hero + 1
-            $ Charm + 1
+            $ Hero += 1
+            $ Charm += 1
             n "....."
 
             show CopBase
@@ -467,7 +467,7 @@ label prologue:
 
     menu:
         "It was corrupt": #(+Hero)
-            $ Hero + 1
+            $ Hero += 1
             n "Guwon's entire economy was based around the manufacturing and propagation of Proficiencies."
             n "They treated us like livestock! We were paraded about as status symbols and meal tickets."
             n "No one cared what happened to us."
@@ -501,7 +501,7 @@ label prologue:
             call interrogation_end
 
         "It was convenient": #(+Villain)
-            $ Villain + 1
+            $ Villain += 1
             n "Where else was I supposed to start? Guwon was my home."
             n "I had never been outside of my hometown and it was as good a place as any."
 
@@ -530,7 +530,7 @@ label prologue:
             call interrogation_end
 
         "It was safest": #(+Villain)
-            $ Villain + 1
+            $ Villain += 1
             n "Guwon is water locked, it would be the easiest to fortify."
             n "With what Odori had planned, we couldn't just set up shop anywhere. It had to be someplace secure."
 
@@ -558,7 +558,7 @@ label prologue:
             call interrogation_end
 
         "To end the war": #(+Hero)
-            $ Hero + 1
+            $ Hero += 1
             n "Everyone was fighting each other, not just us."
             n "This is just an isolated incident among many that happened during the battle between Lethe and the Karmic Gladiators."
             n "Even after she was gone, people were still fighting each other."
@@ -741,7 +741,7 @@ label prologue:
 
     menu:
         "New role?": #(+Chr)
-            $ Charm + 1
+            $ Charm += 1
             show MMBase
 
             mm "Pantsuit, short hair, dorky accessories; I'm one minivan away from perfection."
@@ -770,7 +770,7 @@ label prologue:
             call life_1
 
         "Where are we going?": #(+Int)
-            $ Intel + 1
+            $ Intel += 1
             show MMBase
 
             mm "Someplace safe."
@@ -1213,6 +1213,8 @@ label prologue2:
     hide MMBase
     play music "music/Still.mp3"
 
+    scene backgroundprincipal
+
     # Principal office
     "A woman gestures for us to sit down. She takes her place behind a massive desk with a stack of forms for us to review."
     "The nameplate in front of her reads in gold letters 'Principal Vivaldi Thani'."
@@ -1319,6 +1321,7 @@ label prologue2:
     mm "You got this."
 
     # New Background showing around the outside here
+    backgrounddorm
 
     "We go back to the car to get the last of my things."
     "She wraps me in a huge hug and I become very aware of the car coming up to the roundabout."
@@ -1363,7 +1366,7 @@ label prologue2:
 
     menu:
         "Say something witty":
-            $ Charm + 1
+            $ Charm += 1
 
             n "Well, all my stuff is here already, so I might as well."
 
@@ -1382,7 +1385,7 @@ label prologue2:
             jump nk_intro
         
         "Just answer the question":
-            $ Vigor + 1
+            $ Vigor += 1
 
             n "Yeees..."
 
@@ -1403,7 +1406,7 @@ label prologue2:
             jump nk_intro
 
         "Introduce yourself":
-            $ Intel + 1
+            $ Intel += 1
 
             n "My name's Nagen Tesuta. Orientation is in E-103, right?"
 
@@ -1423,7 +1426,7 @@ label prologue2:
                     jump nk_intro
 
                 "Yes":
-                    $ nkRep + 1
+                    $ nkRep += 1
                     n "Actually, yeah, I could use an extra pair of hands."
 
                     nk "Great, I'll walk with you! What do you need me to carry?"
@@ -1938,58 +1941,103 @@ label prologue_hiro:
     "I trail off. There's no way of knowing how much he knows about the deal that was cut with the DVP."
     "If I say the wrong thing, I could jeopardize his chance at getting pardoned."
 
+    hide HBase
+    show HHappy
+
     h "Yeah, I'm surprised they're letting us go to school together."
     h "My lawyer said they were going to separate us and we weren't allowed to see each other again. I wonder what changed?"
 
+    hide HHappy
     menu:
 
         "Pretend to speculate":
 
-            $ Intel + 1
+            $ Intel += 1
+
+            show HHappy
 
             n "I don't know, maybe Uitto worked her magic and cried us into a lighter sentence."
 
+            show HTALK2
+
             h "We could do that? Shoot, if I'da known that, I woulda taken a lemon into the courtroom or something."
+
+            hide HTALK2
+            show HSmug
             h "I mean, yeah I was kinda scared, but I totally coulda cried my way to freedom."
 
             "He's as determined as ever."
 
             n "I was thinking more along the lines of using her Proficiency. It was Diplomacy, remember?"
 
+            hide HSmug
+            show HHeadempty
+
             "He stares at me blankly."
 
             n "She could talk people into doing things for her."
 
+            hide HHeadempty
+            show HSass
+
             h "Right, she was a Charisma major at the time."
+
+            hide HSass
+            show HBase
             h "Oh! That reminds me."
+            hide HBase
+            show HTALK1
             h "There's been a rumor going around that you can change your major, have you heard anything about that?"
 
             n "No, I haven't."
 
+            hide HTALK1
+            show HTalk
+
             h "Oh, that sucks. I was hoping you could explain it to me."
             h "Something to do with how Proficiencies can apply to different majors depending on how they're used."
+
+            hide HTalk
+            show HSuppress
             h "But I just don't get injured easily. I don't see how that would make me smarter or more likable."
 
             "That is odd, I'll have to look into that."
+            
+            hide HSuppress
 
         "Ask how he's doing":
 
-            $ Charm + 1
-            $ hRep + 1
+            $ Charm += 1
+            $ hRep += 1
+
+            show HHappy
 
             n "Crazy, right? But it's good to see you. How have you been?"
+
+            hide HHappy
+            show HSadtalk
 
             h "I'm living in a group home right now. It's not too bad, a little cramped, but they were willing to take me."
 
             n "That's kinda surprising."
 
+            show HSadSmile
+
             h "Well, I mean, it's like a rehab center for troubled kids."
             h "We have to go to classes, and therapy sessions, and they;ve got this little reward system and junk."
+
+            hide HSadSmile
+            show HSadtalk
             h "I had to work really hard just to be able to leave the building on my own."
 
             n "Oh, well, I mean that's good to hear. Is it nice?"
 
+            hide HSadSmile
+            show HSass
             h "I only have the bottom half of a bedroom door, and one of the other kids punched a hole in the wall last week."
+
+            hide HSass
+            show HSadSmile
             h "But the grown-ups are nice, they give me plenty of space... But it's like a respect thing, not 'cause they're scared."
 
             "Well that's good. He has a bad habit of lashing out if people get too close too suddenly."
@@ -1999,16 +2047,26 @@ label prologue_hiro:
             n "My foster family's a little... strange. They live in this huge house, but they don't really take care of it."
             n "It's like living in a museum. Lots of dusty old expensive things I'm not allowed to touch."
 
+            hide HSadSmile
+
         "Lawyers are dumb":
+
+            show HHappy
 
             n "Why would they tell you that?"
             n "It wasn't a standard case, it's not like he could flip through a handbook and find the standard punishment on taking over a city."
             
+            hide HHappy
+            show HSuppress
+
             h "Well, no, I guess not."
 
             n "He was probably trying to scare you or something. That's so unethical..."
             n "I think."
             n "I'm not sure to be honest. See, this is why I chose to represent myself."
+
+            hide HSuppress
+            show HTALK2
 
             h "You shoulda been my lawyer instead, I'm sure you were awesome."
 
@@ -2017,10 +2075,13 @@ label prologue_hiro:
             n "Something like that; I'm on probation. Do you think the others are here?"
             h "I mean, it's possible. They had Proficiencies too... Maybe we could start our club back up!?"
 
+            hide HTALK2
             menu:
                 "Yes":
 
-                    $ Villain + 1
+                    $ Villain += 1
+
+                    show HSmirk
 
                     n "Shh, keep your voice down. We can't have the DVP finding out about this."
 
@@ -2032,15 +2093,25 @@ label prologue_hiro:
 
                     n "This time we're doing things my way."
 
+                    hide HSmirk
+
                 "Maybe":
 
-                    $ Hero + 1
+                    $ Hero += 1
 
                     n "As tempting as that sounds, it'd be best if we lay low for a while. At least wait and see how things pan out for us here."
 
+                    show HHeadempty
+
                     h "What's bread got to do with this?"
 
+                    hide HHeadempty
+                    show HSmirk
+
                     "I must look like I'm about to clock him or something because he starts laughing like a mad man."
+
+                    hide HSmirk
+                    show HSmug
 
                     h "Dude, I;m just kidding, cool your jets."
 
@@ -2051,8 +2122,12 @@ label prologue_hiro:
                     n "To knock it off with the puns, or to keep out of trouble?"
 
                     h "Both."
+                    
+                    hide HSmug
 
                 "No":
+
+                    show HThisisfine
 
                     n "I don't know. I mean, we can't use the same group name, and it wouldn't feel right without Odori anyway."
 
@@ -2061,13 +2136,24 @@ label prologue_hiro:
                     "Odori was the one who brought us all together in the first place."
                     "The Liberation Front was her dream, and a part of it died with her."
 
+                    hide HThisisfine
+                    show HTalk
+
                     h "Hey man, are you okay?"
 
-    hide HBase
+                    hide HTalk
+
+    show HThisisfine
 
     n "We’ll be meeting later."
 
+    hide HThisisfine
+    show HTALK2
+
     h "We?"
+
+    hide HTALK2
+    show HHappy
 
     h "Wait, no way, are the other’s here too?"
 
@@ -2080,6 +2166,8 @@ label prologue_hiro:
 
         n "Yup."
 
+    hide HHappy
+    
     "I've spent way too long listening to what other people tell me to do."
     "Once I've finished scoping out the school, I'm breaking out the strategy board."
     "I should get going. There's still more of the school to see."
@@ -2110,7 +2198,7 @@ label prologue_mariko:
 
         "Try to calm her down":
             
-            $ mRep + 1
+            $ mRep += 1
 
             n "I'm not against the idea, but do you actually want me on your team?"
 
@@ -2128,7 +2216,7 @@ label prologue_mariko:
 
                 "Dreary":
 
-                    $ Charm + 1
+                    $ Charm += 1
                     
                     "She smiles that polite, forced smile one receives out of pity."
                     "To be fair, I wasn't exactly the most outgoing kid in the world and I didn't have the best lasting impression on her."
@@ -2156,7 +2244,7 @@ label prologue_mariko:
 
                 "Hostile":
 
-                    $ Vigor + 1
+                    $ Vigor += 1
 
                     m "I should have seen it coming."
 
@@ -2189,7 +2277,7 @@ label prologue_mariko:
                     
                 "Uninterested":
 
-                    $ Intel + 1
+                    $ Intel += 1
 
                     n "I never really had a lot of free time back then."
 
@@ -2281,7 +2369,7 @@ label prologue_yoku:
 
         "None of your business":
 
-            $ yRep + 1
+            $ yRep += 1
 
             n "Just looking for where my new classes are going to be. And talking to you, I guess."
 
@@ -2314,7 +2402,7 @@ label prologue_yoku:
 
         "I'm lost":
 
-            $ yRep + 1
+            $ yRep += 1
 
             y "...Obviously."
 
@@ -2347,7 +2435,7 @@ label prologue_yoku:
             menu:
                 "How do you know me?":
 
-                    $ Charisma + 1
+                    $ Charisma += 1
 
                     y "You really don't know?"
                     y "W-well, whe-ere do I start..."
@@ -2378,7 +2466,7 @@ label prologue_yoku:
 
                 "What are you doing here?":
 
-                    $ Intel + 1
+                    $ Intel += 1
 
                     y "I was looking for the auditorium, I he-heard that this school was going to provide a Wurlitzer."
                     y "As the future's leading co-com-composer, I'd like to find it."
@@ -2396,7 +2484,7 @@ label prologue_yoku:
 
                 "Is your hair naturally green?":
 
-                    $ Vision + 1
+                    $ Vision += 1
 
                     y "....."
 
@@ -2541,7 +2629,7 @@ label prologue_uitto:
 
         "I missed you":
 
-            $ uRep + 1
+            $ uRep += 1
 
             show Uittoembarrassed
 
@@ -2571,7 +2659,7 @@ label prologue_uitto:
 
         "It doesn't matter":
 
-            $ uRep - 1
+            $ uRep -= 1
 
             show UBase
 
@@ -2608,7 +2696,7 @@ label prologue_uitto:
 
         "Of course I did":
 
-            $ Charm + 1
+            $ Charm += 1
 
             show UBase
 
@@ -2744,7 +2832,7 @@ label prologue_kitsune:
 
         "That's not a talent":
 
-            $ kRep - 1
+            $ kRep -= 1
 
             k "Excuse me? Do you know how many years it took to perfect this?"
             k "I woke up at 4AM to get ready and your only takeaway is 'she has no talent'!?"
@@ -2766,7 +2854,7 @@ label prologue_kitsune:
 
         "Like the fox spirit?":
 
-            $ kRep + 1
+            $ kRep += 1
 
             "I only know Uitto by her stage name; maybe this girl picked out her own?"
 
@@ -2804,7 +2892,7 @@ label prologue_kitsune:
 
         "And your Proficiency is...":
 
-            $ Vigor + 1
+            $ Vigor += 1
 
             k "I specialize in vocal manipulation. My range is A0 to C8 in relation to a piano."
             k "No other singer can compare to me without the use of technology."
@@ -2934,7 +3022,7 @@ label prologue_kazz:
 
         "What did you do?":
 
-            $ kkRep + 1
+            $ kkRep += 1
 
             kk "The correct question is, what didn't I do?"
 
@@ -2960,7 +3048,7 @@ label prologue_kazz:
             
         "I didn't bail":
 
-            $ kkRep - 1
+            $ kkRep -= 1
 
             n "They didn't give me a choice when they moved me. I would have gladly stayed in Regular Ed."
 
@@ -2986,7 +3074,7 @@ label prologue_kazz:
 
         "Why not?":
 
-            $ Intel + 1
+            $ Intel += 1
 
             kk "I'm not sure."
             kk "Even after they knew I was plagiarizing all my work, they still kept giving me full points."
@@ -3103,7 +3191,7 @@ label prologue_oshin:
 
         "You should have TA'd":
 
-            $ muRep - 1
+            $ muRep -= 1
 
             n "Sure you'd have to grade papers and junk, but it's less work for the same grade."
             
@@ -3128,7 +3216,7 @@ label prologue_oshin:
 
         "Are you going to use it?":
 
-            $ Intel + 1
+            $ Intel += 1
 
             mu "Maybe. I mean, I guess it'd cover A and P, but..."
             mu "I don't know if it's worth the money or effort."
@@ -3153,7 +3241,7 @@ label prologue_oshin:
         
         "Need any help?":
 
-            $ MuRep + 1
+            $ MuRep += 1
 
             mu "What do you know about medicine?"
 
@@ -3255,7 +3343,7 @@ label prologue_ichita:
 
         "I wasn't scared!":
 
-            $ Vision + 1
+            $ Vision += 1
 
             i "You were making a little scared face." 
             i "Your eyes got all wide and you kept looking at my teeth. You're like an open book."
@@ -3272,7 +3360,7 @@ label prologue_ichita:
 
         "Hiro said you do":
 
-            $ iRep - 1
+            $ iRep -= 1
 
             i "Hiro?"
 
@@ -3296,7 +3384,7 @@ label prologue_ichita:
 
         "Neither do I":
 
-            $ iRep + 1
+            $ iRep += 1
 
             i "Hah, look at you."
 
@@ -3403,7 +3491,7 @@ label prologue_taiga:
 
         "Can I pet him?":
 
-            $ tRep + 1
+            $ tRep += 1
 
             "Perhaps I was too eager with the way I asked."
             "He stares, shell shocked, before nodding."
@@ -3434,7 +3522,7 @@ label prologue_taiga:
 
         "Pets are forbidden":
 
-            $ tRep - 1
+            $ tRep -= 1
 
             t "Houdini isn't a pet."
 
@@ -3462,7 +3550,7 @@ label prologue_taiga:
 
         "Aren't you scared?":
 
-            $ Charm + 1
+            $ Charm += 1
 
             t "Scared? Scared of what, the school?"
             t "The teachers are just people diving into a collective midlife crisis. I'm more annoyed than anything."
@@ -3571,7 +3659,7 @@ label prologue_chisei:
 
         "I'm so sorry":
 
-            $ chRep - 1
+            $ chRep -= 1
 
             ch "All you have done is stare."
             ch "Unless you have thought something uncouth, there is no need to apologize."
@@ -3597,7 +3685,7 @@ label prologue_chisei:
 
         "Sick robot hand":
 
-            $ chRep + 1
+            $ chRep += 1
 
             ch "It is not humanoid, but it serves me well. You are the second person to compliment it."
 
@@ -3619,7 +3707,7 @@ label prologue_chisei:
 
         "What's your major?":
 
-            $ Vision + 1
+            $ Vision += 1
 
             "It's basic small talk, so why does she look so down?"
 
@@ -3727,7 +3815,7 @@ label prologue_shoma:
 
         "What's with the machine?":
 
-            $ shRep + 1
+            $ shRep += 1
 
             n "I know they're low on funds, but the least they could do is get you a modern sewing machine." 
             n "That thing looks ancient."
@@ -3751,7 +3839,7 @@ label prologue_shoma:
 
         "Your stuff's going to melt":
 
-            $ Vigor + 1
+            $ Vigor += 1
 
             sh "I'm not sure that's possible."
 
@@ -3775,7 +3863,7 @@ label prologue_shoma:
 
         "This is boring":
 
-            $ shRep - 1
+            $ shRep -= 1
 
             sh "Ah, yes. Unpacking generally isn't fun. You could offer to help instead of complaining."
 
@@ -3893,7 +3981,7 @@ label prologue_setsuna:
 
         "My friends":
 
-            $ sRep + 1
+            $ sRep += 1
 
             s "You know other people that go here?"
             s "Lucky you, I feel like a fish out of water. It's like everyone here grew up together or something."
@@ -3918,7 +4006,7 @@ label prologue_setsuna:
 
         "The pool":
 
-            $ Charm + 1
+            $ Charm += 1
 
             "She pounds on the gym floor, it sounds... hollow?"
 
@@ -3938,7 +4026,7 @@ label prologue_setsuna:
 
         "Something interesting":
 
-            $ sRep - 1
+            $ sRep -= 1
 
             s "Sorry to disappoint you then."
 
@@ -4082,7 +4170,7 @@ label prologue_kietsu:
     menu:
         "What's wrong with you?":
 
-            $ kiRep - 1
+            $ kiRep -= 1
 
             show Kihey
 
@@ -4130,7 +4218,7 @@ label prologue_kietsu:
 
         "Your old school":
 
-            $ kiRep + 1
+            $ kiRep += 1
 
             show Kisadtalk
 
@@ -4183,7 +4271,7 @@ label prologue_kietsu:
 
         "Eating sage?":
 
-            $ Vision + 1
+            $ Vision += 1
 
             show Kicringe
 
@@ -4362,7 +4450,7 @@ label prologue_momoko:
 
         "What happened to you?":
 
-            $ mhRep - 1
+            $ mhRep -= 1
 
             mh "Oh, well, I was messing around with some new hair dye formulas and it kinda nuked my eyebrows..."
             mh "And my lashes..."
@@ -4391,7 +4479,7 @@ label prologue_momoko:
 
         "You look happy":
 
-            $ mhRep + 1
+            $ mhRep += 1
 
             mh "For the first time in a long time, I feel like things are going to get better."
             mh "I got that vibe, y'know. Don't you?"
@@ -4415,7 +4503,7 @@ label prologue_momoko:
 
         "Mad scientist":
 
-            $ Intel + 1
+            $ Intel += 1
 
             mh "Now don't go saying that, you'll make people think I'm irresponsible or something."
 
@@ -4532,7 +4620,7 @@ label prologue_rei:
 
         "Your sister's gonna kill you":
 
-            $ reRep + 1
+            $ reRep += 1
 
             re "I know... Ugh, I should have gotten a storage locker or something. My poor babies."
 
@@ -4548,7 +4636,7 @@ label prologue_rei:
 
         "Aren't they heavy?":
 
-            $ reRep - 1
+            $ reRep -= 1
 
             n "How could you forget you were carrying those things?"
 
@@ -4577,7 +4665,7 @@ label prologue_rei:
 
         "You haven't changed":
 
-            $ Vigor + 1
+            $ Vigor += 1
 
             re "In a good way, I hope."
 
@@ -4660,7 +4748,7 @@ label prologue_rise:
 
         "Decline":
 
-            $ rRep - 1
+            $ rRep -= 1
 
             n "Sorry, not a big tea fan."
 
@@ -4671,7 +4759,7 @@ label prologue_rise:
 
         "Sit":
 
-            $ rRep + 1
+            $ rRep += 1
 
             n "Are you sure?"
 
@@ -4692,7 +4780,7 @@ label prologue_rise:
             menu:
                 "Golden Tip":
 
-                    $ Charm + 1
+                    $ Charm += 1
 
                     r "It tastes best without milk, I should know."
 
@@ -4722,7 +4810,7 @@ label prologue_rise:
 
                 "Spark Matcha":
 
-                    $ Vigor + 1
+                    $ Vigor += 1
 
                     r "Are you feeling tired?"
 
@@ -4751,7 +4839,7 @@ label prologue_rise:
 
                 "Earl Gray":
 
-                    $ Intel + 1
+                    $ Intel += 1
 
                     n "You'll have to forgive me if I'm a little shaky on the proper etiquette, but that's the one I can put milk in, right?"
 
@@ -4853,7 +4941,7 @@ label prologue_dyre:
 
         "Who told you I was sick?":
 
-            $ dRep + 1
+            $ dRep += 1
 
             d "I mean, you called out sick all the time."
 
@@ -4881,7 +4969,7 @@ label prologue_dyre:
             n "It's like I said, I ran away."
 
         "Yeah, sorry":
-            $ Charm + 1
+            $ Charm += 1
 
             d "What are you apologizing to me for? I don't care where you live, as long as you're okay."
             d "There's a lot of weirdos out there that'd try to take advantage of a kid like you."
@@ -4916,7 +5004,7 @@ label prologue_dyre:
 
         "Of course":
 
-            $ dRep - 1
+            $ dRep -= 1
 
             n "My helicopter parents never gave me a moment to myself."
             n "Then you got me thrown in my mom's class and suddenly I was under surveillance 24/7."
@@ -5059,7 +5147,7 @@ label prologue_jona:
 
         "Opposites attract":
 
-            $ Vision + 1
+            $ Vision += 1
 
             n "Ah, well, I haven't seen anyone who's dressed in full counter-culture around here."
             n "I mean, steampunk is definitely more mainstream, but still..."
@@ -5094,7 +5182,7 @@ label prologue_jona:
 
         "To start a fight":
 
-            $ jRep + 1
+            $ jRep += 1
             
             hide JHappy
             show JFrustrated
@@ -5148,7 +5236,7 @@ label prologue_jona:
 
         "Look for an exit":
 
-            $ jRep - 1
+            $ jRep -= 1
 
             n "You're the one who walked up to me."
 
@@ -5227,138 +5315,145 @@ label Meeting:
     "I walk into the room to find Hiro and Jona waiting for me. Uitto comes in silently behind me."
     "The last time we were all together, it was to tell everyone that Lethe had passed."
 
-    show JRelax
+    show JRelax at center
 
     j "So, who's leading the meeting?"
 
-    hide JRelax
-    show HBase
+    show HJudge at left
 
     h "Whadya mean?"
-
-    hide HBase
-    show JRelax
 
     j "Well, usually Odori tells us what to do, but I don't see her here."
     j "I haven't seen her since she called for a cease-fire. Hiro, you were supposed to be guarding the base, where-"
 
-    hide JRelax
-    show HBase
+    hide HJudge
+    show HSadtalk at left
 
     h "So Nagen, what's the plan?"
 
-    hide HBase
-    show JMad
+    hide JRelax
+    show JMad at center 
 
     j "Why are you avoiding the question?"
 
-    hide JMad
+    hide HSadtalk
+    show HGrump at left
 
     n "Focus guys, both of you. I never 'said' anything about a plan."
 
-    show HBase
+    hide HGrump
+    show HMad at left
 
     h "So you wanted to hold a meeting and there isn't even a plan?"
 
-    hide HBase
-    show JFrustrated
+    hide JMad
+    show JFrustrated at center
 
     j "I am so confused."
 
-    hide JFrustrated
-
     n "Guys, I know you're wondering why I called you here."
 
-    show Uittoyell
+    show Uittoyell at right
 
     u "Just spit it out, Nagen. You knew I was here, I'm sure the same went for the others too."
     u "So, where the hell's Odori? Did she just not make the cut or did she stop participating in life too?"
 
-    hide Uittoyell
-    show HBase
-
     h "Uitto!"
 
-    hide HBase
-    show JRelax
+    hide JFrustrated
+    show JRelax at center
 
     j "Well, Nagen, do you know what happened to her?"
-
-    hide JRelax
 
     n "She's... still missing. No one's found her."
 
     "Hiro doesn't look surprised, but he's definitely avoiding Jona's almost accusatory turn towards him."
     "It's hard to tell with the goggles. Uitto keeps glaring at me."
 
-    show Uittosadtalk
+    hide Uittoyell
+    show Uittosadtalk at right
 
     u "That's what I thought..."
     u "So, when are you going to beg for our forgiveness? Or are you going to keep acting like {i}you're{/i} not the one who sold us out?"
 
     hide Uittosadtalk
-    show Uittosad
+    show Uittosad at right
+    hide JRelax
+    show JDepressed at center
+    hide HMad
+    show HGuilt at left
 
     n "What are you talking about?"
 
     hide Uittosad
-    show Uittoyell
+    show Uittoyell at right
 
     u "I'm talking about how, despite pleading not-guilty, I ended up in reform school!"
     u "You're the one that knew we'd all be here, so you have to be in their pockets!"
 
     hide Uittoyell
-    show HBase
+    show Uittosad at right
+    hide HGuilt
+    show HMad at left
 
     h "Quit calling him manipulative! Not everyone is good at talking people into believing lies like you."
+    
+    hide HMad
+    show HGuilt at left
+
     h "We should just be happy we're together again..."
 
-    hide HBase
-    show JMad
+    hide JDepressed
+    show JMad at center
 
     j "Of course you would say that, you coward. If it were up to you, we'd be groveling on our bellies years ago."
 
-    hide JMad
-
     n "Now hold on..."
 
-    show HBase
+    hide HGuilt
+    show HGrump at left
 
     h "You're one to talk! They were asking me about the doomsday cult we supposedly started."
+
+    hide HGrump
+    show HWait at left
     h "I wonder who's pet project that could have been?"
+    hide HWait
+    show HMad at left
     h "Your stupid stories probably got us into more trouble than we should have been in."
     h "And you're running around the school looking like a freaking serial killer! Are you trying to get us targeted!?"
 
-    hide HBase
-    show JFrustrated
+    hide JMad
+    show JFrustrated at center
 
     j "Steampunk is art! Quit acting like my art is hurting people."
 
     hide JFrustrated
-    show JMad
+    show JMad at center
+    hide HMad
+    show HSulk at left
 
     j "You're the one that left Odori alone with people on our tail!"
-
-    hide JMad
 
     n "Guys! Look, I know things aren't ideal right now, but that's why I called you here."
     n "We got separated on purpose, and all of us were forced to do things we didn't want to do to get by."
     n "But we're together now, and we need to figure out what to do next."
 
-    show Uittogurl
+    hide Uittosad
+    show Uittogurl at right
 
     u "Oh really, and why should we listen to you? You sold us out to the DVP!"
 
     n "I never-"
 
     hide Uittogurl
-    show Uittoyell
+    show Uittoyell at right
 
     u "The agent they sent to get me mentioned you by name!"
     u "I bet they gave you an offer you couldn't refuse or some cliche that makes you feel {i}better{/i} about leaving us to the wolves..."
 
     hide Uittoyell
-    show Uittosad
+    show Uittosad at right
 
     u "What else could you want from us?"
 
@@ -5366,22 +5461,25 @@ label Meeting:
     n "They wanted us to turn on each other and make their boarding school look good."
     n "They're afraid of what we accomplish when we work together."
 
-    hide Uittosad
-    show JDepressed
+    hide JMad
+    show JDepressed at center
 
     j "Well, yeah. A faceless organization is ten times scarier than a handful of teens."
 
-    hide JDepressed
-    show HBase
+    hide HSulk
+    show HFINE at left
 
     h "I'd have to disagree. Faceless organizations don't punch you in the junk in the middle of the night."
 
     n "What!?"
 
+    hide HFINE
+    show HGrump at left
+
     h "My foster brother's an asshole."
 
-    hide HBase
-    show Uittogurl
+    hide Uittosad
+    show Uittogurl at right
 
     u "...Right. So, you were saying..."
 
@@ -5389,30 +5487,30 @@ label Meeting:
     n "It's going to be lame, but if we can play the part for a year and play it well, they've got nothing on us."
     n "We make them think we're model students and we gain support from the students here to prove our innocence."
 
-    hide Uittogurl
-    show JDepressed
-
     j "How's that any different from what they told us to do?"
 
     n "Because the whole student body will be in the palm of our hands and they'll be none the wiser."
     n "I'm going to take control of whatever passes for a student council and... well that's all I got for now."
 
-    hide JDepressed
-    show HBase
+    hide HGrump
+    show HHeadempty at left
 
     h "...Cool..."
 
     n "And in the end, we'll get a lighter sentence and still get to be heroes."
 
+    hide HHeadempty
+    show HBase at left
+
     h "Yes! Good! I like this plan!"
 
-    hide HBase
-    show JHappy
+    hide JDepressed
+    show JHappy at center
 
     j "That isn't exactly a plan, but it doesn't sound like it'll get us in trouble..."
 
-    hide JHappy
-    show UBase
+    hide Uittogurl
+    show UBase at right
 
     u "So, we get stuck here for a year, make nice and live happily ever after?"
 
@@ -5420,37 +5518,37 @@ label Meeting:
 
     u "Not interested."
 
-    hide UBase
-    show JFrustrated
+    hide JHappy
+    show JFrustrated at center
 
     j "What are you talking about?"
 
-    hide JFrustrated
-    show Uittotalk
+    hide UBase
+    show Uittotalk at right
 
     u "You all can act like the last few years didn't happen and live in a fantasy world, but I'm not interested in lying to the randos at this school."
 
     hide Uittotalk
-    show Uittocringe
+    show Uittocringe at right
     u "I'm a wanted criminal, I ruined people's lives, and no amount of crocodile tears will make that okay."
     hide Uittocringe
-    show Uittosadtalk
+    show Uittosadtalk at right
     u "Of course, the people I hurt deserved it, but I'm not a helpless victim anymore. It's not fair to the other kids..."
 
     n "Then why plead not guilty if you're so honest?"
 
     hide Uittosadtalk
-    show Uittosad
+    show Uittosad at right
 
     u "Some of us actually want a normal adult to say we were right instead of begging for probation."
 
-    hide Uittosad
-    show HBase
+    hide HBase
+    show HSadtalk
 
     h "Come on, guys, arguing will get us nowhere."
 
-    hide HBase
-    show Uittosadtalk
+    hide Uittosad
+    show Uittosadtalk at right
 
     u "I'll see you later, Hiro... maybe. I shouldn't be here..."
 
@@ -5462,61 +5560,59 @@ label Meeting:
     "She leaves without another word."
 
     hide JFrustrated
+    hide HSadtalk
 
     menu:
         "Forget her":
-            $ uRep - 1
-            $ jRep - 1
+            $ uRep -= 1
+            $ jRep -= 1
 
             n "Who needs her anyways? It's not like she ever did anything important."
 
-            show HBase
+            show HGuilt at left
+            show JRelax at right
 
             h "Come on man, I know you're pissed-"
 
             n "No, she wants to throw her little diva tantrum, that's fine."
-
-            hide HBase
-            show JRelax
 
             j "Doesn't her ditching throw off your master plan?"
 
             n "Every experiment has an outlier. As long as the majority of the school believes us, nothing will change."
 
             hide JRelax
+            hide HGuilt
 
             jump meet_main
 
         "She'll come around":
-            $ jRep + 1
-            $ hRep + 1
+            $ jRep += 1
+            $ hRep += 1
 
             n "She just needs some time to get over it. She will get over it, won't she?"
 
-            show HBase
+            show HGuilt at left
+            show JDepressed at right
 
             h "Ehh... hard to say."
             h "She still refuses to watch Avenger League ever since it took the time slot of her favorite show."
 
-            hide HBase
-
             n "Empire of the Lost did not deserve to be canceled and I support her decision."
             n "But this is something entirely different. This is about our lives."
             n "She could end up with a life sentence. She knows that, right?"
-
-            show JDepressed
 
             j "I don't know. She didn't look mad at us, not enough to hold a grudge."
             j "I don't care what her aura looked like to you."
             j "Nagen's right, she's not going to hold a grudge over this forever. We just have to wait."
 
             hide JDepressed
+            hide HGuilt
 
             jump meet_main
 
         "Go after her":
             play music "music/CoolNights.mp3"        
-            $ uRep + 1
+            $ uRep += 1
 
             n "Uitto, wait!"
 

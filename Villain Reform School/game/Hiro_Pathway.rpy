@@ -1,12 +1,12 @@
 label HiroVisit:
 
-    if hTurn = 0:
+    if hTurn == 0:
         jump Hiro1
-    elif hTurn = 1:
+    elif hTurn == 1:
         jump Hiro2
-    elif hTurn = 2:
+    elif hTurn == 2:
         jump Hiro3
-    elif hTurn = 3:
+    elif hTurn == 3:
         jump Hiro4
     else:
         jump HiroF
@@ -50,7 +50,7 @@ label Hiro1:
 
     menu: 
         "I'm worried about you.":
-            $ Vigor + 1
+            $ Vigor += 1
             
             h "Run that by me again?"
 
@@ -106,7 +106,7 @@ label Hiro1:
 
             h "Yeah…"
         "I want to switch majors.":
-            $ hRep + 1
+            $ hRep += 1
 
             h "What!? Why?"
 
@@ -151,7 +151,7 @@ label Hiro1:
 
             "He ran off before I could catch him. He’s going to be guarding that stupid thing like his life depended on it."
         "No reason":
-            $ hRep - 1
+            $ hRep -= 1
             
             h "...Bullshit."
 
@@ -195,8 +195,8 @@ label Hiro1:
             n "I swear everything is fine."
 
             h "Right, sure it is."
-    $ Vigor + 1
-    $ hTurn + 1
+    $ Vigor += 1
+    $ hTurn += 1
 
     h "Hey, I saw a vending machine on the third floor. Bet you I can get us some free candy."
 
@@ -245,7 +245,7 @@ label Hiro2:
 
     menu:
         "Put out the fire.":
-            $ Vigor + 1
+            $ Vigor += 1
 
             h "Well yeah, obviously, but how?"
             h "This room doesn’t have a fire extinguisher."
@@ -272,7 +272,7 @@ label Hiro2:
 
             n "Please stop with the puns, I beg you."
         "Shield my friend from the fire.":
-            $ hRep + 1
+            $ hRep += 1
             h "W-what?"
 
             n "I’m wearing mostly leather, so it should work long enough for the sprinklers to go off."
@@ -289,7 +289,7 @@ label Hiro2:
 
             n "Hunh?"
         "Refuse to answer.":
-            $ hRep - 1
+            $ hRep -= 1
 
             n "I don’t have enough information to answer the question."
 
@@ -315,8 +315,8 @@ label Hiro2:
             h "You gotta do something fast, we’re getting crispy."
 
             n "You just said we died!"
-    $ Vigor + 1
-    $ hTurn + 1
+    $ Vigor += 1
+    $ hTurn += 1
 
     h "You’re missing the point."
     h "The idea is to do something you usually wouldn't do. It’s the only way to change."
@@ -426,7 +426,7 @@ label Hiro3:
 
     menu:
         "I'm not the problem.":
-            $ hRep - 1
+            $ hRep -= 1
 
             n "It’s just you."
 
@@ -451,7 +451,7 @@ label Hiro3:
 
             h "That doesn’t mean you have to be the same way."
         "I don't know.":
-            $ hRep + 1
+            $ hRep += 1
 
             n "I don’t know man, I struggle to think past the hour. I had to learn the big picture stuff the hard way."
             n "You’ll do fine man. You’re trying, that’s what matters."
@@ -478,7 +478,7 @@ label Hiro3:
             n "That’s my job."
         
         "I have to change.":
-            $ Vigor + 1
+            $ Vigor += 1
 
             n "The trick is changing without changing."
             n "I know they say fake it til you make it, but faking it is exhausting."
@@ -508,8 +508,8 @@ label Hiro3:
 
             n "We’ll keep that as a plan ‘B’."
     
-    $ Vigor + 1
-    $ hTurn + 1
+    $ Vigor += 1
+    $ hTurn += 1
 
     h "Things were so much easier when this kind of stuff happened on TV."
     h "There wasn’t any of this morally grey bullshit."
@@ -629,7 +629,7 @@ label Hiro4:
 
             menu:
                 "Accept":
-                    $ hRep + 5
+                    $ hRep += 5
 
                     n "And, uhh… how do you feel now?"
 
@@ -659,7 +659,7 @@ label Hiro4:
 
         "Probably Not":
 
-            $ hRep + 1
+            $ hRep += 1
 
             n "You’re right. Stirring up that stuff would have caused nothing but trouble."
 
@@ -693,7 +693,7 @@ label Hiro4:
 
             "It’s not exactly what I expected, but I’m glad he’s found something he wants to do."
         "I won't forgive you":
-            $ hRep + 1
+            $ hRep += 1
 
             n "If I had confessed, and by some miracle she accepted, I might have been able to spend more time with her."
             n "I could have been with her when Guwon came crashing down around us."

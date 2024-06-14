@@ -49,7 +49,7 @@ label Uitto1:
 
     menu:
         "List everything":
-            $ uRep + 1
+            $ uRep += 1
 
             n "Oh reallly?"
             n "So I guess that means I don’t know you defended your DDR title for four years or that you had the weakest constitution in your dance class."
@@ -70,7 +70,7 @@ label Uitto1:
             u "Always so damn literal. I was putting on an act, you dumbass."            
 
         "You're right":
-            $ uRep -1
+            $ uRep -= 1
 
             n "I don’t know who you are anymore. You’re like a completely different person."
 
@@ -98,7 +98,7 @@ label Uitto1:
             u "You’re being one right now. Makes plenty of sense to me."
 
         "You don't know you either":
-            $ Charm + 1
+            $ Charm += 1
 
             u "What kind of fake-deep nonsense-"
 
@@ -120,8 +120,8 @@ label Uitto1:
             n "My point is, if I haven’t told you something, it isn’t to be cruel. I’m sure you’re the same way."
             n "Whatever it is, I can handle it."
 
-    $ uTurn + 1
-    $ Charm + 1
+    $ uTurn += 1
+    $ Charm += 1
 
     u "I’m over trying to impress you or anyone else for that matter."
     u "It’s... exhausting and frankly, I’m too tired to keep trying. I’m sorry I’m not the person you thought I was."
@@ -188,7 +188,7 @@ label Uitto2:
 
     menu:
         "Which type are you?":
-            $ uRep + 1
+            $ uRep += 1
 
             u "A little bit of both. I prefer people think I’m the manipulative type."
             u "Saves me from false pity."
@@ -215,7 +215,7 @@ label Uitto2:
             "She says so with icy conviction. I knew they were the reason she joined us, but I never asked her about it."
 
         "It's not that bad":
-            $ uRep - 1
+            $ uRep -= 1
 
             n "There’s a lot worse things in life than putting up with a room full of extroverts for an hour."
 
@@ -237,7 +237,7 @@ label Uitto2:
             u "As long as I’m a Charisma Major, I will be lumped in with the rest of them."
 
         "There has to be someone":
-            $ Charm + 1
+            $ Charm += 1
 
             n "Not every Charisma Major is a showpony. I mean, you’re not."
 
@@ -304,8 +304,8 @@ label Uitto2:
     "I’ve created a monster."
 
 
-    $ uTurn + 1
-    $ Charm + 1
+    $ uTurn += 1
+    $ Charm += 1
     return
 
 label Uitto3:
@@ -326,7 +326,7 @@ label Uitto3:
 
     menu:
         "Comedic":
-            $ uRep + 1
+            $ uRep += 1
 
             "I skim through the scene. The dialogue is pretty sappy."
             "I don’t see how anyone can take this seriously. Granted, my well known bias against romantic dramas probably affects my decision."
@@ -377,7 +377,7 @@ label Uitto3:
             u "I respect that. It’s not like you’re going to be on stage anytime soon."
 
         "Improv":
-            $ uRep - 1
+            $ uRep -= 1
 
             n "Why don’t you start us off?"
 
@@ -407,8 +407,8 @@ label Uitto3:
 
             u "I get acting isn’t the most ‘respectable’ of professions, but the least you could do is humor me for a few minutes."
             u "Heaven knows I’ve done the same for you."
-    $ uTurn + 1
-    $ Charm + 1
+    $ uTurn += 1
+    $ Charm += 1
 
     n "You’ve got a lot of passion for this. The drama club is lucky to have you."
 
@@ -514,7 +514,7 @@ label Uitto4:
 
         "Sounds Stressful":
 
-            $ Charm + 1
+            $ Charm += 1
 
             u "That’s what most people say. I think It’s kind of fun. You find what gets the best reaction and rack up brownie points until you get the best outcome."
 
@@ -538,7 +538,7 @@ label Uitto4:
             "She laughs."
 
         "And if you lost?":
-            $ uRep - 1
+            $ uRep -= 1
 
             "She’s quiet for a long time. The ball she was ramming against the wall rolls lifelessly along the ground."
 
@@ -565,7 +565,7 @@ label Uitto4:
             u "You just have to not suck at it."
 
         "I've always wanted to try":
-            $ uRep + 1
+            $ uRep += 1
 
             "She starts laughing."
 
@@ -598,8 +598,8 @@ label Uitto4:
             n "No, absolutely not, forget I said anything."
 
             u "t’s your loss."
-    $ Charm + 1
-    $ uRep + 1
+    $ Charm += 1
+    $ uRep += 1
  
     n "You’re pretty good with that racket."
 
@@ -718,7 +718,7 @@ label Uitto5:
 
     menu:
         "Be helpful":
-            $ Charm + 1
+            $ Charm += 1
 
             "Yes, be helpful. The sensible thing to do."
                 
@@ -756,7 +756,7 @@ label Uitto5:
             "We stayed that way for quite a while, her struggling to breathe and me waiting."
 
         "Do nothing":
-            $ uRep + 1
+            $ uRep += 1
 
             "I’ve never seen Uitto look so vulnerable before. It kinda freaks me out seeing her break down like this."
             "I can’t just bail on her, but I don’t really know what else to do."
@@ -796,7 +796,7 @@ label Uitto5:
 
             n "....."
         "Stop crying":
-            $ uRep - 1
+            $ uRep -= 1
 
             u "W-what?"
 
@@ -827,8 +827,8 @@ label Uitto5:
 
             n "You don’t have to listen to me, but I’m telling you as a friend, you’re making a mistake."
             n "You need to calm down and think things through rationally."
-    $ Charm + 1
-    $ uTurn + 1
+    $ Charm += 1
+    $ uTurn += 1
 
     u "....."
     u "Do you think it’s too late for me?"
