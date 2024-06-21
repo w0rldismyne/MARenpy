@@ -1321,7 +1321,7 @@ label prologue2:
     mm "You got this."
 
     # New Background showing around the outside here
-    backgrounddorm
+    scene backgrounddorm
 
     "We go back to the car to get the last of my things."
     "She wraps me in a huge hug and I become very aware of the car coming up to the roundabout."

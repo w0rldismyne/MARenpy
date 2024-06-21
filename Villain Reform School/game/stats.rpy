@@ -39,6 +39,18 @@ screen stats():
         xpos 1577
         ypos 367
 
+    text "Hero: [Hero]":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 1577
+        ypos 519
+
+    text "Villain: [Villain]":
+        xanchor 0.5
+        yanchor 0.5
+        xpos 1577
+        ypos 664
+
     text "Subject":
         xanchor 0.5
         yanchor 0.5

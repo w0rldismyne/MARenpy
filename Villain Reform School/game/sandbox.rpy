@@ -230,8 +230,8 @@ screen fight_health:
         xmaximum 200
         value nagen_current_health
         range nagen_health
-        left_bar "images/Clues/Headline.png"
-        right_bar "images/Clues/Headline.png"
+        left_bar "gui/HealthLight1.png"
+        right_bar "gui/HealthDark1.png"
 
     text "Mariko":
         xanchor 0.5
@@ -244,8 +244,16 @@ screen fight_health:
         xmaximum 200
         value mariko_current_health
         range mariko_health
-        left_bar "images/Clues/Headline.png"
-        right_bar "images/Clues/Headline.png"
+        left_bar "gui/HealthLight2.png"
+        right_bar "gui/HealthDark2.png"
+
+    bar:
+        pos 1500, 500
+        xmaximum 200
+        value mariko_fatigue
+        range 100
+        left_bar "gui/HealthLight3.png"
+        right_bar "gui/HealthDark3.png"
 
 screen fight_menu:
 

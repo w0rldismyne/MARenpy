@@ -242,7 +242,8 @@ screen choice(items):
             for i in items:
                 textbutton i.caption:
                     action i.action
-                    xsize 200
+                    xsize 250
+                    ysize 150
 
 
 style choice_vbox is vbox
