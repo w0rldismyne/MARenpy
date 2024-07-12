@@ -57,14 +57,13 @@ define gui.interface_text_color = '#ffffff'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "Action_Man.ttf"
-#"DejaVuSans.ttf"
+define gui.text_font = "Action_Man.ttf" #"DejaVuSans.ttf"
 
 ## The font used for character names.
 define gui.name_text_font = "Action_Man.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "KomikaTitle.ttf" #"DejaVuSans.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
@@ -121,7 +120,7 @@ define gui.namebox_height = None
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.
-define gui.namebox_borders = Borders(5, 5, 5, 15)
+define gui.namebox_borders = Borders(5, 15, 5, 15)
 
 ## If True, the background of the namebox will be tiled, if False, the
 ## background of the namebox will be scaled.
@@ -159,8 +158,7 @@ define gui.button_borders = Borders(6, 6, 6, 6)
 define gui.button_tile = False
 
 ## The font used by the button.
-define gui.button_text_font = "true-crimes.ttf"
-#gui.interface_text_font
+define gui.button_text_font = "true-crimes.ttf" #gui.interface_text_font
 
 ## The size of the text used by the button.
 define gui.button_text_size = gui.interface_text_size
@@ -213,7 +211,7 @@ define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = '#888888'
+define gui.choice_button_text_idle_color = '#111111' #'#888888'
 define gui.choice_button_text_hover_color = "#ffffff"
 define gui.choice_button_text_insensitive_color = '#8888887f'
 

@@ -121,15 +121,15 @@ label chapter1_freetime:
                 "Uitto":
                     call UittoVisit
                 "Jona":
-                    pass
+                    call JonaVisit
                 "Hiro":
-                    pass
+                    call HiroVisit
                 "Nanase":
                     pass
                 "Mariko":
-                    pass
+                    call MarikoVisit
                 "Yoku":
-                    pass
+                    call YokuVisit
 
         "Investigate":
             call chapter1_investigation

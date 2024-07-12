@@ -140,6 +140,10 @@ default boss_idle = "images/Sprites/Mariko/Boss1.png"
 default boss_attack = "images/Sprites/Mariko/4.png"
 default boss_hurt = "images/Sprites/Mariko/3.png"
 
+default info_overlay = "images/Icons/Bossboxesv1.png"
+default fight_overlay1 = "images/Icons/Bossboxesv1.png"
+default fight_overlay2 = "images/Icons/Bossboxesv2.png"
+
 default nagen_health = 10
 default mariko_health = 12
 
@@ -218,42 +222,44 @@ screen fight_background:
 
 screen fight_health:
 
+    image "[info_overlay]"
+
     text "Nagen":
         color "#000000"
         xanchor 0.5
         yanchor 0.5
-        pos 1500, 150
+        pos 1600, 75
 
     # Nagen's Health
     bar:
-        pos 1500, 200
+        pos 1600, 100
         xmaximum 200
         value nagen_current_health
         range nagen_health
-        left_bar "gui/HealthLight1.png"
-        right_bar "gui/HealthDark1.png"
+        left_bar "gui/HealthLight6.png"
+        right_bar "gui/HealthDark6.png"
 
     text "Mariko":
         xanchor 0.5
         yanchor 0.5
-        pos 1500, 350
+        pos 1600, 275
 
     # Mariko's Health
     bar:
-        pos 1500, 400
+        pos 1600, 325
         xmaximum 200
         value mariko_current_health
         range mariko_health
-        left_bar "gui/HealthLight2.png"
-        right_bar "gui/HealthDark2.png"
+        left_bar "gui/HealthLight6.png"
+        right_bar "gui/HealthDark6.png"
 
     bar:
-        pos 1500, 500
+        pos 1600, 425
         xmaximum 200
         value mariko_fatigue
         range 100
-        left_bar "gui/HealthLight3.png"
-        right_bar "gui/HealthDark3.png"
+        left_bar "gui/HealthLight5.png"
+        right_bar "gui/HealthDark5.png"
 
 screen fight_menu:
 
@@ -325,7 +331,13 @@ label check_conditions:
             $ mariko_halfway = True
             $ mariko_halfway_post_turns = turns_passed
 
-            jump midfight_cutscene
+            hide screen fight_health
+
+            call midfight_cutscene
+
+            show screen fight_health
+
+            $ info_overlay = fight_overlay2
         
         if mariko_current_health <= 0:
 

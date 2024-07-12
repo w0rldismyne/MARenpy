@@ -128,7 +128,7 @@ init python:
 style window is default
 style say_label is default
 style say_dialogue is default
-#style say_thought is say_dialogue
+style say_thought is say_dialogue
 
 style namebox is default
 style namebox_label is say_label
@@ -163,6 +163,7 @@ style say_dialogue:
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
+    line_spacing 10
 
     adjust_spacing True
 
@@ -244,6 +245,7 @@ screen choice(items):
                     action i.action
                     xsize 250
                     ysize 150
+                    text_yalign 0.5
 
 
 style choice_vbox is vbox
