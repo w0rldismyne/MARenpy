@@ -135,7 +135,7 @@ image HMad = "Sprites/Hiro/Hiromad.png"
 image HPout = "Sprites/Hiro/Hiropout.png"
 image HPuppy = "Sprites/Hiro/Hiropuppy.png"
 image HSmile = "Sprites/Hiro/Hirosmile.png"
-image HTalk = "Sprites/Hiro/Hirotalk.png"
+image HTalk = "Sprites/Hiro/HiroBase.png"
 image HSadSmile = "Sprites/Hiro/Hirosadsmile.png"
 image HSadtalk = "Sprites/Hiro/Hirosadtalk.png"
 image HSass = "Sprites/Hiro/Hirosass.png"
@@ -152,6 +152,23 @@ image HWait = "Sprites/Hiro/Hirowaitaminute.png"
 
 #Ichita
 image IBase = "Sprites/Ichita/ichitabase.png"
+image IAnger = "Sprites/Ichita/ichitaanger.png"
+image IAnnoyed = "Sprites/Ichita/ichitaannoyed.png"
+image IFrown = "Sprites/Ichita/ichitafrown.png"
+image IGrin = "Sprites/Ichita/ichitagrin.png"
+image IGrr = "Sprites/Ichita/ichitagrr.png"
+image IHappy = "Sprites/Ichita/ichitahappy.png"
+image IHmm = "Sprites/Ichita/ichitahmm.png"
+image ILecture = "Sprites/Ichita/ichitalecture.png"
+image IMock = "Sprites/Ichita/ichitamock.png"
+image IOh = "Sprites/Ichita/ichitaoh.png"
+image ISadTalk = "Sprites/Ichita/ichitasadtalk.png"
+image ISadTalk2 = "Sprites/Ichita/ichitasadtalk2.png"
+image IShout = "Sprites/Ichita/ichitaschout.png"
+image IScowl = "Sprites/Ichita/ichitascowl.png"
+image ITalk = "Sprites/Ichita/ichitatalk.png"
+image ITalk2 = "Sprites/Ichita/ichitatalk.png"
+image ITease = "Sprites/Ichita/ichitatease.png"
 
 #Jona
 image JDepressed = "Sprites/Jona/JonaDepressed.png"
@@ -193,18 +210,60 @@ image MhBase = "Sprites/Momoko/momokobase.png"
 
 #Mu
 image MuBase = "Sprites/Mu/Mu1.png"
+image MuAnger = "Sprites/Mu/Muanger.png"
+image MuCringe = "Sprites/Mu/Mucringe.png"
+image MuGrin = "Sprites/Mu/Mugrin.png"
+image MuHeh = "Sprites/Mu/Muheh.png"
+image MuHey = "Sprites/Mu/Muhey.png"
+image MuIrate = "Sprites/Mu/Muirate.png"
+image MuIrateTalk = "Sprites/Mu/Muiratetalk.png"
+image MuPout = "Sprites/Mu/Mupout.png"
+image MuShame = "Sprites/Mu/Mushame.png"
+image MuSmug = "Sprites/Mu/Musumg.png"
+image MuTalk = "Sprites/Mu/Mutalk.png"
+image MuTalk2 = "Sprites/Mu/Mutalk2.png"
+image MuUugh = "Sprites/Mu/Muuugh.png"
+image MuUmm = "Sprites/Mu/Muumm.png"
 
 #Nanase
 image NBase = "Sprites/Nanase/nanasebase.png"
 
 #Rei
 image ReBase = "Sprites/Rei/Rei.png"
+image ReBrag = "Sprites/Rei/Reibrag.png"
+image ReDepressed = "Sprites/Rei/Reidepressed.png"
+image ReDisappointed = "Sprites/Rei/Reidisappointt.png"
+image ReEh = "Sprites/Rei/Reieh.png"
+image ReIrate = "Sprites/Rei/Reiirate.png"
+image ReOpt = "Sprites/Rei/Reioptomism.png"
+image ReSad = "Sprites/Rei/Reisad.png"
+image ReSadtalk = "Sprites/Rei/Reisadtalk.png"
+image ReSmiletalk = "Sprites/Rei/Reismiletalk.png"
+image ReTalk = "Sprites/Rei/Reitalk1.png"
+image ReTalk2 = "Sprites/Rei/Reitalk2.png"
+image ReThink = "Sprites/Rei/Reithink.png"
 
 #Rise
 image RBase = "Sprites/Rise/Rise1.png"
 
 #Setsuna
 image SBase = "Sprites/Setsuna/setsunabase.png"
+image SAnnoy = "Sprites/Setsuna/setsunaannoy.png"
+image SCrazy = "Sprites/Setsuna/setsunacrazy.png"
+image SCringe = "Sprites/Setsuna/setsunacringe.png"
+image SDone = "Sprites/Setsuna/setsunadone.png"
+image SEmbarrassed = "Sprites/Setsuna/setsunaembarrassed.png"
+image SFO = "Sprites/Setsuna/setsunafo.png"
+image SGrin = "Sprites/Setsuna/setsunagrin.png"
+image SHeh = "Sprites/Setsuna/setsunaheh.png"
+image SLaugh = "Sprites/Setsuna/setsunalaugh.png"
+image SMock = "Sprites/Setsuna/setsunamock.png"
+image SMourn = "Sprites/Setsuna/setsunamourn.png"
+image SRelax = "Sprites/Setsuna/setsunarelax.png"
+image SSadTalk = "Sprites/Setsuna/setsunasadtalk.png"
+image STiredTalk = "Sprites/Setsuna/setsunatiredtalk.png"
+image SWhat = "Sprites/Setsuna/setsunawhat.png"
+image SWhatever = "Sprites/Setsuna/setsunawhatever.png"
 
 #Shoma
 image ShBase = "Sprites/Shoma/ShomaN.png"
@@ -228,6 +287,22 @@ image Uittoyell = "Sprites/Uitto/Uittoyell.png"
 
 #Yoku
 image YBase = "Sprites/Yoku/YokuN.png"
+image YBashful = "Sprites/Yoku/YokuBashful.png"
+image YBlush = "Sprites/Yoku/YokuBlush.png"
+image YBlush2 = "Sprites/Yoku/YokuBlush2.png"
+image YBully = "Sprites/Yoku/YokuBully.png"
+image YBully2 = "Sprites/Yoku/YokuBully2.png"
+image YBummed = "Sprites/Yoku/YokuBummed.png"
+image YDaydream = "Sprites/Yoku/YokuDaydream.png"
+image YEyeroll = "Sprites/Yoku/YokuEyeroll.png"
+image YIrate = "Sprites/Yoku/YokuIrate.png"
+image YIrate2 = "Sprites/Yoku/YokuIrate2.png"
+image YJoy = "Sprites/Yoku/YokuJoy.png"
+image YSad = "Sprites/Yoku/YokuSad.png"
+image YSheepish = "Sprites/Yoku/YokuSheepish.png"
+image YTalk = "Sprites/Yoku/YokuTalk.png"
+image YThink = "Sprites/Yoku/YokuThink.png"
+image YTired = "Sprites/Yoku/YokuTired.png"
 
 ### Teachers ###
 
@@ -269,17 +344,17 @@ image backgroundYPath = "CGs/YPath.png"
 
 #Hiros Flashbacks
 
-image backgroundfb1 = "FB/HFB1.jpg"
-image backgroundfb2 = "FB/HFB2.jpg"
-image backgroundfb3 = "FB/HFB3.jpg"
-image backgroundfb4 = "FB/HFB4.jpg"
-image backgroundfb5 = "FB/HFB5.jpg"
-image backgroundfb6 = "FB/HFB6.jpg"
-image backgroundfb7 = "FB/HFB7.jpg"
-image backgroundfb8 = "FB/HFB8.jpg"
-image backgroundfb9 = "FB/HFB9.jpg"
-image backgroundfb10 = "FB/HFB10.jpg"
-image backgroundfb11 = "FB/HFB11.jpg"
+image backgroundfb1 = "CGs/FB/HFB1.jpg"
+image backgroundfb2 = "CGs/FB/HFB2.jpg"
+image backgroundfb3 = "CGs/FB/HFB3.jpg"
+image backgroundfb4 = "CGs/FB/HFB4.jpg"
+image backgroundfb5 = "CGs/FB/HFB5.jpg"
+image backgroundfb6 = "CGs/FB/HFB6.jpg"
+image backgroundfb7 = "CGs/FB/HFB7.jpg"
+image backgroundfb8 = "CGs/FB/HFB8.jpg"
+image backgroundfb9 = "CGs/FB/HFB9.jpg"
+image backgroundfb10 = "CGs/FB/HFB10.jpg"
+image backgroundfb11 = "CGs/FB/HFB11.jpg"
 
 # Player's Stats
 default Vigor = 0
@@ -390,7 +465,15 @@ init python:
         "Sato",
         "Uitto",
         "Hiro",
-        "Jona"
+        "Jona",
+        "Kazz",
+        "Yoku",
+        "Mu",
+        "Koe",
+        "Rei",
+        "Setsuna",
+        "IChita",
+        "Maimai"
     ]
 
     def extendedSearchVoice(id):
