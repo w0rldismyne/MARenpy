@@ -455,7 +455,7 @@ label Nanase3:
 
 label Nanase4:
     scene backgroundstuco
-    "Nanase and I worked on our posters for a good couple hours, preparing for speeches and public speaking in general. 
+    "Nanase and I worked on our posters for a good couple hours, preparing for speeches and public speaking in general."
     "Nanase’s had a border of panda stickers and some crudely drawn books on her adverts. I tried my best to keep my letters the same size on the stupid thing."
 
     nk "-and then in episode 145, Pandeku crashed this underground speakeasy run by flamingos." 
