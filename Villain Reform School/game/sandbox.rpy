@@ -186,6 +186,22 @@ label fight:
 
     jump fight_loop
 
+transform text_animated:
+    xpos 0.5
+    alpha 0.0
+    parallel:
+        ease 5.0 xpos 0.75
+        pause 0.5
+        ease 5.0 xpos 0.25
+        pause 0.5
+        repeat
+    parallel:
+        ease 1.0 alpha 1.0
+        pause 0.5
+        ease 1.0 alpha 0.0
+        pause 0.5
+        repeat
+
 label fight_loop:
 
     while turn_order is not fight_end:
@@ -226,13 +242,15 @@ screen fight_health:
 
     text "Nagen":
         color "#000000"
-        xanchor 0.5
+        xanchor 0.0
         yanchor 0.5
-        pos 1600, 75
+        pos 1600, 615
 
     # Nagen's Health
     bar:
-        pos 1600, 100
+        xanchor 0.0
+        yanchor 0.5
+        pos 1600, 665
         xmaximum 200
         value nagen_current_health
         range nagen_health
@@ -240,13 +258,15 @@ screen fight_health:
         right_bar "gui/HealthDark6.png"
 
     text "Mariko":
-        xanchor 0.5
+        xanchor 0.0
         yanchor 0.5
-        pos 1600, 275
+        pos 1600, 75
 
     # Mariko's Health
     bar:
-        pos 1600, 325
+        xanchor 0.0
+        yanchor 0.5
+        pos 1600, 125
         xmaximum 200
         value mariko_current_health
         range mariko_health
@@ -254,7 +274,9 @@ screen fight_health:
         right_bar "gui/HealthDark6.png"
 
     bar:
-        pos 1600, 425
+        xanchor 0.0
+        yanchor 0.5
+        pos 1600, 225
         xmaximum 200
         value mariko_fatigue
         range 100
@@ -263,22 +285,39 @@ screen fight_health:
 
 screen fight_menu:
 
-    hbox:
+    image "gui/button/AttackButton.png":
         xanchor 0.5
         yanchor 0.5
-        pos 0.5, 0.85
-        spacing 0.25
-        xsize 0.5
+        pos 215, 100
+        xysize 250, 150
+    
+    textbutton _("Attack"):
+        xanchor 0.5
+        yanchor 0.5
+        pos 225, 100
+        text_color "#000000"
+        text_hover_color "#444444"
+        action Hide("fight_menu"), Jump("nagen_attacks")
 
-        textbutton _("Attack"):
-            text_color "#000000"
-            text_hover_color "#444444"
-            action Hide("fight_menu"), Jump("nagen_attacks")
+    image "gui/button/PlainCombatButton.png":
+        xanchor 0.5
+        yanchor 0.5
+        pos 225, 200
+        xysize 200, 100
 
-        textbutton _("Defend"):
-            text_color "#000000"
-            text_hover_color "#444444"
-            action Hide("fight_menu"), Jump("nagen_defends")
+    textbutton _("Defend"):
+        xanchor 0.5
+        yanchor 0.5
+        pos 225, 200
+        text_color "#000000"
+        text_hover_color "#444444"
+        action Hide("fight_menu"), Jump("nagen_defends")
+
+    text "Agrabah":
+        xanchor 0.5
+        xpos 0.5
+        ypos 0.5
+        at text_animated
 
 default defending = False
 

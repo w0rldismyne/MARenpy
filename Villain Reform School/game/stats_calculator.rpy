@@ -1,26 +1,60 @@
 init python:
     class Character_Stats:
         def __init__(self):
-            self._Vigor = 0
-            self._Charm = 0
-            self._Intelligence = 0
-            self._Vision = 0
+            self._ATK = 0
+            self._HP = 0
+            self._SECONDARY = 0
 
         @property
-        def Vigor(self):
-            return self._Vigor
+        def ATK(self):
+            return self._ATK
 
         @property
-        def Charm(self):
-            return self._Charm
+        def HP(self):
+            return self._HP
 
         @property
-        def Intelligence(self):
-            return self._Intelligence
+        def Secondary(self):
+            return self._SECONDARY
 
-        @property
-        def Vision(self):
-            return self._Vision
+        def AutoConfigure(self):
 
-        def Recalibrate(self):
-            pass
+            self._ATK = 0
+            self._HP = 0
+            self._SECONDARY = 0
+
+            if Intel >= Vigor:
+                self._HP += 1
+            else:
+                self._ATK += 1
+
+            if Intel >= Charm:
+                self._HP += 1
+            else:
+                self._SECONDARY += 1
+
+            if Vigor >= Charm:
+                self._ATK += 1
+            else:
+                self._SECONDARY += 1
+
+            if self._HP == 2:
+                pass
+            elif self._HP == 1:
+                pass
+            else:
+                pass
+            
+            if self._ATK == 2:
+                pass
+            elif self._ATK == 1:
+                pass
+            else:
+                pass
+
+            if self._SECONDARY == 2:
+                pass
+            elif self._SECONDARY == 1:
+                pass
+            else:
+                pass
