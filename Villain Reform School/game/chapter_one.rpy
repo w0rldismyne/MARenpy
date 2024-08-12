@@ -108,6 +108,7 @@ label chapter_one:
     call chapter1_day5_event4 
 
     # Boss Battle
+    call chapter1_boss_scene
 
     call chapter1_day5_event_night
 

@@ -1,13 +1,10 @@
-label Ch1BossBattle:
-    
-    #[Fungus Cutscene]
-    #[BG: Field at Night]
+label chapter1_boss_scene:
 
     scene backgroundB1
     
     "I run to the practice field with all my might while keeping my phone close, hoping that at any moment, Hiro will answer my calls."
     "As the grass caves under my boots, I see three girls arguing amongst themselves. For a brief second, I thought I had made it in time."
-    "After all, it isn’t uncommon for the cheerleaders to monopolize the field. However…"
+    "After all, it isn’t uncommon for the cheerleaders to monopolize the field. However..."
 
     s "Answer the question." #(Irritated)
     
@@ -58,7 +55,7 @@ label Ch1BossBattle:
     hide MBase
     show JMad
 
-    j "...where is he?"
+    j "...Where is he?"
 
     hide JMad
     show MBase
@@ -103,7 +100,7 @@ label Ch1BossBattle:
 
         m "I think that might be why I was chosen. I don’t have anyone to rely on other than Rei and they still found us."
 
-        n "...who’s they?"
+        n "...Who’s they?"
 
         m "I’m not sure, but they seem to know a lot about you. I think it’s the people you used to work for."
 
@@ -116,115 +113,111 @@ label Ch1BossBattle:
 
         m "Nagen, please. Run."
 
-    elif $ mRep >= 10:
+        g "It seems your opponent doesn’t want to fight you. This is your chance to convince them to join your side. One wrong move and combat will begin."
+
+        n "I’m not going to fight anyone."
+
+        menu:
+            "Where's Hiro":
+                jump chapter1_boss_intro
+            "I’m no coward":
+                jump chapter1_boss_intro
+            "You’re hurt":
+                pass
+
+        n "We both know you’re in no position to fight right now. If you keep pushing yourself like this, you’re going to pass out again. Wait, is this why you’ve been freaking out about not having enough time? Do you think something’s going to happen to you?"
+
+        m "They found this place and where I live, they even know where my friends are. I have every right to be scared. I’m not being paranoid."
+
+        menu:
+            "I can help":
+                jump chapter1_boss_intro
+            "Let's find the teachers":
+                jump chapter1_boss_intro
+            "It's not your responsibility":
+                pass
+
+        n "You don’t have to take on everything yourself. No one’s blaming you for what happened, but trying to fix things by yourself, it just makes things worse."
+
+        #[If Vision > ?] For later ...
+        #
+        #n "Believe me, I’ve tried to get this right so many times."
+
+        m "Don’t you think I know that!? My original squad is gone, and even though I know they made their own choices, that doesn’t help either. Nothing I do is working, but I can’t stop trying. What else am I supposed to do?"
+
+        n "Let us help you. You’ve been fighting alone for too long. Tell us where Hiro is so we can get you out of this mess."
+
+        m "...Okay…"
+
+        "She snaps her fingers again, signaling to Rei and Setsuna to go to the scoreboard."
+
+        u "About time. What’s their damage anyway?"
+
+        m "I’m not allowed to say. Honestly, if Hiro hadn’t cooperated, I would have been in more trouble than I already am."
+
+        j "He turned himself in?"
+
+        m "...Yeah. He didn’t want you guys getting in trouble because of him. I guess that’s the one thing we can agree on... Once the teachers find out about what happened, I might not see you for a while."
+
+        "She turns and walks off the field, not wanting to face Hiro after what she’s done. Both cheerleaders are having to support his weight as they bring him to us."
+
+        j "Is he awake? What the hell happened?"
+
+        h "I’m awake, it’s just hard to move with all this crap they put on me."
+
+        re "I’m so sorry, Hiro. I honestly don’t know what to think anymore."
+
+        s "We should go talk to Principal Thani. I’m sure these guys can handle taking care of Hiro."
+
+        "Rei hesitates a moment before letting him go and following in Mariko’s footsteps."
+
+        u "Can we really trust them?"
+
+        h "Are you kidding? I thought they’d never leave."
+
+        "Uitto and Jona fuss with the overlapping belts as he speaks."
+
+        h "I never thought Mariko would resort to something so underhanded. Guess all that self righteous talk was just that, talk."
+
+        n "I could have told you that. I can’t believe after all we went through, you’d just turn yourself in like that."
+
+        h "Because it’s my fault we all got stuck here. If I hadn’t convinced people to put on those helmets, things wouldn’t have gotten so bad."
+
+        if Villain >= Hero:
+
+            n "That doesn’t mean you should throw yourself to the wolves. What if you’d actually gotten hurt?"
+
+            h "....."
+
+            j "You could have told us what you were doing instead of running off on your own again."
+
+            h "....."
+
+            u "Guys, quit ganging up on him. What matters is nothing serious happened, at least not yet. We should check out that tape before the teachers find out about it."
+
+            jump chapter1_boss_player_choice
+
+        n "It’s not like putting them on was your idea to begin with. Besides we- I wasn’t completely honest about what they did."
+
+        j "Nagen!"
+
+        n "But it’s true. I thought if you knew how… complete the brainwashing was, you wouldn’t go through with it, so we lied. All of us did."
+
+        h "But I did know. I’m not stupid, Nagen, I could see what was happening out there. I just convinced myself it would all be worth it in the end. I wanted to believe we’re the good guys."
+
+        u "We are the good guys! Don’t let all this mess with your head. Good guys make mistakes too."
+
+        n "And right now, we gotta figure out who's behind this. Hopefully, that tape will give us some answers."
+
+        jump chapter1_boss_player_choice
+
+    if mRep >= 10:
         m "I promised, didn’t I? ‘No matter what happens, I’ll protect you.’"
         m "This is the only thing I can do right now."
 
-        call MarikoBonus
+        jump mariko_bonus_scene
 
-
-
-    #[Main Branch]
-    #-It seems your opponent doesn’t want to fight you. This is your chance to convince them to join your side. One wrong move and combat will begin.-
-    
-    n "I’m not going to fight anyone."
-
-    #[Player Choice]
-    #A. Where’s Hiro
-    #[Skip to Pre-Combat 1]
-    #B. I’m no coward
-    #[Skip to Pre-Combat 1]
-    #C. You’re hurt
-    
-    n "We both know you’re in no position to fight right now. If you keep pushing yourself like this, you’re going to pass out again. Wait, is this why you’ve been freaking out about not having enough time? Do you think something’s going to happen to you?"
-
-    m "They found this place and where I live, they even know where my friends are. I have every right to be scared. I’m not being paranoid."
-
-    #[Secondary Choice]
-    #A. I can help
-    #[Skip to Pre-Combat 1]
-    #B. Let’s find the teachers
-    #[Skip to Pre-Combat 1]
-    #C. It’s not your responsibility
-    
-    n "You don’t have to take on everything yourself. No one’s blaming you for what happened, but trying to fix things by yourself, it just makes things worse."
-
-    #[If Vision > ?] 
-    
-    n "Believe me, I’ve tried to get this right so many times."
-
-    #[Else]
-    
-    m "Don’t you think I know that!? My original squad is gone, and even though I know they made their own choices, that doesn’t help either. Nothing I do is working, but I can’t stop trying. What else am I supposed to do?"
-
-    n "Let us help you. You’ve been fighting alone for too long. Tell us where Hiro is so we can get you out of this mess."
-
-    m "...okay…"
-
-    "She snaps her fingers again, signaling to Rei and Setsuna to go to the scoreboard."
-
-    u "About time. What’s their damage anyway?"
-
-    m "I’m not allowed to say. Honestly, if Hiro hadn’t cooperated, I would have been in more trouble than I already am."
-
-    j "He turned himself in?"
-
-    m "...yeah. He didn’t want you guys getting in trouble because of him. I guess that’s the one thing we can agree on... Once the teachers find out about what happened, I might not see you for a while."
-
-    "She turns and walks off the field, not wanting to face Hiro after what she’s done. Both cheerleaders are having to support his weight as they bring him to us."
-
-    j "Is he awake? What the hell happened?"
-
-    h "I’m awake, it’s just hard to move with all this crap they put on me."
-
-    re "I’m so sorry, Hiro. I honestly don’t know what to think anymore."
-
-    s "We should go talk to Principal Thani. I’m sure these guys can handle taking care of Hiro."
-
-    "Rei hesitates a moment before letting him go and following in Mariko’s footsteps."
-
-    u "Can we really trust them?"
-
-    h "Are you kidding? I thought they’d never leave."
-
-    "Uitto and Jona fuss with the overlapping belts as he speaks."
-
-    h "I never thought Mariko would resort to something so underhanded. Guess all that self righteous talk was just that, talk."
-
-    n "I could have told you that. I can’t believe after all we went through, you’d just turn yourself in like that."
-
-    h "Because it’s my fault we all got stuck here. If I hadn’t convinced people to put on those helmets, things wouldn’t have gotten so bad."
-
-    #[If Villain > Hero]
-    
-    n "That doesn’t mean you should throw yourself to the wolves. What if you’d actually gotten hurt?"
-
-    h "....."
-
-    j "You could have told us what you were doing instead of running off on your own again."
-
-    h "....."
-
-    u "Guys, quit ganging up on him. What matters is nothing serious happened, at least not yet. We should check out that tape before the teachers find out about it."
-
-    #[Skip to Dorm Scene]
-    #[Else Hero > Villain] 
-    
-    n "It’s not like putting them on was your idea to begin with. Besides we- I wasn’t completely honest about what they did."
-
-    j "Nagen!"
-
-    n "But it’s true. I thought if you knew how… complete the brainwashing was, you wouldn’t go through with it, so we lied. All of us did."
-
-    h "But I did know. I’m not stupid, Nagen, I could see what was happening out there. I just convinced myself it would all be worth it in the end. I wanted to believe we’re the good guys."
-
-    u "We are the good guys! Don’t let all this mess with your head. Good guys make mistakes too."
-
-    n "And right now, we gotta figure out who's behind this. Hopefully, that tape will give us some answers."
-
-    #[Skip to Dorm Scene]
-label Precombat1:
-    #[Pre-Combat 1]
+label chapter1_boss_intro:
     
     m "I gave you a chance to run. It’s not my fault you didn’t listen to me."
 
@@ -247,32 +240,12 @@ label Precombat1:
     n "I don’t want to fight you."
 
     m "I’m afraid you don’t have a choice."
-label combat1:
-    #Combat 1
-    #[Unity Puzzle Level]
-    #(The following will be an RPG style puzzle fight where the goal is to not attack and block every round. The enemy has 2 health bars: one for HP and one for energy. Each round, energy will dip by 1/10.) 
-    #(For Mariko’s VA: Mariko is trying to bait Nagen/Player into hitting her. She is cocky/angry. The following lines play during combat each time the energy bar drops.)
-    
-    m "It doesn’t matter what you do, Nagen, I won’t feel a thing."
 
-    "But just because she can’t feel it, doesn’t mean she can’t be injured."
+    jump chapter1_boss_battle_initial
 
-    m "This is nothing compared to cheer camp. Do you know how many broken bones I’ve walked off? What’s the matter, Nagen, scared to fight a girl?"
-
-    "Why is she purposely egging me on?"
-
-    m "You’re making this too easy. Even the bottom left of the pyramid could deck you with one punch."
-
-    "She says that, but she can barely move in that costume."
-
-    m "This isn’t going to work if you don’t fight back. C’mon! Don’t you want to save your friend?"
+label chapter1_boss_battle_midfight_scene:
 
     "Wait, does she... want me to hit her?"
-
-label midfight_cutscene:
-    #[Once Energy or Health is at ½]
-    #Midfight Cutscene
-    #[Fungus Scene]
     
     n "This isn’t going anywhere. Just give up already."
 
@@ -308,58 +281,57 @@ label midfight_cutscene:
 
     n "He didn’t know."
 
-    #[If Hero > Villain]
-    #[CG of Hiro’s Injury]
+    if Hero > Villain:
 
+        #[CG of Hiro’s Injury]
+        scene backgroundFB11
+
+        "Hiro never wanted anyone to get hurt. He would sooner get himself killed than let others fight for him. No matter how awful people were, he’d always make excuses for them. He wanted everyone to be happy."
+
+        #[CG of Odori and Nagen flanking young Hiro, offering a gun.]
+        scene backgroundFB5
+
+        "So we lied to him about Lethe’s predictions. We told him no one would get hurt as long as he did exactly what we told him. As crazy as our plan was, he never could figure out how to tell us no."
+
+        #[CG of Hiro blocking out the world with headphones]
+        scene backgroundFB2
+
+        "After people started to die, he shut everyone out. Despite our best efforts to hide the truth, I could see him counting how many people made it back every night. He blamed himself for everything going to shit."
+
+        #[CG of Hiro surrounded by monitors of the destroyed city]
+
+        "When the Proficiency Management Committee demanded for our leader to surrender, Lethe met them in his stead."
+
+        #[Same CG in full color, with scribbled out scenes]
+        scene backgroundB3
+
+        "HIe bdloanmtewd hainmtsteolsf feoer htehr diesa!t!h."
+
+        #[Return to previous CG]
+
+        "He tried to face the people responsible head on... and lost. I thought I’d never see him again."
+
+        # Back to Boss Arena
+        scene backgroundmariko
+
+        n "The only reason Hiro came to you was to stop anyone else from getting hurt, including you. He already felt guilty for what happened. What more do you want?"
+
+        m "I want to guarantee my friends’ safety. Your pretty words aren’t enough to save anyone."
+
+        return
+
+    #[CG of Hiro’s Injury]
     scene backgroundFB11
-    
-    "Hiro never wanted anyone to get hurt. He would sooner get himself killed than let others fight for him. No matter how awful people were, he’d always make excuses for them. He wanted everyone to be happy."
-
-    #[CG of Odori and Nagen flanking young Hiro, offering a gun.]
-
-    scene backgroundFB5
-    
-    "So we lied to him about Lethe’s predictions. We told him no one would get hurt as long as he did exactly what we told him. As crazy as our plan was, he never could figure out how to tell us no."
-
-    #[CG of Hiro blocking out the world with headphones]
-
-    scene backgroundFB2
-    
-    "After people started to die, he shut everyone out. Despite our best efforts to hide the truth, I could see him counting how many people made it back every night. He blamed himself for everything going to shit."
-
-    #[CG of Hiro surrounded by monitors of the destroyed city]
-    
-    "When the Proficiency Management Committee demanded for our leader to surrender, Lethe met them in his stead."
-
-    #[Same CG in full color, with scribbled out scenes]
-
-    scene backgroundB3
-    
-    "HIe bdloanmtewd hainmtsteolsf feoer htehr diesa!t!h."
-
-    #[Return to previous CG]
-    
-    "He tried to face the people responsible head on... and lost. I thought I’d never see him again."
-
-    scene backgroundmariko
-
-    #[Return to Boss Battle arena]
-    
-    n "The only reason Hiro came to you was to stop anyone else from getting hurt, including you. He already felt guilty for what happened. What more do you want?"
-
-    m "I want to guarantee my friends’ safety. Your pretty words aren’t enough to save anyone."
-
-    #[Move to Combat 2]
-    #[Else Villain > Hero]
-    #[CG of Hiro’s Injury]
     
     "Hiro wanted to see the good in anyone, even when they hurt him. It made him easy to manipulate. If I so much as looked disappointed, he’d immediately cave. It’s why he made such a wonderful puppet."
 
     #[CG of Odori and Nagen flanking young Hiro, offering a gun.]
+    scene backgroundFB5
     
     "We’d feed him our ideas and Hiro would blindly spread them to anyone who’d listen. As long as he thought he was in charge, it didn’t matter what we said, he’d still do it. After all, it’s a leader’s job to make the hard decisions."
 
     #[CG of Hiro blocking out the world with headphones]
+    scene backgroundFB2
     
     "After his father was out of the picture and Lethe passed, we were all he had left. It was kind of pathetic watching him talk to the brainwashed soldiers like they would answer him."
 
@@ -368,6 +340,7 @@ label midfight_cutscene:
     "When the time came, he served his purpose as our figurehead. Everyone associates his face as the mastermind behind the attacks. Even now, he’s taking the blame in our place, all of his own volition. He’s too useful of a pawn to throw out like this."
 
     #[Return to Boss Battle arena]
+    scene backgroundmariko
     
     n "It’s not Hiro’s fault people trusted him more than you, Mariko. You’re only making things worse by picking a fight you will lose."
 
@@ -375,28 +348,7 @@ label midfight_cutscene:
 
     return
 
-label combat2:
-    #Combat 2
-    #[Unity Puzzle]
-    #(The following lines play in between rounds. At this point, Mariko is fully mourning her loss, trying to draw on her memories from the past for strength. However, the damage that’s been done is evident, as she’s been battling survivor’s guilt this whole time.)
-    
-    m "Kanon would have gone for your eyes."
-
-    m "Hiyoko would probably be scolding me alongside Rei."
-
-    m "Ty and Kiki… They stayed together the whole time, brainwashing be damned..."
-
-    m "Did any of them think of me at all while I was looking for them? If I can just... take you down. They’ll forgive me... they’ll have to forgive me."
-
-    "Mariko’s ankle gives out beneath her. A tangled mess of belts and heels lays helpless on the ground."
-
-    m "Please... forgive me."
-
-    "But I know she isn’t talking to me."
-
-label MarikoSpare:
-    #[Transition to Fungus scene. The player will get to choose what happens to the villain.]
-    #A. Spare (+Rep)(+Hero)
+label chapter1_boss_spare:
     
     "I know she wrecked havoc, but I really can’t kick a person while they’re down."
 
@@ -431,11 +383,10 @@ label MarikoSpare:
     m "Nagen, school is the least of our worries."
 
     "The teachers quickly detain Mariko and her friends for questioning."
-    call Ch1TapeScene
 
-label MarikoPunish:
-    #[Move to Tape Scene]
-    #B. Punish (+Villain)
+    jump chapter1_tape_scene
+
+label chapter1_boss_punish:
     
     n "Of course I’ll forgive you, you provided valuable entertainment for everyone."
 
@@ -477,16 +428,15 @@ label MarikoPunish:
 
     v "Do you want someone to listen to your side or not?"
 
-    n "...fine."
+    n "...Fine."
 
     "I spend over three hours in her office explaining everything in detail. In the end, she says nothing and sends me away."
 
     "I don’t think I’m in trouble, at least not directly, but I’m definitely worried she’ll call my fosters and tell them what happened."
 
-    call Ch1TapeScene
-    #[Move to Tape Scene] 
+    jump chapter1_tape_scene 
 
-label MarikoBonus:
+label mariko_bonus_scene:
 
     #(Chapter 1, prior to the tape scene? If Mariko = MAX)
     #[BG: Grey watercolor. POV Mariko.]
@@ -557,9 +507,9 @@ label MarikoBonus:
     
     m "How long have I been running in circles?"
 
-    call MarikoSpare
+    jump chapter1_boss_player_choice
 
-label Ch1TapeScene:
+label chapter1_tape_scene:
     #[BG: Outside the Dorm]
     
     "After all was said and done, Mariko was the one who got in trouble and the rest of us were let go. We still haven’t told them about the tape. After all, we don't even know what’s on it. I wanted a chance to talk to Hiro before the others come meet up with us to watch it. Hiro doesn't seem so thrilled."
@@ -573,7 +523,8 @@ label Ch1TapeScene:
     h "Mariko's already taken care of, so can you please put away the kid gloves?"
 
     h "We've been apart for two years, but you all act like you're the only ones who got older."
-    if Villain > Hero:
+
+    if Villain >= Hero:
         n "I figured you'd run your ideas by us before running off and doing something stupid, y'know, like you're supposed to."
 
         h "And I figured you'd respect the decisions of your old commander instead of undermining me at every turn."
@@ -606,6 +557,8 @@ label Ch1TapeScene:
 
         n "Of course they will. Everything just takes a little time."
 
+        return
+
     #[Return to Main Branch]
     #[If Hero]
     else:
@@ -629,3 +582,5 @@ label Ch1TapeScene:
         h "No one cares that we're trying."
 
         n "You care, don't you? That's all that should matter. Fuck the people too impatient to wait."
+
+        return

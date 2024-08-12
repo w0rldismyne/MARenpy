@@ -39,22 +39,22 @@ init python:
                 self._SECONDARY += 1
 
             if self._HP == 2:
-                pass
+                self._HP = 24
             elif self._HP == 1:
-                pass
+                self._HP = 16
             else:
-                pass
+                self._HP = 12
             
             if self._ATK == 2:
-                pass
+                self._ATK = 8
             elif self._ATK == 1:
-                pass
+                self._ATK = 6
             else:
-                pass
+                self._ATK = 4
 
             if self._SECONDARY == 2:
-                pass
+                self._SECONDARY = 12
             elif self._SECONDARY == 1:
-                pass
+                self._SECONDARY = 8
             else:
-                pass
+                self._SECONDARY = 6
