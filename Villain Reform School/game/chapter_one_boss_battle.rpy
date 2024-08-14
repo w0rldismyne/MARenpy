@@ -197,14 +197,39 @@ transform boss_hint1:
         pause 2.0
         repeat
     parallel:
-        ease renpy.random.randint(1.0, 2.0) alpha 0.0
-        pause renpy.random.randint(2.0, 3.0)/2
-        ease renpy.random.randint(1.0, 2.0) alpha 1.0
-        pause renpy.random.randint(2.0, 4.0)
+        ease 1 alpha 0.0
+        pause 2.5
+        ease 1.5 alpha 1.0
+        pause 3
         repeat
 
 transform boss_hint2:
-        pass
+    rotate 90
+    block:
+        parallel:
+            choice:
+                xoffset -10
+            choice:
+                xoffset -5
+            choice:
+                xoffset 0
+            choice:
+                xoffset 5
+            choice:
+                xoffset 10
+        parallel:
+            choice:
+                yoffset -10
+            choice:
+                yoffset -5
+            choice:
+                yoffset 0
+            choice:
+                yoffset 5
+            choice:
+                yoffset 10
+        pause 0.4
+        repeat
 
 screen floating_text:
     if turns_passed % 3 is 1:
@@ -382,9 +407,7 @@ label chapter1_boss_battle_evaluations:
 
         elif mariko_current_health <= 0:
 
-            "I won!!! ... Did I?"
-
-            g "You Lose!"
+            jump chapter1_boss_player_choice
     
     return
 
