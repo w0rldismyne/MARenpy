@@ -490,6 +490,9 @@ label post_mariko_turn:
 
 label chapter1_boss_player_choice:
 
+    hide screen boss_mariko
+    hide screen boss_overlay
+
     menu:
         "Spare":
             jump chapter1_boss_spare
