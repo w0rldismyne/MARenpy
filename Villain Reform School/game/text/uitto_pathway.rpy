@@ -309,7 +309,7 @@ label Uitto2:
     return
 
 label Uitto3:
-    scene background stage
+    scene backgroundstage
 
     n "So, how’s the trail blazing going?"
 
