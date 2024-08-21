@@ -115,6 +115,14 @@ label chapter_one:
     # Chapter 2
 
 label chapter1_freetime:
+
+    if chapter1_event is chapter1_free_time_morning_break:
+        scene backgroundschool
+    elif chapter1_event is chapter1_free_time_after_school:
+        scene backgroundschoolnoon
+    elif chapter1_event is chapter1_free_time_evening:
+        scene backgroundcourtyardnight
+
     menu:
         "Freetime"
         "Hang Out":
@@ -126,7 +134,7 @@ label chapter1_freetime:
                 "Hiro":
                     call HiroVisit
                 "Nanase":
-                    pass
+                    call NanaseVisit
                 "Mariko":
                     call MarikoVisit
                 "Yoku":

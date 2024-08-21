@@ -104,7 +104,7 @@ label MarikoP1:
 
             "Somehow, I got roped into being a gopher for the Cheer Squad."
 
-            $ food == true
+            $ food = true
         "If you could change one thing, what would it be?":
             $ Vigor += 1
 

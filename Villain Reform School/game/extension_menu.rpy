@@ -1,3 +1,24 @@
+screen test_button:
+    
+    imagebutton:
+        xanchor 0.5
+        yanchor 1.0
+        xpos 0.5
+        ypos 0.05
+        focus_mask True
+        idle "gui/button/PlainCombatButton.png"
+        hover "gui/button/PlainCombatButton.png"
+        action Show("test_menu")
+        at test_extension
+
+transform test_extension:
+    ypos 0.05
+    on hover:
+        linear 0.5 ypos 0.1
+    on idle:
+        linear 0.5 ypos 0.05
+    
+
 screen test_menu:
     modal True
 

@@ -251,6 +251,9 @@ label chapter1_boss_battle_midfight_scene:
 
     m "Oh? But I’ve come too far to give up now. It’s not like you’re my target anyway. I just need you to teach him a very important lesson."
 
+    hide screen boss_mariko
+    with dissolve
+
     scene backgroundB2
 
     "The scoreboard that overlooks the field lights up, revealing where Hiro had been bound and gagged."
@@ -270,6 +273,8 @@ label chapter1_boss_battle_midfight_scene:
     n "This isn’t the same thing."
 
     scene backgroundmariko
+
+    show screen boss_mariko
 
     m "But it feels the same."
     m "We were awake inside those voiceless meat shields you turned us into."

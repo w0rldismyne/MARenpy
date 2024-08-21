@@ -284,7 +284,6 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Test") action Show("test_menu")
             textbutton _("Stats") action Show("stats")
             textbutton _("Inventory") action Show("inventory")
             textbutton _("Back") action Rollback()

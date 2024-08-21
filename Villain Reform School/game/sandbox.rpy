@@ -99,6 +99,8 @@ return
 
 label new_menu:
 
+    show screen test_button
+
     $ choice_many_choices = True
     menu:
         "Location 01":
@@ -111,4 +113,6 @@ label new_menu:
             pass
 
     $ choice_many_choices = False
+
+    hide screen test_button
 return

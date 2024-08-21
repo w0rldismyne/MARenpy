@@ -217,17 +217,31 @@ transform boss_hint2:
                 xoffset 5
             choice:
                 xoffset 10
+            choice:
+                xoffset 15
+            choice:
+                xoffset 20
+            choice:
+                xoffset 30
+            choice:
+                xoffset 40
         parallel:
             choice:
                 yoffset -10
             choice:
-                yoffset -5
-            choice:
                 yoffset 0
             choice:
-                yoffset 5
-            choice:
                 yoffset 10
+            choice:
+                yoffset 20
+            choice:
+                yoffset 30
+            choice:
+                yoffset 35
+            choice:
+                yoffset 40
+            choice:
+                yoffset 45
         pause 0.4
         repeat
 
@@ -237,7 +251,7 @@ screen floating_text:
             xanchor 0.5
             yanchor 0.5
             xpos 710
-            ypos 0.4
+            ypos 0.1
             at boss_hint1
 
     if mariko_fatigue >= 50:
@@ -245,7 +259,7 @@ screen floating_text:
             xanchor 0.5
             yanchor 0.5
             xpos 1210
-            ypos 0.85
+            ypos 0.8
             at boss_hint2
 
 label nagen_turn:
@@ -359,7 +373,7 @@ label chapter1_boss_battle_conditions:
 
     if nagen_current_health <= 0:
 
-        $ turn_order = fight_end
+        $ turn_order = round_end
         $ fight_end_state = lose
 
     if mariko_current_health <= 12 or mariko_fatigue >= 50:
@@ -381,12 +395,12 @@ label chapter1_boss_battle_conditions:
         
         if mariko_current_health <= 0:
 
-            $ turn_order = fight_end
+            $ turn_order = round_end
             $ fight_end_state = lose
 
     if mariko_fatigue >= 100:
 
-        $ turn_order = fight_end
+        $ turn_order = round_end
         $ fight_end_state = win
 
     return
