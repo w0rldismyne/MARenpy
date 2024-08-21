@@ -600,6 +600,7 @@ label Uitto4:
             u "t’s your loss."
     $ Charm += 1
     $ uRep += 1
+    $ uTurn += 1
  
     n "You’re pretty good with that racket."
 
