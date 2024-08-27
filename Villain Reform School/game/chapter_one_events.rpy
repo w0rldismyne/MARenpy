@@ -1,8 +1,11 @@
 #11111
 label chapter1_day1_event_morning:
-    scene backgroundroom
 
     play music "music/CryingOverYou.mp3"
+
+    scene backgroundC1_T
+    #Set a wait time
+    scene backgroundroom
 
     kk "Good morning, brotato chips!"
     kk "We’re going to start this school year with a banging opening ceremony in the amphitheater before classes start."
@@ -3096,6 +3099,8 @@ label chapter1_day5_event_night:
 
     j "No bummers!"
 
+    scene backgroundstatic
+
     "I slide the tape in and watch as static peels away to reveal a grainy image of a familiar logo."
 
     q "Mariko Genki, your bravery during the riots has not gone unnoticed. We would like to give you the support to protect the people you care about most."
@@ -3103,6 +3108,8 @@ label chapter1_day5_event_night:
     q "We know you'll make the right choice. Sincerely, Apex of the Karmic Gladiators."
 
     "The video is consumed by static once more."
+
+    scene backgroundroomn
 
     h "...the Karmic Gladiators sent her? Why!? We were junior heroes for them."
 
@@ -3129,6 +3136,8 @@ label chapter1_day5_event_night:
     "The tape sputters and then a curtain displays on the screen. Slowly a girl, suspended by ribbons, is lowered into the frame."
 
     play music "music/#28.mp3"
+
+    scene backgroundC1_4
 
     if Villain > Hero:
     #[If Villain]
@@ -3160,11 +3169,15 @@ label chapter1_day5_event_night:
     a "Just know, there's a lot of people counting on you to fail."
     a "Au Revoir."
 
+    scene backgroundstatic
+
     play music "music/VHS.mp3"
 
     "She disappears behind the static. We sit there drowning in white noise for a few moments before Uitto turns off the TV."
 
     play music "music/INeedTo.mp3"
+
+    scene backgroundroomn
 
     u "'False Heroes', just who does she think she is?"
 
@@ -3191,5 +3204,7 @@ label chapter1_day5_event_night:
     "We marathon B-grade movies long into the night. The next day, we find out that Mariko won’t be coming back to class for a long time."
 
     scene backgroundC1_E
+
+    g "Chapter One End"
 
     return

@@ -286,24 +286,28 @@ label chapter1_boss_battle_midfight_scene:
 
     n "He didn’t know."
 
+    hide screen boss_mariko
+
     if Hero > Villain:
 
         #[CG of Hiro’s Injury]
-        scene backgroundFB11
+        scene backgroundfb11
 
         "Hiro never wanted anyone to get hurt. He would sooner get himself killed than let others fight for him. No matter how awful people were, he’d always make excuses for them. He wanted everyone to be happy."
 
         #[CG of Odori and Nagen flanking young Hiro, offering a gun.]
-        scene backgroundFB5
+        scene backgroundfb5
 
         "So we lied to him about Lethe’s predictions. We told him no one would get hurt as long as he did exactly what we told him. As crazy as our plan was, he never could figure out how to tell us no."
 
         #[CG of Hiro blocking out the world with headphones]
-        scene backgroundFB2
+        scene backgroundfb2
 
         "After people started to die, he shut everyone out. Despite our best efforts to hide the truth, I could see him counting how many people made it back every night. He blamed himself for everything going to shit."
 
         #[CG of Hiro surrounded by monitors of the destroyed city]
+
+        scene backgroundB4
 
         "When the Proficiency Management Committee demanded for our leader to surrender, Lethe met them in his stead."
 
@@ -314,44 +318,50 @@ label chapter1_boss_battle_midfight_scene:
 
         #[Return to previous CG]
 
+        scene backgroundB4
+
         "He tried to face the people responsible head on... and lost. I thought I’d never see him again."
 
         # Back to Boss Arena
         scene backgroundmariko
 
+        show screen boss_mariko
+
         n "The only reason Hiro came to you was to stop anyone else from getting hurt, including you. He already felt guilty for what happened. What more do you want?"
 
         m "I want to guarantee my friends’ safety. Your pretty words aren’t enough to save anyone."
-
         return
-
-    #[CG of Hiro’s Injury]
-    scene backgroundFB11
+    else:
+        #[CG of Hiro’s Injury]
+        scene backgroundfb11
     
-    "Hiro wanted to see the good in anyone, even when they hurt him. It made him easy to manipulate. If I so much as looked disappointed, he’d immediately cave. It’s why he made such a wonderful puppet."
+        "Hiro wanted to see the good in anyone, even when they hurt him. It made him easy to manipulate. If I so much as looked disappointed, he’d immediately cave. It’s why he made such a wonderful puppet."
 
-    #[CG of Odori and Nagen flanking young Hiro, offering a gun.]
-    scene backgroundFB5
+        #[CG of Odori and Nagen flanking young Hiro, offering a gun.]
+        scene backgroundfb5
     
-    "We’d feed him our ideas and Hiro would blindly spread them to anyone who’d listen. As long as he thought he was in charge, it didn’t matter what we said, he’d still do it. After all, it’s a leader’s job to make the hard decisions."
+        "We’d feed him our ideas and Hiro would blindly spread them to anyone who’d listen. As long as he thought he was in charge, it didn’t matter what we said, he’d still do it. After all, it’s a leader’s job to make the hard decisions."
 
-    #[CG of Hiro blocking out the world with headphones]
-    scene backgroundFB2
+        #[CG of Hiro blocking out the world with headphones]
+        scene backgroundfb2
     
-    "After his father was out of the picture and Lethe passed, we were all he had left. It was kind of pathetic watching him talk to the brainwashed soldiers like they would answer him."
+        "After his father was out of the picture and Lethe passed, we were all he had left. It was kind of pathetic watching him talk to the brainwashed soldiers like they would answer him."
 
-    #[CG of Hiro surrounded by monitors of the destroyed city]
+        #[CG of Hiro surrounded by monitors of the destroyed city]
+
+        scene backgroundB4
     
-    "When the time came, he served his purpose as our figurehead. Everyone associates his face as the mastermind behind the attacks. Even now, he’s taking the blame in our place, all of his own volition. He’s too useful of a pawn to throw out like this."
+        "When the time came, he served his purpose as our figurehead. Everyone associates his face as the mastermind behind the attacks. Even now, he’s taking the blame in our place, all of his own volition. He’s too useful of a pawn to throw out like this."
 
-    #[Return to Boss Battle arena]
-    scene backgroundmariko
+        #[Return to Boss Battle arena]
+        scene backgroundmariko
+
+        show screen boss_mariko
     
-    n "It’s not Hiro’s fault people trusted him more than you, Mariko. You’re only making things worse by picking a fight you will lose."
+        n "It’s not Hiro’s fault people trusted him more than you, Mariko. You’re only making things worse by picking a fight you will lose."
 
-    m "As long as I breathe, I’m not done fighting. I'll leave you with scars that will outlive me."
-
-    return
+        m "As long as I breathe, I’m not done fighting. I'll leave you with scars that will outlive me."
+        return
 
 label chapter1_boss_spare:
     
@@ -445,15 +455,18 @@ label mariko_bonus_scene:
 
     #(Chapter 1, prior to the tape scene? If Mariko = MAX)
     #[BG: Grey watercolor. POV Mariko.]
+    scene background_Mfb1
     
     m "I always used to think I was invincible, but my parents treated me like I was made of glass."
     m "I couldn't go anywhere without them shadowing me. That meant no sports, no clubs, and no school with friends for six whole years."
 
+    scene background_Mfb2
     #[Mariko on the couch in front of a TV. Tall shadows stretch behind her and over her head. As Estella talks, the background shifts to a lighter grey and the shadows shrink.]
     e "So you think your child has exceptional abilities? At Estella Academy, we tailor our curriculum around your child's... special attributes."
 
     M"Finally released from my bubble, I leapt at the chance to talk to kids my own age."
 
+    scene background_Mfb3
     #[Mariko surrounded by silhouettes of the cheer squad]
     M"Most of the girls in my class were in cheer, so I joined too. Even without auditioning, I was named captain of the squad."
 
@@ -466,6 +479,8 @@ label mariko_bonus_scene:
     re "I can tell you when you've hurt yourself if you tell me when I should take a break; deal?"
 
     m "But when the riots started…"
+    
+    scene background_Mfb4
 
     #[Same formation, but Mariko's blocking the exit to a building. There's fire outside.]
     
@@ -476,6 +491,8 @@ label mariko_bonus_scene:
     re "Everyone's scared. If Hiro found some place safer to hide, then I think we should believe him."
 
     m "Fine, don't listen to me! I don't want a bunch of liars on my team anyway!"
+
+    scene background_Mfb5
 
     #[Scene fades; Mariko's running through the city.]
 
@@ -497,16 +514,23 @@ label mariko_bonus_scene:
 
     m "Survive."
 
+    scene background_Mfb6
+
     #[Mariko at the school, still running]
     
     m "We were rescued, those of us left, and I was asked to find a 'new normal'."
     m "The shattered feeling dulled, but it never left."
     m "I combed through my old phone looking for their voices, for evidence they were there."
     m "Anything as long as I kept moving."
+
+    scene background_Mfb7
+
     m "Except I didn't know what I was moving toward anymore."
     m "When did the enemy I had to fight become my own body?"
     m "When did my will to fight gain a will of its own?"
     m "How do I make the pieces of my life fall back into place?"
+
+    scene background_Mfb8
 
     #[CG of Mariko in a hospital looking room, mirroring the CG of her on the couch.]
     

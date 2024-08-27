@@ -84,6 +84,7 @@ image backgroundhide           = "Backgrounds/RoofHideout.png"
 image backgroundparty          = "Backgrounds/roofparty.jpg"
 image backgroundschool         = "Backgrounds/School.png"
 image backgroundschoolnoon     = "Backgrounds/Schoolnoon.png"
+image backgroundstatic         = "Backgrounds/static.png"
 image backgroundlab            = "Backgrounds/science.jpg"
 image backgroundsew            = "Backgrounds/sew.jpg"
 image backgroundstage          = "Backgrounds/stage.png"
@@ -146,7 +147,7 @@ image HShame = "Sprites/Hiro/Hiroshame.png"
 image HSmirk = "Sprites/Hiro/Hirosmirk.png"
 image HSmug = "Sprites/Hiro/Hirosmug.png"
 image HSulk = "Sprites/Hiro/Hirosulk.png"
-image HSuppress = "Sprites/Hiro/Hirosupress.png"
+image HSuppress = "Sprites/Hiro/Hirosuppress.png"
 image HTALK1 = "Sprites/Hiro/HiroTALK1.png"
 image HTALK2 = "Sprites/Hiro/HiroTALK2.png"
 image HThisisfine = "Sprites/Hiro/Hirothisisfine.png"
@@ -209,6 +210,18 @@ image MBase = "Sprites/Mariko/Marikobase.png"
 
 #Momoko
 image MhBase = "Sprites/Momoko/momokobase.png"
+image MhAnger = "Sprites/Momoko/momokoanger.png"
+image MhAngerTalk = "Sprites/Momoko/momokoangertalk.png"
+image MhConfused = "Sprites/Momoko/momokoconfused.png"
+image MhHappy = "Sprites/Momoko/momokohappy.png"
+image MhManic = "Sprites/Momoko/momokomanic1.png"
+image MhOohShit = "Sprites/Momoko/momokobase.png"
+image MhPuzzle = "Sprites/Momoko/momokopuzzle.png"
+image MhSad = "Sprites/Momoko/momokosad.png"
+image MhSadTalk = "Sprites/Momoko/momokosadtalk.png"
+image MhSurprise = "Sprites/Momoko/momokosurprise.png"
+image MhTalk = "Sprites/Momoko/momokotalk.png"
+image MhTalk2 = "Sprites/Momoko/momokotalk2.png"
 
 #Mu
 image MuBase = "Sprites/Mu/Mu1.png"
@@ -327,15 +340,18 @@ image backgroundP1 = "Cgs/Prologue_1.png"
 image backgroundP2 = "CGs/Prologue_2.png"
 image backgroundP3 = "CGs/Prologue_3.png"
 image backgroundP4 = "CGs/Prologue_4.png"
+image backgroundP5 = "CGs/Prologue_5.png"
 image backgroundPT = "CGs/Prologue_T.png"
 image backgroundC1_1 = "CGs/Ch1_1.png"
 image backgroundC1_2 = "CGs/Ch1_2.png"
 image backgroundC1_3 = "CGs/Ch1_3.png"
+image backgroundC1_4 = "CGs/Ch1_4.png"
 image backgroundC1_T = "CGs/Ch1_T.png"
 image backgroundC1_E = "CGs/Ch1_E.png"
 image backgroundB1 = "CGs/Boss1_1.png"
 image backgroundB2 = "CGs/Boss1_2.png"
 image backgroundB3 = "CGs/Boss1_3.png"
+image backgroundB4 = "CGs/Boss1_4.jpg"
 image backgroundUPath = "CGs/UPath.png"
 image backgroundHPath = "CGs/HPath.png"
 image backgroundHPath2 = "CGs/HPath2.png"
@@ -343,6 +359,8 @@ image backgroundMPath = "CGs/MPath.png"
 image backgroundMPath2 = "CGs/MPath2.png"
 image backgroundNPath = "CGs/NPath.png"
 image backgroundYPath = "CGs/YPath.png"
+image backgroundDisc1 = "Backgrounds/disclaimer.png"
+image backgroundDisc2 = "Backgrounds/disclaimer2.png"
 
 #Hiros Flashbacks
 
@@ -357,6 +375,16 @@ image backgroundfb8 = "CGs/FB/HFB8.jpg"
 image backgroundfb9 = "CGs/FB/HFB9.jpg"
 image backgroundfb10 = "CGs/FB/HFB10.jpg"
 image backgroundfb11 = "CGs/FB/HFB11.jpg"
+
+#Marikos Flashbacks
+image background_Mfb1 = "CGs/MFB/MFB_1.png"
+image background_Mfb2 = "CGs/MFB/MFB_2.png"
+image background_Mfb3 = "CGs/MFB/MFB_3.png"
+image background_Mfb4 = "CGs/MFB/MFB_4.png"
+image background_Mfb5 = "CGs/MFB/MFB_5.png"
+image background_Mfb6 = "CGs/MFB/MFB_6.png"
+image background_Mfb7 = "CGs/MFB/MFB_7.png"
+image background_Mfb8 = "CGs/MFB/MFB_8.png"
 
 # Player's Stats
 default Vigor = 0
@@ -458,24 +486,26 @@ default check_laptop = False
 
 init python:
     listOfDirectories = ["Apex",
+        "Chisei",
         "Cop",
+        "Hiro",
+        "Ichita",
         "Inukai",
+        "Jona",
+        "Kazz",
+        "Kenzo",
         "Kietsu",
         "Koe",
         "Lethe",
-        "Odori",
-        "Sato",
-        "Uitto",
-        "Hiro",
-        "Jona",
-        "Kazz",
-        "Yoku",
+        "MaiMai",
+        "Momoko",
         "Mu",
-        "Koe",
+        "Odori",
         "Rei",
+        "Sato",
         "Setsuna",
-        "IChita",
-        "Maimai"
+        "Uitto",
+        "Yoku"
     ]
 
     def extendedSearchVoice(id):

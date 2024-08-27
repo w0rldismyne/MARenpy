@@ -2,6 +2,14 @@
 
 label prologue:
 
+    scene backgroundDisc1
+
+    g "Click to continue."
+
+    scene backgroundDisc2
+
+    g "Click to continue."
+
     play music "music/Undertow.mp3"
     scene backgroundpolice
 
@@ -166,11 +174,11 @@ label prologue:
             n "We both know this is shady as hell."
             n "I'll parrot any garbage you want me to say after I get my sentence."
 
-            call interrogation_end
+            jump interrogation_end
 
         "Refuse": #(Fast forwards past all choices, all points put in Intelligence)
             $ Intel += 4
-            call interrogation_1
+            jump interrogation_1
 
     label interrogation_1:
 
@@ -204,7 +212,7 @@ label prologue:
             "If I lie, I could be held in contempt of the court, but if I play the 'scapegoat', maybe they can get out of here unscathed."
             "Either way, someone has to answer for what we did."
 
-            call interrogation_2
+            jump interrogation_2
 
         "I don't have a choice": #(+Villian, +Vig)
             $ Villain += 1
@@ -224,7 +232,7 @@ label prologue:
 
             hide CopBase
 
-            call interrogation_2
+            jump interrogation_2
 
         "It's all part of the plan": #(+Int)
             $ Intel += 1
@@ -232,7 +240,7 @@ label prologue:
 
             "It's too dangerous to make a move now. Best to play along for now."
 
-            call interrogation_2
+            jump interrogation_2
 
         "I need to lighten my sentence": #(+Chr)
             $ Charm += 1
@@ -242,7 +250,7 @@ label prologue:
             "The more sympathy I can gain, the better."
             "No one will want to hear my side of the story if I act like the violent criminal they think I am."
 
-            call interrogation_2
+            jump interrogation_2
 
     #[Return to Main Branch]
     label interrogation_2:
@@ -278,7 +286,7 @@ label prologue:
             "Proficiencies were dangerous to the general public, but so is a pen if you use it correctly."
             "These people, however, just want to confirm what they already believe, so I'll just tell them what they want to hear."
 
-            call interrogation_3
+            jump interrogation_3
 
         "The one who gathered the army": #(+Hero, +Vig)
             $ Hero += 1
@@ -291,7 +299,7 @@ label prologue:
             "He was the first one of us to get captured by these hypocrites."
             "Even after getting dragged down, he insisted on taking credit for what happened. I hope he's okay."
 
-            call interrogation_3
+            jump interrogation_3
 
         "The one who planned the attack": #(+Int)
             $ Intel += 1
@@ -302,7 +310,7 @@ label prologue:
             "I was lucky Maimai was crazy enough to spare my life."
             "If I manage to get out of this, I should thank her properly."
 
-            call interrogation_3
+            jump interrogation_3
 
         "The club president": #(+Vis)
             $ Vision += 1
@@ -322,7 +330,7 @@ label prologue:
 
             hide CopBase
 
-            call interrogation_3
+            jump interrogation_3
 
     #[Return to Main Branch]
     label interrogation_3:
@@ -364,7 +372,7 @@ label prologue:
 
             hide KoeBase
 
-            call interrogation_4
+            jump interrogation_4
 
         "Rebuild the city": #(+Hero, +Int)
             $ Hero += 1
@@ -390,7 +398,7 @@ label prologue:
 
             hide KoeBase
 
-            call interrogation_4
+            jump interrogation_4
 
         "Rebuild society in my vision": #(+Villain, +Vis)
             $ Villain += 1
@@ -415,7 +423,7 @@ label prologue:
 
             hide KoeBase
 
-            call interrogation_4
+            jump interrogation_4
 
         "I don't know": #(+Hero, +Chr)
             $ Hero += 1
@@ -443,7 +451,7 @@ label prologue:
 
             hide KoeBase
 
-            call interrogation_4
+            jump interrogation_4
 
     #[Return to Main Branch]
     label interrogation_4:
@@ -498,7 +506,7 @@ label prologue:
 
             hide KoeBase
 
-            call interrogation_end
+            jump interrogation_end
 
         "It was convenient": #(+Villain)
             $ Villain += 1
@@ -527,7 +535,7 @@ label prologue:
 
             hide KoeBase
 
-            call interrogation_end
+            jump interrogation_end
 
         "It was safest": #(+Villain)
             $ Villain += 1
@@ -555,7 +563,7 @@ label prologue:
 
             hide KoeBase
 
-            call interrogation_end
+            jump interrogation_end
 
         "To end the war": #(+Hero)
             $ Hero += 1
@@ -767,7 +775,7 @@ label prologue:
 
             hide MMBase
 
-            call life_1
+            jump life_1
 
         "Where are we going?": #(+Int)
             $ Intel += 1
@@ -794,7 +802,7 @@ label prologue:
 
             hide MMBase
 
-            call life_1
+            jump life_1
 
     #[Return to Main Branch]
     label life_1:
@@ -950,7 +958,7 @@ label prologue:
 
             kan "Follow me, we need to talk."
 
-            call prologue2
+            jump prologue2
 
         "Who are you?":
 
@@ -969,7 +977,7 @@ label prologue:
             kan "In a way, yes. Though it's usually incredibly difficult to get her to show herself."
             kan "The question is, why is she risking that for you and your friends?"
 
-            call prologue2
+            jump prologue2
 
         "Why are you doing this?":
 
@@ -996,7 +1004,7 @@ label prologue:
             kan "You seem confused."
             kan "Follow me, we have a lot to talk about."
 
-            call prologue2
+            jump prologue2
 
 label prologue2:
 
