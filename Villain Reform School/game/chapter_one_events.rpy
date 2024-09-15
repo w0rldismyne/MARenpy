@@ -4,6 +4,7 @@ label chapter1_day1_event_morning:
     play music "music/CryingOverYou.mp3"
 
     scene backgroundC1_T
+    pause 2.0
     #Set a wait time
     scene backgroundroom
 

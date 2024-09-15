@@ -89,6 +89,7 @@ image backgroundlab            = "Backgrounds/science.jpg"
 image backgroundsew            = "Backgrounds/sew.jpg"
 image backgroundstage          = "Backgrounds/stage.png"
 image backgroundstuco          = "Backgrounds/stuco.png"
+image backgroundMansion         = "Backgrounds/Mansion.jpg"
 
 ### Character Sprites ###
 
@@ -105,6 +106,7 @@ image CopBase = "Sprites/Cop/cop1.png"
 image MMBase = "Sprites/MaiMai/MMBase.png"
 image MMO = "Sprites/MaiMai/MMO.png"
 image MMSmile = "Sprites/MaiMai/MMSmile.png"
+image MMFrown = "Sprites/MaiMai/MMfrown.png"
 
 #Kenzo
 image KenzoBase = "Sprites/Kenzo/kenzoSprite.png"
@@ -115,6 +117,21 @@ image ASad = "Sprites/Apex/Apexspritesad.png"
 
 #Chisei
 image ChBase = "Sprites/Chisei/Chiseibase.png"
+image ChBlank = "Sprites/Chisei/Chiseiblank.png"
+image ChFrown1 = "Sprites/Chisei/Chiseifrown.png"
+image ChFrown2 = "Sprites/Chisei/Chiseifrown2.png"
+image ChMad = "Sprites/Chisei/Chiseimad.png"
+image ChMad2 = "Sprites/Chisei/Chiseimad2.png"
+image ChSadtalk = "Sprites/Chisei/Chiseisadtalk.png"
+image ChSadtalk2 = "Sprites/Chisei/Chiseisadtalk2.png"
+image ChSadtalk3 = "Sprites/Chisei/Chiseisadtalk3.png"
+image ChScream = "Sprites/Chisei/Chiseisceam.png"
+image ChSmile = "Sprites/Chisei/Chiseismile.png"
+image ChSmiletalk = "Sprites/Chisei/Chiseismiletalk.png"
+image ChSmiletalk2 = "Sprites/Chisei/Chiseismiletalk2.png"
+image ChTalk = "Sprites/Chisei/Chiseitalk.png"
+image ChTalk2 = "Sprites/Chisei/Chiseitalk2.png"
+image ChTalk4 = "Sprites/Chisei/Chiseitalk4.png"
 
 #Dyre
 image DBase = "Sprites/Dyre/Dyrebase.png"
@@ -204,6 +221,19 @@ image Kiveryconcerned = "Sprites/Kietsu/veryconcerned.png"
 
 #Kitsune
 image KBase = "Sprites/Kitsune/KitsuneN.png"
+image KCatty = "Sprites/Kitsune/Kitsunecatty.png"
+image KCry = "Sprites/Kitsune/Kitsunecry.png"
+image KCrytalk = "Sprites/Kitsune/Kitsunecrytalk.png"
+image KCrytalk2 = "Sprites/Kitsune/Kitsunecrytalk2.png"
+image KMad = "Sprites/Kitsune/Kitsunemad.png"
+image KMad2 = "Sprites/Kitsune/Kitsunemad2.png"
+image KShock = "Sprites/Kitsune/Kitsuneshock.png"
+image KSmug = "Sprites/Kitsune/Kitsunesmug.png"
+image KSulk = "Sprites/Kitsune/Kitsunesulk.png"
+image KTalk = "Sprites/Kitsune/Kitsunetalk.png"
+image KTalk2 = "Sprites/Kitsune/Kitsunetalk2.png"
+image KTntc = "Sprites/Kitsune/Kitsunetrynottocry.png"
+image KWhatever = "Sprites/Kitsune/Kitsunewhatever.png"
 
 #Mariko
 image MBase = "Sprites/Mariko/Marikobase.png"
@@ -234,7 +264,7 @@ image MuIrate = "Sprites/Mu/Muirate.png"
 image MuIrateTalk = "Sprites/Mu/Muiratetalk.png"
 image MuPout = "Sprites/Mu/Mupout.png"
 image MuShame = "Sprites/Mu/Mushame.png"
-image MuSmug = "Sprites/Mu/Musumg.png"
+image MuSmug = "Sprites/Mu/Musmug.png"
 image MuTalk = "Sprites/Mu/Mutalk.png"
 image MuTalk2 = "Sprites/Mu/Mutalk2.png"
 image MuUugh = "Sprites/Mu/Muuugh.png"
@@ -242,6 +272,23 @@ image MuUmm = "Sprites/Mu/Muumm.png"
 
 #Nanase
 image NBase = "Sprites/Nanase/nanasebase.png"
+image NAshamed = "Sprites/Nanase/nanaseashamed.png"
+image NBlush = "Sprites/Nanase/nanaseblush.png"
+image NCry = "Sprites/Nanase/nanasecry.png"
+image NCrysmile = "Sprites/Nanase/nanasecrysmile.png"
+image NDisappointed = "Sprites/Nanase/nanasedisappointed.png"
+image NEmbarrassed = "Sprites/Nanase/nanaseembarrassed.png"
+image NOffensive = "Sprites/Nanase/nanaseoffensive.png"
+image NSad1 = "Sprites/Nanase/nanasesad1.png"
+image NSad2 = "Sprites/Nanase/nanasesad2.png"
+image NSadsmile = "Sprites/Nanase/nanasesadsmile.png"
+image NScold = "Sprites/Nanase/nanasescold.png"
+image NSmile = "Sprites/Nanase/nanasesmile2.png"
+image NSmiletalk = "Sprites/Nanase/nanasesmiletalk.png"
+image NIrate = "Sprites/Nanase/nanaseirate.png"
+image NSurprise = "Sprites/Nanase/nanasesurprise.png"
+image NTalk = "Sprites/Nanase/nanasetalk2.png"
+image NUrdumb = "Sprites/Nanase/nanaseurdumb.png"
 
 #Rei
 image ReBase = "Sprites/Rei/Rei.png"
@@ -260,6 +307,18 @@ image ReThink = "Sprites/Rei/Reithink.png"
 
 #Rise
 image RBase = "Sprites/Rise/Rise1.png"
+image RDisappointed = "Sprites/Rise/Risedisappointed.png"
+image REh = "Sprites/Rise/Riseeh.png"
+image RFlirt = "Sprites/Rise/Riseflirt.png"
+image RFrown = "Sprites/Rise/Risefrown.png"
+image RHearts = "Sprites/Rise/Riseheart.png"
+image RHearttalk = "Sprites/Rise/Risehearttalk.png"
+image RMad = "Sprites/Rise/Risemad.png"
+image RSceam = "Sprites/Rise/Risesceam.png"
+image RSmile = "Sprites/Rise/Risesmile.png"
+image RSmug = "Sprites/Rise/Risesmug.png"
+image RSurprise = "Sprites/Rise/Risesurprise.png"
+image RTalk = "Sprites/Rise/Risetalk.png"
 
 #Setsuna
 image SBase = "Sprites/Setsuna/setsunabase.png"
@@ -488,6 +547,7 @@ init python:
     listOfDirectories = ["Apex",
         "Chisei",
         "Cop",
+        "Dyre",
         "Hiro",
         "Ichita",
         "Inukai",
@@ -495,18 +555,26 @@ init python:
         "Kazz",
         "Kenzo",
         "Kietsu",
+        "Kitsune",
         "Koe",
         "Lethe",
         "MaiMai",
+        "Mariko",
         "Momoko",
         "Mu",
+        "Nanase",
         "Odori",
         "Rei",
+        "Rise",
         "Sato",
         "Setsuna",
+        "Shoma",
+        "Taiga",
         "Uitto",
+        "Vivaldi",
+        "Yaguchi",
         "Yoku"
-    ]
+        ]
 
     def extendedSearchVoice(id):
         for directory in listOfDirectories:
