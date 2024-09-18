@@ -2111,7 +2111,7 @@ label prologue_hiro:
             show HSadSmile
 
             h "Well, I mean, it's like a rehab center for troubled kids."
-            h "We have to go to classes, and therapy sessions, and they;ve got this little reward system and junk."
+            h "We have to go to classes, and therapy sessions, and they've got this little reward system and junk."
 
             hide HSadSmile
             show HSadtalk
@@ -2200,7 +2200,7 @@ label prologue_hiro:
                     hide HSmirk
                     show HSmug
 
-                    h "Dude, I;m just kidding, cool your jets."
+                    h "Dude, I'm just kidding, cool your jets."
 
                     n "You know how I feel about puns."
 
@@ -3067,6 +3067,7 @@ label prologue_kitsune:
             k "Not literally! It's a metaphor. You know, to invoke imagery and imagination."
 
             n "I imagine wise old men when people talk about fox spirits."
+            n "Maybe it does suit you. You already have the white hair."
 
             hide KMad
             show KSulk
@@ -4328,6 +4329,8 @@ label prologue_shoma:
 
 label prologue_setsuna:
 
+    scene backgroundgym
+
     "My footsteps squeak as the smell of floor polish and vinyl hits me in the face."
     "It must have been built recently for the place to be so clean."
     "I had heard there was supposed to be a pool here, but this is clearly a basketball court."
@@ -4846,12 +4849,12 @@ label prologue_kietsu:
 label prologue_momoko:
 
     "As I make my way to the third floor, I hear a huge crash at the end of the hall."
-    "The door to the school lab is slightly ajar. I rush in to see a girl with multicolored hair standing in the middle of theroom"
+    "The door to the school lab is slightly ajar. I rush in to see a girl with multicolored hair standing in the middle of the room"
     "Or, at least, standing as well as she can with rollerskates on. Are those even allowed?"
 
     n "What happened? Are you okay?"
 
-    show MhBase
+    show MhPuzzle
 
     mh "Is one free outlet without a jenga tower in the way too much to ask for?"
 
@@ -4863,11 +4866,17 @@ label prologue_momoko:
 
     "A foreboding clunk comes from behind the small wooden door as she backs away."
 
+    hide MhPuzzle
+    show MhSurprise
+
     mh "Don't open that cabinet."
 
     n "How did you know my name? None of us have been here that long."
 
     "She starts laughing."
+
+    hide MhSurprise
+    show MhOohShit
 
     mh "Decisions, decisions."
     mh "Do I pretend to be someone else and see how long it takes you to figure it out? Or do I tell you?"
@@ -4877,8 +4886,15 @@ label prologue_momoko:
 
     n "Is it really that funny?"
 
+    hide MhOohShit
+    show MhHappy
+
     mh "You took it so personally when I kept forgetting your name."
     mh "I had it written on my hand for at least a year before I got it down."
+    
+    hide MhHappy
+    show MhPuzzle
+    
     mh "Maybe my forgetfulness is contagious?"
 
     "I still got nothing, but there's no way I'd forget someone's name."
@@ -4886,12 +4902,15 @@ label prologue_momoko:
 
     n "I'm so sorry, could you please just tell me your name?"
     
+    hide MhPuzzle
+    show MhTalk
+
     mh "Momoko Yoshino. My Proficiency is in Chemistry."
     mh "We were in the same special classes and homeroom in Estella for four years. Ring any bells?"
 
     n "Momoko!?"
 
-    hide MhBase
+    hide MhTalk
 
     scene backgroundP4
 
@@ -4912,6 +4931,8 @@ label prologue_momoko:
 
             $ mhRep -= 1
 
+            show MhSad
+
             mh "Oh, well, I was messing around with some new hair dye formulas and it kinda nuked my eyebrows..."
             mh "And my lashes..."
             mh "And my bangs..."
@@ -4920,9 +4941,15 @@ label prologue_momoko:
             n "That isn't too surprising."
             n "But I meant all of this; the clothes, the bigness. You're so different."
 
+            hide MhSad
+            show MhTalk2
+
             mh "So? No one wanted me around before. At least now I think I'm fun, the rest should follow after."
 
             n "The rest of what?"
+
+            hide MhTalk2
+            show MhTalk
 
             mh "Rebellion!"
             mh "After spending months in boardrooms talking with boring grown-ups, I got so frustrated trying to make those jerks happy that I decided to stop caring what anyone thinks."
@@ -4932,27 +4959,47 @@ label prologue_momoko:
 
             "So this is her idea of what teenage rebellion looks like?"
 
+            hide MhTalk
+            show MhAnger
+
             mh "Now I'm all feisty. Begone, frown wrinkles, begone!"
+            
+            hide MhAnger
+            show MhBase
+
             mh "Today is supposed to be a good day, for we have science. Unsupervised science."
 
             n "...We always have science."
 
+            hide MhBase
+
         "You look happy":
 
             $ mhRep += 1
+
+            show MhBase
 
             mh "For the first time in a long time, I feel like things are going to get better."
             mh "I got that vibe, y'know. Don't you?"
 
             n "I think you're one of the few."
 
+            hide MhBase
+            show MhAnger
+
             mh "Aww, don't go bummering all over my parade because you're jealous I'm thriving."
 
             n "I'm not jealous. You're jealous."
 
+            hide MhAnger
+            show MhHappy
+
             mh "D'aw, cheer up Nagen, it'll be okay. I mean, you're still an Intel major, yeah?"
 
             n "Well, yeah..."
+
+            hide MhHappy
+            show MhTalk
 
             mh "Then that's one more reason to smile."
             mh "We'll get to be in the same classes again! Come on dude, get on this level."
@@ -4961,19 +5008,32 @@ label prologue_momoko:
 
             "She gives me a huge, cheesy grin and I can't help smiling too."
 
+            hide MhTalk
         "Mad scientist":
 
             $ Intel += 1
+
+            show MhManic
 
             mh "Now don't go saying that, you'll make people think I'm irresponsible or something."
 
             n "You're on wheels near a tower of glass."
 
+            hide MhManic
+            show MhTalk
+
             mh "It's not like I'm zipping around in Jams."
             mh "They're quads, baby skates, I'm safer in these than on solid ground; trust me."
+            
+            hide MhTalk
+            show MhPuzzle
+            
             mh "Do I really give off crazy vibes?"
 
             n "No... but you have been known to be a bit of a pyromaniac."
+
+            hide MhPuzzle
+            show MhSadTalk
 
             mh "Fire likes me, not the other way around. Besides, I've been trying to break up with combustibles."
             mh "Even contained explosions are too much stress right now."
@@ -4981,15 +5041,25 @@ label prologue_momoko:
             "That's a surprise. She was always so enchanted with fireworks and the like."
             "I can't imagine her doing anything else."
 
+            hide MhSadTalk
+    
+    show MhTalk
+
     mh "I think we all can use a break from everything going on outside."
     mh "It's best to think of this as a free vacation."
 
     n "It's hard for me to see how school and vacation fit in the same circle."
 
+    hide MhTalk
+    show MhSadTalk
+
     mh "Really? I thought you loved school."
     mh "You were always so competitive about grades and you ran all those clubs. You practically lived there."
 
     "She shakes her head."
+
+    hide MhSadTalk
+    show MhTalk2
 
     mh "Eh, who am I to judge? I didn't have much of a life before either."
 
@@ -4999,20 +5069,32 @@ label prologue_momoko:
 
     n "Workshop? You're going to start making stuff here?"
 
+    hide MhTalk2
+    show MhPuzzle
+
     mh "See, that look of panic is not what I'm going for."
     mh "I know I've got a bit of a destructive streak to make up for, but I swear I've changed."
     mh "I want to make nice things, the kinds of stuff that makes people happy."
 
     n "You don't mean-"
 
+    hide MhPuzzle
+    show MhHappy
+
     mh "Cosmetics!"
 
     n "Umm..."
+
+    hide MhHappy
+    show MhTalk2
 
     mh "I've already started trying to make my own hair dye with... mixed results."
     mh "But there's still more things to try. It'll be like putting a spa in a bottle, doesn't that sound like fun?"
 
     n "I'm sure someone will like it."
+
+    hide MhTalk2
+    show MhBase
 
     mh "I still gotta assert my dominance and claim this lab as my own, but once I do, you'll know."
 
@@ -5024,6 +5106,9 @@ label prologue_momoko:
     
     n "I don't know..."
 
+    hide MhBase
+    show MhTalk
+
     mh "Why not? There's nothing more manly than taking care of yourself."
 
     n "That's not the issue."
@@ -5033,6 +5118,9 @@ label prologue_momoko:
     n "Eggs."
     
     "And explosions."
+
+    hide MhTalk
+    show MhHappy
     
     mh "Then it shouldn't be a problem, right? Oh, and if there's anything specific you want, just let me know."
 
@@ -5040,8 +5128,8 @@ label prologue_momoko:
     n "I mean, what's the point of making people happy if you never see it?"
 
     "Just please, for everyone's safety, fixate on something else."
-
-    hide MhBase
+    
+    hide MhHappy
 
     return
 
@@ -5054,7 +5142,7 @@ label prologue_rei:
 
     n "Hey, are you okay?"
 
-    show ReBase
+    show ReDisappointed
 
     re "Oh Nagen, it's just awful, they took everything away! I totally forgot I had them with me until the alarms went off."
     re "I told them I wasn't going to stab anyone. I swear, I wasn't going to stab anyone!"
@@ -5062,11 +5150,17 @@ label prologue_rei:
 
     n "Woah, woah, slow down. What are you talking about?"
 
+    hide ReDisappointed
+    show ReSadtalk
+
     re "The swords! All of my sister's swords, what did you think I was talking about?"
 
     "Her sister's swords? I only know one person whose family heirlooms are weapons."
 
     n "I don't know, Rei, maybe you were listing Warrior Pony OCs."
+
+    hide ReSadtalk
+    show ReDisappointed
 
     re "I'm such an idiot. I got so used to carrying them around in the riots."
 
@@ -5076,27 +5170,40 @@ label prologue_rei:
     "I respect that she never blamed her classmates for the crummy treatment she received."
     "It would have been really easy to throw us under the bus to save her reputation."
 
+    hide ReDisappointed
+
     menu:
 
         "Your sister's gonna kill you":
 
             $ reRep += 1
 
+            show ReIrate
+
             re "I know... Ugh, I should have gotten a storage locker or something. My poor babies."
 
             n "It's okay, I'm sure they just locked them up. There aren't too many safe places to dispose of swords right now."
+
+            hide ReIrate
+            show ReOpt
 
             re "Right, you're right! I'll get them back eventually."
             re "For now, I'll just settle for plastic props. They're a shame compared to her craftsmanship."
             
             n "I'd like to see them sometime."
 
+            hide ReIrate
+            show ReTalk
+
             re "I'm more of an artillery gal myself, but even I could see the beauty in her armory."
             re "You'll definitely have to come by this summer and see 'em."
 
+            hide ReTalk
         "Aren't they heavy?":
 
             $ reRep -= 1
+
+            show ReDisappointed
 
             n "How could you forget you were carrying those things?"
 
@@ -5106,41 +5213,64 @@ label prologue_rei:
 
             n "How many were there?"
 
+            hide ReDisappointed
+            show ReTalk2
+
             re "About eight. Any more than that and I wouldn't be able to move."
 
             n "You forgot you were carrying eight swords?"
 
+            hide ReTalk2
+            show ReTalk
+
             re "Yeah, and my fifteen knives, and my keys."
 
             n "Your keys?"
+
+            hide ReTalk
+            show ReBrag
 
             re "The key chain was a brass knuckle kitty."
             re "I couldn't get the keys off because they were welded to the head like whiskers."
 
             n "Unbelievable."
 
+            hide ReBrag
+            show ReDepressed
+
             re "I already got three weeks probation, I don't need a lecture from you too."
 
             "This girl walks into school with the iron throne strapped to her back and I'm the one on probation?"
+
+            hide ReDepressed
 
         "You haven't changed":
 
             $ Vigor += 1
 
+            show ReEh
             re "In a good way, I hope."
 
             n "Why wouldn't it be in a good way?"
+
+            hide ReEh
+            show ReIrate
             
             re "Well, I never was sure if you actually liked me."
             re "No one in our class wanted to be there. It always felt like everyone was just waiting to get out."
 
             n "I mean, you're not wrong, but that doesn't mean I disliked you. I just had other things going on."
 
+            hide ReIrate
+            show ReTalk
+
             re "That's good to hear."
 
             n "Now that you've been caught bearing arms, you've really earned your title as a 'problem' child."
 
             re "You're the only ones who thought constantly forgetting homework wasn't a problem."
+
+            hide ReTalk
 
     re "I'm really glad you're here, Nagen."
     re "I was starting to think that I'd have to go to this big ol' scary place by myself."
@@ -5192,7 +5322,7 @@ label prologue_rise:
     "Every piece of furniture clashes despite the effort to match colors."
     "By the large bay window sits a poised girl with a tea set."
     "Rise Kisaki, her Proficiency is Allure, which I never fully understood."
-    "According to Uitto, it means she;s a people magnet, like a lot of Charisma majors."
+    "According to Uitto, it means she's a people magnet, like a lot of Charisma majors."
     "With me being in the “bad kids” class, I never really talked to her."
     "Her far off stare reminds me of a china doll. Across from her is an empty cup and chair."
 
@@ -5200,15 +5330,19 @@ label prologue_rise:
 
     "She perks up at the sound of my voice with slow, deliberate blinks."
 
-    show RBase
+    show RSmile
 
     r "Yes, though high tea is an activity that can be enjoyed by anyone. Please, have a seat."
+
+    hide RSmile
 
     menu:
 
         "Decline":
 
             $ rRep -= 1
+
+            show RFrown
 
             n "Sorry, not a big tea fan."
 
@@ -5217,9 +5351,13 @@ label prologue_rise:
 
             "There's no reason for me to stay here. I turn and leave."
 
+            hide RFrown
+
         "Sit":
 
             $ rRep += 1
+
+            show RBase
 
             n "Are you sure?"
 
@@ -5230,6 +5368,9 @@ label prologue_rise:
 
             n "This just looks like water..."
 
+            hide RBase
+            show RTalk
+
             r "It is for now. I would not want to accidentally poison a stranger through social convention by serving the wrong tea."
             r "Now let us see if I have anything you would like."
 
@@ -5237,10 +5378,14 @@ label prologue_rise:
 
             r "Choose whatever you would like."
 
+            hide RTalk
+
             menu:
                 "Golden Tip":
 
                     $ Charm += 1
+
+                    show RSmug
 
                     r "It tastes best without milk, I should know."
 
@@ -5248,10 +5393,16 @@ label prologue_rise:
 
                     n "You have multiple bags of $200 tea?"
 
+                    hide RSmug
+                    show RFlirt
+
                     r "Is that why you chose it? And here I thought you were aiming for the health benefits." 
                     r "It is supposed to help with anxiety."
 
                     n "Not going to argue it's 'not that expensive'?"
+
+                    hide RFlirt
+                    show RFrown
 
                     r "I would not know, I did not buy them."
 
@@ -5259,18 +5410,28 @@ label prologue_rise:
 
                     n "It might be a while until you can get more. Are you sure I can have this?"
 
+                    hide RFrown
+                    show RBase
+
                     r "By all means; you are curious and I already offered it to you, regardless of its worth."
                     r "It will be ready in about five minutes."
 
                     n "If you drink this a bunch, does that mean you're an anxious person?"
 
+                    hide RBase
+                    show RFrown
+
                     r "...I have been favoring it recently. But everyone has been seeking comfort more as of late, correct?"
 
                     n "I guess."
 
+                    hide RFrown
+
                 "Spark Matcha":
 
                     $ Vigor += 1
+
+                    show RSmile
 
                     r "Are you feeling tired?"
 
@@ -5280,15 +5441,24 @@ label prologue_rise:
 
                     n "I can't, I still have things I need to do today."
 
+                    hide RSmile
+                    show RFrown
+
                     r "Before school begins? That must be stressful."
 
                     n "Yeah. The school's so big and all the construction is making it hard to get around."
+
+                    hide RFrown
+                    show RFlirt
 
                     r "Your motivation is admirable."
                     r "Merely setting foot on campus felt like a chore to me, even though this is an area I should thrive in."
                     r "Where do you find the drive?"
 
                     n "I've spent the last few months with no internet and barely two people to talk to."
+
+                    hide RFlirt
+                    show RSmug
 
                     r "So the facility itself is the obstacle?"
                     r "Well, that certainly explains a lot, but you should not put too much pressure on yourself."
@@ -5297,9 +5467,12 @@ label prologue_rise:
 
                     n "No good. If I don't try my hardest, it will just keep me up all night."
 
+                    hide RSmug
                 "Earl Gray":
 
                     $ Intel += 1
+
+                    show RTalk
 
                     n "You'll have to forgive me if I'm a little shaky on the proper etiquette, but that's the one I can put milk in, right?"
 
@@ -5310,6 +5483,9 @@ label prologue_rise:
 
                     "She says that, but I feel like she's watching my every move. Too bad there's no food."
 
+                    hide RTalk
+                    show RFlirt
+
                     r "You must be new at this if you have to think so much about drinking tea."
                     r "A true blue blood has such notions drilled into them since birth."
 
@@ -5319,8 +5495,15 @@ label prologue_rise:
 
                     n "I don't think the people who taught me plan on keeping me around after graduation."
 
+                    hide RFlirt
+                    show RSmug
+
                     r "It is a shame when you do not feel like you belong."
 
+                    hide RSmug
+    
+    show RTalk
+    
     r "Perhaps I could help you find who you have been looking for?"
 
     n "I never said I was looking for anyone specific."
@@ -5332,6 +5515,8 @@ label prologue_rise:
     n "Not exactly. I'm looking for some old friends of mine."
     n "I appreciate your offer to help, but there'd be no way to contact each other. Someone like you wouldn't want my number."
 
+    hide RTalk
+    show RDisappointed
     r "What gave you that idea?"
     r "Nagen, this may be overstepping my bounds, but I do not think your group is worth this much of your time."
     r "All they ever did was get you into trouble."
@@ -5341,15 +5526,24 @@ label prologue_rise:
 
     n "You don't know what you're talking about."
 
+    hide RDisappointed
+    show RFrown
+
     r "I have been mistaken before."
     r "I just worry that you have been exploited by individuals that do not value your personal achievements."
 
     n "And you do?"
 
+    hide RFrown
+    show RFlirt
+
     r "I could, though I am not in the best position to impose myself on anyone at the moment."
     r "Given enough time, I could compose a detailed list of potential matches that would be mutually beneficial."
 
     n "Not interested."
+
+    hide RFlirt
+    show RSmug
 
     r "Suit yourself."
 
@@ -5359,9 +5553,12 @@ label prologue_rise:
 
     n "Thanks for the tea, but I need to go."
 
+    hide RSmug
+    show RSmile
+
     r "Anytime, Nagen. I do hope our next meeting will be pleasant."
 
-    hide RBase
+    hide RSmile
 
     "I turn and leave."
 
@@ -6126,7 +6323,9 @@ label Meeting:
         "As I drift off to sleep, I desperately try to convince myself everything will work out in the end."
 
         if Vision >= 4:
-            #CG teachers
+            
+            scene backgroundclass
+
             ya "So, what's the plan?"
 
             sa "Darling, this was the plan."

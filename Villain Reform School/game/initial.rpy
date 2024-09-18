@@ -89,7 +89,8 @@ image backgroundlab            = "Backgrounds/science.jpg"
 image backgroundsew            = "Backgrounds/sew.jpg"
 image backgroundstage          = "Backgrounds/stage.png"
 image backgroundstuco          = "Backgrounds/stuco.png"
-image backgroundMansion         = "Backgrounds/Mansion.jpg"
+image backgroundMansion        = "Backgrounds/Mansion.jpg"
+image backgroundgym            = "Backgrounds/gym.jpg"
 
 ### Character Sprites ###
 
