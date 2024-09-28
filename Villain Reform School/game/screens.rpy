@@ -230,7 +230,9 @@ screen choice(items):
 
         vbox:
             for i in items:
-                textbutton i.caption action i.action
+                textbutton i.caption:
+                    sensitive i.kwargs.get("sensitive", True)
+                    action i.action
 
     else:
         grid choice_width choice_height:
@@ -242,6 +244,7 @@ screen choice(items):
 
             for i in items:
                 textbutton i.caption:
+                    sensitive i.kwargs.get("sensitive", True)
                     action i.action
                     xsize 250
                     ysize 150

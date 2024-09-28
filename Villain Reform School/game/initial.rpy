@@ -585,12 +585,13 @@ init python:
         return f"audio/{id}.ogg"
 
     config.auto_voice = extendedSearchVoice
-    
 
 # THE GAME STARTS HERE!
 label start:
 
     call inventory
+
+    #jump prologue
 
     menu:
         "Prologue":

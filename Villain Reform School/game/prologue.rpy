@@ -1558,8 +1558,6 @@ label nk_intro:
 
 label prologue_meet_students:
 
-    $ config.menu_include_disabled = True
-
     scene backgroundschool
     play music "music/CosimoFogg.mp3"
     if prologueFriendsFound is 3:
@@ -1570,7 +1568,6 @@ label prologue_meet_students:
             "Keep Looking Around" if prologueSearches is not 18:
                 pass
             "Start the Meeting":
-                $ config.menu_include_disabled = False
                 jump Meeting
 
     if prologueSearches is 0:
@@ -1591,58 +1588,58 @@ label prologue_locations_test:
 
     menu:
         extend ""
-        "Lecture Hall" if prologueHiroMet is False:
+        "Lecture Hall" (sensitive = (prologueHiroMet is False)):
             $ choice_many_choices = False
             jump prologue_lecture_hall
-        "Field" if prologueMarikoMet is False:
+        "Field" (sensitive = (prologueMarikoMet is False)):
             $ choice_many_choices = False
             jump prologue_field
-        "Hallway" if prologueYokuMet is False:
+        "Hallway" (sensitive = (prologueYokuMet is False)):
             $ choice_many_choices = False
             jump prologue_hallway
-        "Courtyard" if prologueUittoMet is False:
+        "Courtyard" (sensitive = (prologueUittoMet is False)):
             $ choice_many_choices = False
             jump prologue_courtyard
-        "Stage" if prologueKitsuneMet is False:
+        "Stage" (sensitive = (prologueKitsuneMet is False)):
             $ choice_many_choices = False
             jump prologue_stage
-        "Audio Visual Room" if prologueKazzMet is False:
+        "Audio Visual Room" (sensitive = (prologueKazzMet is False)):
             $ choice_many_choices = False
             jump prologue_av
-        "Nurse's Office" if prologueOshinMet is False:
+        "Nurse's Office" (sensitive = (prologueOshinMet is False)):
             $ choice_many_choices = False
             jump prologue_nurse_office
-        "Pond" if prologueIchitaMet is False:
+        "Pond" (sensitive = (prologueIchitaMet is False)):
             $ choice_many_choices = False
             jump prologue_pond
-        "Roof" if prologueTaigaMet is False:
+        "Roof" (sensitive = (prologueTaigaMet is False)):
             $ choice_many_choices = False
             jump prologue_roof
-        "Library" if prologueChiseiMet is False:
+        "Library" (sensitive = (prologueChiseiMet is False)):
             $ choice_many_choices = False
             jump prologue_library
-        "Sewing Room" if prologueShomaMet is False:
+        "Sewing Room" (sensitive = (prologueShomaMet is False)):
             $ choice_many_choices = False
             jump prologue_sewing_room
-        "Gymnasium" if prologueSetsunaMet is False:
+        "Gymnasium" (sensitive = (prologueSetsunaMet is False)):
             $ choice_many_choices = False
             jump prologue_gym
-        "Cafe" if prologueKietsuMet is False:
+        "Cafe" (sensitive = (prologueKietsuMet is False)):
             $ choice_many_choices = False
             jump prologue_cafe
-        "Lab" if prologueMomokoMet is False:
+        "Lab" (sensitive = (prologueMomokoMet is False)):
             $ choice_many_choices = False
             jump prologue_lab
-        "Classroom" if prologueReiMet is False:
+        "Classroom" (sensitive = (prologueReiMet is False)):
             $ choice_many_choices = False
             jump prologue_classroom
-        "Student Council Room" if prologueRiseMet is False:
+        "Student Council Room" (sensitive = (prologueRiseMet is False)):
             $ choice_many_choices = False
             jump prologue_student_council_room
-        "Forbidden Door" if prologueDyreMet is False:
+        "Forbidden Door" (sensitive = (prologueDyreMet is False)):
             $ choice_many_choices = False
             jump prologue_forbidden_door
-        "Ampitheater" if prologueJonaMet is False:
+        "Ampitheater" (sensitive = (prologueJonaMet is False)):
             $ choice_many_choices = False
             jump prologue_ampitheater
 
