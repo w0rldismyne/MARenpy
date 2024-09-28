@@ -1,4 +1,6 @@
-﻿image background1 = "Backgrounds/Courtyard.png"
+﻿default persistent.sandbox_menu_choice = 0
+
+image background1 = "Backgrounds/Courtyard.png"
 image background2 = "Backgrounds/Field.png"
 image background3 = "Backgrounds/ForestClearing.png"
 image background4 = "Backgrounds/Lake.png"
@@ -7,6 +9,15 @@ image sprite 1 = "Sprites/TestSprite.png"
 image sprite 2 = "Sprites/TestSprite2.png"
 image sprite 3 = "Sprites/TestSprite3.png"
 image sprite 4 = "Sprites/TestSprite4.png"
+
+transform room_1:
+    matrixcolor TintMatrix("#FFFFFF")
+
+transform room_2:
+    matrixcolor TintMatrix("#FF8000")
+
+transform room_3:
+    matrixcolor TintMatrix("#0037FF")
 
 # THE GAMES STARTS HERE!
 label sandbox:
@@ -21,6 +32,8 @@ label sandbox:
             jump new_menu
         "Battle":
             jump chapter1_boss_scene
+        "Room of Persistence":
+            jump sandbox_persistence
 
 label Event1:
 
@@ -116,3 +129,42 @@ label new_menu:
 
     hide screen test_button
 return
+
+label sandbox_persistence:
+
+    menu:
+        "Visit the Room":
+            jump sandbox_room
+
+        "Change to Starting Room":
+            $ persistent.sandbox_menu_choice = 0
+            "Room 1 Applied"
+            jump sandbox_persistence
+
+        "Change to Variant Room 1":
+            $ persistent.sandbox_menu_choice = 1
+            "Room 2 Applied"
+            jump sandbox_persistence
+
+        "Change to Variant Room 2":
+            $ persistent.sandbox_menu_choice = 2
+            "Room 3 Applied"
+            jump sandbox_persistence
+
+        "Leave":
+            jump sandbox
+
+label sandbox_room:
+    if persistent.sandbox_menu_choice is 0:
+        scene backgroundschool at room_1
+        "Room 1"
+        
+    elif persistent.sandbox_menu_choice is 1:
+        scene backgroundschool at room_2
+        "Room 2"
+
+    elif persistent.sandbox_menu_choice is 2:
+        scene backgroundschool at room_3
+        "Room 3"
+        
+    jump sandbox_persistence
