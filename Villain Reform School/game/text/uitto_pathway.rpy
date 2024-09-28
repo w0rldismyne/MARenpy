@@ -974,7 +974,8 @@ label Uitto5:
     n "O-okay?"
 
     hide Uittobase
-    backgroundfield
+    
+    scene backgroundfield
 
     "I followed her instructions to the letter. I found her waiting for me, backpack in hand."
 

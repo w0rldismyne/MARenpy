@@ -587,7 +587,7 @@ label Hiro3:
             hide HSadtalk
     #BG city
 
-    backgroundtown
+    scene backgroundtown
 
     "I stumbled after him for about fifteen minutes through the woods before we finally reached the city surrounding our school."
     "At any other academy, you’d be able to take trips into town to go out to eat or shop. But this place…"
@@ -923,7 +923,7 @@ label Hiro4:
             n "Wait, what are you saying?"
 
             hide HConfess
-            Show HEmbarrassed
+            show HEmbarrassed
 
             h "Please don’t make this harder, it’s embarrassing enough as it is."
 

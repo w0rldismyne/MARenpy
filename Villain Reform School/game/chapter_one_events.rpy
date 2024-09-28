@@ -2,10 +2,6 @@
 label chapter1_day1_event_morning:
 
     play music "music/CryingOverYou.mp3"
-
-    scene backgroundC1_T
-    pause 2.0
-    #Set a wait time
     scene backgroundroom
 
     kk "Good morning, brotato chips!"
@@ -133,6 +129,9 @@ label chapter1_day1_event_morning:
     "She gets up quietly and leaves to sit with some other girls."
 
     u "Thank god. I seriously don’t know what I’d do without you guys."
+    
+    show HBase at right
+    
 
     h "Why didn’t you just tell her to go away?"
 
@@ -140,9 +139,9 @@ label chapter1_day1_event_morning:
     u "I’m not going to shit on someone’s self esteem for seeking validation, that’d be pointlessly cruel."
     u "It just sucks that the one person who wanted to talk to me just wanted to compete."
 
-    show HBase at right
     hide UBase
-
+    hide HBase
+    
     "We’re interrupted by a comical scale of trumpets as the vice principal bounds on stage. Principal Vivaldi follows close behind in silence."
 
     show IkBase at left

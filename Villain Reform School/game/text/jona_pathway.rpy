@@ -279,7 +279,7 @@ label Jona2:
     n "Get out of there, man."
 
     hide JDepressed
-    shwo JHappy
+    show JHappy
 
     j "Wait for it... Ah hah!"
 
@@ -857,7 +857,7 @@ label Jona4:
             n "Is avoiding getting labeled as a Charisma Major really worth all this trouble?"
 
             hide JDepressed
-            sho JRelax
+            show JRelax
 
             j "It’s all I’ve known. Besides, the less connection I have with my mother in the eyes of the public, the easier things will be for me. It’s the same for you, isn’t it?"
 

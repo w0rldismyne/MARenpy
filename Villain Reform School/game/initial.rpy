@@ -2,7 +2,7 @@
 define a        = Character("Apex",             window_background = "gui/text_boxes/ApexText.png")
 define ch       = Character("Chisei Jikoma",    window_background = "gui/text_boxes/ChiseiText.png")
 define d        = Character("Dyre Okami",       window_background = "gui/text_boxes/DyreText.png")
-define h        = Character("Hiro Manuke",      window_background = "gui/text_boxes/HiroText.png")
+define h        = Character("Hiro Morine",      window_background = "gui/text_boxes/HiroText.png")
 define i        = Character("Ichita Kinoshita", window_background = "gui/text_boxes/IchitaText.png")
 define j        = Character("Jona Oshima",      window_background = "gui/text_boxes/JonaText.png")
 define kk       = Character("Kazz Kataki",      window_background = "gui/text_boxes/KazzText.png")
@@ -39,7 +39,7 @@ define kan      = Character("Kenzo Ando",       window_background = "gui/text_bo
 define Kanon    = Character("Kanon",            window_background = "gui/text_boxes/OtherText.png")
 define Kiki     = Character("Kiki",             window_background = "gui/text_boxes/OtherText.png")
 define l        = Character("Lethe",            window_background = "gui/text_boxes/OtherText.png")
-define mm       = Character("Mai Mai",          window_background = "gui/text_boxes/OtherText.png")
+define mm       = Character("Maimai Ran",          window_background = "gui/text_boxes/OtherText.png")
 define Nurse    = Character("School Nurse",     window_background = "gui/text_boxes/OtherText.png")
 define PA       = Character("PA",               window_background = "gui/text_boxes/OtherText.png")
 define q        = Character("???",              window_background = "gui/text_boxes/OtherText.png")
@@ -136,6 +136,18 @@ image ChTalk4 = "Sprites/Chisei/Chiseitalk4.png"
 
 #Dyre
 image DBase = "Sprites/Dyre/Dyrebase.png"
+image DConcern = "Sprites/Dyre/Dyreconcern.png"
+image DDisturbed = "Sprites/Dyre/Dyredisturbed.png"
+image DMad = "Sprites/Dyre/Dyremad.png"
+image DSad = "Sprites/Dyre/Dyresad.png"
+image DSadtalk = "Sprites/Dyre/Dyresadtalk.png"
+image DScowl = "Sprites/Dyre/Dyrescowl.png"
+image DSmile = "Sprites/Dyre/Dyresmile.png"
+image DSmiletalk = "Sprites/Dyre/Dyresmiletalk.png"
+image DSmirk = "Sprites/Dyre/Dyrebase.png"
+image DTalk = "Sprites/Dyre/Dyretalk.png"
+image DTalk2 = "Sprites/Dyre/Dyretalk2.png"
+image DTease = "Sprites/Dyre/Dyretease.png"
 
 #Hiro
 image HBase = "Sprites/Hiro/Hirobase.png"
@@ -200,6 +212,14 @@ image JRelax = "Sprites/Jona/JonaRelax.png"
 
 #Kazz
 image KkBase = "Sprites/Kazz/Kazz1.png"
+image KkShine = "Sprites/Kazz/Kazzbase.png"
+image KkComplain = "Sprites/Kazz/Kazzcomplain.png"
+image KkDead = "Sprites/Kazz/Kazzdead.png"
+image KkFret = "Sprites/Kazz/Kazzfret.png"
+image KkGrin = "Sprites/Kazz/Kazzgrin.png"
+image KkO = "Sprites/Kazz/KazzO.png"
+image KkSadtalk = "Sprites/Kazz/Kazzsadtalk.png"
+image KkTalk = "Sprites/Kazz/Kazztalk.png"
 
 #Kietsu
 image KiBase = "Sprites/Kietsu/k2.png"
@@ -238,6 +258,30 @@ image KWhatever = "Sprites/Kitsune/Kitsunewhatever.png"
 
 #Mariko
 image MBase = "Sprites/Mariko/Marikobase.png"
+image MDamage = "Sprites/Mariko/2.png"
+image MBlock = "Sprites/Mariko/3.png"
+image MBlockcry = "Sprites/Mariko/3cry.png"
+image MBlockinjured = "Sprites/Mariko/3injured.png"
+image MAttack = "Sprites/Mariko/4.png"
+image MAttackcry = "Sprites/Mariko/4cry.png"
+image MAttackinjured = "Sprites/Mariko/4injured.png"
+image MAttackinjuredcrying = "Sprites/Mariko/4injuredcry.png"
+image MBoss = "Sprites/Mariko/Boss1.png"
+image MBosscry = "Sprites/Mariko/Boss1cry.png"
+image MBossinjured = "Sprites/Mariko/Boss1injured.png"
+image MBossinjuredcry = "Sprites/Mariko/Boss1injuredcry.png"
+image MCackle = "Sprites/Mariko/Marikocackle.png"
+image MCringe = "Sprites/Mariko/Marikocringe.png"
+image MCry = "Sprites/Mariko/Marikocry.png"
+image MFrowntalk = "Sprites/Mariko/Marikofrowntalk.png"
+image MGlare = "Sprites/Mariko/Marikoglare.png"
+image MGrin = "Sprites/Mariko/Marikogrin.png"
+image MJudge = "Sprites/Mariko/Marikojudge.png"
+image MMadtalk = "Sprites/Mariko/Marikomadtalk.png"
+image MSadtalk = "Sprites/Mariko/Marikosadtalk.png"
+image MSheepish = "Sprites/Mariko/Marikosheepish.png"
+image MSmiletalk = "Sprites/Mariko/Marikosmiletalk.png"
+image MTalk = "Sprites/Mariko/Marikotalk.png"
 
 #Momoko
 image MhBase = "Sprites/Momoko/momokobase.png"
@@ -302,7 +346,7 @@ image ReOpt = "Sprites/Rei/Reioptomism.png"
 image ReSad = "Sprites/Rei/Reisad.png"
 image ReSadtalk = "Sprites/Rei/Reisadtalk.png"
 image ReSmiletalk = "Sprites/Rei/Reismiletalk.png"
-image ReTalk = "Sprites/Rei/Reitalk1.png"
+image ReTalk =  "Sprites/Rei/Reitalk1.png"
 image ReTalk2 = "Sprites/Rei/Reitalk2.png"
 image ReThink = "Sprites/Rei/Reithink.png"
 
@@ -342,9 +386,33 @@ image SWhatever = "Sprites/Setsuna/setsunawhatever.png"
 
 #Shoma
 image ShBase = "Sprites/Shoma/ShomaN.png"
+image ShFear = "Sprites/Shoma/Shomafear.png"
+image ShFrown = "Sprites/Shoma/Shomafrown.png"
+image ShGrin = "Sprites/Shoma/Shomagrin.png"
+image ShLie = "Sprites/Shoma/Shomalie.png"
+image ShMad = "Sprites/Shoma/Shomamad.png"
+image ShManic = "Sprites/Shoma/Shomamanic.png"
+image ShObserve = "Sprites/Shoma/Shomaobserve.png"
+image ShSad = "Sprites/Shoma/Shomasad.png"
+image ShSadsmile = "Sprites/Shoma/Shomasadsmile.png"
+image ShShy = "Sprites/Shoma/Shomashy.png"
+image ShSparkle = "Sprites/Shoma/Shomasparkle.png"
+image ShTalk = "Sprites/Shoma/Shomatalk1.png"
+image ShTalk2 = "Sprites/Shoma/Shomatalk2.png"
 
 #Taiga
 image TBase = "Sprites/Taiga/TaigaN.png"
+image TGasp = "Sprites/Taiga/Taigagasp.png"
+image TGrimace = "Sprites/Taiga/Taigagrimace.png"
+image TGrin = "Sprites/Taiga/Taigagrin.png"
+image TGrump = "Sprites/Taiga/Taigagrump.png"
+image TMadtalk = "Sprites/Taiga/Taigamadtalk.png"
+image TSadtalk = "Sprites/Taiga/Taigasadtalk.png"
+image TSadtalk2 = "Sprites/Taiga/Taigasadtalk2.png"
+image TSceam = "Sprites/Taiga/Taigasceam.png"
+image TSmiletalk = "Sprites/Taiga/Taigasmiletalk.png"
+image TSuspicious = "Sprites/Taiga/TaigaN.png"
+image TUgh = "Sprites/Taiga/Taigaugh.png"
 
 #Uitto
 image UBase = "Sprites/Uitto/Uittobase.png"
@@ -383,15 +451,54 @@ image YTired = "Sprites/Yoku/YokuTired.png"
 
 #Inukai
 image IkBase = "Sprites/Inukai/inuN.png"
+image IkConcern = "Sprites/Inukai/inuconcern.png"
+image IkFrown = "Sprites/Inukai/inufrown.png"
+image IkSad = "Sprites/Inukai/inusad.png"
+image IkSadtalk = "Sprites/Inukai/inusadtalk.png"
+image IkSigh = "Sprites/Inukai/inusigh.png"
+image IkTalk = "Sprites/Inukai/inutalk.png"
+image IkTalk2 = "Sprites/Inukai/inutalk2.png"
+image IkTired = "Sprites/Inukai/inutired.png"
+image IkTiredSmile = "Sprites/Inukai/inutiredsmile.png"
+image IkTiredtalk = "Sprites/Inukai/inutiredtalk.png"
 
 #Sato
 image SaBase = "Sprites/Fox/basespriteox.png"
+image SaDone = "Sprites/Fox/foxdone.png"
+image SaEyeroll = "Sprites/Fox/foxeyeroll.png"
+image SaFear = "Sprites/Fox/foxfear.png"
+image SaGeez = "Sprites/Fox/foxgeez.png"
+image SaGlare = "Sprites/Fox/foxglare.png"
+image SaScold = "Sprites/Fox/foxscold.png"
+image SaSigh = "Sprites/Fox/foxsigh.png"
+image SaSmiletalk = "Sprites/Fox/foxsmiletalk.png"
+image SaTalk = "Sprites/Fox/foxtalk.png"
+image SaThisisfine = "Sprites/Fox/foxthisisfine.png"
+image SaTired = "Sprites/Fox/foxtired.png"
+image SaYawn = "Sprites/Fox/foxyawn.png"
 
 #Vivaldi
 image VBase = "Sprites/Vivaldi/ViBase.png"
+image VBasefrown = "Sprites/Vivaldi/ViBasefrown.png"
+image VDisappointed = "Sprites/Vivaldi/Vidisappointed.png"
+image VLecture = "Sprites/Vivaldi/Vilecture.png"
+image VMigraine = "Sprites/Vivaldi/Vimigraine.png"
+image VSad = "Sprites/Vivaldi/Visad.png"
+image VSadtalk = "Sprites/Vivaldi/Visadtalk.png"
+image VSadtalk2 = "Sprites/Vivaldi/Visadtalk2.png"
+image VSmile = "Sprites/Vivaldi/Vismile.png"
+image VSmirk = "Sprites/Vivaldi/Vismirk.png"
+image VTalk = "Sprites/Vivaldi/Vitalk.png"
 
 #Yaguchi
 image YaBase = "Sprites/Yaguchi/yaguchibase.png"
+image YaBleh = "Sprites/Yaguchi/yaguchibleh.png"
+image YaFrown = "Sprites/Yaguchi/yaguchifrown.png"
+image YaMad = "Sprites/Yaguchi/yaguchimad.png"
+image YaTalk = "Sprites/Yaguchi/yaguchitalk.png"
+image YaTalk2 = "Sprites/Yaguchi/yaguchitalk2.png"
+image YaTalk3 = "Sprites/Yaguchi/yaguchitalk3.png"
+image YaYell = "Sprites/Yaguchi/yaguchiyell.png"
 
 #Clues
 
