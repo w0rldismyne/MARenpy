@@ -16,6 +16,8 @@ label JonaVisit:
 label Jona1:
     scene backgroundcafe
 
+    show JFrustrated
+
     "I find Jona sketching in the corner of the school’s cafe. At this point, it’s safe to say he lives here more than his dorm."
 
     n "Hey."
@@ -36,9 +38,15 @@ label Jona1:
 
     "I try to get a look, but he slams the notebook shut."
 
+    hide JFrustrated
+    show JRelax
+
     j "Just some sketchbook assignment my guardian gave me to ‘get to know me better’."
 
     n "You’re putting more effort into it than I would. Are you being graded on it or something?"
+
+    hide JRelax
+    show JDepressed
 
     j "No... At least, I don’t think so. She’s an art teacher, so it’s possible. I just figured I’d make it look nice since she wants to see it."
 
@@ -49,6 +57,9 @@ label Jona1:
     n "She keeps messaging me asking how school is."
     n "She has nothing to gain by putting on this act. I don’t know what to do."
 
+    hide JDepressed
+    show JRelax
+
     j "I don’t know, unless you want to avoid her. That would be the easiest way to handle it."
 
     n "Like I said, she seeks me out, man."
@@ -56,6 +67,9 @@ label Jona1:
     j "Can’t relate."
 
     "He opens a large pot of ink and splatters the paper."
+
+    hide JRelax
+    show JMad
 
     j "Mrs. Miki doesn’t talk at all and my mom liked her space."
     j "She was like a curled up spider, you wanted to poke it to see if it was alive, even though it would hurt you."
@@ -66,18 +80,28 @@ label Jona1:
     
     n "Really? She seemed so possessive, I assumed she was some helicopter parent. I mean, mine were-"
 
+    hide JMad
+    show JHappy
+
     "He starts laughing his ass off."
 
     j "Her? Hover? The only reason she got that mad was when I inconvenienced her."
 
     n "Inconvenience her how?"
 
+    hide JHappy
+    show JDepressed
+
     j "It was a pretty long list. Some things contradicted each other."
     j "Like I wasn’t supposed to have friends at the house, but I was supposed to have, and I quote, a ‘social life’."
+
+    hide JDepressed
 
     menu:
         "Sounds like my mom.":
             $ jRep -= 1
+
+            show JFrustrated
 
             j "...how?"
 
@@ -87,26 +111,43 @@ label Jona1:
 
             n "You don’t think that was weird?"
 
+            hide JFrustrated
+            show JMad
+
             j "Super weird, but that’s what I’m saying. Mrs. Tesuta was weird, mine..."
 
             "It looks like he’s having trouble finding the words."
+
+            hide JMad
+            show JDepressed
 
             j "She was like Lethe, only she didn’t stop fighting until I left."
 
             n "What’s that supposed to mean?"
 
             j "If you don’t get it, then either you don’t want to or you’re trying not to think about it. Either way, forget it."
+
+            hide JDepressed
+
         "And when she was happy?":
             $ jRep += 1
+
+            show JDepressed
 
             j "I never saw her happy. I’d see her smile, but you can’t be happy with a gray or green aura. It just means you know how to fake it."
 
             n "What’s a green aura?"
 
+            hide JDepressed
+            show JFrustrated
+
             j "Anger... I think. People are hard to decode and I don’t have a handbook, so I have to go by actions."
             j "People yell and hit things with a green aura, so anger seemed likely."
 
             n "And gray?"
+
+            hide JFrustrated
+            show JDepressed
 
             j "...it’s a curse."
 
@@ -117,8 +158,13 @@ label Jona1:
             n "That’s terrifying."
 
             j "The only way to get rid of it is with an equally powerful emotion. Anger’s easy to trigger, but it never lasts, and the gray creeps back..."
+
+            hide JDepressed
+
         "Why'd you invite us?":
             $ Charm += 1
+
+            show JRelax
 
             j "I’d rather get yelled at than be in the house alone day after day. Didn’t matter anyway, everyone always declined."
 
@@ -130,11 +176,18 @@ label Jona1:
 
             n "Still, I wish we could’ve done more stuff together when everything was normal."
 
+            hide JRelax
+            show JHappy
+
             j "You can’t focus on the past like that. It’s not like you can change it. You’ll only make yourself miserable."
 
             n "...I guess."
+
+            hide JHappy
     $ jTurn += 1
     $ Charm += 1
+
+    show JDepressed
     
     j "I wonder if they’re contagious, the negative emotions people have. Can people catch them like a virus?"
 
@@ -149,9 +202,15 @@ label Jona1:
 
     n "It doesn’t work that way. It’s not an actual virus, it’s just human emotions."
 
+    hide JDepressed
+    show JFrustrated
+
     j "People have died from lesser things."
 
     n "That’s pretty cryptic."
+
+    hide JFrustrated
+    show JDepressed
 
     j "Sorry. I just don’t like not knowing how to fix things. All these people problems are way too complicated and it’s frustrating."
 
@@ -166,6 +225,8 @@ label Jona1:
 
     n "Okay dude, I promise."
 
+    hide JDepressed
+
     return
 label Jona2:
     scene backgroundamp
@@ -178,6 +239,8 @@ label Jona2:
 
     "The poor sap startles and hits his head on the lid."
 
+    show JRelax
+
     j "Don’t sneak up on me like that!"
     j "...how did you sneak up on me? I have, like, three trip wires around here."
 
@@ -185,9 +248,15 @@ label Jona2:
 
     n "What do you think you’re doing?"
 
+    hide JRelax
+    show JHappy
+
     j "Well, they won’t let me leave campus to comb the junkyard, so this is the next best thing. Not a lot of stuff to go through, unfortunately. These people are hornier for recycling than I am."
 
     n "...uh hunh, right. And why do you need garbage?"
+
+    hide JHappy
+    show JRelax
 
     j "Not garbage, junk. Junk is cleaner."
 
@@ -197,6 +266,9 @@ label Jona2:
 
     n "Right... so this is a thing you do routinely?"
 
+    hide JRelax
+    show JDepressed
+
     j "Used to. I’d spend all my summers hanging out in the junkyard building stuff. Other people do it too, it’s not that weird."
 
     n "No, no I get that. It’s just... you’re in a dumpster, dude."
@@ -205,6 +277,9 @@ label Jona2:
     j "Have you seen a baby around here? I think I found a diaper."
 
     n "Get out of there, man."
+
+    hide JDepressed
+    shwo JHappy
 
     j "Wait for it... Ah hah!"
 
@@ -222,9 +297,13 @@ label Jona2:
 
     j "It might need a new comb, but that’s an easy fix."
 
+    hide JHappy
+
     menu:
         "Throw it away":
             $ jRep -= 1
+
+            show JFrustrated
 
             n "It was in the trash for a reason."
 
@@ -236,16 +315,25 @@ label Jona2:
 
             n "If I look  in your room, am I going to find a bunch of useless shit in there?"
 
+            hide JFrustrated
+            show JMad
+
             j "...you will with that attitude."
             j "What’s gotten into you lately? You never used to care this much about what I’ve been up to."
 
             n "All that shit you were talking about earlier, being quiet all of the sudden; it’s gotten me worried."
+
+            hide JMad
+            show JFrustrated
 
             j "I’m worrying you? By doing what?"
             j "Last I checked, you were the one poking the hornet’s nest that is the hierarchy of high school."
             j "We’re a bunch of weirdos and freaks, what makes you think you can win a popularity contest?"
 
             n "I just don’t think holding onto all this junk is healthy."
+
+            hide JFrustrated
+            show JMad
 
             j "I didn’t ask for your opinion about how I have a shitty hobby. You could be joining me, but like always, you have to fixate on the negative."
             j "Out of the two of us, you’re the one who holds onto useless junk."
@@ -260,8 +348,12 @@ label Jona2:
 
             "He won’t be so smug when his stupid mask is shattered against the pavement."
 
+            hide JMad
+
         "Why that?":
             $ jRep += 1
+
+            show JHappy
 
             n "If you’re looking to build something, wouldn’t the scrapped set pieces be more useful?"
 
@@ -275,17 +367,28 @@ label Jona2:
             n "I could’ve looked something up for you. All it takes is copying music onto a metal sheet. That’s well within my skill set."
             n "Even if I can’t make something, I can replicate it. At least, in theory."
 
+            hide JHappy
+            show JRelax
+
             j "I suppose that’s all we’re good for, copying things that already exist."
 
             n "Way to trivialize my life’s work, pal."
+
+            hide JRelax
+            show JDepressed
+
 
             j "Sorry. I just wish I was more original. It’s not that I don’t try, I just don’t have that spark of inspiration other folks seem to have. In the end, I always fall into old habits."
 
             n "And one of those is digging through other people’s garbage."
 
             j "Funny. Like I said, I’d normally go to a junkyard where everything’s organized. This is more necessity than anything else."
+
+            hide JDepressed
         "You could buy a new one":
             $ Charm += 1
+
+            show JFrustrated
 
             j "You’re kidding, right? Do you know how expensive these things are?"
 
@@ -294,6 +397,9 @@ label Jona2:
             j "Toy’s aren’t typically made of glass. At best, it’d be around three hundred dollars, but judging by the materials used, it’s closer to a couple thousand."
 
             n "No way."
+
+            hide JFrustrated
+            show JMad
 
             j "This place used to be a library, right?"
             j "I bet it got broken during the renovations and some worker assumed it was ‘just a toy’."
@@ -304,6 +410,9 @@ label Jona2:
 
             n "How could you tell just by looking at it?"
 
+            hide JMad
+            show JRelax
+
             j "I grew up with old people. Old people love retro collectible stuff. You’ll start picking up an eye for this kind of stuff too the longer you live with Ando."
             j "Rich people are big on tradition."
 
@@ -311,18 +420,28 @@ label Jona2:
 
             j "Probably restore it. Or try to at least. The ballerina will have to stay as is. Besides, it gives it character."
             j "It’d be a shame to erase everything that made it unique."
+
+            hide JRelax
     $ jTurn += 1
     $ Charm += 1
+
+    show JDepressed
 
     j "I don’t like deception and all the messy things that come with it. With machines, the right answer is clear. Either it works or it doesn’t."
     j "People are more nuanced. It’s annoying."
 
     n "You’re preaching to the choir here, but where’s this coming from?"
 
+    hide JDepressed
+    show JFrustrated
+
     j "People have been asking me to change lately, a lot. And I get it, the I dress won’t get me a decent job blah, blah, blah. But it’s other things too."
     j "I just don’t know where the line between compromise and lying about who I am is."
 
     n "I am literally the worst person to go to about this kind of thing."
+
+    hide JFrustrated
+    show JRelax
 
     j "Really? But you’re so good at it."
     j "It doesn't matter who you’re talking to, you just adapt into the role they need you to fill."
@@ -334,6 +453,9 @@ label Jona2:
     j "I see... So if you pretended to be someone else, even though you’re still you, that’s different from adapting to make people happy?"
 
     n "Yeah, I guess. Look, can we take this conversation to the cafe? I feel weird having a conversation with someone standing in a dumpster."
+
+    hide JRelax
+    show JHappy
 
     j "Oh, right. Just give me a moment, I’ll catch up."
 
@@ -347,6 +469,8 @@ label Jona2:
 
     "I don’t think we’ll ever fully agree on the matter, but at least I can convince him to forgo booby-trapping the dumpsters. For someone so harmless, he can be a real handful."
 
+    hide JHappy
+
     return
 label Jona3:
 
@@ -355,6 +479,8 @@ label Jona3:
     "Jona invited me to hang out in his dorm room while he works on fixing up the old music box we found."
     "His room looks more like a workshop with all the disassembled junk he had strewn about."
     "While poking around his collection, I find a half finished 3D puzzle to mess around with."
+
+    show JRelax
 
     j "Have you thought of where you’re going to when we graduate? Not job wise, but literally where you’re going to live?"
 
@@ -365,6 +491,9 @@ label Jona3:
     n "True."
     n "Why do you ask?"
 
+    hide JRelax
+    show JFrustrated
+
     j "The situation with my guardians is... complicated."
     j "I know I don’t fully understand sign language, but they’re definitely hiding things from each other, and I’ve tried not to get involved."
     j "I don’t think I can avoid it much longer."
@@ -372,6 +501,9 @@ label Jona3:
     n "What, do you think they’re cheating on each other or something?"
 
     "He fumbles with his tools. What an odd thing to get flustered over."
+
+    hide JFrustrated
+    show JDepressed
 
     j "What? No, no it’s something else. Ms. Miki had shown me a bunch of old pictures of her family."
     j "I guess she had this kid brother that went missing when he was four."
@@ -386,14 +518,21 @@ label Jona3:
 
     n "Dude, don’t scare me like that."
 
+    hide JDepressed
+    show JHappy
+
     j "It would have been crazy if it was true though, almost like a fairytale. To find out I secretly had a big sister that was missing me while I was living somewhere else."
     j "She’d be so happy to be vindicated after years of fruitless searching... Wearing color contacts doesn’t hurt, does it?"
 
     "He can’t seriously be thinking of conning this woman, is he?"
 
+    hide JHappy
+
     menu: 
         "Be yourself":
             $ jRep += 1
+
+            show JRelax
 
             n "Don’t do it."
 
@@ -406,6 +545,9 @@ label Jona3:
             n "It’s not going to work. Trust me, you do not want it to work."
             n "Imagine having to lie twenty-four seven, never being able to relax, just because someone’s crazy enough to believe it. It’s not worth it."
 
+            hide JRelax
+            show JDepressed
+
             j "It’s not like I’m that important to being with. If it brings someone back from the dead and makes people happy, why does it matter that it’s a lie?"
             
             n "There’s no way that’s your only motivation."
@@ -416,14 +558,22 @@ label Jona3:
             n "You can’t just ditch her after building up an elaborate lie like that. It would kill her all over again."
 
             j "It’d be better than trying to figure out what I’m going to do on my own."
+
+            hide JDepressed
+
         "You'd need more than contacts":
             $ Charm += 1
+
+            show JRelax
 
             n "If you’re serious about pulling this off, you need to do serious research on her family, her parents, as far back as you can go."
 
             j "I barely remember anything about when I was four, why would someone else?"
 
             n "I can."
+
+            hide JRelax
+            show JFrustrated
 
             j "....."
 
@@ -433,11 +583,19 @@ label Jona3:
 
             n "Stealing someone’s identity usually is. Most catfishes are protected by the internet, you’re going for real life on a continuous basis. It’s going to be difficult."
 
+            hide JFrustrated
+            show JMad
+
             j "Who said anything about stealing? This was practically given to me, I’m just trying to figure out if I want the part."
 
             n "You should figure that out soon. There’s only so long you can keep your goggles on."
+
+            hide JMad
+
         "They're pricey":
             $ jRep -= 1
+
+            show JDepressed
 
             n "You got sixty bucks to spare?"
 
@@ -449,6 +607,9 @@ label Jona3:
 
             n "You could get a part time job."
 
+            hide JDepressed
+            show JFrustrated
+
             j "Those rarely work out for me. They always want me to take off the mask and goggles, I won’t be able to convince them to leave it, and I inevitably get fired."
 
             n "Is keeping that junk worth getting fired over?"
@@ -459,9 +620,16 @@ label Jona3:
 
             j "Please stop looking at me like that. I’m not taking them off."
 
+            hide JFrustrated
+
+    show JDepressed
+    
     j "There has to be something easier I can do. We only stay in the dorms for a short while, I’m really not looking forward to heading back in the winter with all the tenseness."
 
     n "Have you thought about talking with ‘chairwoman’ Amagi?"
+
+    hide JDepressed
+    show JFrustrated
 
     j "Are you crazy? I’m pretty sure she hides lasers or something behind those stupid spectacles."
     j "We’re nothing but pawns to her. She’d never acknowledge my existence, let alone talk to me."
@@ -476,6 +644,9 @@ label Jona3:
 
     n "You just have to be really careful."
 
+    hide JFrustrated
+    show JDepressed
+
     j "Or I could mind my own business and wait for it to pass."
     j "Not everything gets better by poking your nose into other people’s business."
 
@@ -485,6 +656,9 @@ label Jona3:
 
     n "What’s your problem?"
 
+    hide JDepressed
+    show JMad
+
     j "Ever since we’ve gotten here, you’ve done nothing but tell me what to do. It’s... odd. I get having people bossing us around again is weird."
     j "That doesn’t mean you have to do it too."
 
@@ -493,6 +667,8 @@ label Jona3:
 
     n "Clearly whatever you’ve been doing has been working so well for you in the past, so far be it for me to try and change anything."
 
+    hide JMad
+
     return
 label Jona4:
     scene backgroundcafe
@@ -500,6 +676,8 @@ label Jona4:
     "I hadn’t hung out with Jona after he got all weird about asking me for help with his family issues."
     "I have enough on my plate without adding some manufactured rhetoric about how I butt into other people’s business."
     "So it’s really weird having him seek me out for a change."
+
+    show JDepressed
 
     n "What do you want?"
 
@@ -514,6 +692,9 @@ label Jona4:
     j "Oh."
 
     n "And last I checked, you dislike ‘people’ problems, so go ingenting them for all the people around you?"
+
+    hide JDepressed
+    show JFrustrated
 
     j "I’m not inventing problems, I just notice them. And you are not taking failure well."
 
@@ -531,6 +712,9 @@ label Jona4:
 
     "It hurts to breathe. I may not be built for combat, but like hell am I giving up."
 
+    hide JFrustrated
+    show JMad
+
     j "What have I got to lose? You’re no better than me at this point."
 
     "He’s so focused on keeping my shoulder pinned that I’m able to shake my leg around his other foot to knock him to the ground."
@@ -547,6 +731,11 @@ label Jona4:
     "At least that gets him laughing. Only for a bit though, his laughter stopping the instant he sees his goggles shattered on the ground."
 
     n "Dude, I’m sorry-"
+
+    hide JMad
+    show JDepressed
+
+    #CG?
 
     j "Don’t look at me!"
 
@@ -580,9 +769,13 @@ label Jona4:
     "But Siren was a tragic and fragile figure in the history of the Karmic Gladiators and Jona’s mom was..."
     "Well, there’s no delicate way to put it, she was crazy. Could they really be the same person?"
 
+    hide JDepressed
+
     menu:
         "There's no way":
             $ jRep -= 1
+
+            show JFrustrated
 
             n "Dude, your mom was crazy, you’ve said so yourself. It probably just seems like she was right because she conditioned you to believe so."
             n "Of course people are going to freak out when they see your face, you always hide it."
@@ -590,6 +783,9 @@ label Jona4:
             j "You don’t understand, I don’t want you to understand, that would be... You made me go off topic, I came here to see if you were okay."
 
             n "Clearly I’m the poster child for well adjusted teens."
+
+            hide JFrustrated
+            show JMad
 
             j "You know what I mean."
 
@@ -599,12 +795,20 @@ label Jona4:
 
             n "What part of this looks like spiraling to you?"
 
+            hide JMad
+            show JFrustrated
+
             j "The unwavering fixation on a single goal to the point of neglecting everything else in your life. You know you do this a lot when things get stressful."
             j "I don’t want you going all tunnel vision and forget to eat and stuff."
 
             n "I’m not- This time is different, okay?"
+
+            hide JFrustrated
+
         "It's none of my buisness":
             $ Charm += 1
+
+            show JMad
 
             n "Who told you we only hung out with you to boost our egos?"
 
@@ -621,8 +825,12 @@ label Jona4:
             j "Well, she tried being tactful, I think, then she gave up and told me point blank what was going on. I thought doing whatever you guys wanted would get me somewhere, but here we are."
 
             "Here we are indeed. At this time last year, I thought I’d be ruling my own city. Instead, I’m in high school."
+
+            hide JMad
         "Play along":
             $ jRep += 1
+
+            show JRelax
 
             n "Your secret’s safe with me. I mean, I don’t know if it’s a secret or anything, I just assume that if you’re lying about your major..."
 
@@ -631,6 +839,9 @@ label Jona4:
             "He straps on his busted goggles and sighs in defeat. Only one lens in still in place, though it’s obscured by a spider web of breaks."
 
             n "Even when the lenses are intact, do they really work?"
+
+            hide JRelax
+            show JDepressed
 
             j "...not really, but they help filter out the light and dulls most colors. It just makes things easier to deal with. I got a spare, don’t worry."
 
@@ -645,12 +856,19 @@ label Jona4:
 
             n "Is avoiding getting labeled as a Charisma Major really worth all this trouble?"
 
+            hide JDepressed
+            sho JRelax
+
             j "It’s all I’ve known. Besides, the less connection I have with my mother in the eyes of the public, the easier things will be for me. It’s the same for you, isn’t it?"
 
             n "I mean, my dad was an evil bastard, but I don’t care if people compare us. I’ve surpassed him in every way by design."
             n "Besides, I’d like to believe the things I’ve done and will do are more important than who my mad scientist parents were."
+            hide JRelax
+
     $ jTurn += 1
     $ Charm += 1
+
+    show JRelax
 
     n "I just wish people would stop pointing out everything I’ve messed up and then asking me why I can’t get over it. I can’t get over it?"
     n "Everyone else can’t seem to shut up about it long enough for me to finally move on and do something new."
@@ -660,10 +878,16 @@ label Jona4:
 
     n "Yeah, and?"
 
+    hide JRelax
+    show JDepressed
+
     j "Back then all we did was complain until you and Odori convinced us to do something about it."
     j "Now we’re starting over, but you’re skipping the complaining step. It’s like you’re fighting just to fight."
 
     n "That’s what’s got you concerned? That I’m not complaining enough?"
+
+    hide JDepressed
+    show JFrustrated
 
     j "I don’t know why you keep trying to fight these kids yourself. If it’s for the sake of fighting, then what happens when we’ve beaten them all? That’s what I’m worried about."
     j "People who fight just to keep fighting, they shut down the moment they stand still. I’ve seen it more than once."
@@ -672,17 +896,25 @@ label Jona4:
 
     n "I’m just doing this to protect people. I’m not stirring up shit to keep busy."
 
+    hide JFrustrated
+    show JDepressed
+
     j "...okay."
 
     n "I’m serious! Come on, let’s go get patched up before someone sees us. I really don’t want to get detention over something dumb like this. I’m sure Hiro has something we can use."
 
     j "...sure."
+
+    hide JDepressed
+
 label Jona5:
 
     scene backgroundstage
 
     "Today I have to help Jona paint sets for an upcoming dance recital. Well, technically I don’t have to, I’ve chosen to. It’s the least I can do after breaking his goggles."
     "He has me painting all the built pieces with base coats while he constructs the rest."
+
+    show JRelax
 
     j "How’s your hand?"
 
@@ -694,9 +926,14 @@ label Jona5:
 
     j "Well, yeah, but what if you can’t? Things could be stuck this way forever. I mean, what about this is fixable?"
 
+    hide JRelax
+
     menu:
         "The future":
             $ jRep += 1
+
+            show JRelax
+
             j "....."
 
             n "Not in a cheery way, but like... Like where you’re going to go after we graduate. That’s an easy fix."
@@ -705,11 +942,19 @@ label Jona5:
 
             n "Just stay with me."
 
+            hide JRelax
+            show JHappy
+
             j "What?"
 
             n "I gotta move out after graduation anyways, and getting a place is easier if two people are shipping in."
 
+            hide JHappy
+
             if jRep >= 3:
+
+                show JHappy
+
                 j "....."
 
                 n "I mean, we’ll both need to work to make ends meet, but we can swing it."
@@ -723,7 +968,13 @@ label Jona5:
                 n "Please don’t spend all our money on art supplies."
 
                 j "No promises."
+
+                hide JHappy
+
             else:
+
+                show JDepressed
+
                 j "That’s a horrible idea. Why would you suggest that so soon after getting into a fight with me?"
                 j "Are you some kind of yandere stalker? That would explain so much."
                     
@@ -739,6 +990,11 @@ label Jona5:
                 j "We fail to find Apex and take the fall for everything."
 
                 "I can’t even laugh at the absurdity of all this. I just feel tired and numb thinking about ending up at the back end of this."
+
+                hide JDepressed
+            
+            show JDepressed
+
             n "That’s simply not an option."
 
             j "Your aura’s getting grayer."
@@ -746,14 +1002,22 @@ label Jona5:
             n "I’m fine, don’t worry about me."
 
             j "...that’s what they all said. You can’t fix everything, Nagen. The sooner you accept that, the easier it gets."
+
+            hide JDepressed
+
         "School":
             $ Charm += 1
+
+            show JHappy
             
             n "We’re a part of the first graduating class at this school. We get to establish the status quo, the traditions. Plus lord over our peers."
 
             j "Yeah, you’re the only one putting any importance on this role as student body president. You’re competing with nerds for the attention of other nerds."
 
             n "But I can make everyone here listen to me even if they don’t want to!"
+
+            hide JHappy
+            show JFrustrated
 
             j "....."
 
@@ -764,13 +1028,20 @@ label Jona5:
 
             n "It’s a two way street. We put up with teachers and we make them put up with our shit. All of it."
 
+            hide JFrustrated
+            show JRelax
+
             j "Hmm... As insulting as Rise’s attempt at an art show was, it would be nice to display some of my more finished works."
 
             n "There you go! We could make an art club or something."
 
             j "Or something..."
+
+            hide JRelax
         "Apex":
             $ jRep -= 1
+
+            show JMad
 
             j "What, change Apex? Like with the power of friendship and shit?"
 
@@ -784,6 +1055,11 @@ label Jona5:
             j "Or we can focus on helping the people closest to us and then worry about the others."
 
             n "My point is, we have to at least try and do something. Otherwise, nothing’s going to change for sure."
+
+            hide JMad
+
+    show JRelax
+
     j "...right."
     j "So Hiro’s mad at you, hunh?"
 
@@ -792,6 +1068,9 @@ label Jona5:
     j "Did he try to kiss it and make it better?"
 
     n "No! He asked me what happened and when I told him what happened, he said you were right."
+
+    hide JRelax
+    show JHappy
 
     j "Bwahahaha! Did you punch him too?"
 
@@ -802,6 +1081,9 @@ label Jona5:
 
     n "I’m supposed to be the one looking out for you guys."
 
+    hide JHappy
+    show JFrustrated
+
     j "Which is total bullshit considering all of us are older and taller than you."
 
     n "You didn’t have to bring up being taller."
@@ -810,6 +1092,9 @@ label Jona5:
     j "It’s just frustrating to see you acting like you’re in this alone."
 
     n "You’re such a hypocrite, you know that?"
+
+    hide JFrustrated
+    show JHappy
 
     j "Right back at you, asshat."
 
@@ -825,6 +1110,8 @@ label Jona5:
     j "Don’t get all pessimistic on me now. We have a lot of work to do before nightfall."
 
     "It’s times like these that I’m glad I have a photographic memory. I’ll only be glancing at the assigned reading tonight."
+    
+    hide JHappy
     
 label JonaF:
     scene backgroundfield
