@@ -110,7 +110,9 @@ image MMSmile = "Sprites/MaiMai/MMSmile.png"
 image MMFrown = "Sprites/MaiMai/MMfrown.png"
 
 #Kenzo
-image KenzoBase = "Sprites/Kenzo/kenzoSprite.png"
+image KenBase = "Sprites/Kenzo/kenzoSprite.png"
+image KenDamn = "Sprites/Kenzo/kenzodamn.png"
+image KenTalk = "Sprites/Kenzo/kenzotalk1.png"
 
 #Apex
 image ABase = "Sprites/Apex/Apexspritebase.png"
@@ -343,6 +345,7 @@ image ReDisappointed = "Sprites/Rei/Reidisappointt.png"
 image ReEh = "Sprites/Rei/Reieh.png"
 image ReIrate = "Sprites/Rei/Reiirate.png"
 image ReOpt = "Sprites/Rei/Reioptomism.png"
+image RePout = "Sprites/Rei/Reipout.png"
 image ReSad = "Sprites/Rei/Reisad.png"
 image ReSadtalk = "Sprites/Rei/Reisadtalk.png"
 image ReSmiletalk = "Sprites/Rei/Reismiletalk.png"
@@ -695,6 +698,8 @@ init python:
 
 # THE GAME STARTS HERE!
 label start:
+    camera:
+        perspective True
 
     call inventory
 

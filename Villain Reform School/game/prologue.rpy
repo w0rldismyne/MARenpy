@@ -837,20 +837,21 @@ label prologue:
 
     mm "Surprise!"
 
-    show KenzoBase at right
+    show KenBase at center
 
     kan "What part of this arrangement involved you coming here?"
 
     n "I knew it! He wasn't expecting us at all!"
 
     mm "Well, he was expecting you."
-
  
     kan "...That's the kid?"
 
-
     mm "He claims otherwise, but yes, this is him."
     mm "Don't worry, in this big ol' house, you'll hardly notice us."
+
+    hide KenBase
+    show KenDamn
 
     kan "Us?"
     kan "You're the one who insisted on abandoning your old identity and with it, any connection to me."
@@ -860,18 +861,32 @@ label prologue:
 
     n "I'm not your kid! And you're not a mom."
 
+    hide MMSmile
+    show MMO at left
+
     mm "Of course I'm a mom."
     mm "We'll work out the details later."
     mm "I have a full day ahead of me dropping off the rest of the rugrat felons, but I'll be back before you know it."
 
+    hide KenDamn
+    show KenBase
+
     kan "I agreed to claim to be taking care of the child."
     kan "You said nothing about living here."
 
+    hide MMO 
+    show MMFrown at left
+
     mm "I feel like you're hearing me, but you're not understanding."
     mm "I am a new mom and we will talk about this later."
+
+    hide MMFrown
+    show MMSmile at left
+
     mm "I'll see you soon, Nagen."
 
-    hide MMBase
+    hide MMSmile
+    hide KenBase
 
     "What happened to not leaving me alone in a strange place?"
     "The man sighs and lets me in anyway."
@@ -887,7 +902,7 @@ label prologue:
 
         "Where am I staying?":
 
-            show KenzoBase
+            show KenBase
 
             kan "Here, apparently."
 
@@ -901,17 +916,22 @@ label prologue:
 
             "I go to leave, but he stops me."
 
+            hide KenBase
+            show KenTalk
+
             kan "She didn't mention there were... others."
 
             n "That's... kind of a long story."
 
             kan "Follow me, we need to talk."
 
+            hide KenTalk
+
             jump prologue2
 
         "Who are you?":
 
-            show KenzoBase
+            show KenBase
 
             kan "I'm a software engineer."
 
@@ -926,11 +946,13 @@ label prologue:
             kan "In a way, yes. Though it's usually incredibly difficult to get her to show herself."
             kan "The question is, why is she risking that for you and your friends?"
 
+            hide KenBase
+
             jump prologue2
 
         "Why are you doing this?":
 
-            show KenzoBase
+            show KenBase
 
             n "Are they paying you to babysit me?"
             n "Or is it just because Maimai's blackmailing you?"
@@ -939,6 +961,9 @@ label prologue:
             kan "No one would listen to her."
 
             n "Then why are you doing it?"
+
+            hide KenBase
+            show KenDamn
 
             "He looks me over in disgust."
 
@@ -953,9 +978,13 @@ label prologue:
             kan "You seem confused."
             kan "Follow me, we have a lot to talk about."
 
+            hide KenDamn
+
             jump prologue2
 
 label prologue2:
+
+    show KenBase
 
     "I follow him into a cluttered study."
     "He takes a long drink of coffee before he sits down."
@@ -1063,6 +1092,11 @@ label prologue2:
     "It’s not quite the same shade of blue and the books are too new to be mine."
     "It’s equally eerie and comforting."
 
+    hide KenBase
+
+
+    scene backgroundblack
+
     play music "music/WhereS.mp3"
 
     "These hypocritical drones are spitting Lethe's memory when they worshiped her six months ago."
@@ -1155,8 +1189,7 @@ label prologue2:
 
     n "Clearly they worked wonders."
 
-    hide MMBase
-    show KenzoBase
+    show KenTalk at right
 
     kan "All the more reason not to be scared."
     kan "This is only to show the courts you can behave for a long period of time."
@@ -1165,16 +1198,16 @@ label prologue2:
 
     kan "I thought you hated being cooped up here."
 
-    hide KenzoBase
-    show MMBase
-
     "I do."
     "I do hate it, but at least I know what to expect when I’m here."
 
+    hide MMBase
+    show MMSmile
+
     mm "You can come back during the break and I’ll be going with you the first day to make sure the place is on the up and up."
 
-    hide MMBase
-    show KenzoBase
+    hide KenTalk
+    show KenBase at right
 
     kan "I assure you, it’s a legitimate establishment."
     kan "I wouldn’t send him off if I wasn’t familiar with the staff."
@@ -1186,10 +1219,14 @@ label prologue2:
     play sound "car_idling.ogg"
 
     n "I hate this."
+    
+    hide MMSmile
+    show MMFrown
 
     mm "I know. Come on, the year will be over before you know it."
 
-    hide MMBase
+    hide MMFrown
+    hide KenBase
 
     "She herds me into the car with a forced smile on her face."
 
@@ -1228,6 +1265,9 @@ label prologue2:
 
     n "Why should I care?"
 
+    hide MMBase
+    show MMSmile
+
     mm "No, but do you think these bowties proofread every book in the building before bringing you in here?"
     mm "Who knows what you could find!"
 
@@ -1236,6 +1276,9 @@ label prologue2:
     "Along the west corridor are rooms for the fine arts and along the east is a giant computer lab."
     "Large bay windows look out to the central courtyard."
     "We finally arrive at a large mahogany office door."
+
+    hide MMSmile
+    show MMFrown
 
     mm "This is it."
     mm "Promise you’ll be on your best behavior?"
@@ -1252,7 +1295,7 @@ label prologue2:
 
     "Maimai escorts me into the office."
 
-    hide MMBase
+    hide MMFrown
     play music "music/Still.mp3"
 
     scene backgroundprincipal
@@ -1275,7 +1318,7 @@ label prologue2:
     "It's like she doesn't even care."
 
     hide VBase
-    show MMBase
+    show MMSmile
 
     mm "He’s just nervous because it’s a new school."
     mm "You know teenagers, all salty about change and stuff."
@@ -1287,7 +1330,7 @@ label prologue2:
     mm "So you’re the principal?"
     mm "That’s uh, quite a shift from being a police officer."
 
-    hide MMBase
+    hide MMSmile
 
     "I've never seen Maimai so nervous before."
     "Is she scared of this woman? Or just psychics in general?"
@@ -1339,6 +1382,9 @@ label prologue2:
     n "She’s going to set me up to fail."
     n "You can’t expect me to believe she’s okay with helping someone who trashed their hometown."
 
+    hide MMBase
+    show MMFrown
+
     mm "I don’t. That’s why you need to be careful."
     mm "These people stand more to gain from your success than your failure, but I can’t guarantee their motives are good-intentioned."
     mm "We have to meet them halfway."
@@ -1349,6 +1395,9 @@ label prologue2:
     mm "I’m sure there are a lot of troubled kids who could benefit from a school like this."
 
     "Each word is slow and deliberate."
+
+    hide MMFrown
+    show MMSmile
 
     mm "I’m sure you’ll find some good friends here."
 
@@ -1361,6 +1410,8 @@ label prologue2:
     "They’re here. Somewhere in this god-forsaken reform school, I’ll find my friends."
 
     mm "You got this."
+
+    hide MMSmile
 
     # New Background showing around the outside here
     scene backgroundschool
@@ -1391,8 +1442,6 @@ label prologue2:
     hide MMFrown
 
     scene backgroundschool
-
-    hide MMBase
 
     "I really don’t want to go, but I can’t keep putting it off."
     "We say our final goodbyes and I watch as the car drives off. Tomorrow will be my first day of school."

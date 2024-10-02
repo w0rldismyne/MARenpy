@@ -14,21 +14,34 @@ label NanaseVisit:
 label Nanase1:  
     scene backgroundstuco
 
+    n "Are you busy?"
+
+    show NSurprise
+
     nk "Hunh? Oh? I mean not really, why?" 
 
     n "Wanna? hang out." 
+
+    hide NSurprise
+    show NEmbarrassed
 
     nk "S-sure!" 
 
     "She stared at me expectantly, and a little lost. To be fair, I might have looked the same way. I should probably say something."
 
+    hide NSurprise
     menu:
         "What are your hobbies?":
             $ Vision += 1
+
+            show NUrdumb
     
             nk "Hunh?" 
 
             n "What do you like to do in your free time?" 
+
+            hide NUrdumb
+            show NTalk
 
             nk "Umm? I guess cleaning?" 
             nk "I do that a lot. I've never really thought about it though."
@@ -37,16 +50,33 @@ label Nanase1:
 
             "She faltered and tried to back track."
 
+            hide NTalk
+            show NSurprise
+
             nk "That's not what I meant!" 
+
+            hide NSurprise
+            show NSad1
+
             nk "I mean I've always spent my time trying to better my chances at getting into a good career."
 
             "Her energy deflated before she finished her sentence."
+
+            hide NSad1
+            show NSad2
         
             nk "So, I guess I don't usually think about having fun." 
+
+            hide NSad2
+            show NSadsmile
+
             nk "I mean, there'll be time for that when I'm an adult right?" 
             nk "I should just focus on my goals now. The rest will sort itself out eventually."
 
             n "If you can't figure out how to balance that stuff now, what makes you think you'll have time to do it when you have a job?" 
+
+            hide NSadsmile
+            show NSad1
 
             nk "W-well, I really don't know where to start." 
 
@@ -56,11 +86,18 @@ label Nanase1:
 
             n "There you go, find something to do with pandas." 
 
+            hide NSad1
+            show NSmile
+
             nk "Okay! Yeah. I can do that." 
+
+            hide NSmile
 
         "What's with the sweater vest?":
 
             $ nkRep -= 1
+
+            show NDisappointed
 
             "She stares at me blankly."
 
@@ -76,8 +113,12 @@ label Nanase1:
 
             nk "Yeah, well this was... uhh... interesting, but I should get back to work." 
 
+            hide NDisappointed
+
         "What do you want to do?":
             $ nkRep += 1
+
+            show NEmbarrassed
 
             nk "I don't know." 
 
@@ -87,6 +128,9 @@ label Nanase1:
 
             "She stalled for time as long as she could."
 
+            hide NEmbarrassed
+            show NDisappointed
+
             nk "Usually I'd watch them play games or something while I worked." 
 
             n "What about when you weren't working?" 
@@ -94,6 +138,9 @@ label Nanase1:
             nk "Sleep." 
 
             "She picked up on my confusion."
+
+            hide NDisappointed
+            show NSad1
 
             nk "I used to be a teacher's aide." 
             nk "I'd grade papers, audit attendance records, revise lesson plans and all that." 
@@ -103,20 +150,32 @@ label Nanase1:
 
             "She bit her lip and avoided my eyes."
 
+            hide NSad1
+            show NSadsmile
+
             nk "Well, the uh, the school and I agreed it would be for the best if I wasn't a TA anymore..." 
 
             "Her shoulders slumped as she spoke."
 
+            hide NSadsmile
+            show NScold
+
             nk "I don't really talk to them anymore. My childhood friends that is." 
 
             "I want to ask her why, but it seems personal."
+
+            hide NScold
+            show NSadsmile
 
             n "Why don't we watch a movie or something?" 
 
             nk "O-okay." 
 
             "We hooked up my laptop to the classroom projector and watched Shanghai Bouncer. Lots of B-grade action scenes and pandas."
-        
+
+            hide NSadsmile
+    show NBase
+
     nk "Umm... I don't know if this is the best time for this, but you pursuing this anonymous threat letter has me concerned." 
 
     n "What else am I supposed to do?" 
@@ -131,7 +190,12 @@ label Nanase1:
 
     "She doesn't understand. The people who'd be coming for me wouldn't be your average bullies. The person doing this could very well be a threat to everyone." 
 
+    hide NBase
+    show NIrate
+
     nk "I'm just trying to help." 
+
+    hdie NIrate
 
     "She glared at me, almost about to cry. I don't think I've ever seen her this mad before. I mean, yeah I was kinda rude, but nothing deserving of such a steely glare. She stormed off without anothing word."
 
@@ -139,11 +203,18 @@ label Nanase1:
 
 label Nanase2:
     scene backgroundstuco
+
+    n "Are you busy?"
+
+    show NIrate
     nk "Yeah. Things to file, documents to shred."
 
     "Ouch, looks like she's still mad about earlier. She turned her back on me and continued shredding documents. ...Wait a minute, shredding documents?" 
 
     "I picked up a form from the pile."
+
+    hide NIrate
+    show NOffensive
 
     nk "Hey!"
 
@@ -151,21 +222,33 @@ label Nanase2:
 
     n "Are these all threat letters?"
 
+    hide NOffensive
+    show NIrate
+
     nk "Th-they're just empty threats."
     nk "It seems the anonymity of the request form makes it easy to target people."
     nk "I find it best not to give a reaction."
 
     "She struggled to change the subject."
 
+    hide NIrate
+    show NScold
+
     nk "We're really only interested in nominations for student council."
     nk "There's actually quite a few-"
 
     n "Why are you doing this?"
 
+    hide NScold
+    show NSad1
+
     nk "Well I'm aiming to be class historian, so I figured volunteering to work on the election would-."
 
     n "I mean why are you shredding these?"
     n "Why are you going out of your way to get rid of these?"
+
+    hide NSad1
+    show NOffensive
 
     nk "Is it so hard to believe that someone just wants to help you?"
 
@@ -173,14 +256,24 @@ label Nanase2:
     n "I find it very hard to believe that someone would repeatedly go out of their way to help someone with my reputation."
     n "Especially when that someone has done nothing in return. It seems very fake."
 
+    hide NOffensive
+    show NAshamed
+
     nk "Fake?"
 
     n "Sorry, probably not the best choice of words."
     n "Perfunctory would be more appropriate."
     n "I just don't get this whole...whatever it is you think you're doing."
 
+    hide NAshamed
+    show NOffensive
+
     nk "I feel bad for you!"
     nk "I understand what it's like to have a reputation."
+
+    hide NOffensive
+    show NScold
+
     nk "My Proficiency is only as good as the person I'm assisting, so I only help the best of the best!"
     nk "I am doing everything I can, but I can't even begin to help you unless you tell me what to do! So don't you dare tell me that doing what you're told is mindless, because it's the only thing I'm good at!"
     nk "So... that genuine enough for you?"
@@ -189,21 +282,34 @@ label Nanase2:
 
     n "Wait, that's why you're mad at me?"
 
+    hide NScold
+    show NSad1
+
     nk "My Proficiency is... Obedience. I need people to tell me what to do, or I fail."
     nk "I truly want to help you. I just don't know how. I'm sorry."
+
+    hide NSad1
     
     menu:
         "I didn't ask for your help.":
             $ nkRep -= 1 
 
+            show NIrate
+
             nk "Why are you making this so difficult?"
 
             n "You don't have to be here."
+
+            hide NIrate
+            show NScold
 
             nk "You're the one who came looking for me."
             nk "If you don't want my help, then why are you here?"
 
             n "I'm just trying to blow off some steam, okay?"
+
+            hide NScold
+            show NIrate
 
             nk "Yeah? Well you have a funny way of doing it."
             nk "I- I just want to make people happy."
@@ -213,8 +319,12 @@ label Nanase2:
 
             nk "It's not. So don't treat me like I'm a problem and let me do my job."
 
+            hide NIrate
+
         "Reputation?":
             $ nkRep += 1
+
+            show NEmbarrassed
 
             n "You have a reputation?"
 
@@ -223,11 +333,21 @@ label Nanase2:
 
             n "That's it? That doesn't sound so bad."
 
+            hide NEmbarrassed
+            show NCry
+
             nk "His wife didn't seem to think so."
 
             n "Oh... Oh, wait, what? When did this happen? You're like fifteen at the oldest."
 
+            hide NCry
+            show NEmbarrassed
+
             nk "It's not what you think!"
+
+            hide NEmbarrassed
+            show NAshamed
+
             nk "Everyone else seems to think that too..."
             nk "I wanted them to think that, in the past that is."
             nk "As if having a teacher as my boyfriend made me better than them somehow. Now I'm that girl."
@@ -238,8 +358,12 @@ label Nanase2:
 
             "Wait a minute- does she not know?"
 
+            hide NAshamed
+
         "You shouldn't get involved.":
             $ Intel += 1
+
+            show NScold
  
             n "I know you mean well, but this isn't something you should get involved in."
             n "It's too dangerous."
@@ -251,10 +375,16 @@ label Nanase2:
             n "You'll just get roped in with me if you keep interfering like this."
             n "You'll ruin your chances at Class Historian at this point."
 
+            hide NScold
+            show NIrate
+
             nk "W-well you'll ruin your chances at Student Council President."
 
             n "My chances are slim enough as it is."
             n "For all you know, this could make me go up in the polls. If not, then I'll do something else."
+
+            hide NIrate
+            show NOffensive
 
             nk "No! You absolutely have to be Class President! If not then..."
 
@@ -264,15 +394,28 @@ label Nanase2:
 
             "She shuddered, rejecting the idea with every fiber of her being."
 
+            hide NOffensive
+            show NIrate
             nk "I can't let that happen. You're by far the best choice we've got."
+
+            hide NIrate
+
+    show NSurprise
 
     n "Do you have any idea- Haven't you heard about the Guwon Riots?"
 
     nk "Well, yeah, but what's that have to do with anything?"
+
+    hide NSurprise
+    show NSad1
+
     nk "Unless... Oh. Were you one of the survivors?"
     nk "I've heard a few of them came here."
 
     n "You don't recognize me?"
+
+    hide NSad1
+    show NScold
 
     nk "Is this some kind of trick question? Of course I recognize you..."
     nk "We're friends, aren't we?"
@@ -283,16 +426,26 @@ label Nanase2:
 
     n "Look, I'm sorry, it's just hard for me not to question people's motivation."
 
+    hide NScold
+    show NSadsmile
+
     nk "I get it."
     nk "I do the same thing all the time. It's hard to let people in."
     nk "But that doesn't mean you have to shut people out entirely."
     nk "I'm here for you, if you need me."
     nk "You know where to find me."
+
+    hide NSadsmile
     
     return
 
 label Nanase3:
     scene backgroundstuco
+
+    show NOffensive
+
+    n "You busy?"
+
     nk "No, but aren't you?" 
 
     n "Uhh..." 
@@ -300,6 +453,9 @@ label Nanase3:
     nk "In the entire time I've known you, you haven't made one move toward advancing your campaign." 
 
     n "I've been kinda preoccupied." 
+
+    hide NOffensive
+    show NScold
 
     nk "If you can't even be bothered to campaign properly, how do you expect the students to have faith in your commitment to the position?" 
 
@@ -311,9 +467,13 @@ label Nanase3:
 
     "She doesn't seem even remotely impressed."
 
+    hide NScold
+
     menu:
         "Want to help?":
             $ nkRep += 1
+
+            show NSmile
 
             "Her eyes lit up."
     
@@ -326,11 +486,19 @@ label Nanase3:
 
             n "6th grade, really?" 
 
+            hide NSmile
+            show NTalk
+
             nk "Average literacy levels are low sir, don't underestimate the power of knowing your audience."
 
             n "But whatever shall I do without my superfluous adjectives?" 
 
+            hide NTalk
+            show NSmiletalk
+
             nk "I think you'll live. Now, come on! Let's go!" 
+
+            hide NSmiletalk
 
             scene backgroundMPath
 
@@ -374,23 +542,36 @@ label Nanase3:
             nk "Sh-shut up and draw your stupid poster." 
         "What about you?":
             $ Intel += 1
+
+            show NSurprise
     
             nk "Hunh?" 
 
             n "What about your campaign for Historian? I haven't seen you campaigning." 
+
+            hide NSurprise
+            show NUrdumb
 
             nk "That's different, I'm running unopposed." 
             nk "Not a lot of kids are rushing to be a secretary." 
 
             n "I mean, that's fair, but that doesn't mean you shouldn't try. Live by example and all that." 
 
+            hide NUrdumb
+            show NIrate
+
             nk "Does that mean you'll try harder, if I try harder?" 
 
             n "No, it means I'll start trying if you start." 
 
             nk "Ugh, point made. I'll run a proper campaign and so will you. Let's do this!" 
+
+            hide NIrate
+
         "Stand by your statement.":
             $ nkRep -= 1
+
+            show NIrate
     
             n "Yes surveying, hearing from the people, learning their problems and coming up with solutions." 
 
@@ -398,27 +579,44 @@ label Nanase3:
 
             n "G-go on." 
 
+            hide NIrate
+            show NScold
+
             nk "I have a friend who claims to want responsibility, but does none of the things to earn it." 
             nk "How do I get my lazy running mate's butt in gear." 
 
             n "Coffee." 
 
+            hide NScold
+            show NSurprise
+
             nk "Wha~at?" 
 
             n "Buy him some coffee." 
+
+            hide NSurprise
+            show NScold
 
             nk "Are you seriously asking me to bribe you into doing something you said you wanted to do?" 
 
             n "It's worth a shot." 
 
+            hide NScold
+            show NIrate
+
             nk "Ugh, you're no better than those idiots." 
-            nk "If I wanted to be someone's mommy I'd hang out with Kaz or Dyre again." 
+            nk "If I wanted to be someone's mommy I'd hang out with Kazz or Dyre again." 
 
             n "Hey! I'm a presidential nominee, not an advice columnist... I don't know who you're talking about." 
 
             nk "Two of the most immature dorks I've ever met." 
 
             "Harsh, and she's the one who started it. Nagging me out of the blue like that, what gives?"
+            hide NIrate
+
+    scene backgroundstuco
+
+    show NTalk
 
     "Even if we don't always get along, the past few days I've spent with Nanase have felt surprisingly normal."
     "After everything that happened, I hadn't expected to be able to just hang out with someone and work on school stuff again."
@@ -432,9 +630,15 @@ label Nanase3:
 
     n "Cool... cool. Then, you were there, weren't you?" 
 
+    hide NTalk
+    show NBase
+
     nk "Yeah... Nagen, what's this about?" 
 
     n "I just had to check, y'know? You just seem so unaffected by it." 
+
+    hide NBase
+    show NSad1
 
     nk "I don't remember much about what happened." 
     nk "The riots, it just feels like a giant blur to me." 
@@ -445,16 +649,24 @@ label Nanase3:
 
     n "Honestly, me too." 
 
+    hide NSad1
+    show NAshamed
+
     nk "It must be harder for you. You can remember everything." 
 
     n "I'm still trying to pull myself out of that way of thinking too." 
 
     "I'm still trying to figure out where to go from here, but it's moments like these that are nice."
 
+    hide NAshamed
+
     return
 
 label Nanase4:
     scene backgroundstuco
+
+    show NSmiletalk
+
     "Nanase and I worked on our posters for a good couple hours, preparing for speeches and public speaking in general."
     "Nanase's had a border of panda stickers and some crudely drawn books on her adverts. I tried my best to keep my letters the same size on the stupid thing."
 
@@ -465,7 +677,14 @@ label Nanase4:
 
     n "Uh, thanks again for helping out with the campaign and everything." 
 
+    hide NSmiletalk
+    show NSurprise
+
     nk "Hunh? Oh, no problem, really. It's nice to finally be working with someone, not for them." 
+    
+    hide NSurprise
+    show NSmile
+
     nk "Really nice..." 
     nk "Do you think we would have been friends if we'd gone to the same school when we were kids?" 
 
@@ -477,25 +696,49 @@ label Nanase4:
 
     nk "O-oh, right. Do you think we'd be friends if we were in the same class?"   
     
+    hide NSmile
+
     menu:
         "Yes":
+            show NBlush
+
             nk "Y-yeah, me too. Maybe things would have turned out differently."
             $ nkRep += 1
+            
+            hide NBlush
+
         "No":
+
+            show NSad2
+
             nk "You're probably right... but we're friends now. That's all that really matters."
 
+            hide NSad2
+    show NBase
+
     n "There's actually something I've been meaning to ask you..."
+
+    hide NBase
 
     menu:
         "Why do you keep trying to help me?":
             $ nkRep -= 1
+
+            show NDisappointed
+
             nk "Haven't we gone through this already? I like helping you."
 
             n "Yeah you said that. You also said you could only do something right if you were told to..." 
 
+            hide NDisappointed
+            show NUrdumb
+
             nk "Y-yeah... So?" 
 
             n "Did you want to help me? Or did someone tell you to." 
+
+            hide NUrdumb
+            show NSad1
 
             nk "O-oh, you meant like that." 
             nk "Obedience is my Proficiency and you asked me to help, that's why I'm so good at it." 
@@ -503,6 +746,9 @@ label Nanase4:
 
             n "Yeah, after you insisted. You were the one who first came to me." 
             n "Why?" 
+
+            hide NSad1
+            show NBase
 
             nk "I mean, there a lot of reasons." 
 
@@ -515,14 +761,21 @@ label Nanase4:
 
             nk "I don't know." 
 
+            hide NBase
+
         "Why do you keep calling me sir?":
             $ nkRep +=1 
+
+            show NSurprise
 
             n "I'm not your boss or anything, you could just call me by my name." 
 
             nk "Uhh... Umm..." 
 
             n "It's not that weird." 
+
+            hide NSurprise
+            show NSadsmile
 
             nk "O-okay, I'll try.. Mr. Tesuta." 
 
@@ -532,9 +785,15 @@ label Nanase4:
 
             n "Come on, we're friends aren't we?" 
 
+            hide NSadsmile
+            show NEmbarrassed
+
             nk "Okay then, N-nagen." 
 
             n "See? That wasn't hard at all." 
+
+            hide NEmbarrassed
+            show NOffensive
 
             nk "Easy for you to say!" 
             nk "I haven't called anybody by their first name since elementary school!" 
@@ -543,18 +802,29 @@ label Nanase4:
             nk "This is the ultimate sign of trust y'know, you're not allowed to disappoint me now... Nagen."
 
             "I guess it's a step in the right direction, but something about what she said seemed off."
-        
+
+            hide NOffensive
+
         "Do you want to go out?":
+
+            show NSurprise
 
             nk "Do you need some fresh air or something?" 
 
             n "I meant do you want to go out, on a date?" 
 
+            hide NSurprise
+            show NEmbarrassed
+
             nk "O-oh! Oh my goodness. Are you serious?" 
 
             n "Yeah." 
 
+            hide NEmbarrassed
+
             if nkRep > 3:
+
+                show NCry
 
                 "In all the scenarios I had run through my head of how she'd react, I never imagined her crying."
 
@@ -567,6 +837,9 @@ label Nanase4:
                 n "Yeah, I'm not messing with you or anything." 
                 n "Is that... That's not a bad thing is it?" 
 
+                hide NCry
+                show NCrysmile
+
                 nk "No, no." 
                 nk "I'm sorry."  
                 nk "I'm really, really happy." 
@@ -578,6 +851,9 @@ label Nanase4:
 
                 "I really didn't know what else to say at that point. I just kinda stood there, feeling useless while she calmed down."
 
+                hide NCrysmile
+                show NBlush
+
                 nk "You want to go out with me." 
 
                 "She repeated it softly, reaffirming what I feel like I've repeated a few times now."
@@ -588,9 +864,16 @@ label Nanase4:
 
                 n "So that's a yes then?" 
 
+                hide NBase
+                show NSadsmile
+
                 nk "Ah! Yes, of course." 
 
+                hide NSadsmile
+
             else:
+                
+                show NCry
 
                 nk "That... wouldn't be a good idea." 
 
@@ -603,11 +886,18 @@ label Nanase4:
 
                 n "What makes you think you'd be hurting me?" 
 
+                hide NCry
+
+    show NAshamed
+
     nk "I'm sorry, I just keep making things difficult by getting involved." 
     nk "I don't know what I'm supposed to do anymore." 
     nk "I want to do everything I can to help you, but I'm not even sure what that means." 
 
     n "Nanase what's going on?" 
+
+    hide NAshamed
+    show NSad2
 
     nk "Something just doesn't feel right about this." 
     nk "I feel like I've kinda forced myself on you, and I feel really bad about it." 
@@ -615,6 +905,9 @@ label Nanase4:
     nk "It made me feel needed, but what if that's a bad thing?" 
     nk "What if I'm repeating the same mistakes over and over again and now I'm dragging you down with me?!" 
     nk "Or... maybe I'm just being paranoid." 
+
+    hide NSad2
+    show NSad1
 
     "Nanase's always been a little codependent around me."
     "I had just written it off as a side effect of having a limited number of friends."
@@ -626,6 +919,9 @@ label Nanase4:
 
     "I watched as all emotion drained from her face. She stared at me blankly, maybe thinking something over, I'm not sure."
     
+    hide NSad1
+    show NBase
+
     #nk no emotion
     nk "I'm sorry, that request conflicts with 17 previous commands." 
     nk "Would you like to continue or override existing commands?" 
@@ -636,8 +932,16 @@ label Nanase4:
     nk "Resuming. Please wait."
 
     #nk "normal"
+
+    hide NBase
+    show NSurprise
+
     nk "I'm sorry for worrying you." 
     nk "I'm fine really, I just have a lot on my mind lately." 
+
+    hide NSurprise
+    show NAshamed
+
     nk "It's kinda hard to explain." 
 
     n "...right. Does it having anything to do with... whatever the hell that was?" 
@@ -648,9 +952,11 @@ label Nanase4:
 
     nk "I'm sorry sir, now's not a very good time." 
 
+    hide NAshamed
+
     return
 
 label NanaseF:
     scene backgroundstuco
-    "Nagase must be busy right now."
+    "Nanase must be busy right now."
     return
