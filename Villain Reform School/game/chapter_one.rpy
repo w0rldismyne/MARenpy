@@ -220,10 +220,10 @@ label chapter1_investigation3:
             call MuInv1
 
         "Kazz":
-            pass
+            call KazzInv1
 
         "Mariko":
-            pass
+            call MarikoInv1
 
         "Next Page":
             jump chapter1_investigation

@@ -23,10 +23,10 @@ define u        = Character("Uitto Hanatabe",   window_background = "gui/text_bo
 define y        = Character("Yoku Teki",        window_background = "gui/text_boxes/YokuText.png")
 
 # Teachers
-define ik       = Character("Inukai",           window_background = "gui/text_boxes/InukaiText.png")
-define sa       = Character("Sato",             window_background = "gui/text_boxes/SatoText.png")
+define ik       = Character("Proffessor Inukai",           window_background = "gui/text_boxes/InukaiText.png")
+define sa       = Character("Miss Sato",             window_background = "gui/text_boxes/SatoText.png")
 define v        = Character("Vivaldi Thani",    window_background = "gui/text_boxes/VivaldiText.png")
-define ya       = Character("Yaguchi",          window_background = "gui/text_boxes/YaguchiText.png")
+define ya       = Character("Mister Yaguchi",          window_background = "gui/text_boxes/YaguchiText.png")
 
 # Extras
 define cop      = Character("Cop",              window_background = "gui/text_boxes/OtherText.png")
@@ -91,6 +91,7 @@ image backgroundstage          = "Backgrounds/stage.png"
 image backgroundstuco          = "Backgrounds/stuco.png"
 image backgroundMansion        = "Backgrounds/Mansion.jpg"
 image backgroundgym            = "Backgrounds/gym.jpg"
+image backgroundyoffice        = "Backgrounds/yoffice.jpg"
 
 ### Character Sprites ###
 

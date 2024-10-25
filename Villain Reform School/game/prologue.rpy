@@ -6681,18 +6681,37 @@ label Meeting:
             
             scene backgroundclass
 
+            show YaBase at right
+
             ya "So, what's the plan?"
+
+            show SaEyeroll at left
 
             sa "Darling, this was the plan."
 
+            show VBase
+
             v "For now, we will proceed as originally intended. This just means we'll have to devote more energy to security."
+
+            hide YaBase
+            show YaFrown at right
 
             ya "With what time?"
 
+            hide SaEyeroll
+            show SaGeez at left
+
             sa "The four of us are burnt out as it is. We need manpower. If you would just let me call a few people..."
+
+            hide ViBase
+            show IkConcern
 
             ik "Man, hearing you guys bicker like this really reminds me of the old days."
             ik "Still..."
+
+            hide IkConcern
+            hide YaFrown
+            hide SaGeez
 
             #CG note
 
@@ -6704,11 +6723,21 @@ label Meeting:
 
             #CG teachers
 
+            show IkConcern
+
             ik "This is a little too eloquent for a student to be responsible, don't you think Viv?"
+
+            show VFrown at left
 
             v "We can't exclude any possibility at this point."
 
+            show YaFrown at right
+
             ya "For your sake, I hope it's some dumb kid."
+
+            hide IkConcern
+            hide YaFrown
+            hide VFrown
 
             call chapter_one
         else:

@@ -195,7 +195,7 @@ label Nanase1:
 
     nk "I'm just trying to help." 
 
-    hdie NIrate
+    hide NIrate
 
     "She glared at me, almost about to cry. I don't think I've ever seen her this mad before. I mean, yeah I was kinda rude, but nothing deserving of such a steely glare. She stormed off without anothing word."
 
