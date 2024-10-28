@@ -50,7 +50,7 @@ label Jona1:
 
     j "No... At least, I don’t think so. She’s an art teacher, so it’s possible. I just figured I’d make it look nice since she wants to see it."
 
-    n "I just don’t understand how Maimai thinks she can swoop in with this ‘mom’ person and it’ll erase everything. Sure, she’s nice to me, but she’s still a known killer. It’s weird, right?"
+    n "I just don’t understand how Maimai thinks she can swoop in with this ‘mom’ persona and it’ll erase everything. Sure, she’s nice to me, but she’s still a known killer. It’s weird, right?"
 
     j "......"
 

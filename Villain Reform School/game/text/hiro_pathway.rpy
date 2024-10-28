@@ -517,7 +517,7 @@ label Hiro2:
 
     h "That’s why we jumped out the window!"
 
-    n "I can’t believe you jumped out the window. Don’t you ever picked me up like that again!"
+    n "I can’t believe you jumped out the window. Don’t you ever pick me up like that again!"
 
     hide HHappy
     show HSmirk

@@ -327,6 +327,8 @@ label chapter1_day1_event_morning:
 
         n "Yeah... yeah, I just... it felt weird coming from you is all. Sorry."
 
+        scene backgroundblack with fade
+
     return
 
 label chapter1_day1_event1:
@@ -353,7 +355,7 @@ label chapter1_day1_event1:
         "Vision":
             $ Vision += 1
             call chapter1_day1_event1_classes_vision
-
+    scene backgroundblack with fade
     return
 
 label chapter1_day1_event1_classes_vigor:
@@ -603,6 +605,8 @@ label chapter1_day1_event1_classes_vigor:
 
     hide IkSigh
 
+    scene backgroundblack with fade
+
     return
 
 label chapter1_day1_event1_classes_charm:
@@ -674,6 +678,8 @@ label chapter1_day1_event1_classes_charm:
     hide NBase
     
     "Ms. Yamamoto points to the blackboard."
+
+    scene backgroundblack with fade
 
     return
 
@@ -1005,6 +1011,8 @@ label chapter1_day1_event1_classes_intelligence:
 
     hide YaFrown
 
+    scene backgroundblack with fade
+
     return
 
 label chapter1_day1_event1_classes_vision:
@@ -1273,6 +1281,8 @@ label chapter1_day1_event1_classes_vision:
 
     hide VBase
 
+    scene backgroundblack with fade
+
     return
 
 label chapter1_day1_event2:
@@ -1506,6 +1516,8 @@ label chapter1_day1_event2:
 
     hide NBase
 
+    scene backgroundblack with fade
+
     return
 
 label chapter1_day1_event3:
@@ -1577,6 +1589,8 @@ label chapter1_day1_event3:
     g "Be careful using second-hand testimonies; sometimes things get lost in translation."
     g "Hanging out with classmates will give you bonuses in their Major."
     g "Each Major has different strengths; experiment to see which works best for you."
+
+    scene backgroundblack with fade
 
     return
 
@@ -1685,6 +1699,8 @@ label chapter1_day2_event_morning:
     n "Shit!"
 
     "My alarm says it's going off, but no sound is coming out. I fall out of bed in a panic."
+
+    scene backgroundblack with fade
 
     return
 
@@ -1886,6 +1902,8 @@ label chapter1_day2_event1:
     hide NBase
 
     "We splinter off into our respective classes. I do my best not to nod off during Ms. Sato's lecture on symbolism."
+
+    scene backgroundblack with fade
 
     return
 
@@ -2134,7 +2152,7 @@ label chapter1_day2_event2:
         hide NSadsmile
 
         "She leaves, taking small, methodic steps as she goes. It must still hurt pretty bad, but why is she keeping it a secret?"
-
+    scene backgroundblack with fade
     return
 
 label chapter1_day2_event3:
@@ -2157,7 +2175,7 @@ label chapter1_day2_event3:
     hide MuBase
 
     "Wait a minute, the nurse is gone... why is he able to get in?"
-
+    scene backgroundblack with fade
     return
 
 label chapter1_day2_event_night:
@@ -2200,7 +2218,7 @@ label chapter1_day3_event_morning:
 
     "Uggh"
     "I have gym today."
-
+    scene backgroundblack with fade
     return
 
 label chapter1_day3_event1:
@@ -2317,7 +2335,7 @@ label chapter1_day3_event1:
     hide JHappy
     hide UBase
     hide HSadSmile
-
+    scene backgroundblack with fade
     return
 
 label chapter1_day3_event2:
@@ -2368,7 +2386,7 @@ label chapter1_day3_event2:
     mu "Well, you clearly need medical help and you won't tell me what it is."
     mu "Usually when that happens, it's something sex related."
 
-    n "That's not what's going on damn it!"
+    n "That's not what's going on, damn it!"
 
     "He looks at me expectantly, his eraser poised over the paper."
     "The longer it takes for me to answer, the more he'll think I’m lying."
@@ -2445,7 +2463,7 @@ label chapter1_day3_event2:
 
     "When I wake up again, I have two lines coming out of my chest and an antibiotic running above my head."
     "He sheepishly informs me that the nurse will be by in two days to see me in person."
-
+    scene backgroundblack with fade
     return
 
 label chapter1_day3_event3:
@@ -2473,7 +2491,7 @@ label chapter1_day3_event3:
 
     n "Have you tried asking Uitto?"
 
-    hide MGlare
+    hide MGrin
     show MJudge at left
 
     m "No... Why, do you think she'd be interested?"
@@ -2500,11 +2518,13 @@ label chapter1_day3_event3:
     n "If she knows I asked you to talk to her, she'll think it's a prank and avoid you even more."
 
     hide MCackle
-    show MSmiletalk
+    show MSmiletalk at left
 
     m "Of course! It'll be our little secret!"
 
     hide MSmiletalk
+
+    scene backgroundblack with fade
 
     return
 
@@ -2551,7 +2571,7 @@ label chapter1_day4_event_morning:
 
     "As annoying as it was, I kind of miss Kazz's broadcast."
     "It beats waking up to an empty room knowing I have to read old Shakespeare in front of everyone."
-
+    scene backgroundblack with fade
     return
 
 label chapter1_day4_event1:
@@ -2701,6 +2721,8 @@ label chapter1_day4_event1:
 
     "And I've even found something from his favorite series. It seems I'll have to find something else to hold his attention."
     hide HSass
+
+    scene backgroundblack with fade
     return
 
 label chapter1_day4_event2:
@@ -2737,13 +2759,15 @@ label chapter1_day4_event2:
     mh "I asked the teachers if I could bring my old GameStation collection, y'know, since it predates the internet."
     mh "They said yes, if I share it with club members."
 
-    hide HHappy at right
+    hide HBase
+    show HHappy at right
 
     h "What games do you have?"
 
     "Before Momoko can seal the deal, Chisei bellows from down the hall."
 
-    show ChBase
+    hide UCringe
+    show ChBase at left
 
     ch "Hark, deceiver!"
 
@@ -2937,6 +2961,8 @@ label chapter1_day4_event2:
     hide HSadtalk
     hide JFrustrated
 
+    scene backgroundblack with fade
+
     return
 
 label chapter1_day4_event_night:
@@ -3016,7 +3042,7 @@ label chapter1_day5_event_morning:
     kk "Starting us off, we've got a request from the heart. 'Hurt' by Midday Maniacs."
 
     "I drag myself out of bed and remind myself it's just one more day of classes before the weekend."
-
+    scene backgroundblack with fade
     return
 
 label chapter1_day5_event1:
@@ -3115,6 +3141,8 @@ label chapter1_day5_event1:
 
     n "Thanks... I think."
 
+    scene backgroundblack with fade
+
     return
 
 label chapter1_day5_event2:
@@ -3194,7 +3222,7 @@ label chapter1_day5_event2:
         n "Thanks for hearing me out."
 
         hide SRelax
-
+    scene backgroundblack with fade
     return
 
 label chapter1_day5_event3:
@@ -3266,7 +3294,7 @@ label chapter1_day5_event3:
     "Lately she seems to be pushing everyone away indiscriminately."
 
     hide Uittosmile
-    show Uittobase
+    show UBase
 
     u "Hey now, don't go looking at me like that. Quit thinking about sad shit."
 
@@ -3274,7 +3302,7 @@ label chapter1_day5_event3:
 
     u "Don't push it, Tesuta."
 
-    hide Uittobase
+    hide UBase
 
     if Vision >= 10:
 
@@ -3322,7 +3350,9 @@ label chapter1_day5_event3:
     u "...Yeah, annoyingly so. At least I know you set them up to it instead of some ulterior motive."
 
     hide UBase
+    scene backgroundblack with fade
 
+    return
 label chapter1_day5_event4:
     play music "music/Interloper.mp3"
     scene backgroundcafexn
@@ -3363,7 +3393,7 @@ label chapter1_day5_event4:
 
     "Before I can get a word in, they run off. By now, he should be at the field where we were supposed to surrender."
     "The question is, who's behind this?"
-
+    scene backgroundblack with fade
     return
 
 label chapter1_day5_event_night:
@@ -3599,5 +3629,7 @@ label chapter1_day5_event_night:
     scene backgroundC1_E
 
     g "Chapter One End"
+
+    scene backgroundblack with fade
 
     return

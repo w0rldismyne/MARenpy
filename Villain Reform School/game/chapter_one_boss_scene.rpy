@@ -65,6 +65,7 @@ label chapter1_boss_scene:
     m "But if you’re going to continue to defend him, then you’re just as guilty."
 
     hide Uittogurl
+    hide ReDisappointed
     show ReSad 
 
     re "Mariko, this is enough! You’re scaring me."
@@ -79,7 +80,7 @@ label chapter1_boss_scene:
 
     "She snaps her fingers and with solemn expressions, the other girls turn to us. Uitto and Jona end up pinned before I know it."
 
-    hide MMadtalk
+    hide MCry
     show MGlare
 
     m "This wouldn’t have happened if you just listened to me in the first place."
@@ -91,6 +92,8 @@ label chapter1_boss_scene:
 
     m "This is your chance to wash your hands of this whole mess, Nagen. Turn tail and run. Run as far away as you can from this place."
     m "Show me how far you can really make it on your own."
+
+    "What else is there to say?"
 
     hide MMadtalk
 
@@ -355,7 +358,7 @@ label chapter1_boss_battle_midfight_scene:
     hide screen boss_mariko
     with dissolve
 
-    scene backgroundB2
+    scene backgroundB5
 
     "The scoreboard that overlooks the field lights up, revealing where Hiro had been bound and gagged."
 
@@ -364,6 +367,8 @@ label chapter1_boss_battle_midfight_scene:
     "I attempt to knock her out while she’s distracted, but when I hit her..."
 
     h "Mpmph!"
+
+    scene backgroundB2
 
     m "Pretty neat, hunh?"
     m "Anytime I get hit, he feels it instead."

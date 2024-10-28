@@ -27,6 +27,7 @@ define ik       = Character("Proffessor Inukai",           window_background = "
 define sa       = Character("Miss Sato",             window_background = "gui/text_boxes/SatoText.png")
 define v        = Character("Vivaldi Thani",    window_background = "gui/text_boxes/VivaldiText.png")
 define ya       = Character("Mister Yaguchi",          window_background = "gui/text_boxes/YaguchiText.png")
+define ci       = Character("Chiriyo",          window_background = "gui/text_boxes/OtherText.png")
 
 # Extras
 define cop      = Character("Cop",              window_background = "gui/text_boxes/OtherText.png")
@@ -523,6 +524,7 @@ image backgroundB1 = "CGs/Boss1_1.png"
 image backgroundB2 = "CGs/Boss1_2.png"
 image backgroundB3 = "CGs/Boss1_3.png"
 image backgroundB4 = "CGs/Boss1_4.jpg"
+image backgroundB5 = "CGs/Boss1_5.png"
 image backgroundUPath = "CGs/UPath.png"
 image backgroundHPath = "CGs/HPath.png"
 image backgroundHPath2 = "CGs/HPath2.png"

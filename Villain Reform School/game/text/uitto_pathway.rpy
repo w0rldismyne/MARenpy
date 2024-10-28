@@ -92,11 +92,11 @@ label Uitto1:
             n "What are you talking about?"
 
             hide Uittosad
-            show Uittobase
+            show UBase
 
             u "Always so damn literal. I was putting on an act, you dumbass." 
 
-            hide Uittobase           
+            hide UBase           
 
         "You're right":
             $ uRep -= 1
@@ -252,13 +252,13 @@ label Uitto2:
     n "Whatever. Why hate your cohorts?"
 
     hide Uittogurl
-    show Uittobase
+    show UBase
 
     u "See, you’re an intelligence major, so you don’t get it."
     u "Getting labeled a Charisma Major is nothing but trouble. Like Kitsune, classic example of the vapid peacocks I get lumped in with. The people who advertise them only make it worse."
     u "You’re either preened for objectification or labeled manipulative. It doesn’t matter how smart you are or how hard you work, all your accomplishments are considered handouts."
    
-    hide Uittobase
+    hide UBase
     show Uittocringe
    
     u "There’s only a few types who can survive that lifestyle; I can’t stand any of them."
@@ -403,14 +403,14 @@ label Uitto2:
     n "What do you want to do?"
 
     hide Uittogurl
-    show Uittobase
+    show UBase
 
     u "I mean, what else is there? I’ve been training for Proficiency pageants my whole life. It’s all I know."
 
     n "Well one of the benefits of all of this is the freedom to make our own decisions."
     n "No one’s going to force you back into those pageants and you don’t have to go around advertising your Major."
 
-    hide Uittobase
+    hide UBase
     show Uittosmile
 
     u "Hey, you’re right! I could do whatever I want!"
@@ -546,12 +546,12 @@ label Uitto3:
             n "...that was my best."
 
             hide Uittocringe
-            show Uittobase
+            show UBase
 
             u "That’s why the problem was your choices, not your energy. You’re just trying to have fun with it."
             u "I respect that. It’s not like you’re going to be on stage anytime soon."
 
-            hide Uittobase
+            hide UBase
 
         "Improv":
             $ uRep -= 1
@@ -561,13 +561,13 @@ label Uitto3:
             n "Why don’t you start us off?"
 
             hide Uittosmile
-            show Uittobase
+            show UBase
 
             u "Oh. Okay, let’s see..."
 
             "She flips back a few pages."
 
-            hide Uittobase
+            hide UBase
             show Uittosad
 
             u "I’ve wandered these halls a thousand different ways. Something is a miss. Who goes there?"
@@ -821,11 +821,11 @@ label Uitto4:
             "She smacks the ball with her racket."
 
             hide Uittotalk
-            show Uittobase
+            show UBase
 
             u "You just have to not suck at it."
 
-            hide Uittobase
+            hide UBase
 
         "I've always wanted to try":
             $ uRep += 1
@@ -884,7 +884,7 @@ label Uitto4:
     $ uRep += 1
     $ uTurn += 1
 
-    show Uittobase
+    show UBase
  
     n "You’re pretty good with that racket."
 
@@ -892,7 +892,7 @@ label Uitto4:
 
     n "Wait, really?"
 
-    hide Uittobase
+    hide UBase
     show Uittotalk
 
     u "I just feel like everyone’s staring at me, waiting for me to mess up."
@@ -966,14 +966,14 @@ label Uitto5:
     n "Oh god, who did you kill?"
 
     hide Uittosmirk
-    show Uittobase
+    show UBase
 
     u "No one! Geez, give me a little credit, it’s nothing that serious. Just meet me by the back fence when you’re done."
     u "I’ll explain everything later, just get your things."
 
     n "O-okay?"
 
-    hide Uittobase
+    hide UBase
     
     scene backgroundfield
 
@@ -1256,11 +1256,11 @@ label Uitto5:
     n "Cool, so we can forget about the whole running away thing?"
 
     hide Uittosmirk
-    show Uittobase
+    show UBase
 
     u "For now. Come on, let’s go back before they’ve noticed we’re gone."
 
-    hide Uittobase
+    hide UBase
 
     return
 
