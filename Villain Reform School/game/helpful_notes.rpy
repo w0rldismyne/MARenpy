@@ -55,8 +55,8 @@
 # WISHLIST:
 # Text animation (typewriter)
 # Image gallery
-# Battle system
-# Skip API for mechanics
-# Investigation stuff
+# Battle system - Done
+# Skip API for mechanics - Can't
+# Investigation stuff - Done
 
 # Memory feature for prologue menu

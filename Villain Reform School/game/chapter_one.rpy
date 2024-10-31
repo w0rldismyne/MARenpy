@@ -260,7 +260,7 @@ label Ask_For_Help:
         "Fuck this":
             "I’ve seen too many horror movies to go blindly into strange places. I should just go to bed."
             # (end scene)
-	    "Go in":
+        "Go in":
             #continue scene
 "I used one of the old books to keep the door from closing behind me. 
 "The last thing I need is to get locked in a place I’m not supposed to be in."
@@ -346,7 +346,7 @@ q "Nagen? I don’t recognize that name. Are you a student or a teacher?”
 
             q "Well, I’m supposed to be on firewall duty, but my students need me!”
 
-	    "Student":
+        "Student":
             q "Righty-o. I promise to keep all your secrets!"
             q "Oh, but I’m not sure how you can fill out your profile without your friend hearing."
             q "Once everything’s back online we can fill it out together.”
@@ -390,7 +390,7 @@ ci "Will you be by to visit again?”
             "It’s so proud of itself, it’s kind of sad."
 
             ci "Next time you come by, the door will open.”
-	    "No":
+        "No":
 
             ci "Your friend is in good paws. Please be safe on your way back.”
 

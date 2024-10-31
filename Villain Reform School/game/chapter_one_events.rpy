@@ -298,7 +298,7 @@ label chapter1_day1_event_morning:
 
         n "You're seriously going to support her?"
 
-        h "...yeah? You got something against cheerleaders?"
+        h "...Yeah? You got something against cheerleaders?"
 
         hide HSadSmile
         show UBase
@@ -1383,7 +1383,7 @@ label chapter1_day1_event2:
     u "We didn't come here to start shit, we came because we were forced to."
     u "If anyone lays a hand on Hiro, I'll claw your eyes out."
 
-    re "...you're not even going to apologize?"
+    re "...You're not even going to apologize?"
 
     "Rei pleads with her last bit of hope. Everyone else looks on with a mixture of grief and loathing."
     "Uitto stands between us, acting as a rage-filled human shield. I can hear staff thundering down the stairs after us."
@@ -3353,6 +3353,7 @@ label chapter1_day5_event3:
     scene backgroundblack with fade
 
     return
+
 label chapter1_day5_event4:
     play music "music/Interloper.mp3"
     scene backgroundcafexn
