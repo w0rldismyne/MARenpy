@@ -5,14 +5,14 @@ label chapter1_day1_event_morning:
     scene backgroundroom
 
     kk "Good morning, brotato chips!"
-    kk "We’re going to start this school year with a banging opening ceremony in the amphitheater before classes start."
+    kk "We're going to start this school year with a banging opening ceremony in the amphitheater before classes start."
     kk "You got one hour to be up and ready this morning."
-    kk "And now, a request from the heart, an original mix by your’s truly to start your day with fighting spirit."
+    kk "And now, a request from the heart, an original mix by your's truly to start your day with fighting spirit."
 
-    "I wake up to a song I’ve never heard blaring from an old radio alarm clock."
+    "I wake up to a song I've never heard blaring from an old radio alarm clock."
     "My dorm is uncomfortably cold compared to my bed, but I have to cross the room in order to turn it off."
 
-    n "Ugh, where’s the off switch on this thing?"
+    n "Ugh, where's the off switch on this thing?"
 
     "From outside my door, I can hear a rush of activity and a loud bang."
 
@@ -20,15 +20,15 @@ label chapter1_day1_event_morning:
 
     h "Come on, Nagen, we got to get going if we want to sit together."
 
-    n "Just save me a seat, I’ll meet up with you later."
+    n "Just save me a seat, I'll meet up with you later."
 
-    j "I tried that, he wouldn’t stop knocking until I opened the door. Do NOT let him in."
+    j "I tried that, he wouldn't stop knocking until I opened the door. Do NOT let him in."
 
-    h "If I don’t bug you guys, you’ll just go back to sleep and we’ll be laaate."
+    h "If I don't bug you guys, you'll just go back to sleep and we'll be laaate."
 
     "The banging increases tenfold."
 
-    j "I can’t stop him. His desire to be annoying is too strong."
+    j "I can't stop him. His desire to be annoying is too strong."
 
     h "Open the doooor."
 
@@ -36,13 +36,13 @@ label chapter1_day1_event_morning:
 
     scene backgrounddorm
 
-    "Jona could only restrain one of Hiro’s arms at a time."
+    "Jona could only restrain one of Hiro's arms at a time."
     "It was a valiant effort, but he could be dragged wherever Hiro wanted to go."
 
     show JFrustrated
     show HHappy at left
 
-    j "Where’s your school stuff?"
+    j "Where's your school stuff?"
 
     n "In my locker, you nut case."
 
@@ -54,7 +54,7 @@ label chapter1_day1_event_morning:
     hide HHappy
     show HPuppy at left
 
-    h "Come on, Uitto’s saving us a spot with her giraffe legs. We gotta go."
+    h "Come on, Uitto's saving us a spot with her giraffe legs. We gotta go."
 
     hide HPuppy
     hide JDepressed
@@ -62,8 +62,8 @@ label chapter1_day1_event_morning:
     scene backgroundamp
     play music "music/TheLoyalist.mp3"
 
-    "I’m hoping that means she’s ready to talk to me, but when we get to the amphitheater, Hiro and Jona immediately sit on either side of her."
-    "She’s ignoring me in favor of her own reflection."
+    "I'm hoping that means she's ready to talk to me, but when we get to the amphitheater, Hiro and Jona immediately sit on either side of her."
+    "She's ignoring me in favor of her own reflection."
 
     show HHappy at left
 
@@ -75,7 +75,7 @@ label chapter1_day1_event_morning:
 
     show JDepressed at right
 
-    j "I didn’t unpack anything yesterday, sorry."
+    j "I didn't unpack anything yesterday, sorry."
 
     u "Next time, just send someone ahead. You know I hate-"
 
@@ -93,22 +93,22 @@ label chapter1_day1_event_morning:
     hide KSmug
     show KCatty at right
 
-    k "Though I suppose anyone can catch attention with the amount of makeup you put on. Careful not to touch, boys, I heard she doesn’t use sealing spray."
+    k "Though I suppose anyone can catch attention with the amount of makeup you put on. Careful not to touch, boys, I heard she doesn't use sealing spray."
 
     hide Uittocringe
     hide HGrump
     show Uittoiguess at left
 
-    u "They could care less what I’m wearing, and so should you. This thing you’re doing, it’s not cute. Just go sit down somewhere, these seats are clearly taken."
+    u "They could care less what I'm wearing, and so should you. This thing you're doing, it's not cute. Just go sit down somewhere, these seats are clearly taken."
     
-    "She sounds so tired. I’m able to grab her attention and silently ask if she knows this girl from before."
-    "Uitto pantomimes a long winded ‘no’. Kitsune, completely oblivious, sits on Jona’s other side."
+    "She sounds so tired. I'm able to grab her attention and silently ask if she knows this girl from before."
+    "Uitto pantomimes a long winded ‘no'. Kitsune, completely oblivious, sits on Jona's other side."
 
     hide KCatty
     show KWhatever at right
 
     k "I could have my fans follow me around all the time, but I was afraid it would make me too unapproachable."
-    k "People could get the wrong idea and think I’m a stuck up attention hog."
+    k "People could get the wrong idea and think I'm a stuck up attention hog."
     
     hide Uittoiguess
     show UBase at left
@@ -124,7 +124,7 @@ label chapter1_day1_event_morning:
     
     k "H-hunh?"
 
-    n "Isn’t that why you came here?"
+    n "Isn't that why you came here?"
 
     hide KShock
     show KTalk at right
@@ -151,32 +151,32 @@ label chapter1_day1_event_morning:
     hide UBase
     show Uittocringe
 
-    u "Thank god. I seriously don’t know what I’d do without you guys."
+    u "Thank god. I seriously don't know what I'd do without you guys."
     
     show HBeans at right
     
 
-    h "Why didn’t you just tell her to go away?"
+    h "Why didn't you just tell her to go away?"
 
     hide Uittocringe
     show Uittosadtalk
 
-    u "It’s the first day of school."
-    u "I’m not going to shit on someone’s self esteem for seeking validation, that’d be pointlessly cruel."
+    u "It's the first day of school."
+    u "I'm not going to shit on someone's self esteem for seeking validation, that'd be pointlessly cruel."
     u "It just sucks that the one person who wanted to talk to me just wanted to compete."
 
     hide Uittosadtalk
     hide HBeans
     
-    "We’re interrupted by a comical scale of trumpets as the vice principal bounds on stage. Principal Vivaldi follows close behind in silence."
+    "We're interrupted by a comical scale of trumpets as the vice principal bounds on stage. Principal Vivaldi follows close behind in silence."
 
     show IkBase
     
-    ik "Welcome, everyone! I hope you all had a good night’s sleep!"
+    ik "Welcome, everyone! I hope you all had a good night's sleep!"
 
     "No one responds."
 
-    ik "We’ll work on that later. Right now, we wanted to remind you all of a few important school rules before classes start."
+    ik "We'll work on that later. Right now, we wanted to remind you all of a few important school rules before classes start."
     ik "With a lot of hard work, we hope this place can become like home to you."
 
     hide IkBase
@@ -185,7 +185,7 @@ label chapter1_day1_event_morning:
     
     v "All students are to remain on campus at all times."
     v "That means staying out of the wooded areas surrounding the school."
-    v "It’s easy to get lost out there and we don’t want anyone to get hurt."
+    v "It's easy to get lost out there and we don't want anyone to get hurt."
 
     hide IkFrown
     show IkSad at left
@@ -200,13 +200,13 @@ label chapter1_day1_event_morning:
     v "It is also the reason many of your electronic devices were confiscated before entering the dorms."
     v "We apologize for any inconveniences this might have caused."
     
-    "They didn’t even let me transfer my music onto their cheap burner phone. At least I know my stuff’s safe with Maimai."
+    "They didn't even let me transfer my music onto their cheap burner phone. At least I know my stuff's safe with Maimai."
     
-    ik "Now to end on a happier note, here’s Mariko with some announcements about school clubs."
+    ik "Now to end on a happier note, here's Mariko with some announcements about school clubs."
 
     show MGrin at right
     
-    m "How’s everyone feeling this morning!?"
+    m "How's everyone feeling this morning!?"
 
     play music "music/leaf.mp3"
 
@@ -218,14 +218,14 @@ label chapter1_day1_event_morning:
     "We murmur amongst ourselves with one brave soul demanding more sleep."
     
     m "Sleep is for the weak willed! You lot have spent the last year and a half lazing around already."
-    m "If we’re going to make it through another year, we have to face it with fists full of fire!"
+    m "If we're going to make it through another year, we have to face it with fists full of fire!"
     
-    "Her little speech inspires laughter. It may not have been the reaction she wanted, but it’s lifted the mood."
+    "Her little speech inspires laughter. It may not have been the reaction she wanted, but it's lifted the mood."
     
     hide MCackle
     show MCry
 
-    m "A-anyway, the point is, this year could really suck if we don’t have the right attitude going in."
+    m "A-anyway, the point is, this year could really suck if we don't have the right attitude going in."
     m "Anyone that wants to make a club has to gather at least three interest members before all the faculty advisors get snatched up!"
     
     hide MCry
@@ -233,7 +233,7 @@ label chapter1_day1_event_morning:
     
     m "So, if you have the guts, you should join the cheer squad."
     
-    "She scans the crowd. With each passing moment, her bravado falters. She’s shaking."
+    "She scans the crowd. With each passing moment, her bravado falters. She's shaking."
     
     m "I-if you do, you can learn how to do this."
 
@@ -256,13 +256,13 @@ label chapter1_day1_event_morning:
 
     show MSadtalk at center
     
-    m "I’m fine. God, this is embarrassing."
+    m "I'm fine. God, this is embarrassing."
 
     show MuAnger at right
     
-    mu "Stop trying to put weight on it, stupid, there’s a reason you lost some range of motion."
+    mu "Stop trying to put weight on it, stupid, there's a reason you lost some range of motion."
     
-    m "I said I’m fine. People are staring."
+    m "I said I'm fine. People are staring."
     
     "Rei swiftly hoists Mariko onto her back."
 
@@ -278,11 +278,11 @@ label chapter1_day1_event_morning:
     hide ReDepressed
     show ReBrag
     
-    re "She’s a-okay everyone! If you’re interested in joining, talk to me or Mariko!"
+    re "She's a-okay everyone! If you're interested in joining, talk to me or Mariko!"
 
     hide ReBrag
     
-    "Mariko buries her face into Rei’s back as she’s carried off stage."
+    "Mariko buries her face into Rei's back as she's carried off stage."
     "Everyone claps out of pity. The second hand embarrassment is palpable."
     #( Vision Bonus Day 1, Immediately following Opening Ceremony)
 
@@ -336,7 +336,7 @@ label chapter1_day1_event1:
 
     play music "music/Lights.wav"
 
-    "After the assembly, we’re handed our class schedules. I’m stuck with English, P.E., Science, and Proficiency Management."
+    "After the assembly, we're handed our class schedules. I'm stuck with English, P.E., Science, and Proficiency Management."
     "They wanted me to take the Intelligence course, but I can always switch it if I want to."
     
     menu:
@@ -365,7 +365,7 @@ label chapter1_day1_event1_classes_vigor:
     "Out of all the teachers, he seems the most relaxed and quite frankly, that's what I need right now."
     "Due to the good weather, class is being held outside."
     "No pencils or paper or devices, just all of us gathered in the first two rows while he tries to focus his ideas into an hour and a half."
-    "It’s only the first day of class and there’s already a classroom wide brawl."
+    "It's only the first day of class and there's already a classroom wide brawl."
 
     show HBase at right
      
@@ -390,7 +390,7 @@ label chapter1_day1_event1_classes_vigor:
     hide MCringe
     hide HSulk
     
-    "Hiro tears away from me to argue. They’re talking over Professor Inukai the whole time."
+    "Hiro tears away from me to argue. They're talking over Professor Inukai the whole time."
     "Completely lost, I gravitate to the two people who aren't up in arms."
     
     n "Shoma, what the hell's going on?"
@@ -575,9 +575,9 @@ label chapter1_day1_event1_classes_vigor:
     hide IkSadtalk
     
     "With some minor complaints, everyone completes a variety of benign physical exams."
-    "The teacher forgot to bring something to write down everyone's results, so I’m put in charge of remembering everyone's numbers."
+    "The teacher forgot to bring something to write down everyone's results, so I'm put in charge of remembering everyone's numbers."
     "He could have borrowed something from the other students, but I think he was looking for something for me to do."
-    "I'm not sure what this is all for, but at least it’s not boring."
+    "I'm not sure what this is all for, but at least it's not boring."
 
     show IkBase
     
@@ -626,7 +626,7 @@ label chapter1_day1_event1_classes_charm:
     sa "You'll find the link on my faculty page. It will be free for the duration of the course, but if you want to keep it after, you'll have to pay full price."
     sa "I may not be a sadist, but I am a capitalist at heart. That said, I notice some of you here aren't actually enrolled in the course..."
     
-    "She’s staring directly at me as she says this."
+    "She's staring directly at me as she says this."
 
     hide SaTalk
     show SaSmiletalk
@@ -634,7 +634,7 @@ label chapter1_day1_event1_classes_charm:
     sa "Feel free to take a seat closer to the front."
     sa "If this is how you want to spend your freetime, you might as well get a good seat."
     
-    "I refuse to move. Most of us are crowded into the back rows anyway. Like hell I’m going to call attention to myself and put myself where everyone can see me."
+    "I refuse to move. Most of us are crowded into the back rows anyway. Like hell I'm going to call attention to myself and put myself where everyone can see me."
     
     hide SaSmiletalk
     show SaSigh
@@ -643,7 +643,7 @@ label chapter1_day1_event1_classes_charm:
     
     "She shuffles to a luxurious fainting couch and crawls up onto the fluffy cushion."
     "Once stretched out on the chair, she begins her lecture."
-    "I’m surprised how captivating she can be without moving a muscle."
+    "I'm surprised how captivating she can be without moving a muscle."
 
     hide SaSigh
     show SaTalk
@@ -687,7 +687,7 @@ label chapter1_day1_event1_classes_intelligence:
     scene backgroundlibrary
     
     "I arrive at my class as printed on my schedule."
-    "Intelligence Majors typically dominate most academic institutions, so it’s especially odd to have us all crammed in the same class together like this."
+    "Intelligence Majors typically dominate most academic institutions, so it's especially odd to have us all crammed in the same class together like this."
     
     show KkComplain
 
@@ -729,7 +729,7 @@ label chapter1_day1_event1_classes_intelligence:
     kk "Umm, dudes, where's the teacher?"
     
     "Class should have started ten minutes ago. We look around, but we can't find any evidence of the teacher's stuff either."
-    "We are in the right room, I’m sure of it."
+    "We are in the right room, I'm sure of it."
     
     hide MhAnger
     show MhConfused at right
@@ -846,7 +846,7 @@ label chapter1_day1_event1_classes_intelligence:
     hide YaBase
     show YaYell
     
-    ya "Then by your definition, Mr. Reverse Psychology, you’re stupid."
+    ya "Then by your definition, Mr. Reverse Psychology, you're stupid."
     ya "You don't know something you have no interest in, which makes you stupid because I know it. Does that make it true?"
     ya "You a stupid kid?"
     
@@ -895,7 +895,7 @@ label chapter1_day1_event1_classes_intelligence:
     ya "How many of you actually want to have a job in the field you were assigned?"
     ya "Not because you were told to or it's easy for you, but because you enjoy it."
     
-    "Only Yoku and Mu raise their hands. I can see Momoko thinking about it, but even she isn’t sure."
+    "Only Yoku and Mu raise their hands. I can see Momoko thinking about it, but even she isn't sure."
     
     hide YTalk
     show YaTalk2
@@ -923,7 +923,7 @@ label chapter1_day1_event1_classes_intelligence:
     show YaTalk
     
     ya "What's depressing is the army of kids that feel like failures when they remind people they're human."
-    ya "I saw a kid have a breakdown because he got an 89 on one test. It's not like getting A’s ever made him happy either."
+    ya "I saw a kid have a breakdown because he got an 89 on one test. It's not like getting A's ever made him happy either."
     ya "All demanding perfection ever does is take the joy from your accomplishments."
     ya "It took me almost a decade to undo what that kind of thinking did to me."
     ya "The least I can do is put a tourniquet on your bleeding hearts before you completely fall apart in your thirties."
@@ -1079,7 +1079,7 @@ label chapter1_day1_event1_classes_vision:
     hide Kibwahaha
     show Kidontworry at left
     
-    ki "’Fraid so. There might be a few border-liners who could qualify, but this is more than I was expectin' to be honest."
+    ki "'Fraid so. There might be a few border-liners who could qualify, but this is more than I was expectin' to be honest."
 
     hide Kidontworry
     hide JDepressed
@@ -1145,7 +1145,7 @@ label chapter1_day1_event1_classes_vision:
     
     n "Yeah, go ahead."
     
-    "I feel my phone vibrate in my pocket. A few seconds later, Chisei’s scribbling on the board."
+    "I feel my phone vibrate in my pocket. A few seconds later, Chisei's scribbling on the board."
 
     scene backgroundC1_3
     
@@ -1247,7 +1247,7 @@ label chapter1_day1_event1_classes_vision:
 
             show JHappy
     
-            "I trade papers and look at his list. It’s surprisingly long."
+            "I trade papers and look at his list. It's surprisingly long."
 
             hide JHappy
             
@@ -1290,7 +1290,7 @@ label chapter1_day1_event2:
     
     play music "music/Interloper.mp3"
     #BG: Hallway
-    "It’s surreal being thrown back into school life without my friends in every class."
+    "It's surreal being thrown back into school life without my friends in every class."
     "Back at Estella, we had been clumped together for everything year after year. Hearing the bell ring is a relief."
 
     "The hallways swarm with a stampede of students."
@@ -1299,7 +1299,7 @@ label chapter1_day1_event2:
 
     PA "Attention all students."
 
-    "That voice isn't human. Or, if it is, it’s distorted beyond recognition. The disturbing pitch is enough to interrupt everyone's conversations."
+    "That voice isn't human. Or, if it is, it's distorted beyond recognition. The disturbing pitch is enough to interrupt everyone's conversations."
 
     PA "I would like to commend you all for overcoming your fears to be here today."
     PA "Many of us are still recovering from the Guwon Riots."
@@ -1309,7 +1309,7 @@ label chapter1_day1_event2:
 
     "A staff member bolts out of the classroom and down the hall."
 
-    "Mr. Yaguchi tries to cover the voice from the PA with his own instructions, but it’s too late."
+    "Mr. Yaguchi tries to cover the voice from the PA with his own instructions, but it's too late."
 
     PA "Nagen Tesuta, Uitto Hanatabe, Jona Oshima; you have five days to turn in your leader, Hiromichi Morine."
     PA "If he is not restrained on the practice field by then, the punishment will be tenfold."
@@ -1320,7 +1320,7 @@ label chapter1_day1_event2:
 
     scene backgroundC1_1
 
-    "Everyone is staring. Everyone knows. They may not have beforehand, but now it’s like being under a spotlight."
+    "Everyone is staring. Everyone knows. They may not have beforehand, but now it's like being under a spotlight."
 
     re "It's not true, is it?"
 
@@ -1442,7 +1442,7 @@ label chapter1_day1_event2:
 
     "Why am I getting scolded? I didn't do anything. They're the ones that swarmed around us like piranhas."
     "Whoever targeted us doesn't just want justice, they want to humiliate us."
-    "For that, I’ll make certain their plan backfires. After the halls have emptied, I turn to my teammates."
+    "For that, I'll make certain their plan backfires. After the halls have emptied, I turn to my teammates."
 
     n "I'm going to find who did this."
 
@@ -1664,7 +1664,7 @@ label chapter1_day1_event_night:
     #(AN: A black text box with blue writing will be used for a nameless dialog titled "Dark". These lines are not voiced, but are part of Nagen's internal dialogue.)
     #[BG: Nagen's room Night]
 
-    "I’ve done a decent job distracting myself today, but it's getting late."
+    "I've done a decent job distracting myself today, but it's getting late."
     "Everyone I know has gone to bed. My arms are tired from recreating the oldest recognized constellations on my ceiling with glow in the dark stickers."
     "I lay there, tracing the patterns with my eyes until the stickers lose their glow." 
     "In the darkness, I fall victim to my overactive mind."
@@ -1912,7 +1912,7 @@ label chapter1_day2_event2:
     scene backgroundclass
 
     "Jona and I have found a quiet corner to hide in for science."
-    "It’s just far enough away from the teacher to overlook, but not so far away we'll get targeted for being 'too quiet'."
+    "It's just far enough away from the teacher to overlook, but not so far away we'll get targeted for being 'too quiet'."
 
     show JMad
 
@@ -1983,7 +1983,7 @@ label chapter1_day2_event2:
 
     s "Well, say something."
 
-    "I’m confused until her friend scurries up next to her. With shaking hands, she holds out a to-go cup to me."
+    "I'm confused until her friend scurries up next to her. With shaking hands, she holds out a to-go cup to me."
 
     show NSad1
 
@@ -1997,7 +1997,7 @@ label chapter1_day2_event2:
 
     n "...Thank you?"
 
-    "I can tell there’s something else she wants to say, but she’s too nervous."
+    "I can tell there's something else she wants to say, but she's too nervous."
 
     hide NSad1
     show NEmbarrassed
@@ -2227,8 +2227,8 @@ label chapter1_day3_event1:
 
     "P.E. is always the worst."
     "I have to change in and out of sweat soaked clothes and half the guys in my class have yet to discover deodorant."
-    "After class gets out, I’m left with two options; feel gross the rest of the day or shower in public..."
-    "I’m in the middle of regretting my decision at the lunch table when Uitto snaps her fingers in front of me."
+    "After class gets out, I'm left with two options; feel gross the rest of the day or shower in public..."
+    "I'm in the middle of regretting my decision at the lunch table when Uitto snaps her fingers in front of me."
 
     show Uittosmile
 
@@ -2280,7 +2280,7 @@ label chapter1_day3_event1:
     hide HBase
     show HJudge at right
 
-    h "Uitto, I told you I’m fine."
+    h "Uitto, I told you I'm fine."
 
     hide JRelax
     show JHappy at left
@@ -2389,7 +2389,7 @@ label chapter1_day3_event2:
     n "That's not what's going on, damn it!"
 
     "He looks at me expectantly, his eraser poised over the paper."
-    "The longer it takes for me to answer, the more he'll think I’m lying."
+    "The longer it takes for me to answer, the more he'll think I'm lying."
 
     n "Just put down port care."
 
@@ -2497,7 +2497,7 @@ label chapter1_day3_event3:
     m "No... Why, do you think she'd be interested?"
 
     "A whole bunch of manic girls chattering about school spirit and teamwork would be her living nightmare."
-    "It’s also the perfect way to get back at her for earlier."
+    "It's also the perfect way to get back at her for earlier."
 
     n "I know she's looking for a club to join, but so far she's had problems finding a place to fit in."
     n "Talking to new people doesn't come naturally to her."
@@ -2532,10 +2532,10 @@ label chapter1_day3_event_night:
     play music "music/WhereS.mp3"
     scene backgroundroomn
     
-    "My shoulder is still kinda sore, but I can rest a little easier knowing that I’m not crazy."
+    "My shoulder is still kinda sore, but I can rest a little easier knowing that I'm not crazy."
     "I honestly expect people to have formed a lynch mob or something by now."
     "Granted, being casually avoided doesn't feel great either, but it's better than what I expected."
-    "If you had told us when we ran away we would have come here, I think Hiro would’ve been the only one to go through with it."
+    "If you had told us when we ran away we would have come here, I think Hiro would've been the only one to go through with it."
 
     scene backgroundfb4
 
@@ -2581,7 +2581,7 @@ label chapter1_day4_event1:
     "I decide to eat lunch early today."
     "Jona has run off to work on god knows what and Uitto is getting chased around by the cheer squad."
     "That leaves me alone in the courtyard with Hiro."
-    "He’s bouncing around, boxing his shadows, carefree as ever."
+    "He's bouncing around, boxing his shadows, carefree as ever."
 
     show HPout
 
@@ -2771,7 +2771,7 @@ label chapter1_day4_event2:
 
     ch "Hark, deceiver!"
 
-    "She’s not terribly fast, but she makes up for it by shouting as she walks."
+    "She's not terribly fast, but she makes up for it by shouting as she walks."
 
     hide UCringe
     show ChMad at left
@@ -2856,11 +2856,11 @@ label chapter1_day4_event2:
     ch "Well I do not know what I can do, but I will most certainly sever my connection to you."
 
     "I don't think I've ever seen Chisei this angry before."
-    "Momoko apologizes, but there’s little she can say to pacify her."
+    "Momoko apologizes, but there's little she can say to pacify her."
 
     hide MhSad
 
-    "Honestly, I’m mostly in shock and I can sense the others were as well."
+    "Honestly, I'm mostly in shock and I can sense the others were as well."
     "The Education Collar was never meant to do that kind of damage. There shouldn't have been anything in it that could do that."
 
     hide HMad
@@ -2969,7 +2969,7 @@ label chapter1_day4_event_night:
     play music "music/Nostalgia.mp3"
     scene backgroundroomn
 
-    "Over the last few days, it’s felt like things are almost normal now."
+    "Over the last few days, it's felt like things are almost normal now."
     "At least, for me it feels normal."
     "None of the kids really wanted to hang out with the 'teacher's pet'."
     "The things I wanted to talk about didn't make sense to other kids and I couldn't figure out how to find common ground."
@@ -3036,7 +3036,7 @@ label chapter1_day5_event_morning:
     "For the first time since school began, I wake up to the radio blaring at top volume."
 
     kk "Good morning, amibros!"
-    kk "That’s right, we're back on the air!"
+    kk "That's right, we're back on the air!"
     kk "Thank you to everyone who sent in requests while we worked out the kinks."
     kk "It's going to take me a while to go through all of them, but I promise I'll do my best to get to each one."
     kk "Starting us off, we've got a request from the heart. 'Hurt' by Midday Maniacs."
@@ -3049,7 +3049,7 @@ label chapter1_day5_event1:
     play music "music/TheLoyalist.mp3"
     scene backgroundhall1
 
-    "I’m on my way to lunch when I catch Kitsune in the halls."
+    "I'm on my way to lunch when I catch Kitsune in the halls."
     "She has her locker wide open with an assortment of compacts at her feet."
     "She keeps pulling at her bangs and making wild faces in the mirror."
     "Maybe I could sneak past her if I just-"
@@ -3150,7 +3150,7 @@ label chapter1_day5_event2:
         play music "music/TheySay.mp3"
         #[BG: Courtyard]
 
-        "I still have a little time before lunch. For some reason, there’s something bothering me about the cheerleaders."
+        "I still have a little time before lunch. For some reason, there's something bothering me about the cheerleaders."
         "Rei might still be mad at me, so my best option is Setsuna."
 
         show SBase
@@ -3331,7 +3331,7 @@ label chapter1_day5_event3:
 
         u "...Nagen, I can't believe I'm saying this, but your memory's wrong. See for yourself."
 
-        "Sure enough, there’s not a single hole."
+        "Sure enough, there's not a single hole."
 
         u "Are you feeling okay?"
 
@@ -3405,7 +3405,7 @@ label chapter1_day5_event_night:
     
     u "Knock, knock! Ready for 'movie' night?"
 
-    "Uitto’s carrying her pillow under her arm and a few bags of chips in the other. She looks like she’s ready for bed."
+    "Uitto's carrying her pillow under her arm and a few bags of chips in the other. She looks like she's ready for bed."
 
     u "Jona found one of those retro TV's with the tape thingy-"
 
@@ -3621,7 +3621,7 @@ label chapter1_day5_event_night:
 
     h "Wooton!!!"
 
-    "We marathon B-grade movies long into the night. The next day, we find out that Mariko won’t be coming back to class for a long time."
+    "We marathon B-grade movies long into the night. The next day, we find out that Mariko won't be coming back to class for a long time."
 
     hide HSmile
     hide JHappy

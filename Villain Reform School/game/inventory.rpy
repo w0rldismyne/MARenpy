@@ -63,7 +63,7 @@ init python:
             self.Clues.Clear()
             self.Count = 0
 
-default inventory = Inventory()
+default inventory = None
 default selected_clue_name = ""
 default selected_clue_description = ""
 default page = 1
@@ -83,6 +83,7 @@ define clue_cheerad = Clue("clue_cheerad", "Club Ad", "A radio announcement subm
 label inventory:
 
     # Test Inventory
+    $ inventory = Inventory()
 
     $ inventory.AddClue(clue_account)
     #$ inventory.ShowClue(clue_account)
@@ -106,7 +107,7 @@ label inventory:
 
     return
 
-screen inventory(inventory = inventory):
+screen inventory():
     
     modal True
 
