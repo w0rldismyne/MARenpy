@@ -28,12 +28,14 @@ label sandbox:
     menu:
         "Event Loop":
             pass
+        "New UI":
+            jump new_ui
         "Menu":
             jump new_menu
-        "Battle":
-            jump chapter1_boss_scene
         "Room of Persistence":
             jump sandbox_persistence
+        "Image Map Ver.":
+            jump image_map_point_and_click
 
 label Event1:
 
@@ -110,6 +112,12 @@ label CharacterList:
             pass
 return
 
+label new_ui:
+
+    call screen settings
+    call screen settings_2
+    jump sandbox
+
 label new_menu:
 
     show screen test_button
@@ -168,3 +176,21 @@ label sandbox_room:
         "Room 3"
         
     jump sandbox_persistence
+
+label image_map_point_and_click:
+    call screen test
+
+screen test:
+    modal True
+
+    imagemap:
+        alpha False
+
+        ground None
+        idle "images/Interactables/ch1idle.png"
+        hover "images/Interactables/ch1hover.png"
+
+        hotspot (10, 570, 291, 167) action Jump("sandbox")
+        hotspot (1319, 26, 368, 389) action Jump("sandbox")
+        hotspot (267, 6, 785, 717) action Jump("sandbox")
+        hotspot (1393, 523, 407, 323) action Jump("sandbox")
