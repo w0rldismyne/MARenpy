@@ -4,6 +4,8 @@ label chapter2_day1_event1:
 
     #[BG: Dorm]
 
+    scene backgroundroom
+
     kk "Good morning, brotatos, and welcome to another amazing week at school. To get you in the mood, a request from the heart, it's Innuendo by Queen."
 
     "Leave it to Kazz to blast a whole rock opera first thing in the morning. I wish I could be that chipper this early."
@@ -13,11 +15,21 @@ label chapter2_day1_event1:
 
     #[BG: Stuco Dim]
 
+    scene backgroundstuco
+
     "The lights aren't on. Am I that late? I can't imagine we'd have that much to discuss. As I'm about to leave, the door swings open."
+
+    show NSurprise
 
     nk "Wait, don't leave!"
 
+    show SBase at left
+    hide NSurprise
+    show NSmile
+
     s "I told you turning off the lights was too much."
+
+    show Kibwahaha at right
 
     ki "I got it, hold on."
 
@@ -29,11 +41,23 @@ label chapter2_day1_event1:
 
     n "This is all for me?"
 
+    hide SBase
+    show SHeh at left
+
     s "It's for all of us."
 
-    ki "We're going to be workin' as a team startin' today. The first week of school was garbage for a lot of people, so we gotta think of ways to raise morale. Which reminds me; Setsuna, isn't there somethin' you'd like to say to Nagen?"
+    hide Kibwahaha
+    show Kidontworry at right
 
+    ki "We're going to be workin' as a team startin' today. The first week of school was garbage for a lot of people, so we gotta think of ways to raise morale."
+    ki "Which reminds me; Setsuna, isn't there somethin' you'd like to say to Nagen?"
+
+    hide SHeh
+    show SMock at left
     s "Don't screw this up."
+
+    hide NSmile
+    show NSmiletalk
 
     nk "I told you she wasn't going to apologize."
 
@@ -41,15 +65,27 @@ label chapter2_day1_event1:
 
     "She sighs, almost in a defeated way."
 
+    hide SMock
+    show SMourn at left
+
     s "I thought I was smarter than you and I let my ego get in the way when you offered to help. I should have trusted you more. If I had, maybe we could've protected Hiro together."
 
     "That wasn't really an apology, but I'll take a healthy dose of humility."
+
+    hide Kidontworry
+    show Kimischeif at right
 
     ki "Close enough. Now, I went ahead and asked the class representatives to join us in decidin' what to do to cheer everyone up. If we can get everyone to help out, we could host a huge party."
 
     n "A party? That's not a horrible idea, but it will be a lot of work."
 
+    hide SMourn
+    show SFO at left
+
     s "My thoughts exactly."
+
+    hide NSmiletalk
+    show NTalk
 
     nk "I think as long as we keep expectations low, we could pull it off without disappointing anyone."
 
@@ -57,11 +93,22 @@ label chapter2_day1_event1:
 
     n "If we can convince all the classes to help out, then we'll be able to do it."
 
+    hide Kimischeif
+    show Kitalk at right
+
     ki "YES! I like those odds."
 
     "The teachers have been making them do office work, like labeling drawers. I guess this is the first time they've been able to do stuff for the students."
     "After we finish the menial tasks we were given, the class reps come to meet with us, each speaking for their respective Major."
     "Rise, Yoku, and Ichita didn't really surprise me, but I'm shocked to see Hiro here after everything that happened."
+
+    hide Kitalk
+    hide SFO
+    hide NTalk
+
+    show RSmile at left
+    show IAnnoyed
+    show YBase at right
 
     r "It is almost like deja vu, though thankfully Jona has been replaced with a more pleasing candidate."
 
@@ -71,63 +118,140 @@ label chapter2_day1_event1:
 
     "He practically has his back to her. Was it something she said?"
 
+    hide YBase
+    show HTalk at right
+
     h "Anyway, what'd you want to ask us, dude?"
 
+    hide IAnnoyed
+    show Kidontworry
+
     ki "We finally got enough approval to do the thing!"
+
+    hide Kidontworry
+    show IGrin
 
     i "Man, I thought they'd never let us hold a dance."
 
     n "A dance?! Now wait a minute-"
 
+    hide RTalk
+    show RHearttalk at left
+
     r "A homecoming dance that honors all of the students, what a clever idea."
+
+    hide HTalk
+    show HSerious at right
 
     h "Nagen didn't say anything about a homecoming dance. You just said that so you could win a popularity contest."
 
+    hide HSerious
+    show YIrate at right
+
     y "....."
 
+    hide RHearts
+    show RDisappointed at left
+
     r "...I suppose it would be unfair for council members to win prizes at a party they planned."
+    
+    hide IGrin
+    show SFO
 
     s "Prizes? We don't have the funds for decorations, let alone 'prizes'."
+
+    hide SFO
+    show ILecture
 
     i "But you gotta have a king and queen of a school dance. Everyone expects it, it's tradition or whatever. We should be able to be voted for too."
 
     n "Like I was trying to say earlier-"
+    
+    hide YIrate
+    show HHeadempty at right
 
     h "I guess it'd be fair if that's the case. But do we have a theme?"
 
+    hide ILecture
+    show Kihunh
+
     ki "Masquerades are pretty easy."
+
+    hide RDisappointed
+    show RSmile at left
 
     r "Oh excellent, I should have something from home that would work. We could offer discounts to couples too."
 
     n "Not everyone has money-"
+    
+    hide ILecture
+    show IBase
 
     i "Door charge could be snacks then. Or stuff that makes the party better."
 
+    hide HHeadempty
+    show HSmile at right
+
     h "That's a good idea!"
+
+    hide RSmile
+    show RBase at left
 
     r "Then how about Monday night? That should be enough time to prepare without alienating the chronic procrastinators in our class."
 
+    hide IBase
+    show IGrin
+
     i "Then it's settled!"
+
+    hide RBase
+    show RSmug at left
 
     r "We can figure out the details together later; class is about to start."
 
+    hide HSmile
+    show HHappy at right
+
     h "Great ideas, guys. This is going to be tons of fun."
+
+    hide HHappy
+    hide RSmug
+    hide IGrin
 
     "Rise, Hiro, and Ichita leave the room chattering amongst themselves, leaving the rest of us with the aftermath."
 
+    show NAshamed
+
     nk "...What just happened?"
 
-    y "Y-you invited the most ta-talkative and competitive kids into your office to hear their opinions. You are only going to hear their opinions if they're all in th-the same room. You're lucky they all agreed with each other."
+    show YBase at left
+
+    y "Y-you invited the most ta-talkative and competitive kids into your office to hear their opinions."
+    y "You are only going to hear their opinions if they're all in th-the same room. You're lucky they all agreed with each other."
+
+    show SCringe at right
 
     s "This is a disaster. There's no way we can afford to plan a masquerade and whatever else they want to add on before lunch."
+
+    hide NAshamed
+    show NSurprise
 
     nk "Eight days isn't much time to plan either."
 
     n "No, we can make this work. We just have to take control of the situation before it gets out of hand."
 
+    hide SCringe
+    show Kiteasing at right
+
     ki "That's the spirit! Come on, guys, this is going to be fun."
 
+    hide NSurprise
+    show NSadsmile
+
     nk "Right... fun."
+
+    hide YBase
+    show YSheepish at left
 
     y "May I have a brownie?"
 
@@ -135,8 +259,558 @@ label chapter2_day1_event1:
 
     n "Sure, knock yourself out."
 
+    hide YSheepish
+    hide Kiteasing
+    hide NSadsmile
+
+    scene backgroundblack with fade
+return
+
     #[Class Scene]
 
+label chapter2_classes:
+    scene backgroundschool
+    menu:
+        "Vigor":
+            $ Vigor += 1
+            call chapter2_vigor
+
+        "Charisma":
+            $ Charm += 1
+            call chapter2_charm
+
+        "Intelligence":
+            $ Intel += 1
+            call chapter2_intel
+
+        "Vision":
+            $ Vision += 1
+            call chapter2_vision
+    scene backgroundblack with fade
+    return
+
+label chapter2_vigor:
+
+    # [BG: Ampetheater]
+    scene backgroundamp
+    
+    "After everything that happened this week, I needed a mental break. Besides, I’m not entirely comfortable with Hiro being by himself for obvious reasons."
+    
+    show ReIrate at left
+    
+    re "....."
+    
+    show HMad at right
+    
+    h "......"
+    
+    "Man this is awkward. Rei cracked her knuckles and walked up to Hiro."
+    
+    re "One punch and we call it even?"
+    
+    h "Okay."
+    
+    n "Wait, what!?"
+    
+    "They both stood there staring at each other."
+    
+    hide ReIrate
+    show ReEh at left
+    
+    re "What are you waiting for?"
+    
+    hide HMad
+    show HHmmm at right
+    
+    h "Me? I thought you were going to hit me?"
+
+    hide ReEh
+    show ReSad at left
+
+    re "But I didn’t stop Mariko when I thought she was up to something."
+
+    hide HHmmm
+    show HGuilt at right
+
+    h "I’m just trying to makeup for not protecting you guys."
+
+    hide ReSad
+    show ReThink at left
+
+    re "...same time?"
+
+    hide HGuilt
+    show HSmirk at right
+
+    h "Deal!"
+    "They both took a fighting stance. Their fists collided in the most aggressive fist bump I have ever seen. I guess that makes sense. They both could get in serious trouble if they were caught fighting."
+    
+    hide ReThink
+    show ReBrag
+    
+    re "Nagen, you next?"
+    n "I’m good."
+
+    hide ReBrag
+    show ReSmiletalk
+
+    re "Suit yourself. Now, both of you, no more sad clown faces."
+    re "No matter what happens, we’re allies, okay?"
+    h "Got it."
+    
+    hide ReSmiletalk
+    hide HSmirk
+
+    "Not the same as friends, but it’s a start.
+
+    show IkBase
+    ik "What’s smarter when things are okay?"
+
+    Everyone "...The mind."
+
+    ik "What’s smarter when things go wrong?"
+
+    Everyone "...The body."
+
+    ik "Okay, we’ll work on the enthusiasm, but good work everybody." 
+
+    "Please don’t. Just be happy we’re participating and move on."
+    "Professor Inukai has slowly been getting better at getting everyone’s attention."
+    "Without a clear goal in mind, it’s hard to keep everyone on task.
+    "I’m still not sure what their even going to be tested on."
+
+    hide IkBase
+    show IkTalk
+    
+    ik "Now, some of you might know this already, but Vigor was actually the second recognized major."
+    ik "Back in the day, the only way to prove you had a proficiency was frequent grueling testing."
+    ik "It wasn’t until multiple Vigor majors came forward that those restrictions loosened. Anyone know why?"
+    
+    "Nooo, don’t just say anyone. No one’s raising their hand. God this is painful."
+
+    hide IkTalk
+    show IkBase
+
+    ik "Yes, Nagen."
+
+    n "Because physical adaptations are easily observable."
+
+    hide IkBase
+    show IkSadtalk
+    ik "Close. It’s because being a Vigor major is an inherent part of who you are."
+
+    hide IkSadtalk
+    show IkConcern
+    ik "It’s not something you think about, or practice to achieve."
+    ik "Because of that, we serve an important purpose for our community."
+
+    "He sat down in the grass."
+
+    hide IkConcern
+    show IkSad
+
+    ik "People like Vi and Sato constantly have to defend and prove themselves in ways we don’t have to."
+    ik "When people think of proficiencies, you’re going to be who they think of, not them."
+
+    show ShFrown at left
+
+    sh "...why does that matter?"
+
+    hide IkSad
+    show IkTiredtalk
+
+    ik "The proficiency system only exists in Guwon."
+    ik "If you have to leave for any reason, you’re the only ones who can prove beyond a shadow of a doubt you can do things other people can’t."
+    
+    hide IkTiredtalk
+    show IkFrown
+    
+    ik "If that happens, don’t forget to defend your fellow majors."
+
+    show HJudge at right
+
+    h "What do you mean it’s only in Guwon? There has to be special people all over the world."
+    h "Ichita was from the Philippines."
+
+    hide IkFrown
+    show IkSigh
+
+    ik "You’re right, but Guwon’s the only place that recognizes those abilities as proficiencies."
+   
+   hide ShFrown
+   show KBase at left 
+   
+    k "Do they call it something else?"
+    ik "They don’t call it anything. It just is."
+
+    hide KBase
+    hide HJudge
+    hide IkSigh
+
+    "We spent the rest of class interrogating him on what he meant by that, but it all circled back to the same answer."
+    "Despite all evidence, Guwon was the only place that claimed people could be borderline superhuman."
+    "My head hurts."
+    
+    return
+
+label chapter2_vision:
+
+    scene backgroundclass
+
+    "I don’t know if I’ll ever get used to class getting taught by the principal. I get she’s plenty qualified, it’s just weird. Jona was already drumming on his desk. I wish I could offer him something, but until we find his sketchbook, this is really the best he could do."
+    
+    show KiBase
+    
+    ki "Heck yeah, 100%% retainment!"
+
+    show ChSadtalk at left
+
+    ch "Jona, is everything alright?"
+
+    show JonaDepressed at right
+
+    j "It’s… I’ll be fine. Not a big talking day."
+
+    "I forgot most of these kids haven’t shared a class with us before."
+
+    hide KiBase
+    hide ChSadtalk
+    hide JonaDepressed
+
+    show VBase
+
+    v "Alright everyone, settle down. Today we’ll be talking about something… controversial."
+    "Everyone immediately quieted."
+    v "When trying to establish Vision as a major, abilities were sorted into two categories: internal and external. It took having over a hundred people with external abilities before the classification of major was even considered."
+    
+    "Oh, she meant the boring kind of controversial."
+    
+    hide VBase
+    show VSmile
+
+    v "Right now we’re trying to push to have the subclassification of majors change and you will be an integral part of that."
+    
+    n "Why?"
+    
+    "I should have raised my hand, but there’s so few people here, it hardly feels like class."
+    
+    n "Why doe it matter?"
+    
+    hide VSmile
+    show VLecture
+
+    v "You remember last week’s demonstration? How Chisei and I can influence each other’s abilities? It’s because we both can communicate with the dead."
+    "She gestured to Kietsu."
+    v "Is Siri or Alexa here with us?"
+    "Kietsu sat up, a little embarrassed to have people watch him scan an empty room."
+
+    show Kicringe at left 
+
+    ki "Yeah. On your class notes."
+    "She placed her hand on the table."
+
+    hide VLecture
+    show VBasefrown
+
+    v "I fell no presence, there’s nothing I can speak with."
+
+    "She tried to lift her notecards, but the bent like something was sitting on it."
+
+    hide VBasefrown
+    show VTalk
+
+    v "And yet, as you can see, there clearly is something in the room with us."
+    "Kietsu sunk in his chair."
+    v "It is my belief, that while our abilities interact with the unseen, the unseen planes of existence are not always the same."
+    
+    show ITalk at right
+
+    i "Does anyone else believe that?"
+
+    hide VTalk
+    show VDisappointed
+
+    v "I’m afraid more people have been concerned with identifying a cause."
+
+    hide ITalk
+    hide Kicringe
+
+    "She was the first vision major, shouldn’t she know what the cause is?"
+    
+    n "Did something cause your ability? Mutant spider? Acid bath?"
+
+    hide VDisappointed
+    show VSmile
+    
+    "That actually got her to smile."
+    
+    v "It’s hard to say. I speak to the dead by touching the body. As you can imagine, that is not a common scenario to stumble into."
+    
+    "She traced the pendant on her chest."
+
+    hide VSmile
+    show VSadtalk2
+    
+    v "I’m sure some of you are familiar with my first case, but… it was the hardest trial I had to speak at."
+   
+   hide VSadtalk
+   
+    #-CG Vivaldi on the stand-
+    v "I had first heard my father’s voice at the funeral, all he could do was answer questions with on word,  and the second…"
+    #-Add a man to the stan-
+    v "Was when I was helping with the laundry. My uncle failed to notice a blood stain… It was the only evidence I had, and if no one believed me, I would have been forced to live with a murderer who watched me testify against him."
+    #-CG gone-
+
+    show VTalk
+
+    v "After that, the dead could speak to me in short phrases."
+    v "With each new case I took the stronger my ability became."
+    v "There’s no way of knowing if that’s because I was getting older, or had more practice, or if it was from being put in the same traumatic position over and over again."
+    
+    show ChSadtalk2 at left
+
+    ch "...Why did you tell people? Everyone thought you were a genius detective."
+    ch "Why did you tell them you were talking to ghosts?"
+    
+    "After she came out as a psychic, everyone was quick to discredit her."
+    "Estella wanted nothing to do with her after that."
+    
+    hide VTalk
+    show VSadtalk
+
+    v "...I wish I could say it was for something noble, like finding others like me."
+    v "The truth is, I realized even the dead have reasons to lie and I wanted to have a say in who I was forced to talk to."
+    v "They tried to bury my confession, so I went public. That’s how I was scouted by the Karmic Gladiator."
+
+    hide ChSadtalk2
+    show IHmm at left
+
+    i "I don’t remember any Vision majors in the Gladiators."
+
+    show JHappy at right 
+
+    j "There was Memento Mori, Lethe and I still say Babylon counts."
+    
+    n "You just assume she doesn’t study the language before she understands it, that doesn’t’ mean-"
+    
+    "Everyone is staring."
+
+    hide VSadtalk
+    show VTalk
+
+    v "In answer to your earlier question Mr. Tesuta, this is why I’m more interested in expanding the subclassifications."
+    v "I think our abilities are more complex than what others can see. Because Mr. Oshima is correct."
+    
+    hide IHmm
+
+    j "Ha! I told you, she just knew them!"
+    
+    n "But her card says she’s an Intelligence major."
+
+    v "When was that card mode?"
+    
+    "I had to go way back, but when I bought the card, the packaging looked a specific way."
+    
+    n "Twenty five years ago."
+    
+    hide VTalk
+    show VSmile
+
+    v "And Vision was recognized as a proficiency when?"
+    
+    n "...Fifteen years ago…"
+    
+    "I hate when my memory gets used against me. Jona’s got his mask on, but I can feel the vindictive glee radiating off him."
+    
+    v "Good to see you participating in class Mr. Tesuta."
+    
+    "That doesn’t make me feel any better."
+    
+    hide VSmile
+    show VTalk
+    
+    v "So the classifications we have now involve death and a separate plane of existence." 
+    
+    i "What about… it’s just mine’s, I don’t want to use other things, but real, living people."
+    
+    "The same would go for Jona. He sees auras around people."
+    "She made another collum on the black board."
+    
+    v "Fair point. Now, in order to make this a classification, we have to narrow down what qualities set it apart."
+    v "Involving the living is a good start. Any other ideas?"
+
+    hide VTalk
+    hide JHappy
+    
+    "We threw around ideas up until the bell rang."
+
+    return
+label chapter2_charm:
+
+    scene backgorundcharm
+
+    "Lecture began as usual, with Ms. Yamamoto reclining on her couch."
+
+    show SaBase
+
+    sa "Establishing Charisma as a recognized major was no easy task."
+    sa "Despite being more valuable then intelligence when it comes to achievement or fulfillment, it was hard to provide the numbers to back our claims."
+    
+    hide SaBase
+    show SaEyeroll
+    
+    sa "That being, some individuals have a higher capacity to learn it then others. The other challenge was to identify proficiencies within that major."
+    sa "It’s easy to sort kids by their best subject, not so much by their best social quality." 
+    
+    hide SaEyeroll
+    show SaGeez
+    
+    sa "If any of you are irritated by your assigned labels, that would be why. Quite frankly, we guessed."
+    
+    "The room went into an uproar. I guess that’s what happens when yo tell a room full of passionate people they aren’t as special as they thought."
+    
+    hide SaGeez
+    show SaGlare
+
+    sa "If you want to whine about your participation proficiencies, save if for ‘rate my teacher’."
+    sa "The world doesn’t owe you shit, if you want recognition for your abilities, you have to earn it."
+    
+    hide SaGlare
+    show SaScold
+    
+    sa "Otherwise you’ll be written off as entitled after thoughts. It took twenty years of fighting for us to build up our major to where it is today."
+    sa "If you think for a second that that’s all it takes you can ride those coat tails back home."
+    
+    hide SaScold
+    show SaDone
+    
+    sa "Being underestimated is in our blood, but it makes us silent killers. If you’re descreate about the cords you have to play, you can work your way to the top."
+    sa "Reveal your hand too soon and your strengths will become targets. Many a great Charisma Major found themselves thrown to the wolves over trivial matters."
+    sa "You don’t want to end up like Siren."
+    
+    "A hush fell over the class."
+
+    hide SaDone
+    show SaSmiletalk
+    
+    sa "Oh, so you all know her story?"
+    sa "Funny, seeing as it happened before most of you were born. She was a financial genius."
+    sa "Turning people’s proficiencies into superhero personas for profit."
+    sa "Her moto ‘Anyone can be a hero’ was the crown jewel in supporting the foundation of Charisma."
+    sa "After all, one woman uniting thirty-some ‘heroes’ in there days was a not worthy achievement."
+   
+    "Her expression darkened as the tone of her voice took a grim turn."
+
+    hide SaSmiletalk
+    show SaScold
+   
+    sa "Or perhaps you had a different story in mind. Does the term violent assault come to mind?"
+    
+    hide SaScold
+    show SaSigh
+    
+    sa "In all the articles and stories that circulated five mention she was a manager and not a field agent of the Karmic Gladiators, two mentioned she was off duty and only one stated the crime happened while she was taking out the garbage of her own home."
+    
+    hide SaSigh
+    show SaScold
+    
+    sa "All of them bring up she was a Charisma Major, every last one of them. As soon as they found a chink in her armor, they tore her down and everything she worked for."
+    
+    hide SaScold
+    show SaGlare
+
+    "With a cleansing breath, her features softened."
+    
+    sa "Anyone can spin a tragedy into a media circus with the proper technique."
+    sa "You can either be the lion roaring on display or the ring master calling the shots."
+    
+    hide SaGlare
+    show SaBase
+    
+    sa "Think about this carefully when choosing who you associate with."
+    sa "The easily swayed my seem like the best option, but you’ll soon find they can just as easily turn against you."
+    
+    show DSmirk at left
+
+    d "Oh really, and who would you suggest?"
+
+    hide SaBase
+    show SaSmiletalk
+    
+    sa "My circle is a multigenerational crime family."
+    sa "If you’re interested in attempting to find such individuals, there are plenty of future felons on campus to get you started. Choose wisely."
+    
+    hide SaSmiletalk
+    hid DSmirk
+    
+    "No wonder she’s so intimidating. Growing up around that kind of crowd must give you tough skin. And who’s she calling future felons!?"
+
+
+lavel chapter2_intel:
+
+[BG: Library]
+    "Momoko was at the front of the library with a bunch of cobbled together wig heads. It’s impressive how passionate she is about all this stuff. I don’t really care about genetics or types of hair, but the way she goes on about is entertaining if nothing else."
+    mh "So, all these little scale things, if they’re dry or damaged, won’t let chemicals penetrate it the same way it will healthy hair."
+    "There’s a small part of me that can’t ignore she’s teaching the class instead of Mr. Yaguichi. She basically had to beg him to sit in on her lectures. Even then, he’s ignoring her to work on other things. I know he claimed this is for us, but it really seems like he just wanted to get out of teaching us."
+    mh "Alright everyone take a head! This part’s always been my favorite. Uh, couldn’t get my hands on any wigs made of real human hair for obvious reasons, so we’ll have to make do with synthetics."
+    "Wait a minute… The only things coming in are things like food and soap"
+    n "Are these yours? Like yours yours."
+    mh "Yeah? Go on, it’s fine."
+    "Everyone collected their wig heads, but I hesitate."
+    n "What if I ruin it?"
+    ya "Nagen, quite complaining and do the exercise."
+    "He wasn’t even looking up."
+    n "I’m not-"
+    ya "Just take a damn head."
+    mh "It’s okay. If it’s that bad, I just won’t wear it and you and you can let me practice on you when my new dye’s done."
+    kk "You’re going to wear these?"
+    mh "Yeah… why wouldn’t I?"
+    "BECAUSE NONE OF US KNOW WHAT WE’RE DOING!? I’m glad I’m not the only one freaked out by this. Mr. Yaguichi glared at me until I took a head back to my seat."
+    mu "Do we just… do anything?"
+    n "I guess?"
+    "Yoku got started immediately, I have no clue how he already knows what to do. And Kazz just got every color he could grab and just started going to town."
+    ya "If you don’t know what to do, just ask for help."
+    mh "Just do whatever."
+    "Not helpful guys. Not helpful at all. I don’t even know where to start."
+    mu "Can I at least have a reference before this thing starts looking like a used barbie doll?"
+    n "Yes, please; literally anything."
+    mh "Alright, but it’s not as fun that way."
+    "She handed us a few printed pictures and I did my best to recreate one of them. Though I can’t say I’m happy with it."
+    kk "Woah dude, how’d you get it to go green like that?"
+    n "Green?"
+    "I thought the smell of burning plastics was coming from somewhere else. Shit!"
+    mh "You just let it sit too long. It’s fine."
+    "She held the wig head up next to her own. The sickly green matched her bangs."
+    mh "It happens."
+    n "But it’s supposed to be easy."
+    ya "Who said that?"
+    n "The book. Page twenty-five, beginner styling. Bleaching is a fundamental-"
+    ya "Don’t quote the damn book at me. Who said this was supposed to be easy? Have you done this before?"
+    n "No."
+    ya "Then you got no metric for what’s easy for you. You literally can’t fail this class, quit beating yourself up about it."
+    "He doesn’t get it. Everyone’s staring and I actually tried…"
+    n "I have to get out of here."
+    mh "Nagen?"
+    "I left the classroom and rounded the corner. They’re right, this is supposed to be a blow off class. I shouldn’t care this much. But I can see what it’s supposed to look like in my head. Why can’t I just do it? I heard footsteps come up behind me."
+    ya "Talk to me kid."
+    n "I really don’t feel like another lecture about how I should just ‘stop caring’. If it was that easy, I would just do it already."
+    "He sat down next to me."
+    ya "I know."
+    n "No, you don’t. No matter what I learn, I can ace any test, but the second it comes to actually doing it…"
+    "He didn’t interrupt me this time, he just waited."
+    n "It’s not good enough."
+    ya "I want to make one thing clear, I’m not frustrated with you guys. It’s the dingbats that drilled useless shit into your head like needing to take time to learn stuff is not good enough. It’s like a survival instinct you can’t turn off."
+    "That doesn’t really make me feel better."
+    ya "What? I’m not going to lie to you, but you’re the one punishing yourself for not doing better. As your teacher, I’m telling you that’s not necessary."
+    "There was a loud bang from the classroom."
+    ya "Shit, that better not have damaged anything."
+    "He struggled to get to his feet."
+    ya "I’m going to make sure nothing’s blown up. You coming?"
+    "I already embarrassed the hell out of myself, I’m not exactly eager to go back."
+    ya "Suit yourself."
+    "I spent longer than I should have to muster the courage to go back in. Thankfully no one said anything once I did. The rest of class was uneventful."
+
+    return
 label chapter2_day1_event2:
     #Day 1 Scene 2
 
@@ -242,7 +916,7 @@ label chapter2_day1_event2:
 
     "He's not listening, or maybe he's in denial. Still, it could be a page from his stolen sketchbook."
 
-    "Largest Letter: *Something's sticking out from behind the letter. If I peel it back some... (+Red Hair)"
+    "Largest Letter: "Something's sticking out from behind the letter. If I peel it back some... (+Red Hair)"
 
     u "What are you looking for, a secret code?"
 
@@ -274,7 +948,7 @@ label chapter2_day1_event2:
 
     h "Please just tell me what it is or it's gonna bug me all day."
 
-    "Pink Streak: *What the hell is this? Uitto takes it from my hands and squints. (+Nail Polish Chip)"
+    "Pink Streak: "What the hell is this? Uitto takes it from my hands and squints. (+Nail Polish Chip)"
 
     u "Anyone got some glue or... wait, bingo!"
 
@@ -417,9 +1091,9 @@ label chapter2_day2_event1:
 
     kk "Good morning, broquittos! As many of you know, we got a masquerade rager coming up this Monday. Make sure you get your mask orders in before it's too late. Next up, we got ___."
 
-    "How did this spiral out of control so fast? It's only been a day! I know the student body is small, but this is ridiculous. At this point, it might be easier if people don't show up at all.
-    I drag myself out of bed and run to meet up with Uitto before our classes. 
-    However, by the time I get to our meeting place, she's already talking with someone else."
+    "How did this spiral out of control so fast? It's only been a day! I know the student body is small, but this is ridiculous. At this point, it might be easier if people don't show up at all."
+    "I drag myself out of bed and run to meet up with Uitto before our classes."
+    "However, by the time I get to our meeting place, she's already talking with someone else."
 
     #[BG: Hall]
 
@@ -3612,11 +4286,11 @@ label chapter2_day8_event2:
 
     ik "What's smarter when things are okay?"
 
-    ###"Everyone: "The mind."
+    ###"Everyone "The mind."
 
     ik "What's smarter when things go wrong?"
 
-    ###"Everyone: "...the body."
+    ###"Everyone "...the body."
 
     ik "Okay, we'll work on the enthusiasm, but good work, everybody!"
 
