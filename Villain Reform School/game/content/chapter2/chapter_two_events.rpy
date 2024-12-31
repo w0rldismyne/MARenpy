@@ -451,6 +451,7 @@ label chapter2_vigor:
     "Despite all evidence, Guwon was the only place that claimed people could be borderline superhuman."
     "My head hurts."
     
+    scene backgroundblack with fade
     return
 
 label chapter2_vision:
@@ -644,6 +645,7 @@ label chapter2_vision:
     
     "We threw around ideas up until the bell rang."
 
+    scene backgroundblack with fade
     return
 label chapter2_charm:
 
@@ -745,70 +747,226 @@ label chapter2_charm:
     
     "No wonder she’s so intimidating. Growing up around that kind of crowd must give you tough skin. And who’s she calling future felons!?"
 
+    scene backgroundblack with fade
+    return
 
 lavel chapter2_intel:
 
-[BG: Library]
-    "Momoko was at the front of the library with a bunch of cobbled together wig heads. It’s impressive how passionate she is about all this stuff. I don’t really care about genetics or types of hair, but the way she goes on about is entertaining if nothing else."
+    scene backgroundlibrary
+
+    "Momoko was at the front of the library with a bunch of cobbled together wig heads. It’s impressive how passionate she is about all this stuff."
+    "I don’t really care about genetics or types of hair, but the way she goes on about is entertaining if nothing else."
+    
+    show MhHappy
+
     mh "So, all these little scale things, if they’re dry or damaged, won’t let chemicals penetrate it the same way it will healthy hair."
-    "There’s a small part of me that can’t ignore she’s teaching the class instead of Mr. Yaguichi. She basically had to beg him to sit in on her lectures. Even then, he’s ignoring her to work on other things. I know he claimed this is for us, but it really seems like he just wanted to get out of teaching us."
-    mh "Alright everyone take a head! This part’s always been my favorite. Uh, couldn’t get my hands on any wigs made of real human hair for obvious reasons, so we’ll have to make do with synthetics."
+
+    "There’s a small part of me that can’t ignore she’s teaching the class instead of Mr. Yaguichi. She basically had to beg him to sit in on her lectures."
+    "Even then, he’s ignoring her to work on other things. I know he claimed this is for us, but it really seems like he just wanted to get out of teaching us."
+
+    hide MhHappy
+    show MhTalk
+
+    mh "Alright everyone take a head! This part’s always been my favorite."
+    mh "Uh, couldn’t get my hands on any wigs made of real human hair for obvious reasons, so we’ll have to make do with synthetics."
+    
     "Wait a minute… The only things coming in are things like food and soap"
+    
     n "Are these yours? Like yours yours."
+    
+    hide MhTalk
+    show MhTalk2
+
     mh "Yeah? Go on, it’s fine."
+    
     "Everyone collected their wig heads, but I hesitate."
+    
     n "What if I ruin it?"
+    
+    show YaBase at left
+
     ya "Nagen, quite complaining and do the exercise."
+    
     "He wasn’t even looking up."
+    
     n "I’m not-"
+    
+    hide YaBase
+    show YaTalk at left
+    
     ya "Just take a damn head."
-    mh "It’s okay. If it’s that bad, I just won’t wear it and you and you can let me practice on you when my new dye’s done."
+
+    hide MhTalk2
+    show MhSadTalk
+
+    mh "It’s okay."
+    mh "If it’s that bad, I just won’t wear it and you and you can let me practice on you when my new dye’s done."
+    
     kk "You’re going to wear these?"
+    
     mh "Yeah… why wouldn’t I?"
-    "BECAUSE NONE OF US KNOW WHAT WE’RE DOING!? I’m glad I’m not the only one freaked out by this. Mr. Yaguichi glared at me until I took a head back to my seat."
+    
+    "BECAUSE NONE OF US KNOW WHAT WE’RE DOING!?"
+    "I’m glad I’m not the only one freaked out by this."
+
+    hide YaTalk
+    show YaMad at left
+
+    "Mr. Yaguichi glared at me until I took a head back to my seat."
+    
+    show MuCringe at right
+
     mu "Do we just… do anything?"
+    
     n "I guess?"
-    "Yoku got started immediately, I have no clue how he already knows what to do. And Kazz just got every color he could grab and just started going to town."
+    
+    "Yoku got started immediately, I have no clue how he already knows what to do."
+    "And Kazz just got every color he could grab and just started going to town."
+
+    hide YaMad
+    show YaTalk at left
+
     ya "If you don’t know what to do, just ask for help."
+
+    hide MhSadTalk
+    show MhBase
+
     mh "Just do whatever."
+    
     "Not helpful guys. Not helpful at all. I don’t even know where to start."
+    
     mu "Can I at least have a reference before this thing starts looking like a used barbie doll?"
+    
     n "Yes, please; literally anything."
+    
     mh "Alright, but it’s not as fun that way."
-    "She handed us a few printed pictures and I did my best to recreate one of them. Though I can’t say I’m happy with it."
+   
+    hide MhBase
+    hide YaTalk
+    hide MuCringe
+   
+    "She handed us a few printed pictures and I did my best to recreate one of them."
+    "Though I can’t say I’m happy with it."
+
+    show KkGrin at right
+    
     kk "Woah dude, how’d you get it to go green like that?"
+
     n "Green?"
+
     "I thought the smell of burning plastics was coming from somewhere else. Shit!"
+
+    show MhBase
+
     mh "You just let it sit too long. It’s fine."
+
     "She held the wig head up next to her own. The sickly green matched her bangs."
+
+    hide MhBase
+    show MhConfused
+
     mh "It happens."
+
     n "But it’s supposed to be easy."
+
+    show YaTalk2 at left
+
     ya "Who said that?"
+
     n "The book. Page twenty-five, beginner styling. Bleaching is a fundamental-"
-    ya "Don’t quote the damn book at me. Who said this was supposed to be easy? Have you done this before?"
+
+    hide YaTalk2
+    show YaMad at left
+
+    ya "Don’t quote the damn book at me."
+    ya "Who said this was supposed to be easy? Have you done this before?"
+    
     n "No."
-    ya "Then you got no metric for what’s easy for you. You literally can’t fail this class, quit beating yourself up about it."
+    
+    ya "Then you got no metric for what’s easy for you."
+    ya "You literally can’t fail this class, quit beating yourself up about it."
+    
     "He doesn’t get it. Everyone’s staring and I actually tried…"
+    
     n "I have to get out of here."
+
+    hide MhConfused
+    show MhSad
+    
     mh "Nagen?"
-    "I left the classroom and rounded the corner. They’re right, this is supposed to be a blow off class. I shouldn’t care this much. But I can see what it’s supposed to look like in my head. Why can’t I just do it? I heard footsteps come up behind me."
+
+    hide MhSad
+    hide YaMad
+    hide KkGrin
+
+    scene backgroundhall2
+    
+    "I left the classroom and rounded the corner."
+    "They’re right, this is supposed to be a blow off class."
+    "I shouldn’t care this much. But I can see what it’s supposed to look like in my head."
+    "Why can’t I just do it? I heard footsteps come up behind me."
+    
+    show YaFrown
+
     ya "Talk to me kid."
-    n "I really don’t feel like another lecture about how I should just ‘stop caring’. If it was that easy, I would just do it already."
+
+    n "I really don’t feel like another lecture about how I should just ‘stop caring’."
+    n "If it was that easy, I would just do it already."
+
     "He sat down next to me."
+
     ya "I know."
-    n "No, you don’t. No matter what I learn, I can ace any test, but the second it comes to actually doing it…"
+
+    n "No, you don’t."
+    n "No matter what I learn, I can ace any test, but the second it comes to actually doing it…"
+    
     "He didn’t interrupt me this time, he just waited."
+    
     n "It’s not good enough."
-    ya "I want to make one thing clear, I’m not frustrated with you guys. It’s the dingbats that drilled useless shit into your head like needing to take time to learn stuff is not good enough. It’s like a survival instinct you can’t turn off."
+    
+    hide YaFrown
+    show YaBase
+
+    ya "I want to make one thing clear, I’m not frustrated with you guys."
+    ya "It’s the dingbats that drilled useless shit into your head like needing to take time to learn stuff is not good enough."
+    
+    hide YaBase
+    show YaFrown
+
+    ya "It’s like a survival instinct you can’t turn off."
+
     "That doesn’t really make me feel better."
-    ya "What? I’m not going to lie to you, but you’re the one punishing yourself for not doing better. As your teacher, I’m telling you that’s not necessary."
+
+    hide YaFrown
+    show YaTalk2
+
+    ya "What? I’m not going to lie to you, but you’re the one punishing yourself for not doing better."
+    ya "As your teacher, I’m telling you that’s not necessary."
+
     "There was a loud bang from the classroom."
+
+    hide YaTalk2
+    show YaTalk
+
     ya "Shit, that better not have damaged anything."
+
     "He struggled to get to his feet."
+
+    hide YaTalk
+    show YaFrown
+
     ya "I’m going to make sure nothing’s blown up. You coming?"
+
     "I already embarrassed the hell out of myself, I’m not exactly eager to go back."
+
     ya "Suit yourself."
-    "I spent longer than I should have to muster the courage to go back in. Thankfully no one said anything once I did. The rest of class was uneventful."
+
+    hide YaFrown
+
+    "I spent longer than I should have to muster the courage to go back in."
+    "Thankfully no one said anything once I did. The rest of class was uneventful."
+
+    scene backgroundblack with fade
 
     return
 label chapter2_day1_event2:
@@ -816,86 +974,186 @@ label chapter2_day1_event2:
 
     #[BG: (tba)]
 
+    scene backgroundcourtyard
+
     "After class, I go to meet up with Uitto and the others, hoping they might have some ideas. Unfortunately..."
+
+    show JDepressed
 
     j "Nagen, did I have my sketchbook with me when we stayed in your room?"
 
     n "No? Why, what happened to it?"
 
+    hide JDepressed
+    show JFrustrated
+
     j "I can't find it! I've already looked everywhere, I dumped out my backpack three times."
+
+    show Uittocringe at left
 
     u "We're trying to figure out when the last time he had it was."
 
-    "Usually, it's on his person at all times. It's like another limb or something. But I know for sure he didn't bring it with him to my room, which means the last time I saw it on him was..."
+    "Usually, it's on his person at all times."
+    "It's like another limb or something."
+    "But I know for sure he didn't bring it with him to my room, which means the last time I saw it on him was..."
 
-    n "When we realized Hiro was missing. We were all freaking out at the time. Jona, do you remember packing it up before we tried looking for him?"
+    n "When we realized Hiro was missing. We were all freaking out at the time."
+    n "Jona, do you remember packing it up before we tried looking for him?"
 
-    j "No... there was nothing at our spot either. Someone turned my pens into the teachers, but my sketchbook is gone. This is bad. I wanted to get extras, but nooo, I just had to make room for a second blanket."
+    hide JFrustrated
+    show JDepressed
+
+    j "No... there was nothing at our spot either."
+    j "Someone turned my pens into the teachers, but my sketchbook is gone."
+
+    hide JDepressed
+    show JFrustrated
+
+    j "This is bad. I wanted to get extras, but nooo, I just had to make room for a second blanket."
+
+    show HGrump at right
 
     h "Can't you just draw on other paper?"
 
     "Oh, if looks could kill, Hiro would be a deadman right now."
 
-    j "It has to be the right paper! If the grain's too smooth or the page is too thin, it'll be garbage. The pages need to be in order. I can't draw without it, but if I don't draw, I'll start stimming in class and everyone will stare."
+    hide JFrustrated
+    show JMad
 
-    h "We get it. This is one of those weird Jona things. We'll try our best to find it, but you might have to get a new one."
+    j "It has to be the right paper!"
+    j "If the grain's too smooth or the page is too thin, it'll be garbage."
+    j "The pages need to be in order. I can't draw without it, but if I don't draw, I'll start stimming in class and everyone will stare."
+
+    hide HGrump
+    show HInsulted at right
+
+    h "We get it. This is one of those weird Jona things."
+
+    hide HInsulted
+    show HSadSmile at right
+
+    h "We'll try our best to find it, but you might have to get a new one."
 
     j "Aggh!!!"
 
     n "It's just going to be one of those weeks, isn't it?"
 
+    hide Uittocringe
+    show Uittotalk at left
+
     u "Why, what happened to you?"
 
     n "The student council went from planning a small party to well, this."
 
-    "I hand her a three page list of all the class rep's requests. A lot of them contradict each other or are impossible."
+    "I hand her a three page list of all the class rep's requests."
+    "A lot of them contradict each other or are impossible."
+
+    hide Uittotalk
+    show Uittoyell at left
 
     u "How on Earth?"
 
+    hide HSadSmile
+    show HBase at right
+
     h "Oooh, that reminds me, wouldn't it be cool if we could get everyone's masks to light up?"
+
+    hide Uittoyell
+    show Uittotongue at left
 
     u "Nevermind, I think I get the picture."
 
     n "Well, you're the one with the gift of gab, think you could get even half of the stuff on the list?"
 
-    u "We can at least get everyone looking the part, though we'd be owing Shoma big time. The rest... I'll see what I can do. I don't see why you'd need me for this, though."
+    hide Uittotongue
+    show Uittotalk at left
+
+    u "We can at least get everyone looking the part, though we'd be owing Shoma big time."
+    u "The rest... I'll see what I can do. I don't see why you'd need me for this, though."
 
     "She hands the list to Hiro, who starts scribbling stuff down in the margins."
 
     n "You don't think you can convince Ms. Sato to lend us some of her resources?"
 
+    hide Uittotalk
+    show Uittocringe at left
+
     u "Are you serious? Negotiating with her counts as my final exam."
 
     n "Does that mean you can't do it? In a pinch, I could ask Dyre to try."
 
+    hide Uittocringe
+    show Uittoiguess at left
+
     u "Don't bother. I can see what all I can get before the dance."
 
+    hide JMad
+    show JRelax
+
     j "Dance? That reminds me, someone left this on my desk this morning."
+
+    hide Uittoiguess
+    show Uittosmirk at left
 
     u "Shut up, don't tell me you got a love letter?"
 
     j "I'm not sure. I was going to ask you guys before I got my hopes up."
 
-    "He hands it to me and I must say, it isn't a love note. Someone used clippings to cobble together the following:"
+    "He hands it to me and I must say, it isn't a love note."
+    "Someone used clippings to cobble together the following..."
 
     #Image?
     "I will strike during the dance."
 
-    h "You got a threat letter too... Why didn't you show us this first instead of complaining about your sketchpad?"
+    hide Uittosmirk
+    show Uittobase at left
+
+    hide HBase
+    show HBeans at right
+
+    h "You got a threat letter too..."
+    h "Why didn't you show us this first instead of complaining about your sketchpad?"
+
+    hide JRelax
+    show JHappy
 
     j "Because getting nasty notes isn't that unusual for me."
 
-    u "You should see what people wrote about him in the girl's bathroom. Pretty vile stuff, and that was when we were kids. This is pretty tame by comparison."
+    hide Uittobase
+    show Uittosad at left
+
+    u "You should see what people wrote about him in the girl's bathroom."
+    u "Pretty vile stuff, and that was when we were kids. This is pretty tame by comparison."
+
+    hide HBeans
+    show HCurseword at right
 
     h "Still, it hasn't even been a week since someone challenged me. This could be the same."
 
     n "Whoever it is, they're trying harder not to get caught."
 
-    u "But why bother with a warning at all? At least last time there was a bounty, but this is deliberately vague."
+    hide Uittosad
+    show Uittotalk at left
 
-    n "No point in riling everyone up at the school now. If anyone was going to help them, they would've by now."
+    u "But why bother with a warning at all?"
+    u "At least last time there was a bounty, but this is deliberately vague."
+
+    n "No point in riling everyone up at the school now."
+    n "If anyone was going to help them, they would've by now."
+
+    hide Uittotalk
+    show Uittoyell at left
 
     u "I guess, it's just... odd."
+
+    hide Uittoyell
+    hide HCurseword
+    hide JHappy
+
+    scene backgroundblack with fade
+    return
+
+label Chapter2_pointandclick:
 
     #Ch2 Investigation
 
