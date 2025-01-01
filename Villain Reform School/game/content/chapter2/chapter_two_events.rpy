@@ -264,7 +264,7 @@ label chapter2_day1_event1:
     hide NSadsmile
 
     scene backgroundblack with fade
-return
+    return
 
     #[Class Scene]
 
@@ -974,7 +974,7 @@ label chapter2_day1_event2:
 
     #[BG: (tba)]
 
-    scene backgroundcourtyard
+    scene backgroundclass
 
     "After class, I go to meet up with Uitto and the others, hoping they might have some ideas. Unfortunately..."
 
@@ -1162,7 +1162,9 @@ label Chapter2_pointandclick:
     "I don't have much to go off of other than this note. Maybe the culprit left us a clue?"
     g "Click on items to see if they lead to any clues."
 
-    "Paper: It's thicker than normal paper, but it's too white to be cardstock. (+Sketchbook Paper)"
+    #"Paper: 
+    
+    "It's thicker than normal paper, but it's too white to be cardstock."
 
     n "Jona, what color is your sketchbook paper?"
 
@@ -1174,7 +1176,11 @@ label Chapter2_pointandclick:
 
     "He's not listening, or maybe he's in denial. Still, it could be a page from his stolen sketchbook."
 
-    "Largest Letter: "Something's sticking out from behind the letter. If I peel it back some... (+Red Hair)"
+    #+ SKetchbook Paper
+
+    #"Largest Letter: 
+    
+    "Something's sticking out from behind the letter. If I peel it back some..."
 
     u "What are you looking for, a secret code?"
 
@@ -1206,7 +1212,11 @@ label Chapter2_pointandclick:
 
     h "Please just tell me what it is or it's gonna bug me all day."
 
-    "Pink Streak: "What the hell is this? Uitto takes it from my hands and squints. (+Nail Polish Chip)"
+    #Red Hair
+
+    #Pink Streak: 
+    
+    "What the hell is this? Uitto takes it from my hands and squints."
 
     u "Anyone got some glue or... wait, bingo!"
 
@@ -1230,17 +1240,35 @@ label Chapter2_pointandclick:
 
     "It's not a lot to go on, but at least we have somewhere to start."
 
+    #Nail polish chip
+
     #[Return to Main Branch]
 
-    j "It's nice of you guys to worry, but honestly, I'd rather get my sketchbook back than bug other people about this. Besides, you've got a lot to do for the masquerade ball."
+    scene backgroundclass
+
+    show JDepressed
+    show Uittobase at right
+
+    j "It's nice of you guys to worry, but honestly, I'd rather get my sketchbook back than bug other people about this."
+    j "Besides, you've got a lot to do for the masquerade ball."
 
     n "It's not a ball! Where are you people getting that idea from?"
 
-    h "Jona has a point, though. You're the student council president. If everyone busts their asses getting ready and it sucks, people are going to wonder what you were doing."
+    show HCurseword at left
+
+    h "Jona has a point, though. You're the student council president."
+    h "If everyone busts their asses getting ready and it sucks, people are going to wonder what you were doing."
 
     g "During the investigation, you can ask fellow students to help with preparations for the dance. You know what they say in Colorado... \"One awesome party can fix everything.\""
 
     n "I can make this work. I will make this work."
+
+    hide JDepressed
+    hide Uittobase
+    hide HCurseword
+
+    scene backgroundblack with fade
+    return
 
     #[Freetime Event]
 
@@ -1249,7 +1277,14 @@ label chapter2_day1_event3:
 
     #[BG: Courtyard]
 
-    "Hiro and I are kicking an empty bottle around while we wait for Jona and Uitto. To my surprise, Kietsu is the one to flag us down first."
+    scene backgroundcourtyard
+
+    show HBase at left
+
+    "Hiro and I are kicking an empty bottle around while we wait for Jona and Uitto."
+    "To my surprise, Kietsu is the one to flag us down first."
+
+    show Kidude
 
     ki "Hey, Nagen, you didn't approve any other clubs, did you?"
 
@@ -1259,135 +1294,282 @@ label chapter2_day1_event3:
 
     "He shows us a white poster with hand written lettering."
 
+    hide HBase
+    hide Kidude
+
     #[CG: Poster saying "Nothing matters. Waste time with us. ^ NC]
 
+    show Kihunh
+    show HGrump at left
+    
     n "That's mildly concerning."
 
-    ki "There's no rules prohibitin' students from gatherin', but with everythin' goin' on, I agree it's concernin'. I just wanted to make sure it wasn't a side project before I sent Setsu to investigate."
+    ki "There's no rules prohibitin' students from gatherin', but with everythin' goin' on, I agree it's concernin'."
+    ki "I just wanted to make sure it wasn't a side project before I sent Setsu to investigate."
 
     h "Investigate what? You just said it's not against the rules to do this."
 
-    ki "It's not against the school's rules. I've been at enough places to know crap like this can lead to kids gettin' hazed to death or worse. There's a reason they didn't come to us or the teachers about this and frankly, there's no way for the four of them to watch everyone at all times."
+    hide Kidude
+    show Kihey
+
+    ki "It's not against the school's rules. I've been at enough places to know crap like this can lead to kids gettin' hazed to death or worse."
+    ki "There's a reason they didn't come to us or the teachers about this and frankly, there's no way for the four of them to watch everyone at all times."
+
+    hide HGrump
+    show HGuilt at left
 
     h "You're just going to scare people if you go around spying on people like this."
 
     n "People are already scared, Hiro. We're trying to make things better, but if the party doesn't work..."
 
-    ki "The council will rise to the top of the food chain through fear if necessary. It may be the only way to keep dangerous people out of power. I really hope it won't come to that."
+    ki "The council will rise to the top of the food chain through fear if necessary."
+    ki "It may be the only way to keep dangerous people out of power."
+    
+    show Kisadtalk
+
+    ki "I really hope it won't come to that."
 
     n "Agreed. Let me know if Setsuna finds anything."
 
+    hide Kisadtalk
+    hide HGuilt
+
     "Hiro pulls me aside, oddly serious."
+
+    show HJudge
 
     h "You can't seriously agree with this."
 
     #[IF Hero]
 
-    h "All this coming after Jona's threat letter... it might be a distraction."
+    if Hero > Villain:
 
-    n "They were with me all morning, I highly doubt they'd mislead me after begging me to join."
+        hide HJudge
+        show HGuilt
 
-    h "That's not what I meant. Between the dance, the letter, and this, I think someone's trying to spread the council so thin that everything will fail. The treasurer should be focusing on the upcoming event, not this. Trust me, Nagen. I know I wasn't the greatest leader, but I know people."
+        h "All this coming after Jona's threat letter... it might be a distraction."
 
-    "He has a point. There's only so much we can do at once."
+        n "They were with me all morning, I highly doubt they'd mislead me after begging me to join."
+
+        hide HGuilt
+        show HGrump
+
+        h "That's not what I meant."
+
+        hide HGrump
+        show HFINE
+
+        h "Between the dance, the letter, and this, I think someone's trying to spread the council so thin that everything will fail."
+        h "The treasurer should be focusing on the upcoming event, not this."
+
+        hide HFINE
+        show HGrump
+
+        h "Trust me, Nagen. I know I wasn't the greatest leader, but I know people."
+
+        "He has a point. There's only so much we can do at once."
+
+        hide HGrump
+
+        return
+
+    else
 
     #[IF Villain]
 
-    h "I thought we were done with the whole 'rule with an iron fist' thing. All it did was make everyone hate us."
+        show HGuilt
 
-    n "There's more important things than being liked."
+        h "I thought we were done with the whole 'rule with an iron fist' thing."
+        h "All it did was make everyone hate us."
 
-    h "Nagen, you're not listening to me. I don't think we should be butting our heads into other peoples' business. It would make us hypocrites. If this is the direction the council's going, then maybe..."
+        n "There's more important things than being liked."
 
-    n "Maybe what? This is my one chance to prove I'm a better leader than... other people."
+        hide HGuilt
+        show HInsulted
 
-    h "I just think you should be careful who you trust."
+        h "Nagen, you're not listening to me. I don't think we should be butting our heads into other peoples' business."
+        h "It would make us hypocrites. If this is the direction the council's going, then maybe..."
 
-    "He has a point. It would be better if I took care of this myself."
+        n "Maybe what? This is my one chance to prove I'm a better leader than... other people."
+
+        hide HInsulted
+        show HGuilt
+
+        h "I just think you should be careful who you trust."
+
+        "He has a point. It would be better if I took care of this myself."
+
+        hide HGuilt
+
+        return
 
     #[Return to Main Branch]
+
+    show Kihunh at left
+    show HGuilt
 
     n "Kietsu, I'll look into it. They probably didn't come to us because there aren't any club slots open."
 
     ki "I suppose that's fair. If you find anythin', please let me know. I'll be off, don't wanna miss dinner."
 
+    hide Kihunh
+    show Uittosad
+
     "Uitto comes rushing to our sides as he walks off."
 
     u "I don't think Jona's coming with. He's still trying to find his sketchbook."
+
+    hide HGuilt
+    show HHmmm
 
     h "Still? Maybe someone really did steal it."
 
     n "There's not much we can do right now other than report it and hope it turns up."
 
+    hide Uittosad
+    show Uittosadtalk
+
     u "We should grab him some stuff from the cafe while we're there. Just in case."
 
     "Still, it's odd. Why steal something like that? No one else here would have a use for it."
 
+    hide Uittosadtalk
+    hide HHmmm
+
+    scene backgroundblack with fade
+    return
     #[Freetime Event]
 
 label chapter2_day1_night:
     #Day 1 (Night)
 
-    "So much has happened today. I feel like I barely had a chance to catch my breath. I lay in bed, physically exhausted, but sleep refuses to come. My mind keeps searching for a motive behind the theft. Unfortunately, I don't even know what's in it."
+    scene backgroundroomn
+
+    "So much has happened today."
+    "I feel like I barely had a chance to catch my breath."
+    "I lay in bed, physically exhausted, but sleep refuses to come."
+    "My mind keeps searching for a motive behind the theft."
+    "Unfortunately, I don't even know what's in it."
 
     Dark "He didn't used to be so secretive."
 
-    "Not long ago, he'd say every little thing on his mind like word vomit. But after the riots started, he wouldn't let anyone see what he was working on. I even caught him burning a few of his pieces in the past."
+    "Not long ago, he'd say every little thing on his mind like word vomit."
+    "But after the riots started, he wouldn't let anyone see what he was working on."
+    "I even caught him burning a few of his pieces in the past."
 
     Dark "He said he wasn't going to draw again."
 
-    "I could never get a straight answer out of him about why he wanted to stop. Just that nothing he drew made him happy anymore."
+    "I could never get a straight answer out of him about why he wanted to stop."
+    "Just that nothing he drew made him happy anymore."
     "I didn't know how to help him."
 
     Dark "He had nowhere to go."
 
     "Unlike the rest of us, he had no one willing to claim him. Even if he wanted to leave the riots behind, we were all he had. Now he's a ward of the state."
-
+    scene backgroundblack with fade
+    return
 label chapter2_day2_event1:
         #Day 2 Event 1
     #BG: Nagen's Room Day]
 
-    kk "Good morning, broquittos! As many of you know, we got a masquerade rager coming up this Monday. Make sure you get your mask orders in before it's too late. Next up, we got ___."
+    scene backgroundroom
+
+    kk "Good morning, broquittos!"
+    kk "As many of you know, we got a masquerade rager coming up this Monday."
+    kk"Make sure you get your mask orders in before it's too late. Next up, we got ___."
 
     "How did this spiral out of control so fast? It's only been a day! I know the student body is small, but this is ridiculous. At this point, it might be easier if people don't show up at all."
     "I drag myself out of bed and run to meet up with Uitto before our classes."
     "However, by the time I get to our meeting place, she's already talking with someone else."
 
+    scene backgroundblack with fade
     #[BG: Hall]
+
+    scene backgroundhall1
+
+    show Uittocringe at left
 
     u "Why would I do that?"
 
+    show IShout at right
+
     i "Do you really need a reason?"
 
-    u "Um, yeah. You're asking me to put my reputation on the line so you can cheat. That's a shit deal with zero reward for me."
+    hide Uittocringe
+    show Uittoyell at left
+
+    u "Um, yeah. You're asking me to put my reputation on the line so you can cheat."
+    u "That's a shit deal with zero reward for me."
+
+    hide IShout
+    show IScowl at right
 
     i "Rise said the same thing. I think. I know she won't help."
 
-    u "I didn't say I won't help. I said your idea sucked and would get me in trouble. Just, don't tell anyone, especially my friends. Jona can't keep a secret to save his life."
+    hide Uittoyell
+    show Uittoembarrassed at left
+
+    u "I didn't say I won't help. I said your idea sucked and would get me in trouble."
+    u "Just, don't tell anyone, especially my friends."
+    u "Jona can't keep a secret to save his life."
+
+    hide IScowl
+    show IGrin at right
 
     i "You'll really do it?"
+
+    hide Uittoembarrassed
+    show Uittoiguess at left
 
     u "I have an idea, but I make no promises. You seriously owe me if this works."
 
     "She looks over her shoulder at me."
 
+    hide Uittoiguess
+    show Uittotongue at left
+
     u "I gotta go. Remember, not a word."
+
+    hide IGrin
+    hide Uittotongue
 
     "She comes up to me with a sigh."
 
+    show Uittosmile
+
     n "You're so loud."
 
-    u "Whatever, I'm doing the best I can with your little fetch quest. It's getting dangerously close to a trade chain."
+    hide Uittosmile
+    show Uittobase
+
+    u "Whatever, I'm doing the best I can with your little fetch quest."
+    u "It's getting dangerously close to a trade chain."
 
     n "Trade chain?"
 
-    u "You know; person A wants something from person B who wants something from person C, etcetera etcetera. Luckily, most people want nice masks or outfits, but there's only a few people who know how to make that stuff. Which reminds me... I kinda promised Shoma we'd be his dress dummies."
+    hide Uittobase
+    show Uittoiguess
+
+    u "You know; person A wants something from person B who wants something from person C, etcetera etcetera."
+    u "Luckily, most people want nice masks or outfits, but there's only a few people who know how to make that stuff."
+    
+    hide Uittoiguess
+    show Uittocringe
+    
+    u "Which reminds me... I kinda promised Shoma we'd be his dress dummies."
 
     n "Most of the guys here are taller than me. How's that supposed to work?"
 
-    u "Hiro's going to be helping out too. Basically, we're going to be stuck wearing the rejects. Shoma agreed to help so long as his designs don't end up in the trash."
+    hide Uittocringe
+    show Uittobase
+
+    u "Hiro's going to be helping out too. Basically, we're going to be stuck wearing the rejects."
+    u "Shoma agreed to help so long as his designs don't end up in the trash."
 
     n "That's fair. What about Jona?"
+
+    hide Uittobase
+    show Uittosad
 
     u "Got him on mask detail. It's helping him stay distracted from everything that's been going on."
 
@@ -1395,50 +1577,88 @@ label chapter2_day2_event1:
 
     n "What were you talking to Ichita about?"
 
+    hide Uittosad
+    show Uittotalk
+
     u "Nothing that concerns you, I assure you."
 
     n "I'll put on my best assured face on, just for you."
 
     "The wall is up. For whatever reason, she doesn't feel comfortable talking to me about it."
 
-    u "Thanks. I highly value my diva-dumbass confidentiality policy. It's the only way to know what goes on on the 'other side'."
+    hide Uittotalk
+    show Uittotongue
+
+    u "Thanks. I highly value my diva-dumbass confidentiality policy."
+    u "It's the only way to know what goes on on the 'other side'."
 
     n "Is there really an 'other side' now? All of us are scrambled in different classes and I'm pretty sure the teachers don't care which course we were in."
 
     "Or the other students for that matter. All things considered, I've talked to more kids from the 'normal' class now than I did before."
 
-    u "Nagen, the only reason Rei still talks to us is that sense of classroom loyalty. The 'good kids' and 'bad kids' classes may be gone, but the pack mentality lingers. We all went to the same elementary school, but I still feel like an outsider. Maybe it's just me. Hiro seems to have been accepted by everyone again just fine and Jona's vibing as best he can."
+    hide Uittotongue
+    show Uittosadtalk
+
+    u "Nagen, the only reason Rei still talks to us is that sense of classroom loyalty. The 'good kids' and 'bad kids' classes may be gone, but the pack mentality lingers."
+    u "We all went to the same elementary school, but I still feel like an outsider"
+    u "Maybe it's just me. Hiro seems to have been accepted by everyone again just fine and Jona's vibing as best he can."
 
     n "I know in my head that it doesn't matter if people here think we're cool but damn it, I'm sick of people feeling forced to talk to me."
 
-    u "Oh my God, yes! Like, I don't need the red carpet treatment. Just that little glimmer in the eye that says they're happy to see you? I'll take passive acknowledgment at this point. Anything that doesn't make me feel guilty for breathing."
+    hide Uittosadtalk
+    show Uittosmirk
+
+    u "Oh my God, yes! Like, I don't need the red carpet treatment."
+    u "Just that little glimmer in the eye that says they're happy to see you? I'll take passive acknowledgment at this point."
+    u "Anything that doesn't make me feel guilty for breathing."
 
     n "Everyone's already getting hyped up for the party. If we can nail this-"
+
+    hide Uittosmirk
+    show Uittotalk
 
     u "It's not going to fix everything."
 
     n "But things are going to suck less. I can feel it!"
 
+    hide Uittotalk
+    show Uittosmile
+
     u "I'm trying to keep my expectations more realistic, but I feel it too!"
 
     "We cheer at the sky."
+
+    hide Uittosmile
+    show Uittotalk
 
     u "I gotta go do a thing before I run out of artificial hype. Good luck to you, Nagen!"
 
     n "Uh, you too?"
 
+    hide Uittotalk
+
     "She's been surprisingly busy lately. I hope that's a good thing."
+
+    scene backgroundblack with fade
+    return
 
     #Freetime Event
 
 label chapter2_day2_event2:
     #Day 2 Event 2
 
+    scene backgroundsew
+
     "After lunch, I decide to check in on Shoma in his workshop to see what exactly I've been drafted to help with. 'Dress dummy' could mean any number of things."
 
     #Door greeting plays
 
-    "Every table is covered in stacks of hastily cut out patterns. Peels of scrap fabric obscure the floor under a patchwork mess of color. Samples of trim and lace have been pushpinned into the wall and the heat from his collection of candles makes it feel like I'm walking into a dungeon. One lone table has Jona's crafting supplies sprawled out across it with multiple masks drying in varying states of completion."
+    "Every table is covered in stacks of hastily cut out patterns."
+    "Peels of scrap fabric obscure the floor under a patchwork mess of color."
+    "Samples of trim and lace have been pushpinned into the wall and the heat from his collection of candles makes it feel like I'm walking into a dungeon."
+    "One lone table has Jona's crafting supplies sprawled out across it with multiple masks drying in varying states of completion."
+
+    show ShGrin
 
     sh "Nagen, you're here earlier than I thought. You wouldn't happen to know how to sew, would you?"
 
@@ -1446,21 +1666,41 @@ label chapter2_day2_event2:
 
     n "No. I tried once. I wasn't successful."
 
+    show JHappy at left
+
     j "See?"
+
+    hide ShGrin
+    show ShManic
 
     sh "It doesn't hurt to ask. You never know when someone has a hidden talent."
 
     n "Jona, what are you doing?"
 
-    j "Palette coordinating. Shoma's limited in what he can make, so I want to make sure the masks I make match what he's working on. Wouldn't want anyone looking silly."
+    hide JHappy
+    show JRelax at left
+
+    j "Palette coordinating. Shoma's limited in what he can make, so I want to make sure the masks I make match what he's working on."
+    j "Wouldn't want anyone looking silly."
 
     n "I'm sure people won't care as long as they look nice."
 
+    hide JRelax
+    show JMad at left
+
     j "I would care. I would notice. I'd feel bad."
 
-    sh "Wish I could set boundaries with my customers like that. He gets to make whatever he wants, meanwhile I get wishlists a mile long. Or nothing at all. 'A suit' is this week's hot new item."
+    hide ShManic
+    show ShBase
+
+    sh "Wish I could set boundaries with my customers like that."
+    sh "He gets to make whatever he wants, meanwhile I get wishlists a mile long."
+    sh "Or nothing at all. 'A suit' is this week's hot new item."
 
     n "Isn't that easier?"
+
+    hide ShBase
+    show ShObserve
 
     sh "You'd be surprised how often my 'a suit' is the wrong suit because I don't like making boring, black three piece sets."
 
@@ -1470,13 +1710,22 @@ label chapter2_day2_event2:
 
     sh "Don't mess with the system, man."
 
+    hide JMad
+    show JFrustrated at left
+
     j "The minute you start throwing things out is the minute we gotta dig through garbage looking for lost pieces."
 
     n "Okay, I get it. What do you want me to do then?"
 
+    hide ShObserve
+    show ShSad
+
     sh "You can help cut out patterns. Jona's been trying but..."
 
     "He then whispers to me."
+
+    hide ShSad
+    show ShFear
 
     sh "He took thirty minutes to cut one sleeve because it had to be 'perfect'. We got ten more outfits to do and I sew faster than he cuts."
 
@@ -1484,37 +1733,71 @@ label chapter2_day2_event2:
 
     n "Is that the only reason you volunteered to help?"
 
-    sh "Not really, I'll take any excuse to make stuff. It's just, after everything that happened, I thought I'd finally get some kind of closure. Some kind of grand sign that things were going to be different this time."
+    hide ShFear
+    show ShFrown
+
+    sh "Not really, I'll take any excuse to make stuff. It's just, after everything that happened, I thought I'd finally get some kind of closure."
+    sh "Some kind of grand sign that things were going to be different this time."
+
+    hide JFrustrated
+    show JRelax at left
 
     j "Being treated better isn't the same as an apology. And they aren't going to apologize. You have to think you've done something wrong to want to apologize."
 
     n "Even if they did apologize, it wouldn't make me feel any better. We're all in one class now, that should be all that matters. Everyone's just so defensive now. Either they're trying really hard to seem happy or they're not trying to do anything at all. I'm not sure what's worse."
 
+    hide JRelax
+    show JDepressed at left
+
     j "Both. Being fake happy and doing nothing. It's the perfect recipe for suffering."
 
     sh "....."
 
-    sh "Well, once one of our own is in charge of the school, it really will be a different story. Cause, like, they won't be the ones making the rules anymore."
+    hide ShFrown
+    show ShManic
+
+    sh "Well, once one of our own is in charge of the school, it really will be a different story."
+    sh "Cause, like, they won't be the ones making the rules anymore."
 
     n "What do you mean?"
 
-    sh "The other council kids are total outsiders. Even Nanase's basically cut off from the rich kid circle. Which means if you're president, they won't have a single kid in the room."
+    hide ShManic
+    show ShBase
 
-    "But none of them want my position... At least, that's what I've been told. Still, it will be nice to tell people what to do again, even if I've had a bit of a rocky start."
+    sh "The other council kids are total outsiders."
+    sh "Even Nanase's basically cut off from the rich kid circle. Which means if you're president, they won't have a single kid in the room."
+
+    "But none of them want my position... At least, that's what I've been told."
+    "Still, it will be nice to tell people what to do again, even if I've had a bit of a rocky start."
+
+    hide ShBase
+    show ShTalk
 
     sh "That's when it'll really feel like it changed, right?"
 
     n "Y-yeah."
 
-    "I do my best to cut out all the pieces he'll need. By the end, there has to be at least one hundred pieces of carefully cut pieces amongst a pile of scraps."
+    "I do my best to cut out all the pieces he'll need."
+    "By the end, there has to be at least one hundred pieces of carefully cut pieces amongst a pile of scraps."
 
     n "This is going to take forever to put together."
 
+    hide JDepressed
+    show JRelax
+
     j "Yeah, but it'll be worth it when it's all done."
+
+    hide ShTalk
+    show ShLie
 
     sh "...Yeah..."
 
     "I go to throw away my scraps and immediately-"
+
+    hide ShLie
+    show ShFear
+    hide JRelax
+    show JMad
 
     sh "What are you doing?!"
 
@@ -1528,6 +1811,11 @@ label chapter2_day2_event2:
 
     "I should leave before I touch something else I'm not supposed to."
 
+    hide JMad
+    hide ShFear
+
+    scene backgroundblack with fade
+    return
     #Freetime Event
 
 label chapter2_day2_event3:
@@ -1591,6 +1879,8 @@ label chapter2_day2_event3:
 
     "She gathers her supplies and assesses my central line dressing. Only a few more days of antibiotics left to go before I can put this thing out of my mind again."
 
+    scene backgroundblack with fade
+    return
     #Freetime Event
 
 label chapter2_day2_event4:
