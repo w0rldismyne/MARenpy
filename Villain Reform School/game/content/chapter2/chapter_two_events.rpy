@@ -1106,7 +1106,7 @@ label chapter2_day1_event2:
     "I will strike during the dance."
 
     hide Uittosmirk
-    show Uittobase at left
+    show UBase at left
 
     hide HBase
     show HBeans at right
@@ -1119,7 +1119,7 @@ label chapter2_day1_event2:
 
     j "Because getting nasty notes isn't that unusual for me."
 
-    hide Uittobase
+    hide UBase
     show Uittosad at left
 
     u "You should see what people wrote about him in the girl's bathroom."
@@ -1247,7 +1247,7 @@ label Chapter2_pointandclick:
     scene backgroundclass
 
     show JDepressed
-    show Uittobase at right
+    show UBase at right
 
     j "It's nice of you guys to worry, but honestly, I'd rather get my sketchbook back than bug other people about this."
     j "Besides, you've got a lot to do for the masquerade ball."
@@ -1264,7 +1264,7 @@ label Chapter2_pointandclick:
     n "I can make this work. I will make this work."
 
     hide JDepressed
-    hide Uittobase
+    hide UBase
     hide HCurseword
 
     scene backgroundblack with fade
@@ -1540,14 +1540,14 @@ label chapter2_day2_event1:
     n "You're so loud."
 
     hide Uittosmile
-    show Uittobase
+    show UBase
 
     u "Whatever, I'm doing the best I can with your little fetch quest."
     u "It's getting dangerously close to a trade chain."
 
     n "Trade chain?"
 
-    hide Uittobase
+    hide UBase
     show Uittoiguess
 
     u "You know; person A wants something from person B who wants something from person C, etcetera etcetera."
@@ -1561,14 +1561,14 @@ label chapter2_day2_event1:
     n "Most of the guys here are taller than me. How's that supposed to work?"
 
     hide Uittocringe
-    show Uittobase
+    show UBase
 
     u "Hiro's going to be helping out too. Basically, we're going to be stuck wearing the rejects."
     u "Shoma agreed to help so long as his designs don't end up in the trash."
 
     n "That's fair. What about Jona?"
 
-    hide Uittobase
+    hide UBase
     show Uittosad
 
     u "Got him on mask detail. It's helping him stay distracted from everything that's been going on."
@@ -1888,13 +1888,23 @@ label chapter2_day2_event4:
 
     #BG: Courtyard
 
-    "The stone table in the courtyard is an especially sought after gathering spot since it's mostly in the shade. It seems I wasn't quick enough to grab it."
+    scene backgroundcourtyard
+
+    "The stone table in the courtyard is an especially sought after gathering spot since it's mostly in the shade."
+    "It seems I wasn't quick enough to grab it."
+
+    show KkTalk
 
     kk "I think she'll say yes. I mean, I'm one of the only people who talks to her, but I don't want to be tied down all night."
+
+    show DSadtalk at left
 
     d "Ya'hunh."
 
     "Dyre is way too busy with his book to really be paying attention to what Kazz is saying."
+
+    hide KkGrin
+    show KkO
 
     kk "But I also don't want to be the only one without a date. I'd look totally lame."
 
@@ -1902,17 +1912,30 @@ label chapter2_day2_event4:
 
     "He's totally checked out."
 
+    hide KkO
+    show KkTalk
+
     kk "Maybe I should try asking Nanase instead?"
 
+    hide DSadtalk
+    show DDisturbed at left
+
     d "What's that over there?"
+
+    hide KkTalk
+    show KkComplain
 
     kk "Bro, I'm not five, that's not going to work on me."
 
     d "No seriously, on the door behind Nagen, what the fuck is that?"
 
+    hide KkComplain
+    hide DDisturbed
+
     #Display Hiro portrait
 
-    "That's... unsettling. It looks like one of those ink-blot tests, but the shapes were obviously made by hand. One of them looks kind of familiar..."
+    "That's... unsettling. It looks like one of those ink-blot tests, but the shapes were obviously made by hand."
+    "One of them looks kind of familiar..."
 
     kk "Looks like the kind of stuff a computer spurs out when you ask it to paint. Or a chocolate shell."
 
@@ -1930,17 +1953,38 @@ label chapter2_day2_event4:
 
     n "I don't know."
 
+    scene backgroundcourtyard
+
+    show DDisturbed at left
+    show KkDead
+
     d "....."
 
     kk "....."
 
     n "....."
 
+    hide DDisturbed
+    show DMad at left
+
     d "Well where is he? I gotta know what this thing is, it'll kill me."
 
     kk "Maybe it's a sleep paralysis demon."
 
+    hide DMad
+    hide KkDead
+    
+    scene backgroundblack with fade
+
+    #add walking sfx
+
+    backgroundamp
+
     "After relentless pressuring, we meet up with Jona and show him the picture."
+
+    show JRelax at right
+    show DMad at left
+    show Kkbase
 
     j "That's Hiro."
 
@@ -1950,9 +1994,15 @@ label chapter2_day2_event4:
 
     "But this looks nothing like him."
 
+    hide DMad
+    show DSmile at left
+
     d "Cool drawing."
 
     j "Thanks."
+
+    hide Kkbase
+    show KkComplain
 
     kk "A minute ago, you said it was just a bunch of scribbles."
 
@@ -1960,9 +2010,17 @@ label chapter2_day2_event4:
 
     kk "I- Whatever. Now that we figured that out, what do you think I should do about-"
 
+    hide DSmile
+    show DTalk2 at left
+
     d "Darn, look at the time. I should start working on my history homework, if I want to get my sleep tonight."
 
     kk "Hey!"
+
+    hide DTalk2
+    hide KkComplain
+    hide JRelax
+    show JMad 
 
     "Dyre speeds off towards the dorms in a hurry with Kazz following closely behind. Jona crumples the drawing and starts to rip it to shreds."
 
@@ -1972,53 +2030,83 @@ label chapter2_day2_event4:
 
     n "I'm sure he'd be flattered that you tried to draw him."
 
+    hide JMad
+    show JDepressed
+
     j "But it wasn't a nice picture. It was an honest one."
 
     n "...none of us could tell it was a picture of him. I think you're fine."
 
-    j "Why that one then? I have a bunch of nicer pictures in the front of the book. I already know it's stolen, but now they're just ripping it apart and showing people what they want to be seen."
+    j "Why that one then? I have a bunch of nicer pictures in the front of the book."
+    j "I already know it's stolen, but now they're just ripping it apart and showing people what they want to be seen."
 
+    hide JDepressed
+
+    if Hero > Villain:
     #IF Hero
 
-    j "This is what happens when you trust people with a part of you. You used to understand. Or maybe you were just being nice..."
+        show JMad
 
-    n "What's wrong with being nice?"
+        j "This is what happens when you trust people with a part of you. You used to understand. Or maybe you were just being nice..."
 
-    j "Nothing... but saying nice things because you want people to like you is not the same thing as being empathetic. It's more like lying."
+        n "What's wrong with being nice?"
 
-    "He tightens the bands of his mask."
+        j "Nothing... but saying nice things because you want people to like you is not the same thing as being empathetic. It's more like lying."
 
-    j "I'm not some kid who's feelings need to be spared. I'd rather people be honest about what they want of me."
+        "He tightens the bands of his mask."
 
-    j "This is why I stopped letting people look at my stuff. They just do whatever they want with my art with no respect to what it means to me or why I made it."
+        j "I'm not some kid who's feelings need to be spared. I'd rather people be honest about what they want of me."
 
-    n "Death of the artist, it's the risk you take when you make something."
+        hide JMad
+        show JDepressed
 
+        j "This is why I stopped letting people look at my stuff. They just do whatever they want with my art with no respect to what it means to me or why I made it."
+
+        n "Death of the artist, it's the risk you take when you make something."
+
+        hide JDepressed
+
+    else:
     #IF Villain
 
-    j "Nagen, there's so many things in that book that could be taken the wrong way out of context. Stuff that could make you guys look bad."
+        shoe JDepressed
 
-    n "What do you mean?"
+        j "Nagen, there's so many things in that book that could be taken the wrong way out of context. Stuff that could make you guys look bad."
 
-    j "They were assignments, things I drew to fulfill a prompt. But by themselves, with only my name on them, it looks like I enjoy thinking about bad things all the time. Not like I'm trying to tell someone about bad things that happened."
+        n "What do you mean?"
 
-    n "So it's literally showing people half of a conversation."
+        j "They were assignments, things I drew to fulfill a prompt. But by themselves, with only my name on them, it looks like I enjoy thinking about bad things all the time."
+        j "Not like I'm trying to tell someone about bad things that happened."
 
-    j "And only the ugly parts."
+        n "So it's literally showing people half of a conversation."
 
-    "Quite literally it seems."
+        hide JDepressed
+        show JMad
+
+        j "And only the ugly parts."
+
+        "Quite literally it seems."
+
+        hide JMad
 
     #Return to Main Branch
+
+    show JFrustrated
 
     j "I've been thinking about this ever since Hiro got targeted but... what if... what if the goal here isn't to hurt us physically, but to make us look bad?"
 
     n "You saw what Mariko did to Hiro."
 
-    j "Yeah. I saw someone sick and grieving try to bait you into hitting her in front of the whole school. Now someone's spreading my old art around, and an abstract piece at that. Why would someone try to make new reasons for people to hate us? There's plenty to work with already."
+    j "Yeah. I saw someone sick and grieving try to bait you into hitting her in front of the whole school."
+    j "Now someone's spreading my old art around, and an abstract piece at that. Why would someone try to make new reasons for people to hate us?"
+    j "There's plenty to work with already."
 
     "It is weird. The only thing getting into fights here would do is hurt our chances at getting parol, but no one here knows that. Unless..."
 
     n "Jona, I think you may be onto something."
+
+    hide JFrustrated
+    show JRelax
 
     j "Really?"
 
@@ -2026,15 +2114,28 @@ label chapter2_day2_event4:
 
     j "I think it's a little late for that."
 
-    n "But if it seems like it's not working anymore, they'll get frustrated and try more extreme stuff to mess with you until they slip up. That's how we'll be able to catch them."
+    n "But if it seems like it's not working anymore, they'll get frustrated and try more extreme stuff to mess with you until they slip up."
+    n "That's how we'll be able to catch them."
+
+    hide JRelax
+    show JDepressed
 
     j "Yeah, but I don't want them to do more extreme stuff. I want to be left the fuck alone."
 
     n "I mean, same, but I don't think that's realistic at this point."
 
+    hide JDepressed
+    show JFrustrated
+
     j "Well too bad. I'm going to keep doing what I want. I know you're trying to help, but I like my idea better."
 
-    "In all honesty, I don't think things are going to get better just waiting for people to change on their own. But once Jona has his mind set on something, there's no way to talk him out of it."
+    "In all honesty, I don't think things are going to get better just waiting for people to change on their own."
+    "But once Jona has his mind set on something, there's no way to talk him out of it."
+
+    hide JFrustrated
+    
+    scene backgroundblack with fade
+    return
 
     #Freetime Event
 
@@ -2043,46 +2144,74 @@ label chapter2_day2_night:
 
     #BG: Nagen's Dorm Night
 
-    "I guess I can't be too surprised that Jona's so worried about his art being seen by other people like this. I just hope the reason he's trying to downplay it isn't to spare our feelings. We may be busy with other things, but that doesn't mean we don't care."
+    scene backgroundroomn
+
+    "I guess I can't be too surprised that Jona's so worried about his art being seen by other people like this."
+    "I just hope the reason he's trying to downplay it isn't to spare our feelings. We may be busy with other things, but that doesn't mean we don't care."
 
     Dark "He tried drawing the kind of life he wanted."
 
-    "Granted, half the time I couldn't make sense of it, but he definitely had an obsession with a 'living heaven'. He tried using his art to show what he wanted people to do to make the world a better place."
+    "Granted, half the time I couldn't make sense of it, but he definitely had an obsession with a 'living heaven'."
+    "He tried using his art to show what he wanted people to do to make the world a better place."
 
     Dark "But there was this monster he'd always draw."
 
-    "It was a three-headed demon representing the first three majors that he depicted brutalizing innocent people and babies. He didn't have a name for it, it was just 'the thing we were supposed to fight'."
+    "It was a three-headed demon representing the first three majors that he depicted brutalizing innocent people and babies."
+    "He didn't have a name for it, it was just 'the thing we were supposed to fight'."
 
     Dark "People began worshiping the monster."
 
-    "What was supposed to be a warning turned into a patron saint for the people that hated all Vision Majors because of Lethe. Suddenly, his drawings became grim prophecies of how bad the riots would become. The riots are over, but those people are still out there."
+    "What was supposed to be a warning turned into a patron saint for the people that hated all Vision Majors because of Lethe."
+    "Suddenly, his drawings became grim prophecies of how bad the riots would become. The riots are over, but those people are still out there."
 
     Dark "He only drew Lethe after that."
 
-    "Piles of sketches cluttered his room of women with blonde hair and amber staffs. But without a reference, none of them really looked like her. The only thing he had to go off of were older drawings he did when she was still alive."
+    "Piles of sketches cluttered his room of women with blonde hair and amber staffs. But without a reference, none of them really looked like her."
+    "The only thing he had to go off of were older drawings he did when she was still alive."
+
+    scene backgroundblack with fade
+    return
 
 label chapter2_day3_event1:
     #"Day 3 Event 1"
 
     #BG: Tba
+    show backgroundroom
 
     kk "Good morning, Bro Peeps!"
 
     "Nooooo. Why must he do this every morning?"
 
-    kk "Voting for king and queen will happen at the dance. There are no nominations since everyone is eligible for the title, so please do not send nominations to the AV club or council; everyone's nominated."
+    kk "Voting for king and queen will happen at the dance."
+    kk "There are no nominations since everyone is eligible for the title, so please do not send nominations to the AV club or council; everyone's nominated."
 
-    "I thought we weren't going to go through with that. Who told Kazz to throw that into the announcements? I get dressed as quickly as I can and storm to the AV booth. When I get there, Kazz is blocking the doorway with his body, trying to keep Kitsune from coming in."
+    "I thought we weren't going to go through with that. Who told Kazz to throw that into the announcements?"
+    "I get dressed as quickly as I can and storm to the AV booth. 
 
-    k "What's the big idea, Kataki? I thought you were going to help me, not bushwhack my entire campaign! Now everyone's just going to vote for themselves!"
+    scene backgroundavroom
+    
+    "When I get there, Kazz is blocking the doorway with his body, trying to keep Kitsune from coming in."
+
+    show KMad2
+
+    k "What's the big idea, Kataki?"
+    k "I thought you were going to help me, not bushwhack my entire campaign! Now everyone's just going to vote for themselves!"
+
+    show KkGrin at left
 
     kk "Exactly, now it doesn't matter."
 
     "She stomps her foot and he flinches."
 
+    hide KkGrin
+    show KkO at left
+
     kk "I-isn't that right, Nagen?"
 
     n "There isn't going to be a king or queen, we already have enough on our plate as it is."
+
+    hide KMad2
+    show KMad
 
     k "...That's not what Uitto's saying. She's already campaigning, I just assumed she got insider info from you."
 
@@ -2094,21 +2223,36 @@ label chapter2_day3_event1:
 
     n "That's not-"
 
+    hide KMad
+
     k "Mark my words, I will be crowned queen, no matter what that tired showgirl has up her sleeve!"
 
     n "But-"
+
+    hide KMad
 
     "She runs out of the room with dramatic flair. I see Kazz trying to sneak towards the door out of the corner of my eye."
 
     n "Where do you think you're going? This is all your fault!"
 
+    hide KkO
+    show KkComplain
+
     kk "Maaan."
 
     "He sighs and turns to me."
 
-    kk "Look, it's like Kit said. Uitto's been going around with some of the other girls trying to gather votes. Both of them kept hounding me to do a commercial for them and I didn't want to pick sides so I figured this way, it would just... go away?"
+    hide KkComplain
+    show KkTalk
+
+    kk "Look, it's like Kit said. Uitto's been going around with some of the other girls trying to gather votes."
+    kk "Both of them kept hounding me to do a commercial for them and I didn't want to pick sides.
+    kk "So I figured this way, it would just... go away?"
 
     n "Why didn't you just come directly to us?"
+
+    hide KkTalk
+    show KkComplain
 
     kk "You saying I can't trust Uitto?"
 
@@ -2118,11 +2262,26 @@ label chapter2_day3_event1:
 
     n "I can't ask the historian to take on additional duties last minute like that."
 
-    kk "You can't? Ohh, right, she was helping that Kietsu guy first. I just assumed she would've climbed higher up the food chain by now. Either way, Kitsune and Uitto have been spreading rumors about voting for queen of the dance even before coming to me. If you don't have plans for it, someone else is going to try to and that's not going to be pretty."
+    hide KkComplain
+    show KkO
+
+    kk "You can't?"
+
+    hide KkO
+    show KkTalk
+
+    kk "Ohh, right, she was helping that Kietsu guy first."
+    kk "I just assumed she would've climbed higher up the food chain by now."
+    kk "Either way, Kitsune and Uitto have been spreading rumors about voting for queen of the dance even before coming to me."
+    kk "If you don't have plans for it, someone else is going to try to and that's not going to be pretty."
 
     "That may be true, but that doesn't change the fact that I'm supposed to be the one in charge! People can't keep deciding this stuff without me!"
 
-    n "I'm going to get to the bottom of this. Until then, no more ad libbing stuff about the dance. If we're going to add anything to the event, I will send you a note."
+    n "I'm going to get to the bottom of this. Until then, no more ad libbing stuff about the dance."
+    n "If we're going to add anything to the event, I will send you a note."
+
+    hide KkTalk
+    show KkFret
 
     kk "But-"
 
@@ -2130,10 +2289,17 @@ label chapter2_day3_event1:
 
     "The five minute bell rings."
 
+    hide KkFret
+    show KkBase
+
     kk "Y-yeah. We're going to be late. I'mma just-"
 
-    "He books it down the hall. How are things spiraling out of control so fast?"
+    hide KkBase
 
+    "He books it down the hall. How are things spiraling out of control so fast?"
+    
+    scene backgroundblack with fade
+    return
     #Freetime Event
 
 label chapter2_day3_event2:
@@ -2141,10 +2307,15 @@ label chapter2_day3_event2:
     #Day 3 Event 2
 
     #BG: Tba
+    scene backgroundcafe
 
     "I stop to give myself a chance to calm down before hunting down Uitto. If I'm too emotional, she'll have the upper hand and I'll never get to the bottom of this rumor."
 
     "I find her playing cards in the cafe with Hiro while Jona lazily sketches on the back of his notes."
+    
+    show JRelax at left
+    show HBase at right
+    show Uittotalk
 
     n "Uitto, a word please."
 
@@ -2152,49 +2323,91 @@ label chapter2_day3_event2:
 
     h "Hunh?"
 
+    hide Uittotalk
+    show Uittotongue
+
     u "Verb; to deny or oppose. A word, as requested. Was it big enough for you?"
 
     "She may have Hiro laughing, but I hate it when she plays dumb like this."
 
     j "Uitto..."
 
+    hide Uittotongue
+    show Uittoiguess
+
     u "Fine. But you don't have to pull me aside like I'm a kid, just spit it out."
 
     n "Are you going around asking people to make you prom queen?"
+
+    hide Uittoiguess
+    show Uittogurl
 
     u "No."
 
     "She picks up another card."
 
+    hide JRelax
+    show JHappy at left
+
     j "....."
+
+    hide Uittogurl
+    show Uittotalk
 
     u "Is that all?"
 
     n "Then why is Kazz saying you were asking to run a commercial for a contest we're not hosting?"
 
-    u "Because you are. Four out of four class reps agree it's a good idea and Kietsu makes five. Majority wins and you don't have to worry about the logistics. Everything will take care of itself."
+    u "Because you are."
+    u "Four out of four class reps agree it's a good idea and Kietsu makes five."
+    u "Majority wins and you don't have to worry about the logistics. Everything will take care of itself."
 
     n "Hiro, you knew about this?"
 
+    hide HBase
+    shoe HGuilt at right
+
     h "I didn't think it would be a big deal. Most people just, kinda expected it."
 
-    u "I'm doing you a favor, Nagen. Why are you making such a big deal out of this? You're going to give yourself a migraine making that face."
+    hide Uittotalk
+    show Uittosmirk
+
+    u "I'm doing you a favor, Nagen."
+    u "Why are you making such a big deal out of this? You're going to give yourself a migraine making that face."
 
     j "Because Nagen's the leader and now you're acting like he's not."
 
+    hide HGuilt
+    show HBeans at right
+
     h "We're just friends, there is no leader now."
 
-    n "Except I'm acting as the council president. I asked for your help, not to go adding more stuff to the asinine list of expectations."
+    n "Except I'm acting as the council president."
+    n "I asked for your help, not to go adding more stuff to the asinine list of expectations."
+
+    hide Uittosmirk
+    show Uittocringe
 
     u "I'm adding stuff to my to-do list. Trade-chain quest, remember? You want the stuff you asked for, you gotta trust me."
 
     n "How can I do that when you won't tell me what's going on?"
 
+    hide Uittocringe
+    show UBase
+
     u "I'm not telling you because you have enough to worry about right now."
 
     "She gives a meaningful glance to Jona's frantic sketches."
 
+    hide UBase
+    show Uittosmile
+
     u "I'll let you know if I get in over my head."
+
+    hide HBeans
+    show HSadSmile at right
+    hide JHappy
+    show JRelax at left
 
     h "You've been working yourself sick lately."
 
@@ -2202,9 +2415,20 @@ label chapter2_day3_event2:
 
     h "Please, let us handle this one. I promise no more surprises."
 
+    hide JRelax
+    show JDepressed at left
+
     j "....."
 
     "I get that they're trying to help, but why does that involve treating me like a child?"
+
+    hide JDepressed
+    hide HSadSmile
+    hide Uittobase
+
+    scene backgroundblack with fade
+
+    return
 
     #Freetime Event
 
@@ -2266,6 +2490,10 @@ label chapter2_day3_event3:
     y "She's not my first choice e-either, but it wou-uld be foolish to overlook her the-eatrical experience."
 
     "At this point, I'm willing to try anything."
+
+    scene backgroundblack with fade
+
+    return
 
     #Freetime Event
 
@@ -2348,6 +2576,10 @@ label chapter2_day3_event4:
 
     "She leaves without another word as the wind picks up."
 
+    scene backgroundblack with fade
+
+    return
+
     #Freetime Event
 
 label chapter2_day3_night:
@@ -2356,7 +2588,10 @@ label chapter2_day3_night:
 
     #BG: Nagen's Dorm Night
 
-    "It seems like things are starting to fall into place, but I can't quite shake what Yoku and Rise said to me. I mean, 'willful ignorance'. I'm not trying to avoid thinking about anything. I'm not-"
+    scene backgroundroomn
+
+    "It seems like things are starting to fall into place, but I can't quite shake what Yoku and Rise said to me."
+    "I mean, 'willful ignorance'. I'm not trying to avoid thinking about anything. I'm not-"
 
     o "She should have a funeral."
 
@@ -2374,7 +2609,8 @@ label chapter2_day3_night:
 
     n "I can't, it's not fair." #[SFx
 
-    "Jona didn't want Odori to come until she was properly buried so Uitto stayed behind with her. I had no idea where Hiro ran off to. We already made him clean her. I couldn't leave Jona alone."
+    "Jona didn't want Odori to come until she was properly buried so Uitto stayed behind with her."
+    "I had no idea where Hiro ran off to. We already made him clean her. I couldn't leave Jona alone."
 
     j "None of this is fair. Just keep your eyes closed. She wouldn't want you to see her like this." # [SFx
 
@@ -2383,13 +2619,18 @@ label chapter2_day3_night:
     j "To keep people from... 'un'burying her. I told you..." #[SFx] 
     j "I've done this twice before."
 
+    scene backgroundblack with fade
+
+    return
+
 label chapter2_day4_event1:
 
     #Day 4 Event 1
 
     #BG: Nagen's Dorm (tba)
 
-    "I wake up before my alarm, nauseous and in a cold sweat. It's been two years, I shouldn't- I thought I moved past this. I have student council in half an hour. Might as well get ready, it's not like I can go back to sleep now."
+    "I wake up before my alarm, nauseous and in a cold sweat. It's been two years, I shouldn't- I thought I moved past this."
+    "I have student council in half an hour. Might as well get ready, it's not like I can go back to sleep now."
 
     #BG: Hallway
 
@@ -2399,7 +2640,8 @@ label chapter2_day4_event1:
 
     d "Why are you acting like I'm the bad guy here? I'm just trying to warn you that Kazz-"
 
-    nk "I don't want anything to do with you or Kazz! You saw how he treated me and you did nothing. It's pretty clear you're his friend, not mine. So just leave me alone already!"
+    nk "I don't want anything to do with you or Kazz! You saw how he treated me and you did nothing. It's pretty clear you're his friend, not mine."
+    nk "So just leave me alone already!"
 
     d "Nanase, come on."
 
@@ -2450,7 +2692,8 @@ label chapter2_day4_event2:
 
     #BG: Cafe
 
-    "Jona is dominating half the table with ribbons and paints. Judging by the size of the mess, he's been at it for a while. All of these look like the same mask. The rest of us are carefully eating our lunch on the other side of the craft divide."
+    "Jona is dominating half the table with ribbons and paints. Judging by the size of the mess, he's been at it for a while."
+    "All of these look like the same mask. The rest of us are carefully eating our lunch on the other side of the craft divide."
 
     u "Still having trouble with the horns?"
 
@@ -2536,22 +2779,36 @@ label chapter2_day4_event2:
 
     "He runs off to the kitchen before Jona can stop him."
 
+    scene backgroundblack with fade
+
+    return
+
     #Freetime Event
 
 label chapter2_day4_event3:
     #Day 4 Event 3
 
+    scene backgroundnurse
+
     #BG: Nurse's Office
 
-    "I manage to get through another round of antibiotics with minimal interaction with the nurse. I know she means well, but I really don't have the energy to make small talk. I don't have much energy at all. As I exit the office, I notice a drawing taped to the far wall. At first glance, one might lump it in with the educational posters, but the person who posted this deliberately avoided putting it on the bulletin board and it definitely wasn't there when I went in earlier. I take the picture off the wall."
+    "I manage to get through another round of antibiotics with minimal interaction with the nurse."
+    "I know she means well, but I really don't have the energy to make small talk."
+    "I don't have much energy at all. As I exit the office, I notice a drawing taped to the far wall."
+    "At first glance, one might lump it in with the educational posters, but the person who posted this deliberately avoided putting it on the bulletin board and it definitely wasn't there when I went in earlier."
+    "I take the picture off the wall."
 
     #CG of Nagen's portrait
 
-    "That's my port... The details aren't exact, but I'd know that shape anywhere. Not only that, but this thing, it's like a map of everywhere I've had an IV. There are rough, repeated lines in bright yellow that remind me of the feeding tubes they'd shove down my nose. I never told anyone about those. How does he..."
+    "That's my port... The details aren't exact, but I'd know that shape anywhere."
+    "Not only that, but this thing, it's like a map of everywhere I've had an IV."
+    "There are rough, repeated lines in bright yellow that remind me of the feeding tubes they'd shove down my nose."
+    "I never told anyone about those. How does he..."
 
     #Hide CG
 
-    "I can't get distracted. Whoever stole his sketchbook wanted me to find this picture. Probably for the same reason they put Hiro's portrait where he might find it... Still..."
+    "I can't get distracted. Whoever stole his sketchbook wanted me to find this picture."
+    "Probably for the same reason they put Hiro's portrait where he might find it... Still..."
 
     #CG of Nagen's portrait
 
@@ -2559,39 +2816,66 @@ label chapter2_day4_event3:
 
     #Hide CG
 
-    "I should talk to Jona about this before jumping to conclusions. But I don't want to talk to Jona about the things he drew, especially if it's of me. Now all I can think about is the feeling of the damn thing going down my nose. I fold up the picture and put it in my bag. I have a bad feeling these are going to get worse."
+    "I should talk to Jona about this before jumping to conclusions."
+    "But I don't want to talk to Jona about the things he drew, especially if it's of me. Now all I can think about is the feeling of the damn thing going down my nose."
+    "I fold up the picture and put it in my bag. I have a bad feeling these are going to get worse."
+
+    scene backgroundblack with fade
+
+    return
 
     #Freetime Event
 
 label chapter2_day4_night:
     #"Day 4 Night"
 
+    scene backgroundroomn
+
     #BG: Nagen's Dorm Night
 
-    "I know I should be sleeping, but I can't. I feel like the drawing in my bag is staring at me. Just this ugly void sitting in the corner of my room. Jona didn't draw things like that in the past, they were always pretty things."
+    "I know I should be sleeping, but I can't. I feel like the drawing in my bag is staring at me."
+    "Just this ugly void sitting in the corner of my room. Jona didn't draw things like that in the past, they were always pretty things."
 
     Dark "He would draw Lethe over and over."
 
-    "Few people had the patience for Jona's ticks and fixations, but Lethe didn't seem to mind. She praised each gilded portrait like they were gifts. She helped all of us see our quirks as strengths, but Jona sought her out the most."
+    "Few people had the patience for Jona's ticks and fixations, but Lethe didn't seem to mind. She praised each gilded portrait like they were gifts."
+    "She helped all of us see our quirks as strengths, but Jona sought her out the most."
 
     Dark "The paintings would always make her cry."
 
-    "Jona's hands were always stained with gold. He'd ask me what people associated with 'good'. Halos and flowers would work their way into future paintings, but still Jona was frustrated. None of them 'worked'. He wasn't able to explain to me what he wanted from her. After all, she said all of them were lovely."
+    "Jona's hands were always stained with gold. He'd ask me what people associated with 'good'."
+    "Halos and flowers would work their way into future paintings, but still Jona was frustrated. None of them 'worked'."
+    "He wasn't able to explain to me what he wanted from her. After all, she said all of them were lovely."
 
     Dark "She didn't think of them as portraits of her."
 
-    "Uitto and Odori would complain that he didn't ever paint them. Typically, he only painted places, not people. Maybe that's why he was so set on making the 'perfect' portrait. His skill wasn't lining up with what was in his head. Finally, he got her to agree to model for him."
+    "Uitto and Odori would complain that he didn't ever paint them."
+    "Typically, he only painted places, not people.
+    "Maybe that's why he was so set on making the 'perfect' portrait. His skill wasn't lining up with what was in his head."
+    "Finally, he got her to agree to model for him."
 
     Dark "We never got to see the final painting."
 
-    "Lethe... was gone a week after the painting was finished. I suggested using it at her memorial, but he refused. He wouldn't let anyone look at it. I assumed he was protective of it because it was the last thing they did together, but now I wonder; what made that painting worse than his 'failures'?"
+    "Lethe... was gone a week after the painting was finished."
+    "I suggested using it at her memorial, but he refused. He wouldn't let anyone look at it."
+    "I assumed he was protective of it because it was the last thing they did together, but now I wonder; what made that painting worse than his 'failures'?"
+
+    scene backgroundblack with fade
+
+    return
 
 label chapter2_day5_event1:
     #"Day 5 Event 1"
 
     #BG: Nagen's Dorm Day
 
-    "I wake up and for a brief second, it feels like a normal day. Then Kazz's voice comes blasting through the clock radio. I can barely focus on what he's saying. There's so many things I have to get done and barely enough time to do it and I still haven't talked to Jona about the picture I found. My hands tremor. I know I need to eat, I need to get dressed, yet I feel like my shoe got caught in the tracks of an on-coming train. Instead of doing anything, I just sit, hoping it will pass. The minutes pass and all I can do now is fixate on how long I've been sitting here. Am I going to be late to class?"
+    scene backgroundroom
+
+    "I wake up and for a brief second, it feels like a normal day. Then Kazz's voice comes blasting through the clock radio."
+    "I can barely focus on what he's saying. There's so many things I have to get done and barely enough time to do it and I still haven't talked to Jona about the picture I found."
+    "My hands tremor. I know I need to eat, I need to get dressed, yet I feel like my shoe got caught in the tracks of an on-coming train."
+    "Instead of doing anything, I just sit, hoping it will pass. The minutes pass and all I can do now is fixate on how long I've been sitting here."
+    "Am I going to be late to class?"
 
     "A loud knock of metal on metal startles me back to reality."
 
@@ -2607,13 +2891,17 @@ label chapter2_day5_event1:
 
     "She waits patiently for me to finish getting ready before we make our way across the grounds."
 
+    scene backgroundschool
+
     #BG: School Outside
 
-    ch "People have been avoiding me lately. At first, I thought it was just due to misunderstandings, but I am starting to think it is deliberate exclusion. I do not suppose you have heard anything?"
+    ch "People have been avoiding me lately. At first, I thought it was just due to misunderstandings, but I am starting to think it is deliberate exclusion."
+    ch "I do not suppose you have heard anything?"
 
     n "No, I can't say I have."
 
-    ch "No news is good news, I suppose. Still, I would like to be of help to someone in all this. Perhaps an act of goodwill is in order? Something to proffer sentiments of gratitude from both sides, but I wanted to run it by you first."
+    ch "No news is good news, I suppose. Still, I would like to be of help to someone in all this."
+    ch "Perhaps an act of goodwill is in order? Something to proffer sentiments of gratitude from both sides, but I wanted to run it by you first."
 
     n "I'm not sure what you're getting at."
 
@@ -2627,7 +2915,8 @@ label chapter2_day5_event1:
 
     n "Why? Not that I'm against it, he'd lose his mind, but why?"
 
-    ch "Certain people think they can speak for us. I would like the chance to show him and everyone that he does not have to 'earn' his place here. None of you do. And, like you said, he would 'lose his mind'."
+    ch "Certain people think they can speak for us. I would like the chance to show him and everyone that he does not have to 'earn' his place here."
+    ch "None of you do. And, like you said, he would 'lose his mind'."
 
     n "I don't see a problem with it, but I don't think it'll be that easy."
 
@@ -2639,12 +2928,17 @@ label chapter2_day5_event1:
 
     "She waves to me and goes to her own classroom. I wonder if someone sent her to come get me or if she came on her own."
 
+    scene backgroundblack with fade
+
+    return
+
     #Freetime Event
 
 label chapter2_day5_event2:
     #Day 5 Event 2"
 
-    "Jona and Uitto are making a noxious slop out of their leftover food. The theme this time being anything pink. The smell is awful, but at least they waited until after I was done eating before working on today's monstrosity."
+    "Jona and Uitto are making a noxious slop out of their leftover food. The theme this time being anything pink."
+    "The smell is awful, but at least they waited until after I was done eating before working on today's monstrosity."
 
     j "It doesn't look enough like blood. Are there any soy sauce packets left?"
 
@@ -2654,7 +2948,8 @@ label chapter2_day5_event2:
 
     j "How else can we make sure each one's unique?"
 
-    "It's good to see everyone falling into their old routines, even if that involves making weird food monsters. I'm just not in the mood to participate this time. Rise walks up to our table with a small frown."
+    "It's good to see everyone falling into their old routines, even if that involves making weird food monsters."
+    "I'm just not in the mood to participate this time. Rise walks up to our table with a small frown."
 
     r "It seems I came at a bad time."
 
@@ -2777,13 +3072,18 @@ label chapter2_day5_event2:
     u "Diva-dumbass confidentiality goes for you too, don't worry. Just... let me know if something changes."
 
     #Freetime Event
+    scene backgroundblack with fade
+
+    return
 
 label chapter2_day5_event3:
     #"Day 5 Event 3"
 
     #BG: Tba
 
-    "I had to come to the library to get a break from talking to people. Something about the looming walls of books and tucked away corners feels soothing to me. However, Rei comes up and sits at my table. There are literally four other tables she could have sat at. She scribbles down things in a beat-up notebook only to erase and start over."
+    "I had to come to the library to get a break from talking to people."
+    "Something about the looming walls of books and tucked away corners feels soothing to me. However, Rei comes up and sits at my table."
+    "There are literally four other tables she could have sat at. She scribbles down things in a beat-up notebook only to erase and start over."
 
     re "Have you-"
 
@@ -2797,7 +3097,8 @@ label chapter2_day5_event3:
 
     "Rei twirls her pencil in her hands."
 
-    re "Nagen, I'm really starting to get worried. She hasn't been in class at all this week and she's not answering her phone. I know she's supposed to be in detention, but it's like she disappeared."
+    re "Nagen, I'm really starting to get worried. She hasn't been in class at all this week and she's not answering her phone."
+    re "I know she's supposed to be in detention, but it's like she disappeared."
 
     n "I'm sure she's okay. I've read some places like this will transfer out 'troublemakers'. Maybe she was forced to transfer schools and doesn't have your number?"
 
@@ -2812,6 +3113,9 @@ label chapter2_day5_event3:
     n "I'll see what I can do. "
 
     re "Thanks." # (7) (+Quest)"
+    scene backgroundblack with fade
+
+    return
 
     #Freetime Event
 
@@ -2820,13 +3124,15 @@ label chapter2_day5_event4:
 
     #BG: Amphitheater
 
-    "Night time is fast approaching and I still haven't asked Jona about the drawing I found. Part of me is afraid of what he'll say and wants to pretend I never found it. But I know if I do that, it'll just keep eating at me. He's rooting through the planters looking for natural materials for... something. Maybe a mask, but it would wilt by then."
+    "Night time is fast approaching and I still haven't asked Jona about the drawing I found."
+    "Part of me is afraid of what he'll say and wants to pretend I never found it. But I know if I do that, it'll just keep eating at me."
+    "He's rooting through the planters looking for natural materials for... something. Maybe a mask, but it would wilt by then."
 
-    "....."
+    j "....."
 
     "He's too engrossed in what he's doing to notice me. I'll have to say something first."
 
-    "....."
+    j "....."
 
     "Damn it."
 
@@ -2854,13 +3160,16 @@ label chapter2_day5_event4:
 
     n "How... how did you know?"
 
-    j "The one time you stayed over at my house... I saw one of the scars and when I asked what it was, your whole body lit up in these nasty orange pathways. I wasn't sure if it was pain or fear, but it was the first time I saw an aura that only covered parts of the body."
+    j "The one time you stayed over at my house... I saw one of the scars and when I asked what it was, your whole body lit up in these nasty orange pathways."
+    j "I wasn't sure if it was pain or fear, but it was the first time I saw an aura that only covered parts of the body."
 
     "Then is Hiro's the same?"
 
     n "But I never told you about any of this. How did you know they were medical devices?"
 
-    j "They'd light up when people talked about hospitals or your dad. I kinda put two and two together. I figured if it was something you wanted to talk about, you'd tell me. Knowing stuff you didn't want me to know made me feel like a bad friend. So, I did what everyone else did. I didn't bring it up."
+    j "They'd light up when people talked about hospitals or your dad. I kinda put two and two together."
+    j "I figured if it was something you wanted to talk about, you'd tell me. Knowing stuff you didn't want me to know made me feel like a bad friend."
+    j "So, I did what everyone else did. I didn't bring it up."
 
     "He takes one last look at me and starts ripping up the drawing."
 
@@ -2874,7 +3183,9 @@ label chapter2_day5_event4:
 
     j "What do you mean 'trigger something'?"
 
-    n "You know how in movies, peoples' memories play out the whole thing? Well, the same thing happens to me. If I'm reminded about it, my brain can latch on like a piranha and make me sit through it again. It's really fucking inconvenient."
+    n "You know how in movies, peoples' memories play out the whole thing? Well, the same thing happens to me."
+    n "If I'm reminded about it, my brain can latch on like a piranha and make me sit through it again."
+    n "It's really fucking inconvenient."
 
     j "Do memories with Lethe in them do that to you?"
 
@@ -2900,7 +3211,8 @@ label chapter2_day5_event4:
 
     #Return to Main Branch
 
-    j "I really don't understand how people can sleep here. The smells, the sounds; everything is so different from the inner city it's distracting. We're not even allowed to have roommates or anything and it just feels so empty."
+    j "I really don't understand how people can sleep here. The smells, the sounds; everything is so different from the inner city it's distracting."
+    j "We're not even allowed to have roommates or anything and it just feels so empty."
 
     n "I've been having trouble sleeping too. Usually I just map out the constellations on my ceiling until I pass out."
 
@@ -2916,6 +3228,10 @@ label chapter2_day5_event4:
 
     j "It's an excellent coat rack."
 
+    scene backgroundblack with fade
+
+    return
+
     #Freetime Event
 
 label chapter2_day5_night:
@@ -2923,15 +3239,21 @@ label chapter2_day5_night:
 
     #BG: Nagen's Dorm Night
 
-    "A small part of me feels better knowing that picture got shredded before anyone else saw it. It's not like I'm keeping it a secret or anything, but I'm not ready to talk about it with people I don't know well. Still, for Jona to pick up on that from what he's seen... It makes me wonder what else he's seen that he doesn't talk about."
+    scene backgroundroomn
+
+    "A small part of me feels better knowing that picture got shredded before anyone else saw it."
+    "It's not like I'm keeping it a secret or anything, but I'm not ready to talk about it with people I don't know well."
+    "Still, for Jona to pick up on that from what he's seen... It makes me wonder what else he's seen that he doesn't talk about."
 
     Dark "That sleepover had been a disaster."
 
-    "There was no one in the house when we came in after school. Laundry and dishes were piled so high, it was impossible to tell what was dirty and what was clean. He had invited me over to show the murals he painted on the walls, but I kept getting distracted by the garbage."
+    "There was no one in the house when we came in after school. Laundry and dishes were piled so high, it was impossible to tell what was dirty and what was clean."
+    "He had invited me over to show the murals he painted on the walls, but I kept getting distracted by the garbage."
 
     Dark "We ended up spending most of the night hiding in his room."
 
-    "He hadn't asked permission to invite a friend over. Didn't have the time, he said. I saw her briefly come in and throw on the TV, quickly falling asleep on the couch. She didn't even say hi to him."
+    "He hadn't asked permission to invite a friend over. Didn't have the time, he said. I saw her briefly come in and throw on the TV, quickly falling asleep on the couch."
+    "She didn't even say hi to him."
 
     Dark "Jona lived like a ghost."
 
@@ -2941,22 +3263,34 @@ label chapter2_day5_night:
 
     "He mixed a few drops into a puddle of yellow paint, the color growing muddy."
 
-    j "It doesn't matter what color she tries to be, it always has black in it. Some days it's darker than others. Those days she sleeps the most, so I try not to do anything that makes it darken."
+    j "It doesn't matter what color she tries to be, it always has black in it. Some days it's darker than others."
+    j "Those days she sleeps the most, so I try not to do anything that makes it darken."
 
-    "He never went to parties or school trips. Didn't join us for summer camp or invite her to the plays he helped out with. He even took himself to school and packed his own lunch. I asked if any of it was working, but he didn't know. Just changed the conversation to my IV scars. I called to get picked up after that."
+    "He never went to parties or school trips. Didn't join us for summer camp or invite her to the plays he helped out with."
+    "He even took himself to school and packed his own lunch. I asked if any of it was working, but he didn't know. Just changed the conversation to my IV scars."
+    "I called to get picked up after that."
+
+    scene backgroundblack with fade
+
+    return
 
 label chapter2_day6_event1:
     #"Day 6 Event 1"
 
     #BG: Nagen's Dorm Day
 
-    "Usually, I wake up to Kazz's cheery voice setting up another eclectic collection of songs. This morning, it's the constant ringing of my phone. Someone has been trying to call me before my alarm. Multiple people, apparently. Mu and Ichita of all people had tried calling me before Hiro started spamming redial."
+    scene backgroundroom
+
+    "Usually, I wake up to Kazz's cheery voice setting up another eclectic collection of songs."
+    "This morning, it's the constant ringing of my phone. Someone has been trying to call me before my alarm."
+    "Multiple people, apparently. Mu and Ichita of all people had tried calling me before Hiro started spamming redial."
 
     "Hiro dials me again. I answer."
 
     n "Dude, what the hell? It's not even six yet."
 
-    h "Thank God you answered. I need you to stall Uitto, but like, without making her suspicious. The other guys panicked and I think Ichita left a message and you gotta stop her before- Shit, why's Chisei here?"
+    h "Thank God you answered. I need you to stall Uitto, but like, without making her suspicious."
+    h "The other guys panicked and I think Ichita left a message and you gotta stop her before- Shit, why's Chisei here?"
 
     n "Slow down, Hiro, start from the beginning. What's wrong?"
 
@@ -2964,9 +3298,11 @@ label chapter2_day6_event1:
 
     "He hung up on me! I scramble out of bed and out the door just in time to see Uitto run into the main hall. Curse her stupid long legs!"
 
+    scene backgroundhall1
     #BG: Hallway
 
-    "Over half the school is here whispering to each other and craning their necks to look at the announcement boards. Just how many people did they call? They notice Uitto first and start parting like the red sea."
+    "Over half the school is here whispering to each other and craning their necks to look at the announcement boards."
+    "Just how many people did they call? They notice Uitto first and start parting like the red sea."
 
     u "What's going on?"
 
@@ -2982,7 +3318,8 @@ label chapter2_day6_event1:
 
     #CG: Uitto's Portrait
 
-    "Unlike the previous portraits, there's no doubt that's Uitto. The implications make my stomach flip. Uitto stands there, her eyes wide, but otherwise motionless. Mu heaves Ichita up as high as he can and he manages to grab it, tearing the drawing in half as he falls to the ground. At least it was the suggestive part."
+    "Unlike the previous portraits, there's no doubt that's Uitto. The implications make my stomach flip. Uitto stands there, her eyes wide, but otherwise motionless."
+    "Mu heaves Ichita up as high as he can and he manages to grab it, tearing the drawing in half as he falls to the ground. At least it was the suggestive part."
 
     #Hide CG
 
@@ -2998,7 +3335,8 @@ label chapter2_day6_event1:
 
     u "I..."
 
-    "She looks at everyone around us like a cornered animal. No one here is judging her or making fun of her, but it doesn't seem to matter. She runs through the split in the crowd towards the front entrance just as someone else opens the door."
+    "She looks at everyone around us like a cornered animal. No one here is judging her or making fun of her, but it doesn't seem to matter."
+    "She runs through the split in the crowd towards the front entrance just as someone else opens the door."
 
     j "What's everyone doing here so early?"
 
@@ -3018,7 +3356,9 @@ label chapter2_day6_event1:
 
     j "Nagen..."
 
-    "He looks at the torn remains of the drawing that was pinned to the corkboard. Ichita shoves his half of the torn up scrap into his Duct Taped backpack with a bunch of other crumpled up pieces of paper. He just keeps silently standing there until Hiro joins us."
+    "He looks at the torn remains of the drawing that was pinned to the corkboard."
+    "Ichita shoves his half of the torn up scrap into his Duct Taped backpack with a bunch of other crumpled up pieces of paper."
+    "He just keeps silently standing there until Hiro joins us."
 
     h "I think that was the last of them. Good job, guys, now-"
 
@@ -3077,13 +3417,17 @@ label chapter2_day6_event1:
 label chapter2_day6_event2:
     #"Day 6 Event 2"
 
+    scene backgrounddorm
+
     #BG: Dorms Outside
 
-    "We don't have a lot of time between classes. Hiro and I thought it would be best to split up and check on them at the same time. We both have someone we're closer with, but sometimes that makes you the worst person to talk to in situations. That's why I'm checking on..."
+    "We don't have a lot of time between classes. Hiro and I thought it would be best to split up and check on them at the same time."
+    "We both have someone we're closer with, but sometimes that makes you the worst person to talk to in situations. That's why I'm checking on..."
 
     #"A. Uitto (+Uitto)"
 
-    "I need to let Uitto know what Jona told me about that sketchbook. Maybe knowing what they were drawn for would help her feel better. I knock on her door and wait. She opens the door with puffy eyes."
+    "I need to let Uitto know what Jona told me about that sketchbook. Maybe knowing what they were drawn for would help her feel better."
+    "I knock on her door and wait. She opens the door with puffy eyes."
 
     n "Hey... can I come in?"
 
@@ -3101,19 +3445,22 @@ label chapter2_day6_event2:
 
     "I put my backpack down on the floor. She looks at it and bites her lip."
 
-    n "He drew weird pictures of all of us and whoever stole that sketchbook has been posting them around school. He said Hiro's was of something he didn't want to talk about and mine... mine was too. I guess his fosters wanted to know about us..."
+    n "He drew weird pictures of all of us and whoever stole that sketchbook has been posting them around school."
+    n "He said Hiro's was of something he didn't want to talk about and mine... mine was too. I guess his fosters wanted to know about us..."
 
     u "Can I see them?"
 
     #Give player option to look at gallery
 
-    "They're all half finished. Some aren't even from this year. She flips through the stack of papers. When she gets to the last one, she sighs. She sits there on her bed staring at it."
+    "They're all half finished. Some aren't even from this year. She flips through the stack of papers."
+    "When she gets to the last one, she sighs. She sits there on her bed staring at it."
 
     u "I don't know why he thinks he's bad at drawing people. Any one of these is fine... I just..."
 
     "Her thumb traces over the shadows in the background."
 
-    u "There's a lot that happened while I was working as a Rosette that I just try not to think about. Towards the end there, my manager would come to our play rehearsals and try to pressure me into dropping out so I could work more."
+    u "There's a lot that happened while I was working as a Rosette that I just try not to think about."
+    u "Towards the end there, my manager would come to our play rehearsals and try to pressure me into dropping out so I could work more."
 
     #Show CG Uitto + Jona backstage with some dude
 
@@ -3125,7 +3472,8 @@ label chapter2_day6_event2:
 
     #Hide CG
 
-    u "I mean, he can see people's emotions, right? So, he must have seen that I was scared to be alone with them... I guess... I just hoped he wouldn't figure out why, but... he's always been there. How could he not know?"
+    u "I mean, he can see people's emotions, right? So, he must have seen that I was scared to be alone with them... I guess..."
+    u "I just hoped he wouldn't figure out why, but... he's always been there. How could he not know?"
 
     "She puts the pictures in her desk drawer."
 
@@ -3139,7 +3487,8 @@ label chapter2_day6_event2:
 
     #"B. Jona (+Jona)"
 
-    "If I send Hiro to check on Jona, he's probably just going to make things worse. As much as I'd like to ask Uitto about those pictures, I should focus on damage control. I text Jona and ask him to let me into my room."
+    "If I send Hiro to check on Jona, he's probably just going to make things worse. As much as I'd like to ask Uitto about those pictures, I should focus on damage control."
+    "I text Jona and ask him to let me into my room."
 
     #BG: Nagen's Dorm
 
@@ -3165,7 +3514,8 @@ label chapter2_day6_event2:
 
     n "She's not going to hate you, if that's what you're afraid of."
 
-    "He gets up from the floor and grabs a piece of paper. On one side, three hastily drawn stick figures, then an arrow pointing to a scribble filled silhouette like the ones from his drawing."
+    "He gets up from the floor and grabs a piece of paper."
+    "On one side, three hastily drawn stick figures, then an arrow pointing to a scribble filled silhouette like the ones from his drawing."
 
     j "...Worse..."
 
@@ -3179,7 +3529,10 @@ label chapter2_day6_event2:
 
     j "....."
 
-    "He starts to pull at his hair with his head between his knees. I can tell he wants to say more, like there's something I'm not getting, but he still can't really talk. Which is odd, since he had no problem talking with me when it came to Hiro and I's portraits, even when he thought we'd be mad. I look back at the drawings. While similar, the backgrounds are all different. Some are on what looks like TV sets or dressing rooms. Quite a few remind me of the stage back at Estella. Are these of different times? He takes them from me and folds them up so the drawings aren't showing, tucking them into his jacket pocket."
+    "He starts to pull at his hair with his head between his knees. I can tell he wants to say more, like there's something I'm not getting, but he still can't really talk."
+    "Which is odd, since he had no problem talking with me when it came to Hiro and I's portraits, even when he thought we'd be mad. I look back at the drawings."
+    "While similar, the backgrounds are all different. Some are on what looks like TV sets or dressing rooms. Quite a few remind me of the stage back at Estella."
+    "Are these of different times? He takes them from me and folds them up so the drawings aren't showing, tucking them into his jacket pocket."
 
     n "I wish I knew how to fix this."
 
@@ -3199,49 +3552,79 @@ label chapter2_day6_event2:
 
     #BG: Dorm
 
-    "It's only 6PM... but I don't think I can do anything right now. I collapse onto the bed. Maybe if I just lay here a few minutes... I wonder when Jona finally made it back to his room?"
+    "It's only 6PM... but I don't think I can do anything right now. I collapse onto the bed. Maybe if I just lay here a few minutes..."
+    "I wonder when Jona finally made it back to his room?"
+
+    scene backgroundblack with fade
+
+    return
 
 label chapter2_day6_night:
     #Fade to black. BG: Nagen's Dorm Night
 
-    "I guess I nodded off, what time is it? ... 2AM?! I basically wasted a whole day! There's only one day left to prepare for the dance. I check my phone. Hiro was worried when I didn't make it to dinner. I guess he ate alone last night. I'll admit, I'm a little concerned the others didn't get dinner, particularly Jona. It can be really easy for him to shut down when he doesn't know how to handle things."
+    scene backgroundroomn
+
+    "I guess I nodded off, what time is it? ... 2AM?! I basically wasted a whole day!"
+    "There's only one day left to prepare for the dance. I check my phone. Hiro was worried when I didn't make it to dinner."
+    "I guess he ate alone last night. I'll admit, I'm a little concerned the others didn't get dinner, particularly Jona."
+    "It can be really easy for him to shut down when he doesn't know how to handle things."
 
     Dark "I noticed the clothes first."
 
-    "No one really liked the school uniform. It was stiff and uncomfortable and a bunch of kids got in trouble for breaking dress code by wearing the wrong color socks. Jona coming to class in street clothes one day wasn't super surprising on its own, but even with the pant legs rolled up, I could tell they were an adult's clothes."
+    "No one really liked the school uniform. It was stiff and uncomfortable and a bunch of kids got in trouble for breaking dress code by wearing the wrong color socks."
+    "Jona coming to class in street clothes one day wasn't super surprising on its own, but even with the pant legs rolled up, I could tell they were an adult's clothes."
 
     Dark "No one could convince him to change."
 
-    "We didn't want him to get in trouble, but he didn't care. He started racking up detentions and every day, he'd come to school in a new set of oversized clothes. After four days, they called him to the office to meet with his mom. She said the next day he'd be in his uniform."
+    "We didn't want him to get in trouble, but he didn't care. He started racking up detentions and every day, he'd come to school in a new set of oversized clothes."
+    "After four days, they called him to the office to meet with his mom. She said the next day he'd be in his uniform."
 
     Dark "He wasn't at school the next day."
 
-    "We didn't hear from him the whole weekend. That Monday he was dropped off in tears, but in uniform. He kept screaming at his mom's car, but she didn't turn back. His uniform looked a little wrinkled, but otherwise fine, yet he kept crying because his clothes were 'still dirty'."
+    "We didn't hear from him the whole weekend. That Monday he was dropped off in tears, but in uniform."
+    "He kept screaming at his mom's car, but she didn't turn back."
+    "His uniform looked a little wrinkled, but otherwise fine, yet he kept crying because his clothes were 'still dirty'."
 
     Dark "I offered to switch clothes with him."
 
-    "It was the best thing we could think of at the time and it seemed to help a little. He finally told me that his grandma was the one who did laundry and made his breakfast before school every morning. His mom had tried, but she just didn't do things the same way and she assumed he knew how to do things he didn't."
+    "It was the best thing we could think of at the time and it seemed to help a little."
+    "He finally told me that his grandma was the one who did laundry and made his breakfast before school every morning."
+    "His mom had tried, but she just didn't do things the same way and she assumed he knew how to do things he didn't."
 
     Dark "He'd brought a sealed wooden box to school."
 
-    "For weeks after, he'd keep it with him to watch over, hoping it would start sprouting like our lima beans in science class. It was supposed to be a cherry tree one day and he wanted to know the moment it would start growing."
+    "For weeks after, he'd keep it with him to watch over, hoping it would start sprouting like our lima beans in science class."
+    "It was supposed to be a cherry tree one day and he wanted to know the moment it would start growing."
 
     j "Gran said she'd turn into a cherry tree when she died. If nothing's growing, then she must not be dead yet."
 
     #IF Vigor > ? have nighttime scene option here
+    scene backgroundblack with fade
+
+    return
 
 label chapter2_day7_event1:
     #"Day 7 Event 1 (Freetime should = 18 by the end of day 7)"
 
     #BG: Nagen's Dorm Day
 
+    scene backgroundroom
+
     kk "Good morning, bromeleons! I know there's no class today, but who would want to waste such a beautiful day?"
 
     "Does this kid crave death? It's 6AM, who would want to be up this early on a weekend??"
 
-    kk "Shoma has requested that anyone who's commissioned a 'fit or mask, please pick them up before 5PM today; otherwise, you'll be stuck waiting until after the dance. Harsh. Also, reminder that voting will be happening at the dance. Sending votes under my door or in the STUCO box don't count. And you can only vote once."
+    kk "Shoma has requested that anyone who's commissioned a 'fit or mask, please pick them up before 5PM today; otherwise, you'll be stuck waiting until after the dance."
+    kk "Harsh."
+    kk "Also, reminder that voting will be happening at the dance."
+    kk "Sending votes under my door or in the STUCO box don't count. And you can only vote once."
 
-    "Right, tomorrow's the dance. This is my last chance to gather what I need. Just as I'm thinking of getting an extra half hour of sleep, Kazz starts blasting a deep-fried hyperpop mix at top volume. I guess I have to start the day."
+    "Right, tomorrow's the dance. This is my last chance to gather what I need."
+    "Just as I'm thinking of getting an extra half hour of sleep, Kazz starts blasting a deep-fried hyperpop mix at top volume. I guess I have to start the day."
+    
+    scene backgroundblack with fade
+
+    return
 
     #Freetime Event
 
@@ -3282,7 +3665,8 @@ label chapter2_day7_event2:
 
     n "...thanks..."
 
-    sh "Could you please stop looking at my work with such distaste? You haven't even tried it on. I promise, I did not design anything that would make people look bad. Just... trust me, you'll look fine."
+    sh "Could you please stop looking at my work with such distaste? You haven't even tried it on."
+    sh "I promise, I did not design anything that would make people look bad. Just... trust me, you'll look fine."
 
     n "....."
 
@@ -3294,7 +3678,8 @@ label chapter2_day7_event2:
 
     #CG: Nagen in the mirror
 
-    "Honestly, compared to what I normally wear, this looks normal... So why do I feel like I look silly? Maybe it's the mask Jona made for it, or the fact whoever this was made for was at least five inches taller than me."
+    "Honestly, compared to what I normally wear, this looks normal..."
+    "So why do I feel like I look silly? Maybe it's the mask Jona made for it, or the fact whoever this was made for was at least five inches taller than me."
 
     #CG: Hiro bursting into the dressing room
 
@@ -3340,6 +3725,9 @@ label chapter2_day7_event2:
 
     "At least people are still excited about the party. If it wasn't for that, all people would have to talk about is, well, us."
 
+    scene backgroundblack with fade
+
+    return
     #Freetime Event
 
 label chapter2_day7_event3:
@@ -3403,7 +3791,8 @@ label chapter2_day7_event3:
 
     n "Thanks."
 
-    s "So, we've got our assigned jobs. I'll handle concessions, Kietsu has volunteer wrangling, Nanase's on door duty, and you make sure no one's causing any trouble. Especially your friends."
+    s "So, we've got our assigned jobs."
+    s "I'll handle concessions, Kietsu has volunteer wrangling, Nanase's on door duty, and you make sure no one's causing any trouble. Especially your friends."
 
     n "...Got it."
 
@@ -3411,7 +3800,8 @@ label chapter2_day7_event3:
 
     "Everyone groans and packs up their things. It's my turn to clean and lock up, but Nanase is staying behind to help."# [IF Nanase is Date, skip to Main Branch
 
-    nk "So... the umm... some people are going together, like together together, to the dance... I know you're going to be hanging out with your friends, but do you... are you going with someone else?"
+    nk "So... the umm... some people are going together, like together together, to the dance..."
+    nk "I know you're going to be hanging out with your friends, but do you... are you going with someone else?"
 
     # IF Date = Yes
 
@@ -3427,11 +3817,14 @@ label chapter2_day7_event3:
 
     #IF Date = No
 
-    n "No, just my friends. I'm going to be pretty distracted and I don't want to, like, just run off and leave someone if something comes up. And it's just so early to think about that kinda stuff. I don't get how everyone can settle in so easily."
+    n "No, just my friends. I'm going to be pretty distracted and I don't want to, like, just run off and leave someone if something comes up."
+    n "And it's just so early to think about that kinda stuff. I don't get how everyone can settle in so easily."
 
     "She laughs a little."
 
-    nk "These things are supposed to be fun, but it's just been a source of stress for me. Everyone's put so much effort into it, so if I don't do everything by the book, am I not gonna have any fun? Or do people just say those things are fun because they put so much time in it? It's like, before I knew it, this thing turned into a couple's thing."
+    nk "These things are supposed to be fun, but it's just been a source of stress for me."
+    nk "Everyone's put so much effort into it, so if I don't do everything by the book, am I not gonna have any fun?"
+    nk "Or do people just say those things are fun because they put so much time in it? It's like, before I knew it, this thing turned into a couple's thing."
 
     n "Really?"
 
@@ -3456,6 +3849,10 @@ label chapter2_day7_event3:
     "She finishes stacking the stairs and dusts off her hands."
 
     nk "Thank you again. It really means a lot to me."
+
+    scene backgroundblack with fade
+
+    return
 
     #Freetime Event
 
@@ -3511,7 +3908,9 @@ label chapter2_day7_event4:
     j "...There's still pages missing from my book... They won't hurt anyone here, but... I don't want anyone seeing them... I don't think I'll be better in time for the dance... Sorry..."
 
     "He closes the door without another word. This is bad. He hasn't had to miss class like this in a while. I'll let the others know he's doing okay. Though I may leave out that he's surviving on cereal for his sake. The last thing he needs is Hiro trying to shove food through the door."
+    scene backgroundblack with fade
 
+    return
 
 label chapter2_day7_night:
     #"Day 7 Night"
@@ -3520,15 +3919,19 @@ label chapter2_day7_night:
 
     "Tomorrow's the dance; there's nothing more I can do to prepare for it. I can't help but feel nervous about tomorrow. "
 
-    "Usually, I try to have at least three plans for something, but I can't make plans for what to do if things go wrong this time. There's too many variables. It was like this when I first transferred to their class too."
+    "Usually, I try to have at least three plans for something, but I can't make plans for what to do if things go wrong this time."
+    "There's too many variables. It was like this when I first transferred to their class too."
 
     Dark "They made me sit next to the other new kid."
 
-    "I didn't know how to talk to new people or make friends, so I spent every lunch period inside reading. Jona would be at his desk sorting the same deck of cards into different piles. He still wore his uniform back then. We spent weeks next to each other in silence."
+    "I didn't know how to talk to new people or make friends, so I spent every lunch period inside reading."
+    "Jona would be at his desk sorting the same deck of cards into different piles."
+    "He still wore his uniform back then. We spent weeks next to each other in silence."
 
     Dark "It was like opening a dam."
 
-    "One question about his collection sent him into a detailed history on Golden Age era heroes from the Karmic Gladiators. Not that I minded. His favorite hero was the founder Siren; controversies aside, she was kind of a boring choice in my opinion. But he liked how easily she found other heroes like her."
+    "One question about his collection sent him into a detailed history on Golden Age era heroes from the Karmic Gladiators. Not that I minded."
+    "His favorite hero was the founder Siren; controversies aside, she was kind of a boring choice in my opinion. But he liked how easily she found other heroes like her."
 
     Dark "He wanted me to make a deal."
 
@@ -3537,6 +3940,10 @@ label chapter2_day7_night:
     "He didn't even ask to be liked, just tolerated. In exchange, he gave me a foil Lethe card."
 
     Dark "I kept my promise."
+
+    scene backgroundblack with fade
+
+    return
 
 label chapter2_day8_event1:
     #"Day 8 Event 1"
