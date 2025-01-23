@@ -361,7 +361,7 @@ label chapter2_vigor:
     hide ReSmiletalk
     hide HSmirk
 
-    "Not the same as friends, but it’s a start.
+    "Not the same as friends, but it’s a start."
 
     show IkBase
     ik "What’s smarter when things are okay?"
@@ -376,7 +376,7 @@ label chapter2_vigor:
 
     "Please don’t. Just be happy we’re participating and move on."
     "Professor Inukai has slowly been getting better at getting everyone’s attention."
-    "Without a clear goal in mind, it’s hard to keep everyone on task.
+    "Without a clear goal in mind, it’s hard to keep everyone on task."
     "I’m still not sure what their even going to be tested on."
 
     hide IkBase
@@ -437,8 +437,8 @@ label chapter2_vigor:
 
     ik "You’re right, but Guwon’s the only place that recognizes those abilities as proficiencies."
    
-   hide ShFrown
-   show KBase at left 
+    hide ShFrown
+    show KBase at left 
    
     k "Do they call it something else?"
     ik "They don’t call it anything. It just is."
@@ -458,7 +458,8 @@ label chapter2_vision:
 
     scene backgroundclass
 
-    "I don’t know if I’ll ever get used to class getting taught by the principal. I get she’s plenty qualified, it’s just weird. Jona was already drumming on his desk. I wish I could offer him something, but until we find his sketchbook, this is really the best he could do."
+    "I don’t know if I’ll ever get used to class getting taught by the principal. I get she’s plenty qualified, it’s just weird."
+    "Jona was already drumming on his desk. I wish I could offer him something, but until we find his sketchbook, this is really the best he could do."
     
     show KiBase
     
@@ -482,7 +483,8 @@ label chapter2_vision:
 
     v "Alright everyone, settle down. Today we’ll be talking about something… controversial."
     "Everyone immediately quieted."
-    v "When trying to establish Vision as a major, abilities were sorted into two categories: internal and external. It took having over a hundred people with external abilities before the classification of major was even considered."
+    v "When trying to establish Vision as a major, abilities were sorted into two categories: internal and external."
+    v "It took having over a hundred people with external abilities before the classification of major was even considered."
     
     "Oh, she meant the boring kind of controversial."
     
@@ -554,7 +556,7 @@ label chapter2_vision:
     
     v "I’m sure some of you are familiar with my first case, but… it was the hardest trial I had to speak at."
    
-   hide VSadtalk
+    hide VSadtalk
    
     #-CG Vivaldi on the stand-
     v "I had first heard my father’s voice at the funeral, all he could do was answer questions with on word,  and the second…"
@@ -743,14 +745,14 @@ label chapter2_charm:
     sa "If you’re interested in attempting to find such individuals, there are plenty of future felons on campus to get you started. Choose wisely."
     
     hide SaSmiletalk
-    hid DSmirk
+    hide DSmirk
     
     "No wonder she’s so intimidating. Growing up around that kind of crowd must give you tough skin. And who’s she calling future felons!?"
 
     scene backgroundblack with fade
     return
 
-lavel chapter2_intel:
+label chapter2_intel:
 
     scene backgroundlibrary
 
@@ -1373,7 +1375,7 @@ label chapter2_day1_event3:
 
         return
 
-    else
+    else:
 
     #[IF Villain]
 
@@ -1451,17 +1453,25 @@ label chapter2_day1_night:
     "My mind keeps searching for a motive behind the theft."
     "Unfortunately, I don't even know what's in it."
 
+    scene background_Jfb1
+
     Dark "He didn't used to be so secretive."
+
+    scene background_Jfb2
 
     "Not long ago, he'd say every little thing on his mind like word vomit."
     "But after the riots started, he wouldn't let anyone see what he was working on."
     "I even caught him burning a few of his pieces in the past."
+
+    scene background_Jfb3
 
     Dark "He said he wasn't going to draw again."
 
     "I could never get a straight answer out of him about why he wanted to stop."
     "Just that nothing he drew made him happy anymore."
     "I didn't know how to help him."
+
+    scene backgroundblack
 
     Dark "He had nowhere to go."
 
@@ -1823,13 +1833,16 @@ label chapter2_day2_event3:
 
     #BG: Nurse's Office
 
-    "Mu said the nurse would be stopping by the school to see me. Though at this point, I feel much better. Still, if I keep avoiding it, he'll chase me down in the halls. I come in to find a stoic woman in a mask manning the desk."
+    "Mu said the nurse would be stopping by the school to see me. Though at this point, I feel much better."
+    "Still, if I keep avoiding it, he'll chase me down in the halls. I come in to find a stoic woman in a mask manning the desk."
 
     Nurse "Name?"
 
     n "Um, Nagen Tesuta. "
 
-    "She flinches and looks up from her papers. I was afraid this would happen. After years of getting shuffled around from hospital to hospital, I gained a nasty reputation among the nursing staff. No one wanted to take care of me for longer than a shift."
+    "She flinches and looks up from her papers. I was afraid this would happen."
+    "After years of getting shuffled around from hospital to hospital, I gained a nasty reputation among the nursing staff."
+    "No one wanted to take care of me for longer than a shift."
 
     Nurse "You going to sit down or were you planning to stand the whole time?"
 
@@ -1857,13 +1870,17 @@ label chapter2_day2_event3:
 
     "She laughs."
 
-    Nurse "Hun, you were fine. Your dad was the problem. He had a list of who was allowed to take care of you, he had hidden cameras in the room. The guy fired me for holding your hand without gloves on. No one blamed you for being grumpy when you had a six foot helicopter hovering around you twenty-four seven. Sorry, not my place to speak ill of... of the dead. Holy Peanuts."
+    Nurse "Hun, you were fine. Your dad was the problem. He had a list of who was allowed to take care of you, he had hidden cameras in the room."
+    Nurse "The guy fired me for holding your hand without gloves on. No one blamed you for being grumpy when you had a six foot helicopter hovering around you twenty-four seven."
+    Nurse "Sorry, not my place to speak ill of... of the dead. Holy Peanuts."
 
     n "Yeah, I'm not with my family anymore. Am I okay to go yet?"
 
     "She sets down her pen, looking directly at me. I don't like that look. That's the 'here are your options' look."
 
-    Nurse "You don't need that port anymore. Well, you never needed an implanted medical device, we both know that. After we fix it up, it'll be fine for a while, but it's only a matter of time before it gives you problems again. Alternatively, over break, you could have it removed. I'm not saying you have to, but if you're going to keep it, you have to take care of it. Otherwise it can go."
+    Nurse "You don't need that port anymore. Well, you never needed an implanted medical device, we both know that."
+    Nurse "After we fix it up, it'll be fine for a while, but it's only a matter of time before it gives you problems again. Alternatively, over break, you could have it removed."
+    Nurse "I'm not saying you have to, but if you're going to keep it, you have to take care of it. Otherwise it can go."
 
     n "But I might need it."
 
@@ -1978,7 +1995,7 @@ label chapter2_day2_event4:
 
     #add walking sfx
 
-    backgroundamp
+    scene backgroundamp
 
     "After relentless pressuring, we meet up with Jona and show him the picture."
 
@@ -2069,7 +2086,7 @@ label chapter2_day2_event4:
     else:
     #IF Villain
 
-        shoe JDepressed
+        show JDepressed
 
         j "Nagen, there's so many things in that book that could be taken the wrong way out of context. Stuff that could make you guys look bad."
 
@@ -2149,20 +2166,28 @@ label chapter2_day2_night:
     "I guess I can't be too surprised that Jona's so worried about his art being seen by other people like this."
     "I just hope the reason he's trying to downplay it isn't to spare our feelings. We may be busy with other things, but that doesn't mean we don't care."
 
+    scene background_Jfb4
+
     Dark "He tried drawing the kind of life he wanted."
 
     "Granted, half the time I couldn't make sense of it, but he definitely had an obsession with a 'living heaven'."
     "He tried using his art to show what he wanted people to do to make the world a better place."
+
+    scene background_Jfb5
 
     Dark "But there was this monster he'd always draw."
 
     "It was a three-headed demon representing the first three majors that he depicted brutalizing innocent people and babies."
     "He didn't have a name for it, it was just 'the thing we were supposed to fight'."
 
+    scene background_Jfb6
+
     Dark "People began worshiping the monster."
 
     "What was supposed to be a warning turned into a patron saint for the people that hated all Vision Majors because of Lethe."
     "Suddenly, his drawings became grim prophecies of how bad the riots would become. The riots are over, but those people are still out there."
+
+    scene background_Jfb4
 
     Dark "He only drew Lethe after that."
 
@@ -2186,7 +2211,7 @@ label chapter2_day3_event1:
     kk "There are no nominations since everyone is eligible for the title, so please do not send nominations to the AV club or council; everyone's nominated."
 
     "I thought we weren't going to go through with that. Who told Kazz to throw that into the announcements?"
-    "I get dressed as quickly as I can and storm to the AV booth. 
+    "I get dressed as quickly as I can and storm to the AV booth."
 
     scene backgroundavroom
     
@@ -2246,7 +2271,7 @@ label chapter2_day3_event1:
     show KkTalk
 
     kk "Look, it's like Kit said. Uitto's been going around with some of the other girls trying to gather votes."
-    kk "Both of them kept hounding me to do a commercial for them and I didn't want to pick sides.
+    kk "Both of them kept hounding me to do a commercial for them and I didn't want to pick sides."
     kk "So I figured this way, it would just... go away?"
 
     n "Why didn't you just come directly to us?"
@@ -2365,7 +2390,7 @@ label chapter2_day3_event2:
     n "Hiro, you knew about this?"
 
     hide HBase
-    shoe HGuilt at right
+    show HGuilt at right
 
     h "I didn't think it would be a big deal. Most people just, kinda expected it."
 
@@ -2436,8 +2461,13 @@ label chapter2_day3_event3:
     #"Day 3 Event 3
 
     #BG: Tba
+    scene backgroundcafex
 
-    "I need to do some damage control; if nothing else, to slow the progress of rumors. And I'm not going to make the same mistake twice. I already got Hiro to promise to run things by me. Now I just have to convince the others to get on the same page."
+    "I need to do some damage control; if nothing else, to slow the progress of rumors. And I'm not going to make the same mistake twice."
+    "I already got Hiro to promise to run things by me. Now I just have to convince the others to get on the same page."
+
+    show YIrate left
+    show IAnger right
 
     y "Just cut a-all of the king and queen nonse-ense."
 
@@ -2445,13 +2475,25 @@ label chapter2_day3_event3:
 
     "Ichita and Yoku are busy with after school activities most days, so I agreed to meet with both of them together. Unfortunately, they can't agree on anything."
 
+    hide YIrate
+    show YIrate2 at left
+
     y "It's a popularity contest; it's tttacky for an event lik-ke this."
 
+    hide IAnger
+    show IAnnoyed at right
+
     i "You're just saying that because no one would vote for you."
+
+    hide YIrate2
+    show YBummed at left
 
     y "N-no! It's just, with this taking place on the anniver-rsary of the Reformation Ball, we should be res-spectful of tradition. It should be an event in good taste, just like befo-ore. Right, Nagen?"
 
     n "I'm sorry, the what? What are you talking about?"
+
+    hide YBummed
+    show YBase at left
 
     y "...you don't know? Your p-parents were third ringer-rs though. Well then, what about Oshima? Surely he tol-ld you something about growin-ng up in the first ring."
 
@@ -2459,9 +2501,18 @@ label chapter2_day3_event3:
 
     n "I think you're mistaken. Jona lived in Crystal Acres, not some country club or whatever. We're just normal kids."
 
+    hide YBase
+    show YThink at left
+    
     y "I cou-uld have sworn the Oshima's ha-ad an heir our age. Must be a co-ommon last name then..."
 
+    hide IAnnoyed
+    show ILecture at right
+
     i "It's like Nagen said, we're normal kids. We expect normal things like potato chips and a prom court!"
+
+    hide YThink
+    show YIrate2 at left
 
     y "Well to som-me of us, the ball was nor-rmal. We had to go every ye-ear."
 
@@ -2471,13 +2522,22 @@ label chapter2_day3_event3:
 
     y "Seven, maybe eight. I'm n-not entirely sure tho-ough."
 
+    hide ILecture
+    show IOh at right
+
     i "That's the problem! We kept telling people it'll be a normal party and all you rich kids got nostalgic for your weird de-but thingies."
 
     n "And they kept spreading their assumptions and vice versa. This is worse than a class divide, it's a mutated class chimera."
 
+    hide IOh
+    show ISadTalk
+
     i "You need, like, an official party planner. Someone whose only job it is to advertise what will actually be there. That way we can say if the planner didn't say it, it was just a rumor."
 
     n "That... that's actually a really good idea. Like a- ugh, what's the word?"
+
+    hide YIrate2
+    show YBummed at left
 
     y "...Debutant..."
 
@@ -2487,9 +2547,15 @@ label chapter2_day3_event3:
 
     i "Does she know how to talk to people without bossing them around?"
 
+    hide YBummed
+    show YIrate at left
+
     y "She's not my first choice e-either, but it wou-uld be foolish to overlook her the-eatrical experience."
 
     "At this point, I'm willing to try anything."
+
+    hide YIrate
+    hide ISadTalk
 
     scene backgroundblack with fade
 
@@ -2502,7 +2568,12 @@ label chapter2_day3_event4:
 
     #BG: Roof
 
-    "Rise agreed to meet with me on the roof of the school. I don't know why, it gets so cold up here in the evening. She doesn't have her tea set out, though I can see the bag hanging from her back."
+    scene backgroundroof
+
+    "Rise agreed to meet with me on the roof of the school."
+    "I don't know why, it gets so cold up here in the evening. She doesn't have her tea set out, though I can see the bag hanging from her back."
+
+    show RTalk
 
     r "So... what did you want to ask me?"
 
@@ -2510,19 +2581,32 @@ label chapter2_day3_event4:
 
     n "I... I think I need your help."
 
+    hide RTalk
+    show RSurprise
+
     r "Oh? Well, this is unexpected."
 
     "Is it really?"
 
-    r "You are so type A; you practically have every part of your day scheduled. Were your friends unable to keep up?"
+    hide RSurprise
+    show RSmug
+
+    r "You are so type A; you practically have every part of your day scheduled."
+    r "Were your friends unable to keep up?"
 
     "I'm not sure who she's trying to dig at or if I'm reading too much into it."
 
     n "Yoku said you were supposed to be really good at party planning and well, we're planning a party so..."
 
+    hide RSmug
+    show RHearttalk
+
     r "Really?!"
 
     n "Yeah... you were there."
+
+    hide RHearttalk
+    show RFlirt
 
     r "Did he say anything else about me?"
 
@@ -2536,13 +2620,24 @@ label chapter2_day3_event4:
 
     "She goes pale."
 
-    r "Oh no. No, no, no; Nagen, you can not have people comparing this event to the Reformation Ball. Why that day of all days?"
+    hide RFlirt
+    show RSurprise
+
+    r "Oh no. No, no, no; Nagen, you can not have people comparing this event to the Reformation Ball."
+    r "Why that day of all days?"
 
     n "You're the one who chose the day. Everyone else is against moving it."
 
-    r "I apologize. It was a severe lapse in judgment on my part. Old habits die hard, so to speak."
+    hide RSurprise
+    show RDisappointed
+
+    r "I apologize. It was a severe lapse in judgment on my part."
+    r "Old habits die hard, so to speak."
 
     n "I'm not excited to be compared to a ritzy party either but-"
+
+    hide RDisappointed
+    show RMad
 
     r "It was not a party, Nagen! Yoku has different views on the affair since his family was new to the seventh ring, but there are some things that cannot be 'reclaimed'. An exclusionary match-making ball is not one of them, especially where membership was conditional and easily revoked. It is not something I wish to subject our peers to."
 
@@ -2554,7 +2649,19 @@ label chapter2_day3_event4:
 
     "She bites her lip."
 
-    r "Nagen, if high society had no place for you, you would have ended up in a place like Crystal Acres, not getting fostered by a corporate giant. I know you disdain your parents, but you are still benefiting from their legacy. There is more to rebellion than willful ignorance. You have to make a conscious effort not to follow in their footsteps... If possible, we should try and move the dance. At the very least, we should try to schedule it for a different time."
+    hide RMad
+    show RFrown
+
+    r "Nagen, if high society had no place for you, you would have ended up in a place like Crystal Acres, not getting fostered by a corporate giant."
+    r "I know you disdain your parents, but you are still benefiting from their legacy."
+    r "There is more to rebellion than willful ignorance."
+    r "You have to make a conscious effort not to follow in their footsteps..."
+
+    hide RFrown
+    show RMad
+
+    r "If possible, we should try and move the dance."
+    r "At the very least, we should try to schedule it for a different time."
 
     "She seems to be taking this personally."
 
@@ -2562,17 +2669,35 @@ label chapter2_day3_event4:
 
     "She looks out at the school grounds."
 
-    r "What about having it on the roof of the gym? Rooftop parties use less decorations and we could make being out past curfew the main feature of the party. 'A night under the stars', only instead of cheap decorations, we will have the real thing."
+    hide RMad
+    show RBase
+
+    r "What about having it on the roof of the gym? Rooftop parties use less decorations and we could make being out past curfew the main feature of the party."
+    r "'A night under the stars', only instead of cheap decorations, we will have the real thing."
 
     n "That could work, but we have class the next day."
 
     "She laughs."
 
-    r "Fine, an extra two hours to curfew then. It will have a similar effect. Was there anything else you wanted to ask me?"
+    hide RBase
+    show RSceam
+
+    r "Fine, an extra two hours to curfew then. It will have a similar effect."
+
+    hide RSceam
+    show RHearts
+
+    r "Was there anything else you wanted to ask me?"
 
     n "No, not really."
 
-    r "I see... Well then, I will send you a list of what I require in the morning. I do hope everything will go as planned."
+    hide RHearts
+    show RFrown
+
+    r "I see... Well then, I will send you a list of what I require in the morning."
+    r "I do hope everything will go as planned."
+
+    hide RFrown
 
     "She leaves without another word as the wind picks up."
 
@@ -2595,13 +2720,19 @@ label chapter2_day3_night:
 
     o "She should have a funeral."
 
+    scene background_Ofb1
+
     #Screen abruptly cuts. Odori in front of a watercolor-filled IV set. Pink static.
 
     "No."
 
+    scene background_Ofb2
+
     #Screen flickers, Odori isn't an inked silhouette, we can see she's been crying. Her eyes are unfocused. The TV's censored.
 
     "I can't do this again. I can't. I can't."
+
+    scene backgroundblack
 
     #CG of Jona and Nagen near a nameless grave in the forest. Nagen's covering his eyes. There's buckets everywhere.
 
@@ -2613,6 +2744,8 @@ label chapter2_day3_night:
     "I had no idea where Hiro ran off to. We already made him clean her. I couldn't leave Jona alone."
 
     j "None of this is fair. Just keep your eyes closed. She wouldn't want you to see her like this." # [SFx
+
+    scene background_Jfb10
 
     n "...Why do we have to use cement?" # [SFx
 
@@ -2629,35 +2762,67 @@ label chapter2_day4_event1:
 
     #BG: Nagen's Dorm (tba)
 
+    scene backgroundroom
+
     "I wake up before my alarm, nauseous and in a cold sweat. It's been two years, I shouldn't- I thought I moved past this."
     "I have student council in half an hour. Might as well get ready, it's not like I can go back to sleep now."
 
+    scene backgroundblack with fade
+
+    scene backgroundhall2
     #BG: Hallway
 
     "The courtyard is cool and quiet. It helps me clear my head. But as soon as I get to the second floor, I see Nanase leaving the council room in a hurry."
 
+    show NOffensive
     nk "I said I don't want to talk to you."
+
+    show DMad at left
 
     d "Why are you acting like I'm the bad guy here? I'm just trying to warn you that Kazz-"
 
     nk "I don't want anything to do with you or Kazz! You saw how he treated me and you did nothing. It's pretty clear you're his friend, not mine."
     nk "So just leave me alone already!"
 
+    hide DMad
+    show DDisturbed at left
+
     d "Nanase, come on."
 
     "She almost runs into me rushing toward the stairs."
+
+    hide NOffensive
+    show NSadsmile
 
     nk "Nagen!"
 
     "She hides behind me as Dyre comes closer."
 
+    hide NSadsmile
+    show NSad1
+
     nk "About the council meeting, I don't think I can-"
 
-    d "That guy? Really? You threw out my application for student council president to help him? Didn't you hear what Mariko said?"
+    hide DDisturbed
+    show DMad at left
 
-    nk "It's not my fault you missed the deadline. Nagen wants to help people; I'm not helping you take credit for our hard work."
+    d "That guy? Really?"
+    d "You threw out my application for student council president to help him?"
+    d "Didn't you hear what Mariko said?"
+
+    hide NSad1
+    show NIrate
+
+    nk "It's not my fault you missed the deadline."
+    nk "Nagen wants to help people; I'm not helping you take credit for our hard work."
+
+    hide DMad
+    show DScowl at left
 
     d "Yeah, because you're such a great judge of character Ms. 'I'm going to elope with my teacher'."
+
+    hide NIrate
+    show NCry
 
     n "Don't talk to her like that."
 
@@ -2665,15 +2830,25 @@ label chapter2_day4_event1:
 
     nk "....."
 
+    hide DScowl
+    show DSadtalk at left
+
     d "Well, I can't leave with you guys blocking the stairs."
 
     nk "Come on, Nagen. The meeting's supposed to start soon."
 
-    "He slips around us with his hands in his pockets. Nanase looks like she's about to cry."
+    hide DSadtalk
 
-    nk "Just... please pretend like everything's okay. If Setsuna or Kietsu try to ask, could you change the subject?"
+    "He slips around us with his hands in his pockets."
+    "Nanase looks like she's about to cry."
+
+    nk "Just... please pretend like everything's okay."
+    nk "If Setsuna or Kietsu try to ask, could you change the subject?"
 
     n "Yeah."
+
+    hide NCry
+    show NCrysmile
 
     nk "Thanks."
 
@@ -2681,9 +2856,16 @@ label chapter2_day4_event1:
 
     n "Was there really no one else who wanted to be student council president?"
 
+    hide NCrysmile
+    show NAshamed
+
     nk "...We're both getting what we want. It doesn't matter what Dyre tells people."
 
     "We both take our seats and wait for the meeting to start in silence."
+
+    scene backgroundblack with fade
+
+    return
 
     #Freetime
 
@@ -2692,8 +2874,14 @@ label chapter2_day4_event2:
 
     #BG: Cafe
 
+    scene backgroundcafe
+
     "Jona is dominating half the table with ribbons and paints. Judging by the size of the mess, he's been at it for a while."
     "All of these look like the same mask. The rest of us are carefully eating our lunch on the other side of the craft divide."
+
+    show Uittotalk at left
+    show JFrustrated
+    show HHmmm at right
 
     u "Still having trouble with the horns?"
 
@@ -2713,21 +2901,39 @@ label chapter2_day4_event2:
 
     n "They said it was a bad idea."
 
+    hide HHmmm
+    show SAnnoy at right
+
     s "No, we said you were too worried about what people were saying."
 
     n "What are you doing here?"
 
     "She never sits with us. After everything that happened, I was sure she'd try to avoid us."
 
+    hide SAnnoy
+    show SWhatever at right
+
     s "Well, when I kept getting 'I don't know, Uitto's working on it' as an answer, I figured I'd ask her if we had everything Rise was asking for."
 
     n "I'm doing stuff too. Uitto just offered to help."
 
+    hide Uittotalk
+    show Uittoyell at left
+
     u "What do you mean 'what Rise asked for'? Nagen, I thought I was planning the party?"
+
+    hide SWhatever
+    show SFO at right
 
     s "Oh, he didn't tell you? It looks like someone else is going to take credit for making the party work."
 
+    hide Uittoyell
+    show Uittosmirk at left 
+
     u "Nagen, you truly are a godsend."
+
+    hide SFO
+    show SWhat at right
 
     s "Hunh?"
 
@@ -2737,16 +2943,40 @@ label chapter2_day4_event2:
 
     "She smirks and hands over a packet."
 
+    hide Uittosmirk
+    show Uittosmile at left
+
     u "I got everything on your list and Nagen's filling in the gaps. If you have any problems, I wrote down who all agreed to help and what they said they'd bring."
+
+    hide JonaFrustrated
+    show HSadSmile
 
     h "Ui, I think Nagen was hoping you'd need more time to get everything."
 
-    "I hide my eyes with my hand. I'm relieved we have everything. I mean, of course we do, this is Uitto we're talking about."
+    "I hide my eyes with my hand. I'm relieved we have everything."
+    "I mean, of course we do, this is Uitto we're talking about."
 
-    u "Why would I- Oh, right. Sorry, Nagen."
+    hide Uittosmile
+    show Uittotalk at left
+    u "Why would I-"
+
+    hide Uittotalk
+    show Uittosadtalk at left
+    
+    u "Oh, right. Sorry, Nagen."
+
+    hide SWhat
+    show SLaugh at right
 
     s "Good, then there's no reason to push back the dance. I'll see you all on Monday."
 
+    hide SLaugh
+    hide HSadSmile
+    hide Uittosadtalk
+    show Uittosmile at left
+    show HGrump at right
+    show JRelax
+    
     "She walks away with Uitto's list."
 
     n "You're too good at your job, you know that?"
@@ -2761,13 +2991,20 @@ label chapter2_day4_event2:
 
     "I put a hand on his shoulder and he startles."
 
-    n "You've barely eaten anything. If you don't take a break now, you're not gonna want to eat anything."
+    n "You've barely eaten anything."
+    n "If you don't take a break now, you're not gonna want to eat anything."
 
     "He sighs and sets down his brushes."
+
+    hide JRelax
+    show JDepressed
 
     j "I got the soup, but they made it wrong. It's got dill floating in it and it's the stringy chicken, not the chunks."
 
     "In short, it's not his grandma's recipe. Hiro stands up with a stretch."
+
+    hide HGrump
+    show HGuilt at right
 
     h "Looks like I'm back on kitchen duty."
 
@@ -2775,9 +3012,17 @@ label chapter2_day4_event2:
 
     "I hand Hiro a scrap paper with a hasty recreation of the recipe."
 
+    hide HGuilt
+    show HHappy
+
     h "You've been working your butt off for everyone else, you deserve the right chicken soup."
 
+    hide HHappy
+
     "He runs off to the kitchen before Jona can stop him."
+
+    hide JDepressed
+    hide Uittosmile
 
     scene backgroundblack with fade
 
@@ -2836,10 +3081,14 @@ label chapter2_day4_night:
     "I know I should be sleeping, but I can't. I feel like the drawing in my bag is staring at me."
     "Just this ugly void sitting in the corner of my room. Jona didn't draw things like that in the past, they were always pretty things."
 
+    scene background_Jfb7
+
     Dark "He would draw Lethe over and over."
 
     "Few people had the patience for Jona's ticks and fixations, but Lethe didn't seem to mind. She praised each gilded portrait like they were gifts."
     "She helped all of us see our quirks as strengths, but Jona sought her out the most."
+
+    scene background_Jfb8
 
     Dark "The paintings would always make her cry."
 
@@ -2847,12 +3096,16 @@ label chapter2_day4_night:
     "Halos and flowers would work their way into future paintings, but still Jona was frustrated. None of them 'worked'."
     "He wasn't able to explain to me what he wanted from her. After all, she said all of them were lovely."
 
+    scene background_Jfb9
+
     Dark "She didn't think of them as portraits of her."
 
     "Uitto and Odori would complain that he didn't ever paint them."
-    "Typically, he only painted places, not people.
+    "Typically, he only painted places, not people."
     "Maybe that's why he was so set on making the 'perfect' portrait. His skill wasn't lining up with what was in his head."
     "Finally, he got her to agree to model for him."
+
+    scene background_Jfb11
 
     Dark "We never got to see the final painting."
 
@@ -2879,11 +3132,18 @@ label chapter2_day5_event1:
 
     "A loud knock of metal on metal startles me back to reality."
 
+    scene backgrounddorm
+
+    show ChSmiletalk
+
     ch "Sorry, I was not sure how to knock."
 
     "I quickly get dressed and answer the door."
 
     n "Uhh... hi? Did you... What's up?"
+
+    hide ChSmiletalk
+    show ChSadtalk3
 
     ch "Would you like to walk to class with me?"
 
@@ -2895,15 +3155,24 @@ label chapter2_day5_event1:
 
     #BG: School Outside
 
+    hide ChSadtalk3
+    show ChSadtalk
+
     ch "People have been avoiding me lately. At first, I thought it was just due to misunderstandings, but I am starting to think it is deliberate exclusion."
     ch "I do not suppose you have heard anything?"
 
     n "No, I can't say I have."
 
+    hide ChSadtalk
+    show ChTalk4
+
     ch "No news is good news, I suppose. Still, I would like to be of help to someone in all this."
     ch "Perhaps an act of goodwill is in order? Something to proffer sentiments of gratitude from both sides, but I wanted to run it by you first."
 
     n "I'm not sure what you're getting at."
+
+    hide ChTalk4
+    show ChTalk2
 
     ch "I was hoping you could lift the ban on the council members from being eligible for prom court."
 
@@ -2915,16 +3184,24 @@ label chapter2_day5_event1:
 
     n "Why? Not that I'm against it, he'd lose his mind, but why?"
 
+    hide ChTalk2
+    show ChSadtalk3
+
     ch "Certain people think they can speak for us. I would like the chance to show him and everyone that he does not have to 'earn' his place here."
     ch "None of you do. And, like you said, he would 'lose his mind'."
 
     n "I don't see a problem with it, but I don't think it'll be that easy."
+
+    hide ChSadtalk3
+    show ChSmile
 
     ch "Perhaps, but it is worth exploring. I am glad to see you will be attending class today. Though, you may have a backlog of texts from some concerned parties."
 
     "I hadn't even thought to check my phone. It's five minutes after the bell, but Chisei walks all the way with me to my class."
 
     ch "They will not say anything if you are late, I know from experience."
+
+    hide ChSmile
 
     "She waves to me and goes to her own classroom. I wonder if someone sent her to come get me or if she came on her own."
 
@@ -2937,8 +3214,14 @@ label chapter2_day5_event1:
 label chapter2_day5_event2:
     #Day 5 Event 2"
 
+    scene backgroundcafe
+
     "Jona and Uitto are making a noxious slop out of their leftover food. The theme this time being anything pink."
     "The smell is awful, but at least they waited until after I was done eating before working on today's monstrosity."
+
+    show JHappy at left
+    show Uittoiguess
+    show HJudge at right
 
     j "It doesn't look enough like blood. Are there any soy sauce packets left?"
 
@@ -2951,17 +3234,33 @@ label chapter2_day5_event2:
     "It's good to see everyone falling into their old routines, even if that involves making weird food monsters."
     "I'm just not in the mood to participate this time. Rise walks up to our table with a small frown."
 
+    hide JHappy
+    show RFrown at left
+
     r "It seems I came at a bad time."
 
     "She looks at the food pile with poorly masked disgust."
 
+    hide HJudge
+    show HSadSmile at right
+
     h "Nah, we're not doing anything important."
 
-    r "Clearly... In any case, seeing as time is in short supply, I was wondering if you would be my escort to the dance. Unless you have made other plans."
+    r "Clearly... In any case, seeing as time is in short supply, I was wondering if you would be my escort to the dance."
+    r "Unless you have made other plans."
 
-    h "Uhh... I know you're rich and all, but I don't think you can do that."
+    hide HSadSmile
+    show HSass at right
+
+    h "Uhh... I know you're rich and all, but I don't think you can afford me."
+
+    hide Uittoiguess
+    show Uittogurl
 
     u "Hard pass."
+
+    hide RFrown
+    show RDisappointed at left
 
     r "I was asking Nagen."
 
@@ -2969,59 +3268,122 @@ label chapter2_day5_event2:
 
     "She looks down at her charm bracelet, rolling the chain between her fingers."
 
-    r "Other people have 'dates' they are going with. I was wondering if you would be... Would you like to go together?"
+    hide RDisappointed
+    show REh at left
 
-    "I honestly hadn't thought about it. Things have been so crazy lately. Still, she's expecting an answer and everyone's staring."
+    r "Other people have 'dates' they are going with."
+    hide REh
+    show RHearts at left
+    r "I was wondering if you would be... Would you like to go together?"
+
+    "Things have been so crazy lately. Still, she's expecting an answer and everyone's staring."
 
     #Player Choice
 
     #"A. Yes (+Ris Date, +Ris)"
 
-    "She smiles and breathes a sigh of relief."
+    hide RHearts
+    hide Uittogurl
+    hide HSass
 
-    r "Wonderful! If only there was a flower shop nearby, we would be able to wear something that matched."
+    menu:
+        "Yes":
+            $ rRep + 1
+            $ dateRise = True
+            $ dateNanase = False
+            $ dateMomoko = False
+            $ dateKitsune = False
+            $ dateHiro = False
+            $ dateYoku = False
+            $ dateMu = False
+            $ dateTaiga = False
+            
+            "She smiles and breathes a sigh of relief."
 
-    j "Does this mean you're going to sit with us now?"
+            show RSmile
 
-    "A tater tot soaked in Powerade falls off the pile and lands with a squelch."
+            r "Wonderful! If only there was a flower shop nearby, we would be able to wear something that matched."
 
-    r "Another time perhaps. There is still quite a bit to do before the event."
+            show JDepressed at left
 
-    "She excuses herself and rushes past Yoku. He looks like he wants to say something, but walks away instead."
+            j "Does this mean you're going to sit with us now?"
 
-    u "She's only using you to make someone jealous. You know that, right?"
+            "A tater tot soaked in Powerade falls off the pile and lands with a squelch."
 
-    n "So? It's just one night. It's not like I had any other plans."
+            hide RSmile
+            show RDisappointed
 
-    h "I thought we were going together, as a group."
+            r "Another time perhaps. There is still quite a bit to do before the event."
 
-    n "We still are. Guys, it's not that serious. It'll be fine. It's just a dance."
+            hide RDisappointed
+
+            "She excuses herself and rushes past Yoku. He looks like he wants to say something, but walks away instead."
+
+            show Uittocringe
+            
+            u "She's only using you to make someone jealous. You know that, right?"
+
+            n "So? It's just one night. It's not like I had any other plans."
+
+            show HSadtalk at right
+
+            h "I thought we were going together, as a group."
+
+            n "We still are. Guys, it's not that serious. It'll be fine. It's just a dance."
+
+            hide HSadtalk
+            hide Uittocringe
+            hide JDepressed
+
 
     #"B. No (-Ris)"
+        "No":
+        
+            show RDisappointed
 
-    r "I see..."
+            r "I see..."
 
-    "She clasps her hands behind her back."
+            "She clasps her hands behind her back."
 
-    r "Well, this is disappointing."
+            r "Well, this is disappointing."
 
-    "She turns and leaves the cafe in a hurry."
+            hide RDisappointed
 
-    h "Well, aren't you popular?"
+            "She turns and leaves the cafe in a hurry."
+        
+            show HSmirk at left
 
-    n "Very funny, Hiro. I just don't want to go with someone just because they think they have to have a date. I'd rather go with someone who actually likes me."
+            h "Well, aren't you popular?"
 
-    j "....."
+            n "Very funny, Hiro. I just don't want to go with someone just because they think they have to have a date."
+            n "I'd rather go with someone who actually likes me."
 
-    n "What?"
+            show JRelax
+            show Uittogurl at right
+            hide HSmirk
+            show HSuppress at left
 
-    j "I don't know, she was pretty sad when you said no."
+            j "....."
 
-    u "Don't tell him that. There's no reason to make him feel guilty for a valid decision."
+            n "What?"
 
-    j "I wasn't, I was just saying."
+            j "I don't know, she was pretty sad when you said no."
+
+            hide Uittogurl
+            show Uittocringe at right
+
+            u "Don't tell him that. There's no reason to make him feel guilty for a valid decision."
+
+            j "I wasn't, I was just saying."
+            hide Uittocringe
+            hide HSuppress
+            hide JRelax
 
     #Return to Main Branch
+
+    show JRelax
+    show HSuppress at left
+    show Uittobase at right
 
     h "Can we throw out this..."
 
@@ -3031,15 +3393,27 @@ label chapter2_day5_event2:
 
     h "Cool, can we throw out Jenaveve so I can have second lunch?"
 
+    hide HSuppress
+    hide JRelax
+
     "They gather the pile and shuffle off toward the trash cans. Uitto lingers behind."
+
+    hide Uittobase
+    show Uittotalk
 
     u "A date, hunh?"
 
     n "Jealous?"
 
+    hide Uittotalk
+    show Uittoiguess
+
     u "Kinda, but at the same time... I don't know if any guys or girls here would want to deal with all my baggage. Not exactly ready to trust other kids here either. What about you?"
 
     n "What about me?"
+
+    hide Uittoiguess
+    show Uittotalk
 
     u "You plan on telling anyone here you're bi, or am I still sworn to secrecy?"
 
@@ -3049,27 +3423,51 @@ label chapter2_day5_event2:
 
     n "People hate me enough as it is, I'm not exactly ready to give people more reasons to avoid me."
 
+    hide Uittotalk
+    show Uittocringe
+
     u "I think you're overreacting just a little."
 
     n "Yeah, well, I'm not ready to find that out, okay?"
+
+    hide Uittocringe
+    show Uittoiguess
 
     u "Fine. Just wanted to make sure I was telling people the 'right' thing."
 
     n "Telling who the right thing?"
 
+    hide Uittoiguess
+    show Uittogurl
+
     u "Our well meaning friends."
 
     n "...Why were they asking you about that?"
 
-    u "I don't know, 'cause they're nosey. These are the same guys that over-analyze kid's movies. They might want to, you know, help?"
+    hide Uittogurl
+    show Uittoembarrassed
 
-    n "No. No no, I don't want either of them playing matchmaker. I'm doing just fine. You just saw someone ask me out!"
+    u "I don't know, 'cause they're nosey."
+    u "These are the same guys that over-analyze kid's movies."
+    u "They might want to, you know, help?"
+
+    n "No. No no, I don't want either of them playing matchmaker."
+    n "I'm doing just fine. You just saw someone ask me out!"
+
+    hide Uittoembarrassed
+    show Uittotongue
 
     u "I know."
 
     "She nods her head in Jona and Hiro's direction. They're coming back to the table."
 
-    u "Diva-dumbass confidentiality goes for you too, don't worry. Just... let me know if something changes."
+    hide Uittotongue
+    show Uittotalk
+
+    u "Diva-dumbass confidentiality goes for you too, don't worry."
+    u "Just... let me know if something changes."
+
+    hide Uittotalk
 
     #Freetime Event
     scene backgroundblack with fade
@@ -3081,21 +3479,37 @@ label chapter2_day5_event3:
 
     #BG: Tba
 
+    scene backgroundlibrary
+
     "I had to come to the library to get a break from talking to people."
     "Something about the looming walls of books and tucked away corners feels soothing to me. However, Rei comes up and sits at my table."
     "There are literally four other tables she could have sat at. She scribbles down things in a beat-up notebook only to erase and start over."
+
+    show ReSad
 
     re "Have you-"
 
     "She cuts herself off."
 
-    re "Do you know if Mariko will be at the dance this weekend? I get you probably don't want to talk about her, but..."
+    hide ReSad
+    show RePout
+
+    re "Do you know if Mariko will be at the dance this weekend?"
+    re "I get you probably don't want to talk about her, but..."
 
     n "To be honest, I wouldn't know. I haven't seen her since the incident."
+
+    #add if for intel ending
+
+    hide RePout
+    show ReDisappointed
 
     re "You haven't seen her either?"
 
     "Rei twirls her pencil in her hands."
+
+    hide ReDisappointed
+    show ReDepressed
 
     re "Nagen, I'm really starting to get worried. She hasn't been in class at all this week and she's not answering her phone."
     re "I know she's supposed to be in detention, but it's like she disappeared."
@@ -3104,9 +3518,15 @@ label chapter2_day5_event3:
 
     "I highly doubt anyone has the numbers from the burner phones memorized."
 
+    hide ReDepressed
+    show ReSadtalk
+
     re "I just thought she was avoiding me! This is worse, so much worse."
 
     n "Sorry, I was just trying to help."
+
+    hide ReSadtalk
+    show rethink
 
     re "I know. Listen, if you find out anything about how she's doing, will you let me know? There's something I'd like to give her if I can."
 
@@ -3124,9 +3544,13 @@ label chapter2_day5_event4:
 
     #BG: Amphitheater
 
+    scene backgroundamp
+
     "Night time is fast approaching and I still haven't asked Jona about the drawing I found."
     "Part of me is afraid of what he'll say and wants to pretend I never found it. But I know if I do that, it'll just keep eating at me."
     "He's rooting through the planters looking for natural materials for... something. Maybe a mask, but it would wilt by then."
+
+    show JFrustrated
 
     j "....."
 
@@ -3144,11 +3568,17 @@ label chapter2_day5_event4:
 
     n "Listen, uh, I think I found another one of your drawings."
 
+    hide JFrustrated
+    show JMad
+
     j "You only think? You don't know? I signed all of them, Nagen, I'm pretty sure you'd know."
 
     n "It just... doesn't look like the other one, y'know?"
 
     "He stops rummaging through the dirt and looks at the folded drawing in my hand."
+
+    hide JMad
+    show JDepressed
 
     j "Oh."
 
@@ -3167,6 +3597,9 @@ label chapter2_day5_event4:
 
     n "But I never told you about any of this. How did you know they were medical devices?"
 
+    hide JDepressed
+    show JFrustrated
+
     j "They'd light up when people talked about hospitals or your dad. I kinda put two and two together."
     j "I figured if it was something you wanted to talk about, you'd tell me. Knowing stuff you didn't want me to know made me feel like a bad friend."
     j "So, I did what everyone else did. I didn't bring it up."
@@ -3175,50 +3608,71 @@ label chapter2_day5_event4:
 
     n "To be honest, I'm trying to forget that ever happened."
 
+    hide JFrustrated
+    show JDepressed
+
     j "But your Proficiency is Memory. Can you turn it on and off when you want or something? Is it like deleting files on a computer?"
 
     n "No, no; I just try not to think about certain things, never know when it'll trigger something."
 
-    #IF Hero
+    if Hero > Villain:
 
-    j "What do you mean 'trigger something'?"
+        j "What do you mean 'trigger something'?"
 
-    n "You know how in movies, peoples' memories play out the whole thing? Well, the same thing happens to me."
-    n "If I'm reminded about it, my brain can latch on like a piranha and make me sit through it again."
-    n "It's really fucking inconvenient."
+        n "You know how in movies, peoples' memories play out the whole thing? Well, the same thing happens to me."
+        n "If I'm reminded about it, my brain can latch on like a piranha and make me sit through it again."
+        n "It's really fucking inconvenient."
 
-    j "Do memories with Lethe in them do that to you?"
+        j "Do memories with Lethe in them do that to you?"
 
-    n "Sometimes. Usually the bad ones."
+        n "Sometimes. Usually the bad ones."
 
-    j "That's a shame. She tried to make good memories with you."
+        j "That's a shame. She tried to make good memories with you."
 
-    n "I know."
+        n "I know."
 
-    #IF Villain
+        hide JDepressed
 
-    j "Am I in any of them? The things you're trying to forget? Because if hanging out with me makes that worse, maybe-"
+    else:
 
-    n "No! God no. If you're in any of those bad memories, they're bad because I let you down."
+        j "Am I in any of them? The things you're trying to forget? Because if hanging out with me makes that worse, maybe-"
 
-    j "Well, I don't remember that ever happening. So I guess that's a good sign."
+        n "No! God no. If you're in any of those bad memories, they're bad because I let you down."
 
-    n "Really? You can't think of one time I disappointed you? Or, like, made you upset?"
+        hide JDepressed
+        show JHappy
 
-    j "....."
+        j "Well, I don't remember that ever happening. So I guess that's a good sign."
 
-    j "I mean, kinda, but I don't think most people intend to make people jealous. It just happens."
+        n "Really? You can't think of one time I disappointed you? Or, like, made you upset?"
+
+        hide JHappy
+        show JRelax
+
+        j "....."
+
+        j "I mean, kinda, but I don't think most people intend to make people jealous. It just happens."
+        
+        hide JRelax
 
     #Return to Main Branch
+
+    show JFrustrated
 
     j "I really don't understand how people can sleep here. The smells, the sounds; everything is so different from the inner city it's distracting."
     j "We're not even allowed to have roommates or anything and it just feels so empty."
 
     n "I've been having trouble sleeping too. Usually I just map out the constellations on my ceiling until I pass out."
 
+    hide JFrustrated
+    show JHappy
+
     j "That's so smart! If I can find something my brain can do other than art, maybe I can at least rest when I'm supposed to."
 
     n "I have some stars leftover if you want them."
+
+    hide JHappy
+    show JRelax
 
     j "I appreciate it, but I can't sleep in a room with glowing things. Too bright."
 
@@ -3227,6 +3681,8 @@ label chapter2_day5_event4:
     "Jona tugs on his sleeve."
 
     j "It's an excellent coat rack."
+
+    hide JRelax
 
     scene backgroundblack with fade
 
@@ -3298,23 +3754,35 @@ label chapter2_day6_event1:
 
     "He hung up on me! I scramble out of bed and out the door just in time to see Uitto run into the main hall. Curse her stupid long legs!"
 
+    scene backgroundblack with fade
     scene backgroundhall1
     #BG: Hallway
 
     "Over half the school is here whispering to each other and craning their necks to look at the announcement boards."
     "Just how many people did they call? They notice Uitto first and start parting like the red sea."
 
+    show Uittoyell
+
     u "What's going on?"
 
-    "They look at her with pity. Ichita has ditched his prosthetic to stand on Mu's shoulders. They're trying to get something at the top of the board, but it's out of reach. Rei and Chisei try to block her way."
+    "They look at her with pity. Ichita has ditched his prosthetic to stand on Mu's shoulders."
+    "They're trying to get something at the top of the board, but it's out of reach. Rei and Chisei try to block her way."
+
+    show ChSadtalk2 at left
 
     ch "Hiro's gone looking for a ladder or a teacher. Whichever he can find first."
+
+    show ReSadtalk at right
 
     re "Uitto, please trust me, you don't want to see this. Not now. Not in front of everyone."
 
     u "Let me through!"
 
     "She pushes past the girls and I follow, just as Ichita's fingers brush the bottom of a drawing."
+
+    hide Uittoyell
+    hide ChSadtalk2
+    hide ReSadtalk
 
     #CG: Uitto's Portrait
 
