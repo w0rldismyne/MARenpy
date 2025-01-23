@@ -674,6 +674,9 @@ default check_cd = False
 default check_mic = False
 default check_laptop = False
 
+default chapter1_investigation_success = False
+default kazzPhoneFound = False
+
 # Chapter 2 Variables
 default dateRise = False
 default dateNanase = False
