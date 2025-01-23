@@ -30,4 +30,17 @@ screen settings_2:
         hotspot (602, 579, 529, 265) action Return()
         hotspot (1149, 575, 263, 270) action Return()
         hotspot (601, 862, 381, 206) action Return()
-        hotspot (1003, 860, 405, 203) action Return()
+        hotspot (1003, 860, 405, 203) action Show("confirmation")
+
+screen confirmation:
+    modal True
+
+    imagemap:
+        alpha False
+
+        ground "New Assets/Confirm - Pause/confirm_frame.png"
+        idle "New Assets/Confirm - Pause/confirm_idle.png"
+        hover "New Assets/Confirm - Pause/confirm_hover.png"
+
+        hotspot (951, 632, 136, 52) action Hide("confirmation"), Return()
+        hotspot (1106, 631, 137, 55) action Hide("confirmation")

@@ -112,6 +112,8 @@ screen say(who, what):
                 style "namebox"
                 text who id "who"
 
+        # else
+
         text what id "what"
 
 
@@ -291,6 +293,7 @@ screen quick_menu():
             textbutton _("Inventory") action Show("inventory")
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
+            textbutton _("History2") action ShowMenu('history2')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
@@ -1001,6 +1004,87 @@ style history_label:
 
 style history_label_text:
     xalign 0.5
+
+screen history2():
+
+    ## Avoid predicting this screen, as it can be very large.
+    predict False
+
+    frame:
+
+        ypadding 50
+
+        background "New Assets/Dialogue/history_background.png"
+
+        vpgrid id "history":
+            cols 1
+            yinitial 1.0
+
+            xsize 1686
+            xpos 76
+
+            draggable True
+            mousewheel True
+
+            for h in _history_list:
+
+                window:
+                    background None
+                    xpadding 25
+                    yalign 0.5
+                    ysize 332
+                    bottom_margin 32
+
+                    ## This lays things out properly if history_height is None.
+                    has fixed:
+                        yfit True
+
+                    window:
+                        top_margin 32
+                        xpadding 50
+                        ypadding 50
+                        background "New Assets/Dialogue/history_textbox.png"
+
+                        $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                        text what:
+                            line_spacing 10
+                            substitute False
+                            xmaximum 1528
+
+                    if h.who:
+                        window:
+                            xmargin 32
+                            background "New Assets/Dialogue/history_namebox.png"
+                            label h.who:
+                                xalign 0.0
+                                yalign 0.0
+                                xpadding 15
+                                ypadding 6
+                                substitute False
+
+                                ## Take the color of the who text from the Character, if
+                                ## set.
+                                if "color" in h.who_args:
+                                    text_color h.who_args["color"]
+
+            if not _history_list:
+                label _("The dialogue history is empty.")
+        
+        vbar value YScrollValue("history"):
+            base_bar "New Assets/Dialogue/scroll_bar.png"
+            thumb "New Assets/Dialogue/scroll_thumb.png"
+            ysize 779
+            yoffset 67
+            xsize 31
+            xpos 1842
+
+        imagebutton:
+            xpos 1779
+            ypos 920
+            focus_mask True
+            idle "New Assets/Dialogue/return_idle.png"
+            hover "New Assets/Dialogue/return_hover.png"
+            action Return()
 
 ## Help screen #################################################################
 ##

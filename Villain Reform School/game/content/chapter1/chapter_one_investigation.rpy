@@ -1637,7 +1637,7 @@ label SetsunaInterrogation1:
             s "The screen was password locked, so I can't say with a hundred percent certainty."
 
             "That sure sounds like Kazz's phone alright. I should let him know where it is. "
-            #(+Locker, +Phone)
+            $ kazzPhoneFound = True
             #clue_baton_pass
             #clue_missing_phone
             #clue_second_locker
@@ -2016,7 +2016,7 @@ label KazzInv1:
     n "Woah there, you need to breathe. It's not the end of the world."
 
     hide KkO
-    shot KkFret
+    show KkFret
     
     kk "I'm going to be the idiot that got expelled on the first week of school."
     kk "If they take me, give Dyre the rest of my stuff. He'll know where to find it."
@@ -2054,24 +2054,63 @@ label KazzInv1:
 label KazzInterrogation1:
     menu:
         "Missing Phone":
-            #[If Phone = -]
+            if kazzPhoneFound is False:
     
-            n "Do you remember where you last had your phone?"
+                n "Do you remember where you last had your phone?"
 
-            show KkTalk
+                show KkTalk
 
-            kk "I duct taped it to my... leg during move in to smuggle it in."
-            kk "But after I got all the boxes into my room, I couldn't find it."
+                kk "I duct taped it to my... leg during move in to smuggle it in."
+                kk "But after I got all the boxes into my room, I couldn't find it."
 
-            n "See anyone near the dorms at that time?"
+                n "See anyone near the dorms at that time?"
 
-            kk "Kitsune and Ichita were goofing around and Shoma was moving stuff from the dorms to the school."
+                kk "Kitsune and Ichita were goofing around and Shoma was moving stuff from the dorms to the school."
 
-            "I'll try asking one of them."
+                "I'll try asking one of them."
 
-            hide Kk talk
+                hide KkTalk
 
-            jump KazzInterrogation1
+            else:
+    
+                n "I found it, but..."
+
+                kk "Oh no, what happened? Did it get put in rice in time?"
+
+                n "It's not broken. Setsuna gave it to the principal."
+
+                kk "For the love of Brodin, why!?"
+
+                n "It kept making noise in the lockers and she didn't know who it belonged to."
+                n "The teachers probably don't know either, otherwise you'd be in trouble already."
+
+                kk "Awesome! Wait, no, not awesome."
+                kk "If I don't claim it, it could end up in the garbage, but then I would get detention."
+                kk "Who's locker was it in? I checked all the empty ones three times."
+
+                n "Mu's."
+
+                "Everything's a mess right now, but the bottom line is Kazz's 'friends' were the ones running off with his stuff."
+
+                kk "That traitor is dead to me now. Welp, nothing I can do about it now, I guess."
+                kk "I don't have any money, but here, would this be an okay reward?"
+
+                "He hands me a foil card in a plastic sleeve."
+
+                n "Is this a KG card? Where did you get this?"
+                n "They stopped making them years ago."
+
+                kk "I used to collect them when I was real little."
+                kk "It's a golden age hero, so it might be worth five bucks if you can find a collector that still buys them."
+
+                n "Like hell I'm going to sell it."
+
+                "I had to leave my old collection behind when I ran away from home."
+                "Maybe I should try collecting them again."
+
+                kk "Glad you like it!" #(+Memento Mori Card)
+            
+                jump KazzInterrogation1
 
             #[If Phone = +]
     
@@ -2334,7 +2373,7 @@ label KazzInterrogation1:
 
             pass
 
-    shoe KkSadtalk
+    show KkSadtalk
 
     n "Thanks for talking with me. I think I have a bit more to go on now."
 
@@ -2503,13 +2542,13 @@ label MarikoChoice1:
         "Leave":
             call MarikoCheck
 label MarikoCheck:
-    if $ Intel >= 3:
+    if Intel >= 3:
         call MarikoInt
     else:
         call MarikoOutro
 label MarikoOutro:
 
-    shoe MCry
+    show MCry
 
     m "Sorry I couldn't be more help."
     m "I've been so busy with my own stuff, I haven't had time to really look around or talk to people."
@@ -3016,6 +3055,8 @@ label MarikoSuccess:
     
     "Mariko hands me an unmarked VHS tape from her bag."
 
+    $ chapter1_investigation_success = True
+
     m "On the roof, the guys found an old CRT TV."
     m "You should go there when you get the chance."
 
@@ -3143,7 +3184,7 @@ label HiroInv1:
 
     n "There's not much we can do about that at the moment."
 
-    hdie HSadSmile
+    hide HSadSmile
     show HSadtalk
 
     h "I know... A-anyway, I was able to talk to Shoma."

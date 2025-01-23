@@ -107,8 +107,9 @@ label chapter_one:
 
     call chapter1_day5_event4 
 
-    # Boss Battle
-    call chapter1_boss_scene
+    if chapter1_investigation_success is False:
+        # Boss Battle
+        call chapter1_boss_scene
 
     call chapter1_day5_event_night
 
@@ -248,7 +249,7 @@ label Ask_For_Help:
 
     return
 
-label investiagtion_good_end:
+label investigation_good_end:
     #(Investigation ending successful, bypass boss battle to tape scene then this goes after sleepover scene in chapter 1!)
 
     #Bg forbidden door

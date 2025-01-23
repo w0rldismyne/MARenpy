@@ -657,6 +657,9 @@ default check_cd = False
 default check_mic = False
 default check_laptop = False
 
+default chapter1_investigation_success = False
+default kazzPhoneFound = False
+
 init python:
     listOfDirectories = ["Apex",
         "Chisei",
