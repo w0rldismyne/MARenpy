@@ -19,8 +19,6 @@ label prologue:
 
     show CopBase
 
-    voice "audio/cop/prologue_b121c771.ogg"
-
     cop "Please state your name and registered Proficiency."
 
     n "My name is Nagen Tesuta."
@@ -37,20 +35,9 @@ label prologue:
 
     show CopBase
 
-    voice "audio/cop/prologue_3787084e.ogg"
-
     cop "Look, you and I both know it's not looking good for you."
-
-    voice "audio/cop/prologue_c616cfd6.ogg"
-
     cop "I mean, you've heard the charges: premeditated murder, inciting a riot, mayhem, and menticide."
-
-    voice "audio/cop/prologue_279523b4.ogg"
-
     cop "These are all with a registered Proficiency which will add twenty-five more years to your sentence."
-
-    voice "audio/cop/prologue_559297ff.ogg"
-
     cop "Don't even get me started on the use of deadly weapons."
 
     hide CopBase
@@ -95,13 +82,12 @@ label prologue:
     cop "Just make this easier on yourself and fold. It'll be better than what your friends are going through."
     hide CopBase
 
-    #[Player Choice]
-
     menu:
-        "Confess everything": #(-Hiro)
+        "Confess everything":
             $ hRep -= 1
-            $ Villain += 3
-            $ Vigor += 1
+            #$ Villain += 3
+            #$ Vigor += 1
+
             n "Yeah, I did it, everything you said is true."
             n "I helped start the riots to take down Estella and her talent mills."
             n "You want the names of all the adults that worked with her, right?"
@@ -112,7 +98,8 @@ label prologue:
             jump interrogation_4
 
         "Refuse": #(Fast forwards past all choices, all points put in Intelligence)
-            $ Intel += 4
+            $ hRep += 1
+            #$ Intel += 4
             jump interrogation_1
 
     label interrogation_1:
@@ -122,6 +109,7 @@ label prologue:
     n "Also, I was never read my rights, so unless you want a mistrial, I suggest you start treating me like an adult before trying me like one."
 
     show CopBase
+
     cop "That's not how the system works, kid."
 
     hide CopBase
@@ -135,12 +123,10 @@ label prologue:
 
     hide KoeBase
 
-    #[Player Choice]
-
     menu:
         "I have to protect my teammates": #(+Hero, +Vis)
             $ Hero += 1
-            $ Vision += 1
+            #$ Vision += 1
             n "I'll plead guilty in court, but I and I alone am guilty of these charges."
             n "I cannot say the same of my friends; they genuinely believed in what Lethe told them..."
 
@@ -151,7 +137,7 @@ label prologue:
 
         "I don't have a choice": #(+Villian, +Vig)
             $ Villain += 1
-            $ Vigor += 1
+            #$ Vigor += 1
             n "Under the advice of my legal counsel, I will."
 
             "Maimai would be heartbroken if I got locked away. She's been through this before."
@@ -170,7 +156,7 @@ label prologue:
             jump interrogation_2
 
         "It's all part of the plan": #(+Int)
-            $ Intel += 1
+            #$ Intel += 1
             n "I'll cooperate."
 
             "It's too dangerous to make a move now. Best to play along for now."
@@ -178,8 +164,8 @@ label prologue:
             jump interrogation_2
 
         "I need to lighten my sentence": #(+Chr)
-            $ Charm += 1
-            n "...okay..."
+            #$ Charm += 1
+            n "...Okay..."
 
             "I hang my head at a 30-degree angle and feign the slightest tremor in my shoulders."
             "The more sympathy I can gain, the better."
@@ -187,7 +173,6 @@ label prologue:
 
             jump interrogation_2
 
-    #[Return to Main Branch]
     label interrogation_2:
 
     n "I fully understood the ramifications of my actions and stand at the mercy of the court."
@@ -196,6 +181,7 @@ label prologue:
     show CopBase
 
     cop "That's all we need to hear."
+
     hide CopBase
     show KoeBase
 
@@ -206,11 +192,11 @@ label prologue:
 
     hide KoeBase
 
-    #[Player Choice]
-
     menu:
-        "The one who told us to kill": #(+Chr)
-            $ Charm += 1
+        "The one who told us to kill":
+            $ jRep += 1
+
+            #$ Charm += 1
             n "Lethe was. She wanted to create a group of youth vigilantes to gain back public support."
             n "It wasn't until after she died that we realized she was the one who started the chaos."
 
@@ -223,9 +209,11 @@ label prologue:
 
             jump interrogation_3
 
-        "The one who gathered the army": #(+Hero, +Vig)
+        "The one who gathered the army":
+            $ hRep += 1
+
             $ Hero += 1
-            $ Vigor += 1
+            #$ Vigor += 1
             n "Hiro Morine was our leader. He insisted on it constantly."
             n "If it wasn't for him, we wouldn't have gathered nearly as much support."
 
@@ -236,8 +224,11 @@ label prologue:
 
             jump interrogation_3
 
-        "The one who planned the attack": #(+Int)
-            $ Intel += 1
+        "The one who planned the attack":
+            $ uRep += 1
+            
+            #$ Intel += 1
+
             n "I was. I deliberately withheld information from my peers, knowing it would sway their decision to stay."
             n "In the end, I was the only one standing."
 
@@ -247,8 +238,9 @@ label prologue:
 
             jump interrogation_3
 
-        "The club president": #(+Vis)
-            $ Vision += 1
+        "The club president":
+            #$ Vision += 2
+
             n "Odori Hato was our leader. She's the one who brought Lethe's attention to our club."
             n "Odori just wanted to help us and a cheesy superhero club was her answer."
 
@@ -261,13 +253,12 @@ label prologue:
 
             n "No, she's not with us anymore."
 
-            "I want to believe she's still out there, but…"
+            "I want to believe she's still out there, but..."
 
             hide CopBase
 
             jump interrogation_3
 
-    #[Return to Main Branch]
     label interrogation_3:
 
     show KoeBase
@@ -280,12 +271,10 @@ label prologue:
 
     hide KoeBase
 
-    #[Player Choice]
-
     menu:
         "Fortify the city against my enemies": #(+Villain, +Vig)
             $ Villain += 1
-            $ Vigor += 1
+            #$ Vigor += 1
             n "I just wanted a place where I could feel safe. Anyone there was free to leave, but they chose to stay."
             n "They took up arms, and I had to defend myself."
 
@@ -311,7 +300,7 @@ label prologue:
 
         "Rebuild the city": #(+Hero, +Int)
             $ Hero += 1
-            $ Intel += 1
+            #$ Intel += 1
             n "Before making any plans, I would have had to reverse the damage that had been done."
             n "I was in command of over five hundred people; they needed a place to live once the dust settled."
 
@@ -335,9 +324,10 @@ label prologue:
 
             jump interrogation_4
 
-        "Rebuild society in my vision": #(+Villain, +Vis)
+        # "Rebuild society in my vision":
             $ Villain += 1
-            $ Vision += 1
+            #$ Vision += 1
+
             n "Guwon was an experiment to see if we truly were capable of reshaping society."
             n "It was supposed to show the might of our nation's youth, that we were something bigger than everyone else said we were."
             n "The experiment failed."
@@ -362,7 +352,8 @@ label prologue:
 
         "I don't know": #(+Hero, +Chr)
             $ Hero += 1
-            $ Charm += 1
+            #$ Charm += 1
+
             n "....."
 
             show CopBase
@@ -377,7 +368,7 @@ label prologue:
 
             ka "And what would that be?"
 
-            n "Hunh? Oh… nothing. Nothing was planned after that… I just did what I was told."
+            n "Hunh? Oh... nothing. Nothing was planned after that... I just did what I was told."
 
             "I just wanted to make everyone happy."
             "I thought if we took down the city together, we'd get some kind of happily ever after."
@@ -406,11 +397,11 @@ label prologue:
 
     hide KoeBase
 
-    #[Player Choice]
-
     menu:
-        "It was corrupt": #(+Hero)
+        "It was corrupt":
+
             $ Hero += 1
+
             n "Guwon's entire economy was based around the manufacturing and propagation of Proficiencies."
             n "They treated us like livestock! We were paraded about as status symbols and meal tickets."
             n "No one cared what happened to us."
@@ -443,8 +434,10 @@ label prologue:
 
             jump interrogation_end
 
-        "It was convenient": #(+Villain)
+        "It was convenient":
+
             $ Villain += 1
+
             n "Where else was I supposed to start? Guwon was my home."
             n "I had never been outside of my hometown and it was as good a place as any."
 
@@ -472,8 +465,10 @@ label prologue:
 
             jump interrogation_end
 
-        "It was safest": #(+Villain)
+        "It was safest":
+
             $ Villain += 1
+
             n "Guwon is water locked, it would be the easiest to fortify."
             n "With what Odori had planned, we couldn't just set up shop anywhere. It had to be someplace secure."
 
@@ -500,8 +495,10 @@ label prologue:
 
             jump interrogation_end
 
-        "To end the war": #(+Hero)
+        "To end the war":
+
             $ Hero += 1
+
             n "Everyone was fighting each other, not just us."
             n "This is just an isolated incident among many that happened during the battle between Lethe and the Karmic Gladiators."
             n "Even after she was gone, people were still fighting each other."
@@ -527,9 +524,6 @@ label prologue:
             
             jump interrogation_end
 
-    #[Return to Main Branch]
-
-    # Error, if we run out of story, it leads us back here?
     label interrogation_end:
 
     show KoeEh
@@ -610,7 +604,6 @@ label prologue:
     "I mean, yeah I wanted to get my friends out of this, but I didn't want to make them into guinea pigs like me."
     "There's no telling what these people might do for the sake of 'science'."
 
-
     hide KoeSmirk
     show CopBase
 
@@ -639,10 +632,6 @@ label prologue:
     scene backgroundPT
     pause 2.0
 
-    #Life at the House (scene 2)
-
-    #[BG: Car Exterior]
-
     scene backgroundcar
 
     "A black limo is waiting for me out back."
@@ -650,15 +639,11 @@ label prologue:
     "It feels like stepping into this car might be the last thing I get to do."
     "Regardless of my hesitation, I'm ushered into the back seat by the bailiffs and greeted by none other than the Medusa Killer."
 
-    #[BG: Car interior]
-
     scene backgroundcarin
 
     play sound "car sedan door open 1.ogg"
 
     n "Maimai?"
-
-    #[Sprite: Maimai]
 
     show MMBase
 
@@ -666,7 +651,6 @@ label prologue:
 
     play sound "car sedan door shut 1.ogg"
     play sound ["car_inside.ogg"]
-    #loop last sound
 
     n "You're my appointed guardian? This has to be a mistake, you're a registered villain."
 
@@ -700,11 +684,10 @@ label prologue:
 
     hide MMBase
 
-    #[Player Choice]
-
     menu:
-        "New role?": #(+Chr)
-            $ Charm += 1
+        "New role?":
+            #$ Charm += 1
+
             show MMBase
 
             mm "Pantsuit, short hair, dorky accessories; I'm one minivan away from perfection."
@@ -732,8 +715,8 @@ label prologue:
 
             jump life_1
 
-        "Where are we going?": #(+Int)
-            $ Intel += 1
+        "Where are we going?":
+            #$ Intel += 1
             show MMBase
 
             mm "Someplace safe."
@@ -749,7 +732,7 @@ label prologue:
 
             n "Whose limo is this?"
 
-            mm "...an old target's decided to be quite hospitable."
+            mm "...An old target's decided to be quite hospitable."
 
             n "What the- Oh my god, you're blackmailing the poor man."
 
@@ -788,19 +771,18 @@ label prologue:
 
     mm "If it was classified, I would have told you it's classified."
 
-    # Needs new song queue, something sad
-
     stop sound 
     stop music 
+
     "A month. She's been missing for over a month."
+
     play music "music/Still.mp3"
+
     "At this point, they're not looking for {i}her{/i} anymore, they're looking for a body."
     "My mouth's gone dry. I don't want to be here."
     "She should be in a limo on her way to a new home, not me."
 
     mm "Nagen honey, remember to breathe. We're not going to get out of the car until you're ready."
-
-    #[BG: Manor Exterior]
 
     scene backgroundnhouse
     play music "music/LateNights.mp3"
@@ -893,10 +875,8 @@ label prologue:
 
     scene backgroundMansion
 
-    "Everything I own now fits inside my backpack, but I’m not sure where to put it."
+    "Everything I own now fits inside my backpack, but I'm not sure where to put it."
     "He just stares at the closed door, potentially regretting his decision to let me in."
-
-    #BG Interior
 
     menu:
 
@@ -938,7 +918,7 @@ label prologue:
             n "That's it?"
             n "I find it really hard to believe Maimai would obsessively pursue some software engineer."
         
-            kan "...that was my own doing."
+            kan "...That was my own doing."
             kan "I made the mistake of confusing a dark-web serial killer with an ARG and tried to set a trap for her so to speak."
 
             n "You asked Maimai to target you on purpose!?"
@@ -1013,15 +993,15 @@ label prologue2:
     n "She was the one that saw potential in all of us."
     n "We trusted her with our lives and we let her down."
     n "She never wanted to be our leader, but Hiro and I basically made her be."
-    n "Now she’s gone."
+    n "Now she's gone."
 
     "I hate saying it like that."
     "I hate thinking about it like that, but after everything we lost, what we did had to mean something."
 
-    n "I know she’s out there somewhere, she has to be."
-    n "She physically couldn’t have run away, and no one can tell me where she is."
-    n "So the least you could do is not treat me like some dumb kid while I’m waiting to hear if my friend is dead."
-    n "For god’s sake, we took over a whole damn province together!"
+    n "I know she's out there somewhere. She has to be."
+    n "She physically couldn't have run away, and no one can tell me where she is."
+    n "So the least you could do is not treat me like some dumb kid while I'm waiting to hear if my friend is dead."
+    n "For god's sake, we took over a whole damn province together!"
 
     kan "Are you finished?"
 
@@ -1088,12 +1068,11 @@ label prologue2:
     n "Right."
 
     "I high-tail it out of his office, eager to escape the oppressive air."
-    "The room I’ve been given shares a striking resemblance to the one I grew up in as a kid."
-    "It’s not quite the same shade of blue and the books are too new to be mine."
-    "It’s equally eerie and comforting."
+    "The room I've been given shares a striking resemblance to the one I grew up in as a kid."
+    "It's not quite the same shade of blue and the books are too new to be mine."
+    "It's equally eerie and comforting."
 
     hide KenBase
-
 
     scene backgroundblack
 
@@ -1105,15 +1084,9 @@ label prologue2:
     "I mean, she was the leader of the Karmic Gladiators; she devoted her life to helping people that everyone thought couldn't be helped."
     "She was everyone's hero, especially mine..."
 
-    #(Flashback)
-
-    #[CG: Young Odori with Lethe]
-
     play music "music/Sappheiros.mp3"
     scene backgroundP1 with fade:
         size (1920, 1080) crop (300, 400, 640, 360)
-
-    voice "audio/Apex/prologue_2bfa7b67.ogg"
 
     o "Gladiators! You'll never believe the guest speaker I found for today's meeting!"
 
@@ -1129,12 +1102,13 @@ label prologue2:
     l "Not many have what it takes."
 
     n "O-of course! I mean, who wouldn't want to become a real live hero?"
+
     scene backgroundP1 with fade:
         size (1920, 1080) crop (600, 0, 960, 540)
         linear 2 crop (0, 0, 1920, 1080)
     n "I can't believe you're actually here! We've mostly been planning. I mean, what else can we do?"
     n "But we've been working day and night on what we'll do as real heroes!"
-    n "Not like a hobby… or anything… We meet everyday after school, and even longer on weekends."
+    n "Not like a hobby... or anything... We meet everyday after school, and even longer on weekends."
     n "We can't use the classrooms, so we meet in the park!"
 
     "I started gathering the draft papers, but when I looked up at her face, she seemed so sad."
@@ -1150,7 +1124,6 @@ label prologue2:
         size (1920, 1080) crop (700, 200, 640, 360)
         linear 4 crop (0, 0, 1920, 1080)
 
-
     play music "music/Nostalgia.mp3"
 
     "I became painfully aware of the IV that hid under my sleeve."
@@ -1162,7 +1135,7 @@ label prologue2:
     "In her name, we fought for sanctuary from Estella Academy and the people who abused us."
     "The brainwashing of our peers was a little excessive, I'll admit, but how else would you be able to safely train middle schoolers for a civil war?"
     "We didn't have the luxury to make a boot camp with the city up in flames."
-    "We worked with what we had, in the time we had…"
+    "We worked with what we had, in the time we had..."
 
     scene backgroundMansion
 
@@ -1177,13 +1150,13 @@ label prologue2:
     "A month goes by in a flash."
     "The lingering winter nips at my cheeks as I watch the last of my things get packed into the cab."
     "A familiar feeling of helplessness washes over me."
-    "There’s nothing else I can do."
+    "There's nothing else I can do."
 
     show MMBase
 
-    mm "Hey, it’s going to be okay. Boarding school isn’t that bad."
+    mm "Hey, it's going to be okay. Boarding school isn't that bad."
 
-    n "You don’t know that."
+    n "You don't know that."
 
     mm "Excuse me mister, but I have been to my fair share of reform schools."
 
@@ -1194,25 +1167,25 @@ label prologue2:
     kan "All the more reason not to be scared."
     kan "This is only to show the courts you can behave for a long period of time."
 
-    n "...Can’t I just stay here with you guys instead?"
+    n "...Can't I just stay here with you guys instead?"
 
     kan "I thought you hated being cooped up here."
 
     "I do."
-    "I do hate it, but at least I know what to expect when I’m here."
+    "I do hate it, but at least I know what to expect when I'm here."
 
     hide MMBase
     show MMSmile
 
-    mm "You can come back during the break and I’ll be going with you the first day to make sure the place is on the up and up."
+    mm "You can come back during the break and I'll be going with you the first day to make sure the place is on the up and up."
 
     hide KenTalk
     show KenBase at right
 
-    kan "I assure you, it’s a legitimate establishment."
-    kan "I wouldn’t send him off if I wasn’t familiar with the staff."
+    kan "I assure you, it's a legitimate establishment."
+    kan "I wouldn't send him off if I wasn't familiar with the staff."
 
-    "That’s supposed to make me feel better?"
+    "That's supposed to make me feel better?"
 
     scene backgroundcar
 
@@ -1236,20 +1209,22 @@ label prologue2:
     play sound "car_inside.ogg"
 
     "We drive a few hours to get to the school."
+
     scene backgroundtown
+
     "Out my window were the decimated towns and scorched wastelands leading into the outskirts of Guwon."
     "Far from anyone else sat an old brick building."
-    "It’s one of the few buildings that survived the riots."
+    "It's one of the few buildings that survived the riots."
 
     stop sound 
 
     scene backgroundschool
     play music "music/TheySay.mp3"
 
-    "I heard it was a library donated to the DVP for renovation and now it’s become this."
+    "I heard it was a library donated to the DVP for renovation and now it's become this."
     "I would have preferred the library."
-    "It’s no surprise, really, that this is where they planned to test their stupid program."
-    "What confuses me is that I’m expected to act like an ordinary student."
+    "It's no surprise, really, that this is where they planned to test their stupid program."
+    "What confuses me is that I'm expected to act like an ordinary student."
     "I mean, our names were never released to the public, so it could work."
     "Something just seems... off."
 
@@ -1271,9 +1246,9 @@ label prologue2:
     mm "No, but do you think these bowties proofread every book in the building before bringing you in here?"
     mm "Who knows what you could find!"
 
-    "I appreciate she’s trying to make this sound like an adventure, but it doesn’t change how... empty the school feels."
+    "I appreciate she's trying to make this sound like an adventure, but it doesn't change how... empty the school feels."
     "The second floor is for more specialized classes."
-    "Along the west corridor are rooms for the fine arts and along the east is a giant computer lab."
+    "Along the west corridor are rooms for the fine arts and along the east corridor is a giant computer lab."
     "Large bay windows look out to the central courtyard."
     "We finally arrive at a large mahogany office door."
 
@@ -1281,17 +1256,17 @@ label prologue2:
     show MMFrown
 
     mm "This is it."
-    mm "Promise you’ll be on your best behavior?"
+    mm "Promise you'll be on your best behavior?"
 
     n "...Why are you asking me that now?"
 
     "She searches for the right words to say."
 
-    mm "I didn’t want you to spend your time at the mansion worrying about school."
-    mm "This place is the safest place for you to be right now, even if it’s upsetting at times."
+    mm "I didn't want you to spend your time at the mansion worrying about school."
+    mm "This place is the safest place for you to be right now, even if it's upsetting at times."
     mm "Until they grant me full guardianship, my hands are tied."
 
-    n "...I promise I’ll try."
+    n "...I promise I'll try."
 
     "Maimai escorts me into the office."
 
@@ -1300,7 +1275,6 @@ label prologue2:
 
     scene backgroundprincipal
 
-    # Principal office
     "A woman gestures for us to sit down. She takes her place behind a massive desk with a stack of forms for us to review."
     "The nameplate in front of her reads in gold letters 'Principal Vivaldi Thani'."
 
@@ -1320,15 +1294,15 @@ label prologue2:
     hide VBase
     show MMSmile
 
-    mm "He’s just nervous because it’s a new school."
+    mm "He's just nervous because it's a new school."
     mm "You know teenagers, all salty about change and stuff."
 
     "The principal is cold and composed, much like a statue."
-    "I can’t help glaring at her. The DVP had handed me over to the woman who set up Lethe and sabotaged our siege of Guwon."
-    "How could she be so indifferent? Doesn’t she recognize me at all?!"
+    "I can't help glaring at her. The DVP had handed me over to the woman who set up Lethe and sabotaged our siege of Guwon."
+    "How could she be so indifferent? Doesn't she recognize me at all?!"
 
-    mm "So you’re the principal?"
-    mm "That’s uh, quite a shift from being a police officer."
+    mm "So you're the principal?"
+    mm "That's uh, quite a shift from being a police officer."
 
     hide MMSmile
 
@@ -1345,7 +1319,7 @@ label prologue2:
 
     "Locating? Is that what she calls what she did? Locating criminals?"
     "Lethe was- She watched them kill her with that indifferent stare on live television."
-    "We get up to leave. I can’t hold my tongue any longer."
+    "We get up to leave. I can't hold my tongue any longer."
 
     scene backgroundP3 with fade:
         size (1920, 1080) crop (0, 0, 1920, 1080)
@@ -1360,9 +1334,9 @@ label prologue2:
 
 
     n "No, because of her stupid feud, I lost both my mentor and my best friend in one night."
-    n "Just because I have to be here doesn’t mean I have to play along with her revenge fantasy."
+    n "Just because I have to be here doesn't mean I have to play along with her revenge fantasy."
 
-    v "This isn’t supposed to be a punishment, Mr. Tesuta. Your school life will be what you make of it."
+    v "This isn't supposed to be a punishment, Mr. Tesuta. Your school life will be what you make of it."
     v "I trust you will do everything in your power to avoid ending up in my office again. Good day to you both."
 
     scene backgroundhall2
@@ -1372,34 +1346,34 @@ label prologue2:
 
     show MMBase
 
-    mm "I know you’re a smart kid, so please... please don’t go starting fights you can’t finish."
+    mm "I know you're a smart kid, so please... please don't go starting fights you can't finish."
 
-    n "You can’t leave me here with her- You knew she’d be here!"
+    n "You can't leave me here with her- You knew she'd be here!"
 
     mm "It's part of your plea bargain, I can't pull you out even if I wanted to."
     mm "I'm not your legal guardian yet."
 
-    n "She’s going to set me up to fail."
-    n "You can’t expect me to believe she’s okay with helping someone who trashed their hometown."
+    n "She's going to set me up to fail."
+    n "You can't expect me to believe she's okay with helping someone who trashed their hometown."
 
     hide MMBase
     show MMFrown
 
-    mm "I don’t. That’s why you need to be careful."
-    mm "These people stand more to gain from your success than your failure, but I can’t guarantee their motives are good-intentioned."
+    mm "I don't. That's why you need to be careful."
+    mm "These people stand more to gain from your success than your failure, but I can't guarantee their motives are good-intentioned."
     mm "We have to meet them halfway."
 
-    n "You know I don’t like being alone."
+    n "You know I don't like being alone."
 
-    mm "I’m sorry."
-    mm "I’m sure there are a lot of troubled kids who could benefit from a school like this."
+    mm "I'm sorry."
+    mm "I'm sure there are a lot of troubled kids who could benefit from a school like this."
 
     "Each word is slow and deliberate."
 
     hide MMFrown
     show MMSmile
 
-    mm "I’m sure you’ll find some good friends here."
+    mm "I'm sure you'll find some good friends here."
 
     "She finishes with a wink and finally I understand."
     "My old teammates could be here too."
@@ -1407,13 +1381,12 @@ label prologue2:
     n "Are they really-"
 
     "Still, to cut me off like that, it must mean I was right."
-    "They’re here. Somewhere in this god-forsaken reform school, I’ll find my friends."
+    "They're here. Somewhere in this god-forsaken reform school, I'll find my friends."
 
     mm "You got this."
 
     hide MMSmile
 
-    # New Background showing around the outside here
     scene backgroundschool
 
     "We go back to the car to get the last of my things."
@@ -1431,19 +1404,19 @@ label prologue2:
     hide MMSmile
     show MMFrown
 
-    mm "I mean it. Don’t go forgetting about me, okay?"
+    mm "I mean it. Don't go forgetting about me, okay?"
 
     n "Okay, okay, people are staring."
 
     "I brush her off and collect my bags."
 
-    n "I’ll miss you too."
+    n "I'll miss you too."
 
     hide MMFrown
 
     scene backgroundschool
 
-    "I really don’t want to go, but I can’t keep putting it off."
+    "I really don't want to go, but I can't keep putting it off."
     "We say our final goodbyes and I watch as the car drives off. Tomorrow will be my first day of school."
     "I can see other kids unloading their luggage and milling about the grounds. Now would be a good chance to find my friends."
 
@@ -1451,7 +1424,8 @@ label prologue2:
     pause 2.0
     #Set a wait time
 
-    #insert nanase intro here
+    ##################################### Ch 1
+
     scene backgroundschool
 
     play music "music/CryingOverYou.mp3"
@@ -2283,7 +2257,7 @@ label prologue_hiro:
 
     show HThisisfine
 
-    n "We’ll be meeting later."
+    n "We'll be meeting later."
 
     hide HThisisfine
     show HTALK2
@@ -2293,11 +2267,11 @@ label prologue_hiro:
     hide HTALK2
     show HHappy
 
-    h "Wait, no way, are the other’s here too?"
+    h "Wait, no way, are the other's here too?"
 
     # Has Nagen found someone?
     if prologueFriendsFound is 2:
-        n "I don’t know for sure, but I’m looking for them. Until then, play it cool."
+        n "I don't know for sure, but I'm looking for them. Until then, play it cool."
     else:
 
         # Change this thanks
