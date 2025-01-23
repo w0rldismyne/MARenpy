@@ -2016,7 +2016,7 @@ label KazzInv1:
     n "Woah there, you need to breathe. It's not the end of the world."
 
     hide KkO
-    shot KkFret
+    show KkFret
     
     kk "I'm going to be the idiot that got expelled on the first week of school."
     kk "If they take me, give Dyre the rest of my stuff. He'll know where to find it."
@@ -2334,7 +2334,7 @@ label KazzInterrogation1:
 
             pass
 
-    shoe KkSadtalk
+    show KkSadtalk
 
     n "Thanks for talking with me. I think I have a bit more to go on now."
 
@@ -2509,7 +2509,7 @@ label MarikoCheck:
         call MarikoOutro
 label MarikoOutro:
 
-    shoe MCry
+    show MCry
 
     m "Sorry I couldn't be more help."
     m "I've been so busy with my own stuff, I haven't had time to really look around or talk to people."
@@ -3143,7 +3143,7 @@ label HiroInv1:
 
     n "There's not much we can do about that at the moment."
 
-    hdie HSadSmile
+    hide HSadSmile
     show HSadtalk
 
     h "I know... A-anyway, I was able to talk to Shoma."

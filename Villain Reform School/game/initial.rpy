@@ -559,6 +559,23 @@ image background_Mfb6 = "CGs/MFB/MFB_6.png"
 image background_Mfb7 = "CGs/MFB/MFB_7.png"
 image background_Mfb8 = "CGs/MFB/MFB_8.png"
 
+#Jonas Flashbacks
+image background_Jfb1 = "CGs/FB/JFB1.png"
+image background_Jfb2 = "CGs/FB/JFB2.png"
+image background_Jfb3 = "CGs/FB/JFB3.png"
+image background_Jfb4 = "CGs/FB/JFB4.png"
+image background_Jfb5 = "CGs/FB/JFB5.png"
+image background_Jfb6 = "CGs/FB/JFB6.png"
+image background_Jfb7 = "CGs/FB/JFB7.png"
+image background_Jfb8 = "CGs/FB/JFB8.png"
+image background_Jfb9 = "CGs/FB/JFB9.png"
+image background_Jfb10 = "CGs/FB/JFB10.png"
+image background_Jfb11 = "CGs/FB/JFB11.png"
+
+#Odori Flashbacks
+image background_Ofb1 = "CGs/FB/OFB1.png"
+image background_Ofb2 = "CGs/FB/OFB2.png"
+
 # Player's Stats
 default Vigor = 0
 default Vision = 0
@@ -656,6 +673,16 @@ default check_book = False
 default check_cd = False
 default check_mic = False
 default check_laptop = False
+
+# Chapter 2 Variables
+default dateRise = False
+default dateNanase = False
+default dateMomoko = False
+default dateKitsune = False
+default dateHiro = False
+default dateYoku = False
+default dateMu = False
+default dateTaiga = False
 
 init python:
     listOfDirectories = ["Apex",
