@@ -301,10 +301,6 @@ label prologue:
             "Wandering around the city with a gun was safer than going back home anyway."
             "I had all kinds of other machines I was playing with that I got from the junkyard, but that's not what they care about."
 
-            ka "Did you use any of these guns against another person?"
-
-            n "Yes."
-
             hide KoeBase
 
             jump interrogation_4
@@ -327,7 +323,7 @@ label prologue:
 
             ka "This would be the same city you planned to bomb, correct?"
 
-            n "I wouldn't say that bombing the entire city was the plan, but I would say that arming every soldier with TNT definitely reduced the number of casualties on our end."
+            n "What!? No, what good would that do?"
 
             "I tried my best to keep everyone safe, even if it meant lying. I can't let them down now."
 
@@ -465,8 +461,7 @@ label prologue:
 
             n "Education collars, actually, though I do take issue with your tone."
             n "You act like I was the one who made them."
-            n "Quite the opposite, as it was your technology we were using."
-            n "So before questioning how I used it, shouldn't you be asking why it was made in the first place?"
+            "Shouldn't she be asking why it was made in the first place?"
 
             hide KoeBase
 
