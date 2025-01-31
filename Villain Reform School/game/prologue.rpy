@@ -1137,12 +1137,13 @@ label prologue2:
     "But that was the me of two years ago, the kid who grew up in a glass box waiting for my veins to stop burning."
     "The unwilling test subject of the very people who stand before me claiming I'm the monster."
 
-    scene backgroundnhouse
-    play music "music/TheLoyalist.mp3"
-
     scene backgroundblack
 
     "A month goes by in a flash."
+
+    scene backgroundnhouse
+    play music "music/TheLoyalist.mp3"
+
     "The lingering winter nips at my cheeks as I watch the last of my things get packed into the cab."
     "A familiar feeling of helplessness washes over me."
     "There's nothing else I can do."
