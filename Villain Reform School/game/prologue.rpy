@@ -967,11 +967,11 @@ label prologue2:
 
     kan "Liberation Army, hunh?"
 
-    n "Liberation Front."
+    n "Junior Gladiators"
 
     kan "Same difference."
 
-    n "No, it's the Liberation Front, get it right."
+    n "No, it's the Junior Gladiators, get it right."
 
     "The computer next to him roars to life."
     "He has no keyboard or mouse, yet it seems to be working just fine."
@@ -1132,8 +1132,6 @@ label prologue2:
     "We didn't have the luxury to make a boot camp with the city up in flames."
     "We worked with what we had, in the time we had..."
 
-    scene backgroundMansion
-
     play music "music/Undertow.mp3"
 
     "But that was the me of two years ago, the kid who grew up in a glass box waiting for my veins to stop burning."
@@ -1142,12 +1140,16 @@ label prologue2:
     scene backgroundnhouse
     play music "music/TheLoyalist.mp3"
 
+    scene backgroundblack
+
     "A month goes by in a flash."
     "The lingering winter nips at my cheeks as I watch the last of my things get packed into the cab."
     "A familiar feeling of helplessness washes over me."
     "There's nothing else I can do."
 
     show MMBase
+
+    show KenTalk at right
 
     mm "Hey, it's going to be okay. Boarding school isn't that bad."
 
@@ -1156,8 +1158,6 @@ label prologue2:
     mm "Excuse me mister, but I have been to my fair share of reform schools."
 
     n "Clearly they worked wonders."
-
-    show KenTalk at right
 
     kan "All the more reason not to be scared."
     kan "This is only to show the courts you can behave for a long period of time."
@@ -1281,13 +1281,14 @@ label prologue2:
     "She's the last person I want to talk to."
 
     show VBase
+    show MMFrown at left
 
     v "Is something wrong?"
 
     "It's like she doesn't even care."
 
-    hide VBase
-    show MMSmile
+    hide MMfrown
+    show MMSmile at left
 
     mm "He's just nervous because it's a new school."
     mm "You know teenagers, all salty about change and stuff."
@@ -1299,14 +1300,10 @@ label prologue2:
     mm "So you're the principal?"
     mm "That's uh, quite a shift from being a police officer."
 
-    hide MMSmile
-
     "I've never seen Maimai so nervous before."
     "Is she scared of this woman? Or just psychics in general?"
     "She hands us papers to sign, with Maimai trying to stay as far away from the woman's hands as possible."
     "My phone is confiscated and replaced with a cheap knock-off to use while on campus."
-
-    show VBase
 
     v "Detective. I grew tired of locating criminals after they committed crimes."
 
