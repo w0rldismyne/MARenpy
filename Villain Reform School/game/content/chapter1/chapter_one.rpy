@@ -1,5 +1,11 @@
 label chapter_one:
 
+    scene backgroundC1_T
+    with dissolve
+    pause
+
+    call chapter1_introduction
+
     ### 1 ###
     $ chapter1_day = 1
 

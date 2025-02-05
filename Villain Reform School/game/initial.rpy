@@ -638,28 +638,28 @@ default tTurn = 0
 default yTurn = 0
 default uTurn = 0
 
-# Prologue Variables
-default prologueSearches = 0
-default prologueFriendsFound = 0
-define  prologueLocationsPage = 1
-default prologueHiroMet    = False
-default prologueJonaMet    = False
-default prologueUittoMet   = False
-default prologueMarikoMet  = False
-default prologueYokuMet    = False
-default prologueKitsuneMet = False
-default prologueKazzMet    = False
-default prologueOshinMet   = False
-default prologueIchitaMet  = False
-default prologueTaigaMet   = False
-default prologueChiseiMet  = False
-default prologueShomaMet   = False
-default prologueSetsunaMet = False
-default prologueKietsuMet  = False
-default prologueMomokoMet  = False
-default prologueReiMet     = False
-default prologueRiseMet    = False
-default prologueDyreMet    = False
+# Chapter 1 Introduction Variables
+default introductionSearches = 0
+default introductionFriendsFound = 0
+define  introductionLocationsPage = 1
+default introductionHiroMet    = False
+default introductionJonaMet    = False
+default introductionUittoMet   = False
+default introductionMarikoMet  = False
+default introductionYokuMet    = False
+default introductionKitsuneMet = False
+default introductionKazzMet    = False
+default introductionOshinMet   = False
+default introductionIchitaMet  = False
+default introductionTaigaMet   = False
+default introductionChiseiMet  = False
+default introductionShomaMet   = False
+default introductionSetsunaMet = False
+default introductionKietsuMet  = False
+default introductionMomokoMet  = False
+default introductionReiMet     = False
+default introductionRiseMet    = False
+default introductionDyreMet    = False
 
 # Chapter 1 Variables
 default chapter1_day = 1
@@ -742,7 +742,7 @@ label start:
         "Prologue":
             jump prologue
         "Meet Students/Find Friends":
-            jump prologue_meet_students
+            jump introduction_meet_students
         "Chapter One":
             menu:
                 g "Where in Chapter One?"
@@ -750,5 +750,8 @@ label start:
                     jump chapter_one
                 "Investigation":
                     jump chapter1_investigation
+        "Chapter Two":
+            jump chapter_two
+        #chapter3
         "Sandbox":
             jump sandbox

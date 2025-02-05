@@ -197,13 +197,13 @@ screen stats_char_reputation():
         text "Yoku Reputation: [yRep]"
         text "Uitto Reputation: [uRep]"
 
-screen stats_prologue():
+screen stats_introduction():
 
     modal True
     image "images/Clues/Cork.png"
 
     # Return Button
-    textbutton _("Return") action Hide("stats_prologue"):
+    textbutton _("Return") action Hide("stats_introduction"):
         xalign 1.0
         yalign 0.0
         text_color "#FF0000"
@@ -215,8 +215,8 @@ screen stats_prologue():
         xpos 0.0
         ypos 0.5
 
-        text "Searches: [prologueSearches]"
-        text "Friends Found: [prologueFriendsFound]"
+        text "Searches: [introductionSearches]"
+        text "Friends Found: [introductionFriendsFound]"
 
 screen stats_chapter_one():
 
