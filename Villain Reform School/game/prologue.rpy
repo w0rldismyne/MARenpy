@@ -817,11 +817,11 @@ label prologue:
     "The building groans as a sizable bell rings from a tower above the gate."
     "When the door opens, I begin to understand why Maimai described my appointed guardian as a potato."
 
-    show MMSmile at left
+    show MMSmile at left_center
 
     mm "Surprise!"
 
-    show KenBase at center
+    show KenBase at right_center
 
     kan "What part of this arrangement involved you coming here?"
 
@@ -835,7 +835,7 @@ label prologue:
     mm "Don't worry, in this big ol' house, you'll hardly notice us."
 
     hide KenBase
-    show KenDamn
+    show KenDamn at right_center
 
     kan "Us?"
     kan "You're the one who insisted on abandoning your old identity and with it, any connection to me."
@@ -846,26 +846,26 @@ label prologue:
     n "I'm not your kid! And you're not a mom."
 
     hide MMSmile
-    show MMO at left
+    show MMO at left_center
 
     mm "Of course I'm a mom."
     mm "We'll work out the details later."
     mm "I have a full day ahead of me dropping off the rest of the rugrat felons, but I'll be back before you know it."
 
     hide KenDamn
-    show KenBase
+    show KenBase at right_center
 
     kan "I agreed to claim to be taking care of the child."
     kan "You said nothing about living here."
 
     hide MMO 
-    show MMFrown at left
+    show MMFrown at left_center
 
     mm "I feel like you're hearing me, but you're not understanding."
     mm "I am a new mom and we will talk about this later."
 
     hide MMFrown
-    show MMSmile at left
+    show MMSmile at left_center
 
     mm "I'll see you soon, Nagen."
 
@@ -1162,9 +1162,9 @@ label prologue2:
     "A familiar feeling of helplessness washes over me."
     "There's nothing else I can do."
 
-    show MMBase
+    show MMBase at left_center
 
-    show KenTalk at right
+    show KenTalk at right_center
 
     mm "Hey, it's going to be okay. Boarding school isn't that bad."
 
@@ -1185,12 +1185,12 @@ label prologue2:
     "I do hate it, but at least I know what to expect when I'm here."
 
     hide MMBase
-    show MMSmile
+    show MMSmile at left_center
 
     mm "You can come back during the break and I'll be going with you the first day to make sure the place is on the up and up."
 
     hide KenTalk
-    show KenBase at right
+    show KenBase at right_center
 
     kan "I assure you, it's a legitimate establishment."
     kan "I wouldn't send him off if I wasn't familiar with the staff."
@@ -1221,6 +1221,7 @@ label prologue2:
     "We drive a few hours to get to the school."
 
     scene backgroundtown
+    with dissolve
 
     "Out my window were the decimated towns and scorched wastelands leading into the outskirts of Guwon."
     "Far from anyone else sat an old brick building."
@@ -1229,6 +1230,8 @@ label prologue2:
     stop sound 
 
     scene backgroundschool
+    with dissolve
+
     play music "music/TheySay.mp3"
 
     "I heard it was a library donated to the DVP for renovation and now it's become this."
@@ -1322,13 +1325,11 @@ label prologue2:
 
     v "Detective. I grew tired of locating criminals after they committed crimes."
 
-    hide VBase
-
     "Locating? Is that what she calls what she did? Locating criminals?"
     "Lethe was- She watched them kill her with that indifferent stare on live television."
     "We get up to leave. I can't hold my tongue any longer."
 
-    scene backgroundP3 with fade:
+    scene backgroundP3 with dissolve:
         size (1920, 1080) crop (0, 0, 1920, 1080)
 
     n "You ruined my life."
@@ -1395,6 +1396,7 @@ label prologue2:
     hide MMSmile
 
     scene backgroundschool
+    with dissolve
 
     "We go back to the car to get the last of my things."
     "She wraps me in a huge hug and I become very aware of the car coming up to the roundabout."
