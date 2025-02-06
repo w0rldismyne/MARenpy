@@ -316,7 +316,7 @@ image MuShame = "Sprites/Mu/Mushame.png"
 image MuSmug = "Sprites/Mu/Musmug.png"
 image MuTalk = "Sprites/Mu/Mutalk.png"
 image MuTalk2 = "Sprites/Mu/Mutalk2.png"
-image MuUugh = "Sprites/Mu/Muuugh.png"
+image MuUugh = "Sprites/Mu/Muugh.png"
 image MuUmm = "Sprites/Mu/Muumm.png"
 
 #Nanase
