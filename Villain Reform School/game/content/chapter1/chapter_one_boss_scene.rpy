@@ -333,7 +333,7 @@ label chapter1_boss_intro:
 
     n "Have you actually lost your mind? What do you mean taking over?"
 
-    m "Isn’t it obvious? I’m the new leader of the Liberation Front and you’ve been kicked off the team."
+    m "Isn’t it obvious? I’m the new leader of the Junior Gladiators and you’ve been kicked off the team."
 
     "Long, thin blades pop out of her gauntlets, poised to strike."
 

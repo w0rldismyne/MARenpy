@@ -316,7 +316,7 @@ image MuShame = "Sprites/Mu/Mushame.png"
 image MuSmug = "Sprites/Mu/Musmug.png"
 image MuTalk = "Sprites/Mu/Mutalk.png"
 image MuTalk2 = "Sprites/Mu/Mutalk2.png"
-image MuUugh = "Sprites/Mu/Muugh.png"
+image MuUgh = "Sprites/Mu/Muugh.png"
 image MuUmm = "Sprites/Mu/Muumm.png"
 
 #Nanase
@@ -741,13 +741,13 @@ label start:
     menu:
         "Prologue":
             jump prologue
-        "Meet Students/Find Friends":
-            jump introduction_meet_students
         "Chapter One":
             menu:
                 g "Where in Chapter One?"
                 "Beginning":
                     jump chapter_one
+                "Meet Students/Find Friends":
+                    jump introduction_meet_students
                 "Investigation":
                     jump chapter1_investigation
         "Chapter Two":

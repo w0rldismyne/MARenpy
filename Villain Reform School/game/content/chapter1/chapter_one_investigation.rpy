@@ -30,12 +30,17 @@ label YokuInv1:
 
     y "Clearly you can see I'm preoccupied at the mo-oment. What did you want?"
 
+    hide YBase
+
     # Choices
 
 label YokuInvestigation1:
 
     menu:
         "Alibi":
+
+            show YBase
+
             y "That morning, I had to report to the classroom early to perform my duties as class representative."
             y "It ssseems I'm the only one that wants to come into class twenty minutes early."
 
@@ -64,11 +69,16 @@ label YokuInvestigation1:
 
             n "I suppose that's fair." #(+Mysterious noise)
 
+            hide YBase
+
             $ inventory.ShowClue(clue_mysterious_noise)
 
             jump YokuInvestigation1
 
         "Show Evidence":
+
+                show YBase
+
                 "I show Yoku a photo I took of the CDs"
 
                 n "This is going to sound silly, but would you be able to look at this picture and tell me if there's anything special about how these CDs are organized?"
@@ -86,12 +96,16 @@ label YokuInvestigation1:
                 y "One of the perks of bein-ng a DJ."
                 y "It'll be June before I hear any cl-lassical music on the air."
 
+                hide YBase
+
                 jump YokuInvestigation1
 
         "Leave":
             pass
 
     #Outro
+
+    show YBase
 
     n "Well, thank you for taking time out of... whatever this is to talk to me."
 
@@ -1720,11 +1734,15 @@ label KitsuneInv1:
 
     k "Well, I did say I would owe you, so what exactly were you hoping to talk to me about?"
 
+    hide KBase
+
 label KitsuneInterrogation1:
 
     menu:
 
         "Alibi":
+
+            show KBase
 
             "Why do I get the feeling I'm going to regret asking this?"
 
@@ -1744,6 +1762,8 @@ label KitsuneInterrogation1:
             k "Though I wish he'd just teach me instead of forcing me to pay him every time I need a new outfit."
             k "I can't afford to be indebted to someone like that."
             
+            hide KBase
+
             jump KitsuneInterrogation1
 
         "Show Evidence":
@@ -1751,6 +1771,8 @@ label KitsuneInterrogation1:
             menu:
 
                 "Microphone":
+
+                    show KBase
 
                     k "It's a shame, isn't it?"
                     k "There's no recording equipment available to the students."
@@ -1772,7 +1794,11 @@ label KitsuneInterrogation1:
                     "It wouldn't be hard to tip an anxious person like him over the edge as a distraction."
                     "But I can't ignore that Kitsune has a personal reason for wanting to keep him out of trouble."#(+Alexa Commands)
 
+                    hide KBase
+
                 "Missing Phone":
+
+                    show KBase
 
                     k "I should have known that was his, he's the only person I know who's snuck in tech they shouldn't have."
                     k "I just didn't take him for a skull kind of guy."
@@ -1802,6 +1828,8 @@ label KitsuneInterrogation1:
                     "Maybe she knows something about him I don't."
                     "As far as I can tell, he's one of the most trusting people here."
 
+                    hide KBase
+
                     $ inventory.ShowClue(clue_baton_pass)
 
             jump KitsuneInterrogation1
@@ -1809,6 +1837,8 @@ label KitsuneInterrogation1:
         "Leave":
 
             pass
+
+    show KBase
 
     "She gently tugs at her hair, threading her thumbs through her pigtails."
     "I think something's still bothering her."

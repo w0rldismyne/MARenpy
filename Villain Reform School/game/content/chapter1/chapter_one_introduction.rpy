@@ -97,18 +97,6 @@ label chapter1_introduction:
             hide NSmile
 
             menu:
-                "No":
-                    show NSad2
-
-                    n "I'm fine, really. Thanks anyways."
-
-                    nk "O-okay then."
-
-                    "She doesn't seem convinced, but I'm in a bit of a hurry."
-
-                    hide NSad2
-                    jump nk_intro
-
                 "Yes":
                     $ nkRep += 1
                     show NSmile
@@ -137,6 +125,18 @@ label chapter1_introduction:
 
                     hide NBase
 
+                    jump nk_intro
+
+                "No":
+                    show NSad2
+
+                    n "I'm fine, really. Thanks anyways."
+
+                    nk "O-okay then."
+
+                    "She doesn't seem convinced, but I'm in a bit of a hurry."
+
+                    hide NSad2
                     jump nk_intro
 
 label nk_intro:
@@ -822,7 +822,7 @@ label introduction_hiro:
                     h "Yeah, that's true."
 
                     "Odori was the one who brought us all together in the first place."
-                    "The Liberation Front was her dream, and a part of it died with her."
+                    "The Junior Gladiators was her dream, and a part of it died with her."
 
                     hide HThisisfine
                     show HTalk
@@ -990,7 +990,7 @@ label introduction_mariko:
                     n "It was good to see you again. You know, to know that you're okay."
                     
                     "Though I'm surprised she's here considering what I was sent here to do. I'm sure she had hoped to never see me again."
-                    "Does that mean there are other kids from the Liberation Front at this school?"
+                    "Does that mean there are other kids from the Junior Gladiators at this school?"
                     
                     hide MTalk
 
@@ -2191,14 +2191,14 @@ label introduction_oshin:
             mu "I don't know if it's worth the money or effort."
             
             hide MuUmm
-            show MuUugh
+            show MuUgh
             
             mu "If I'm taking on heaps of debt, I need to be certain it's for something I actually want to do."
             mu "Med school doesn't look kindly on the uncertain."
 
             n "What else would you do?"
 
-            hide MuUugh
+            hide MuUgh
             show MuTalk2
 
             mu "Homeopathy, pharmacology, farming; whatever's easiest."
@@ -2755,6 +2755,7 @@ label introduction_chisei:
     scene backgroundlibrary
 
     show ChBase
+    with dissolve
 
     ch "It was from an accident. No, it does not still hurt and please do not touch me."
 
@@ -3158,6 +3159,7 @@ label introduction_setsuna:
     n "Well, this is disappointing."
 
     show SBase
+    with dissolve
 
     s "The gym or being at school?"
 
@@ -4837,7 +4839,7 @@ label introduction_jona:
 
             j "...Hunh. Well, you gotta show me your class schedule so I can update your book. My JG logs are pretty dated."
 
-            n "We're not in the Liberation Front anymore. You don't need to keep logs on everyone."
+            n "We're not in the Junior Gladiators anymore. You don't need to keep logs on everyone."
 
             j "...but I like knowing everyone's schedule."
 
