@@ -1,13 +1,11 @@
 # Boss Sprites
-default boss_active = "images/Sprites/MarikoBoss1.png"
+default boss_active = "images/Sprites/Mariko/Boss1.png"
 define boss_idle = "images/Sprites/Mariko/Boss1.png"
 define boss_attack = "images/Sprites/Mariko/4.png"
 define boss_hurt = "images/Sprites/Mariko/3.png"
 
 # UI Panels
-default info_overlay = "images/Icons/Bossboxesv1.png"
-define fight_overlay1 = "images/Icons/Bossboxesv1.png"
-define fight_overlay2 = "images/Icons/Bossboxesv2.png"
+default info_overlay = "New Assets/Fight/fight_frame.png"
 
 # Attributes
 default chapter1_nagen = Character_Stats()
@@ -41,60 +39,157 @@ default fight_end_state = -1
 define lose = 0
 define win = 1
 
-screen boss_mariko:
+screen boss_mariko_s1(variation=False):
 
     image "[boss_active]":
         xanchor 0.5
         yanchor 0.5
         pos 0.5, 0.7
         xysize 949, 1401
+        if variation is True:
+            at boss_mariko_s2_s1
+
+transform boss_mariko_s1_s2:
+    xpos 0.5
+    linear 0.5 xpos 0.7
+
+screen boss_mariko_s2:
+
+    image "[boss_active]":
+        xanchor 0.5
+        yanchor 0.5
+        pos 0.5, 0.7
+        xysize 949, 1401
+        at boss_mariko_s1_s2
+
+transform boss_mariko_s2_s1:
+    xpos 0.7
+    linear 0.5 xpos 0.5
+
+screen boss_mariko:
+
+    image "[boss_active]":
+        xanchor 0.5
+        yanchor 0.5
+        pos 0.7, 0.7
+        xysize 949, 1401
+        if boss_active is boss_hurt:
+            at hit_shake
 
 screen boss_overlay:
 
     image "[info_overlay]"
 
+screen nagen_hp_bars:
+
+    image "New Assets/Fight/name_nagen.png":
+        xanchor 0.0
+        yanchor 0.5
+        pos 124, 1032
+
     text "Nagen":
         color "#000000"
         xanchor 0.0
         yanchor 0.5
-        pos 1600, 615
+        pos 134, 1036
 
     # Nagen's Health
     bar:
         xanchor 0.0
         yanchor 0.5
-        pos 1600, 665
-        xmaximum 200
+        pos 60, 945
+        xysize 814, 89
         value nagen_current_health
         range nagen_health
-        left_bar "gui/HealthLight6.png"
-        right_bar "gui/HealthDark6.png"
+        left_bar "New Assets/Fight/mc_hp_full.png"
+        right_bar "New Assets/Fight/mc_hp_empty.png"
+        left_gutter 156
+        right_gutter 15
+
+    text "[nagen_current_health]/[nagen_health]":
+        xanchor 1.0
+        yanchor 0.5
+        pos 829, 949
+        size 40
+
+screen mariko_hp_bars:
+
+    image "New Assets/Fight/name_others.png":
+        xanchor 1.0
+        yanchor 0.5
+        pos 1876, 216
 
     text "Mariko":
-        xanchor 0.0
+        xanchor 1.0
         yanchor 0.5
-        pos 1600, 75
+        pos 1866, 220
 
     # Mariko's Health
     bar:
         xanchor 0.0
         yanchor 0.5
-        pos 1600, 125
-        xmaximum 200
+        pos 1340, 80
+        xysize 511,57
         value mariko_current_health
         range mariko_health
-        left_bar "gui/HealthLight6.png"
-        right_bar "gui/HealthDark6.png"
+        left_bar "New Assets/Fight/enemy_hp_full.png"
+        right_bar "New Assets/Fight/enemy_hp_empty.png"
+        left_gutter 130
+        right_gutter 15
 
     bar:
         xanchor 0.0
         yanchor 0.5
-        pos 1600, 225
-        xmaximum 200
+        pos 1365, 148
+        xysize 511,57
         value mariko_fatigue
         range mariko_fatigue_max
-        left_bar "gui/HealthLight5.png"
-        right_bar "gui/HealthDark5.png"
+        left_bar "New Assets/Fight/enemy_mp_full.png"
+        right_bar "New Assets/Fight/enemy_mp_empty.png"
+        left_gutter 130
+        right_gutter 15
+
+    text "[mariko_current_health]/[mariko_health]":
+        xanchor 1.0
+        yanchor 0.5
+        pos 1816, 84
+
+    text "[mariko_fatigue]/[mariko_fatigue_max]":
+        xanchor 1.0
+        yanchor 0.5
+        pos 1841, 152
+
+# Nagen's Available Actions
+screen chapter1_boss_battle_menu:
+
+    # Attack Button
+    imagebutton action Hide("chapter1_boss_battle_menu"), Hide("floating_text"), Jump("nagen_attacks"):
+        idle "New Assets/Fight/attack_idle.png"
+        hover "New Assets/Fight/attack_hover.png"
+        xanchor 0.0
+        yanchor 0.5
+        pos 40, 735
+        xysize 405, 132
+        at attack_button
+
+    # Defend Button
+    imagebutton action Hide("chapter1_boss_battle_menu"), Hide("floating_text"), Jump("nagen_defends"):
+        idle "New Assets/Fight/defend_idle.png"
+        hover "New Assets/Fight/defend_hover.png"
+        xanchor 0.0
+        yanchor 0.5
+        pos 50, 840
+        xysize 371, 87
+        at defend_button
+
+transform attack_button:
+    alpha 0.0 xpos -405
+    linear 0.15 alpha 1.0 xpos 40
+
+transform defend_button:
+    alpha 0.0 xpos -371
+    pause 0.07
+    linear 0.13 alpha 1.0 xpos 50
 
 # Battle Start
 label chapter1_boss_battle_initial:
@@ -105,11 +200,6 @@ label chapter1_boss_battle_initial:
     $ nagen_attack = chapter1_nagen.ATK
     $ nagen_defense = chapter1_nagen.Secondary
     $ nagen_current_health = nagen_health
-
-    # Mariko's Sprite
-    $ boss_active = boss_idle
-    scene backgroundmariko
-    show screen boss_mariko
 
     # Mariko's Stats
     $ mariko_current_health = mariko_health
@@ -123,8 +213,22 @@ label chapter1_boss_battle_initial:
     $ turn_order = nagen_turn
     $ fight_end_state = -1
 
+    # Mariko's Sprite
+    $ boss_active = boss_idle
+    scene backgroundmariko
+
+    hide screen boss_mariko_s1
+    show screen boss_mariko_s2
+
+    pause 0.5
+
     show screen boss_overlay
+    show screen nagen_hp_bars
+    show screen mariko_hp_bars zorder 1
     with dissolve
+
+    hide screen boss_mariko_s2
+    show screen boss_mariko
 
     # Temporary?
     g "Nagen gets first action!"
@@ -151,38 +255,26 @@ label chapter1_boss_battle_loop:
 
     jump chapter1_boss_battle_evaluations
 
-# Nagen's Available Actions
-screen chapter1_boss_battle_menu:
-
-    image "gui/button/AttackButton.png":
-        xanchor 0.5
-        yanchor 0.5
-        pos 215, 0.33
-        xysize 400, 300
-    
-    textbutton _("Attack"):
-        xanchor 0.5
-        yanchor 0.5
-        pos 225, .33
-        text_size 60
-        text_color "#000000"
-        text_hover_color "#444444"
-        action Hide("chapter1_boss_battle_menu"), Hide("floating_text"), Jump("nagen_attacks")
-
-    image "gui/button/PlainCombatButton.png":
-        xanchor 0.5
-        yanchor 0.5
-        pos 225, 0.67
-        xysize 300, 150
-
-    textbutton _("Defend"):
-        xanchor 0.5
-        yanchor 0.5
-        pos 225, 0.67
-        text_size 60
-        text_color "#000000"
-        text_hover_color "#444444"
-        action Hide("chapter1_boss_battle_menu"), Hide("floating_text"), Jump("nagen_defends")
+transform hit_shake:
+    block:
+        xoffset -8
+        pause 0.025
+        xoffset 8
+        pause 0.025
+        repeat 4
+    block:
+        xoffset -5
+        pause 0.02
+        xoffset 5
+        pause 0.02
+        repeat 4
+    block:
+        xoffset -2
+        pause 0.02
+        xoffset 2
+        pause 0.02
+        repeat 4
+    xoffset 0 yoffset 0
 
 transform boss_hint1:
     alpha 0.0
@@ -383,15 +475,28 @@ label chapter1_boss_battle_conditions:
             $ mariko_halfway = True
             $ mariko_halfway_post_turns = turns_passed
 
+            hide screen nagen_hp_bars
+            hide screen mariko_hp_bars
             hide screen boss_overlay
             with dissolve
+
+            hide screen boss_mariko
+            show screen boss_mariko_s1(variation = True)
             
             call chapter1_boss_battle_midfight_scene
 
-            $ info_overlay = fight_overlay2
+            hide screen boss_mariko_s1
+            show screen boss_mariko_s2
+
+            pause 0.5
 
             show screen boss_overlay
+            show screen nagen_hp_bars
+            show screen mariko_hp_bars zorder 1
             with dissolve
+
+            hide screen boss_mariko_s2
+            show screen boss_mariko
         
         if mariko_current_health <= 0:
 
@@ -490,8 +595,12 @@ label post_mariko_turn:
 
 label chapter1_boss_player_choice:
 
+    hide screen nagen_hp_bars
+    hide screen mariko_hp_bars
     hide screen boss_mariko
     hide screen boss_overlay
+
+    # Need rewrite
 
     menu:
         "Spare":

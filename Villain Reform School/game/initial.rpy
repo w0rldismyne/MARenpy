@@ -52,6 +52,7 @@ define g        = Character("",                  window_background = "gui/text_b
 #backgrounds
 image backgroundpolice         = "Backgrounds/PoliceRoom.png"
 image backgroundblack          = "Backgrounds/black.png"
+image backgroundwhite          = "#ffffff"
 image backgroundamp            = "Backgrounds/ampetheater.jpg"
 image backgroundavroom         = "Backgrounds/AVRoom.jpg"
 image backgroundbad            = "Backgrounds/badforrest.png"
@@ -750,6 +751,8 @@ label start:
                     jump introduction_meet_students
                 "Investigation":
                     jump chapter1_investigation
+                "Boss Battle":
+                    jump chapter1_boss_scene
         "Chapter Two":
             jump chapter_two
         #chapter3

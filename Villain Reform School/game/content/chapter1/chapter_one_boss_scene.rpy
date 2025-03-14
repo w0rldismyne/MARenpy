@@ -93,6 +93,10 @@ label chapter1_boss_scene:
     m "This is your chance to wash your hands of this whole mess, Nagen. Turn tail and run. Run as far away as you can from this place."
     m "Show me how far you can really make it on your own."
 
+    if mRep < 5:
+        show backgroundblack
+        with dissolve
+
     "What else is there to say?"
 
     hide MMadtalk
@@ -325,7 +329,18 @@ label chapter1_boss_intro:
     
     m "I gave you a chance to run. It’s not my fault you didn’t listen to me."
 
+    show backgroundwhite
+    with dissolve
+
+    hide backgroundblack
+
+    hide backgroundwhite
+    with dissolve
+
     "The stadium lights turn on without warning and once my eyes adjust to the blinding lights…"
+
+    show screen boss_mariko_s1
+    with dissolve
 
     m "Call me over ambitious, but if I’m taking over as leader, the whole team is going to need a massive overhaul."
 
@@ -355,7 +370,8 @@ label chapter1_boss_battle_midfight_scene:
 
     m "Oh? But I’ve come too far to give up now. It’s not like you’re my target anyway. I just need you to teach him a very important lesson."
 
-    hide screen boss_mariko
+    window hide
+    hide screen boss_mariko_s1
     with dissolve
 
     scene backgroundB5
@@ -380,7 +396,7 @@ label chapter1_boss_battle_midfight_scene:
 
     scene backgroundmariko
 
-    show screen boss_mariko
+    show screen boss_mariko_s1
 
     m "But it feels the same."
     m "We were awake inside those voiceless meat shields you turned us into."
@@ -392,7 +408,7 @@ label chapter1_boss_battle_midfight_scene:
 
     n "He didn’t know."
 
-    hide screen boss_mariko
+    hide screen boss_mariko_s1
 
     if Hero > Villain:
 
@@ -431,7 +447,7 @@ label chapter1_boss_battle_midfight_scene:
         # Back to Boss Arena
         scene backgroundmariko
 
-        show screen boss_mariko
+        show screen boss_mariko_s1
 
         n "The only reason Hiro came to you was to stop anyone else from getting hurt, including you. He already felt guilty for what happened. What more do you want?"
 
@@ -462,7 +478,7 @@ label chapter1_boss_battle_midfight_scene:
         #[Return to Boss Battle arena]
         scene backgroundmariko
 
-        show screen boss_mariko
+        show screen boss_mariko_s1
     
         n "It’s not Hiro’s fault people trusted him more than you, Mariko. You’re only making things worse by picking a fight you will lose."
 

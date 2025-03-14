@@ -104,6 +104,7 @@ screen say(who, what):
 
     window:
         id "window"
+        ypos 1033
 
         if who != None and who != "":
 
@@ -282,6 +283,45 @@ screen quick_menu():
     zorder 100
 
     if quick_menu:
+
+        #imagemap: Wrong asset
+        #    alpha False
+
+        #    ground "New Assets/Settings/nav_ground.png"
+        #    idle "New Assets/Settings/nav_idle.png"
+        #    hover "New Assets/Settings/nav_hover.png"
+
+        #    hotspot (680, 987, 142, 61) action None
+        #    hotspot (834, 987, 142, 61) action None
+        #    hotspot (991, 987, 142, 61) action None
+        #    hotspot (1143, 987, 142, 61) action None
+        #    hotspot (1298, 987, 142, 61) action None
+        #    hotspot (1453, 987, 142, 61) action None
+        #    hotspot (1607, 987, 142, 61) action None
+        image "New Assets/Dialogue/textbox_navigation_box.png":
+            xpos 1066
+            ypos 1033
+            yanchor 0.5
+            xanchor 0.0
+
+        hbox:
+            style_prefix "quick"
+
+            xpos 1066
+            ypos 1033
+            yanchor 0.5
+            xanchor 0.0
+
+            textbutton _("Stats") action Show("stats")
+            textbutton _("Inventory") action Show("inventory")
+            textbutton _("Back") action Rollback()
+            textbutton _("History") action ShowMenu('history2')
+            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Auto") action Preference("auto-forward", "toggle")
+            textbutton _("Save") action ShowMenu('save')
+            textbutton _("Q.Save") action QuickSave()
+            textbutton _("Q.Load") action QuickLoad()
+            textbutton _("Prefs") action ShowMenu('preferences')
 
         hbox:
             style_prefix "quick"

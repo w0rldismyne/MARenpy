@@ -179,7 +179,7 @@ label introduction_meet_students:
     else:
         "Where should I look now?"
 
-    jump introduction_locations_test
+    jump introduction_locations
 
     #if introductionLocationsPage is 2:
     #    jump introduction_locations_2
@@ -187,7 +187,7 @@ label introduction_meet_students:
     #    jump introduction_locations_3
 
 
-label introduction_locations_test:
+label introduction_locations:
     $ choice_many_choices = True
 
     menu:
@@ -4179,22 +4179,6 @@ label introduction_rise:
     hide RSmile
 
     menu:
-
-        "Decline":
-
-            $ rRep -= 1
-
-            show RFrown
-
-            n "Sorry, not a big tea fan."
-
-            r "How unfortunate."
-            r "In that case, this room is reserved. I trust you do not need me to show you the way out."
-
-            "There's no reason for me to stay here. I turn and leave."
-
-            hide RFrown
-
         "Sit":
 
             $ rRep += 1
@@ -4343,6 +4327,21 @@ label introduction_rise:
                     r "It is a shame when you do not feel like you belong."
 
                     hide RSmug
+                    
+        "Decline":
+
+            $ rRep -= 1
+
+            show RFrown
+
+            n "Sorry, not a big tea fan."
+
+            r "How unfortunate."
+            r "In that case, this room is reserved. I trust you do not need me to show you the way out."
+
+            "There's no reason for me to stay here. I turn and leave."
+
+            hide RFrown
     
     show RTalk
     
