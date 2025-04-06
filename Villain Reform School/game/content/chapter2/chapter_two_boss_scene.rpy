@@ -13,11 +13,11 @@ label chapter2_boss_scene:
 
     r "Nagen?"
 
-    "She effortlessly hops up onto a dresser with a far off look in her eyes."
+    "She effortlessly hops onto a dresser with a far off look in her eyes."
 
     r "I see. Well, this is rather disappointing. I had hoped someone else would be baited here instead. Serves me right for aiming for two birds with one stone."
 
-    "She snaps her fingers and the doors behind me lock. I can feel her watching me even though she's focused on nothing."
+    "She snaps her fingers and the doors behind me lock. I can feel her watching me even though her eyes aren't focused."
 
     n "How did you...?"
 
@@ -55,13 +55,13 @@ label chapter2_boss_scene:
 
     r "I apologize, but this will hurt a bit."
 
-    "I dive into the maze of furniture for cover. The walls of the pool seem to glow as I run to get out of sight."
+    "I dive into the maze of furniture for cover. The walls of the pool glow as I run to get out of sight."
 
     "Phase 1 Combat"
 
     #The maze is the main feature; avoid getting hit.
 
-    r "I should have been more clear; this won't kill you. It will just put you to sleep for a while."
+    r "I should have been more clear; this will not kill you. It will just put you to sleep for a while."
 
     "Like that's any better?!"
 
@@ -101,7 +101,7 @@ label chapter2_boss_scene:
 
     "There's no way..."
 
-    n "You're a charm major... but, what's your Proficiency?"
+    n "You're a Charm Major... but, what's your Proficiency?"
 
     r "I... I don't have one."
 
@@ -121,11 +121,11 @@ label chapter2_boss_scene:
 
     r "S-see Nagen! See what happens when that innocent mask starts to crack?"
 
-    n "Of course, who do you think taught him how to 'play nice'?"
+    n "Of course; who do you think taught him how to 'play nice'?"
 
     #IF Hero
 
-    n "They were corrupt people, Rise. They hurt more people maintaining their power than Jona ever could have, you're smart enough to know that."
+    n "They were corrupt people, Rise. They hurt more people maintaining their power than Jona ever could have. You're smart enough to know that."
 
     r "Yes, but they were corrupt people I had control over. Now my father's companies are in the hands of strangers. Strangers who saw your fathers research and put more money into it instead of shutting it down."
 
@@ -205,13 +205,13 @@ label chapter2_boss_scene:
 
     n "RISE TURN IT OFF!"
 
-    "She throws the phone down as if it had bit her, all color drained from her face. I run to turn it off as fast as I can. Jona is crying, shaking intensely. He had gone back to his house during the riots. We never talked about why."
+    "She throws the phone down as if it had bit her, all color drained from her face. I run to turn it off as fast as I can. Jona is shuddering with sobs. He had gone back to his house during the riots. We never talked about why."
 
     r "Nagen, I didn't know- Why would she give me something like that?"
 
     n "I'm not the one you should be making excuses at!"
 
-    "The doors finally opens and thank God, there are teachers. Hiro runs around to the steps, but Uitto's quicker."
+    "The doors finally open and thank God, there are teachers. Hiro runs around to the steps, but Uitto's quicker."
 
     u "Nagen, get away from him."
 
@@ -245,7 +245,7 @@ label chapter2_boss_scene:
 
     j "Serves you right for meddling in things you don't understand."
 
-    "The doors to the gym finally open. Miss Sato storms in with a look that could kill. She waddled down to where Rise was crumpled on the floor and leant her a hand. Rise had to be led out, unable to find the ladder on her own. I don't think she can see where she's going. Miss Sato glared at us, but said nothing, instead whispering something in Rise's ear. Uitto and Hiro motion for Jona and I to climb out of the pool, but something on the floor catches my eye.  Rise must have dropped it during the fight."
+    "The doors to the gym finally open. Miss Sato storms in with a look that could kill. She waddles down to where Rise is crumpled on the floor and leans her a hand. Rise has to be led out. I don't think she can see where she's going. Miss Sato glares at us, then whispers something in Rise's ear. Uitto and Hiro motion for Jona and I to climb out of the pool, but something on the floor catches my eye. Rise must have dropped it during the fight."
 
     #CG: Lethe's Portrait
 
@@ -291,11 +291,11 @@ label chapter2_boss_scene:
 
     #BG: Hallway
 
-    "We're called to the office one at a time to give our account of what happened. While I wait for the others, I go check Rise's locker. There had to be a reason she left her combination where I could find it. Inside is a tape much like the one Mariko had. A photo is taped to it. A bunch of fancily dressed people are sitting in front of a banner for a charity dinner. It looks to be about twenty years old. Two people in green are front and center. They must be her parents. Next to them is Jona's mom and... my parents? They really did know each other."
+    "We're called to the office one at a time to give our account of what happened. While I wait for the others, I go check Rise's locker. There has to be a reason she left her combination where I could find it. Inside is a tape much like the one Mariko had. A photo is taped to it. A bunch of fancily dressed people are sitting in front of a banner for a charity dinner. It looks to be about twenty years old. Two people in green are front and center. They must be her parents. Next to them is Jona's mom and... my parents? They really did know each other."
 
     #IF Spared Rise
 
-    "There's a small box in here with an eye-shaped map printed on it. I open it to find an unopened contact lens along with a small note."
+    "There's a small box with an eye-shaped map printed on it. I open it to find an unopened contact lens along with a small note."
 
     ###"Note: "See things the way I do."
 
