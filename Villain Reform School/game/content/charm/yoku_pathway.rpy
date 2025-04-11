@@ -4,9 +4,9 @@ label YokuVisit:
         jump Yoku1
     elif yTurn == 1:
         jump Yoku2
-    elif mTurn == 2:
+    elif yTurn == 2:
         jump Yoku3
-    elif mTurn == 3:
+    elif yTurn == 3:
         jump Yoku4
     else:
         jump YokuF
