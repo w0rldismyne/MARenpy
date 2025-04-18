@@ -131,25 +131,27 @@ label chapter1_freetime:
     elif chapter1_event is chapter1_free_time_evening:
         scene backgroundcourtyardnight
 
-    menu:
-        "Freetime"
-        "Hang Out":
-            menu:
-                "Uitto":
-                    call UittoVisit
-                "Jona":
-                    call JonaVisit
-                "Hiro":
-                    call HiroVisit
-                "Nanase":
-                    call NanaseVisit
-                "Mariko":
-                    call MarikoVisit
-                "Yoku":
-                    call YokuVisit
+    call screen freetime
 
-        "Investigate":
-            call chapter1_investigation
+    #menu:
+    #    "Freetime"
+    #    "Hang Out":
+    #        menu:
+    #            "Uitto":
+    #                call UittoVisit
+    #            "Jona":
+    #                call JonaVisit
+    #            "Hiro":
+    #                call HiroVisit
+    #            "Nanase":
+    #                call NanaseVisit
+    #            "Mariko":
+    #                call MarikoVisit
+    #            "Yoku":
+    #                call YokuVisit
+    
+    #    "Investigate":
+    #        call chapter1_investigation
 
     return
 
