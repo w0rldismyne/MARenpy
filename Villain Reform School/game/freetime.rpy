@@ -6,9 +6,10 @@ screen freetime:
         ypos 0.5
         xanchor 0.5
         yanchor 0.5
+        spacing 60
 
         imagebutton:
-            xysize (456, 442)
+            xysize 456, 442
             xpos 0.5
             ypos 0.5
             xanchor 0.5
@@ -18,7 +19,7 @@ screen freetime:
             action Hide("freetime")
 
         imagebutton:
-            xysize (456, 442)
+            xysize 456, 442
             xpos 0.5
             ypos 0.5
             xanchor 0.5
@@ -28,17 +29,25 @@ screen freetime:
             action Hide("freetime")
 
 image Investigate_Hover:
+    xysize (501, 486)
+    xpos 0.5
+    ypos 0.5
+    xanchor 0.5
+    yanchor 0.5    
     "images/Interactables/Investigate_1.png"
     pause 0.5
     "images/Interactables/Investigate_2.png"
     pause 0.5
     "images/Interactables/Investigate_3.png"
-    pause 0.5
-    repeat
 
 image Hangout_Hover:
+    xysize (501, 486)
+    xpos 0.5
+    ypos 0.5
+    xanchor 0.5
+    yanchor 0.5    
     "images/Interactables/Hangout_1.png"
-    pause 0.5
+    pause 0.7
     "images/Interactables/Hangout_3.png"
-    pause 0.5
+    pause 0.7
     repeat
