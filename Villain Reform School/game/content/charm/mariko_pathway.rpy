@@ -20,7 +20,7 @@ label MarikoP1:
     "It wouldn’t hurt to drop by and say hi, would it? During lunch break, I found her on the practice field with a gaggle of other girls."
     "It seems like she was able to gather enough participants to start the Cheer Squad."
 
-    show MJudge
+    show mariko judging
 
     m "What do you think you’re doing?"
 
@@ -37,16 +37,16 @@ label MarikoP1:
 
     n "Okay, I can come back when you’re not as busy."
 
-    hide MJudge
-    show MBase
+    hide mariko judging
+    show mariko
 
     m "We go on break in twenty, before lunch ends."
 
-    hide MBase
+    hide mariko
 
     "I needed to get food anyways. I came back later, when practice was over."
 
-    show MSheepish
+    show mariko sheepish
 
     m "Good job girls! Next practice, be sure to bring extra water! Oh! You, uh, actually came back."
 
@@ -54,13 +54,13 @@ label MarikoP1:
 
     m "Right… So, what’s up?"
 
-    hide MBase
+    hide mariko
 
     menu:
         "What are you forcing them to practice?":
             $ mRep -= 1
 
-            show MMadtalk
+            show mariko mad talk
 
             m "I didn’t force them to do anything!"
             m "We all agreed that we needed more practice before our first game!"
@@ -71,8 +71,8 @@ label MarikoP1:
 
             n "I didn’t mean to insult your leadership style, I just found it odd."
 
-            hide MMadtalk
-            show MJudge
+            hide mariko mad talk
+            show mariko judging
 
             m "These girls are almost as soft as you are."
 
@@ -83,12 +83,12 @@ label MarikoP1:
             "That really doesn’t sound healthy. I don’t think I’m going to convince her otherwise."
             "The rest of the period she lectured me about how tired she was of people assuming Cheerleaders didn’t have to work hard; including her squad members."
 
-            hide MJudge
+            hide mariko judging
 
         "Aren't you going to eat something?":
             $ mRep += 1
 
-            show MBase
+            show mariko
 
             m "Hunh? Oh yeah, I almost forgot. Thanks for reminding me."
 
@@ -98,8 +98,8 @@ label MarikoP1:
 
             n "Yeah, I got something while I was waiting."
 
-            hide MBase
-            show MSadtalk
+            hide mariko
+            show mariko sad talk
 
             m "Sorry about earlier, it’s just, they’re starting the season so early."
             m "Normally a new squad gets at least three months to prepare. We have two weeks."
@@ -115,15 +115,15 @@ label MarikoP1:
 
             n "You have a meal plan, right?"
 
-            hide MSadtalk
-            show MTalk
+            hide mariko sad talk
+            show mariko talk
 
             m "Yeah, why?"
 
             n "Next time you need food, I can just grab you some during practice."
 
-            hide MTalk
-            show MSmiletalk
+            hide mariko talk
+            show mariko smile talk
 
             m "Really!?"
 
@@ -134,13 +134,13 @@ label MarikoP1:
 
             "Somehow, I got roped into being a gopher for the Cheer Squad."
 
-            hide MSmiletalk
+            hide mariko smile talk
 
             $ food = true
         "If you could change one thing, what would it be?":
             $ Vigor += 1
 
-            show MBase
+            show mariko
 
             "She looked at me with a blank stare. I don’t know why; I expected a slightly positive reaction."
 
@@ -150,8 +150,8 @@ label MarikoP1:
 
             n "You’ve got an event coming up or something?"
 
-            hide MBase
-            show MFrowntalk
+            hide mariko
+            show mariko upset talk
 
             m "Something like that. I don’t think I’ll be ready for it, no matter how much I practice."
 
@@ -165,11 +165,11 @@ label MarikoP1:
 
             m "I-I know. To be lectured by you of all people."
 
-            hide MFrowntalk
+            hide mariko upset talk
     $ Vigor += 1
     $ mTurn += 1
 
-    show MJudge
+    show mariko judging
 
     m "Why did you do it?"
 
@@ -183,8 +183,8 @@ label MarikoP1:
 
     "She closed her eyes and took slow, shallow breaths. I waited patiently for her to respond."
 
-    hide MJudge
-    show MTalk
+    hide mariko judging
+    show mariko talk
 
     m "What… what were you protecting them from?"
 
@@ -194,8 +194,8 @@ label MarikoP1:
     "She mulled that over as well."
     "Granted, it was a gross exaggeration of the problem, but ten minutes is not enough time to tell anyone’s life story."
 
-    hide MTalk
-    show MJudge
+    hide mariko talk
+    show mariko judging
 
     m "Then you understand why I don’t like you?"
 
@@ -206,13 +206,13 @@ label MarikoP1:
 
     n "It looked like something was bothering you, I wanted to make sure you were okay."
 
-    hide MJudge
-    show MCry
+    hide mariko judging
+    show mariko crying
 
     m "I… thanks. Really. It’s been… Adjusting’s been hard."
     m "I’m fine. It’s fine. Everything’s going to be okay."
 
-    hide MCry
+    hide mariko crying
 
     return
 
@@ -220,7 +220,7 @@ label Mariko2P:
 
     scene backgroundfield
 
-    show MSmiletalk
+    show mariko smile talk
 
     m "Well, well, well; look who came back girls?"
 
@@ -238,8 +238,8 @@ label Mariko2P:
 
     n "No. Doesn’t mean it’s not true though."
 
-    hide MSmiletalk
-    show MTalk
+    hide mariko smile talk
+    show mariko talk
 
     m "You’re  a lot different then what I expected, more sarcastic."
 
@@ -247,19 +247,19 @@ label Mariko2P:
 
     "She grimaced."
 
-    hide MTalk
-    show MCry
+    hide mariko talk
+    show mariko crying
 
     m "Really? What exactly about this is fun for you?"
     m "Is it a fetish? Do you have a thing for pom poms?"
 
-    hide MCry
+    hide mariko crying
 
     menu:
         "Hell yeah it's about the pom poms.":
             $ mRep -= 1
 
-            show MCry
+            show mariko crying
 
             m "I didn’t actually mean… good god."
 
@@ -267,8 +267,8 @@ label Mariko2P:
 
             n "You asked. Why, what’s your type?"
 
-            hide MCry
-            show MTalk
+            hide mariko crying
+            show mariko talk
 
             m "Double-Ds."
 
@@ -277,25 +277,25 @@ label Mariko2P:
             n "Where do you get off judging me?"
             n "At least my ideal is realistic."
 
-            hide MTalk
-            show MGlare
+            hide mariko talk
+            show mariko glaring
 
             m "Hey, I’m better then some pom-pom chaser. I don’t go cruising around-"
             m "This isn’t about me okay!"
 
             n "Let this be a lesson, don’t ask questions you don’t want to know the answer to."
 
-            hide MGlare
-            show MTalk
+            hide mariko glaring
+            show mariko talk
 
             m "You could try and show a little shame y’know."
             m "Geez, I don’t know if I should be relieved your intentions are relatively normal or more on guard."
 
-            hide MTalk
+            hide mariko talk
         "I want to know more about you.":
             $ mRep += 1
 
-            show MFrowntalk
+            show mariko upset talk
 
             n "I never really talked to anyone from the front lines."
             n "All I really know was you were the last to join."
@@ -305,8 +305,8 @@ label Mariko2P:
 
             n "I wanted to see first hand what kind of person could do the impossible."
 
-            hide MFrowntalk
-            show MTalk
+            hide mariko upset talk
+            show mariko talk
 
             m "It’s not nearly as incredible as you make it sound."
             m "I was on the run for two days, and then they put the helmet on."
@@ -314,8 +314,8 @@ label Mariko2P:
 
             n "I mean, I guess running away isn’t as cool as fighting off a brainwashed army."
 
-            hide MTalk
-            show MCry
+            hide mariko talk
+            show mariko crying
 
             m "Running away? Never, I kept running forward...."
             m "That sounded less cheesy in my head."
@@ -325,17 +325,17 @@ label Mariko2P:
             "There wasn’t exactly a home to go back to either."
             "It’s hard to imagine running around that long looking for the deceased to return to rubble. Like a morbid Captain Ahab."
 
-            hide MCry
-            show MTalk
+            hide mariko crying
+            show mariko talk
 
             m "I promised I would keep everyone safe, but it’s kinda hard to help people who won’t listen to you."
             m "I will never let something like that happen again."   
 
-            hide MTalk
+            hide mariko talk
         "I like watching people.":
             $ Vigor += 1
 
-            show MBase
+            show mariko
 
             n "You know, like anthropology, seeing people in their natural habitat and how they behave."
 
@@ -346,8 +346,8 @@ label Mariko2P:
 
             n "Do you think you’re not worthy of observation?"
 
-            hide MBase
-            show MCringe
+            hide mariko
+            show mariko cringe
 
             m "N-no. I mean, not like that. It’s just kind of a weird thing to tell someone."
 
@@ -355,8 +355,8 @@ label Mariko2P:
 
             n "I’m only telling the truth. Don’t ask questions you don’t want to know the answer to."
 
-            hide MCringe
-            show MJudge
+            hide mariko cringe
+            show mariko judging
 
             m "...Is it with ill intent?"
 
@@ -366,35 +366,35 @@ label Mariko2P:
 
             n "No."
 
-            hide MJudge
-            show MTalk
+            hide mariko judging
+            show mariko talk
 
             "She breathed a long, reserved sigh of relief."
 
             m "You could stand to work on your people skills, y’know."
 
-            hide MTalk
+            hide mariko talk
 
     $ Vigor += 1
     $ mTurn += 1
 
-    show MTalk
+    show mariko talk
 
     m "I take what I do very seriously. By the time I’m done, these girls will be an elite unit."
     m "Hopefully, by then, they won’t need me anymore. Until then-"
 
     n "Yeah, yeah; don’t lay a finger on them, I know."
 
-    hide MTalk
-    show MJudge
+    hide mariko talk
+    show mariko judging
 
     m "This is no laughing matter. I don’t need them getting distracted by some wandering Cyber Goth."
     m "If you come back again, be prepared to work."
 
     n "What’s that supposed to mean?"
 
-    hide MJudge
-    show MSmiletalk
+    hide mariko judging
+    show mariko smile talk
 
     m "Fufu, I bet you don’t even own a pair of sweats."
 
@@ -408,7 +408,7 @@ label Mariko2P:
 
     n "Just not right now."
 
-    hide MSmiletalk
+    hide mariko smile talk
 
     "My exit out of that conversation was as graceful as my leave off the field."
 
@@ -418,7 +418,7 @@ label Mariko3P:
 
     scene backgroundfield
 
-    show MSmiletalk
+    show mariko smile talk
 
     m "You really don’t know when to quit, do you?"
 
@@ -428,29 +428,29 @@ label Mariko3P:
     "The longer I stood there, the more the girls stared at me. Or at least at the stains on this borrowed shirt."
     "Even if they’re not my mustard stains, I can’t help but feel incredibly uncomfortable."
 
-    hide MSmiletalk
-    show MJudge
+    hide mariko smile talk
+    show mariko judging
 
     m "Didn’t take you for the masochistic type, but then again, you’re full of surprises."
 
     "She turned to face the girls."
 
-    hide MJudge
-    show MCackle
+    hide mariko judging
+    show mariko cackle
 
     m "Alright everybody, strap on the weights, it’s time for lunges. No whining, no complaining, let’s move!"
 
     n "Aren’t we going to warm up first?"
 
-    hide MCackle
-    show MSmiletalk
+    hide mariko cackle
+    show mariko smile talk
 
     m "We already have, you were late."
 
     "Against my better judgement, I followed Genki’s orders."
 
-    hide MSmiletalk
-    show MCackle
+    hide mariko smile talk
+    show mariko cackle
 
     m "You’ve gotta ease into it Cyber Dork, if you keep doing that, you’ll tear a ligament."
 
@@ -460,8 +460,8 @@ label Mariko3P:
 
     n "You know I’m glad you’re finally laughing around me, but why does it have to be at my pain?"
 
-    hide MCackle
-    show MSmiletalk
+    hide mariko cackle
+    show mariko smile talk
 
     m "I’m sorry, I just never dreamed you’d look so ridiculous."
 
@@ -478,20 +478,20 @@ label Mariko3P:
     n "Your overwhelming concern fills me with great joy."
     n "Seriously though, this is the happiest I’ve seen you. What gives?"
 
-    hide MSmiletalk
-    show MFrowntalk
+    hide mariko smile talk
+    show mariko upset talk
 
     m "Oh… you noticed."
 
     n "That’s not the only thing I’ve noticed."
 
-    hide MFrowntalk
+    hide mariko upset talk
 
     menu: 
         "None of the girls talk to Mariko.":
             $ mRep -= 1
 
-            show MFrowntalk
+            show mariko upset talk
 
             n "You’re the captain, but none of the girls seem to talk to you… Wait, you are the Captain right?"
 
@@ -507,8 +507,8 @@ label Mariko3P:
             n "You just seem kinda lonely."
             n "I mean, why else would you be talking to me instead of your friends."
 
-            hide MFrowntalk
-            show MJudge
+            hide mariko upset talk
+            show mariko judging
 
             m "They aren’t- Look, I appreciate your concern, but I’m fine, really."
             m "I’m just trying to figure something out."
@@ -519,12 +519,12 @@ label Mariko3P:
 
             "She doesn’t look fine. There’s a melancholic air about her that she just can’t seem to shake. I can’t tell if I’m helping or making it worse."
 
-            hide MJudge
+            hide mariko judging
 
         "You keep looking at that girl.":
             $ Vigor += 1
 
-            hide MMadtalk
+            hide mariko mad talk
 
             m "No, I’m not! ...I mean, of course I would be looking at my teammates."
             m "I’m like, super in charge of them and junk."
@@ -544,8 +544,8 @@ label Mariko3P:
 
             n "Really? Cause it looks like she’s just doing toe-touches."
 
-            hide MMadtalk
-            show MGlare
+            hide mariko mad talk
+            show mariko glaring
 
             m "You’re impossible!"
 
@@ -557,16 +557,16 @@ label Mariko3P:
 
             "All I could do is laugh."
 
-            hide MGlare
-            show MFrowntalk
+            hide mariko glaring
+            show mariko upset talk
 
             m "Rei… is… a trusted comrade. I would never do anything to jeopardize that."
             m "Which is why I wasn’t ogling!"
 
             n "I’m not buying any of it."
 
-            hide MFrowntalk
-            show MCry
+            hide mariko upset talk
+            show mariko crying
 
             m "Would you just keep it down already! She might hear you!"
 
@@ -575,8 +575,8 @@ label Mariko3P:
             n "I’m sorry, I didn’t mean to make you uncomfortable."
             n "I just find it kind of funny that this is your achilles heel."
 
-            hide MCry
-            show MSmiletalk
+            hide mariko crying
+            show mariko smile talk
 
             m "Well your achilles heel is your complete lack of strength."
 
@@ -584,12 +584,12 @@ label Mariko3P:
 
             "At least she’s feeling better, but it meant 10 laps around the field." 
 
-            hide MSmiletalk
+            hide mariko smile talk
 
         "You're not taking care of yourself.":
             $ mRep += 1
 
-            show MTalk
+            show mariko talk
 
             m "What do you mean? I’m in my prime!"
 
@@ -604,15 +604,15 @@ label Mariko3P:
 
             n "What are you afraid will happen if you stop?"
 
-            hide MTalk
-            show MFrowntalk
+            hide mariko talk
+            show mariko upset talk
 
             m "...That I’ll wake up and all of this will be over."
 
             "She watched the girls practice with a combination of longing and mourning."
 
-            hide MFrowntalk
-            show MCry
+            hide mariko upset talk
+            show mariko crying
 
             m "Moments like these is what kept me going."
             m "If they go away again, if I stop pushing forward, I don’t know if I can start again."
@@ -623,8 +623,8 @@ label Mariko3P:
 
             "Her laugh sounded empty."
 
-            hide MCry
-            show MSmiletalk
+            hide mariko crying
+            show mariko smile talk
 
             m "You’re part of the problem y’know."
             m "Being so nice to me, it’s making me doubt certain things."
@@ -634,12 +634,12 @@ label Mariko3P:
 
             m "A little, but it’s a little too late for that I think."
 
-            hide MSmiletalk
+            hide mariko smile talk
 
     $ Vigor += 1
     $ mTurn += 1
 
-    show MJudge
+    show mariko judging
 
     m "Do I need to take you shopping? You’re showing your underwear again."
 
@@ -649,8 +649,8 @@ label Mariko3P:
 
     n "Hey I don’t need to be lectured by the queen of ‘oh yeah, I forgot it was lunch’."
 
-    hide MJudge
-    show MBase
+    hide mariko judging
+    show mariko
 
     m "Shoot, lunch is almost over, isn’t it."
 
@@ -658,7 +658,7 @@ label Mariko3P:
 
     m "I completely forgot. I’ll see you around Nagen."
 
-    hide MBase
+    hide mariko
 
     "She ran off desperate to grab something from the cafeteria before they closed."
 
@@ -667,7 +667,7 @@ label Mariko3P:
 label MarikoP4:
     scene backgroundfield
 
-    show MBase
+    show mariko
 
     "After the last time we talked, I started dropping by Mariko’s cheer practice a couple times a week."
     "It was surprisingly vigorous all things considered. All of us had improved quite a bit since the beginning of the year, but she still wasn’t satisfied with the results."
@@ -675,8 +675,8 @@ label MarikoP4:
     n "When am I going to learn how to do one of those crazy lifts?"
     n "These muscle bound  broads are starting to make me look bad."
 
-    hide MBase
-    show MSmiletalk
+    hide mariko
+    show mariko smile talk
 
     m "Hah! You’d make a better Flyer than a Base."
     m "I’d focus on cleaning up your floor work before you go attempting any stunts."
@@ -687,15 +687,15 @@ label MarikoP4:
 
     "She rolled her eyes."
 
-    hide MSmiletalk
-    show MTalk
+    hide mariko smile talk
+    show mariko talk
 
     m "Fine, here we’ll start with a basic shoulder sit."
 
     n "Cool… and that would be."
 
-    hide MTalk
-    show MJudge
+    hide mariko talk
+    show mariko judging
 
     m "Ugh, I’m too tired for this."
     m "It’s in the name Nagen, just, kneel on the ground with one knee out at a 90 degree angle and I’ll hop onto your shoulders."
@@ -704,7 +704,7 @@ label MarikoP4:
     "I followed her instructions. It was clumsy, but I managed to stand up with the added weight."
     "My back might murder me tomorrow though, she’s heavier than she looks."
 
-    hide MJudge
+    hide mariko judging
 
     n "Hah! See, that wasn’t so hard, I can do this crap too."
 
@@ -731,7 +731,7 @@ label MarikoP4:
     "How can someone so outwardly lively just not take care of themselves like this?"
     "My concern only grew when she woke up bawling her eyes out."
 
-    show MCry
+    show mariko crying
 
     m "I’m sorry. I’m sorry I yelled. Please listen to me, don’t follow him. NO!"
 
@@ -741,8 +741,8 @@ label MarikoP4:
 
     n "Mariko?"
 
-    hide MCry
-    show MMadtalk
+    hide mariko crying
+    show mariko mad talk
 
     m "AH!"
 
@@ -750,8 +750,8 @@ label MarikoP4:
 
     "She laughed that horrid, hollow laugh."
 
-    hide MMadtalk
-    show MFrowntalk
+    hide mariko mad talk
+    show mariko upset talk
 
     m "Don’t look at me like that. Why are you even here. Where… Where am I?"
 
@@ -759,20 +759,20 @@ label MarikoP4:
 
     "As if that wasn’t scary enough, now she’s shouting things in her sleep."
 
-    hide MFrowntalk
+    hide mariko upset talk
 
     menu:
         "It's not your fault.":
             $ mRep += 1
 
-            show MTalk
+            show mariko talk
 
             m "Huh?"
 
             n "I have a hard time forgiving myself for mistakes I made, sometimes it helps to hear someone else say it."
 
-            hide MTalk
-            show MCry
+            hide mariko talk
+            show mariko crying
 
             m "I’m sorry for making you worry."
 
@@ -783,15 +783,15 @@ label MarikoP4:
 
             n "You’d be surprised how much I get that."
 
-            hide MCry
-            show MTalk
+            hide mariko crying
+            show mariko talk
 
             m "Haha… Hey Nagen, is it normal to… Do you ever have nightmares about your friends dying?"
 
             n "Sometimes."
 
-            hide MTalk
-            show MCry
+            hide mariko talk
+            show mariko crying
 
             m "Then it goes away. The dreams, they’ll go away right?"
             m "I can’t- I can never save them when I’m asleep. It just keeps happening over and over again."
@@ -802,12 +802,12 @@ label MarikoP4:
 
             m "Nagen, I’m tired of being scared all the time."
 
-            hide MCry
+            hide mariko crying
 
         "Why are you doing this to yourself?":
             $ mRept -= 1
 
-            show MSmiletalk
+            show mariko smile talk
 
             n "You’ve got to stop this!"
 
@@ -815,8 +815,8 @@ label MarikoP4:
 
             n "What, you think this is funny?"
 
-            hide MSmiletalk
-            show MBase
+            hide mariko smile talk
+            show mariko
 
             n "Not eating or drinking, and working yourself until you pass out?"
             n "You’re going to get yourself killed at this rate."
@@ -826,8 +826,8 @@ label MarikoP4:
 
             n "What’s more important than your own wellbeing?"
 
-            hide MBase
-            show MGlare
+            hide mariko
+            show mariko glaring
 
             m "Everything. Literally everything. I don’t deserve to be a priority right now."
 
@@ -837,12 +837,12 @@ label MarikoP4:
             m "Stop acting like I’m the problem here."
             m "If you were so worried about other people’s wellbeing, where was it when my friends were out their fighting your war?"
 
-            hide MGlare
+            hide mariko glaring
 
         "What happened?":
             $ Vigor += 1
             
-            show MTalk
+            show mariko talk
 
             n "You were crying in your sleep about people following someone."
 
@@ -850,8 +850,8 @@ label MarikoP4:
 
             n "You don’t have to tell me if it’s too painful."
 
-            hide MTalk
-            show MCry
+            hide mariko talk
+            show mariko crying
 
             m "It’s… I mean, I can, I just... I don’t want to think about it too much."
 
@@ -865,17 +865,17 @@ label MarikoP4:
 
             m "I was the only one that stayed behind."
 
-            hide MCry
+            hide mariko crying
     $ Vigor += 1
     $ mTurn += 1
 
     if mRep >= 2:
 
-        show MCry
+        show mariko crying
 
         m "What’s the most important quality for a person to have?"
 
-        hide MCry
+        hide mariko crying
         menu:
                 "Bravery":
                     $ Intel += 1
@@ -886,7 +886,7 @@ label MarikoP4:
                 "Strength":
                     $ Vigor += 1
 
-        show MBase
+        show mariko
 
         m "For me it’s loyalty. If you make a promise to someone, you have to keep it, no matter what."
         
@@ -896,24 +896,24 @@ label MarikoP4:
 
         n "Are you in trouble?"
 
-        hide MBase
-        show MTalk
+        hide mariko
+        show mariko talk
 
         m "I’m not sure yet. I have… a lot of thinking to do."
 
         n "If there’s anything I can help with, let me know."
 
-        hide MTalk
-        show MSmiletalk
+        hide mariko talk
+        show mariko smile talk
 
         m "Thanks. I really do think of you as a friend Nagen. Please don’t forget that."
 
-        hide MSmiletalk
+        hide mariko smile talk
 
         return
     else:
         
-        show MBase
+        show mariko
         
         m "I don’t think you should come around here anymore."
 
@@ -923,8 +923,8 @@ label MarikoP4:
 
         n "But-"
 
-        hide MBase
-        show MFrowntalk
+        hide mariko
+        show mariko upset talk
 
         m "I get it. You like the idea of me. It’s sweet, but I can’t waste my girl’s time talking to you."
 
@@ -938,13 +938,13 @@ label MarikoP4:
 
         "She dragged herself out of the cot and left me behind."
 
-        hide MFrowntalk
+        hide mariko upset talk
 
         return
 label MarikoPF:
     scene backgroundfield
 
-    show MBase
+    show mariko
 
     m "Nothing's changed Nagen. Go talk to someone else."
 

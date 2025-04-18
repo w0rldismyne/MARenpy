@@ -29,7 +29,7 @@ scene backgroundcourtyard
 
 "I followed the sound to the back courtyard."
 
-show YEyeroll
+show yoku eyeroll
 
 "Oh, it’s that guy. Yoku sat playing a beat up violin."
 "I’m begrudgingly amazed he can make it sound so incredible."
@@ -38,8 +38,8 @@ show YEyeroll
 
 n "Why did you stop playing?"
 
-hide YEyeroll
-show YIrate
+hide yoku eyeroll
+show yoku furious1
 
 y "Your footsteps were so o-obnoxious, I could hardly hear myself play."
 y "For an Ex-Sniper, you sure love to breathe through your m-mouth."
@@ -50,8 +50,8 @@ y "I can’t help but n-notice, having div-v-visive hearing will do that."
 
 "He put away his instrument with a sullen expression his face"
 
-hide YIrate
-show YIrate2
+hide yoku furious1
+show yoku furious2
 
 y "This place is so far rem-moved from most refugee sites, I had hoped to finally practice in peace."
 y "Even with such sm.mall numbers, this place manages to feel crowded."
@@ -60,8 +60,8 @@ y "Even with such sm.mall numbers, this place manages to feel crowded."
 
 n "It’s not too late to become a hermit and live in the Andes."
 
-hide YIrate2
-show YBummed
+hide yoku furious2
+show yoku bummed
 
 y "A nice sentim-ment, but logistically impractical. As a m-musician, I need to be relatively app-proachable."
 
@@ -69,18 +69,18 @@ y "A nice sentim-ment, but logistically impractical. As a m-musician, I need to 
 
 n "You’re pretty good, I think this is the first time I’ve heard you play."
 
-hide YBummed
-show YIrate
+hide yoku bummed
+show yoku furious1
 
 y "P-p-pretty good? Ugh, I have to tr-ry harder."
 
-hide YIrate
+hide yoku furious1
 
 menu:
     "Your playing is fine":
         $ yRep += 1
 
-        show YIrate2
+        show yoku furious2
 
         y "Fine isn’t good e-enough, I need to master every instrument if I’m ever to rise above pedestrian talent."
         y "‘Fine’ doesn’t earn co-ontracts or benefactors."
@@ -88,14 +88,14 @@ menu:
         n "I thought you were a composer."
         n "I get that you don’t like people, but I’m pretty sure directing musicians is part of the job description."
 
-        hide YIrate2
-        show YEyeroll
+        hide yoku furious2
+        show yoku eyeroll
 
         y "I can’t use other m-musicians, it’s part of the rules."
 
         n "Rules?"
 
-        hide YEyeroll
+        hide yoku eyeroll
         show YBlush
 
         y "I must write and perform a sere-serenade using every instrument, a-alone."
@@ -104,7 +104,7 @@ menu:
         n "Sounds like a fool’s errand to me. Whoever told you that just wanted to keep you busy."
 
         hide YBlush
-        show YBashful
+        show yoku bashful
 
         y "You’re probably right. No m-matter, I am a man of my word."
         y "Besides, once I achieve the impossible, people will be b-breaking down my door with job offers. I should invest in a business address."
@@ -115,7 +115,7 @@ menu:
     "Does it matter?":
         $ Intel += 1
 
-        show YTalk
+        show yoku talk
 
         n "As long as you enjoy playing, that’s all that should matter, right?"
 
@@ -123,8 +123,8 @@ menu:
 
         n "You have to be exaggerating, when do you sleep."
 
-        hide YTalk
-        show YEyeroll
+        hide yoku talk
+        show yoku eyeroll
 
         y "Including weekends the nu-umbers added up. I’m not so careless as to negl-l-lect needs, unlike some people."
 
@@ -136,8 +136,8 @@ menu:
 
         n "The most successful are the ones who possess both. Otherwise you end up suffering and loose whatever interest you had."
 
-        hide YEyeroll
-        show YThink
+        hide yoku eyeroll
+        show yoku think
 
         y "Are you under the impr-r-ression I ha-ate what I do?"
         y "This isn’t a hobby for m-me, it’s a car-reer. I’m serious about what I do, that’s all."
@@ -147,17 +147,17 @@ menu:
 
         n "My bad, it just didn’t seem like any of it was making you happy."
 
-        hide YThink
-        show YIrate2
+        hide yoku think
+        show yoku furious2
 
         y "Is that so? Hmm… You’ve giv-ven me so-omething to think about."
 
-        hide YIrate2
+        hide yoku furious2
 
     "I'm not easily impressed":
         $ yRep -= 1
 
-        show YIrate2
+        show yoku furious2
 
         y "I’m not trying to imp-press you!"
 
@@ -169,8 +169,8 @@ menu:
 
         "No witty comeback to that one I see."
 
-        hide YIrate2
-        show YThink
+        hide yoku furious2
+        show yoku think
 
         y "She isn’t h-here right now, but I had hoped she would be."
 
@@ -186,12 +186,12 @@ menu:
 
         n "Uh, yeah, good luck with that."
 
-        hide YThink
+        hide yoku think
 
 $ Intel += 1
 $ yTurn += 1
 
-show YBase
+show yoku
 
 "He finished packing up his stuff with a sigh."
 
@@ -204,8 +204,8 @@ y "Why would you, a famed villain of sorts, be wa-andering around school like no
 
 n "You don’t seem to have a problem talking to me. I mean, yeah I get the stigma, but just because I did bad things doesn’t make me an asshole, or a bad person."
 
-hide YBase
-show YIrate
+hide yoku
+show yoku furious1
 
 y "So you’re just here b-because you can be?"
 
@@ -215,7 +215,7 @@ y "N.no, but it’s certainly disappointing."
 
 "I don’t know what this guy expects of me."
 
-hide YIrate
+hide yoku furious1
 return
 
 label Yoku2:
@@ -224,7 +224,7 @@ label Yoku2:
     "I should have known coming here was a mistake."
     "Granted, I wasn’t given a choice, but that’s besides the point. I’m pretty sure the penitentiary wouldn’t be blasting wonky classical music at all hours."
 
-    show YIrate
+    show yoku furious1
 
     n "Three in the morning, doesn’t this guy ever stop?"
 
@@ -238,8 +238,8 @@ label Yoku2:
 
     n "I don’t care if it’s Mozart’s Birthday! It’s too early for this! Go to bed."
 
-    hide YIrate
-    show YEyeroll
+    hide yoku furious1
+    show yoku eyeroll
 
     y "Gladly, as soon as they change my room a-assignment. My neighbor apparently has night terrors."
     y "I don’t do well with s-sudden screams in the night, though that’s not why you ca-ame to talk to me."
@@ -250,8 +250,8 @@ label Yoku2:
 
     n "I know what night terrors are, and it’s usually a stress response. Do you know what they were screaming about?"
 
-    hide YEyeroll
-    show YBummed
+    hide yoku eyeroll
+    show yoku bummed
     
     y "Most of it was unintelligible. I’m surp-prised you care."
 
@@ -264,21 +264,21 @@ label Yoku2:
 
     y "I’m used to certain co-omforts. Adjusting has been d-difficult."
 
-    hide YBummed
+    hide yoku bummed
 
     menu:
         "What are you used too?":
             $ yRep += 1
 
-            show YThink
+            show yoku think
         
             y "I was brought into this world for the sole purpose of crossbreeding my-y abilities with a higher ranking Proficiency User to create the most a-accomplished and influential musician."
             y "As long as I did what I was s-supposed to, my parents left me a-alone."
 
             "How can he talk about this so casually."
 
-            hide YThink
-            show YTired
+            hide yoku think
+            show yoku tired
 
             y "You seem surprised. Wasn’t it the same for you?"
             y "Professor Tesuta was a product of s-selective breeding as well. They talked so highly of you, I just a-assumed."
@@ -286,15 +286,15 @@ label Yoku2:
             n "No, I was a lab rat for Estella’s research facility. They hovered over me all the time. I felt like I was in a zoo."
             n "Didn’t matter though, they still didn’t get the results they wanted."
 
-            hide YTired
-            show YTalk
+            hide yoku tired
+            show yoku talk
 
             y "I see. That’s why you were never present for the ba-anquets, you were being marketed with false a-advertising."
 
             n "Hey!"
 
-            hide YTalk
-            show YBummed
+            hide yoku talk
+            show yoku bummed
 
             y "You didn’t miss much. It was a g-glorified auction at best."
             y "Though, if you’d gone, maybe people would have stopped s-suggesting I was ‘lucky’ to attend."
@@ -306,12 +306,12 @@ label Yoku2:
 
             "So Yoku stuck in one of those Proficiency mills. That could have very easily been me."
 
-            hide YBummed
+            hide yoku bummed
 
         "Suck it up":
             $ yRep -= 1
 
-            show YIrate
+            show yoku furious1
 
             n "All I ever hear you do is complain, but you never do anything about it. So people rub you the wrong way, who cares? Grow up and stop acting like a spoiled brat."
 
@@ -320,8 +320,8 @@ label Yoku2:
 
             n "You take that back!"
 
-            hide YIrate
-            show YIrate2
+            hide yoku furious1
+            show yoku furious2
 
             y "I’m sorry, did I hurt your feelings? What are you g-going to do, kill me so you’ll feel better about yourself?"
             y "I may not t-tolerate the general public, but at l-least I value their lives."
@@ -332,8 +332,8 @@ label Yoku2:
 
             "He pulled out his instrument."
 
-            hide YIrate2
-            show YBase
+            hide yoku furious2
+            show yoku
 
             y "“I suggest you inv-vest in a pair of ear plugs, otherw-wise it will be a long night."
 
@@ -341,12 +341,12 @@ label Yoku2:
 
             "He lowered his bow with a glare."
 
-            hide YBase
+            hide yoku
 
         "Adjusting is difficult for everyone":
             $ Intel += 1
 
-            show YSad
+            show yoku sad
 
             n "A lot of people just came out of war torn areas. I know you like to blame me for it, but things wouldn’t be this way if I had a say in things."
 
@@ -359,19 +359,19 @@ label Yoku2:
 
             "I never programmed it to do that."
 
-            hide YSad
-            show YBummed
+            hide yoku sad
+            show yoku bummed
 
             y "More than any haunting m-melody, I fear silence."
             y "Even if no one wants to hear me play a-anymore, I will continue to practice."
 
             n "If that’s the case, maybe practicing in the middle of the night isn’t the best thing."
 
-            hide YBummed
+            hide yoku bummed
     $ yTurn += 1
     $ Intel += 1
 
-    show YBase
+    show yoku
 
     y "Were things the way they were sup-p-posed to be, I wouldn’t be staying in the dorms at all. My grandparents’ home was once in the a-area."
 
@@ -379,8 +379,8 @@ label Yoku2:
 
     "I remembered Hiro's story about living in the shared rooms in the foster home. It still kinda bugs me."
 
-    hide YBase
-    show YIrate
+    hide yoku
+    show yoku furious1
 
     y "It wasn’t an est-tate. It was some townhome. I doubt it’s on the list for renovation."
 
@@ -392,13 +392,13 @@ label Yoku2:
 
     y "If you start screaming again, I’ll just b-bang on your wall to wake you up."
 
-    hide YIrate
+    hide yoku furious1
 
     return
 label Yoku3:
     scene backgroundamp
 
-    show YBase
+    show yoku
 
     "Last time I talked to him, Yoku mentioned that his grandparents weren’t well off, but I’m certain he was a part of those uppercrust Proficiency mills. I wonder how he ended up there."
 
@@ -414,14 +414,14 @@ label Yoku3:
 
     n "You’ve mentioned before being a part of the societal banquets, I was wondering what that was like."
 
-    hide YBase
-    show YDaydream
+    hide yoku
+    show yoku daydream
 
     y "I sup-p-posed I could entertain your curiosity for a minute."
     y "To sum-m-marize, it was a bimonthly showcase where up-p-per class folks would go to pat each other on the backs."
    
-    hide YDaydream
-    show YBummed
+    hide yoku daydream
+    show yoku bummed
    
     y "There was a lot of pressure to schmooze senior members in hopes of m-marrying into a higher ring within the club."
     y "The b-best way being to brag about your accomp-plishments."
@@ -430,13 +430,13 @@ label Yoku3:
 
     y "If they would listen to you at all, the e-easiest way to reach them was through their children. I started going when I was fi-ive for that very reason."
 
-    hide YBummed
+    hide yoku bummed
 
     menu:
         "Because you weren't accomplished":
             $ yRep -= 1
 
-            show YIrate
+            show yoku furious1
             
             n "You hadn’t done anything, so you had to cozy up to the big-wigs the backway."
 
@@ -447,8 +447,8 @@ label Yoku3:
 
             "I started laughing, I couldn’t help it, picturing some snob disappointed that all their kid could do was hear well."
 
-            hide YIrate
-            show YBummed
+            hide yoku furious1
+            show yoku bummed
 
             y "That’s not… status was based on bl-l-loodline more than skill."
             y "I was at a disadvantage! That isn’t the reason at all. You’re twisting my words."
@@ -457,11 +457,11 @@ label Yoku3:
 
             "It’s obvious I’ve hit close to the mark. Or at least, he’s afraid I have."
 
-            hide YBummed
+            hide yoku bummed
         "Because it was traditional":
             $ yRep += 1
 
-            show YBummed
+            show yoku bummed
 
             y "Well, yes and no. My family was c-considered fresh blood."
             y "We didn’t have strong ties in the c-community yet. I was barely considered third g-generation, but the practice was expected."
@@ -470,15 +470,15 @@ label Yoku3:
 
             n "I can’t believe people would do stuff like this to their kids."
 
-            hide YBummed
-            show YEyeroll
+            hide yoku bummed
+            show yoku eyeroll
 
             y "A family’s l-legacy can outweigh the individual in many homes. Quite a few of my old ‘friends’ were the children of tycoons or p-politicians."
 
             n "Do you really think that?"
 
-            hide YEyeroll
-            show YTired
+            hide yoku eyeroll
+            show yoku tired
 
             y "...No. It sounds u-utterly ridiculous. For people who clung so d-desperately to the future, they were s-surprisingly short sided."
             y "All they left behind were arbitrary rules."
@@ -488,23 +488,23 @@ label Yoku3:
             n "I wouldn’t know the difference. My parents were not big on ‘family values’. They didn’t even do enough to rank at mediocre."
             n "This whole dynasty thing is so alien to me, it sounds like a giant pain."
 
-            hide YTired
-            show YTalk
+            hide yoku tired
+            show yoku talk
 
             y "I don’t imagine you wo-ould have enjoyed it, n-n-o."
 
-            hide YTalk
+            hide yoku talk
         "To find a girl to marry up":
             $ Intel += 1
 
-            show YEyeroll
+            show yoku eyeroll
 
             y "Excuse me?"
 
             n "That’s how it worked right? Weren’t you all upper class and junk?"
 
-            hide YEyeroll
-            show YIrate
+            hide yoku eyeroll
+            show yoku furious1
 
             y "Well technically speaking yes, but in that small of a pond a single d-demerit could ruin your c-comparable value."
 
@@ -519,8 +519,8 @@ label Yoku3:
             n "That’s so messed up. A kid shouldn’t have to prove their worth."
             n "Learning how to take care of yourself is enough without piling other crap on."
 
-            hide YIrate
-            show YSad
+            hide yoku furious1
+            show yoku sad
 
             y "Quite. Though, I’ll admit it’s nice to hear you assumed differently."
 
@@ -529,11 +529,11 @@ label Yoku3:
 
             y "It’s true. I had hoped school here would be a fre-esh start for me."
 
-            hide YSad
+            hide yoku sad
     $ yTurn += 1
     $ Intel += 1
 
-    show YBummed
+    show yoku bummed
     
     y "My parents dreamed that the Y-Y-Yoku name would go down in music history under a legendary composer."
     y "They shared with me their love of music and their dreams. On.nly, they didn’t intend for me to be that c-composer."
@@ -541,22 +541,22 @@ label Yoku3:
 
     n "Then why are you bothering with all the instruments and commissions? Isn’t that the golden ticket to do whatever you want?"
 
-    hide YBully
-    show YTalk
+    hide yoku bully1
+    show yoku talk
 
     y "I wa-ant to do this. Granted, the terms are a little extreme and I’m expected to fail, but that alone doesn’t m-mean I shouldn’t try."
 
     n "But I mean, what would you get out of it? It just seems like a giant waste of time."
 
-    hide YTalk
-    show YDaydream
+    hide yoku talk
+    show yoku daydream
 
     y "I get to do what I love. I get to spend ev-veryday bringing something into existence that’s never b-been done before."
 
     "I’ve never seen him speak with such passion before. Well, about something positive, that is."
     
-    hide YDaydream
-    show YBase
+    hide yoku daydream
+    show yoku
 
     y "I came here because it w-would bring me closer to my goal, regardless of the risks…"
     y "Why are you here?"
@@ -569,8 +569,8 @@ label Yoku3:
     
     n "I.."
 
-    hide YBase
-    show YSad
+    hide yoku
+    show yoku sad
 
     y "Still no answer of your o-own."
     y "That kind of lazy thi-inking will get you nowhere."
@@ -579,7 +579,7 @@ label Yoku3:
 
     y "Whenever you fi-igure out the answer, let me know."
 
-    hide YSad
+    hide yoku sad
 
     return
 
@@ -590,21 +590,21 @@ label Yoku4:
     "After our last talk I hadn’t expected Yoku to reach out to me of his own volition."
     "He said he wanted to talk to me about something, but he’s just been kinda staring at me intently. I feel like prey."
 
-    show YBase
+    show yoku
 
     y "You’re a person…"
 
     n "Yes, have been my whole life."
 
-    hide YBase
-    show YTalk
+    hide yoku
+    show yoku talk
 
     y "So you know what p-people would like…"
 
     n "I’d like to believe I have a loose understanding of the trends, yes."
 
-    hide YTalk
-    show YThink
+    hide yoku talk
+    show yoku think
 
     y "And girls a-are people…"
 
@@ -612,8 +612,8 @@ label Yoku4:
 
     n "I’m not going to pretend that I know what every woman in the universe wants."
 
-    hide YThink
-    show YBase
+    hide yoku think
+    show yoku
 
     y "But we agree th-that girls are people."
 
@@ -625,7 +625,7 @@ label Yoku4:
 
     y "Just li-isten."
 
-    hide YBase
+    hide yoku
     
     scene backgroundYPath
 
@@ -719,7 +719,7 @@ label Yoku4:
 
     scene backgroundpond
 
-    show YTired
+    show yoku tired
 
     y "I try incredibly ha-ard to come off as el-l-loquent and refined, but I’m still the same stuttering child I was before this all started."
     y "Co-oming here hasn’t changed anything."
@@ -727,8 +727,8 @@ label Yoku4:
     n "Well, no, it’s not going to. No one can make you do anything regardless of how good their intentions are."
     n "There isn’t some great solution or cure all that saves you from being you, but that’s okay."
 
-    hide YTired
-    show YIrate
+    hide yoku tired
+    show yoku furious1
 
     y "Of course you w-would think that."
 
@@ -736,8 +736,8 @@ label Yoku4:
     n "In fact, you’ll never be able to make any progress until you find at least one thing about yourself that’s worth protecting."
     n "Figure out what that is, and then you can work on trying to change the things that you hate."
 
-    hide YIrate
-    show YSad
+    hide yoku furious1
+    show yoku sad
 
     y "I can’t cha-ange the way I talk, or the way people see me."
 
@@ -750,8 +750,8 @@ label Yoku4:
     n "Most people can’t even get that far. You’re getting too caught up on the details."
     n "As long as what you’re doing moves you towards that goal, you’ll be fine."
 
-    hide YSad
-    show YBase
+    hide yoku sad
+    show yoku
 
     y "Are you one of those p-people; the type that doesn’t know what they wa-ant?"
 
@@ -759,15 +759,15 @@ label Yoku4:
     n "I thought Guwon was the key to that, but that didn’t make things any better, it just made things different."
     n "After the year is over, I don’t know what I’m going to do."
 
-    hide YBase
-    show YDaydream
+    hide yoku
+    show yoku daydream
 
     y "Then you do have a g-goal. Even if it’s small, y-you have a purpose."
     
     n "Yeah… Yeah, you’re right!"
 
-    hide YDaydream
-    show YBase
+    hide yoku daydream
+    show yoku
 
     y "I always thought you were far more… ca-alculating then you seem."
 
@@ -775,8 +775,8 @@ label Yoku4:
 
     "He nodded, seemingly in deep thought."
 
-    hide YBase
-    show YJoy
+    hide yoku
+    show yoku joy
 
     y "It seems I have misju-udged your potential as an ally. I will not do the same a sec-cond time."
 
@@ -785,7 +785,7 @@ label Yoku4:
     y "You’ve been pushing to become stu-udent council president, have you not? Should you be serious about this endeav-vor, you have my unw-wavering support."
     y "I look fo-orward to speaking with you at ano-other time."
 
-    hide YJoy
+    hide yoku joy
 
     "Wow"
     "Just… I’m not sure how to feel."
@@ -795,10 +795,10 @@ label Yoku4:
 label YokuF:
     scene backgroundcourtyard
 
-    show YSad
+    show yoku sad
 
     y "Sorry Nagen, my next piece isn't finished yet."
 
-    hide YSad
+    hide yoku sad
     
     return

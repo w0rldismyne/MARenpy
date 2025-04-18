@@ -17,7 +17,7 @@ label prologue:
     "I guess when most adults see a kid act out of line, they want to control the situation."
     "Funny, seeing as that's the very thing I've been fighting for: a chance to be in control of my life."
 
-    show CopBase
+    show cop
 
     cop "Please state your name and registered Proficiency."
 
@@ -25,7 +25,7 @@ label prologue:
     n "I have an Intelligence Proficiency."
     n "Anything I see, hear, or experience is recorded in perfect detail."
 
-    hide CopBase
+    hide cop
 
     "I tap the side of my head."
     "Having a great memory doesn't really make me smarter than anyone else, but the ability falls under the Intelligence major."
@@ -33,27 +33,27 @@ label prologue:
     "I mean, some people can go their whole lives without realizing they have a Proficiency."
     "It's nothing special. The only reason I know about mine is because I was conditioned to have it."
 
-    show CopBase
+    show cop
 
     cop "Look, you and I both know it's not looking good for you."
     cop "I mean, you've heard the charges: premeditated murder, inciting a riot, mayhem, and menticide."
     cop "These are all with a registered Proficiency which will add twenty-five more years to your sentence."
     cop "Don't even get me started on the use of deadly weapons."
 
-    hide CopBase
+    hide cop
 
-    show KoeBase
+    show koe
 
     ka "There's more than enough evidence to try you and your cohorts as adults."
     ka "In the case of The Supreme Court vs. Lethe, vigilantism was determined to be a Class One felony."
 
-    hide KoeBase
-    show KoeSmirk
+    hide koe
+    show koe smirk
     ka "Some of her sympathizers seem to think they are above the law, like you."
     ka "If we were able to find her remaining supporters, it would be an excellent demonstration of goodwill."
     ka "We all remember-"
 
-    hide KoeSmirk
+    hide koe smirk
     # Change soundtrack
     play music "music/WhereS.mp3"
 
@@ -64,23 +64,23 @@ label prologue:
     n "I know you. Koe Amagi, you were the prosecutor during Lethe's trial."
     n "Trying to extort information out of a child for your old department? That's surprisingly underhanded of you."
 
-    show KoeBase
+    show koe
 
     ka "Then you understand what you're up against."
     ka "Choosing to represent yourself in court only gave you a fool for a client."
 
     "She's the prosecutor for my case!?"
 
-    hide KoeBase
-    show KoeEh
+    hide koe
+    show koe eh
 
     ka "I'm just doing my job, Mr. Tesuta and ensuring I have all the information I need for my case."
     
-    hide KoeEh
-    show CopBase
+    hide koe eh
+    show cop
 
     cop "Just make this easier on yourself and fold. It'll be better than what your friends are going through."
-    hide CopBase
+    hide cop
 
     menu:
         "Confess everything":
@@ -108,12 +108,12 @@ label prologue:
     n "I'm sorry, it's going to take more than a movie cliché to get me to tell anyone anything."
     n "Also, I was never read my rights, so unless you want a mistrial, I suggest you start treating me like an adult before trying me like one."
 
-    show CopBase
+    show cop
 
     cop "That's not how the system works, kid."
 
-    hide CopBase
-    show KoeBase
+    hide cop
+    show koe
 
     ka "No, he has a valid point. You want to be talked to like an adult? Fine."
     ka "Mr. Tesuta, if you don't give us the information we need, there will be no 'deal'."
@@ -121,7 +121,7 @@ label prologue:
 
     "So it's her way or no way, hunh? Fine, whatever, she has her reasons; I have mine."
 
-    hide KoeBase
+    hide koe
 
     menu:
         "I have to protect my teammates": #(+Hero, +Vis)
@@ -143,7 +143,7 @@ label prologue:
             "Maimai would be heartbroken if I got locked away. She's been through this before."
             "I practically have a walkthrough written on my sleeve."
 
-            show CopBase
+            show cop
 
             cop "Do you believe you are guilty of these crimes?"
 
@@ -151,7 +151,7 @@ label prologue:
 
             "I've talked too much already. Isn't the confession enough?"
 
-            hide CopBase
+            hide cop
 
             jump interrogation_2
 
@@ -178,19 +178,19 @@ label prologue:
     n "I fully understood the ramifications of my actions and stand at the mercy of the court."
     n "I aided in the brainwashing of my classmates and tried to conquer the Guwon Province for my own benefit."
 
-    show CopBase
+    show cop
 
     cop "That's all we need to hear."
 
-    hide CopBase
-    show KoeBase
+    hide cop
+    show koe
 
     ka "Not quite. I still have a few questions for Mr. Tesuta."
     ka "The Junior Gladiators started as a club at your school, later to fall down a path of destruction."
     ka "And yet, no one can tell us whose fault this was."
     ka "In your estimation, who was the leader during the attack?"
 
-    hide KoeBase
+    hide koe
 
     menu:
         "The one who told us to kill":
@@ -247,7 +247,7 @@ label prologue:
             "After Lethe died, she insisted we continue with our plans so that everyone would be happy again."
             "It's amazing how far out of hand things got."
 
-            show CopBase
+            show cop
 
             cop "Do you know where Ms. Hato is?"
 
@@ -255,13 +255,13 @@ label prologue:
 
             "I want to believe she's still out there, but..."
 
-            hide CopBase
+            hide cop
 
             jump interrogation_3
 
     label interrogation_3:
 
-    show KoeBase
+    show koe
 
     ka "You were apprehended by Vivaldi Thani before you were able to carry out your plan to completion, correct?"
 
@@ -269,7 +269,7 @@ label prologue:
 
     ka "What did you intend to do once you took over the city?"
 
-    hide KoeBase
+    hide koe
 
     menu:
         "Fortify the city against my enemies": #(+Villain, +Vig)
@@ -278,7 +278,7 @@ label prologue:
             n "I just wanted a place where I could feel safe. Anyone there was free to leave, but they chose to stay."
             n "They took up arms, and I had to defend myself."
 
-            show KoeBase
+            show koe
 
             ka "According to eyewitness testimonies, you sought out innocent civilians who were in hiding and killed them on sight."
             ka "We found seventeen assault rifles in your room. Were these also for your defense?"
@@ -290,7 +290,7 @@ label prologue:
             "Wandering around the city with a gun was safer than going back home anyway."
             "I had all kinds of other machines I was playing with that I got from the junkyard, but that's not what they care about."
 
-            hide KoeBase
+            hide koe
 
             jump interrogation_4
 
@@ -300,7 +300,7 @@ label prologue:
             n "Before making any plans, I would have had to reverse the damage that had been done."
             n "I was in command of over five hundred people; they needed a place to live once the dust settled."
 
-            show KoeBase
+            show koe
 
             ka "That's all?"
 
@@ -316,7 +316,7 @@ label prologue:
 
             "I tried my best to keep everyone safe, even if it meant lying. I can't let them down now."
 
-            hide KoeBase
+            hide koe
 
             jump interrogation_4
 
@@ -330,7 +330,7 @@ label prologue:
 
             "I would have loved to see it spread past Guwon, but the opportunity never presented itself."
 
-            show KoeBase
+            show koe
 
             ka "Lethe had similar ideals. She thought that turning citizens against each other would weed out the weak."
 
@@ -342,7 +342,7 @@ label prologue:
             "In order to take it down, you have to integrate into its life cycle and prevent it from reproducing."
             "I just tried to do so from the wrong angle. Next time, I won't be so sloppy."
 
-            hide KoeBase
+            hide koe
 
             jump interrogation_4
 
@@ -352,15 +352,15 @@ label prologue:
 
             n "....."
 
-            show CopBase
+            show cop
 
             cop "Mr. Tesuta, please answer the question."
 
             n "...I didn't. I mean, part of me thought it would never work... I just... did what I always did..."
             n "I never questioned why or what came next."
 
-            hide CopBase
-            show KoeBase
+            hide cop
+            show koe
 
             ka "And what would that be?"
 
@@ -371,14 +371,14 @@ label prologue:
             "That's just not how the world works. There is no 'after'."
             "Just now and everything that has since passed. I have to do what I can so that 'now' doesn't get me killed."
 
-            hide KoeBase
+            hide koe
 
             jump interrogation_4
 
     #[Return to Main Branch]
     label interrogation_4:
 
-    show KoeBase
+    show koe
 
     ka "And what exactly was your end goal in all of this?"
 
@@ -391,7 +391,7 @@ label prologue:
 
     ka "Why?"
 
-    hide KoeBase
+    hide koe
 
     menu:
         "It was corrupt":
@@ -402,7 +402,7 @@ label prologue:
             n "They treated us like livestock! We were paraded about as status symbols and meal tickets."
             n "No one cared what happened to us."
 
-            show KoeBase
+            show koe
 
             ka "There is no need for dramatics, Mr. Tesuta."
 
@@ -426,7 +426,7 @@ label prologue:
             "She was the one who told us to stand up and fight for what we believed in."
             "That when the dust settled, the strongest would be left standing. Even if I lost, I'm still here."
 
-            hide KoeBase
+            hide koe
 
             jump interrogation_end
 
@@ -437,7 +437,7 @@ label prologue:
             n "Where else was I supposed to start? Guwon was my home."
             n "I had never been outside of my hometown and it was as good a place as any."
 
-            show KoeBase
+            show koe
 
             ka "For what?"
 
@@ -456,7 +456,7 @@ label prologue:
             n "You act like I was the one who made them."
             "Shouldn't she be asking why it was made in the first place?"
 
-            hide KoeBase
+            hide koe
 
             jump interrogation_end
 
@@ -467,7 +467,7 @@ label prologue:
             n "Guwon is water locked, it would be the easiest to fortify."
             n "With what Odori had planned, we couldn't just set up shop anywhere. It had to be someplace secure."
 
-            show KoeBase
+            show koe
 
             ka "What exactly did she have planned?"
 
@@ -486,7 +486,7 @@ label prologue:
             n "It was the most pragmatic decision."
             n "I believed Lethe had our best interests in mind, same as you believe she was a monster."
 
-            hide KoeBase
+            hide koe
 
             jump interrogation_end
 
@@ -499,7 +499,7 @@ label prologue:
             n "Even after she was gone, people were still fighting each other."
             n "I believe it's the entire reason your department exists, madam Vice President."
 
-            show KoeBase
+            show koe
 
             ka "Our department exists to regain peace, not to insight riots in the streets."
 
@@ -515,13 +515,13 @@ label prologue:
 
             n "Casualties were bound to happen, you're assuming our activities caused more."
 
-            hide KoeBase
+            hide koe
             
             jump interrogation_end
 
     label interrogation_end:
 
-    show KoeEh
+    show koe eh
 
     ka "I rest my case. It is clear that Nagen Tesuta is guilty of all crimes, and shows no remorse for what he has done."
 
@@ -531,8 +531,8 @@ label prologue:
 
     n "Objection!"
 
-    hide KoeEh
-    show CopBase
+    hide koe eh
+    show cop
 
     cop "That's not how an interrogation works, Mr. Tesuta."
 
@@ -540,8 +540,8 @@ label prologue:
     n "None of the prosecution's questions have been relevant to the charges at hand; they've been about my character."
     n "In fact, all of Ms. Amagi's questions were about proving that my group was malicious and dangerous to society."
 
-    hide CopBase
-    show KoeHmm
+    hide cop
+    show koe hmm
 
     ka "This is outrageous and highly unprofessional."
 
@@ -554,8 +554,8 @@ label prologue:
 
     n "I want to change the terms of the deal."
 
-    hide KoeHmm
-    show KoeSmirk
+    hide koe hmm
+    show koe smirk
 
     ka "You mean the plea bargain?"
 
@@ -572,8 +572,8 @@ label prologue:
     n "The ones who destroyed everything, not just Guwon. I can tell you where they are."
     n "Just let me and my friends go."
 
-    hide KoeSmirk
-    show KoeBase
+    hide koe smirk
+    show koe
 
     ka "And how do you expect us to believe your group is so blameless?"
 
@@ -587,8 +587,8 @@ label prologue:
 
     "Wait a minute, what?"
 
-    hide KoeBase
-    show KoeSmirk
+    hide koe
+    show koe smirk
 
     ka "If your members cooperate and complete the program, we will drop the charges."
     ka "Of course, the Junior Gladiators are officially disbanded and will not be allowed to continue any further activities."
@@ -599,8 +599,8 @@ label prologue:
     "I mean, yeah I wanted to get my friends out of this, but I didn't want to make them into guinea pigs like me."
     "There's no telling what these people might do for the sake of 'science'."
 
-    hide KoeSmirk
-    show CopBase
+    hide koe smirk
+    show cop
 
     cop "The terms have been set."
     cop "If the Junior Gladiators complete the DVP's Villain Prevention Program and can prove they can integrate back into society, they will be issued a full pardon."
@@ -623,7 +623,7 @@ label prologue:
     window hide
     with Dissolve(1.0)
 
-    hide CopBase
+    hide cop
     with dissolve
 
     play music "music/leaf.mp3"
@@ -647,7 +647,7 @@ label prologue:
 
     n "Maimai?"
 
-    show MMBase
+    show maimai
 
     mm "The one and only."
 
@@ -684,13 +684,13 @@ label prologue:
     mm "After those DVP schmucks found out my methodology, I had to retire from stuffing orchids down criminals' windpipes and ditch the costume."
     mm "Besides, it wasn't suitable for my new role."
 
-    hide MMBase
+    hide maimai
 
     menu:
         "New role?":
             #$ Charm += 1
 
-            show MMBase
+            show maimai
 
             mm "Pantsuit, short hair, dorky accessories; I'm one minivan away from perfection."
 
@@ -713,13 +713,13 @@ label prologue:
 
             n "I think the dead body would be safer."
 
-            hide MMBase
+            hide maimai
 
             jump life_1
 
         "Where are we going?":
             #$ Intel += 1
-            show MMBase
+            show maimai
 
             mm "Someplace safe."
             mm "The DVP would like you to believe the best place for you is with them; they're only half right."
@@ -740,14 +740,14 @@ label prologue:
 
             mm "I'm not a monster! It's more complicated than that. You just gotta trust me."
 
-            hide MMBase
+            hide maimai
 
             jump life_1
 
     #[Return to Main Branch]
     label life_1:
 
-    show MMBase
+    show maimai
     
     mm "I had to cash in an old favor to get us out of this mess."
     mm "I was hoping to leave his debt dangling over his head for a few more years, but this is more important."
@@ -794,7 +794,7 @@ label prologue:
     "As we step out of the car, I can smell the faint, eerie scent of velvet kiss growing up by the walkway."
     "The dreary gray estate looms in front of me. Utterly unwelcoming."
 
-    show MMSmile
+    show maimai smile
 
     mm "Now we just gotta find a way in!"
 
@@ -804,12 +804,12 @@ label prologue:
     n "He is expecting us, right?"
     n "You didn't just stalk the man... did you?"
 
-    hide MMSmile
-    show MMO
+    hide maimai smile
+    show maimai oh
 
     mm "No... kind of."
 
-    hide MMO
+    hide maimai oh
 
     "Of course. Why would I expect any different?"
     "I stumble after her through the leaves."
@@ -817,11 +817,11 @@ label prologue:
     "The building groans as a sizable bell rings from a tower above the gate."
     "When the door opens, I begin to understand why Maimai described my appointed guardian as a potato."
 
-    show MMSmile at left_center
+    show maimai smile at left_center
 
     mm "Surprise!"
 
-    show KenBase at right_center
+    show ken at right_center
 
     kan "What part of this arrangement involved you coming here?"
 
@@ -834,8 +834,8 @@ label prologue:
     mm "He claims otherwise, but yes, this is him."
     mm "Don't worry, in this big ol' house, you'll hardly notice us."
 
-    hide KenBase
-    show KenDamn at right_center
+    hide ken
+    show ken damn at right_center
 
     kan "Us?"
     kan "You're the one who insisted on abandoning your old identity and with it, any connection to me."
@@ -845,32 +845,32 @@ label prologue:
 
     n "I'm not your kid! And you're not a mom."
 
-    hide MMSmile
-    show MMO at left_center
+    hide maimai smile
+    show maimai oh at left_center
 
     mm "Of course I'm a mom."
     mm "We'll work out the details later."
     mm "I have a full day ahead of me dropping off the rest of the rugrat felons, but I'll be back before you know it."
 
-    hide KenDamn
-    show KenBase at right_center
+    hide ken damn
+    show ken at right_center
 
     kan "I agreed to claim to be taking care of the child."
     kan "You said nothing about living here."
 
-    hide MMO 
-    show MMFrown at left_center
+    hide maimai oh 
+    show maimai frown at left_center
 
     mm "I feel like you're hearing me, but you're not understanding."
     mm "I am a new mom and we will talk about this later."
 
-    hide MMFrown
-    show MMSmile at left_center
+    hide maimai frown
+    show maimai smile at left_center
 
     mm "I'll see you soon, Nagen."
 
-    hide MMSmile
-    hide KenBase
+    hide maimai smile
+    hide ken
 
     "What happened to not leaving me alone in a strange place?"
     "The man sighs and lets me in anyway."
@@ -884,7 +884,7 @@ label prologue:
 
         "Where am I staying?":
 
-            show KenBase
+            show ken
 
             kan "Here, apparently."
 
@@ -898,8 +898,8 @@ label prologue:
 
             "I go to leave, but he stops me."
 
-            hide KenBase
-            show KenTalk
+            hide ken
+            show ken talk
 
             kan "She didn't mention there were... others."
 
@@ -907,13 +907,13 @@ label prologue:
 
             kan "Follow me, we need to talk."
 
-            hide KenTalk
+            hide ken talk
 
             jump prologue2
 
         "Who are you?":
 
-            show KenBase
+            show ken
 
             kan "I'm a software engineer."
 
@@ -928,13 +928,13 @@ label prologue:
             kan "In a way, yes. Though it's usually incredibly difficult to get her to show herself."
             kan "The question is, why is she risking that for you and your friends?"
 
-            hide KenBase
+            hide ken
 
             jump prologue2
 
         "Why are you doing this?":
 
-            show KenBase
+            show ken
 
             n "Are they paying you to babysit me?"
             n "Or is it just because Maimai's blackmailing you?"
@@ -944,8 +944,8 @@ label prologue:
 
             n "Then why are you doing it?"
 
-            hide KenBase
-            show KenDamn
+            hide ken
+            show ken damn
 
             "He looks me over in disgust."
 
@@ -960,13 +960,13 @@ label prologue:
             kan "You seem confused."
             kan "Follow me, we have a lot to talk about."
 
-            hide KenDamn
+            hide ken damn
 
             jump prologue2
 
 label prologue2:
 
-    show KenBase
+    show ken
 
     "I follow him into a cluttered study."
     "He takes a long drink of coffee before he sits down."
@@ -1074,7 +1074,7 @@ label prologue2:
     "It's not quite the same shade of blue and the books are too new to be mine."
     "It's equally eerie and comforting."
 
-    hide KenBase
+    hide ken
 
     scene backgroundblack
 
@@ -1162,9 +1162,9 @@ label prologue2:
     "A familiar feeling of helplessness washes over me."
     "There's nothing else I can do."
 
-    show MMBase at left_center
+    show maimai at left_center
 
-    show KenTalk at right_center
+    show ken talk at right_center
 
     mm "Hey, it's going to be okay. Boarding school isn't that bad."
 
@@ -1184,13 +1184,13 @@ label prologue2:
     "I do."
     "I do hate it, but at least I know what to expect when I'm here."
 
-    hide MMBase
-    show MMSmile at left_center
+    hide maimai
+    show maimai smile at left_center
 
     mm "You can come back during the break and I'll be going with you the first day to make sure the place is on the up and up."
 
-    hide KenTalk
-    show KenBase at right_center
+    hide ken talk
+    show ken at right_center
 
     kan "I assure you, it's a legitimate establishment."
     kan "I wouldn't send him off if I wasn't familiar with the staff."
@@ -1203,13 +1203,13 @@ label prologue2:
 
     n "I hate this."
     
-    hide MMSmile
-    show MMFrown
+    hide maimai smile
+    show maimai frown
 
     mm "I know. Come on, the year will be over before you know it."
 
-    hide MMFrown
-    hide KenBase
+    hide maimai frown
+    hide ken
 
     "She herds me into the car with a forced smile on her face."
 
@@ -1246,15 +1246,15 @@ label prologue2:
     "Each classroom has a transparent door with an electronic display built-in."
     "It feels more like an observation tank than a classroom."
 
-    show MMBase
+    show maimai
 
     mm "The building had been a library since the 1600's."
     mm "I never got to see the inside, because the previous owner was such a nut job."
 
     n "Why should I care?"
 
-    hide MMBase
-    show MMSmile
+    hide maimai
+    show maimai smile
 
     mm "No, but do you think these bowties proofread every book in the building before bringing you in here?"
     mm "Who knows what you could find!"
@@ -1265,8 +1265,8 @@ label prologue2:
     "Large bay windows look out to the central courtyard."
     "We finally arrive at a large mahogany office door."
 
-    hide MMSmile
-    show MMFrown
+    hide maimai smile
+    show maimai frown
 
     mm "This is it."
     mm "Promise you'll be on your best behavior?"
@@ -1283,7 +1283,7 @@ label prologue2:
 
     "Maimai escorts me into the office."
 
-    hide MMFrown
+    hide maimai frown
     play music "music/Still.mp3"
 
     scene backgroundprincipal
@@ -1298,15 +1298,15 @@ label prologue2:
     "I wouldn't have come if I knew she'd be here."
     "She's the last person I want to talk to."
 
-    show VBase
-    show MMFrown at left
+    show vivaldi
+    show maimai frown at left
 
     v "Is something wrong?"
 
     "It's like she doesn't even care."
 
-    hide MMfrown
-    show MMSmile at left
+    hide maimai frown
+    show maimai smile at left
 
     mm "He's just nervous because it's a new school."
     mm "You know teenagers, all salty about change and stuff."
@@ -1352,7 +1352,7 @@ label prologue2:
     "I practically get pushed out of the room by Maimai."
     "The wooden doors slam shut, but her hands never leave my shoulders."
 
-    show MMBase
+    show maimai
 
     mm "I know you're a smart kid, so please... please don't go starting fights you can't finish."
 
@@ -1364,8 +1364,8 @@ label prologue2:
     n "She's going to set me up to fail."
     n "You can't expect me to believe she's okay with helping someone who trashed their hometown."
 
-    hide MMBase
-    show MMFrown
+    hide maimai
+    show maimai frown
 
     mm "I don't. That's why you need to be careful."
     mm "These people stand more to gain from your success than your failure, but I can't guarantee their motives are good-intentioned."
@@ -1378,8 +1378,8 @@ label prologue2:
 
     "Each word is slow and deliberate."
 
-    hide MMFrown
-    show MMSmile
+    hide maimai frown
+    show maimai smile
 
     mm "I'm sure you'll find some good friends here."
 
@@ -1393,7 +1393,7 @@ label prologue2:
 
     mm "You got this."
 
-    hide MMSmile
+    hide maimai smile
 
     scene backgroundschool
     with dissolve
@@ -1405,13 +1405,13 @@ label prologue2:
 
     n "Maimai, please-"
 
-    show MMSmile
+    show maimai smile
 
     mm "Be safe. Call me if anything happens."
     mm "I want to hear from you at least once a week, mister."
 
-    hide MMSmile
-    show MMFrown
+    hide maimai smile
+    show maimai frown
 
     mm "I mean it. Don't go forgetting about me, okay?"
 
@@ -1421,7 +1421,7 @@ label prologue2:
 
     n "I'll miss you too."
 
-    hide MMFrown
+    hide maimai frown
 
     scene backgroundschool
 

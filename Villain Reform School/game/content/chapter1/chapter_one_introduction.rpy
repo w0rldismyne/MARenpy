@@ -5,20 +5,20 @@ label chapter1_introduction:
 
     play music "music/CryingOverYou.mp3"
 
-    show NSmile
+    show nanase smile
     with dissolve
 
     nk "Good morning!"
 
     n "AH!"
 
-    hide NSmile
-    show NSurprise
+    hide nanase smile
+    show nanase surprised
 
     nk "I'm sorry, I didn't mean to startle you."
 
-    hide NSurprise
-    show NSmiletalk
+    hide nanase surprised
+    show nanase smile talk
     nk "My name's Nanase Keisan. I'm helping with orientation during move in week."
     nk "Will you be staying on campus this year?"
 
@@ -27,42 +27,42 @@ label chapter1_introduction:
     "Good god man, have you forgotten how to talk to people like a normal human being?"
     "Don't just stand there, say something!"
 
-    hide NSmiletalk
+    hide nanase smile talk
 
     menu:
         "Say something witty":
             $ Charm += 1
 
-            show NSmiletalk
+            show nanase smile talk
 
             n "Well, all my stuff is here already, so I might as well."
 
             "I motion to my garishly decorated luggage; my guardians said I needed more than my usual duffle bag of necessities."
             "Pretty sure I have more bags than clothes. They would have been a nice way to carry my rifles... had they let me keep them."
 
-            hide NSmiletalk
-            show NSad1
+            hide nanase smile talk
+            show nanase sad1
 
             nk "R-right, of course."
 
             "She sighs."
 
-            hide NSad1
-            show NSadsmile
+            hide nanase sad1
+            show nanase sad smile
 
             nk "You'll want to head to Classroom E-103."
             nk "Let me know if you need any help."
 
             n "Thanks, I got it."
 
-            hide NSadsmile
+            hide nanase sad smile
 
             jump nk_intro
         
         "Just answer the question":
             $ Vigor += 1
 
-            show NSmile
+            show nanase smile
 
             n "Yeees..."
 
@@ -79,13 +79,13 @@ label chapter1_introduction:
 
             "Have I taken too long? I really can handle it, it'll just be a little awkward balancing five bags."
             "Though now that I think of it, I most certainly don't own enough junk to warrant this much luggage."
-            hide NSmile
+            hide nanase smile
             jump nk_intro
 
         "Introduce yourself":
             $ Intel += 1
 
-            show NSmile
+            show nanase smile
 
             n "My name's Nagen Tesuta. Orientation is in E-103, right?"
 
@@ -94,17 +94,17 @@ label chapter1_introduction:
 
             nk "Yep. Do you need any help?"
 
-            hide NSmile
+            hide nanase smile
 
             menu:
                 "Yes":
                     $ nkRep += 1
-                    show NSmile
+                    show nanase smile
 
                     n "Actually, yeah, I could use an extra pair of hands."
 
-                    hide NSmile
-                    show NSmiletalk
+                    hide nanase smile
+                    show nanase smile talk
 
                     nk "Great, I'll walk with you! What do you need me to carry?"
 
@@ -121,14 +121,14 @@ label chapter1_introduction:
 
                     n "To each their own, I guess."
 
-                    hide NSmiletalk
+                    hide nanase smile talk
 
-                    hide NBase
+                    hide nanase
 
                     jump nk_intro
 
                 "No":
-                    show NSad2
+                    show nanase sad2
 
                     n "I'm fine, really. Thanks anyways."
 
@@ -136,7 +136,7 @@ label chapter1_introduction:
 
                     "She doesn't seem convinced, but I'm in a bit of a hurry."
 
-                    hide NSad2
+                    hide nanase sad2
                     jump nk_intro
 
 label nk_intro:
@@ -613,7 +613,7 @@ label introduction_hiro:
     "I would give anything to be in charge and shape the future of this school."
     "It may take a while, but I'm sure I can get there."
 
-    show HBase
+    show hiro
 
     h "Nagen? Nagen, is that you?"
 
@@ -629,103 +629,103 @@ label introduction_hiro:
     "I trail off. There's no way of knowing how much he knows about the deal that was cut with the DVP."
     "If I say the wrong thing, I could jeopardize his chance at getting pardoned."
 
-    hide HBase
-    show HHappy
+    hide hiro
+    show hiro happy
 
     h "Yeah, I'm surprised they're letting us go to school together."
     h "My lawyer said they were going to separate us and we weren't allowed to see each other again. I wonder what changed?"
 
-    hide HHappy
+    hide hiro happy
     menu:
 
         "Pretend to speculate":
 
             $ Intel += 1
 
-            show HHappy
+            show hiro happy
 
             n "I don't know, maybe Uitto worked her magic and cried us into a lighter sentence."
 
-            show HTALK2
+            show hiro talk2
 
             h "We could do that? Shoot, if I'da known that, I woulda taken a lemon into the courtroom or something."
 
-            hide HTALK2
-            show HSmug
+            hide hiro talk2
+            show hiro smug
             h "I mean, yeah I was kinda scared, but I totally coulda cried my way to freedom."
 
             "He's as determined as ever."
 
             n "I was thinking more along the lines of using her Proficiency. It was Diplomacy, remember?"
 
-            hide HSmug
-            show HHeadempty
+            hide hiro smug
+            show hiro suspicious
 
             "He stares at me blankly."
 
             n "She could talk people into doing things for her."
 
-            hide HHeadempty
-            show HSass
+            hide hiro suspicious
+            show hiro sassy
 
             h "Right, she was a Charisma major at the time."
 
-            hide HSass
-            show HBase
+            hide hiro sassy
+            show hiro
             h "Oh! That reminds me."
-            hide HBase
-            show HTALK1
+            hide hiro
+            show hiro talk1
             h "There's been a rumor going around that you can change your major, have you heard anything about that?"
 
             n "No, I haven't."
 
-            hide HTALK1
-            show HTalk
+            hide hiro talk1
+            show hiro talk
 
             h "Oh, that sucks. I was hoping you could explain it to me."
             h "Something to do with how Proficiencies can apply to different majors depending on how they're used."
 
-            hide HTalk
-            show HSuppress
+            hide hiro talk
+            show hiro suppress
             h "But I just don't get injured easily. I don't see how that would make me smarter or more likable."
 
             "That is odd, I'll have to look into that."
             
-            hide HSuppress
+            hide hiro suppress
 
         "Ask how he's doing":
 
             $ Charm += 1
             $ hRep += 1
 
-            show HHappy
+            show hiro happy
 
             n "Crazy, right? But it's good to see you. How have you been?"
 
-            hide HHappy
-            show HSadtalk
+            hide hiro happy
+            show hiro sad talk
 
             h "I'm living in a group home right now. It's not too bad, a little cramped, but they were willing to take me."
 
             n "That's kinda surprising."
 
-            show HSadSmile
+            show hiro sad smile
 
             h "Well, I mean, it's like a rehab center for troubled kids."
             h "We have to go to classes, and therapy sessions, and they've got this little reward system and junk."
 
-            hide HSadSmile
-            show HSadtalk
+            hide hiro sad smile
+            show hiro sad talk
             h "I had to work really hard just to be able to leave the building on my own."
 
             n "Oh, well, I mean that's good to hear. Is it nice?"
 
-            hide HSadSmile
-            show HSass
+            hide hiro sad smile
+            show hiro sassy
             h "I only have the bottom half of a bedroom door, and one of the other kids punched a hole in the wall last week."
 
-            hide HSass
-            show HSadSmile
+            hide hiro sassy
+            show hiro sad smile
             h "But the grown-ups are nice, they give me plenty of space... But it's like a respect thing, not 'cause they're scared."
 
             "Well that's good. He has a bad habit of lashing out if people get too close too suddenly."
@@ -735,17 +735,17 @@ label introduction_hiro:
             n "My foster family's a little... strange. They live in this huge house, but they don't really take care of it."
             n "It's like living in a museum. Lots of dusty old expensive things I'm not allowed to touch."
 
-            hide HSadSmile
+            hide hiro sad smile
 
         "Lawyers are dumb":
 
-            show HHappy
+            show hiro happy
 
             n "Why would they tell you that?"
             n "It wasn't a standard case, it's not like he could flip through a handbook and find the standard punishment on taking over a city."
             
-            hide HHappy
-            show HSuppress
+            hide hiro happy
+            show hiro suppress
 
             h "Well, no, I guess not."
 
@@ -753,8 +753,8 @@ label introduction_hiro:
             n "I think."
             n "I'm not sure to be honest. See, this is why I chose to represent myself."
 
-            hide HSuppress
-            show HTALK2
+            hide hiro suppress
+            show hiro talk2
 
             h "You shoulda been my lawyer instead, I'm sure you were awesome."
 
@@ -763,13 +763,13 @@ label introduction_hiro:
             n "Something like that; I'm on probation. Do you think the others are here?"
             h "I mean, it's possible. They had Proficiencies too... Maybe we could start our club back up!?"
 
-            hide HTALK2
+            hide hiro talk2
             menu:
                 "Yes":
 
                     $ Villain += 1
 
-                    show HSmirk
+                    show hiro smirk
 
                     n "Shh, keep your voice down. We can't have the DVP finding out about this."
 
@@ -781,7 +781,7 @@ label introduction_hiro:
 
                     n "This time we're doing things my way."
 
-                    hide HSmirk
+                    hide hiro smirk
 
                 "Maybe":
 
@@ -789,17 +789,17 @@ label introduction_hiro:
 
                     n "As tempting as that sounds, it'd be best if we lay low for a while. At least wait and see how things pan out for us here."
 
-                    show HHeadempty
+                    show hiro suspicious
 
                     h "What's bread got to do with this?"
 
-                    hide HHeadempty
-                    show HSmirk
+                    hide hiro suspicious
+                    show hiro smirk
 
                     "I must look like I'm about to clock him or something because he starts laughing like a mad man."
 
-                    hide HSmirk
-                    show HSmug
+                    hide hiro smirk
+                    show hiro smug
 
                     h "Dude, I'm just kidding, cool your jets."
 
@@ -811,11 +811,11 @@ label introduction_hiro:
 
                     h "Both."
                     
-                    hide HSmug
+                    hide hiro smug
 
                 "No":
 
-                    show HThisisfine
+                    show hiro sad
 
                     n "I don't know. I mean, we can't use the same group name, and it wouldn't feel right without Odori anyway."
 
@@ -824,24 +824,24 @@ label introduction_hiro:
                     "Odori was the one who brought us all together in the first place."
                     "The Junior Gladiators was her dream, and a part of it died with her."
 
-                    hide HThisisfine
-                    show HTalk
+                    hide hiro sad
+                    show hiro talk
 
                     h "Hey man, are you okay?"
 
-                    hide HTalk
+                    hide hiro talk
 
-    show HThisisfine
+    show hiro sad
 
     n "We'll be meeting later."
 
-    hide HThisisfine
-    show HTALK2
+    hide hiro sad
+    show hiro talk2
 
     h "We?"
 
-    hide HTALK2
-    show HHappy
+    hide hiro talk2
+    show hiro happy
 
     h "Wait, no way, are the other's here too?"
 
@@ -854,7 +854,7 @@ label introduction_hiro:
 
         n "Yup."
 
-    hide HHappy
+    hide hiro happy
     
     "I've spent way too long listening to what other people tell me to do."
     "Once I've finished scoping out the school, I'm breaking out the strategy board."
@@ -867,27 +867,27 @@ label introduction_mariko:
     "A few years ago, I probably wouldn't be anywhere near here. Maybe this year will be different."
     "In the corner of my eye, I see a girl in black spandex bound over, a pile of papers in her hands."
 
-    show MSheepish
+    show mariko sheepish
 
     m "Hold on a second!"
     m "Hey, the name's Mariko Genki, I'm gathering signatures to start up a Cheer Squad!"
     m "Some may say it's a little early, but it's never too early to start practic-"
 
-    hide MSheepish
-    show MMadtalk
+    hide mariko sheepish
+    show mariko mad talk
 
     "Her chipper demeanor falters once she looks up. It's as if the life has been sucked right out of her."
     "She shifts, using her papers as a physical barrier between us."
     "Floundering for a proper social response, she goes with the first thing I imagine comes to mind."
     
-    hide MMadtalk
-    show MCry
+    hide mariko mad talk
+    show mariko crying
     m "You wouldn't happen to be interested in being a cheerleader, would you?"
 
     "Her tone is tight, her smile forced. I'd judge, but I have always been awkward around people myself."
     "Being an ex-villain just makes things that more difficult, I guess."
 
-    hide MCry
+    hide mariko crying
 
     menu:
 
@@ -895,7 +895,7 @@ label introduction_mariko:
             
             $ mRep += 1
 
-            show MJudge
+            show mariko judging
 
             n "I'm not against the idea, but do you actually want me on your team?"
 
@@ -909,7 +909,7 @@ label introduction_mariko:
 
             m "I mean, anyone's allowed to join. I just never took you for the 'cheery' type. You've always been so..."
 
-            hide MJudge
+            hide mariko judging
 
             menu:
 
@@ -917,7 +917,7 @@ label introduction_mariko:
 
                     $ Charm += 1
 
-                    show MSadtalk
+                    show mariko sad talk
                     
                     "She smiles that polite, forced smile one receives out of pity."
                     "To be fair, I wasn't exactly the most outgoing kid in the world and I didn't have the best lasting impression on her."
@@ -929,8 +929,8 @@ label introduction_mariko:
 
                     n "Good luck with the cheer thing. I'm... really sorry about what happened."
 
-                    hide MSadtalk
-                    show MBase
+                    hide mariko sad talk
+                    show mariko
 
                     "Her face hardens."
 
@@ -938,8 +938,8 @@ label introduction_mariko:
 
                     "She takes a deep breath."
 
-                    hide MBase
-                    show MFrowntalk
+                    hide mariko
+                    show mariko upset talk
 
                     m "But it helps... I just- I'm not going to let my girls down this time. And guys. Really, uh, really should recruit more-"
 
@@ -949,13 +949,13 @@ label introduction_mariko:
 
                     "She hurries off. Not that I blame her."
 
-                    hide MFrowntalk
+                    hide mariko upset talk
 
                 "Hostile":
 
                     $ Vigor += 1
 
-                    show MFrowntalk
+                    show mariko upset talk
 
                     m "I should have seen it coming."
 
@@ -965,8 +965,8 @@ label introduction_mariko:
 
                     n "I was just trying to protect everyone."
 
-                    hide MFrowntalk
-                    show MGlare
+                    hide mariko upset talk
+                    show mariko glaring
 
                     m "No, I was trying to protect everyone; you wanted to fight back!"
 
@@ -974,8 +974,8 @@ label introduction_mariko:
                     n "You fought longer and harder than any of us, it was quite impressive."
                     n "You'd have made an excellent general."
 
-                    hide MGlare
-                    show MTalk
+                    hide mariko glaring
+                    show mariko talk
 
                     m "A general hunh?"
 
@@ -992,13 +992,13 @@ label introduction_mariko:
                     "Though I'm surprised she's here considering what I was sent here to do. I'm sure she had hoped to never see me again."
                     "Does that mean there are other kids from the Junior Gladiators at this school?"
                     
-                    hide MTalk
+                    hide mariko talk
 
                 "Uninterested":
 
                     $ Intel += 1
 
-                    show MTalk
+                    show mariko talk
 
                     n "I never really had a lot of free time back then."
 
@@ -1011,18 +1011,18 @@ label introduction_mariko:
 
                     "She breathes a huge sigh of relief. Still a little anxious, but no longer petrified."
 
-                    hide MTalk
-                    show MSmiletalk
+                    hide mariko talk
+                    show mariko smile talk
 
                     m "Then I'll be on my way. Byeee!"
 
                     "She immediately turns around and leaves. I doubt she'll be coming my way anytime soon."
 
-                    hide MSmiletalk
+                    hide mariko smile talk
 
         "Say anything to make her go away":
 
-            show MTalk
+            show mariko talk
 
             n "Not interested."
 
@@ -1041,8 +1041,8 @@ label introduction_mariko:
             "I don't have time for her to collect her thoughts."
             "As I begin to walk away, she shouts after me."
 
-            hide MTalk
-            show MMadtalk
+            hide mariko talk
+            show mariko mad talk
 
             m "I don't want any trouble from you, Tesuta."
             m "Anyone wearing this emblem is under my protection, you understand?"
@@ -1055,12 +1055,12 @@ label introduction_mariko:
             n "I don't have the time nor desire to mess around with a handful of powder puffs." 
             n "I've got my own problems to deal with."
 
-            hide MMadtalk
-            show MJudge
+            hide mariko mad talk
+            show mariko judging
 
             m "Just don't drag my squad into it."
 
-            hide MJudge
+            hide mariko judging
 
             "It's almost admirable how fervently she defends this so-called 'squad' when she hasn't even gotten permission to lead one in the first place."
             "Old habits die hard, I suppose."
@@ -1081,7 +1081,7 @@ label introduction_yoku:
     "He has a beaten-up piece of paper in his hand and seems lost."
     "When he looks up at me, I feel a chill run down my spine."
 
-    show YEyeroll
+    show yoku eyeroll
 
     y "Oh, it's you..."
 
@@ -1097,12 +1097,12 @@ label introduction_yoku:
     "We never crossed paths since I spent most of my time studying in my room."
     "My room, of course, being an anti-social hotspot."
 
-    hide YEyeroll
-    show YIrate
+    hide yoku eyeroll
+    show yoku furious1
 
     y "What are you doing here?"
 
-    hide YIrate
+    hide yoku furious1
 
     menu:
 
@@ -1112,14 +1112,14 @@ label introduction_yoku:
 
             n "Just looking for where my new classes are going to be. And talking to you, I guess."
 
-            show YIrate2
+            show yoku furious2
 
             y "...You can't be serious."
 
             n "What?"
 
-            hide YIrate2
-            show YEyeroll
+            hide yoku furious2
+            show yoku eyeroll
 
             y "I thought this was supposed to be a school for the e-e-elite, not a co-common murderer."
 
@@ -1128,8 +1128,8 @@ label introduction_yoku:
             n "Secondly, being involved in the Guwon Riots has nothing to do with how capable I am as a student."
             n "The definition of 'elite' here is slightly above average, don't delude yourself."
 
-            hide YEyeroll
-            show YIrate2
+            hide yoku eyeroll
+            show yoku furious2
 
             y "So defensive over your Pr-proficiency, yet you're going to g-gloss over the murderer comment?"
 
@@ -1140,8 +1140,8 @@ label introduction_yoku:
             "The thing is, my Proficiency is artificial."
             "Unlike child prodigies like Yoku, my father had to spend every waking moment forcing my brain to process memories the way it does."
 
-            hide YIrate2
-            show YIrate
+            hide yoku furious2
+            show yoku furious1
 
             y "Hh-ow long are you going to keep staring into space?"
 
@@ -1150,13 +1150,13 @@ label introduction_yoku:
             y "As much as I'd like to continue this ffffascinating discussion, I have business eh-elsewhere."
             y "Until next time."
 
-            hide YIrate
+            hide yoku furious1
 
         "I'm lost":
 
             $ yRep += 1
 
-            show YIrate
+            show yoku furious1
 
             y "...Obviously."
 
@@ -1164,8 +1164,8 @@ label introduction_yoku:
 
             "He freezes."
 
-            hide YIrate
-            show YBlush2
+            hide yoku furious1
+            show yoku blush2
 
             y "You... you don't know that."
 
@@ -1174,21 +1174,21 @@ label introduction_yoku:
             "His face pinches up, as if his lower lip is trying to retreat up his nose."
 
             hide YokuBlush2
-            show YBase
+            show yoku
 
             y "First-"
 
             "I shake my head as he speaks."
 
-            hide YBase
-            show YThink
+            hide yoku
+            show yoku think
 
             y "Lower-"
 
             n "Getting colder. We're on the second floor."
 
-            hide YThink
-            show YIrate
+            hide yoku think
+            show yoku furious1
 
             y "If you kn-know that, how a-re you lost?"
 
@@ -1198,44 +1198,44 @@ label introduction_yoku:
 
             n "Also I have to ask..."
 
-            hide YIrate
+            hide yoku furious1
 
             menu:
                 "How do you know me?":
 
                     $ Charm += 1
 
-                    show YBase
+                    show yoku
 
                     y "You really don't know?"
                     y "W-well, whe-ere do I start..."
 
                     "That's never a good phrase to hear."
 
-                    hide YBase
-                    show YTalk
+                    hide yoku
+                    show yoku talk
 
                     y "Professor Tesuta co-constantly talked about you at galla sssocials, and everyone was dying to kn-know what you'd been up to desp..des..de-"
 
                     "He sighs."
                     
-                    hide YBase
-                    show YIrate2
+                    hide yoku
+                    show yoku furious2
 
                     y "Despite never being invited."
                     y "You got in detention mu-m-multiple times for fighting, and you t-took o-over the city."
 
                     n "Well, yeah, but... how did you know that was me?"
 
-                    hide YIrate2
-                    show YIrate
+                    hide yoku furious2
+                    show yoku furious1
 
                     y "You didn't even do something as simple as wear a mask. What p-possibly made you think no one would recognize you?"
 
                     n "I was really good at hiding."
 
-                    hide YIrate
-                    show YIrate2
+                    hide yoku furious1
+                    show yoku furious2
 
                     y "Y-you were good at camping, that isn't the same thing."
                     y "Honestly, I can't believe you were capable of a-anything on that large a scale."
@@ -1245,20 +1245,20 @@ label introduction_yoku:
 
                     "Granted, I shouldn't be proud of the things I did, but it's okay to feel a little insulted by this, right?"
                     "I'm just mad he's calling me stupid."
-                    hide YIrate2
+                    hide yoku furious2
 
                 "What are you doing here?":
 
                     $ Intel += 1
 
-                    show YTalk
+                    show yoku talk
 
                     y "I was looking for the auditorium, I he-heard that this school was going to provide a Wurlitzer."
                     y "As the future's leading co-com-composer, I'd like to find it."
 
                     n "A Wurlitzer?"
 
-                    hide YTalk
+                    hide yoku talk
                     show YokuBummed
 
                     y "Like a giant music box, an orchestra without... people."
@@ -1268,18 +1268,18 @@ label introduction_yoku:
                     n "What do you need a Wurlitzer for?"
 
                     hide YokuBummed
-                    show YTalk
+                    show yoku talk
                     
                     y "I've composed for a number of high scale events, but it's been a while since I've had a steady stream of clientele."
                     y "Making everything on my own will expedite the process."
 
-                    hide YTalk
+                    hide yoku talk
 
                 "Is your hair naturally green?":
 
                     $ Vision += 1
 
-                    show YIrate2
+                    show yoku furious2
 
                     y "....."
 
@@ -1300,9 +1300,9 @@ label introduction_yoku:
                     "It's been a while since I've talked to people on relatively friendly terms. Maybe crazy is the new normal."
                     "If that's true, my friends might actually have a shot at freedom."
 
-                    hide YIrate
+                    hide yoku furious1
 
-    hide YBase
+    hide yoku
 
     "He didn't seem to have that much to say to me. That's fine, I'm not here to make new friends."
     "The sooner I can find a way out of here, the better."
@@ -1321,14 +1321,14 @@ label introduction_uitto:
 
     n "Hey... uh, come here often?"
 
-    show Uittosmile
+    show uitto smile
 
     u "No way, Nagen!?"
 
     "Her voice is definitely familiar. She turns on me with a wicked grin."
     
-    hide Uittosmile
-    show Uittosmirk
+    hide uitto smile
+    show uitto smirk
 
     u "Did you seriously just hit on me? Good god, man, keep it together. You've been here, what, one day?"
 
@@ -1336,22 +1336,22 @@ label introduction_uitto:
 
     n "Uitto, I didn't realize it was you!"
 
-    hide Uittosmirk
-    show Uittogurl
+    hide uitto smirk
+    show uitto serious
 
     u "That's supposed to make me feel better?"
 
     n "No. I mean kinda. I wasn't even flirting, I just-"
 
-    hide Uittogurl
-    show Uittotalk
+    hide uitto serious
+    show uitto talk
 
     u "Stop, stop. You're just digging yourself deeper, short stack."
 
     n "I'm not that short!"
 
-    hide Uittotalk
-    show Uittotongue
+    hide uitto talk
+    show uitto playful
 
     u "Still shorter than me."
 
@@ -1361,15 +1361,15 @@ label introduction_uitto:
 
     n "....."
 
-    hide Uittotongue
-    show Uittosmirk
+    hide uitto playful
+    show uitto smirk
 
     u "That's what I thought."
 
     n "You're evil."
 
-    hide Uittosmirk
-    show UBase
+    hide uitto smirk
+    show uitto
 
     u "Only when I want to be."
 
@@ -1379,8 +1379,8 @@ label introduction_uitto:
     "It's not surprising she's taller than me either, just disappointing."
     "I had hoped to be taller than at least one of my friends."
 
-    hide UBase
-    show Uittosmirk
+    hide uitto
+    show uitto smirk
 
     u "Oh quit pouting. Size isn't everything, y'know."
 
@@ -1390,15 +1390,15 @@ label introduction_uitto:
 
     n "Don't tempt me."
 
-    hide Uittosmirk
-    show Uittotalk
+    hide uitto smirk
+    show uitto talk
 
     u "With a sharp tongue like that, I'm surprised you're here."
     
     n "Really? You were worried about me?"
 
-    hide Uittotalk
-    show UBase
+    hide uitto talk
+    show uitto
 
     u "I'm serious, between the three of you, you're the last person I expected to see on the outside."
     u "Jona's an idiot and Hiro's basically harmless, but you?"
@@ -1406,21 +1406,21 @@ label introduction_uitto:
 
     n "Yeah, well, so are you."
 
-    hide UBase
-    show Uittosadtalk
+    hide uitto
+    show uitto sad talk
 
     u "Yes, but I'm a poor defenseless girly that was bossed around by a scary guy with piercings and torn up pants."
 
     n "You're hideously manipulative. Is that really the story you went with?"
 
-    hide Uittosadtalk
-    show UBase
+    hide uitto sad talk
+    show uitto
     u "Story? It's the truth."
     u "You're the one that pitched a fit over not being leader, you should be flattered I gave you credit."
-    hide UBase
-    show Uittoyell
+    hide uitto
+    show uitto yell
     u "Unless you told them something else..."
-    hide Uittoyell
+    hide uitto yell
 
     menu:
 
@@ -1428,20 +1428,20 @@ label introduction_uitto:
 
             $ uRep += 1
 
-            show Uittoembarrassed
+            show uitto embarrassed
 
             u "Ugh, don't be gross."
             n "I'm serious! I thought I'd never see you again."
 
             u "Yeah, me too..."
 
-            hide Uittoembarrassed
-            show Uittosad
+            hide uitto embarrassed
+            show uitto sad
 
             u "Listen, if anything I said got you in trouble, I'm sorry."
             u "I was just trying to think of what you guys would probably say and stick with the most common stuff."
-            hide Uittosad
-            show UBase
+            hide uitto sad
+            show uitto
             u "Well, you and Hiro. I figured you both would probably lie to protect the other."
 
             n "So you lied to protect us?"
@@ -1449,28 +1449,28 @@ label introduction_uitto:
             u "And Jona would just lie to lie. All of us were doomed, it was just a matter of damage control."
 
             n "Well that's a defeatist attitude."
-            hide UBase
-            show Uittosad
+            hide uitto
+            show uitto sad
             u "Yeah, being defeated tends to do that to a person."
-            hide Uittosad
+            hide uitto sad
 
         "It doesn't matter":
 
             $ uRep -= 1
 
-            show UBase
+            show uitto
 
             n "We're all here now, so why does it matter?"
 
-            hide UBase
-            show Uittoyell
+            hide uitto
+            show uitto yell
 
             u "All of us?"
 
             n "Yeah; you, me, Hiro, and Jona."
 
-            hide Uittoyell
-            show Uittocringe
+            hide uitto yell
+            show uitto cringe
 
             u "That's not... How do you know they're here?"
 
@@ -1480,8 +1480,8 @@ label introduction_uitto:
 
             n "No, the DVP's Secretary of BS told me during her dumb monologue."
             
-            hide Uittocringe
-            show Uittogurl
+            hide uitto cringe
+            show uitto serious
 
             u "....."
 
@@ -1489,58 +1489,58 @@ label introduction_uitto:
 
             u "....."
 
-            hide Uittogurl
+            hide uitto serious
 
         "Of course I did":
 
             $ Charm += 1
 
-            show UBase
+            show uitto
 
             n "You were not a defenseless girly that was bossed around by a scary dude with awesome piercings."
             n "And these are my favorite jeans!"
 
-            hide UBase
-            show Uittotongue
+            hide uitto
+            show uitto playful
 
             u "You're right! Who'd believe you?"
 
             n "Nah, I went with the silent, brooding approach. The less you say, the better."
 
-            hide Uittotongue
-            show Uittosmirk
+            hide uitto playful
+            show uitto smirk
 
             u "You're joking, right? Brooding definitely, but silent?"
 
             n "Hey, I'm hella stoic."
 
-            hide Uittosmirk
-            show Uittogurl
+            hide uitto smirk
+            show uitto serious
 
             u "Nagen, your oversharing's one evil laugh away from a cartoon monologue. I mean, seriously, you need help. No offense."
 
             n "You wound me. My fragile ego can not handle an ounce of criticism."
             n "End your vicious slander or I shall end you. Muahahaha."
 
-            hide Uittogurl
-            show Uittosmile
+            hide uitto serious
+            show uitto smile
 
             u "I wilt not be-est tamed or commanded, foul villain. I wilt doeth what I wanteth."
 
-            hide Uittosmile
+            hide uitto smile
 
-    show UBase
+    show uitto
     n "We'll be meeting in the office room on the third floor."
 
-    hide UBase
-    show Uittocringe
+    hide uitto
+    show uitto cringe
 
     u "We?"
 
     n "I'm looking for the others right now. We're going to talk about our next move."
 
-    hide Uittocringe
-    show Uittoyell
+    hide uitto cringe
+    show uitto yell
 
     u "Nagen, what are you talking about? We shouldn't be doing anything right now."
     u "You know what's on the line."
@@ -1550,20 +1550,20 @@ label introduction_uitto:
     if Vision >= 10:
         n "Well, yeah... Uitto, is something wrong?"
 
-        hide Uittoyell
-        show Uittocringe
+        hide uitto yell
+        show uitto cringe
 
         u "How did you know where to find me?"
 
         n "Well, I didn't know you were here. I've just been kinda wandering around." 
         n "We're meeting in 313 by four at the latest. Make sure you're there."
-        hide Uittocringe
-        show Uittosadtalk
+        hide uitto cringe
+        show uitto sad talk
         u "...Yeah... whatever you say."
 
-        hide Uittosadtalk
+        hide uitto sad talk
 
-    hide Uittoyell
+    hide uitto yell
 
     "There are still other places to look at. I should go."
 
@@ -1578,38 +1578,38 @@ label introduction_kitsune:
     "At least they didn't fill the fake seats with human silhouettes."
     "The stage itself is polished and well lit. It has more than enough space for rehearsals."
 
-    show KBase
+    show kitsune
 
     k "Isn't it beautiful?"
     k "I was so worried when they picked this place that they'd shove us into a dingy room and call it 'rehearsal' space."
 
     n "It's a little small, don't you think?"
 
-    hide KBase
-    show KSmug
+    hide kitsune
+    show kitsune smug
 
     k "Compared to the pathetic platform most bars offer, this is an opera house."
     k "There's even changing stalls! We'll be able to do great things with it."
 
     n "We?"
 
-    hide KSmug
-    show KShock
+    hide kitsune smug
+    show kitsune shocked
 
     k "Aren't you a fellow performer? You're all dressed up and studying the stage."
     k "What else am I supposed to think; that you're just some Intelligence major?"
 
     n "I {i}am{/i} an Intelligence major."
 
-    hide KShock
-    show KTntc
+    hide kitsune shocked
+    show kitsune teary
 
     k "Oh..."
 
     n "Nagen Tesuta, proficient in memorization, can't get more common than that."
 
-    hide KTalk
-    show KSulk
+    hide kitsune talk1
+    show kitsune sulking
 
     k "N-nagen!? I- Oh my goodness, I didn't know it was you."
     k "I'm so sorry, you must think I'm a monster."
@@ -1618,8 +1618,8 @@ label introduction_kitsune:
 
     n "It's okay. Since we're going with blind assumptions, I'm guessing Charisma major?"
 
-    hide KSulk
-    show KShock
+    hide kitsune sulking
+    show kitsune shocked
 
     k "You mean you don't recognize me?"
 
@@ -1627,13 +1627,13 @@ label introduction_kitsune:
 
     "I never forget a face, but she's wearing so much makeup it's hard to tell where her face starts and the contouring ends."
 
-    hide KShock
-    show KWhatever
+    hide kitsune shocked
+    show kitsune apathetic
 
     k "W-well, I'm a rising star, everyone at this school should recognize me."
     
-    hide KWhatever
-    show KBase
+    hide kitsune apathetic
+    show kitsune
     
     k "Like a phoenix from the ashes, I will guide our nation's culture with my brilliant light!"
     k "You are looking at living, breathing art; the face and voice of the future."
@@ -1643,14 +1643,14 @@ label introduction_kitsune:
 
     n "Right... and what is it you do exactly?"
 
-    hide KBase
-    show KCatty
+    hide kitsune
+    show kitsune catty
 
     k "I am Kitsune."
 
     "This girl is full of nothing answers, isn't she?"
 
-    hide KCatty
+    hide kitsune catty
 
     menu:
 
@@ -1658,7 +1658,7 @@ label introduction_kitsune:
 
             $ kRep -= 1
 
-            show KMad
+            show kitsune mad
 
             k "Excuse me? Do you know how many years it took to perfect this?"
             k "I woke up at 4AM to get ready and your only takeaway is 'she has no talent'!?"
@@ -1668,14 +1668,14 @@ label introduction_kitsune:
 
             k "I have enough class and good taste to pick out shoes brighter than your future."
 
-            hide KMad
-            show KMad2
+            hide kitsune mad
+            show kitsune mad2
             k "You keep insulting people like that and someone's going to punch you so hard your piercings will get drilled into your gums."
 
             "What the ever-loving fuck did I do to her?"
 
-            hide KMad2
-            show KWhatever
+            hide kitsune mad2
+            show kitsune apathetic
 
             k "But my dainty hands belong wrapped around a mic, so you're safe. For now."
             k "I dazzle audiences with my angelic voice and you..."
@@ -1684,13 +1684,13 @@ label introduction_kitsune:
 
             "She seems to have calmed down now, but what was that? Does she want to fight me or not?"
             
-            hide KWhatever
+            hide kitsune apathetic
 
         "Like the fox spirit?":
 
             $ kRep += 1
 
-            show KSmug
+            show kitsune smug
 
             "I only know Uitto by her stage name; maybe this girl picked out her own?"
 
@@ -1700,13 +1700,13 @@ label introduction_kitsune:
 
             k "They're old and wise; neither of which has ever been used to describe me, let alone powerful."
 
-            hide KSmug
-            show KTalk2
+            hide kitsune smug
+            show kitsune talk2
 
             n "You'll get there eventually... in a thousand years."
 
-            hide KTalk2
-            show KMad
+            hide kitsune talk2
+            show kitsune mad
             k "Hey! I am a star right now. Just ask anyone who's gone to my show."
 
             n "I thought you were a fox?"
@@ -1716,8 +1716,8 @@ label introduction_kitsune:
             n "I imagine wise old men when people talk about fox spirits."
             n "Maybe it does suit you. You already have the white hair."
 
-            hide KMad
-            show KSulk
+            hide kitsune mad
+            show kitsune sulking
 
             k "Mom always said my white hair made me look elegant."
 
@@ -1725,8 +1725,8 @@ label introduction_kitsune:
 
             n "You saying old people aren't elegant? That's ageist."
 
-            hide KSulk
-            show KWhatever
+            hide kitsune sulking
+            show kitsune apathetic
 
             k "...Is that your backwards way of complimenting me?"
 
@@ -1736,41 +1736,41 @@ label introduction_kitsune:
             k "O-otherwise it would just feel like empty pandering."
 
             "Says the person who was fishing for compliments five minutes ago."
-            hide KWhatever
+            hide kitsune apathetic
 
         "And your Proficiency is...":
 
             $ Vigor += 1
 
-            show KTalk
+            show kitsune talk1
 
             k "I specialize in vocal manipulation. My range is A0 to C8 in relation to a piano."
             k "No other singer can compare to me without the use of technology."
 
             n "That doesn't sound like a Charm Proficiency."
 
-            hide KTalk
-            show KWhatever
+            hide kitsune talk1
+            show kitsune apathetic
 
             k "Because it's not."
             k "Not every Vigor major you meet is going to be some meathead jock."
             
-            hide KWhatever
-            show KTalk
+            hide kitsune apathetic
+            show kitsune talk1
             
             k "Still, I'm trying to see if they'll let me switch courses."
             k "I feel like Ms. Sato would help me become a more successful idol."
 
             n "I don't think this is that kind of school. You should focus on vocal training."
             
-            hide KTalk
-            show KSulk
+            hide kitsune talk1
+            show kitsune sulking
 
             k "I'm almost too old to start making my debut."
             k "If I want to get anywhere, I have to start building my fan base now."
             
-            hide KSulk
-            show KBase
+            hide kitsune sulking
+            show kitsune
 
             k "Vocal training and dance lessons can happen while I'm on tour."
 
@@ -1780,29 +1780,29 @@ label introduction_kitsune:
 
             n "But why even bother?"
 
-            hide KBase
-            show KTalk
+            hide kitsune
+            show kitsune talk1
 
             k "I like the attention."
 
             "At least she's honest. Seems like a lot of work for little reward."
             "There's no guarantee she'll ever get any fans."
-            hide KTalk
-    show KSmug
+            hide kitsune talk1
+    show kitsune smug
     k "I can tell you still have your doubts, but you'll be pleased to know I've already started working on my first album."
     k "Make good use of this insider info, because people are going to eat it up!"
 
     n "With what? I thought all file sharing electronics were banned."
 
-    hide KSmug
-    show KBase
+    hide kitsune smug
+    show kitsune
 
     k "With CDs of course!"
 
     n "I don't own anything that plays CDs."
 
-    hide KBase
-    show KShock
+    hide kitsune
+    show kitsune shocked
 
     k "Y-you don't? The school issued laptops, didn't they?"
 
@@ -1813,35 +1813,35 @@ label introduction_kitsune:
     n "Normally I'd use my phone and listen to stuff for free online."
     n "Now I'm stuck with whatever came on the burner phone."
 
-    hide KShock
-    show KTntc
+    hide kitsune shocked
+    show kitsune teary
 
     k "Free!? Oh no, that's no good."
 
     n "It's pretty standard nowadays."
 
-    hide KTalk
-    show KTalk2
+    hide kitsune talk1
+    show kitsune talk2
     
     k "Well I'll just need to find a way to get music into the school."
     k "Maybe they'll allow older models of MP3 players and I could have the album on that?"
 
     n "That's not a horrible idea."
 
-    hide KTalk
-    show KBase
+    hide kitsune talk1
+    show kitsune
 
     k "Great! I'll put you down for a preorder then."
 
     n "I didn't mean-"
 
-    hide KBase
-    show KSmug
+    hide kitsune
+    show kitsune smug
 
     k "I'm sending your confirmation number through the school messenger aaaand, you're all set."
     k "The release date will be next spring."
 
-    hide KSmug
+    hide kitsune smug
 
     "She blows me a kiss and runs off before I can finish objecting."
 
@@ -1856,14 +1856,14 @@ label introduction_kazz:
     "A mic dangles from the booth's ceiling, hooked up to three different computers."
     "I try to go inside, but the door is locked."
 
-    show KkO
+    show kazz oh
 
     kk "What are you doing here? No one's supposed to be here, bromigo."
 
     n "You're here, aren't you?"
 
-    hide KkO
-    show KkShine
+    hide kazz oh
+    show kazz shine
 
     kk "I asked if I could check out the recording booth before I finished setting up in my room."
     kk "I guess there are rules against soundproofing the dorms."
@@ -1871,8 +1871,8 @@ label introduction_kazz:
 
     n "What does that have to do with me being here?"
 
-    hide KkShine
-    show KkComplain
+    hide kazz shine
+    show kazz complain
 
     kk "If something breaks or goes missing, I'll be the first person they blame."
     kk "I didn't mean to offend you, but my faith in humanity took a bummer turn by at least 46%% this year."
@@ -1880,8 +1880,8 @@ label introduction_kazz:
 
     n "You plan on making videos?"
 
-    hide KkComplain
-    show KkGrin
+    hide kazz complain
+    show kazz grin
 
     kk "Hell no, editing's boring and I look weird on camera. I'm trying to do an independent radio show."
     kk "It's half audience engagement, half whatever the hell I feel like."
@@ -1898,15 +1898,15 @@ label introduction_kazz:
     "If this kid's his son, he could be one of the students that made competing for top marks a living hell."
     "Especially since he was proficient in math."
 
-    hide KkGrin
-    show KkTalk
+    hide kazz grin
+    show kazz talk
 
     kk "You look hella familiar."
 
     n "I used to go to Estella."
 
-    hide KkTalk
-    show KkGrin
+    hide kazz talk
+    show kazz grin
 
     kk "That's right! You're the kid that bailed on the nerd ward to hang out with all the criminals."
     kk "I heard someone threw a desk at you the first day."
@@ -1919,7 +1919,7 @@ label introduction_kazz:
     kk "That's so cool! We never had anything interesting happen in our class."
     kk "I kept hoping I'd get to join you guys, but my dad wouldn't let them transfer me."
 
-    hide KkGrin
+    hide kazz grin
 
     menu:
 
@@ -1927,14 +1927,14 @@ label introduction_kazz:
 
             $ kkRep += 1
 
-            show KkGrin
+            show kazz grin
 
             kk "The correct question is, what didn't I do?"
 
             n "....."
 
-            hide KkGrin
-            show KkTalk
+            hide kazz grin
+            show kazz talk
 
             kk "My homework. I didn't do my homework, any of it."
             kk "They never reported me, so I turned myself in, but they kept trying to sweep the whole thing under the rug."
@@ -1950,7 +1950,7 @@ label introduction_kazz:
             n "To be fair, that doesn't seem like a transferable occurrence."
             n "Not everyone in my class cheated on tests or had bad grades."
 
-            hide KkTalk
+            hide kazz talk
             show KkSadtalk
 
             kk "I guess that's true, but it seemed logical at the time."
@@ -1963,7 +1963,7 @@ label introduction_kazz:
 
             $ kkRep -= 1
 
-            show KkTalk
+            show kazz talk
 
             n "They didn't give me a choice when they moved me. I would have gladly stayed in Regular Ed."
 
@@ -1983,7 +1983,7 @@ label introduction_kazz:
 
             n "My point was just that-"
 
-            hide KkTalk
+            hide kazz talk
             show KkSadtalk
 
             kk "No, I get it, middle school sucked donkey nards, sorry."
@@ -1996,7 +1996,7 @@ label introduction_kazz:
 
             $ Intel += 1
 
-            show KkTalk
+            show kazz talk
 
             kk "I'm not sure."
             kk "Even after they knew I was plagiarizing all my work, they still kept giving me full points."
@@ -2006,7 +2006,7 @@ label introduction_kazz:
 
             "Why couldn't I reap the benefits of being a teacher's kid?"
 
-            hide KkTalk
+            hide kazz talk
             show KkSadtalk
 
             kk "Anything bad I did ended up making my dad look bad."
@@ -2016,7 +2016,7 @@ label introduction_kazz:
             n "No, the school cared way too much about their image to let a loose nail go unhammered."
 
             hide KkSadtalk
-            show KkShine
+            show kazz shine
             kk "I don't enjoy getting hammered. If I'm gonna party, I want to remember it."
 
             n "That's not even remotely related to what we were talking about."
@@ -2025,8 +2025,8 @@ label introduction_kazz:
 
             n "....."
 
-            hide KkShine
-            show KkGrin
+            hide kazz shine
+            show kazz grin
 
             kk "You know, like a play on words."
 
@@ -2034,9 +2034,9 @@ label introduction_kazz:
 
             kk "I'm sure you're a blast at parties."
 
-            hide KkGrin
+            hide kazz grin
     
-    show KkTalk
+    show kazz talk
 
     kk "It's so trippy though, 91%% of the people I've met here used to go to Estella."
     kk "Most high schools pull in students from four to fifteen different primary schools."
@@ -2060,8 +2060,8 @@ label introduction_kazz:
     "I need to calm down."
     "Shit!"
 
-    hide KkTalk
-    show KkFret
+    hide kazz talk
+    show kazz panic
 
     kk "Do you need to go to the nurse?"
 
@@ -2069,7 +2069,7 @@ label introduction_kazz:
     n "I won't mess with your shit in the recording booth."
     n "I'm sorry, I'm fine, really."
     
-    hide KkFret
+    hide kazz panic
 
     "He still looks worried, but I'm already out the door."
 
@@ -2093,36 +2093,36 @@ label introduction_oshin:
 
     "The curtain flies back and I have to say, I am severely disappointed."
 
-    show MuBase
+    show mu
 
     "If you're going to break the rules, at least look cool doing it."
     "Or shower first."
     "He used to take so much pride in 'knowing' more than me in biology and anatomy; I wonder if he still has that competitive streak."
 
-    hide MuBase
-    show MuCringe
+    hide mu
+    show mu cringe
     mu "Some nurse's office. I can't find a single compression wrap or ice pack, let alone an O2 tank."
     mu "Granted, that means the building isn't at risk for exploding right now, but I feel bad for anyone with asthma."
     mu "They're screwed."
 
     n "You're going to give someone asthma smelling like that. Besides, we both know that's not why you're here."
 
-    hide MuCringe
-    show MuSmug
+    hide mu cringe
+    show mu smug
 
     mu "As the nurse's assistant, it's my job to take inventory. So yeah, that's why I'm here."
     mu "What I do on my fifteen-minute break is another matter."
 
     n "You're the nurse's aid?"
 
-    hide MuSmug
-    show MuHeh
+    hide mu smug
+    show mu laugh
 
     mu "For part of the day."
     mu "They don't have a sports medicine program, so shadowing the school nurse was the only way I could use my Proficiency in biology here."
     
-    hide MuHeh
-    show MuIrate
+    hide mu laugh
+    show mu furious
     
     mu "Well, it was that or be a TA for the Intel Professor during science lectures but... blegh, I hate theory."
     mu "I came here to learn, not to grade papers."
@@ -2134,12 +2134,12 @@ label introduction_oshin:
 
     n "Let me guess, you get paid in 'experience'."
 
-    hide MuIrate
-    show MuHey
+    hide mu furious
+    show mu greet
 
     mu "And college credit."
 
-    hide MuHey
+    hide mu greet
 
     menu:
 
@@ -2147,7 +2147,7 @@ label introduction_oshin:
 
             $ muRep -= 1
 
-            show MuAnger
+            show mu angry
 
             n "Sure you'd have to grade papers and junk, but it's less work for the same grade."
             
@@ -2157,49 +2157,49 @@ label introduction_oshin:
 
             n "Your idea of basic is above average. It can't be that bad."
 
-            hide MuAnger
-            show MuCringe
+            hide mu angry
+            show mu cringe
 
             mu "I was in class with someone who asked if you could get pregnant through your stomach."
             mu "I couldn't help it. I laughed at the poor girl, but she was serious."
 
             n "...Why'd a girl ask you that?"
 
-            hide MuCringe
-            show MuIrate
+            hide mu cringe
+            show mu furious
 
             mu "I. Don't. Know."
             mu "People hear my Proficiency and think it's permission to ask and show me all the gross things they're too scared to talk to an actual doctor about."
 
             n "Oh."
 
-            hide MuIrate
-            show MuIrateTalk
+            hide mu furious
+            show mu furious talk
 
             mu "People will ask me weird stuff no matter what I do."
             mu "At least this way it's less people and I won't have to read essays."
 
-            hide MuIrateTalk
+            hide mu furious talk
 
         "Are you going to use it?":
 
             $ Intel += 1
 
-            show MuUmm
+            show mu awkward
 
             mu "Maybe. I mean, I guess it'd cover A and P, but..."
             mu "I don't know if it's worth the money or effort."
             
-            hide MuUmm
-            show MuUgh
+            hide mu awkward
+            show mu disgust
             
             mu "If I'm taking on heaps of debt, I need to be certain it's for something I actually want to do."
             mu "Med school doesn't look kindly on the uncertain."
 
             n "What else would you do?"
 
-            hide MuUgh
-            show MuTalk2
+            hide mu disgust
+            show mu talk2
 
             mu "Homeopathy, pharmacology, farming; whatever's easiest."
 
@@ -2207,8 +2207,8 @@ label introduction_oshin:
 
             mu "Yeah."
 
-            hide MuTalk2
-            show MuHeh
+            hide mu talk2
+            show mu laugh
 
             "He blows out a cloud of smoke."
 
@@ -2217,17 +2217,17 @@ label introduction_oshin:
             n "Must be nice to have so many options."
 
             hide MHheh
-            show MuPout
+            show mu pout
 
             mu "Yeah, if only those options didn't cost the same as a new house."
 
-            hide MuPout
+            hide mu pout
 
         "Need any help?":
 
             $ muRep += 1
 
-            show MuAnger
+            show mu angry
 
             mu "What do you know about medicine?"
 
@@ -2239,15 +2239,15 @@ label introduction_oshin:
             n "I meant with finding your lighter."
             n "I didn't hear anything fall, so it's probably on the bed somewhere."
 
-            hide MuAnger
-            show MuGrin
+            hide mu angry
+            show mu happy
 
             mu "Oh dang, yeah. It's not mine though. It's the nurse's."
 
             n "What would they need a lighter for?"
 
-            hide MuGrin
-            show MuPout
+            hide mu happy
+            show mu pout
 
             mu "You really think I'd be smoking in here without permission?"
 
@@ -2257,9 +2257,9 @@ label introduction_oshin:
             mu "Found it!"
 
             "He holds aloft a small lighter with a skeleton on it."
-            hide MuPout
+            hide mu pout
 
-    show MuTalk
+    show mu talk1
 
     mu "Why did you come here anyway? Have any allergies or scripts the nurse needs?"
 
@@ -2267,8 +2267,8 @@ label introduction_oshin:
     n "If they make us participate in P.E., I'll end up here eventually."
     n "I have a strange knack for getting hit in the face with sports equipment."
 
-    hide MuTalk
-    show MuGrin
+    hide mu talk1
+    show mu happy
 
     mu "Wait, no way. Were you the kid that got a bloody nose from a sprout ball?"
 
@@ -2285,12 +2285,12 @@ label introduction_oshin:
 
     n "Hilarious."
 
-    hide MuGrin
+    hide mu happy
 
     "Unfortunately, I've been injured by less threatening objects."
     "What he said in jest could very well happen if I run into the wrong cheerleader."
 
-    hide MuBase
+    hide mu
 
     return
 
@@ -2301,7 +2301,7 @@ label introduction_ichita:
     "Maybe it's because this place hasn't been a school for very long, but the entryway doesn't feel haunted."
     "It makes it all the more jarring to see someone declaring how happy he is to be here."
 
-    show IGrin
+    show ichita grinning
 
     i "I finally fuckin' made it!!!"
 
@@ -2315,8 +2315,8 @@ label introduction_ichita:
     i "Exactly!"
     i "No stupid bleach smell or 'round the clock nannies or time-eating fluorescent lights."
     
-    hide IGrin
-    show IMock
+    hide ichita grinning
+    show ichita mocking
     
     i "Just actual dirt and the actual G.D. sun!"
     i "I'm sure you could care less about the sun, but I missed it."
@@ -2328,8 +2328,8 @@ label introduction_ichita:
 
     "Just as I'm contemplating peeling his hands off my jacket, he lets me go and laughs."
 
-    hide IMock
-    show IGrin
+    hide ichita mocking
+    show ichita grinning
     i "I don't think anyone's ever called me that before. Ichita, maybe you've heard of me."
 
     "I have."
@@ -2338,8 +2338,8 @@ label introduction_ichita:
 
     n "Yeah, though nothing flattering comes to mind."
 
-    hide IGrin
-    show IMock
+    hide ichita grinning
+    show ichita mocking
 
     i "That figures; can't say I'm surprised."
     i "Don't listen to anything those sore losers told you. They got left behind for a reason."
@@ -2348,7 +2348,7 @@ label introduction_ichita:
 
     i "No need to look so scared. I don't bite."
 
-    hide IMock
+    hide ichita mocking
 
     menu:
 
@@ -2356,7 +2356,7 @@ label introduction_ichita:
 
             $ Vision += 1
 
-            show ISadTalk
+            show ichita sad talk1
 
             i "You were making a little scared face." 
             i "Your eyes got all wide and you kept looking at my teeth. You're like an open book."
@@ -2371,20 +2371,20 @@ label introduction_ichita:
 
             n "I don't need your pity... and quit laughing."
 
-            hide ISadTalk
+            hide ichita sad talk1
 
         "Hiro said you do":
 
             $ iRep -= 1
 
-            show ILecture
+            show ichita lecturing
 
             i "Hiro?"
 
             "His whole demeanor changes. I regret bringing him up."
 
-            hide ILecture
-            show IAnger
+            hide ichita lecturing
+            show ichita angry
 
             i "That shit storm loved to run his mouth in front of a willing audience."
             i "Too bad most people didn't have the sense to ignore him."
@@ -2398,19 +2398,19 @@ label introduction_ichita:
 
             n "I think you got the wrong idea. I'm not-"
 
-            hide IAnger
-            show IMock
+            hide ichita angry
+            show ichita mocking
 
             i "Relax. I know you have nothing to do with what he says."
 
             "He seems happy with whatever decision he's made about me, but his smile doesn't put me at ease."
 
-            hide IMock
+            hide ichita mocking
         "Neither do I":
 
             $ iRep += 1
 
-            show IGrin
+            show ichita grinning
 
             i "Hah, look at you."
 
@@ -2432,22 +2432,22 @@ label introduction_ichita:
             i "I can work with that!"
 
             "At least his expectations are low."
-            hide IGrin
+            hide ichita grinning
     
-    show ISadTalk
+    show ichita sad talk1
 
     i "Sorry for coming on super intense. It's been a while since I've talked with another person my own age."
     
-    hide ISadTalk
-    show ISadTalk2
+    hide ichita sad talk1
+    show ichita sad talk2
     
     i "Oh shit, I didn't even ask you what your name is."
 
     n "It's Nagen. But yeah, I wanted to ask you why you're so jazzed to be here."
     n "You're acting like you just got out of jail instead of walking towards one."
 
-    hide ISadTalk2
-    show ISadTalk
+    hide ichita sad talk2
+    show ichita sad talk1
 
     i "Compared to a hospital, this place is a theme park!"
     i "Okay, maybe closer to a themed restaurant or summer camp, but you get the idea."
@@ -2461,8 +2461,8 @@ label introduction_ichita:
     n "You don't have to force yourself to act happy for my sake."
     n "Half of what I talk about with my friends is stuff that pisses us off."
 
-    hide ISadTalk
-    show IGrin
+    hide ichita sad talk1
+    show ichita grinning
 
     i "Thanks, but if I stop now, it won't be pretty."
     i "Besides, I promised I'd try to 'perk up' and- ugh- yeah. It'd suck if I threw in the towel on the first day."
@@ -2473,7 +2473,7 @@ label introduction_ichita:
 
     n "That's all you. I'll see you around."
 
-    hide IGrin
+    hide ichita grinning
 
     "There are still some other places I haven't checked yet. I'll keep looking."
 
@@ -2491,7 +2491,7 @@ label introduction_taiga:
     "He gives me a passing glance and resumes glaring at the horizon."
     "There's an obligatory fence, but nothing to stop students from sitting on the edge."
 
-    show TBase
+    show taiga
 
     t "Looking for a way out too?"
     t "If you were thinking of running off into that there forest, you best forget about it."
@@ -2500,22 +2500,22 @@ label introduction_taiga:
 
     "He shudders."
 
-    hide TBase
-    show TGrump
+    hide taiga
+    show taiga grumpy
 
     t "If there was a way to escape this place, I would have found it."
     t "It's not fair!"
     t "I didn't do anything to get stuck in a place full of criminals; nothing criminal about wanting freedom."
 
-    hide TGrump
-    show TGrimace
+    hide taiga grumpy
+    show taiga grimace
 
     t "So, what'd ya do to end up here?"
 
     n "What makes you think I did something?"
 
-    hide TGrimace
-    show TGasp
+    hide taiga grimace
+    show taiga gasp
 
     t "If your folks could trust you, you'd be getting schooled in some refugee camp, but you're not, you're here."
     t "So either you kept running away from where they put ya or ya did something."
@@ -2524,8 +2524,8 @@ label introduction_taiga:
 
     n "It's kind of a long story, I really don't want to get into it."
 
-    hide TGasp
-    show TBase
+    hide taiga gasp
+    show taiga
 
     t "That's cool."
 
@@ -2533,8 +2533,8 @@ label introduction_taiga:
 
     n "What the-"
 
-    hide TBase
-    show TSadtalk2
+    hide taiga
+    show taiga sad talk2
 
     t "Shh. You'll spook him."
 
@@ -2542,7 +2542,7 @@ label introduction_taiga:
     "His coat is broken up with a handful of scars, but overall, he seems healthy."
     "I've never seen a rabbit so calm before."
 
-    hide TSadtalk2
+    hide taiga sad talk2
 
     menu:
 
@@ -2550,7 +2550,7 @@ label introduction_taiga:
 
             $ tRep += 1
 
-            show TSmiletalk
+            show taiga smile talk
 
             "Perhaps I was too eager with the way I asked."
             "He stares, shell shocked, before nodding."
@@ -2564,16 +2564,16 @@ label introduction_taiga:
 
             "I try to pull back, but the rabbit won't let go, all while his owner laughs."
 
-            hide TSmiletalk
-            show TSadtalk2
+            hide taiga smile talk
+            show taiga sad talk2
 
             t "Okay, okay; I get it. I'll make him take the glove off, but you have to let go first."
 
             "Freedom!"
             "I make sure there are no holes before looking back at the offended rabbit."
 
-            hide TSadtalk2
-            show TSuspicious
+            hide taiga sad talk2
+            show taiga suspicious
 
             t "Sorry about that, he just really hates gloved hands. One too many V.E.T. visits."
             t "I promise he won't bite. Isn't that right?"
@@ -2581,20 +2581,20 @@ label introduction_taiga:
             "I've never seen an animal look so personally attacked before."
             "He keeps licking his owner's hand as I pocket my glove."
 
-            hide TSuspicious
-            show TGrin
+            hide taiga suspicious
+            show taiga grin
 
             t "Deep breath, keep a steady hand and go for the cheeks."
 
             "I follow his instructions and get immediately rewarded. The bunny practically melts in his lap."
 
-            hide TGrin
+            hide taiga grin
 
         "Pets are forbidden":
 
             $ tRep -= 1
 
-            show TSadtalk
+            show taiga sad talk1
 
             t "Houdini isn't a pet."
 
@@ -2602,8 +2602,8 @@ label introduction_taiga:
 
             "His cheeks light up bright red and his eyes narrow."
 
-            hide TSadtalk
-            show TUgh
+            hide taiga sad talk1
+            show taiga annoyed
 
             t "This stupid faculty thought I wouldn't cooperate, so they used my assistants as bait to get me to stay."
             t "The others are still being held hostage somewhere."
@@ -2614,8 +2614,8 @@ label introduction_taiga:
 
             t "Anything within reason. For example..."
 
-            hide TUgh
-            show TSceam
+            hide taiga annoyed
+            show taiga scheme
 
             t "Hou, don't you think it'd be funny to piss on the little rich boy's boots?"
 
@@ -2623,20 +2623,20 @@ label introduction_taiga:
 
             n "Nonono-"
 
-            hide TSceam
-            show TSmiletalk
+            hide taiga scheme
+            show taiga smile talk
 
             t "Good boy, Hou."
 
             "The little gray monster scampers into his sleeve to hide."
 
-            hide TSmiletalk
+            hide taiga smile talk
 
         "Aren't you scared?":
 
             $ Charm += 1
 
-            show TGrin
+            show taiga grin
 
             t "Scared? Scared of what, the school?"
             t "The teachers are just people diving into a collective midlife crisis. I'm more annoyed than anything."
@@ -2645,8 +2645,8 @@ label introduction_taiga:
 
             "He stares off into space, retracing the conversation in his mind."
 
-            hide TGrin
-            show TBase
+            hide taiga grin
+            show taiga
 
             t "No. I told him to stay away from the edge."
 
@@ -2654,8 +2654,8 @@ label introduction_taiga:
 
             "There's nothing keeping that animal in his lap other than sheer willpower."
 
-            hide TBase
-            show TGrimace
+            hide taiga
+            show taiga grimace
 
             t "Just, don't tell the teachers you saw him out here."
             t "He's supposed to be in his stupid cage in my dorm."
@@ -2667,16 +2667,16 @@ label introduction_taiga:
 
             n "....."
 
-            hide TGrimace
-            show TBase
+            hide taiga grimace
+            show taiga
 
             t "He's not going to jump out of my lap to become an angel. It's okay."
 
             "I can't help but be concerned when he doesn't even have a hand on him."
 
-            hide TBase
+            hide taiga
     
-    show TSmiletalk
+    show taiga smile talk
 
     t "His full name is Houdini; Angel and Blaine are still somewhere under lock and key."
     t "We're already trapped in the facility, additional cages are just over the top."
@@ -2687,8 +2687,8 @@ label introduction_taiga:
 
     n "And your name would be..."
 
-    hide TSmiletalk
-    show TBase
+    hide taiga smile talk
+    show taiga
 
     t "Oh, Taiga."
 
@@ -2707,8 +2707,8 @@ label introduction_taiga:
 
     n "They'd do that?"
 
-    hide TBase
-    show TGrimace
+    hide taiga
+    show taiga grimace
 
     t "If you get in trouble, probably."
 
@@ -2717,7 +2717,7 @@ label introduction_taiga:
 
     t "It's going to be a long couple of years."
 
-    hide TGrimace
+    hide taiga grimace
 
     "I couldn't agree more, but this conversation's kind of bumming me out. Not that I blame him, but I should go."
 
@@ -2754,7 +2754,7 @@ label introduction_chisei:
 
     scene backgroundlibrary
 
-    show ChBase
+    show chisei
     with dissolve
 
     ch "It was from an accident. No, it does not still hurt and please do not touch me."
@@ -2766,7 +2766,7 @@ label introduction_chisei:
     
     ch "....."
 
-    hide ChBase
+    hide chisei
 
     menu:
 
@@ -2774,15 +2774,15 @@ label introduction_chisei:
 
             $ chRep -= 1
 
-            show ChFrown2
+            show chisei frown2
 
             ch "All you have done is stare."
             ch "Unless you have thought something uncouth, there is no need to apologize."
 
             n "What? No!"
 
-            hide ChFrown2
-            show ChSadtalk2
+            hide chisei frown2
+            show chisei sad talk2
 
             ch "No laughter. Perhaps my delivery was not whimsical enough?"
 
@@ -2796,8 +2796,8 @@ label introduction_chisei:
 
             n "....."
 
-            hide ChSadtalk2
-            show ChFrown2
+            hide chisei sad talk2
+            show chisei frown2
 
             ch "Another botched attempt."
 
@@ -2805,20 +2805,20 @@ label introduction_chisei:
 
             ch "This is going to be a long year."
 
-            hide ChFrown2
+            hide chisei frown2
 
         "Sick robot hand":
 
             $ chRep += 1
 
-            show ChSadtalk3
+            show chisei sad talk3
 
             ch "It is not humanoid, but it serves me well. You are the second person to compliment it."
 
             "She hides her gaping smile behind her other hand."
 
-            hide ChSadtalk3
-            show ChSmile
+            hide chisei sad talk3
+            show chisei smile
 
             ch "I guess you could say, its appeal has had a mass effect on people?"
 
@@ -2826,24 +2826,24 @@ label introduction_chisei:
 
             n "Oh, that one hurt. Why?"
 
-            hide ChSmile
-            show ChSmiletalk
+            hide chisei smile
+            show chisei smile talk1
 
             ch "I have been waiting for someone to set me up for that all day!"
 
             n "Why'd you have to inflict your bad joke on me?"
 
-            hide ChSmiletalk
-            show ChSmiletalk2
+            hide chisei smile talk1
+            show chisei smile talk2
             ch "The best person to share a pun with is someone who hates them. That is just common knowledge."
 
             "I can practically feel her adding me to a list of victims."
-            hide ChSadtalk2
+            hide chisei sad talk2
         "What's your major?":
 
             $ Vision += 1
             
-            show ChTalk4
+            show chisei talk3
 
             "It's basic small talk, so why does she look so down?"
 
@@ -2851,8 +2851,8 @@ label introduction_chisei:
 
             n "I thought you were an Intelligence major?"
 
-            hide ChTalk4
-            show ChTalk
+            hide chisei talk3
+            show chisei talk1
 
             ch "I should be." 
             ch "I should be in classes that help me improve my skills as a writer and collaborate with other creatives."
@@ -2865,17 +2865,17 @@ label introduction_chisei:
 
             "Having a prosthetic shouldn't affect your major. Maybe she can't write as well with her left hand?"
 
-            hide ChTalk
+            hide chisei talk1
     
-    show ChTalk
+    show chisei talk1
 
     ch "We likely will not be in any of the same classes this year. I hope to be able to change that soon."
     ch "Until then, if you happen upon any unsettling rumors, please feel free to address them with me directly."
 
     n "Unsettling how?"
 
-    hide ChTalk
-    show ChSadtalk
+    hide chisei talk1
+    show chisei sad talk1
 
     ch "I have become a channel for the unseen; well, my hand has anyway."
     ch "People could claim any number of things about my writing; about me."
@@ -2883,33 +2883,33 @@ label introduction_chisei:
 
     n "So you're a medium of some kind?"
 
-    hide ChSadtalk
-    show ChSadtalk2
+    hide chisei sad talk1
+    show chisei sad talk2
 
     ch "No. That is not something I have ever wanted to be."
     ch "However, there is something at this school that is trying to take advantage of my hand's weakness and write messages with it."
 
     n "Has this 'thing' told you anything about me?"
 
-    hide ChSadtalk2
+    hide chisei sad talk2
 
     #[If Hero > Villian]
     if Hero >= Villain:
-        show ChSmile
+        show chisei smile
         ch "...Yes."
         ch "It does not want me to believe what others may say about you; that you are a good friend and an honest person."
         "Not exactly the creepy mentalist stuff I was expecting."
-        hide ChSmile
+        hide chisei smile
     else:
     #[If Villian > Hero]
-        show ChFrown1
+        show chisei frown1
         ch "....."
         ch "Sometimes I think my mind is playing tricks on me." 
         ch "Maybe the teachers will see that and put me back with the normal Intelligence majors."
-        hide ChFrown1
+        hide chisei frown1
     #[Return to Main Branch]
 
-    show ChSadtalk3
+    show chisei sad talk3
 
     ch "I do not like the idea of invading someone's privacy."
 
@@ -2919,17 +2919,17 @@ label introduction_chisei:
 
     n "Good luck with that."
 
-    hide ChSadtalk3
-    show ChSmiletalk
+    hide chisei sad talk3
+    show chisei smile talk1
 
     ch "Thank you."
     ch "Well then, I must be off. Good day, Nagen. I hope you are able to find what you are looking for."
 
-    hide ChSmiletalk
+    hide chisei smile talk1
 
     "She shuffles away, carrying with her a heavy black book... I never told her my name."
 
-    hide ChBase
+    hide chisei
 
     return
 
@@ -2941,14 +2941,14 @@ label introduction_shoma:
     "A boy is setting up a retro sewing machine that looks like it's been fetched out of a dump."
     "He looks up with a smirk, eyeing me up and down."
 
-    show ShObserve
+    show shoma observing
     
     sh "Ah, I see we've dressed ourselves today."
     
     n "Hey, just because you know how to plug in a sewing machine doesn't mean you can judge me for what I'm wearing."
 
-    hide ShObserve
-    show ShSparkle
+    hide shoma observing
+    show shoma sparkle
 
     sh "Okay, okay; just an observation. I never took you for the punk type."
     sh "Having no uniform restrictions has really opened my eyes to what our classmates are comfortable wearing."
@@ -2958,8 +2958,8 @@ label introduction_shoma:
     "The guy's got eyes able zoom in and out like a camera."
     "He used to sit in the back of the class, a bit of a loner type."
 
-    hide ShSparkle
-    show ShTalk
+    hide shoma sparkle
+    show shoma talk1
 
     sh "Shoma Nishimoto, but you probably remember that, hunh?"
 
@@ -2969,23 +2969,23 @@ label introduction_shoma:
 
     n "But it's good to see you. The more kids I find from our old homeroom, the better I feel."
 
-    hide ShTalk
-    show ShManic
+    hide shoma talk1
+    show shoma manic
 
     sh "Yeah, I know what you mean. I'm kinda glad there's more crossover classes than just homeroom."
     sh "Hopefully, it will help all the majors get along better. It's gotten so competitive lately."
 
     n "So what are you doing here?"
 
-    hide ShManic
-    show ShTalk2
+    hide shoma manic
+    show shoma talk2
 
     sh "Well, the school couldn't supply a proper costume shop of any kind, but they said I could use this room."
     sh "So... I'm trying to make due."
 
     "This place has multiple theaters but no place to make the costumes? That doesn't make sense."
 
-    hide ShTalk2
+    hide shoma talk2
 
     menu:
 
@@ -2993,7 +2993,7 @@ label introduction_shoma:
 
             $ shRep += 1
 
-            show ShTalk
+            show shoma talk1
 
             n "I know they're low on funds, but the least they could do is get you a modern sewing machine." 
             n "That thing looks ancient."
@@ -3008,8 +3008,8 @@ label introduction_shoma:
 
             n "Do you make your clothes on this thing?"
 
-            hide ShTalk
-            show ShSparkle
+            hide shoma talk1
+            show shoma sparkle
 
             sh "Most of them! I'm not good with knitwear, but other than that, it's all me!"
 
@@ -3018,13 +3018,13 @@ label introduction_shoma:
 
             sh "That's quite the compliment considering your taste."
 
-            hide ShSparkle
+            hide shoma sparkle
 
         "Your stuff's going to melt":
 
             $ Vigor += 1
 
-            show ShSadsmile
+            show shoma sad smile
 
             sh "I'm not sure that's possible."
 
@@ -3035,15 +3035,15 @@ label introduction_shoma:
 
             n "They're not going to fix it?"
 
-            hide ShSadsmile
-            show ShSad
+            hide shoma sad smile
+            show shoma sad
 
             sh "Technically this was a storage closet, so air conditioning is really low on the list of things the school needs."
 
             n "Then ask for a different room. There has to be someplace more comfortable for you to set up shop."
 
-            hide ShSad
-            show ShSadsmile
+            hide shoma sad
+            show shoma sad smile
 
             sh "Oh no, I could never."
             sh "They've already been generous enough to lend me this space, as long as I don't throw out anything they store here."
@@ -3052,13 +3052,13 @@ label introduction_shoma:
             "If that had been me, I would have already marched down the hall demanding a room change."
             "Well, if it really doesn't bother him, there's nothing I can do."
 
-            hide ShSadsmile
+            hide shoma sad smile
 
         "This is boring":
 
             $ shRep -= 1
 
-            show ShObserve
+            show shoma observing
 
             sh "Ah, yes. Unpacking generally isn't fun. You could offer to help instead of complaining."
 
@@ -3071,40 +3071,40 @@ label introduction_shoma:
 
             n "....."
 
-            hide ShObserve
-            show ShBase
+            hide shoma observing
+            show shoma
 
             sh "If you come back after I'm done setting up, I'll try harder to be an entertaining host."
 
             "So not helping."
 
-            hide ShBase
+            hide shoma
 
-    show ShTalk2
+    show shoma talk2
 
     sh "I'm sorry, it seems my mind is all over the place."
     sh "I honestly wasn't expecting to talk to another human being until class started."
 
     n "Really? Then why did you come onto campus the day before?"
 
-    hide ShTalk
-    show ShMad
+    hide shoma talk1
+    show shoma mad
 
     sh "Well... This place... I need a place to create that isn't where I sleep."
     sh "Then I'd be spending way too much time in my room and I... I'm trying to break myself of that habit."
 
     n "I see... what exactly do you plan to do here?"
 
-    hide ShMad
-    show ShLie
+    hide shoma mad
+    show shoma lying
 
     sh "Mostly alterations, unless I can get my hands on some larger materials."
     sh "I could buy some, but it would mean taking commissions."
 
     n "What's wrong with that?"
 
-    hide ShLie
-    show ShSad
+    hide shoma lying
+    show shoma sad
 
     sh "I'm not really... comfortable with women's wear, and I have a feeling that would be in the highest demand here."
     sh "There are only so many vague gown requests I can handle. I'd much rather do something new."
@@ -3116,8 +3116,8 @@ label introduction_shoma:
     "It's as if he's peering into a dark void off into the horizon. I'm not sure what he's seeing."
     "He shudders a bit and then smiles at me."
 
-    hide ShSad
-    show ShSparkle
+    hide shoma sad
+    show shoma sparkle
 
     sh "But if you or your friends ever need something, I'm always up for a challenge."
     sh "I could make some really cool 'punk' stuff out of some strange materials if you find stuff for me."
@@ -3135,13 +3135,13 @@ label introduction_shoma:
     n "I'm sure it will be fine. Granted, it'll suck being cut off from... everything."
     n "But there's other things to do too. You just got to get creative is all."
 
-    hide ShSparkle
-    show ShTalk
+    hide shoma sparkle
+    show shoma talk1
 
     sh "Y-yeah... thanks, Nagen, but I think I'm going to wrap up here for now."
     sh "Maybe I'll see you around."
 
-    hide ShTalk
+    hide shoma talk1
 
     "With that, he ushers me out of the room. He wanders off with a heavy step."
     "I should get going too."
@@ -3158,36 +3158,36 @@ label introduction_setsuna:
 
     n "Well, this is disappointing."
 
-    show SBase
+    show setsuna
     with dissolve
 
     s "The gym or being at school?"
 
     "What the- where did that come from?"
 
-    hide SBase
-    show SWhatever
+    hide setsuna
+    show setsuna apathetic
 
     s "...You weren't talking to me, were you?"
 
     n "I didn't realize you were here, sorry."
 
-    hide SWhatever
-    show SRelax
+    hide setsuna apathetic
+    show setsuna relaxed
 
     s "It happens all the time, don't sweat it."
 
     "She smiles with such ease. I can't help but feel a little jealous."
 
-    hide SRelax
-    show SLaugh
+    hide setsuna relaxed
+    show setsuna laugh
 
     s "The name's Setsuna Hori. I won't be offended if you forget it."
 
     n "That's highly unlikely. I can't forget anything, eidetic memory."
     
-    hide SLaugh
-    show SHeh
+    hide setsuna laugh
+    show setsuna scoff
 
     s "Is that what you go by?"
 
@@ -3197,20 +3197,20 @@ label introduction_setsuna:
 
     s "I guess it's only fair to tell you my Proficiency."
 
-    hide SHeh
-    show SSadTalk
+    hide setsuna scoff
+    show setsuna sad talk
 
     s "I'm told I'm basically invisible; people don't notice me or remember me as much as other people."
     
-    hide SSadTalk
-    show SRelax
+    hide setsuna sad talk
+    show setsuna relaxed
     
     s "I prefer the term Social Chameleon, but the bow-ties in charge of labels don't want to change my status without a retest."
 
     "A Charisma major that specializes in being unnoticed, how odd."
 
-    hide SRelax
-    show SWhatever
+    hide setsuna relaxed
+    show setsuna apathetic
 
     s "Having the wrong label has its perks though."
     s "As long as I act like I belong, I can go pretty much anywhere I want."
@@ -3219,14 +3219,14 @@ label introduction_setsuna:
     "She laughs at her own joke."
 
     s "I don't know what you expected to find here that's got you so down. It's just a gym."
-    hide SWhatever
+    hide setsuna apathetic
     menu:
 
         "My friends":
 
             $ sRep += 1
 
-            show SWhat
+            show setsuna shocked
 
             s "You know other people that go here?"
             s "Lucky you, I feel like a fish out of water. It's like everyone here grew up together or something."
@@ -3234,8 +3234,8 @@ label introduction_setsuna:
             n "If they're from Estella, they may have."
             n "It depends on what class they were in. Some of the courses were highly insulated."
 
-            hide SWhat
-            show SMourn
+            hide setsuna shocked
+            show setsuna mourning
             s "Shoot, that'll make things extra hard."
 
             n "Make what extra hard?"
@@ -3244,8 +3244,8 @@ label introduction_setsuna:
             s "It's like shoving your leg in a closing elevator."
             s "People just stare and you have, like, half a second to make a good impression before they hit close again."
             
-            hide SMourn
-            show SWhatever
+            hide setsuna mourning
+            show setsuna apathetic
             
             s "It's going to be a lot of that or go back to my corner being ignored."
 
@@ -3255,13 +3255,13 @@ label introduction_setsuna:
 
             s "Thanks. I'll keep that in mind, but I'm really trying to stand on my own."
 
-            hide SWhatever
+            hide setsuna apathetic
 
         "The pool":
 
             $ Charm += 1
 
-            show SHeh
+            show setsuna scoff
 
             "She pounds on the gym floor, it sounds... hollow?"
 
@@ -3274,20 +3274,20 @@ label introduction_setsuna:
 
             n "It's better at being impractical."
 
-            hide SHeh
-            show SLaugh
+            hide setsuna scoff
+            show setsuna laugh
             
             "That got her to laugh."
 
             s "I guess that's true, but there's potential at least."
             s "You'd be surprised how many people can't even manage that."
 
-            hide SLaugh
+            hide setsuna laugh
         "Something interesting":
 
             $ sRep -= 1
 
-            show SFO
+            show setsuna glare
 
             s "Sorry to disappoint you then."
 
@@ -3295,8 +3295,8 @@ label introduction_setsuna:
             "There are a million other things I could have said that would be worse."
             "Ugh, but the way she keeps glaring at me..."
 
-            hide SFO
-            show SSadTalk
+            hide setsuna glare
+            show setsuna sad talk
 
             s "By all means, feel free to object at any time."
 
@@ -3309,13 +3309,13 @@ label introduction_setsuna:
             s "Hmm..."
 
             "I can't tell if she doesn't believe me or just doesn't care. Either way, it pisses me off."
-            hide SSadTalk
+            hide setsuna sad talk
 
-    show SBase
+    show setsuna
     "A high pitched alarm rings from her wristwatch."
 
-    hide SBase
-    show SDone
+    hide setsuna
+    show setsuna impatient
 
     s "Well, that was painful."
 
@@ -3323,14 +3323,14 @@ label introduction_setsuna:
 
     n "Wait, what's going on?"
 
-    hide SDone
-    show SFO
+    hide setsuna impatient
+    show setsuna glare
 
     s "I've met my bare minimum for giving a shit and this conversation is clearly going nowhere."
     s "You're not nearly as interesting as I hoped, so I'm leaving."
     
-    hide SFO
-    show SHeh
+    hide setsuna glare
+    show setsuna scoff
     
     s "Honestly, I don't understand why everyone's so worried that you're here."
     s "Outshining you will be a cakewalk."
@@ -3343,23 +3343,23 @@ label introduction_setsuna:
 
     n "Wait, are you even supposed to be at this school?"
 
-    hide SHeh
-    show SFO
+    hide setsuna scoff
+    show setsuna glare
 
     s "I meant the gym, moron. It's off-limits to students without a teacher present."
 
     n "I knew that!"
 
-    hide SFO
-    show SDone
+    hide setsuna glare
+    show setsuna impatient
 
     s "Sure you did."
 
-    hide SDone
-    show SRelax
+    hide setsuna impatient
+    show setsuna relaxed
     s "Welp, I got more important stuff to do. If you ever decide to do anything entertaining, by all means, find me."
 
-    hide SRelax
+    hide setsuna relaxed
 
     "I chase after her, but by the time I get outside, she's nowhere to be found."
 
@@ -3373,14 +3373,14 @@ label introduction_kietsu:
     "A heavenly aroma of breakfast wafts through the air."
     "At one of the tables, a kid in trashed clothes is sitting with his head in his arms, muttering something to himself."
 
-    show Kisad
+    show kietsu sad
 
     n "...Um... You okay, dude?"
 
     "I nudge the leg of his chair with my foot and he jumps up with a start."
 
-    hide Kisad
-    show Kihunh
+    hide kietsu sad
+    show kietsu confused
 
     ki "Hunh!? Oh, sorry, didja want to sit here or somethin'?"
 
@@ -3388,13 +3388,13 @@ label introduction_kietsu:
 
     n "I was just making sure you're okay."
 
-    hide Kihunh
-    show Kisympathy
+    hide kietsu confused
+    show kietsu sympathetic
 
     ki "Thanks man. I've been better, but y'know, who hasn't?"
 
-    hide Kisympathy
-    show KiBase
+    hide kietsu sympathetic
+    show kietsu
 
     ki "At least this place has cheese curds, y'want a cheese curd?"
 
@@ -3402,20 +3402,20 @@ label introduction_kietsu:
     "It seems like the first thing he did when he got here was figure out where to eat."
     "A big plate of fried appetizers is set between us."
 
-    hide KiBase
-    show Kidontworry
+    hide kietsu
+    show kietsu assuring
 
     ki "You can tell a lot about a place by the food they serve their people." 
 
-    hide Kidontworry
-    show Kimildlyupset
+    hide kietsu assuring
+    show kietsu upset1
 
     ki "Crap food means you'll get treated like crap."
 
     n "You've been to a school like this before?"
 
-    hide Kimildlyupset
-    show Kidontworry
+    hide kietsu upset1
+    show kietsu assuring
 
     ki "Like this? Nah. I've been in n' out of a couple... ah, what do they call 'em?"
     ki "'Guided Learning Programs'. I've been to a bunch of those."
@@ -3425,147 +3425,147 @@ label introduction_kietsu:
 
     n "I can't believe your parents would do that to you."
 
-    hide Kidontworry
-    show Kimischeif
+    hide kietsu assuring
+    show kietsu mischievious
 
     ki "My parents...? Nah, I signed myself up."
 
     n "You can do that? Why would you do that?"
 
-    hide Kimischeif
-    show Kisympathy
+    hide kietsu mischievious
+    show kietsu sympathetic
 
     ki "Thought it'd work better than choking on sage and makin' my mom cry. I even tried bootcamp."
     ki "It was actually really cool, but..."
 
-    hide Kisympathy
-    show Kicringe
+    hide kietsu sympathetic
+    show kietsu cringe
 
     "He trails off. With his sunglasses, it's hard to tell if he's looking at me or totally zoning out."
     "I check behind me, just to be sure, but we're the only people in the lobby."
     "I wave at him to get his attention."
 
-    hide Kicringe
-    show Kihunh
+    hide kietsu cringe
+    show kietsu confused
 
     ki "Sorry, what was I talkin' about?"
 
-    hide Kihunh
+    hide kietsu confused
 
     menu:
         "What's wrong with you?":
 
             $ kiRep -= 1
 
-            show Kihey
+            show kietsu serious
 
             ki "That's a loaded question."
 
             "He drums on the table with his knuckles."
 
-            hide Kihey
-            show Kiveryconcerned
+            hide kietsu serious
+            show kietsu concerned
 
             ki "See, we just met, so I don't know what you think 'right' is."
             ki "Conversations like this are just for you to figure out how similar I am to you when you've already decided we're nothin' alike."
 
             "He rubs his temples."
 
-            hide Kiveryconcerned
-            show Kidude
+            hide kietsu concerned
+            show kietsu surprised
 
             ki "Why. Why would you ask that? Did I do something upsettin' if y'think..."
             ki "You a Vision major, or do you hate 'em?"
 
             n "You just kept trailing off and forgetting what you were saying."
 
-            hide Kidude
-            show Kireallyupset
+            hide kietsu surprised
+            show kietsu upset2
 
             ki "That's normal."
 
             n "No dude, it's not."
 
-            hide Kireallyupset
-            show Kiunpleasentsurpise
+            hide kietsu upset2
+            show kietsu upset1 surprised
 
             ki "It's normal for me. Are you one of those people who like irritatin' people?"
 
             n "I-Uh."
 
-            hide Kiunpleasentsurpise
-            show Kihey
+            hide kietsu upset1 surprised
+            show kietsu serious
 
             ki "'Cause that was hella rude. What's wrong with you?"
 
             n "I didn't mean it like that."
-            hide Kihey
+            hide kietsu serious
 
         "Your old school":
 
             $ kiRep += 1
 
-            show Kisadtalk
+            show kietsu sad talk
 
             ki "Right, well they said being a Vision major, I'm a Vision major, they said it made my case too complex."
 
             n "What does that mean?"
 
-            hide Kisadtalk
-            show Kihey
+            hide kietsu sad talk
+            show kietsu serious
 
             ki "I know, right? I was so pumped to have a goal other than 'stay out of trouble' too."
             
-            hide Kihey
-            show Kisympathy
+            hide kietsu serious
+            show kietsu sympathetic
 
             ki "Everythin' was super structured, it was kinda nice. I don't know what to do with myself now."
 
-            hide Kisympathy
-            show Kisad
+            hide kietsu sympathetic
+            show kietsu sad
 
             "He's zoning out again, but I can tell he's still somewhat present."
 
             n "At least we have decent food."
 
-            hide Kisad
-            show KiBase
+            hide kietsu sad
+            show kietsu
 
             ki "Oh yeah, and real plates too. They said we might be able to get music pumped in here after classes."
 
             "He seems genuinely happy to be here, and the food is good."
 
-            hide KiBase
-            show Kisympathy
+            hide kietsu
+            show kietsu sympathetic
 
             ki "Thanks for sittin' with me by the way."
 
             n "Hunh? Oh, yeah, no problem."
 
-            hide Kisympathy
-            show Kimildlyupset
+            hide kietsu sympathetic
+            show kietsu upset1
 
             ki "It feels like everyone here already knows each other."
 
-            hide Kimildlyupset
-            show Kisympathy
+            hide kietsu upset1
+            show kietsu sympathetic
 
             ki "It's hella uncomfortable, so it's cool to have someone who wants to talk to me."
 
-            hide Kisympathy
+            hide kietsu sympathetic
 
         "Eating sage?":
 
             $ Vision += 1
 
-            show Kicringe
+            show kietsu cringe
 
             ki "I mean, you can, but I don't see why you'd want to eat that stuff plain."
 
             n "You said you choked on sage?"
 
-            hide Kicringe
-            show Kibwahaha
+            hide kietsu cringe
+            show kietsu laugh
 
             ki "Sage smoke, man, not a plate of it. You burn sage to ward off evil spirits."
             ki "Not the nicest way to wake up in the mornin'."
@@ -3574,44 +3574,44 @@ label introduction_kietsu:
 
             n "How does that work? Do they not like the smell of it or something? Can spirits even smell?"
 
-            hide Kibwahaha
-            show Kimischeif
+            hide kietsu laugh
+            show kietsu mischievious
 
             ki "Hunh... Never thought about it like that before, I guess they don't."
 
-            hide Kimischeif
-            show Kisadtalk
+            hide kietsu mischievious
+            show kietsu sad talk
 
             ki "You'd hate the smell of it too if someone shoved ten smudge sticks in your face."
 
-            hide Kisadtalk
-            show Kibwahaha
+            hide kietsu sad talk
+            show kietsu laugh
 
             ki "Never had to eat it though."
 
             n "I guess that makes more sense."
 
-            hide Kibwahaha
-            show KiBase
+            hide kietsu laugh
+            show kietsu
 
             ki "Makes more sense than half the stuff you find online. At least it's harmless."
 
-            hide KiBase
+            hide kietsu
 
-    show Kidude
+    show kietsu surprised
 
     ki "Have you seen how big this place is?"
 
-    hide Kidude
-    show Kiteasing
+    hide kietsu surprised
+    show kietsu teasing
     
     ki "When I heard only twenty-some kids would be here, I thought it was going to be super small."
     ki "No wonder the waitlist is so long."
 
     n "There's a waitlist to get in? Already?"
 
-    hide Kiteasing
-    show Kitalk
+    hide kietsu teasing
+    show kietsu talk
 
     ki "Well, yeah, any place that takes teens gets packed right away."
     ki "But the requirements here are really specific. I was lucky to get in."
@@ -3620,18 +3620,18 @@ label introduction_kietsu:
 
     n "Did you get questioned by a red-headed lady in a bad pantsuit?"
 
-    hide Kitalk
-    show Kicringe
+    hide kietsu talk
+    show kietsu cringe
 
     ki "Ahh... no. It was, umm... she had a scarf and really big earrings."
 
-    hide Kicringe
-    show KiBase
+    hide kietsu cringe
+    show kietsu
 
     ki "I ended up writing everything I could fit in the comment section of the application and it earned me a scholarship."
 
-    hide KiBase
-    show Kisadtalk
+    hide kietsu
+    show kietsu sad talk
 
     ki "The interview was hard, but I managed to get through it. Sounds like you got a mean one."
 
@@ -3641,27 +3641,27 @@ label introduction_kietsu:
 
     n "But it's not like she's part of the faculty here, so I don't think we'll be seeing her."
 
-    hide Kisadtalk
-    show KiBase
+    hide kietsu sad talk
+    show kietsu
 
     ki "That's good. And hey, we get a huge place all to ourselves. No upperclassmen either."
     ki "We should make the most of this year."
 
     n "Yeah, I guess so."
 
-    hide KiBase
-    show Kitalk
+    hide kietsu
+    show kietsu talk
 
     ki "I'm gonna go stretch my legs. Don't worry about the bill, my meal plan will cover it."
 
     "There are only three cheese curds left. I barely had any. Where did they all go?"
 
-    hide Kitalk
-    show Kidontworry
+    hide kietsu talk
+    show kietsu assuring
 
     ki "Oh, and thanks for checking on me. You'd be surprised how many people would have just walked away."
 
-    hide Kidontworry
+    hide kietsu assuring
 
     "He shoots a couple finger guns at me before walking away..."
     "The food's all gone. I should keep moving forward."
@@ -3676,7 +3676,7 @@ label introduction_momoko:
 
     n "What happened? Are you okay?"
 
-    show MhPuzzle
+    show momoko puzzled
 
     mh "Is one free outlet without a jenga tower in the way too much to ask for?"
 
@@ -3688,8 +3688,8 @@ label introduction_momoko:
 
     "A foreboding clunk comes from behind the small wooden door as she backs away."
 
-    hide MhPuzzle
-    show MhSurprise
+    hide momoko puzzled
+    show momoko surprised
 
     mh "Don't open that cabinet."
 
@@ -3697,8 +3697,8 @@ label introduction_momoko:
 
     "She starts laughing."
 
-    hide MhSurprise
-    show MhOohShit
+    hide momoko surprised
+    show momoko worry
 
     mh "Decisions, decisions."
     mh "Do I pretend to be someone else and see how long it takes you to figure it out? Or do I tell you?"
@@ -3708,14 +3708,14 @@ label introduction_momoko:
 
     n "Is it really that funny?"
 
-    hide MhOohShit
-    show MhHappy
+    hide momoko worry
+    show momoko happy
 
     mh "You took it so personally when I kept forgetting your name."
     mh "I had it written on my hand for at least a year before I got it down."
     
-    hide MhHappy
-    show MhPuzzle
+    hide momoko happy
+    show momoko puzzled
     
     mh "Maybe my forgetfulness is contagious?"
 
@@ -3724,15 +3724,15 @@ label introduction_momoko:
 
     n "I'm so sorry, could you please just tell me your name?"
     
-    hide MhPuzzle
-    show MhTalk
+    hide momoko puzzled
+    show momoko talk1
 
     mh "Momoko Yoshino. My Proficiency is in Chemistry."
     mh "We were in the same special classes and homeroom in Estella for four years. Ring any bells?"
 
     n "Momoko!?"
 
-    hide MhTalk
+    hide momoko talk1
 
     scene backgroundP4
 
@@ -3745,7 +3745,7 @@ label introduction_momoko:
 
     scene backgroundlab
 
-    hide MhTalk
+    hide momoko talk1
 
     menu:
 
@@ -3753,7 +3753,7 @@ label introduction_momoko:
 
             $ mhRep -= 1
 
-            show MhSad
+            show momoko sad
 
             mh "Oh, well, I was messing around with some new hair dye formulas and it kinda nuked my eyebrows..."
             mh "And my lashes..."
@@ -3763,15 +3763,15 @@ label introduction_momoko:
             n "That isn't too surprising."
             n "But I meant all of this; the clothes, the bigness. You're so different."
 
-            hide MhSad
-            show MhTalk2
+            hide momoko sad
+            show momoko talk2
 
             mh "So? No one wanted me around before. At least now I think I'm fun, the rest should follow after."
 
             n "The rest of what?"
 
-            hide MhTalk2
-            show MhTalk
+            hide momoko talk2
+            show momoko talk1
 
             mh "Rebellion!"
             mh "After spending months in boardrooms talking with boring grown-ups, I got so frustrated trying to make those jerks happy that I decided to stop caring what anyone thinks."
@@ -3781,47 +3781,47 @@ label introduction_momoko:
 
             "So this is her idea of what teenage rebellion looks like?"
 
-            hide MhTalk
-            show MhAnger
+            hide momoko talk1
+            show momoko angry
 
             mh "Now I'm all feisty. Begone, frown wrinkles, begone!"
             
-            hide MhAnger
-            show MhBase
+            hide momoko angry
+            show momoko
 
             mh "Today is supposed to be a good day, for we have science. Unsupervised science."
 
             n "...We always have science."
 
-            hide MhBase
+            hide momoko
 
         "You look happy":
 
             $ mhRep += 1
 
-            show MhBase
+            show momoko
 
             mh "For the first time in a long time, I feel like things are going to get better."
             mh "I got that vibe, y'know. Don't you?"
 
             n "I think you're one of the few."
 
-            hide MhBase
-            show MhAnger
+            hide momoko
+            show momoko angry
 
             mh "Aww, don't go bummering all over my parade because you're jealous I'm thriving."
 
             n "I'm not jealous. You're jealous."
 
-            hide MhAnger
-            show MhHappy
+            hide momoko angry
+            show momoko happy
 
             mh "D'aw, cheer up Nagen, it'll be okay. I mean, you're still an Intel major, yeah?"
 
             n "Well, yeah..."
 
-            hide MhHappy
-            show MhTalk
+            hide momoko happy
+            show momoko talk1
 
             mh "Then that's one more reason to smile."
             mh "We'll get to be in the same classes again! Come on dude, get on this level."
@@ -3830,32 +3830,32 @@ label introduction_momoko:
 
             "She gives me a huge, cheesy grin and I can't help smiling too."
 
-            hide MhTalk
+            hide momoko talk1
         "Mad scientist":
 
             $ Intel += 1
 
-            show MhManic
+            show momoko manic
 
             mh "Now don't go saying that, you'll make people think I'm irresponsible or something."
 
             n "You're on wheels near a tower of glass."
 
-            hide MhManic
-            show MhTalk
+            hide momoko manic
+            show momoko talk1
 
             mh "It's not like I'm zipping around in Jams."
             mh "They're quads, baby skates, I'm safer in these than on solid ground; trust me."
             
-            hide MhTalk
-            show MhPuzzle
+            hide momoko talk1
+            show momoko puzzled
             
             mh "Do I really give off crazy vibes?"
 
             n "No... but you have been known to be a bit of a pyromaniac."
 
-            hide MhPuzzle
-            show MhSadTalk
+            hide momoko puzzled
+            show momoko sad talk
 
             mh "Fire likes me, not the other way around. Besides, I've been trying to break up with combustibles."
             mh "Even contained explosions are too much stress right now."
@@ -3863,25 +3863,25 @@ label introduction_momoko:
             "That's a surprise. She was always so enchanted with fireworks and the like."
             "I can't imagine her doing anything else."
 
-            hide MhSadTalk
+            hide momoko sad talk
     
-    show MhTalk
+    show momoko talk1
 
     mh "I think we all can use a break from everything going on outside."
     mh "It's best to think of this as a free vacation."
 
     n "It's hard for me to see how school and vacation fit in the same circle."
 
-    hide MhTalk
-    show MhSadTalk
+    hide momoko talk1
+    show momoko sad talk
 
     mh "Really? I thought you loved school."
     mh "You were always so competitive about grades and you ran all those clubs. You practically lived there."
 
     "She shakes her head."
 
-    hide MhSadTalk
-    show MhTalk2
+    hide momoko sad talk
+    show momoko talk2
 
     mh "Eh, who am I to judge? I didn't have much of a life before either."
 
@@ -3891,8 +3891,8 @@ label introduction_momoko:
 
     n "Workshop? You're going to start making stuff here?"
 
-    hide MhTalk2
-    show MhPuzzle
+    hide momoko talk2
+    show momoko puzzled
 
     mh "See, that look of panic is not what I'm going for."
     mh "I know I've got a bit of a destructive streak to make up for, but I swear I've changed."
@@ -3900,23 +3900,23 @@ label introduction_momoko:
 
     n "You don't mean-"
 
-    hide MhPuzzle
-    show MhHappy
+    hide momoko puzzled
+    show momoko happy
 
     mh "Cosmetics!"
 
     n "Umm..."
 
-    hide MhHappy
-    show MhTalk2
+    hide momoko happy
+    show momoko talk2
 
     mh "I've already started trying to make my own hair dye with... mixed results."
     mh "But there's still more things to try. It'll be like putting a spa in a bottle, doesn't that sound like fun?"
 
     n "I'm sure someone will like it."
 
-    hide MhTalk2
-    show MhBase
+    hide momoko talk2
+    show momoko
 
     mh "I still gotta assert my dominance and claim this lab as my own, but once I do, you'll know."
 
@@ -3928,8 +3928,8 @@ label introduction_momoko:
     
     n "I don't know..."
 
-    hide MhBase
-    show MhTalk
+    hide momoko
+    show momoko talk1
 
     mh "Why not? There's nothing more manly than taking care of yourself."
 
@@ -3941,8 +3941,8 @@ label introduction_momoko:
     
     "And explosions."
 
-    hide MhTalk
-    show MhHappy
+    hide momoko talk1
+    show momoko happy
     
     mh "Then it shouldn't be a problem, right? Oh, and if there's anything specific you want, just let me know."
 
@@ -3951,7 +3951,7 @@ label introduction_momoko:
 
     "Just please, for everyone's safety, fixate on something else."
     
-    hide MhHappy
+    hide momoko happy
 
     return
 
@@ -3964,7 +3964,7 @@ label introduction_rei:
 
     n "Hey, are you okay?"
 
-    show ReDisappointed
+    show rei disappointed
 
     re "Oh Nagen, it's just awful, they took everything away! I totally forgot I had them with me until the alarms went off."
     re "I told them I wasn't going to stab anyone. I swear, I wasn't going to stab anyone!"
@@ -3972,8 +3972,8 @@ label introduction_rei:
 
     n "Woah, woah, slow down. What are you talking about?"
 
-    hide ReDisappointed
-    show ReSadtalk
+    hide rei disappointed
+    show rei sad talk
 
     re "The swords! All of my sister's swords, what did you think I was talking about?"
 
@@ -3981,8 +3981,8 @@ label introduction_rei:
 
     n "I don't know, Rei, maybe you were listing Warrior Pony OCs."
 
-    hide ReSadtalk
-    show ReDisappointed
+    hide rei sad talk
+    show rei disappointed
 
     re "I'm such an idiot. I got so used to carrying them around in the riots."
 
@@ -3992,7 +3992,7 @@ label introduction_rei:
     "I respect that she never blamed her classmates for the crummy treatment she received."
     "It would have been really easy to throw us under the bus to save her reputation."
 
-    hide ReDisappointed
+    hide rei disappointed
 
     menu:
 
@@ -4000,32 +4000,32 @@ label introduction_rei:
 
             $ reRep += 1
 
-            show ReIrate
+            show rei mad
 
             re "I know... Ugh, I should have gotten a storage locker or something. My poor babies."
 
             n "It's okay, I'm sure they just locked them up. There aren't too many safe places to dispose of swords right now."
 
-            hide ReIrate
-            show ReOpt
+            hide rei mad
+            show rei cheerful
 
             re "Right, you're right! I'll get them back eventually."
             re "For now, I'll just settle for plastic props. They're a shame compared to her craftsmanship."
             
             n "I'd like to see them sometime."
 
-            hide ReIrate
-            show ReTalk
+            hide rei mad
+            show rei talk1
 
             re "I'm more of an artillery gal myself, but even I could see the beauty in her armory."
             re "You'll definitely have to come by this summer and see 'em."
 
-            hide ReTalk
+            hide rei talk1
         "Aren't they heavy?":
 
             $ reRep -= 1
 
-            show ReDisappointed
+            show rei disappointed
 
             n "How could you forget you were carrying those things?"
 
@@ -4035,56 +4035,56 @@ label introduction_rei:
 
             n "How many were there?"
 
-            hide ReDisappointed
-            show ReTalk2
+            hide rei disappointed
+            show rei talk2
 
             re "About eight. Any more than that and I wouldn't be able to move."
 
             n "You forgot you were carrying eight swords?"
 
-            hide ReTalk2
-            show ReTalk
+            hide rei talk2
+            show rei talk1
 
             re "Yeah, and my fifteen knives, and my keys."
 
             n "Your keys?"
 
-            hide ReTalk
-            show ReBrag
+            hide rei talk1
+            show rei bragging
 
             re "The key chain was a brass knuckle kitty."
             re "I couldn't get the keys off because they were welded to the head like whiskers."
 
             n "Unbelievable."
 
-            hide ReBrag
-            show ReDepressed
+            hide rei bragging
+            show rei depressed
 
             re "I already got three weeks probation, I don't need a lecture from you too."
 
             "This girl walks into school with the iron throne strapped to her back and I'm the one on probation?"
 
-            hide ReDepressed
+            hide rei depressed
 
         "You haven't changed":
 
             $ Vigor += 1
 
-            show ReEh
+            show rei surprised
             re "In a good way, I hope."
 
             n "Why wouldn't it be in a good way?"
 
-            hide ReEh
-            show ReIrate
+            hide rei surprised
+            show rei mad
             
             re "Well, I never was sure if you actually liked me."
             re "No one in our class wanted to be there. It always felt like everyone was just waiting to get out."
 
             n "I mean, you're not wrong, but that doesn't mean I disliked you. I just had other things going on."
 
-            hide ReIrate
-            show ReTalk
+            hide rei mad
+            show rei talk1
 
             re "That's good to hear."
 
@@ -4092,25 +4092,25 @@ label introduction_rei:
 
             re "You're the only ones who thought constantly forgetting homework wasn't a problem."
 
-            hide ReTalk
+            hide rei talk1
 
-    show ReSmiletalk
+    show rei smile talk
 
     re "I'm really glad you're here, Nagen."
     re "I was starting to think that I'd have to go to this big ol' scary place by myself."
 
     n "I'm surprised you recognized me."
 
-    hide ReSmiletalk
-    show ReTalk
+    hide rei smile talk
+    show rei talk1
 
     re "So you finally got to pick your own clothes, big deal. You still sound the same as always."
     re "We were really worried about you when you disappeared during the riots."
 
     n "We?"
 
-    hide ReTalk
-    show RePout 
+    hide rei talk1
+    show rei pout 
 
     re "...Our classmates."
     re "And the girls from the squad. We were doing a headcount at the refugee center and couldn't find you."
@@ -4121,8 +4121,8 @@ label introduction_rei:
 
     n "Okay, mom."
 
-    hide RePout
-    show ReIrate
+    hide rei pout
+    show rei mad
 
     re "I'm serious. We've got to look out for each other now more than ever."
 
@@ -4130,15 +4130,15 @@ label introduction_rei:
 
     n "Thanks Rei, I'll try my best."
 
-    hide ReIrate
-    show ReEh
+    hide rei mad
+    show rei surprised
 
     re "O-oh, there's no need to thank me..."
 
     n "The same goes for you though, you can't let your guard down here. It's not safe."
 
-    hide ReEh
-    show ReDisappointed
+    hide rei surprised
+    show rei disappointed
 
     re "Nagen, I'm the one who accidentally brought weapons to the school."
     re "This place is supposed to protect us from the aftermath of the riots. They want to help us."
@@ -4146,12 +4146,12 @@ label introduction_rei:
     "So that's what they've been telling everybody else."
     "It's a shame. As sweet as Rei is, she's too trusting."
 
-    hide ReDisappointed
-    show ReTalk
+    hide rei disappointed
+    show rei talk1
 
     re "This is going to be a fresh start for us, you'll see."
 
-    hide ReTalk
+    hide rei talk1
     
     return
 
@@ -4172,18 +4172,18 @@ label introduction_rise:
 
     "She perks up at the sound of my voice with slow, deliberate blinks."
 
-    show RSmile
+    show rise smile
 
     r "Yes, though high tea is an activity that can be enjoyed by anyone. Please, have a seat."
 
-    hide RSmile
+    hide rise smile
 
     menu:
         "Sit":
 
             $ rRep += 1
 
-            show RBase
+            show rise
 
             n "Are you sure?"
 
@@ -4194,8 +4194,8 @@ label introduction_rise:
 
             n "This just looks like water..."
 
-            hide RBase
-            show RTalk
+            hide rise
+            show rise talk
 
             r "It is for now. I would not want to accidentally poison a stranger through social convention by serving the wrong tea."
             r "Now let us see if I have anything you would like."
@@ -4204,14 +4204,14 @@ label introduction_rise:
 
             r "Choose whatever you would like."
 
-            hide RTalk
+            hide rise talk
 
             menu:
                 "Golden Tip":
 
                     $ Charm += 1
 
-                    show RSmug
+                    show rise smug
 
                     r "It tastes best without milk, I should know."
 
@@ -4219,16 +4219,16 @@ label introduction_rise:
 
                     n "You have multiple bags of $200 tea?"
 
-                    hide RSmug
-                    show RFlirt
+                    hide rise smug
+                    show rise flirting
 
                     r "Is that why you chose it? And here I thought you were aiming for the health benefits." 
                     r "It is supposed to help with anxiety."
 
                     n "Not going to argue it's 'not that expensive'?"
 
-                    hide RFlirt
-                    show RFrown
+                    hide rise flirting
+                    show rise upset
 
                     r "I would not know, I did not buy them."
 
@@ -4236,28 +4236,28 @@ label introduction_rise:
 
                     n "It might be a while until you can get more. Are you sure I can have this?"
 
-                    hide RFrown
-                    show RBase
+                    hide rise upset
+                    show rise
 
                     r "By all means; you are curious and I already offered it to you, regardless of its worth."
                     r "It will be ready in about five minutes."
 
                     n "If you drink this a bunch, does that mean you're an anxious person?"
 
-                    hide RBase
-                    show RFrown
+                    hide rise
+                    show rise upset
 
                     r "...I have been favoring it recently. But everyone has been seeking comfort more as of late, correct?"
 
                     n "I guess."
 
-                    hide RFrown
+                    hide rise upset
 
                 "Spark Matcha":
 
                     $ Vigor += 1
 
-                    show RSmile
+                    show rise smile
 
                     r "Are you feeling tired?"
 
@@ -4267,15 +4267,15 @@ label introduction_rise:
 
                     n "I can't, I still have things I need to do today."
 
-                    hide RSmile
-                    show RFrown
+                    hide rise smile
+                    show rise upset
 
                     r "Before school begins? That must be stressful."
 
                     n "Yeah. The school's so big and all the construction is making it hard to get around."
 
-                    hide RFrown
-                    show RFlirt
+                    hide rise upset
+                    show rise flirting
 
                     r "Your motivation is admirable."
                     r "Merely setting foot on campus felt like a chore to me, even though this is an area I should thrive in."
@@ -4283,8 +4283,8 @@ label introduction_rise:
 
                     n "I've spent the last few months with no internet and barely two people to talk to."
 
-                    hide RFlirt
-                    show RSmug
+                    hide rise flirting
+                    show rise smug
 
                     r "So the facility itself is the obstacle?"
                     r "Well, that certainly explains a lot, but you should not put too much pressure on yourself."
@@ -4293,12 +4293,12 @@ label introduction_rise:
 
                     n "No good. If I don't try my hardest, it will just keep me up all night."
 
-                    hide RSmug
+                    hide rise smug
                 "Earl Gray":
 
                     $ Intel += 1
 
-                    show RTalk
+                    show rise talk
 
                     n "You'll have to forgive me if I'm a little shaky on the proper etiquette, but that's the one I can put milk in, right?"
 
@@ -4309,8 +4309,8 @@ label introduction_rise:
 
                     "She says that, but I feel like she's watching my every move. Too bad there's no food."
 
-                    hide RTalk
-                    show RFlirt
+                    hide rise talk
+                    show rise flirting
 
                     r "You must be new at this if you have to think so much about drinking tea."
                     r "A true blue blood has such notions drilled into them since birth."
@@ -4321,18 +4321,18 @@ label introduction_rise:
 
                     n "I don't think the people who taught me plan on keeping me around after graduation."
 
-                    hide RFlirt
-                    show RSmug
+                    hide rise flirting
+                    show rise smug
 
                     r "It is a shame when you do not feel like you belong."
 
-                    hide RSmug
+                    hide rise smug
                     
         "Decline":
 
             $ rRep -= 1
 
-            show RFrown
+            show rise upset
 
             n "Sorry, not a big tea fan."
 
@@ -4341,9 +4341,9 @@ label introduction_rise:
 
             "There's no reason for me to stay here. I turn and leave."
 
-            hide RFrown
+            hide rise upset
     
-    show RTalk
+    show rise talk
     
     r "Perhaps I could help you find who you have been looking for?"
 
@@ -4356,8 +4356,8 @@ label introduction_rise:
     n "Not exactly. I'm looking for some old friends of mine."
     n "I appreciate your offer to help, but there'd be no way to contact each other. Someone like you wouldn't want my number."
 
-    hide RTalk
-    show RDisappointed
+    hide rise talk
+    show rise disappointed
     r "What gave you that idea?"
     r "Nagen, this may be overstepping my bounds, but I do not think your group is worth this much of your time."
     r "All they ever did was get you into trouble."
@@ -4367,24 +4367,24 @@ label introduction_rise:
 
     n "You don't know what you're talking about."
 
-    hide RDisappointed
-    show RFrown
+    hide rise disappointed
+    show rise upset
 
     r "I have been mistaken before."
     r "I just worry that you have been exploited by individuals that do not value your personal achievements."
 
     n "And you do?"
 
-    hide RFrown
-    show RFlirt
+    hide rise upset
+    show rise flirting
 
     r "I could, though I am not in the best position to impose myself on anyone at the moment."
     r "Given enough time, I could compose a detailed list of potential matches that would be mutually beneficial."
 
     n "Not interested."
 
-    hide RFlirt
-    show RSmug
+    hide rise flirting
+    show rise smug
 
     r "Suit yourself."
 
@@ -4394,12 +4394,12 @@ label introduction_rise:
 
     n "Thanks for the tea, but I need to go."
 
-    hide RSmug
-    show RSmile
+    hide rise smug
+    show rise smile
 
     r "Anytime, Nagen. I do hope our next meeting will be pleasant."
 
-    hide RSmile
+    hide rise smile
 
     "I turn and leave."
 
@@ -4411,7 +4411,7 @@ label introduction_dyre:
     "I can't get it to open, no matter how hard I try."
     "It's not like I need a computer that bad, but I had hoped maybe they had access to the internet."
 
-    show DBase
+    show dyre
 
     d "Tesuta, is that really you? What are the odds I'd find you here? I thought you were too smart for computers."
 
@@ -4419,8 +4419,8 @@ label introduction_dyre:
 
     n "Hello, Dyre."
 
-    hide DBase
-    show DConcern
+    hide dyre
+    show dyre concerned
 
     d "Now, is that any way to treat an old friend?"
 
@@ -4432,8 +4432,8 @@ label introduction_dyre:
     n "I said hello, didn't I? I don't know what you expected, opening with backhanded compliments and shit."
 
 
-    hide DConcern
-    show DSmirk
+    hide dyre concerned
+    show dyre smirk
 
     "He smiles at me like the cat that got the canary."
 
@@ -4442,12 +4442,12 @@ label introduction_dyre:
     
     n "Well considering I ran away from home before the riots, I don't find your 'sympathy' terribly inspiring."
     
-    hide DSmirk
-    show DTalk
+    hide dyre smirk
+    show dyre talk1
     
     d "...We just thought you were out sick. You ran away? Shit, man."
 
-    hide DTalk
+    hide dyre talk1
 
     menu:
 
@@ -4455,7 +4455,7 @@ label introduction_dyre:
 
             $ dRep += 1
 
-            show DSadtalk
+            show dyre sad talk
 
             d "I mean, you called out sick all the time."
 
@@ -4464,8 +4464,8 @@ label introduction_dyre:
             "I ran away right after lunch to avoid my parents."
             "It wouldn't be unheard of for me to get pulled out of school in the middle of the day, but I wonder..."
 
-            hide DSadtalk
-            show DTalk
+            hide dyre sad talk
+            show dyre talk1
 
             d "Now that you mention it, Professor Kataki was the one who told us."
 
@@ -4477,8 +4477,8 @@ label introduction_dyre:
 
             n "I can't believe they lied about what was going on."
 
-            hide DTalk
-            show DScowl
+            hide dyre talk1
+            show dyre scowl
 
             d "Does that mean you're going to tell me the truth instead?"
 
@@ -4488,28 +4488,28 @@ label introduction_dyre:
             
             n "It's like I said, I ran away."
 
-            hide DScowl
+            hide dyre scowl
 
         "Yeah, sorry":
             $ Charm += 1
 
-            show DSadtalk
+            show dyre sad talk
 
             d "What are you apologizing to me for? I don't care where you live, as long as you're okay."
             d "There's a lot of weirdos out there that'd try to take advantage of a kid like you."
 
             n "We're the same age!"
 
-            hide DSadtalk
-            show DTalk2
+            hide dyre sad talk
+            show dyre talk2
 
             d "Yeah, that's how I know."
             d "You got talked into all kinds of stuff when we were younger and you still won't let it go."
 
             n "I... I let some stuff go."
 
-            hide DTalk2
-            show DSmirk
+            hide dyre talk2
+            show dyre smirk
 
             d "Oh really?"
             d "Well then, what about when you swore up and down that cow's milk stole calcium from your bones because you read it in some paper."
@@ -4520,8 +4520,8 @@ label introduction_dyre:
 
             n "I was hoping you'd forget that part."
 
-            hide DSmirk
-            show DSmiletalk
+            hide dyre smirk
+            show dyre smiletalk
 
             d "Hah! No way."
             d "But that's totally my point, you get all worked up and you don't take time to see the other side."
@@ -4531,20 +4531,20 @@ label introduction_dyre:
 
             "He was the one who showed me that paper in the first place."
 
-            hide DSmiletalk
-            show DSmirk
+            hide dyre smiletalk
+            show dyre smirk
 
             d "Stop? Where's the fun in that?"
 
             "I should have known better than to talk to him."
 
-            hide DSmirk
+            hide dyre smirk
 
         "Of course":
 
             $ dRep -= 1
 
-            show DDisturbed
+            show dyre disturbed
 
             n "My helicopter parents never gave me a moment to myself."
             n "Then you got me thrown in my mom's class and suddenly I was under surveillance 24/7."
@@ -4554,8 +4554,8 @@ label introduction_dyre:
 
             n "It wasn't- For the last time, a panic attack isn't something anyone chooses to have."
 
-            hide DDisturbed
-            show DMad
+            hide dyre disturbed
+            show dyre mad
 
             d "Do you have any idea how long she waited for you during the evacuation?"
             d "I know Dr. Tesuta wasn't exactly the nicest teacher, but she refused to leave the shelter without you."
@@ -4565,14 +4565,14 @@ label introduction_dyre:
 
             n "I couldn't stay there any longer. That place was killing me."
 
-            hide DMad
-            show DTalk2
+            hide dyre mad
+            show dyre talk2
 
             d "Well, at least everything turned out okay for you."
 
-            hide DTalk2
+            hide dyre talk2
     
-    show DTalk
+    show dyre talk1
 
     d "It's kind of odd this place is locked up, don't you think?" 
     d "All the major renovations were finished up to the fourth floor."
@@ -4583,8 +4583,8 @@ label introduction_dyre:
 
     n "Reality usually is."
 
-    hide DTalk
-    show DTease
+    hide dyre talk1
+    show dyre tease
 
     d "Come on. In this huge, old building, you don't think there's a bit of history to it?"
     d "Something that would make this place more affordable for a school to set up shop in?"
@@ -4596,8 +4596,8 @@ label introduction_dyre:
 
     #[Noise cue, hum/wind]
 
-    hide DTease
-    show DSmirk
+    hide dyre tease
+    show dyre smirk
 
     d "Yeah, it's haunted as fuck. Ten bucks says they never let us in there this year."
 
@@ -4605,8 +4605,8 @@ label introduction_dyre:
 
     #[Noise cue, distorted computer cry, soft]
 
-    hide DSmirk
-    show DTease
+    hide dyre smirk
+    show dyre tease
 
     d "I will soon."
 
@@ -4623,12 +4623,12 @@ label introduction_dyre:
     #[Noise cue, distorted computer cry, loud]
     n "Y-you're an asshole. It's too early in the year for this man."
 
-    hide DTalk
-    show DTalk2
+    hide dyre talk1
+    show dyre talk2
 
     d "Fine, don't believe me."
 
-    hide DTalk2
+    hide dyre talk2
 
     "He wanders off, waving goodbye over his shoulder as he goes."
     "I really don't want to stick around, not that I believed a word he said. I should look elsewhere."
@@ -4643,7 +4643,7 @@ label introduction_jona:
     "Hidden behind rows of planters is a small concrete stage"
     "It looks like it hasn't been long since the poppies were watered. The earth smells damp and cool."
 
-    show JRelax
+    show jona relaxed
 
     j "....."
 
@@ -4667,8 +4667,8 @@ label introduction_jona:
 
     n "...Right..."
 
-    hide JRelax
-    show JFrustrated
+    hide jona relaxed
+    show jona frustrated
 
     j "Nagen, it's me, Jona."
 
@@ -4677,8 +4677,8 @@ label introduction_jona:
 
     n "You certainly got your hands on a lot of... accessories since we last talked."
 
-    hide JFrustrated
-    show JRelax
+    hide jona frustrated
+    show jona relaxed
 
     j "I made them myself! Well, I can't sew or blow glass, but you get the idea."
 
@@ -4696,8 +4696,8 @@ label introduction_jona:
 
     n "Yeah, kinda."
 
-    hide JRelax
-    show JHappy
+    hide jona relaxed
+    show jona happy
 
     j "Then it's kinda working!"
     j "I'm glad you're here. I was starting to think I'd have to track everyone down myself."
@@ -4729,8 +4729,8 @@ label introduction_jona:
 
             n "N-no."
 
-            hide JHappy
-            show JRelax
+            hide jona happy
+            show jona relaxed
 
             j "Really? But you're stuttering and your face is changing colors."
             j "Hiro said that happens when you're flustered."
@@ -4742,14 +4742,14 @@ label introduction_jona:
 
             "Just let it go, Nagen. You don't want to go down that road again."
 
-            hide JRelax
+            hide jona relaxed
 
         "To start a fight":
 
             $ jRep += 1
             
-            hide JHappy
-            show JFrustrated
+            hide jona happy
+            show jona frustrated
 
             j "!!!"
             j "Why!?"
@@ -4761,8 +4761,8 @@ label introduction_jona:
             n "What? ...no, I meant- Nevermind."
             n "You just can't stare at people non-stop like that. People'll get the wrong idea."
 
-            hide JFrustrated
-            show JRelax
+            hide jona frustrated
+            show jona relaxed
 
             j "I was just drawing."
 
@@ -4780,8 +4780,8 @@ label introduction_jona:
 
             j "Maybe if you stop acting as if you cared, you'd be more self-confident... or conceited..."
 
-            hide JRelax
-            show JFrustrated
+            hide jona relaxed
+            show jona frustrated
 
             j "Or is it conceited to assume people are looking at you at all?"
             j "I forgot where I was going with this."
@@ -4796,7 +4796,7 @@ label introduction_jona:
 
             n "You really don't have to."
 
-            hide JFrustrated
+            hide jona frustrated
 
         "Look for an exit":
 
@@ -4807,8 +4807,8 @@ label introduction_jona:
             "I rarely hung out with Jona one on one. For one, this is the kid that carved up desks for fun."
             "The other was, well, he reminds me of my mom for some reason..."
 
-            hide JHappy
-            show JRelax
+            hide jona happy
+            show jona relaxed
 
             j "I suppose I did talk to you first. Are the others here?"
 
@@ -4822,8 +4822,8 @@ label introduction_jona:
 
             "He tries to hide the notebooks in his bag."
 
-            hide JRelax
-            show JFrustrated
+            hide jona relaxed
+            show jona frustrated
 
             j "Bad weird or good weird?"
 
@@ -4833,8 +4833,8 @@ label introduction_jona:
 
             n "Aahhh... Good weird! I meant good weird."
 
-            hide JFrustrated
-            show JHappy
+            hide jona frustrated
+            show jona happy
 
             j "...Hunh. Well, you gotta show me your class schedule so I can update your book. My JG logs are pretty dated."
 
@@ -4849,13 +4849,13 @@ label introduction_jona:
 
             j "Okay!"
 
-            hide JHappy
+            hide jona happy
 
     # Not safe dialogue if someone comes here before finding anyone
 
     n "Anyway, everyone's going to be meeting in room 313 at four."
 
-    show JHappy
+    show jona happy
 
     j "Everyone, everyone!?"
 
@@ -4868,7 +4868,7 @@ label introduction_jona:
 
     j "....."
 
-    hide JHappy
+    hide jona happy
     
     return
 
@@ -4879,53 +4879,53 @@ label Meeting:
     "I walk into the room to find Hiro and Jona waiting for me. Uitto comes in silently behind me."
     "The last time we were all together, it was to tell everyone that Lethe had passed."
 
-    show JRelax at center
+    show jona relaxed at center
 
     j "So, who's leading the meeting?"
 
-    show HJudge at left
+    show hiro judge at left
 
     h "Whadya mean?"
 
     j "Well, usually Odori tells us what to do, but I don't see her here."
     j "I haven't seen her since she called for a cease-fire. Hiro, you were supposed to be guarding the base, where-"
 
-    hide HJudge
-    show HSadtalk at left
+    hide hiro judge
+    show hiro sad talk at left
 
     h "So Nagen, what's the plan?"
 
-    hide JRelax
-    show JMad at center 
+    hide jona relaxed
+    show jona mad at center 
 
     j "Why are you avoiding the question?"
 
-    hide HSadtalk
-    show HGrump at left
+    hide hiro sad talk
+    show hiro grumpy at left
 
     n "Focus guys, both of you. I never 'said' anything about a plan."
 
-    hide HGrump
-    show HMad at left
+    hide hiro grumpy
+    show hiro mad at left
 
     h "So you wanted to hold a meeting and there isn't even a plan?"
 
-    hide JMad
-    show JFrustrated at center
+    hide jona mad
+    show jona frustrated at center
 
     j "I am so confused."
 
     n "Guys, I know you're wondering why I called you here."
 
-    show Uittoyell at right
+    show uitto yell at right
 
     u "Just spit it out, Nagen. You knew I was here, I'm sure the same went for the others too."
     u "So, where the hell's Odori? Did she just not make the cut or did she stop participating in life too?"
 
     h "Uitto!"
 
-    hide JFrustrated
-    show JRelax at center
+    hide jona frustrated
+    show jona relaxed at center
 
     j "Well, Nagen, do you know what happened to her?"
 
@@ -4934,68 +4934,68 @@ label Meeting:
     "Hiro doesn't look surprised, but he's definitely avoiding Jona's almost accusatory turn towards him."
     "It's hard to tell with the goggles. Uitto keeps glaring at me."
 
-    hide Uittoyell
-    show Uittosadtalk at right
+    hide uitto yell
+    show uitto sad talk at right
 
     u "That's what I thought..."
     u "So, when are you going to beg for our forgiveness? Or are you going to keep acting like {i}you're{/i} not the one who sold us out?"
 
-    hide Uittosadtalk
-    show Uittosad at right
-    hide JRelax
-    show JDepressed at center
-    hide HMad
-    show HGuilt at left
+    hide uitto sad talk
+    show uitto sad at right
+    hide jona relaxed
+    show jona depressed at center
+    hide hiro mad
+    show hiro guilty at left
 
     n "What are you talking about?"
 
-    hide Uittosad
-    show Uittoyell at right
+    hide uitto sad
+    show uitto yell at right
 
     u "I'm talking about how, despite pleading not-guilty, I ended up in reform school!"
     u "You're the one that knew we'd all be here, so you have to be in their pockets!"
 
-    hide Uittoyell
-    show Uittosad at right
-    hide HGuilt
-    show HMad at left
+    hide uitto yell
+    show uitto sad at right
+    hide hiro guilty
+    show hiro mad at left
 
     h "Quit calling him manipulative! Not everyone is good at talking people into believing lies like you."
     
-    hide HMad
-    show HGuilt at left
+    hide hiro mad
+    show hiro guilty at left
 
     h "We should just be happy we're together again..."
 
-    hide JDepressed
-    show JMad at center
+    hide jona depressed
+    show jona mad at center
 
     j "Of course you would say that, you coward. If it were up to you, we'd be groveling on our bellies years ago."
 
     n "Now hold on..."
 
-    hide HGuilt
-    show HGrump at left
+    hide hiro guilty
+    show hiro grumpy at left
 
     h "You're one to talk! They were asking me about the doomsday cult we supposedly started."
 
-    hide HGrump
-    show HWait at left
+    hide hiro grumpy
+    show hiro suspicious at left
     h "I wonder who's pet project that could have been?"
-    hide HWait
-    show HMad at left
+    hide hiro suspicious
+    show hiro mad at left
     h "Your stupid stories probably got us into more trouble than we should have been in."
     h "And you're running around the school looking like a freaking serial killer! Are you trying to get us targeted!?"
 
-    hide JMad
-    show JFrustrated at center
+    hide jona mad
+    show jona frustrated at center
 
     j "Steampunk is art! Quit acting like my art is hurting people."
 
-    hide JFrustrated
-    show JMad at center
-    hide HMad
-    show HSulk at left
+    hide jona frustrated
+    show jona mad at center
+    hide hiro mad
+    show hiro sulking at left
 
     j "You're the one that left Odori alone with people on our tail!"
 
@@ -5003,21 +5003,21 @@ label Meeting:
     n "We got separated on purpose, and all of us were forced to do things we didn't want to do to get by."
     n "But we're together now, and we need to figure out what to do next."
 
-    hide Uittosad
-    show Uittogurl at right
+    hide uitto sad
+    show uitto serious at right
 
     u "Oh really, and why should we listen to you? You sold us out to the DVP!"
 
     n "I never-"
 
-    hide Uittogurl
-    show Uittoyell at right
+    hide uitto serious
+    show uitto yell at right
 
     u "The agent they sent to get me mentioned you by name!"
     u "I bet they gave you an offer you couldn't refuse or some cliche that makes you feel {i}better{/i} about leaving us to the wolves..."
 
-    hide Uittoyell
-    show Uittosad at right
+    hide uitto yell
+    show uitto sad at right
 
     u "What else could you want from us?"
 
@@ -5025,25 +5025,25 @@ label Meeting:
     n "They wanted us to turn on each other and make their boarding school look good."
     n "They're afraid of what we accomplish when we work together."
 
-    hide JMad
-    show JDepressed at center
+    hide jona mad
+    show jona depressed at center
 
     j "Well, yeah. A faceless organization is ten times scarier than a handful of teens."
 
-    hide HSulk
-    show HFINE at left
+    hide hiro sulking
+    show hiro mad fine at left
 
     h "I'd have to disagree. Faceless organizations don't punch you in the junk in the middle of the night."
 
     n "What!?"
 
-    hide HFINE
-    show HGrump at left
+    hide hiro mad fine
+    show hiro grumpy at left
 
     h "My foster brother's an asshole."
 
-    hide Uittosad
-    show Uittogurl at right
+    hide uitto sad
+    show uitto serious at right
 
     u "...Right. So, you were saying..."
 
@@ -5056,25 +5056,25 @@ label Meeting:
     n "Because the whole student body will be in the palm of our hands and they'll be none the wiser."
     n "I'm going to take control of whatever passes for a student council and... well that's all I got for now."
 
-    hide HGrump
-    show HHeadempty at left
+    hide hiro grumpy
+    show hiro suspicious at left
 
     h "...Cool..."
 
     n "And in the end, we'll get a lighter sentence and still get to be heroes."
 
-    hide HHeadempty
-    show HBase at left
+    hide hiro suspicious
+    show hiro at left
 
     h "Yes! Good! I like this plan!"
 
-    hide JDepressed
-    show JHappy at center
+    hide jona depressed
+    show jona happy at center
 
     j "That isn't exactly a plan, but it doesn't sound like it'll get us in trouble..."
 
-    hide Uittogurl
-    show UBase at right
+    hide uitto serious
+    show uitto at right
 
     u "So, we get stuck here for a year, make nice and live happily ever after?"
 
@@ -5082,56 +5082,56 @@ label Meeting:
 
     u "Not interested."
 
-    hide JHappy
-    show JFrustrated at center
+    hide jona happy
+    show jona frustrated at center
 
     j "What are you talking about?"
 
-    hide UBase
-    show Uittotalk at right
+    hide uitto
+    show uitto talk at right
 
     u "You all can act like the last few years didn't happen and live in a fantasy world, but I'm not interested in lying to the randos at this school."
 
-    hide Uittotalk
-    show Uittocringe at right
+    hide uitto talk
+    show uitto cringe at right
     u "I'm a wanted criminal, I ruined people's lives, and no amount of crocodile tears will make that okay."
-    hide Uittocringe
-    show Uittosadtalk at right
+    hide uitto cringe
+    show uitto sad talk at right
     u "Of course, the people I hurt deserved it, but I'm not a helpless victim anymore. It's not fair to the other kids..."
 
     n "Then why plead not guilty if you're so honest?"
 
-    hide Uittosadtalk
-    show Uittosad at right
+    hide uitto sad talk
+    show uitto sad at right
 
     u "Some of us actually want a normal adult to say we were right instead of begging for probation."
 
-    hide HBase
-    show HSadtalk at left
+    hide hiro
+    show hiro sad talk at left
 
     h "Come on, guys, arguing will get us nowhere."
 
-    hide Uittosad
-    show Uittosadtalk at right
+    hide uitto sad
+    show uitto sad talk at right
 
     u "I'll see you later, Hiro... maybe. I shouldn't be here..."
 
-    hide Uittosadtalk
-    show JFrustrated
+    hide uitto sad talk
+    show jona frustrated
 
     j "Uitto, wait!"
 
     "She leaves without another word."
 
-    hide JFrustrated
-    hide HSadtalk
+    hide jona frustrated
+    hide hiro sad talk
 
     menu:
         "Forget her":
             $ uRep -= 1
             $ jRep -= 1
-            show HGuilt at left
-            show JRelax at right
+            show hiro guilty at left
+            show jona relaxed at right
 
             n "Who needs her anyways? It's not like she ever did anything important."
 
@@ -5143,8 +5143,8 @@ label Meeting:
 
             n "Every experiment has an outlier. As long as the majority of the school believes us, nothing will change."
 
-            hide JRelax
-            hide HGuilt
+            hide jona relaxed
+            hide hiro guilty
 
             jump meet_main
 
@@ -5154,8 +5154,8 @@ label Meeting:
 
             n "She just needs some time to get over it. She will get over it, won't she?"
 
-            show HGuilt at left
-            show JDepressed at right
+            show hiro guilty at left
+            show jona depressed at right
 
             h "Ehh... hard to say."
             h "She still refuses to watch Avenger League ever since it took the time slot of her favorite show."
@@ -5168,8 +5168,8 @@ label Meeting:
             j "I don't care what her aura looked like to you."
             j "Nagen's right, she's not going to hold a grudge over this forever. We just have to wait."
 
-            hide JDepressed
-            hide HGuilt
+            hide jona depressed
+            hide hiro guilty
 
             jump meet_main
 
@@ -5183,7 +5183,7 @@ label Meeting:
 
             "Has she been crying?"
 
-            show Uittosad
+            show uitto sad
 
             u "What?"
 
@@ -5198,14 +5198,14 @@ label Meeting:
 
             n "Okay. If there's anything I can do-"
 
-            hide Uittosad
-            show Uittoembarrassed
+            hide uitto sad
+            show uitto embarrassed
             u "You'll try and fix it, I know."
-            hide Uittoembarrassed
-            show Uittocringe
+            hide uitto embarrassed
+            show uitto cringe
             u "This is just a little too much right now. I'll see you later."
 
-            hide Uittocringe
+            hide uitto cringe
 
             "So she isn't actually mad at me. I guess that's good, but I'm still worried."
             
@@ -5232,37 +5232,37 @@ label Meeting:
             
             scene backgroundclass
 
-            show YaBase at right
+            show yaguchi at right
 
             ya "So, what's the plan?"
 
-            show SaEyeroll at left
+            show sato annoyed at left
 
             sa "Darling, this was the plan."
 
-            show VBase
+            show vivaldi
 
             v "For now, we will proceed as originally intended. This just means we'll have to devote more energy to security."
 
-            hide YaBase
-            show YaFrown at right
+            hide yaguchi
+            show yaguchi frown at right
 
             ya "With what time?"
 
-            hide SaEyeroll
-            show SaGeez at left
+            hide sato annoyed
+            show sato dissatisfaction at left
 
             sa "The four of us are burnt out as it is. We need manpower. If you would just let me call a few people..."
 
             hide ViBase
-            show IkConcern
+            show inukai concerned
 
             ik "Man, hearing you guys bicker like this really reminds me of the old days."
             ik "Still..."
 
-            hide IkConcern
-            hide YaFrown
-            hide SaGeez
+            hide inukai concerned
+            hide yaguchi frown
+            hide sato dissatisfaction
 
             #CG note
 
@@ -5274,7 +5274,7 @@ label Meeting:
 
             #CG teachers
 
-            show IkConcern
+            show inukai concerned
 
             ik "This is a little too eloquent for a student to be responsible, don't you think Viv?"
 
@@ -5282,12 +5282,12 @@ label Meeting:
 
             v "We can't exclude any possibility at this point."
 
-            show YaFrown at right
+            show yaguchi frown at right
 
             ya "For your sake, I hope it's some dumb kid."
 
-            hide IkConcern
-            hide YaFrown
+            hide inukai concerned
+            hide yaguchi frown
             hide VFrown
 
             return
