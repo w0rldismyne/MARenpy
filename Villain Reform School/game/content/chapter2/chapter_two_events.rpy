@@ -364,7 +364,7 @@ label chapter2_vigor:
     "Not the same as friends, but it's a start."
 
     show inukai
-    ik "What’s smarter when things are okay?"
+    ik "What's smarter when things are okay?"
 
     Everyone "...The mind."
 
@@ -397,11 +397,11 @@ label chapter2_vigor:
 
     hide inukai
     show inukai sad talk
-    ik "Close. It’s because being a Vigor major is an inherent part of who you are."
+    ik "Close. It's because being a Vigor major is an inherent part of who you are."
 
     hide inukai sad talk
     show inukai concerned
-    ik "It’s not something you think about, or practice to achieve."
+    ik "It's not something you think about, or practice to achieve."
     ik "Because of that, we serve an important purpose for our community."
 
     "He sits down on the grass."
@@ -912,7 +912,7 @@ label chapter2_intel:
 
     ya "Talk to me kid."
 
-    n "I really don't feel like another lecture about how I should just ‘stop caring'."
+    n "I really don't feel like another lecture about how I should just 'stop caring'."
     n "If it was that easy, I would just do it already."
 
     "He sat down next to me."
