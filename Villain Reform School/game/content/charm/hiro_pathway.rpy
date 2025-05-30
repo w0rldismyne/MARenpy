@@ -43,13 +43,13 @@ label Hiro1:
     h "For a normal kid maybe, but I’m a Vigor Major, we’re built of stranger stuff."
 
     hide hiro happy
-    show hiro suspicious
+    show hiro empty
 
     h "Or a least I am."
 
     n "I’ve been meaning to ask you, how are Vigor Proficiencies, well, Proficiencies?"
 
-    hide hiro suspicious
+    hide hiro empty
     show hiro talk2
 
     h "How do you mean?"
@@ -145,7 +145,7 @@ label Hiro1:
             n "That’s what’s going to motivate you when you have to study."
 
             hide hiro judge
-            show hiro suspicious
+            show hiro empty
 
             h "All I know is I don’t want to be stuck waiting tables the rest of my life. I’m so boned."
 
@@ -156,7 +156,7 @@ label Hiro1:
 
             h "Yeah…"
 
-            hide hiro suspicious
+            hide hiro empty
 
         "I want to switch majors.":
             $ hRep += 1
@@ -208,7 +208,7 @@ label Hiro1:
             n "It."
 
             hide hiro smug
-            show hiro sulking
+            show hiro sulk
 
             h "Not that smart ass."
 
@@ -219,7 +219,7 @@ label Hiro1:
             n "Hiro, I need your help."
             n "What was that?"
 
-            hide hiro sulking
+            hide hiro sulk
             show hiro smug
 
             h "My new ringtone."
@@ -233,13 +233,13 @@ label Hiro1:
         "No reason":
             $ hRep -= 1
 
-            show hiro sulking
+            show hiro sulk
             
             h "...Bullshit."
 
             n "Hey!"
 
-            hide hiro sulking
+            hide hiro sulk
             show hiro judge
 
             h "You’re up to something, spill."
@@ -289,11 +289,11 @@ label Hiro1:
             n "I swear everything is fine."
 
             hide hiro guilty
-            show hiro suspicious
+            show hiro empty
 
             h "Right, sure it is."
 
-            hide hiro suspicious
+            hide hiro empty
     $ Vigor += 1
     $ hTurn += 1
 
@@ -676,7 +676,7 @@ label Hiro3:
         "I don't know.":
             $ hRep += 1
 
-            show hiro sad
+            show hiro sad fine
 
             n "I don’t know man, I struggle to think past the hour. I had to learn the big picture stuff the hard way."
             n "You’ll do fine man. You’re trying, that’s what matters."
@@ -686,7 +686,7 @@ label Hiro3:
             n "Yeah, like where you want to see yourself in five years, junk like that. It doesn’t come naturally."
             n "Most people pretend like they know until they actually figure it out. If they figure it out at all."
 
-            hide hiro sad
+            hide hiro sad fine
             show hiro sad talk
 
             h "I don’t know man…"
@@ -694,7 +694,7 @@ label Hiro3:
             n "Just try it. What do you want to be able to do five years from now?"
 
             hide hiro sad talk
-            show hiro suspicious
+            show hiro empty
 
             h "Honestly? Eat as much pizza as I want and play videogames."
 
@@ -702,8 +702,8 @@ label Hiro3:
             n "Now all you have to do is think backwards until you make it to today." 
             n "As long as you get to do the things you want to do, you’ll have made it."
 
-            hide hiro suspicious
-            show hiro sulking
+            hide hiro empty
+            show hiro sulk
 
             h "Cool, now all I gotta do is find a job I don’t hate, one that’s cool with ex-convicts and, y’know, graduate."
             h "That’s not stressful at all."
@@ -711,7 +711,7 @@ label Hiro3:
             n "Dude, don’t drop sarcasm during a heartfelt moment."
             n "That’s my job."
 
-            hide hiro sulking
+            hide hiro sulk
         
         "I have to change.":
             $ Vigor += 1
@@ -773,7 +773,7 @@ label Hiro3:
     "Not that there are hero commandments, but if there were, it wouldn’t be one of them. There really should be-"
 
     hide hiro sad talk
-    show hiro sad
+    show hiro sad fine
 
     h "Nagen! You’re spacing out again; come back to the present."
 
@@ -786,7 +786,7 @@ label Hiro3:
     "Standing here is depressing."
     "We went back to campus without anyone noticing we left."
 
-    hide hiro sad
+    hide hiro sad fine
 
     return
 label Hiro4:
@@ -811,13 +811,13 @@ label Hiro4:
 
     n "What did you do?"
 
-    show hiro suspicious
+    show hiro empty
 
     h "I kinda have detention."
 
     n "How’d you manage to get detention? We haven’t even been here that long."
 
-    hide hiro suspicious
+    hide hiro empty
     show hiro puppy
 
     h "You remember how we jumped into the pool. Super awesome, right?"
@@ -843,21 +843,21 @@ label Hiro4:
     "Hunh?"
 
     hide hiro judge
-    show hiro think
+    show hiro hmm
 
     n "You’re kidding me right? We were fighting over her all the time."
     n "The prank wars?"
     n "Trying to be leader?"
     n "That thing with the goat?"
 
-    hide hiro think
-    show hiro suspicious
+    hide hiro hmm
+    show hiro empty
 
     "He stared at me like I was a lunatic."
 
     n "You’re kidding me, right? Come on, every time I tried to hang out with her, you’d butt in."
 
-    hide hiro suspicious
+    hide hiro empty
     show hiro embarrassed
 
     h "Oh, y-you noticed that?"
@@ -975,19 +975,19 @@ label Hiro4:
                     "A wave of relief washed over me, but I could tell he was disappointed."
 
                     hide hiro guilty
-                    show hiro sad
+                    show hiro sad fine
 
                     h "I didn’t make things weird, did I?"
 
                     n "No. No man, we’re cool."
 
-                    hide hiro sad
+                    hide hiro sad fine
 
         "Probably Not":
 
             $ hRep += 1
 
-            show hiro suspicious
+            show hiro wait
 
             n "You’re right. Stirring up that stuff would have caused nothing but trouble."
 
@@ -995,7 +995,7 @@ label Hiro4:
 
             n "That’s surprisingly level headed coming from you, I’m impressed."
 
-            hide hiro suspicious
+            hide hiro wait
             show hiro judge
 
             h "Really, that’s what it takes to impress you!? You’re such a nerd."

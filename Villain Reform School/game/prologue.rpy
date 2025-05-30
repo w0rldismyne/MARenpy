@@ -19,7 +19,7 @@ label prologue:
 
     show cop
 
-    cop "Please state your name and registered Proficiency."
+    cop "Please state your name and registered Proficiency." id prologue_b121c771
 
     n "My name is Nagen Tesuta."
     n "I have an Intelligence Proficiency."
@@ -35,26 +35,25 @@ label prologue:
 
     show cop
 
-    cop "Look, you and I both know it's not looking good for you."
-    cop "I mean, you've heard the charges: premeditated murder, inciting a riot, mayhem, and menticide."
-    cop "These are all with a registered Proficiency which will add twenty-five more years to your sentence."
-    cop "Don't even get me started on the use of deadly weapons."
+    cop "Look, you and I both know it's not looking good for you." id prologue_3787084e
+    cop "I mean, you've heard the charges: premeditated murder, inciting a riot, mayhem, and menticide." id prologue_c616cfd6
+    cop "These are all with a registered Proficiency which will add twenty-five more years to your sentence." id prologue_279523b4
+    cop "Don't even get me started on the use of deadly weapons." id prologue_559297ff
 
     hide cop
-
     show koe
 
-    ka "There's more than enough evidence to try you and your cohorts as adults."
-    ka "In the case of The Supreme Court vs. Lethe, vigilantism was determined to be a Class One felony."
+    ka "There's more than enough evidence to try you and your cohorts as adults." id prologue_2f132815
+    ka "In the case of The Supreme Court vs. Lethe, vigilantism was determined to be a Class One felony." id prologue_2d7a1977
+
+    show koe smirk
+
+    ka "Some of her sympathizers seem to think they are above the law, like you." id prologue_4f631a84
+    ka "If we were able to find her remaining supporters, it would be an excellent demonstration of goodwill." id prologue_0de140c0
+    ka "We all remember-" id prologue_0a97bf0a
 
     hide koe
-    show koe smirk
-    ka "Some of her sympathizers seem to think they are above the law, like you."
-    ka "If we were able to find her remaining supporters, it would be an excellent demonstration of goodwill."
-    ka "We all remember-"
 
-    hide koe smirk
-    # Change soundtrack
     play music "music/WhereS.mp3"
 
     "Remember? No one is truly capable of remembering."
@@ -66,43 +65,36 @@ label prologue:
 
     show koe
 
-    ka "Then you understand what you're up against."
-    ka "Choosing to represent yourself in court only gave you a fool for a client."
+    ka "Then you understand what you're up against." id prologue_648b8c83
+    ka "Choosing to represent yourself in court only gave you a fool for a client." id prologue_4321cc62
 
     "She's the prosecutor for my case!?"
 
-    hide koe
     show koe eh
 
-    ka "I'm just doing my job, Mr. Tesuta and ensuring I have all the information I need for my case."
+    ka "I'm just doing my job, Mr. Tesuta and ensuring I have all the information I need for my case." id prologue_84fe7ab3
     
-    hide koe eh
+    hide koe
     show cop
 
-    cop "Just make this easier on yourself and fold. It'll be better than what your friends are going through."
+    cop "Just make this easier on yourself and fold. It'll be better than what your friends are going through." id prologue_08dcde7d
+    
     hide cop
+
+label prologue_interrogation:
 
     menu:
         "Confess everything":
+
             $ hRep -= 1
             #$ Villain += 3
             #$ Vigor += 1
 
-            n "Yeah, I did it, everything you said is true."
-            n "I helped start the riots to take down Estella and her talent mills."
-            n "You want the names of all the adults that worked with her, right?"
-            n "Fine. Just don't throw the book at me."
-            n "We both know this is shady as hell."
-            n "I'll parrot any garbage you want me to say after I get my sentence."
+            jump prologue_confession
 
-            jump interrogation_4
+        "Refuse":
 
-        "Refuse": #(Fast forwards past all choices, all points put in Intelligence)
             $ hRep += 1
-            #$ Intel += 4
-            jump interrogation_1
-
-    label interrogation_1:
 
     n "Good cop, bad cop? Really?"
     n "I'm sorry, it's going to take more than a movie cliché to get me to tell anyone anything."
@@ -110,34 +102,35 @@ label prologue:
 
     show cop
 
-    cop "That's not how the system works, kid."
+    cop "That's not how the system works, kid." id interrogation_1_22b00617
 
     hide cop
     show koe
 
-    ka "No, he has a valid point. You want to be talked to like an adult? Fine."
-    ka "Mr. Tesuta, if you don't give us the information we need, there will be no 'deal'."
-    ka "The first step is pleading guilty in court. There is no workaround."
+    ka "No, he has a valid point. You want to be talked to like an adult? Fine." id interrogation_1_9eadb7b7
+    ka "Mr. Tesuta, if you don't give us the information we need, there will be no 'deal'." id interrogation_1_5e97f977
+    ka "The first step is pleading guilty in court. There is no workaround." id interrogation_1_51729dfa
 
     "So it's her way or no way, hunh? Fine, whatever, she has her reasons; I have mine."
 
     hide koe
 
+    #Question 1/4
     menu:
         "I have to protect my teammates": #(+Hero, +Vis)
+
             $ Hero += 1
-            #$ Vision += 1
+
             n "I'll plead guilty in court, but I and I alone am guilty of these charges."
             n "I cannot say the same of my friends; they genuinely believed in what Lethe told them..."
 
             "If I lie, I could be held in contempt of the court, but if I play the 'scapegoat', maybe they can get out of here unscathed."
             "Either way, someone has to answer for what we did."
 
-            jump interrogation_2
-
         "I don't have a choice": #(+Villian, +Vig)
+
             $ Villain += 1
-            #$ Vigor += 1
+
             n "Under the advice of my legal counsel, I will."
 
             "Maimai would be heartbroken if I got locked away. She's been through this before."
@@ -145,7 +138,7 @@ label prologue:
 
             show cop
 
-            cop "Do you believe you are guilty of these crimes?"
+            cop "Do you believe you are guilty of these crimes?" id interrogation_1_591261de
 
             n "....."
 
@@ -153,50 +146,43 @@ label prologue:
 
             hide cop
 
-            jump interrogation_2
-
         "It's all part of the plan": #(+Int)
-            #$ Intel += 1
+
             n "I'll cooperate."
 
             "It's too dangerous to make a move now. Best to play along for now."
 
-            jump interrogation_2
-
         "I need to lighten my sentence": #(+Chr)
-            #$ Charm += 1
+
             n "...Okay..."
 
             "I hang my head at a 30-degree angle and feign the slightest tremor in my shoulders."
             "The more sympathy I can gain, the better."
             "No one will want to hear my side of the story if I act like the violent criminal they think I am."
 
-            jump interrogation_2
-
-    label interrogation_2:
-
     n "I fully understood the ramifications of my actions and stand at the mercy of the court."
     n "I aided in the brainwashing of my classmates and tried to conquer the Guwon Province for my own benefit."
 
     show cop
 
-    cop "That's all we need to hear."
+    cop "That's all we need to hear." id interrogation_2_4434ad43
 
     hide cop
     show koe
 
-    ka "Not quite. I still have a few questions for Mr. Tesuta."
-    ka "The Junior Gladiators started as a club at your school, later to fall down a path of destruction."
-    ka "And yet, no one can tell us whose fault this was."
-    ka "In your estimation, who was the leader during the attack?"
+    ka "Not quite. I still have a few questions for Mr. Tesuta." id interrogation_2_49a741aa
+    ka "The Junior Gladiators started as a club at your school, later to fall down a path of destruction." id interrogation_2_2a180a1f
+    ka "And yet, no one can tell us whose fault this was." id interrogation_2_37c49d0b
+    ka "In your estimation, who was the leader during the attack?" id interrogation_2_3817e59d
 
     hide koe
 
+    #Question 2/4
     menu:
-        "The one who told us to kill":
+        "The one who told us to kill": #(+Chr)
+
             $ jRep += 1
 
-            #$ Charm += 1
             n "Lethe was. She wanted to create a group of youth vigilantes to gain back public support."
             n "It wasn't until after she died that we realized she was the one who started the chaos."
 
@@ -207,13 +193,11 @@ label prologue:
             "Proficiencies were dangerous to the general public, but so is a pen if you use it correctly."
             "These people, however, just want to confirm what they already believe, so I'll just tell them what they want to hear."
 
-            jump interrogation_3
+        "The one who gathered the army": #(+Vig)
 
-        "The one who gathered the army":
             $ hRep += 1
-
             $ Hero += 1
-            #$ Vigor += 1
+
             n "Hiro Morine was our leader. He insisted on it constantly."
             n "If it wasn't for him, we wouldn't have gathered nearly as much support."
 
@@ -222,12 +206,9 @@ label prologue:
             "He was the first one of us to get captured by these hypocrites."
             "Even after getting dragged down, he insisted on taking credit for what happened. I hope he's okay."
 
-            jump interrogation_3
+        "The one who planned the attack": #(+Int)
 
-        "The one who planned the attack":
             $ uRep += 1
-            
-            #$ Intel += 1
 
             n "I was. I deliberately withheld information from my peers, knowing it would sway their decision to stay."
             n "In the end, I was the only one standing."
@@ -236,10 +217,7 @@ label prologue:
             "I was lucky Maimai was crazy enough to spare my life."
             "If I manage to get out of this, I should thank her properly."
 
-            jump interrogation_3
-
-        "The club president":
-            #$ Vision += 2
+        "The club president": #(+Vis)
 
             n "Odori Hato was our leader. She's the one who brought Lethe's attention to our club."
             n "Odori just wanted to help us and a cheesy superhero club was her answer."
@@ -249,7 +227,7 @@ label prologue:
 
             show cop
 
-            cop "Do you know where Ms. Hato is?"
+            cop "Do you know where Ms. Hato is?" id interrogation_2_c5e5c3a7
 
             n "No, she's not with us anymore."
 
@@ -257,31 +235,29 @@ label prologue:
 
             hide cop
 
-            jump interrogation_3
-
-    label interrogation_3:
-
     show koe
 
-    ka "You were apprehended by Vivaldi Thani before you were able to carry out your plan to completion, correct?"
+    ka "You were apprehended by Vivaldi Thani before you were able to carry out your plan to completion, correct?" id interrogation_3_d4e85fff
 
     n "Yes."
 
-    ka "What did you intend to do once you took over the city?"
+    ka "What did you intend to do once you took over the city?" id interrogation_3_4754af2c
 
     hide koe
 
+    #Question 3/4
     menu:
         "Fortify the city against my enemies": #(+Villain, +Vig)
+
             $ Villain += 1
-            #$ Vigor += 1
+
             n "I just wanted a place where I could feel safe. Anyone there was free to leave, but they chose to stay."
             n "They took up arms, and I had to defend myself."
 
             show koe
 
-            ka "According to eyewitness testimonies, you sought out innocent civilians who were in hiding and killed them on sight."
-            ka "We found seventeen assault rifles in your room. Were these also for your defense?"
+            ka "According to eyewitness testimonies, you sought out innocent civilians who were in hiding and killed them on sight." id interrogation_3_40a08180
+            ka "We found seventeen assault rifles in your room. Were these also for your defense?" id interrogation_3_a6f1d42a
 
             n "Yes."
 
@@ -290,19 +266,16 @@ label prologue:
             "Wandering around the city with a gun was safer than going back home anyway."
             "I had all kinds of other machines I was playing with that I got from the junkyard, but that's not what they care about."
 
-            hide koe
-
-            jump interrogation_4
-
         "Rebuild the city": #(+Hero, +Int)
+
             $ Hero += 1
-            #$ Intel += 1
+
             n "Before making any plans, I would have had to reverse the damage that had been done."
             n "I was in command of over five hundred people; they needed a place to live once the dust settled."
 
             show koe
 
-            ka "That's all?"
+            ka "That's all?" id interrogation_3_3737d842
 
             n "Well, we would have needed a hospital next as well as to secure some kind of agricultural production to feed everyone."
             n "That alone would have taken months, and who knows what other problems may have arisen."
@@ -310,17 +283,14 @@ label prologue:
             "What can I say, I read way too many doomsday zombie comics as a kid."
             "If I wanted to be a good leader, I had to make sure my people were provided for."
 
-            ka "This would be the same city you planned to bomb, correct?"
+            ka "This would be the same city you planned to bomb, correct?" id interrogation_3_5369cc0c
 
             n "What!? No, what good would that do?"
 
             "I tried my best to keep everyone safe, even if it meant lying. I can't let them down now."
 
-            hide koe
+        "Rebuild society in my vision":
 
-            jump interrogation_4
-
-        # "Rebuild society in my vision":
             $ Villain += 1
             #$ Vision += 1
 
@@ -332,7 +302,7 @@ label prologue:
 
             show koe
 
-            ka "Lethe had similar ideals. She thought that turning citizens against each other would weed out the weak."
+            ka "Lethe had similar ideals. She thought that turning citizens against each other would weed out the weak." id interrogation_3_f9238aee
 
             n "No. Lethe thought society was beyond saving and proved that one spark could bring it crumbling down, which is why you have a job today."
             n "I believe that people can coexist, we just need to modify a few rules."
@@ -342,11 +312,8 @@ label prologue:
             "In order to take it down, you have to integrate into its life cycle and prevent it from reproducing."
             "I just tried to do so from the wrong angle. Next time, I won't be so sloppy."
 
-            hide koe
-
-            jump interrogation_4
-
         "I don't know": #(+Hero, +Chr)
+
             $ Hero += 1
             #$ Charm += 1
 
@@ -354,7 +321,7 @@ label prologue:
 
             show cop
 
-            cop "Mr. Tesuta, please answer the question."
+            cop "Mr. Tesuta, please answer the question." id interrogation_3_d18d8ff9
 
             n "...I didn't. I mean, part of me thought it would never work... I just... did what I always did..."
             n "I never questioned why or what came next."
@@ -362,7 +329,7 @@ label prologue:
             hide cop
             show koe
 
-            ka "And what would that be?"
+            ka "And what would that be?" id interrogation_3_cb0a83f2
 
             n "Hunh? Oh... nothing. Nothing was planned after that... I just did what I was told."
 
@@ -371,28 +338,35 @@ label prologue:
             "That's just not how the world works. There is no 'after'."
             "Just now and everything that has since passed. I have to do what I can so that 'now' doesn't get me killed."
 
-            hide koe
+    jump prologue_last_question
 
-            jump interrogation_4
+label prologue_confession:
 
-    #[Return to Main Branch]
-    label interrogation_4:
+    n "Yeah, I did it, everything you said is true."
+    n "I helped start the riots to take down Estella and her talent mills."
+    n "You want the names of all the adults that worked with her, right?"
+    n "Fine. Just don't throw the book at me."
+    n "We both know this is shady as hell."
+    n "I'll parrot any garbage you want me to say after I get my sentence."
+
+label prologue_last_question:
 
     show koe
 
-    ka "And what exactly was your end goal in all of this?"
+    ka "And what exactly was your end goal in all of this?" id interrogation_4_1533fb2d
 
     n "Excuse me?"
 
-    ka "Why did you attack Guwon in the first place? Such extreme actions had to come from somewhere."
-    ka "It's not every day a middle school student attempts to destroy a city."
+    ka "Why did you attack Guwon in the first place? Such extreme actions had to come from somewhere." id interrogation_4_dbbb4cac
+    ka "It's not every day a middle school student attempts to destroy a city." id interrogation_4_01eab4f6
 
     n "Guwon had to be brought down!"
 
-    ka "Why?"
+    ka "Why?" id interrogation_4_0531dbce
 
     hide koe
 
+    #Question 4/4
     menu:
         "It was corrupt":
 
@@ -404,31 +378,27 @@ label prologue:
 
             show koe
 
-            ka "There is no need for dramatics, Mr. Tesuta."
+            ka "There is no need for dramatics, Mr. Tesuta." id interrogation_4_6ac902f6
 
             n "Dramatics? Are you even listening to what I'm saying?"
             n "The Estella school system picked kids out and did whatever it took to show that their school improved the abilities of 'gifted' children."
             n "We were their guinea pigs to flaunt to the media and nothing was below them as long as it produced results."
             n "Someone had to stop it."
 
-            ka "I find it hard to believe that Estella would do anything that would harm their students, Mr. Tesuta."
-            ka "If there was truly such a problem, you should have gone to the police."
+            ka "I find it hard to believe that Estella would do anything that would harm their students, Mr. Tesuta." id interrogation_4_71c541f5
+            ka "If there was truly such a problem, you should have gone to the police." id interrogation_4_31158169
 
             n "They didn't listen, no one does! I'm not making this up, my parents worked there."
             n "I knew better than anyone what was going on and you did nothing! Eight anonymous tips and zero investigations."
             n "No one even looked. I had to do something, anything!"
 
-            ka "So you were angry at the Estella and those who ignored you."
-            ka "Most children in that situation would simply run away; you stayed and killed anyone who opposed you."
+            ka "So you were angry at the Estella and those who ignored you." id interrogation_4_fe3bd10c
+            ka "Most children in that situation would simply run away; you stayed and killed anyone who opposed you." id interrogation_4_4cb5b66c
 
             n "I did run away. Lethe was the one who came after me."
 
             "She was the one who told us to stand up and fight for what we believed in."
             "That when the dust settled, the strongest would be left standing. Even if I lost, I'm still here."
-
-            hide koe
-
-            jump interrogation_end
 
         "It was convenient":
 
@@ -439,26 +409,23 @@ label prologue:
 
             show koe
 
-            ka "For what?"
+            ka "For what?" id interrogation_4_ac425b37
 
             n "A blank slate. An area untouched by the stigmas of adults."
             n "Where governing bodies are chosen based on who is the most capable, not the most likable."
             n "We need to exhume these archaic standards and start from scratch."
 
-            ka "There is no such thing as a blank slate, Mr. Tesuta. An ageist cleanse of the area is not a plan to be taken lightly."
+            ka "There is no such thing as a blank slate, Mr. Tesuta. An ageist cleanse of the area is not a plan to be taken lightly." id interrogation_4_dd68f301
 
             n "Don't put words in my mouth. Anyone who wanted to could leave; I merely claimed the area as my own."
 
-            ka "Your peers weren't allowed to leave."
-            ka "We have rescued hundreds of children from those delightful obedience collars."
+            ka "Your peers weren't allowed to leave." id interrogation_4_d83f7b5c
+            ka "We have rescued hundreds of children from those delightful obedience collars." id interrogation_4_c7ba2e40
 
             n "Education collars, actually, though I do take issue with your tone."
             n "You act like I was the one who made them."
+
             "Shouldn't she be asking why it was made in the first place?"
-
-            hide koe
-
-            jump interrogation_end
 
         "It was safest":
 
@@ -469,7 +436,7 @@ label prologue:
 
             show koe
 
-            ka "What exactly did she have planned?"
+            ka "What exactly did she have planned?" id interrogation_4_355015b4
 
             n "We were going to finish what Lethe started."
 
@@ -480,15 +447,11 @@ label prologue:
 
             n "I wasn't exactly sure, but Odori assured me that the end justifies the means."
 
-            ka "You expect us to believe that you were blindly following orders?"
+            ka "You expect us to believe that you were blindly following orders?" id interrogation_4_0b5a23fa
 
             n "I'm just the tactician. You asked me why I picked Guwon, I told you."
             n "It was the most pragmatic decision."
             n "I believed Lethe had our best interests in mind, same as you believe she was a monster."
-
-            hide koe
-
-            jump interrogation_end
 
         "To end the war":
 
@@ -501,29 +464,23 @@ label prologue:
 
             show koe
 
-            ka "Our department exists to regain peace, not to insight riots in the streets."
+            ka "Our department exists to regain peace, not to insight riots in the streets." id interrogation_4_d5e7a729
 
             n "Then why did it take our riots for you to turn your attention to Guwon?"
             n "It was home to a well-known weapons manufacturer at the time."
             n "Once we cut off their exports, suddenly you guys were able to regain control of the populace."
 
-            ka "We needed to restore order. Doing so takes time and hard work."
-            ka "We turned our attention to Guwon next due to the number of casualties, not because of any vigilante interference."
+            ka "We needed to restore order. Doing so takes time and hard work." id interrogation_4_b94cebfb
+            ka "We turned our attention to Guwon next due to the number of casualties, not because of any vigilante interference." id interrogation_4_a503ec13
 
             "She spits out the words as if they're acid." 
             "It's clear I'm getting nowhere with this woman."
 
             n "Casualties were bound to happen, you're assuming our activities caused more."
 
-            hide koe
-            
-            jump interrogation_end
-
-    label interrogation_end:
-
     show koe eh
 
-    ka "I rest my case. It is clear that Nagen Tesuta is guilty of all crimes, and shows no remorse for what he has done."
+    ka "I rest my case. It is clear that Nagen Tesuta is guilty of all crimes, and shows no remorse for what he has done." id interrogation_end_1b0b1285
 
     "Wait a minute, that's it!"
 
@@ -531,10 +488,10 @@ label prologue:
 
     n "Objection!"
 
-    hide koe eh
+    hide koe
     show cop
 
-    cop "That's not how an interrogation works, Mr. Tesuta."
+    cop "That's not how an interrogation works, Mr. Tesuta." id interrogation_end_1f5b1e73
 
     n "S-sorry. It's just, wasn't the purpose of this case to determine whether or not the Junior Gladiators lead to people dying?"
     n "None of the prosecution's questions have been relevant to the charges at hand; they've been about my character."
@@ -543,7 +500,7 @@ label prologue:
     hide cop
     show koe hmm
 
-    ka "This is outrageous and highly unprofessional."
+    ka "This is outrageous and highly unprofessional." id interrogation_end_0b62d016
 
     n "If this is indeed a trial to prove that my group committed atrocities in Guwon Province, then there is more than enough evidence to support the charges."
     n "However, it seems the prosecution wants to prove that my friends and I are, to put it plainly, evil."
@@ -554,17 +511,16 @@ label prologue:
 
     n "I want to change the terms of the deal."
 
-    hide koe hmm
     show koe smirk
 
-    ka "You mean the plea bargain?"
+    ka "You mean the plea bargain?" id interrogation_end_1204df22
 
     n "Right, that. I know that my friends and I, we're good people deep down."
     n "We just got caught up in something bigger and scarier than us and we did what we could to stay alive."
     n "The same can be said of any criminal of war. If you need someone to blame, then blame the adults."
     n "Just drop the charges against my team members."
 
-    ka "I'm listening."
+    ka "I'm listening." id interrogation_end_017dffbc
 
     n "I am fully aware that someone has to atone for what happened in Guwon." 
     n "No amount of apologizing can erase that."
@@ -572,53 +528,53 @@ label prologue:
     n "The ones who destroyed everything, not just Guwon. I can tell you where they are."
     n "Just let me and my friends go."
 
-    hide koe smirk
     show koe
 
-    ka "And how do you expect us to believe your group is so blameless?"
+    ka "And how do you expect us to believe your group is so blameless?" id interrogation_end_5187cbb7
 
     n "....."
 
     "Shit, I thought I had her!"
 
-    ka "The DVP has a program for troubled teens."
-    ka "So far, we have been unable to gather any evidence that proves the program is effective."
-    ka "We would like to use the Junior Gladiators as our focus group."
+    ka "The DVP has a program for troubled teens." id interrogation_end_0d81cd23
+    ka "So far, we have been unable to gather any evidence that proves the program is effective." id interrogation_end_be81a2af
+    ka "We would like to use the Junior Gladiators as our focus group." id interrogation_end_6882d4e6
 
     "Wait a minute, what?"
 
-    hide koe
     show koe smirk
 
-    ka "If your members cooperate and complete the program, we will drop the charges."
-    ka "Of course, the Junior Gladiators are officially disbanded and will not be allowed to continue any further activities."
-    ka "You will be under constant surveillance as a part of the observational study and to prevent skewed data, they will not know about the experiment."
+    ka "If your members cooperate and complete the program, we will drop the charges." id interrogation_end_16ce5e4a
+    ka "Of course, the Junior Gladiators are officially disbanded and will not be allowed to continue any further activities." id interrogation_end_8e278142
+    ka "You will be under constant surveillance as a part of the observational study and to prevent skewed data, they will not know about the experiment." id interrogation_end_894a80d2
 
     "Woah, woah, woah. A; that is highly unethical and B; why's the cop gone silent?"
     "Did I just play into this lady's hand? No way."
     "I mean, yeah I wanted to get my friends out of this, but I didn't want to make them into guinea pigs like me."
     "There's no telling what these people might do for the sake of 'science'."
 
-    hide koe smirk
+    hide koe
     show cop
 
-    cop "The terms have been set."
-    cop "If the Junior Gladiators complete the DVP's Villain Prevention Program and can prove they can integrate back into society, they will be issued a full pardon."
-    cop "If they are unable to do so, they will be tried as adults for their crimes in Guwon."
-    cop "Do you agree to these terms?"
+    cop "The terms have been set." id interrogation_end_c2900460
+    cop "If the Junior Gladiators complete the DVP's Villain Prevention Program and can prove they can integrate back into society, they will be issued a full pardon." id interrogation_end_91a2a7d9
+    cop "If they are unable to do so, they will be tried as adults for their crimes in Guwon." id interrogation_end_a20f350c
+    cop "Do you agree to these terms?" id interrogation_end_a0fa5fb0
 
     n "Yes."
 
     "It's not like I really have a choice anyway."
 
-    cop "Then it's settled. A follow-up hearing will be scheduled in one year to document your progress."
-    cop "In the meantime, you will be appointed a guardian from the DVP to take care of you during your time in the program."
+    cop "Then it's settled. A follow-up hearing will be scheduled in one year to document your progress." id interrogation_end_1ac62a6d
+    cop "In the meantime, you will be appointed a guardian from the DVP to take care of you during your time in the program." id interrogation_end_bf51e3a0
 
     "Unbelievable. Fucking unbelievable."
     "I thought for once I could outsmart these assholes and get out of all this. No, this is not over."
     "A year is a long time. I'm sure I will be able to think of something."
 
-    cop "Your guardian is waiting."
+    cop "Your guardian is waiting." id interrogation_end_efac05da
+
+label life_1:
 
     window hide
     with Dissolve(1.0)
@@ -626,11 +582,11 @@ label prologue:
     hide cop
     with dissolve
 
-    play music "music/leaf.mp3"
-
     show backgroundPT
     with Fade(0.5, 1.0, 0.5)
     
+    play music "music/leaf.mp3"
+
     pause
 
     scene backgroundcar
@@ -649,30 +605,30 @@ label prologue:
 
     show maimai
 
-    mm "The one and only."
+    mm "The one and only." id interrogation_end_665582e8
 
     play sound "car sedan door shut 1.ogg"
     play sound ["car_inside.ogg"]
 
     n "You're my appointed guardian? This has to be a mistake, you're a registered villain."
 
-    mm "The Medusa Killer is a registered villain who's gone MIA. I'm Maimai."
-    mm "See, I've got glasses and everything, no one can tell the difference."
-    mm "Either way, I haven't seen you since pulling you out of a war zone and this is the hello I get?"
+    mm "The Medusa Killer is a registered villain who's gone MIA. I'm Maimai." id interrogation_end_6805706d
+    mm "See, I've got glasses and everything, no one can tell the difference." id interrogation_end_ba51f0f6
+    mm "Either way, I haven't seen you since pulling you out of a war zone and this is the hello I get?" id interrogation_end_bdd73484
 
     "I ended up in a dark room with two vultures circling me thanks to her 'help'."
     "She promised she wouldn't leave my side until I was safe."
 
-    mm "Don't give me that look, you'll be fine."
+    mm "Don't give me that look, you'll be fine." id interrogation_end_4ba27adc
 
     n "You still haven't told me why they sent you."
 
-    mm "They thought a friendly face would keep you from bolting out of the car."
+    mm "They thought a friendly face would keep you from bolting out of the car." id interrogation_end_695c698d
 
     n "And the stupid glasses?"
 
-    mm "A sign of my sincerity. My hypnotic gaze only works when you can see my eyes."
-    mm "If I was planning to force you to cooperate, you'd be drooling on the floor by now."
+    mm "A sign of my sincerity. My hypnotic gaze only works when you can see my eyes." id interrogation_end_8f7c5908
+    mm "If I was planning to force you to cooperate, you'd be drooling on the floor by now." id interrogation_end_ecbaf125
 
     "Her hypnosis was terrifying to experience first hand, especially knowing for five other victims, it was the last thing they experienced."
     "In my attempt to seize control of Guwon, I had put myself in the crosshairs of a dark-web serial killer when I endangered her next target."
@@ -681,97 +637,87 @@ label prologue:
 
     n "This is the most normal I've seen you look... ever."
 
-    mm "After those DVP schmucks found out my methodology, I had to retire from stuffing orchids down criminals' windpipes and ditch the costume."
-    mm "Besides, it wasn't suitable for my new role."
+    mm "After those DVP schmucks found out my methodology, I had to retire from stuffing orchids down criminals' windpipes and ditch the costume." id interrogation_end_d8e6c5ef
+    mm "Besides, it wasn't suitable for my new role." id interrogation_end_4adf67e2
 
     hide maimai
 
     menu:
         "New role?":
+
             #$ Charm += 1
 
             show maimai
 
-            mm "Pantsuit, short hair, dorky accessories; I'm one minivan away from perfection."
+            mm "Pantsuit, short hair, dorky accessories; I'm one minivan away from perfection." id interrogation_end_678aca50
 
             "This is her idea of what a mom looks like?"
 
             n "I'm flattered, but I need a couch to crash on, not a parent."
 
-            mm "That's not what the state says."
-            mm "You want to get out of this mess, then we gotta go full nuclear. Nuke the situation beyond recognition."
+            mm "That's not what the state says." id interrogation_end_073a4d47
+            mm "You want to get out of this mess, then we gotta go full nuclear. Nuke the situation beyond recognition." id interrogation_end_935c89a1
 
             n "You do realize a nuclear family has two parents, right?"
             n "Please tell me this isn't going to be one of those 'Weekend at Bernies' things where you dress up a dead body to be my dad or something."
 
-            mm "I didn't even think of that!"
-            mm "It could work... but no, I found a living option and on my honor, he will remain a living option."
+            mm "I didn't even think of that!" id interrogation_end_a7993254
+            mm "It could work... but no, I found a living option and on my honor, he will remain a living option." id interrogation_end_639a0a53
 
             n "A friend of yours from your dark web days?"
 
-            mm "Yeah, we go way back."
+            mm "Yeah, we go way back." id interrogation_end_acab57b9
 
             n "I think the dead body would be safer."
 
-            hide maimai
-
-            jump life_1
-
         "Where are we going?":
+
             #$ Intel += 1
+
             show maimai
 
-            mm "Someplace safe."
-            mm "The DVP would like you to believe the best place for you is with them; they're only half right."
+            mm "Someplace safe." id interrogation_end_3108d53c
+            mm "The DVP would like you to believe the best place for you is with them; they're only half right." id interrogation_end_b27fbd5b
 
             n "So we're running from the DVP again."
 
-            mm "This is a little different than huddling around a flaming oil drum in an abandoned alleyway."
-            mm "Going off-grid isn't going to help us now. We need to leach from the immunity capitalism offers."
-            mm "Money may not buy happiness, but it sure as hell can buy you protection."
+            mm "This is a little different than huddling around a flaming oil drum in an abandoned alleyway." id interrogation_end_f293281e
+            mm "Going off-grid isn't going to help us now. We need to leech from the immunity capitalism offers." id interrogation_end_a1436a27
+            mm "Money may not buy happiness, but it sure as hell can buy you protection." id interrogation_end_25c0ea6c
 
             "Well that kinda explains the car."
 
             n "Whose limo is this?"
 
-            mm "...An old target's decided to be quite hospitable."
+            mm "...An old target's decided to be quite hospitable." id interrogation_end_336d4d64
 
             n "What the- Oh my god, you're blackmailing the poor man."
 
-            mm "I'm not a monster! It's more complicated than that. You just gotta trust me."
+            mm "I'm not a monster! It's more complicated than that. You just gotta trust me." id interrogation_end_a89226d3
 
-            hide maimai
-
-            jump life_1
-
-    #[Return to Main Branch]
-    label life_1:
-
-    show maimai
-    
-    mm "I had to cash in an old favor to get us out of this mess."
-    mm "I was hoping to leave his debt dangling over his head for a few more years, but this is more important."
-    mm "You need a proper guardian and as much as I'd love to take care of you myself..."
-    mm "I don't have a legal job, or house, or any of the tools that would let the state give me guardianship."
+    mm "I had to cash in an old favor to get us out of this mess." id life_1_f5c87301
+    mm "I was hoping to leave his debt dangling over his head for a few more years, but this is more important." id life_1_054db603
+    mm "You need a proper guardian and as much as I'd love to take care of you myself..." id life_1_2328d997
+    mm "I don't have a legal job, or house, or any of the tools that would let the state give me guardianship." id life_1_33f8eb0d
 
     n "I'm not a child."
     n "I appreciate everything you've done for me, but you'll have to forgive me for not fully trusting you or this other person."
 
-    mm "I just want what's best for you. Please, just give this guy a chance."
-    mm "I will be with you the whole time. He's... he's a bit of a potato, but he'll treat us well."
+    mm "I just want what's best for you. Please, just give this guy a chance." id life_1_159e00ec
+    mm "I will be with you the whole time. He's... he's a bit of a potato, but he'll treat us well." id life_1_2f5b06dd
 
     n "...Potato?"
 
-    mm "Boring, lives somewhere dark and hard to find. A potato."
+    mm "Boring, lives somewhere dark and hard to find. A potato." id life_1_9befeacf
 
     n "...Right..."
     n "Has anyone heard from Odori?"
 
-    mm "No, I'm sorry."
+    mm "No, I'm sorry." id life_1_5771cc36
 
     n "You sure it's not classified or something?"
 
-    mm "If it was classified, I would have told you it's classified."
+    mm "If it was classified, I would have told you it's classified." id life_1_73b4e738
 
     stop sound 
     stop music 
@@ -784,9 +730,10 @@ label prologue:
     "My mouth's gone dry. I don't want to be here."
     "She should be in a limo on her way to a new home, not me."
 
-    mm "Nagen honey, remember to breathe. We're not going to get out of the car until you're ready."
+    mm "Nagen honey, remember to breathe. We're not going to get out of the car until you're ready." id life_1_92a5184d
 
     scene backgroundnhouse
+
     play music "music/LateNights.mp3"
 
     play sound "car sedan door open 1.ogg"
@@ -796,7 +743,7 @@ label prologue:
 
     show maimai smile
 
-    mm "Now we just gotta find a way in!"
+    mm "Now we just gotta find a way in!" id life_1_c69ebb73
 
     "Maimai's exuberance clashes with the apathetic surroundings."
     "Her violently pink attire is giving me a migraine."
@@ -804,12 +751,11 @@ label prologue:
     n "He is expecting us, right?"
     n "You didn't just stalk the man... did you?"
 
-    hide maimai smile
     show maimai oh
 
-    mm "No... kind of."
+    mm "No... kind of." id life_1_e78bf0d3
 
-    hide maimai oh
+    hide maimai
 
     "Of course. Why would I expect any different?"
     "I stumble after her through the leaves."
@@ -819,57 +765,52 @@ label prologue:
 
     show maimai smile at left_center
 
-    mm "Surprise!"
+    mm "Surprise!" id life_1_bd60fe00
 
     show ken at right_center
 
-    kan "What part of this arrangement involved you coming here?"
+    kan "What part of this arrangement involved you coming here?" id life_1_8e960e52
 
     n "I knew it! He wasn't expecting us at all!"
 
-    mm "Well, he was expecting you."
+    mm "Well, he was expecting you." id life_1_29062182
  
-    kan "...That's the kid?"
+    kan "...That's the kid?" id life_1_07ea0577
 
-    mm "He claims otherwise, but yes, this is him."
-    mm "Don't worry, in this big ol' house, you'll hardly notice us."
+    mm "He claims otherwise, but yes, this is him." id life_1_de196b8d
+    mm "Don't worry, in this big ol' house, you'll hardly notice us." id life_1_b207f309
 
-    hide ken
-    show ken damn at right_center
+    show ken damn
 
-    kan "Us?"
-    kan "You're the one who insisted on abandoning your old identity and with it, any connection to me."
-    kan "You made that very clear."
+    kan "Us?" id life_1_3d8dc490
+    kan "You're the one who insisted on abandoning your old identity and with it, any connection to me." id life_1_da75a0e9
+    kan "You made that very clear." id life_1_9ed54c34
 
-    mm "I'm not going to leave my kid in some strange place all by himself."
+    mm "I'm not going to leave my kid in some strange place all by himself." id life_1_e239c06a
 
     n "I'm not your kid! And you're not a mom."
 
-    hide maimai smile
-    show maimai oh at left_center
+    show maimai oh
 
-    mm "Of course I'm a mom."
-    mm "We'll work out the details later."
-    mm "I have a full day ahead of me dropping off the rest of the rugrat felons, but I'll be back before you know it."
+    mm "Of course I'm a mom." id life_1_1d2bdfd4
+    mm "We'll work out the details later." id life_1_ab2d89f0
+    mm "I have a full day ahead of me dropping off the rest of the rugrat felons, but I'll be back before you know it." id life_1_532b7ab4
 
-    hide ken damn
-    show ken at right_center
+    show ken
 
-    kan "I agreed to claim to be taking care of the child."
-    kan "You said nothing about living here."
+    kan "I agreed to claim to be taking care of the child." id life_1_3c010f27
+    kan "You said nothing about living here." id life_1_be4471b7
 
-    hide maimai oh 
-    show maimai frown at left_center
+    show maimai frown
 
-    mm "I feel like you're hearing me, but you're not understanding."
-    mm "I am a new mom and we will talk about this later."
+    mm "I feel like you're hearing me, but you're not understanding." id life_1_ad3539d3
+    mm "I am a new mom and we will talk about this later." id life_1_73a1b8b4
 
-    hide maimai frown
-    show maimai smile at left_center
+    show maimai smile
 
-    mm "I'll see you soon, Nagen."
+    mm "I'll see you soon, Nagen." id life_1_4255763e
 
-    hide maimai smile
+    hide maimai
     hide ken
 
     "What happened to not leaving me alone in a strange place?"
@@ -886,51 +827,42 @@ label prologue:
 
             show ken
 
-            kan "Here, apparently."
+            kan "Here, apparently." id life_1_b1edb688
 
             n "...In the hallway?"
 
-            kan "Second floor, east wing, third room on the left side."
-            kan "It should have nothing terribly breakable in it."
-            kan "Just don't touch anything outside of that room."
+            kan "Second floor, east wing, third room on the left side." id life_1_56bfd45d
+            kan "It should have nothing terribly breakable in it." id life_1_580f73d3
+            kan "Just don't touch anything outside of that room." id life_1_127c4077
 
             n "...Okay."
 
             "I go to leave, but he stops me."
 
-            hide ken
             show ken talk
 
-            kan "She didn't mention there were... others."
+            kan "She didn't mention there were... others." id life_1_dc743400
 
             n "That's... kind of a long story."
 
-            kan "Follow me, we need to talk."
-
-            hide ken talk
-
-            jump prologue2
+            kan "Follow me, we need to talk." id life_1_14117ada
 
         "Who are you?":
 
             show ken
 
-            kan "I'm a software engineer."
+            kan "I'm a software engineer." id life_1_6f0efdf9
 
             n "That's it?"
             n "I find it really hard to believe Maimai would obsessively pursue some software engineer."
         
-            kan "...That was my own doing."
-            kan "I made the mistake of confusing a dark-web serial killer with an ARG and tried to set a trap for her so to speak."
+            kan "...That was my own doing." id life_1_82598262
+            kan "I made the mistake of confusing a dark-web serial killer with an ARG and tried to set a trap for her so to speak." id life_1_e4561678
 
             n "You asked Maimai to target you on purpose!?"
 
-            kan "In a way, yes. Though it's usually incredibly difficult to get her to show herself."
-            kan "The question is, why is she risking that for you and your friends?"
-
-            hide ken
-
-            jump prologue2
+            kan "In a way, yes. Though it's usually incredibly difficult to get her to show herself." id life_1_a035a97c
+            kan "The question is, why is she risking that for you and your friends?" id life_1_e7146c08
 
         "Why are you doing this?":
 
@@ -939,44 +871,35 @@ label prologue:
             n "Are they paying you to babysit me?"
             n "Or is it just because Maimai's blackmailing you?"
 
-            kan "That woman couldn't blackmail me if she tried."
-            kan "No one would listen to her."
+            kan "That woman couldn't blackmail me if she tried." id life_1_3f98975f
+            kan "No one would listen to her." id life_1_163c7fd4
 
             n "Then why are you doing it?"
 
-            hide ken
             show ken damn
 
             "He looks me over in disgust."
 
-            kan "Occasionally her ramblings have merit."
+            kan "Occasionally her ramblings have merit." id life_1_735120ad
 
             n "She mentioned you owing her a favor."
 
-            kan "She got me off Lethe's radar, I made the mistake of thanking her; now you're here."
+            kan "She got me off Lethe's radar, I made the mistake of thanking her; now you're here." id life_1_5628757c
 
             "Lethe was after him too?"
 
-            kan "You seem confused."
-            kan "Follow me, we have a lot to talk about."
-
-            hide ken damn
-
-            jump prologue2
-
-label prologue2:
-
-    show ken
+            kan "You seem confused." id life_1_9005b9d3
+            kan "Follow me, we have a lot to talk about." id life_1_c6fea334
 
     "I follow him into a cluttered study."
     "He takes a long drink of coffee before he sits down."
     "He prompts me to find a seat with a casual wave of his hand."
 
-    kan "Liberation Army, hunh?"
+    kan "Liberation Army, hunh?" id prologue2_bbb5b131
 
-    n "Junior Gladiators"
+    n "Junior Gladiators."
 
-    kan "Same difference."
+    kan "Same difference." id prologue2_1847cff7
 
     n "No, it's the Junior Gladiators, get it right."
 
@@ -984,12 +907,12 @@ label prologue2:
     "He has no keyboard or mouse, yet it seems to be working just fine."
     "He stares me down across his empty desk."
 
-    kan "You seem pretty proud of that."
+    kan "You seem pretty proud of that." id prologue2_58e50c79
 
     n "Five kids bringing down an entire province is pretty impressive in my book."
     n "I was our lead strategist, so their success is my success."
 
-    kan "Hmm..."
+    kan "Hmm..." id prologue2_38ab7775
 
     n "Odori was our leader."
     n "She was the one that saw potential in all of us."
@@ -1005,59 +928,59 @@ label prologue2:
     n "So the least you could do is not treat me like some dumb kid while I'm waiting to hear if my friend is dead."
     n "For god's sake, we took over a whole damn province together!"
 
-    kan "Are you finished?"
+    kan "Are you finished?" id prologue2_00cdb1e9
 
     n "Uhh..."
 
-    kan "Maimai's assumption is correct in one regard."
-    kan "You are a child if you think anything you did in Guwon is worth celebrating."
-    kan "Violence like that may be effective in the short term, but the damage always radiates far beyond your intended target."
+    kan "Maimai's assumption is correct in one regard." id prologue2_fa102437
+    kan "You are a child if you think anything you did in Guwon is worth celebrating." id prologue2_ee2438b2
+    kan "Violence like that may be effective in the short term, but the damage always radiates far beyond your intended target." id prologue2_47c15d5c
 
     n "What else was I supposed to do, just accept my life as a lab rat?"
 
-    kan "You need to divorce your attack on Guwon with your anger at Estella."
-    kan "The two are not connected."
+    kan "You need to divorce your attack on Guwon with your anger at Estella." id prologue2_5dec20ff
+    kan "The two are not connected." id prologue2_a7fe3826
 
     n "Guwon profited off of Estella's caste system for generations."
 
-    kan "Then you intended to harm countless innocents in your reenactment of Children of the Corn?"
+    kan "Then you intended to harm countless innocents in your reenactment of Children of the Corn?" id prologue2_7e456b44
 
     n "No! It isn't that simple."
 
-    kan "Then I suggest you think long and hard about what it was you were trying to accomplish before you defend your actions."
-    kan "Your methods clearly haven't taken you to where you wanted to go."
+    kan "Then I suggest you think long and hard about what it was you were trying to accomplish before you defend your actions." id prologue2_f95572f9
+    kan "Your methods clearly haven't taken you to where you wanted to go." id prologue2_222ca451
 
     "I just got here and he's already lecturing me about how disappointed he is in me."
     "At least we're on the same page about how much I want to be here."
 
     n "Is that all you want me to do?"
 
-    kan "Keep a low profile for a month until school starts."
-    kan "You'll be staying at the dorms where they'll be able to keep a closer eye on you."
+    kan "Keep a low profile for a month until school starts." id prologue2_1b29f6b0
+    kan "You'll be staying at the dorms where they'll be able to keep a closer eye on you." id prologue2_9598c9ac
 
     n "Boarding school? Really!?"
     n "Guwon's government and supply chain is in shambles but hey, at least we still have boarding school."
 
-    kan "McCarthy Academy is overseen by an old friend of mine."
-    kan "It promises to be a safe place for survivors like yourself."
+    kan "McCarthy Academy is overseen by an old friend of mine." id prologue2_2760c3c1
+    kan "It promises to be a safe place for survivors like yourself." id prologue2_d9f313cb
 
     n "I thought you were supposed to be doing that."
 
     "Great, I'm going to spend the next year getting shuffled around like old luggage."
 
-    kan "I have to rebuild my company from the ground up since someone managed to break through our security system."
+    kan "I have to rebuild my company from the ground up since someone managed to break through our security system." id prologue2_04a5f0ab
 
     "Oh shit, don't tell me..."
 
     n "By company, you wouldn't happen to mean Ando Electronics... would you?"
 
-    kan "Seeing as I'm the founder, yes. I was told you can be quite intelligent when you want to be."
-    kan "For your sake, I hope that's true. I don't enjoy gambling."
+    kan "Seeing as I'm the founder, yes. I was told you can be quite intelligent when you want to be." id prologue2_cfef000f
+    kan "For your sake, I hope that's true. I don't enjoy gambling." id prologue2_380616d4
 
     "Gambling on what? What's this guy's deal?"
     "Maimai, why on Earth did you think this was going to be a good idea?"
 
-    kan "It's been a long day. Go unpack your things, Maimai will handle the rest."
+    kan "It's been a long day. Go unpack your things, Maimai will handle the rest." id prologue2_da03f5b8
 
     "He proceeds to ignore me, opting to focus on his computer screen instead."
 
@@ -1065,7 +988,7 @@ label prologue2:
 
     "He groans, rubbing his temples."
 
-    kan "Second floor, east wing, third door on the left side."
+    kan "Second floor, east wing, third door on the left side." id prologue2_2193645d
 
     n "Right."
 
@@ -1092,24 +1015,25 @@ label prologue2:
     scene backgroundP1 with fade:
         size (1920, 1080) crop (300, 400, 640, 360)
 
-    o "Gladiators! You'll never believe the guest speaker I found for today's meeting!"
+    o "Gladiators! You'll never believe the guest speaker I found for today's meeting!" id prologue2_2bfa7b67
 
     #[Pan out, Lethe is standing behind her, smiling]
 
-    scene backgroundP1 with fade:
+    scene backgroundP1:
         size (1920, 1080) crop (300, 500, 640, 360)
         linear 2 crop (600, 0, 960, 540)
 
-    l "Hello, little ones! It's so inspiring to see young people take an interest in our initiative."
-    l "Even if my colleagues disagree, I think it's important to foster the growth of the industry."
-    l "After all, it's rare to see young people so devoted to liberating the justice system."
-    l "Not many have what it takes."
+    l "Hello, little ones! It's so inspiring to see young people take an interest in our initiative." id prologue2_9a7f5aa7
+    l "Even if my colleagues disagree, I think it's important to foster the growth of the industry." id prologue2_fa05e057
+    l "After all, it's rare to see young people so devoted to liberating the justice system." id prologue2_d874f507
+    l "Not many have what it takes." id prologue2_ed304292
 
     n "O-of course! I mean, who wouldn't want to become a real live hero?"
 
     scene backgroundP1 with fade:
         size (1920, 1080) crop (600, 0, 960, 540)
         linear 2 crop (0, 0, 1920, 1080)
+    
     n "I can't believe you're actually here! We've mostly been planning. I mean, what else can we do?"
     n "But we've been working day and night on what we'll do as real heroes!"
     n "Not like a hobby... or anything... We meet everyday after school, and even longer on weekends."
@@ -1118,11 +1042,11 @@ label prologue2:
     "I started gathering the draft papers, but when I looked up at her face, she seemed so sad."
     "She took a seat at the table in silence."
 
-    l "I ask this of all my fans, just as a formality..." 
+    l "I ask this of all my fans, just as a formality..." id prologue2_96ceab93
 
     stop music
 
-    l "Do you feel safe at home?"
+    l "Do you feel safe at home?" id prologue2_e12ba218
 
     scene backgroundP2 with fade:
         size (1920, 1080) crop (700, 200, 640, 360)
@@ -1166,34 +1090,32 @@ label prologue2:
 
     show ken talk at right_center
 
-    mm "Hey, it's going to be okay. Boarding school isn't that bad."
+    mm "Hey, it's going to be okay. Boarding school isn't that bad." id prologue2_5c5f6de6
 
     n "You don't know that."
 
-    mm "Excuse me mister, but I have been to my fair share of reform schools."
+    mm "Excuse me mister, but I have been to my fair share of reform schools." id prologue2_eea239ed
 
     n "Clearly they worked wonders."
 
-    kan "All the more reason not to be scared."
-    kan "This is only to show the courts you can behave for a long period of time."
+    kan "All the more reason not to be scared." id prologue2_07c0cd54
+    kan "This is only to show the courts you can behave for a long period of time." id prologue2_ab741f20
 
     n "...Can't I just stay here with you guys instead?"
 
-    kan "I thought you hated being cooped up here."
+    kan "I thought you hated being cooped up here." id prologue2_8433f1ae
 
     "I do."
     "I do hate it, but at least I know what to expect when I'm here."
 
-    hide maimai
-    show maimai smile at left_center
+    show maimai smile
 
-    mm "You can come back during the break and I'll be going with you the first day to make sure the place is on the up and up."
+    mm "You can come back during the break and I'll be going with you the first day to make sure the place is on the up and up." id prologue2_f889154e
 
-    hide ken talk
-    show ken at right_center
+    show ken
 
-    kan "I assure you, it's a legitimate establishment."
-    kan "I wouldn't send him off if I wasn't familiar with the staff."
+    kan "I assure you, it's a legitimate establishment." id prologue2_ef40a804
+    kan "I wouldn't send him off if I wasn't familiar with the staff." id prologue2_275e155d
 
     "That's supposed to make me feel better?"
 
@@ -1203,12 +1125,11 @@ label prologue2:
 
     n "I hate this."
     
-    hide maimai smile
     show maimai frown
 
-    mm "I know. Come on, the year will be over before you know it."
+    mm "I know. Come on, the year will be over before you know it." id prologue2_aa7e1a52
 
-    hide maimai frown
+    hide maimai
     hide ken
 
     "She herds me into the car with a forced smile on her face."
@@ -1248,16 +1169,15 @@ label prologue2:
 
     show maimai
 
-    mm "The building had been a library since the 1600's."
-    mm "I never got to see the inside, because the previous owner was such a nut job."
+    mm "The building had been a library since the 1600's." id prologue2_a712716c
+    mm "I never got to see the inside, because the previous owner was such a nut job." id prologue2_5d2d2df2
 
     n "Why should I care?"
 
-    hide maimai
     show maimai smile
 
-    mm "No, but do you think these bowties proofread every book in the building before bringing you in here?"
-    mm "Who knows what you could find!"
+    mm "No, but do you think these bowties proofread every book in the building before bringing you in here?" id prologue2_3cccc1f3
+    mm "Who knows what you could find!" id prologue2_61ff597f
 
     "I appreciate she's trying to make this sound like an adventure, but it doesn't change how... empty the school feels."
     "The second floor is for more specialized classes."
@@ -1265,25 +1185,24 @@ label prologue2:
     "Large bay windows look out to the central courtyard."
     "We finally arrive at a large mahogany office door."
 
-    hide maimai smile
     show maimai frown
 
-    mm "This is it."
-    mm "Promise you'll be on your best behavior?"
+    mm "This is it." id prologue2_7dce6920
+    mm "Promise you'll be on your best behavior?" id prologue2_82b2c62c
 
     n "...Why are you asking me that now?"
 
     "She searches for the right words to say."
 
-    mm "I didn't want you to spend your time at the mansion worrying about school."
-    mm "This place is the safest place for you to be right now, even if it's upsetting at times."
-    mm "Until they grant me full guardianship, my hands are tied."
+    mm "I didn't want you to spend your time at the mansion worrying about school." id prologue2_b5f635a7
+    mm "This place is the safest place for you to be right now, even if it's upsetting at times." id prologue2_73d1447e
+    mm "Until they grant me full guardianship, my hands are tied." id prologue2_8d2073db
 
     n "...I promise I'll try."
 
     "Maimai escorts me into the office."
 
-    hide maimai frown
+    hide maimai
     play music "music/Still.mp3"
 
     scene backgroundprincipal
@@ -1301,29 +1220,28 @@ label prologue2:
     show vivaldi
     show maimai frown at left
 
-    v "Is something wrong?"
+    v "Is something wrong?" id prologue2_8f0b8338
 
     "It's like she doesn't even care."
 
-    hide maimai frown
-    show maimai smile at left
+    show maimai smile
 
-    mm "He's just nervous because it's a new school."
-    mm "You know teenagers, all salty about change and stuff."
+    mm "He's just nervous because it's a new school." id prologue2_015bb72e
+    mm "You know teenagers, all salty about change and stuff." id prologue2_95052a68
 
     "The principal is cold and composed, much like a statue."
     "I can't help glaring at her. The DVP had handed me over to the woman who set up Lethe and sabotaged our siege of Guwon."
     "How could she be so indifferent? Doesn't she recognize me at all?!"
 
-    mm "So you're the principal?"
-    mm "That's uh, quite a shift from being a police officer."
+    mm "So you're the principal?" id prologue2_d4d634e7
+    mm "That's uh, quite a shift from being a police officer." id prologue2_58e34f2d
 
     "I've never seen Maimai so nervous before."
     "Is she scared of this woman? Or just psychics in general?"
     "She hands us papers to sign, with Maimai trying to stay as far away from the woman's hands as possible."
     "My phone is confiscated and replaced with a cheap knock-off to use while on campus."
 
-    v "Detective. I grew tired of locating criminals after they committed crimes."
+    v "Detective. I grew tired of locating criminals after they committed crimes." id prologue2_8b233c3e
 
     "Locating? Is that what she calls what she did? Locating criminals?"
     "Lethe was- She watched them kill her with that indifferent stare on live television."
@@ -1334,7 +1252,7 @@ label prologue2:
 
     n "You ruined my life."
 
-    mm "Nagen, please."
+    mm "Nagen, please." id prologue2_28f173df
 
     scene backgroundP3:
         size (1920, 1080) crop (0, 0, 1920, 1080)
@@ -1344,8 +1262,11 @@ label prologue2:
     n "No, because of her stupid feud, I lost both my mentor and my best friend in one night."
     n "Just because I have to be here doesn't mean I have to play along with her revenge fantasy."
 
-    v "This isn't supposed to be a punishment, Mr. Tesuta. Your school life will be what you make of it."
-    v "I trust you will do everything in your power to avoid ending up in my office again. Good day to you both."
+    v "This isn't supposed to be a punishment, Mr. Tesuta. Your school life will be what you make of it." id prologue2_97d59531
+    v "I trust you will do everything in your power to avoid ending up in my office again. Good day to you both." id prologue2_c5ece82f
+
+    hide vivaldi
+    hide maimai
 
     scene backgroundhall2
 
@@ -1354,34 +1275,32 @@ label prologue2:
 
     show maimai
 
-    mm "I know you're a smart kid, so please... please don't go starting fights you can't finish."
+    mm "I know you're a smart kid, so please... please don't go starting fights you can't finish." id prologue2_911151a6
 
     n "You can't leave me here with her- You knew she'd be here!"
 
-    mm "It's part of your plea bargain, I can't pull you out even if I wanted to."
-    mm "I'm not your legal guardian yet."
+    mm "It's part of your plea bargain, I can't pull you out even if I wanted to." id prologue2_293acdcf
+    mm "I'm not your legal guardian yet." id prologue2_5af6c118
 
     n "She's going to set me up to fail."
     n "You can't expect me to believe she's okay with helping someone who trashed their hometown."
 
-    hide maimai
     show maimai frown
 
-    mm "I don't. That's why you need to be careful."
-    mm "These people stand more to gain from your success than your failure, but I can't guarantee their motives are good-intentioned."
-    mm "We have to meet them halfway."
+    mm "I don't. That's why you need to be careful." id prologue2_f009dcdf
+    mm "These people stand more to gain from your success than your failure, but I can't guarantee their motives are good-intentioned." id prologue2_0235a97e
+    mm "We have to meet them halfway." id prologue2_df94b175
 
     n "You know I don't like being alone."
 
-    mm "I'm sorry."
-    mm "I'm sure there are a lot of troubled kids who could benefit from a school like this."
+    mm "I'm sorry." id prologue2_10cc5cff
+    mm "I'm sure there are a lot of troubled kids who could benefit from a school like this." id prologue2_d3a502d4
 
     "Each word is slow and deliberate."
 
-    hide maimai frown
     show maimai smile
 
-    mm "I'm sure you'll find some good friends here."
+    mm "I'm sure you'll find some good friends here." id prologue2_98d7c2ba
 
     "She finishes with a wink and finally I understand."
     "My old teammates could be here too."
@@ -1391,9 +1310,9 @@ label prologue2:
     "Still, to cut me off like that, it must mean I was right."
     "They're here. Somewhere in this god-forsaken reform school, I'll find my friends."
 
-    mm "You got this."
+    mm "You got this." id prologue2_16262522
 
-    hide maimai smile
+    hide maimai
 
     scene backgroundschool
     with dissolve
@@ -1407,13 +1326,12 @@ label prologue2:
 
     show maimai smile
 
-    mm "Be safe. Call me if anything happens."
-    mm "I want to hear from you at least once a week, mister."
+    mm "Be safe. Call me if anything happens." id prologue2_366609f1
+    mm "I want to hear from you at least once a week, mister." id prologue2_368d150e
 
-    hide maimai smile
     show maimai frown
 
-    mm "I mean it. Don't go forgetting about me, okay?"
+    mm "I mean it. Don't go forgetting about me, okay?" id prologue2_17e8ac34
 
     n "Okay, okay, people are staring."
 
@@ -1421,12 +1339,14 @@ label prologue2:
 
     n "I'll miss you too."
 
-    hide maimai frown
+    hide maimai
 
     scene backgroundschool
 
     "I really don't want to go, but I can't keep putting it off."
     "We say our final goodbyes and I watch as the car drives off. Tomorrow will be my first day of school."
     "I can see other kids unloading their luggage and milling about the grounds. Now would be a good chance to find my friends."
+
+    stop music
 
     jump chapter_one

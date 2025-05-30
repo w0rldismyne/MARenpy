@@ -47,7 +47,7 @@ label chapter2_day1_event1:
     s "It's for all of us."
 
     hide kietsu laugh
-    show kietsu assuring at right
+    show kietsu dontworry at right
 
     ki "We're going to be workin' as a team startin' today. The first week of school was garbage for a lot of people, so we gotta think of ways to raise morale."
     ki "Which reminds me; Setsuna, isn't there somethin' you'd like to say to Nagen?"
@@ -72,7 +72,7 @@ label chapter2_day1_event1:
 
     "That wasn't really an apology, but I'll take a healthy dose of humility."
 
-    hide kietsu assuring
+    hide kietsu dontworry
     show kietsu mischievious at right
 
     ki "Close enough. Now, I went ahead and asked the class representatives to join us in decidin' what to do to cheer everyone up. If we can get everyone to help out, we could host a huge party."
@@ -119,17 +119,17 @@ label chapter2_day1_event1:
     "He practically has his back to her. Was it something she said?"
 
     hide yoku
-    show hiro talk at right
+    show hiro at right
 
     h "Anyway, what'd you want to ask us, dude?"
 
     hide ichita annoyed
-    show kietsu assuring
+    show kietsu dontworry
 
     ki "We finally got enough approval to do the thing!"
 
-    hide kietsu assuring
-    show ichita grinning
+    hide kietsu dontworry
+    show ichita grin
 
     i "Man, I thought they'd never let us hold a dance."
 
@@ -140,7 +140,7 @@ label chapter2_day1_event1:
 
     r "A homecoming dance that honors all of the students, what a clever idea."
 
-    hide hiro talk
+    hide hiro
     show hiro serious at right
 
     h "Nagen didn't say anything about a homecoming dance. You just said that so you could win a popularity contest."
@@ -155,24 +155,24 @@ label chapter2_day1_event1:
 
     r "...I suppose it would be unfair for council members to win prizes at a party they planned."
     
-    hide ichita grinning
+    hide ichita grin
     show setsuna glare
 
     s "Prizes? We don't have the funds for decorations, let alone 'prizes'."
 
     hide setsuna glare
-    show ichita lecturing
+    show ichita lecture
 
     i "But you gotta have a king and queen of a school dance. Everyone expects it, it's tradition or whatever. We should be able to be voted for too."
 
     n "Like I was trying to say earlier-"
     
     hide yoku furious1
-    show hiro suspicious at right
+    show hiro empty at right
 
     h "I guess it'd be fair if that's the case. But do we have a theme?"
 
-    hide ichita lecturing
+    hide ichita lecture
     show kietsu confused
 
     ki "Masquerades are pretty easy."
@@ -184,12 +184,12 @@ label chapter2_day1_event1:
 
     n "Not everyone has money-"
     
-    hide ichita lecturing
+    hide ichita lecture
     show ichita
 
     i "Door charge could be snacks then. Or stuff that makes the party better."
 
-    hide hiro suspicious
+    hide hiro empty
     show hiro smile at right
 
     h "That's a good idea!"
@@ -200,7 +200,7 @@ label chapter2_day1_event1:
     r "Then how about Monday night? That should be enough time to prepare without alienating the chronic procrastinators in our class."
 
     hide ichita
-    show ichita grinning
+    show ichita grin
 
     i "Then it's settled!"
 
@@ -216,7 +216,7 @@ label chapter2_day1_event1:
 
     hide hiro happy
     hide rise smug
-    hide ichita grinning
+    hide ichita grin
 
     "Rise, Hiro, and Ichita leave the room chattering amongst themselves, leaving the rest of us with the aftermath."
 
@@ -241,7 +241,7 @@ label chapter2_day1_event1:
     n "No, we can make this work. We just have to take control of the situation before it gets out of hand."
 
     hide setsuna cringe
-    show kietsu teasing at right
+    show kietsu tease at right
 
     ki "That's the spirit! Come on, guys, this is going to be fun."
 
@@ -260,7 +260,7 @@ label chapter2_day1_event1:
     n "Sure, knock yourself out."
 
     hide yoku sheepish
-    hide kietsu teasing
+    hide kietsu tease
     hide nanase sad smile
 
     scene backgroundblack with fade
@@ -296,7 +296,7 @@ label chapter2_vigor:
     
     "After everything that happened this week, I need a mental break. Besides, I'm not entirely comfortable with Hiro being by himself for obvious reasons."
     
-    show rei mad at left
+    show rei irate at left
     
     re "....."
     
@@ -314,13 +314,13 @@ label chapter2_vigor:
     
     "They both stood there staring at each other."
     
-    hide rei mad
+    hide rei irate
     show rei surprised at left
     
     re "What are you waiting for?"
     
     hide hiro mad
-    show hiro think at right
+    show hiro hmm at right
     
     h "Me? I thought you were going to hit me?"
 
@@ -329,7 +329,7 @@ label chapter2_vigor:
 
     re "But I didn't stop Mariko when I thought she was up to something."
 
-    hide hiro think
+    hide hiro hmm
     show hiro guilty at right
 
     h "I'm just trying to makeup for not protecting you guys."
@@ -346,12 +346,12 @@ label chapter2_vigor:
     "They both took a fighting stance. Their fists collided in the most aggressive fist bump I have ever seen. I guess that makes sense. They both could get in serious trouble if they were caught fighting."
     
     hide rei think
-    show rei bragging
+    show rei brag
     
     re "Nagen, you next?"
     n "I'm good."
 
-    hide rei bragging
+    hide rei brag
     show rei smile talk
 
     re "Suit yourself. Now, both of you, no more sad clown faces."
@@ -412,7 +412,7 @@ label chapter2_vigor:
     ik "People like Vi and Sato constantly have to defend and prove themselves in ways we don't have to."
     ik "When people think of proficiencies, you're going to be who they think of, not them."
 
-    show shoma upset at left
+    show shoma frown at left
 
     sh "...why does that matter?"
 
@@ -437,7 +437,7 @@ label chapter2_vigor:
 
     ik "You're right, but Guwon's the only place that recognizes those abilities as proficiencies."
    
-    hide shoma upset
+    hide shoma frown
     show kitsune at left 
    
     k "Do they call it something else?"
@@ -586,7 +586,7 @@ label chapter2_vision:
     v "They tried to bury my confession, so I went public. That's how I was scouted by the Karmic Gladiator."
 
     hide chisei sad talk2
-    show ichita thinking at left
+    show ichita think at left
 
     i "I don't remember any Vision majors in the Gladiators."
 
@@ -604,7 +604,7 @@ label chapter2_vision:
     v "In answer to your earlier question Mr. Tesuta, this is why I'm more interested in expanding the subclassifications."
     v "I think our abilities are more complex than what others can see. Because Mr. Oshima is correct."
     
-    hide ichita thinking
+    hide ichita think
 
     j "Ha! I told you, she just knew them!"
     
@@ -1422,7 +1422,7 @@ label chapter2_day1_event3:
     u "I don't think Jona's coming with. He's still trying to find his sketchbook."
 
     hide hiro guilty
-    show hiro think
+    show hiro hmm
 
     h "Still? Maybe someone really did steal it."
 
@@ -1436,7 +1436,7 @@ label chapter2_day1_event3:
     "Still, it's odd. Why steal something like that? No one else here would have a use for it."
 
     hide uitto sad talk
-    hide hiro think
+    hide hiro hmm
 
     scene backgroundblack with fade
     return
@@ -1501,7 +1501,7 @@ label chapter2_day2_event1:
 
     u "Why would I do that?"
 
-    show ichita shouting at right
+    show ichita shout at right
 
     i "Do you really need a reason?"
 
@@ -1511,8 +1511,8 @@ label chapter2_day2_event1:
     u "Um, yeah. You're asking me to put my reputation on the line so you can cheat."
     u "That's a shit deal with zero reward for me."
 
-    hide ichita shouting
-    show ichita scowling at right
+    hide ichita shout
+    show ichita scowl at right
 
     i "Rise said the same thing. I think. I know she won't help."
 
@@ -1523,8 +1523,8 @@ label chapter2_day2_event1:
     u "Just, don't tell anyone, especially my friends."
     u "Jona can't keep a secret to save his life."
 
-    hide ichita scowling
-    show ichita grinning at right
+    hide ichita scowl
+    show ichita grin at right
 
     i "You'll really do it?"
 
@@ -1540,7 +1540,7 @@ label chapter2_day2_event1:
 
     u "I gotta go. Remember, not a word."
 
-    hide ichita grinning
+    hide ichita grin
     hide uitto playful
 
     "She comes up to me with a sigh."
@@ -1710,7 +1710,7 @@ label chapter2_day2_event2:
     n "Isn't that easier?"
 
     hide shoma
-    show shoma observing
+    show shoma observe
 
     sh "You'd be surprised how often my 'a suit' is the wrong suit because I don't like making boring, black three piece sets."
 
@@ -1727,7 +1727,7 @@ label chapter2_day2_event2:
 
     n "Okay, I get it. What do you want me to do then?"
 
-    hide shoma observing
+    hide shoma observe
     show shoma sad
 
     sh "You can help cut out patterns. Jona's been trying but..."
@@ -1735,7 +1735,7 @@ label chapter2_day2_event2:
     "He then whispers to me."
 
     hide shoma sad
-    show shoma scared
+    show shoma fear
 
     sh "He took thirty minutes to cut one sleeve because it had to be 'perfect'. We got ten more outfits to do and I sew faster than he cuts."
 
@@ -1743,8 +1743,8 @@ label chapter2_day2_event2:
 
     n "Is that the only reason you volunteered to help?"
 
-    hide shoma scared
-    show shoma upset
+    hide shoma fear
+    show shoma frown
 
     sh "Not really. I'll take any excuse to make stuff. It's just- after everything that happened, I thought I'd finally get some kind of closure."
     sh "Some kind of grand sign that things were going to be different this time."
@@ -1763,7 +1763,7 @@ label chapter2_day2_event2:
 
     sh "....."
 
-    hide shoma upset
+    hide shoma frown
     show shoma manic
 
     sh "Well, once one of our own is in charge of the school, it really will be a different story."
@@ -1798,14 +1798,14 @@ label chapter2_day2_event2:
     j "Yeah, but it'll be worth it when it's all done."
 
     hide shoma talk1
-    show shoma lying
+    show shoma lie
 
     sh "...Yeah..."
 
     "I go to throw away my scraps and immediately-"
 
-    hide shoma lying
-    show shoma scared
+    hide shoma lie
+    show shoma fear
     hide jona relaxed
     show jona mad
 
@@ -1822,7 +1822,7 @@ label chapter2_day2_event2:
     "I should leave before I touch something else I'm not supposed to."
 
     hide jona mad
-    hide shoma scared
+    hide shoma fear
 
     scene backgroundblack with fade
     return
@@ -2306,7 +2306,7 @@ label chapter2_day3_event1:
     n "If we're going to add anything to the event, I will send you a note."
 
     hide kazz talk
-    show kazz panic
+    show kazz worry
 
     kk "But-"
 
@@ -2314,7 +2314,7 @@ label chapter2_day3_event1:
 
     "The five minute bell rings."
 
-    hide kazz panic
+    hide kazz worry
     show kazz
 
     kk "Y-yeah. We're going to be late. I'mma just-"
@@ -2507,7 +2507,7 @@ label chapter2_day3_event3:
     y "I cou-uld have sworn the Oshima's ha-ad an heir our age. Must be a co-ommon last name then..."
 
     hide ichita annoyed
-    show ichita lecturing at right
+    show ichita lecture at right
 
     i "It's like Nagen said, we're normal kids. We expect normal things like potato chips and a prom court!"
 
@@ -2522,7 +2522,7 @@ label chapter2_day3_event3:
 
     y "Seven, maybe eight. I'm n-not entirely sure tho-ough."
 
-    hide ichita lecturing
+    hide ichita lecture
     show ichita surprised at right
 
     i "That's the problem! We kept telling people it'll be a normal party and all you rich kids got nostalgic for your weird de-but thingies."
@@ -2606,7 +2606,7 @@ label chapter2_day3_event4:
     n "Yeah... you were there."
 
     hide rise hearts talk
-    show rise flirting
+    show rise flirt
 
     r "Did he say anything else about me?"
 
@@ -2620,7 +2620,7 @@ label chapter2_day3_event4:
 
     "She goes pale."
 
-    hide rise flirting
+    hide rise flirt
     show rise surprised
 
     r "Oh no. No, no, no; Nagen, you can not have people comparing this event to the Reformation Ball."
@@ -2650,14 +2650,14 @@ label chapter2_day3_event4:
     "She bites her lip."
 
     hide rise mad
-    show rise upset
+    show rise frown
 
     r "Nagen, if high society had no place for you, you would have ended up in a place like Crystal Acres, not getting fostered by a corporate giant."
     r "I know you disdain your parents, but you are still benefiting from their legacy."
     r "There is more to rebellion than willful ignorance."
     r "You have to make a conscious effort not to follow in their footsteps..."
 
-    hide rise upset
+    hide rise frown
     show rise mad
 
     r "If possible, we should try and move the dance."
@@ -2692,12 +2692,12 @@ label chapter2_day3_event4:
     n "No, not really."
 
     hide rise hearts
-    show rise upset
+    show rise frown
 
     r "I see... Well then, I will send you a list of what I require in the morning."
     r "I do hope everything will go as planned."
 
-    hide rise upset
+    hide rise frown
 
     "She leaves without another word as the wind picks up."
 
@@ -2811,7 +2811,7 @@ label chapter2_day4_event1:
     d "Didn't you hear what Mariko said?"
 
     hide nanase sad1
-    show nanase furious
+    show nanase irate
 
     nk "It's not my fault you missed the deadline."
     nk "Nagen wants to help people; I'm not helping you take credit for our hard work."
@@ -2821,8 +2821,8 @@ label chapter2_day4_event1:
 
     d "Yeah, because you're such a great judge of character Ms. 'I'm going to elope with my teacher'."
 
-    hide nanase furious
-    show nanase crying
+    hide nanase irate
+    show nanase cry
 
     n "Don't talk to her like that."
 
@@ -2847,8 +2847,8 @@ label chapter2_day4_event1:
 
     n "Yeah."
 
-    hide nanase crying
-    show nanase crying smile
+    hide nanase cry
+    show nanase cry smile
 
     nk "Thanks."
 
@@ -2856,7 +2856,7 @@ label chapter2_day4_event1:
 
     n "Was there really no one else who wanted to be student council president?"
 
-    hide nanase crying smile
+    hide nanase cry smile
     show nanase ashamed
 
     nk "...We're both getting what we want. It doesn't matter what Dyre tells people."
@@ -2881,7 +2881,7 @@ label chapter2_day4_event2:
 
     show uitto talk at left
     show jona frustrated
-    show hiro think at right
+    show hiro hmm at right
 
     u "Still having trouble with the horns?"
 
@@ -2901,7 +2901,7 @@ label chapter2_day4_event2:
 
     n "They said it was a bad idea."
 
-    hide hiro think
+    hide hiro hmm
     show setsuna annoyed at right
 
     s "No, we said you were too worried about what people were saying."
@@ -3235,7 +3235,7 @@ label chapter2_day5_event2:
     "I'm just not in the mood to participate this time. Rise walks up to our table with a small frown."
 
     hide jona happy
-    show rise upset at left
+    show rise frown at left
 
     r "It seems I came at a bad time."
 
@@ -3259,7 +3259,7 @@ label chapter2_day5_event2:
 
     u "Hard pass."
 
-    hide rise upset
+    hide rise frown
     show rise disappointed at left
 
     r "I was asking Nagen."

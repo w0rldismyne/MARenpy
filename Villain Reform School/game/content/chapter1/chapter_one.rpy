@@ -149,7 +149,7 @@ label chapter1_freetime:
     #                call MarikoVisit
     #            "Yoku":
     #                call YokuVisit
-    
+
     #    "Investigate":
     #        call chapter1_investigation
 

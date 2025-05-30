@@ -158,13 +158,13 @@ label Nanase1:
             "Her shoulders slumped as she spoke."
 
             hide nanase sad smile
-            show nanase scolding
+            show nanase scold
 
             nk "I don't really talk to them anymore. My childhood friends that is." 
 
             "I want to ask her why, but it seems personal."
 
-            hide nanase scolding
+            hide nanase scold
             show nanase sad smile
 
             n "Why don't we watch a movie or something?" 
@@ -191,11 +191,11 @@ label Nanase1:
     "She doesn't understand. The people who'd be coming for me wouldn't be your average bullies. The person doing this could very well be a threat to everyone." 
 
     hide nanase
-    show nanase furious
+    show nanase irate
 
     nk "I'm just trying to help." 
 
-    hide nanase furious
+    hide nanase irate
 
     "She glared at me, almost about to cry. I don't think I've ever seen her this mad before. I mean, yeah I was kinda rude, but nothing deserving of such a steely glare. She stormed off without anothing word."
 
@@ -206,14 +206,14 @@ label Nanase2:
 
     n "Are you busy?"
 
-    show nanase furious
+    show nanase irate
     nk "Yeah. Things to file, documents to shred."
 
     "Ouch, looks like she's still mad about earlier. She turned her back on me and continued shredding documents. ...Wait a minute, shredding documents?" 
 
     "I picked up a form from the pile."
 
-    hide nanase furious
+    hide nanase irate
     show nanase offended
 
     nk "Hey!"
@@ -223,7 +223,7 @@ label Nanase2:
     n "Are these all threat letters?"
 
     hide nanase offended
-    show nanase furious
+    show nanase irate
 
     nk "Th-they're just empty threats."
     nk "It seems the anonymity of the request form makes it easy to target people."
@@ -231,15 +231,15 @@ label Nanase2:
 
     "She struggled to change the subject."
 
-    hide nanase furious
-    show nanase scolding
+    hide nanase irate
+    show nanase scold
 
     nk "We're really only interested in nominations for student council."
     nk "There's actually quite a few-"
 
     n "Why are you doing this?"
 
-    hide nanase scolding
+    hide nanase scold
     show nanase sad1
 
     nk "Well I'm aiming to be class historian, so I figured volunteering to work on the election would-."
@@ -272,7 +272,7 @@ label Nanase2:
     nk "I understand what it's like to have a reputation."
 
     hide nanase offended
-    show nanase scolding
+    show nanase scold
 
     nk "My Proficiency is only as good as the person I'm assisting, so I only help the best of the best!"
     nk "I am doing everything I can, but I can't even begin to help you unless you tell me what to do! So don't you dare tell me that doing what you're told is mindless, because it's the only thing I'm good at!"
@@ -282,7 +282,7 @@ label Nanase2:
 
     n "Wait, that's why you're mad at me?"
 
-    hide nanase scolding
+    hide nanase scold
     show nanase sad1
 
     nk "My Proficiency is... Obedience. I need people to tell me what to do, or I fail."
@@ -294,22 +294,22 @@ label Nanase2:
         "I didn't ask for your help.":
             $ nkRep -= 1 
 
-            show nanase furious
+            show nanase irate
 
             nk "Why are you making this so difficult?"
 
             n "You don't have to be here."
 
-            hide nanase furious
-            show nanase scolding
+            hide nanase irate
+            show nanase scold
 
             nk "You're the one who came looking for me."
             nk "If you don't want my help, then why are you here?"
 
             n "I'm just trying to blow off some steam, okay?"
 
-            hide nanase scolding
-            show nanase furious
+            hide nanase scold
+            show nanase irate
 
             nk "Yeah? Well you have a funny way of doing it."
             nk "I- I just want to make people happy."
@@ -319,7 +319,7 @@ label Nanase2:
 
             nk "It's not. So don't treat me like I'm a problem and let me do my job."
 
-            hide nanase furious
+            hide nanase irate
 
         "Reputation?":
             $ nkRep += 1
@@ -334,13 +334,13 @@ label Nanase2:
             n "That's it? That doesn't sound so bad."
 
             hide nanase embarrassed
-            show nanase crying
+            show nanase cry
 
             nk "His wife didn't seem to think so."
 
             n "Oh... Oh, wait, what? When did this happen? You're like fifteen at the oldest."
 
-            hide nanase crying
+            hide nanase cry
             show nanase embarrassed
 
             nk "It's not what you think!"
@@ -363,7 +363,7 @@ label Nanase2:
         "You shouldn't get involved.":
             $ Intel += 1
 
-            show nanase scolding
+            show nanase scold
  
             n "I know you mean well, but this isn't something you should get involved in."
             n "It's too dangerous."
@@ -375,15 +375,15 @@ label Nanase2:
             n "You'll just get roped in with me if you keep interfering like this."
             n "You'll ruin your chances at Class Historian at this point."
 
-            hide nanase scolding
-            show nanase furious
+            hide nanase scold
+            show nanase irate
 
             nk "W-well you'll ruin your chances at Student Council President."
 
             n "My chances are slim enough as it is."
             n "For all you know, this could make me go up in the polls. If not, then I'll do something else."
 
-            hide nanase furious
+            hide nanase irate
             show nanase offended
 
             nk "No! You absolutely have to be Class President! If not then..."
@@ -395,10 +395,10 @@ label Nanase2:
             "She shuddered, rejecting the idea with every fiber of her being."
 
             hide nanase offended
-            show nanase furious
+            show nanase irate
             nk "I can't let that happen. You're by far the best choice we've got."
 
-            hide nanase furious
+            hide nanase irate
 
     show nanase surprised
 
@@ -415,7 +415,7 @@ label Nanase2:
     n "You don't recognize me?"
 
     hide nanase sad1
-    show nanase scolding
+    show nanase scold
 
     nk "Is this some kind of trick question? Of course I recognize you..."
     nk "We're friends, aren't we?"
@@ -426,7 +426,7 @@ label Nanase2:
 
     n "Look, I'm sorry, it's just hard for me not to question people's motivation."
 
-    hide nanase scolding
+    hide nanase scold
     show nanase sad smile
 
     nk "I get it."
@@ -455,7 +455,7 @@ label Nanase3:
     n "I've been kinda preoccupied." 
 
     hide nanase offended
-    show nanase scolding
+    show nanase scold
 
     nk "If you can't even be bothered to campaign properly, how do you expect the students to have faith in your commitment to the position?" 
 
@@ -467,7 +467,7 @@ label Nanase3:
 
     "She doesn't seem even remotely impressed."
 
-    hide nanase scolding
+    hide nanase scold
 
     menu:
         "Want to help?":
@@ -558,7 +558,7 @@ label Nanase3:
             n "I mean, that's fair, but that doesn't mean you shouldn't try. Live by example and all that." 
 
             hide nanase condescending
-            show nanase furious
+            show nanase irate
 
             nk "Does that mean you'll try harder, if I try harder?" 
 
@@ -566,12 +566,12 @@ label Nanase3:
 
             nk "Ugh, point made. I'll run a proper campaign and so will you. Let's do this!" 
 
-            hide nanase furious
+            hide nanase irate
 
         "Stand by your statement.":
             $ nkRep -= 1
 
-            show nanase furious
+            show nanase irate
     
             n "Yes surveying, hearing from the people, learning their problems and coming up with solutions." 
 
@@ -579,15 +579,15 @@ label Nanase3:
 
             n "G-go on." 
 
-            hide nanase furious
-            show nanase scolding
+            hide nanase irate
+            show nanase scold
 
             nk "I have a friend who claims to want responsibility, but does none of the things to earn it." 
             nk "How do I get my lazy running mate's butt in gear." 
 
             n "Coffee." 
 
-            hide nanase scolding
+            hide nanase scold
             show nanase surprised
 
             nk "Wha~at?" 
@@ -595,14 +595,14 @@ label Nanase3:
             n "Buy him some coffee." 
 
             hide nanase surprised
-            show nanase scolding
+            show nanase scold
 
             nk "Are you seriously asking me to bribe you into doing something you said you wanted to do?" 
 
             n "It's worth a shot." 
 
-            hide nanase scolding
-            show nanase furious
+            hide nanase scold
+            show nanase irate
 
             nk "Ugh, you're no better than those idiots." 
             nk "If I wanted to be someone's mommy I'd hang out with Kazz or Dyre again." 
@@ -612,7 +612,7 @@ label Nanase3:
             nk "Two of the most immature dorks I've ever met." 
 
             "Harsh, and she's the one who started it. Nagging me out of the blue like that, what gives?"
-            hide nanase furious
+            hide nanase irate
 
     scene backgroundstuco
 
@@ -824,7 +824,7 @@ label Nanase4:
 
             if nkRep > 3:
 
-                show nanase crying
+                show nanase cry
 
                 "In all the scenarios I had run through my head of how she'd react, I never imagined her crying."
 
@@ -837,8 +837,8 @@ label Nanase4:
                 n "Yeah, I'm not messing with you or anything." 
                 n "Is that... That's not a bad thing is it?" 
 
-                hide nanase crying
-                show nanase crying smile
+                hide nanase cry
+                show nanase cry smile
 
                 nk "No, no." 
                 nk "I'm sorry."  
@@ -851,7 +851,7 @@ label Nanase4:
 
                 "I really didn't know what else to say at that point. I just kinda stood there, feeling useless while she calmed down."
 
-                hide nanase crying smile
+                hide nanase cry smile
                 show nanase blushing
 
                 nk "You want to go out with me." 
@@ -873,7 +873,7 @@ label Nanase4:
 
             else:
                 
-                show nanase crying
+                show nanase cry
 
                 nk "That... wouldn't be a good idea." 
 
@@ -886,7 +886,7 @@ label Nanase4:
 
                 n "What makes you think you'd be hurting me?" 
 
-                hide nanase crying
+                hide nanase cry
 
     show nanase ashamed
 

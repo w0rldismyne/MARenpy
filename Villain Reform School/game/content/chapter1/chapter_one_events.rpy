@@ -39,25 +39,23 @@ label chapter1_day1_event_morning:
     "Jona could only restrain one of Hiro's arms at a time."
     "It was a valiant effort, but he could be dragged wherever Hiro wanted to go."
 
-    show jona frustrated
-    show hiro happy at left
+    show jona frustrated at right_center
+    show hiro happy at left_center
 
     j "Where's your school stuff?"
 
     n "In my locker, you nut case."
 
-    hide jona frustrated
     show jona depressed 
 
     j "Sorry."
 
-    hide hiro happy
-    show hiro puppy at left
+    show hiro puppy
 
     h "Come on, Uitto's saving us a spot with her giraffe legs. We gotta go."
 
-    hide hiro puppy
-    hide jona depressed
+    hide hiro
+    hide jona
 
     scene backgroundamp
     play music "music/TheLoyalist.mp3"
@@ -134,7 +132,7 @@ label chapter1_day1_event_morning:
     n "Then why did you sit down?"
 
     hide kitsune talk1
-    show kitsune sulking at right
+    show kitsune sulk at right
 
     k "I just wanted to talk to Uitto, so-"
 
@@ -144,7 +142,7 @@ label chapter1_day1_event_morning:
 
     play music "music/TheLoyalist.mp3"
 
-    hide kitsune sulking
+    hide kitsune sulk
 
     "She gets up quietly and leaves to sit with some other girls."
 
@@ -204,7 +202,7 @@ label chapter1_day1_event_morning:
     
     ik "Now to end on a happier note, here's Mariko with some announcements about school clubs."
 
-    show mariko grinning at right
+    show mariko grin at right
     
     m "How's everyone feeling this morning!?"
 
@@ -212,7 +210,7 @@ label chapter1_day1_event_morning:
 
     hide inukai sad
     hide vivaldi disappointed
-    hide mariko grinning
+    hide mariko grin
     show mariko cackle at center
     
     "We murmur amongst ourselves with one brave soul demanding more sleep."
@@ -223,12 +221,12 @@ label chapter1_day1_event_morning:
     "Her little speech inspires laughter. It may not have been the reaction she wanted, but it's lifted the mood."
     
     hide mariko cackle
-    show mariko crying
+    show mariko cry
 
     m "A-anyway, the point is, this year could really suck if we don't have the right attitude going in."
     m "Anyone that wants to make a club has to gather at least three interest members before all the faculty advisors get snatched up!"
     
-    hide mariko crying
+    hide mariko cry
     show mariko sheepish
     
     m "So, if you have the guts, you should join the cheer squad."
@@ -276,11 +274,11 @@ label chapter1_day1_event_morning:
     "She turns to us with a grin."
 
     hide rei depressed
-    show rei bragging
+    show rei brag
     
     re "She's a-okay everyone! If you're interested in joining, talk to me or Mariko!"
 
-    hide rei bragging
+    hide rei brag
     
     "Mariko buries her face into Rei's back as she's carried off stage."
     "Everyone claps out of pity. The second hand embarrassment is palpable."
@@ -376,7 +374,7 @@ label chapter1_day1_event1_classes_vigor:
     m "Cyberdork isn't a Vigor Major, he doesn't count."
 
     hide hiro
-    show hiro sulking at right
+    show hiro sulk at right
 
     h "He does too! Now that we have even teams, we can go back to normal exercises."
 
@@ -388,14 +386,14 @@ label chapter1_day1_event1_classes_vigor:
 
     hide rei sad talk
     hide mariko cringe
-    hide hiro sulking
+    hide hiro sulk
     
     "Hiro tears away from me to argue. They're talking over Professor Inukai the whole time."
     "Completely lost, I gravitate to the two people who aren't up in arms."
     
     n "Shoma, what the hell's going on?"
 
-    show shoma scared at center
+    show shoma fear at center
     
     sh "Well, Mariko and Hiro used to be class reps, but there's not enough students to justify splitting the class by gender."
     sh "So now they're trying to figure out who gets to be in charge."
@@ -409,7 +407,7 @@ label chapter1_day1_event1_classes_vigor:
     "Shoma nods. I feel out of place sitting alongside them. Second guessing my decision, I go to leave, but Hiro calls out to me again."
 
     hide kitsune apathetic
-    hide shoma scared
+    hide shoma fear
     show hiro talk2 at center
     
     h "Wait, Nagen, don't go! You gotta stay. I didn't mean to ignore you."
@@ -417,7 +415,7 @@ label chapter1_day1_event1_classes_vigor:
     n "Dude, I don't think I belong here, the culture shock alone..."
 
     hide hiro talk2
-    show hiro sulking at right
+    show hiro sulk at right
     show inukai at center
 
     ik "This isn't going to be a traditional Vigor class. That means no 'teams' or competitions."
@@ -434,7 +432,7 @@ label chapter1_day1_event1_classes_vigor:
     k "Then what's the point-"
 
     hide kitsune mad
-    hide hiro sulking
+    hide hiro sulk
     hide inukai
     show inukai concerned
     
@@ -478,11 +476,11 @@ label chapter1_day1_event1_classes_vigor:
     m "I never said we had to do cheer."
 
     hide hiro mad
-    show hiro suspicious at right
+    show hiro empty at right
     
     h "You were thinking it!"
 
-    hide hiro suspicious
+    hide hiro empty
     show rei depressed at right
     
     re "Guys, please."
@@ -509,7 +507,7 @@ label chapter1_day1_event1_classes_vigor:
     
     h "Dude!"
 
-    show shoma scared at left
+    show shoma fear at left
     
     sh "Test? What test?"
 
@@ -523,7 +521,7 @@ label chapter1_day1_event1_classes_vigor:
     n "But there is going to be a test?"
 
     hide hiro serious
-    show hiro suspicious at right
+    show hiro wait at right
     
     h "DUDE!"
 
@@ -532,13 +530,13 @@ label chapter1_day1_event1_classes_vigor:
     
     ik "Yes. Today we'll be assessing how bad the damage is."
 
-    hide shoma scared
+    hide shoma fear
     show rei surprised at left
     
     re "Damage!?"
 
     hide rei surprised
-    hide hiro suspicious
+    hide hiro wait
 
     hide inukai
     show inukai sad talk
@@ -679,7 +677,7 @@ label chapter1_day1_event1_classes_charm:
     
     "Ms. Yamamoto points to the blackboard."
 
-    scene backgroundblack with fade
+    #scene backgroundblack with fade
 
     return
 
@@ -704,7 +702,7 @@ label chapter1_day1_event1_classes_intelligence:
     mh "Aww, that's no fun. Ah well, what can you do?"
 
     hide yoku bummed
-    show mu furious at left
+    show mu irate at left
     
     mu "Are we going to be tested on everyone's subjects? If so, that's what, twenty-five exams?"
 
@@ -713,12 +711,12 @@ label chapter1_day1_event1_classes_intelligence:
     
     n "Literally, there are so many college courses on data collection and human psychology it's not even funny."
 
-    hide mu furious
-    show mu disappointed at left
+    hide mu irate
+    show mu shame at left
     
     mu "At least psych would be useful."
 
-    hide mu disappointed
+    hide mu shame
     show yoku furious1 at left
 
     y "Not for Chisei, or any other creatives for that matter. How un-nfortunate."
@@ -746,7 +744,7 @@ label chapter1_day1_event1_classes_intelligence:
     n "No, hell no, if we have to be here, so does he."
 
     hide yoku furious1
-    show mu happy at left
+    show mu grin at left
     
     mu "Worried you'll get a zero are you?"
     
@@ -762,7 +760,7 @@ label chapter1_day1_event1_classes_intelligence:
     
     kk "Red handed doing what?"
 
-    hide mu happy
+    hide mu grin
     show yoku furious2 at left
     
     y "Neglecting his duties."
@@ -995,11 +993,11 @@ label chapter1_day1_event1_classes_intelligence:
     
     "I have no idea what to pick. At least Kazz and Momoko have some idea of what they want to learn. That'll buy me a few weeks."
     hide mu pout
-    show mu disappointed at right
+    show mu shame at right
     
     mu "I don't understand how this is better than studying in the nurse's office."
 
-    hide mu disappointed
+    hide mu shame
     hide momoko happy
     show yoku think at left
     
@@ -1049,7 +1047,7 @@ label chapter1_day1_event1_classes_vision:
     "Ichita and Jona hone in on me with renewed interest."
 
     hide ichita angry
-    show ichita thinking at left
+    show ichita think at left
 
     i "Oh shoot, can you literally read minds or something?"
     
@@ -1066,7 +1064,7 @@ label chapter1_day1_event1_classes_vision:
     
     j "So you have tried to read my mind then."
 
-    hide ichita thinking
+    hide ichita think
     show kietsu laugh at left
     
     ki "Lay off the new kid, guys, he'll tell us in his own time. You're makin' him uncomfortable by swarmin' him like that."
@@ -1077,11 +1075,11 @@ label chapter1_day1_event1_classes_vision:
     n "This isn't everyone, is it?"
 
     hide kietsu laugh
-    show kietsu assuring at left
+    show kietsu dontworry at left
     
     ki "'Fraid so. There might be a few border-liners who could qualify, but this is more than I was expectin' to be honest."
 
-    hide kietsu assuring
+    hide kietsu dontworry
     hide jona depressed
     hide chisei talk2
     show vivaldi
@@ -1271,11 +1269,11 @@ label chapter1_day1_event1_classes_vision:
     v "Include emotions, activities, environmental factors, and your reaction to the trigger."
     v "When we know what to expect, it's easier to de-escalate and disrupt the intrusive episodes."
 
-    show ichita thinking at left
+    show ichita think at left
     
     i "What about the lists?"
 
-    hide ichita thinking
+    hide ichita think
     
     v "Hold onto those in a safe place. We will use them again at a later date."
 
@@ -1570,17 +1568,17 @@ label chapter1_day1_event3:
     hide kazz complain
     hide jona depressed
     show jona frustrated at right
-    show kazz panic at left
+    show kazz worry at left
 
     kk "My boom mic. Now get out. I'm the only one who's managed to keep PA privileges and I plan to keep it that way."
 
     hide jona frustrated
-    show hiro suspicious at right
+    show hiro empty at right
 
     h "Alright, fine. We'll leave you alone with... Pepper."
 
-    hide kazz panic
-    hide hiro suspicious
+    hide kazz worry
+    hide hiro empty
     hide uitto cringe
 
     "I think I have enough to start questioning people, but where to start?"
@@ -1710,18 +1708,18 @@ label chapter1_day2_event1:
 
     "By the time I look presentable, first period is over and everyone's milling about the halls."
 
-    show jona happy
+    show jona happy at right_center
 
     j "You're alive! No one else wanted to pair up with me, I had to work in a group of three because of you."
 
-    show uitto smirk at left
+    show uitto smirk at left_center
 
     u "If you're going to ditch, you could at least text us first. We were worried about you."
 
     n "Sorry, I set my alarm, but-"
 
-    hide uitto smirk
-    hide jona happy
+    hide uitto
+    hide jona
 
     "Across the hall someone slams a locker door shut. Kazz is pacing around while his friends watch with varying degrees of interest."
 
@@ -1729,7 +1727,7 @@ label chapter1_day2_event1:
 
     m "Seriously, Kazz, what's with killing the broadcast? I was almost late to class because of you."
 
-    show kazz panic
+    show kazz worry
 
     kk "I appreciate your concern, but you're at an eight and I need you at a five or less, my dude. We can't all be eights. Mu, please try again."
 
@@ -1745,7 +1743,7 @@ label chapter1_day2_event1:
     t "He could call forty and it wouldn't matter if it died in the middle of the night."
     t "I'm sure it'll turn up eventually. You can live a few days without your phone, can't you?"
 
-    hide kazz panic
+    hide kazz worry
     show kazz dead
 
     kk "I can see my life flash before my eyes. So many choice memes."
@@ -1753,7 +1751,7 @@ label chapter1_day2_event1:
     hide kazz dead
     show kazz shine
     hide mariko mad talk
-    show kitsune crying talk1 at left
+    show kitsune cry talk1 at left
 
     k "...My demo reels."
 
@@ -1769,7 +1767,7 @@ label chapter1_day2_event1:
 
     kk "Don't know; he hasn't seen them yet... I think."
 
-    hide kitsune crying talk1
+    hide kitsune cry talk1
     show kitsune apathetic at left
 
     k "Dyre didn't take your phone, ding dong, it's obviously one of them."
@@ -1848,7 +1846,7 @@ label chapter1_day2_event1:
 
     n "I haven't seen it."
 
-    show mu disappointed at left
+    show mu shame at left
 
     mu "That's what everyone's been saying."
 
@@ -1860,7 +1858,7 @@ label chapter1_day2_event1:
 
     hide mariko upset talk
     hide kazz talk
-    hide mu disappointed
+    hide mu shame
 
     "The bell rings, leaving us only five minutes until our next class. As the others depart, Jona shakes his head."
 
@@ -1868,12 +1866,10 @@ label chapter1_day2_event1:
 
     j "Things would be so much easier if some of us were nicer."
 
-    hide jona depressed
     show hiro grumpy at left
 
     h "Hey!"
 
-    hide jona depressed
     show jona frustrated
 
     j "I'm not bagging on you, man, but I'm not spending any of my breaks looking for someone else's stuff."
@@ -1887,8 +1883,8 @@ label chapter1_day2_event1:
     u "Anyway, Jona, no one promised we'd find it."
 
     hide uitto
-    hide jona frustrated
-    hide hiro grumpy
+    hide jona
+    hide hiro
 
     #[If Quest 1 = Y]
 
@@ -2029,7 +2025,7 @@ label chapter1_day2_event2:
     s "Kietsu and I have things under control and we've already received multiple application forms for president, so it isn't the same."
 
     hide nanase surprised
-    show nanase scolding
+    show nanase scold
 
     nk "'Not Nagen' isn't a viable candidate, no matter how many times people submit it!"
 
@@ -2045,7 +2041,7 @@ label chapter1_day2_event2:
     #(Setsuna and Kietsu, feel free to adlib here. Setsuna against Nagen joining, Kietsu for Nagen joining. At least 3-4 sentences.) 
     "As the two start fighting, Nanase pulls me aside and speaks in a rushed whisper."
 
-    hide nanase scolding
+    hide nanase scold
     show nanase ashamed
 
     nk "We haven't been able to get anything done since the start of school."
@@ -2129,14 +2125,14 @@ label chapter1_day2_event2:
 
         s "I thought so, come on Kietsu. Let's leave 'em alone for now."
         
-        show kietsu assuring at right
+        show kietsu dontworry at right
 
         ki "Nanase, make sure to add him to the group chat for me, okay?"
 
         s "What group chat? Even if there was a group chat, we haven't agreed he's on the council yet!"
 
         hide setsuna apathetic
-        hide kietsu assuring
+        hide kietsu dontworry
 
         "They keep bickering as they walk away."
 
@@ -2346,7 +2342,7 @@ label chapter1_day3_event2:
     "The pain in my chest won't go away and it's started to climb up my neck and shoulder."
     "When I finally work up the courage to go to the office, I don't see the nurse, just him."
 
-    show mu disappointed
+    show mu shame
 
     mu "What's the matter? You look pale. Well, paler than usual."
 
@@ -2354,7 +2350,7 @@ label chapter1_day3_event2:
 
     "I can hold out a little while longer."
 
-    hide mu disappointed
+    hide mu shame
     show mu pout
 
     mu "She's not going to be in for two weeks. That's why I'm here."
@@ -2381,7 +2377,7 @@ label chapter1_day3_event2:
     n "WHAT!? NO! What the hell are you writing down!?"
 
     hide mu talk1
-    show mu furious
+    show mu irate
 
     mu "Well, you clearly need medical help and you won't tell me what it is."
     mu "Usually when that happens, it's something sex related."
@@ -2396,7 +2392,7 @@ label chapter1_day3_event2:
     "He sets down the pencil."
     "If I didn't know any better, I'd think he was concerned."
 
-    hide mu furious
+    hide mu irate
     show mu talk2
 
     mu "Is it hurting?"
@@ -2472,7 +2468,7 @@ label chapter1_day3_event3:
 
     "As I drop off the last of my stuff into my locker, I hear an ear shattering screech."
 
-    show mariko grinning at left
+    show mariko grin at left
 
     m "Really? Like, for real for real, you'll do it?"
 
@@ -2491,8 +2487,8 @@ label chapter1_day3_event3:
 
     n "Have you tried asking Uitto?"
 
-    hide mariko grinning
-    show mariko judging at left
+    hide mariko grin
+    show mariko judge at left
 
     m "No... Why, do you think she'd be interested?"
 
@@ -2504,7 +2500,7 @@ label chapter1_day3_event3:
 
     s "She does avoid the other girls in our class like the plague."
 
-    hide mariko judging
+    hide mariko judge
     show mariko cackle at left
 
     m "I see what you're trying to pull, Tesuta."
@@ -2706,13 +2702,13 @@ label chapter1_day4_event1:
     "I hand him a colorful novel with a Naga Ranger cover. His excitement is extinguished the moment he opens it."
 
     hide hiro beans
-    show hiro suspicious
+    show hiro wait
 
     h "Aw man, it's a book-book."
 
     n "This place is basically a library. It's full of them."
 
-    hide hiro suspicious
+    hide hiro wait
     show hiro sassy
 
     h "Hardy-har, Nagen, reading's only fun for you because you think it's easy."
@@ -3054,7 +3050,7 @@ label chapter1_day5_event1:
     "She keeps pulling at her bangs and making wild faces in the mirror."
     "Maybe I could sneak past her if I just-"
 
-    show kitsune sulking
+    show kitsune sulk
 
     k "Nagen..."
 
@@ -3067,7 +3063,7 @@ label chapter1_day5_event1:
 
     n "Why do you want my opinion?"
 
-    hide kitsune sulking
+    hide kitsune sulk
     show kitsune talk1
 
     k "I assumed you like girls and I feel like my makeup is making my face look gross, but I don't know how to fix it."
@@ -3110,13 +3106,13 @@ label chapter1_day5_event1:
     n "I don't think you're ugly, which is why you shouldn't be fishing for compliments."
 
     hide kitsune shocked
-    show kitsune sulking
+    show kitsune sulk
 
     k "I wasn't-"
 
     "She cuts herself off, unable to think of a reasonable defense."
 
-    hide kitsune sulking
+    hide kitsune sulk
     show kitsune talk2
 
     k "Okay, so maybe there was a bit of coaching on my part. What else am I supposed to do, let people ignore me?"

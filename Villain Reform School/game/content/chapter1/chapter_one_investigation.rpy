@@ -2032,13 +2032,13 @@ label KazzInv1:
     n "No man, I haven't."
 
     hide kazz
-    show KkSadtalk
+    show kazz sad talk
 
     kk "I'm sorry brogati, I know I probably sound like a broken record by now."
     kk "It's just- the longer my stuff's missing, the more I'm freaking out about who could have gone through it."
     kk "I didn't even think to back anything up. What if it's dead!?"
     
-    hide KkSadtalk
+    hide kazz sad talk
     show kazz oh
     
     kk "Shit, I don't know which is worse, broken or stolen?"
@@ -2046,7 +2046,7 @@ label KazzInv1:
     n "Woah there, you need to breathe. It's not the end of the world."
 
     hide kazz oh
-    show kazz panic
+    show kazz worry
     
     kk "I'm going to be the idiot that got expelled on the first week of school."
     kk "If they take me, give Dyre the rest of my stuff. He'll know where to find it."
@@ -2067,8 +2067,8 @@ label KazzInv1:
     n "I'm trying not to jump to conclusions, but I do need to talk to you about everything that's happened."
     n "Especially if you think someone's setting you up."
 
-    hide kazz panic
-    show KkSadtalk
+    hide kazz worry
+    show kazz sad talk
 
     kk "I didn't say that..."
 
@@ -2079,7 +2079,7 @@ label KazzInv1:
 
     kk "That's- Alright. What'd you need from me?"
 
-    hide KkSadtalk
+    hide kazz sad talk
 
 label KazzInterrogation1:
     menu:
@@ -2153,20 +2153,20 @@ label KazzInterrogation1:
             #n "It's not broken. Setsuna gave it to the principal."
 
             #hide kazz oh
-            #show kazz panic
+            #show kazz worry
 
             #kk "For the love of Brodin, why!?"
 
             #n "It kept making noise in the lockers and she didn't know who it belonged to."
             #n "The teachers probably don't know either, otherwise you'd be in trouble already."
 
-            #hide kazz panic
+            #hide kazz worry
             #show kazz grin
 
             #kk "Awesome!"
 
             #hide kazz grin
-            #show kazz panic
+            #show kazz worry
 
             #kk "Wait, no, not awesome."
             #kk "If I don't claim it, it could end up in the garbage, but then I would get detention."
@@ -2176,8 +2176,8 @@ label KazzInterrogation1:
 
             #"Everything's a mess right now, but the bottom line is Kazz's 'friends' were the ones running off with his stuff."
 
-            #hide kazz panic
-            #show KkSadtalk
+            #hide kazz worry
+            #show kazz sad talk
 
             #kk "That traitor is dead to me now. Welp, nothing I can do about it now, I guess."
             #kk "I don't have any money, but here, would this be an okay reward?"
@@ -2187,7 +2187,7 @@ label KazzInterrogation1:
             #n "Is this a KG card? Where did you get this?"
             #n "They stopped making them years ago."
 
-            #hide KkSadtalk
+            #hide kazz sad talk
             #show kazz grin
 
             #kk "I used to collect them when I was real little."
@@ -2213,7 +2213,7 @@ label KazzInterrogation1:
             n "Define 'normal' stuff."
 
             hide kazz talk
-            show KkSadtalk
+            show kazz sad talk
 
             kk "If I could, I wouldn't be in this mess."
             kk "Once you left our class, I was the nerd everyone tried to cheat off of, and they stopped talking to me when I didn't let them."
@@ -2223,7 +2223,7 @@ label KazzInterrogation1:
 
             n "It's probably the same asshole that threatened Hiro."
 
-            hide KkSadtalk
+            hide kazz sad talk
             show kazz
 
             kk "And that's a good thing because???"
@@ -2231,7 +2231,7 @@ label KazzInterrogation1:
             n "Well, then it's one mega-asshole making everyone miserable instead of everyone being two-faced and stealing from people."
 
             hide kazz
-            show KkSadtalk
+            show kazz sad talk
 
             kk "It just sucks because without my phone, I can't log into anything."
             kk "Everything's been on auto login for years, so I don't remember any of my passwords."
@@ -2239,7 +2239,7 @@ label KazzInterrogation1:
 
             n "...you seriously don't remember a single one? Why not reset your passwords then?"
 
-            hide KkSadtalk
+            hide kazz sad talk
             show kazz
 
             kk "I need my email to do that, which is hooked up to my phone, and uses a password."
@@ -2248,13 +2248,13 @@ label KazzInterrogation1:
             "That thing's basically a skeleton key for everything he owns."
 
             hide kazz
-            show kazz panic
+            show kazz worry
 
             kk "I asked the council for help, but they're the ones who let club leaders in the PA booth unsupervised. They didn't even ask me first."
 
             n "How could they, there was no way to call you?"
 
-            hide kazz panic
+            hide kazz worry
             show kazz complain
 
             kk "Bro."
@@ -2293,13 +2293,13 @@ label KazzInterrogation1:
                     n "You don't think they shared the key with anyone else, do you?"
 
                     hide kazz complain
-                    show kazz panic
+                    show kazz worry
 
                     kk "Why would they? Letting anyone else in would risk having their club bumped from the running."
                     kk "It would completely defeat the purpose of their recruitment ad."
                     kk "Besides, Mariko was the last one in there, and she'd have told me if something was out of place." 
                     
-                    hide kazz panic
+                    hide kazz worry
                     #(+Cheer Ad, +PA Access)
                     $ inventory.ShowClue(clue_pa_access)
                     $ inventory.ShowClue(clue_cheerad)
@@ -2375,14 +2375,14 @@ label KazzInterrogation1:
                     n "Is there a way to keep the button pressed while not in the room? Like tape or a paper weight?"
 
                     hide kazz talk
-                    show KkSadtalk
+                    show kazz sad talk
 
                     kk "Maybe, but there wasn't any tape on Pepper when I did the morning announcements that day."
                     kk "Unless they went in sometime after I was done. They would have had to have gone straight there from class."
 
                     "That means anyone I saw in the halls..."
 
-                    hide KkSadtalk
+                    hide kazz sad talk
 
                     #[B/W CG of Rei confronting Nagen]
 
@@ -2403,7 +2403,7 @@ label KazzInterrogation1:
 
             pass
 
-    show KkSadtalk
+    show kazz sad talk
 
     n "Thanks for talking with me. I think I have a bit more to go on now."
 
@@ -2417,7 +2417,7 @@ label KazzInterrogation1:
     n "You that scared of me already?"
 
     hide kazz talk
-    show kazz panic
+    show kazz worry
 
     kk "Not you, man, the teachers."
     kk "You think they're going to take someone picking a fight like this lightly?"
@@ -2432,7 +2432,7 @@ label KazzInterrogation1:
 
     n "If it's against the rules to hurt someone, why not just say that?"
 
-    hide kazz panic
+    hide kazz worry
     show kazz oh
 
     kk "Who cares what their legal team made them write down?"
@@ -2481,7 +2481,7 @@ label MarikoInv1:
     "I gesture to the looming piles of art supplies."
 
     hide mariko mad talk
-    show mariko judging
+    show mariko judge
 
     m "Yeah, I'm not exactly the best at art stuff, but I think I made something half decent."
 
@@ -2490,14 +2490,14 @@ label MarikoInv1:
 
     n "It looks like you put a lot of work into it."
 
-    hide mariko judging
-    show mariko grinning
+    hide mariko judge
+    show mariko grin
 
     m "Thanks!"
 
     n "Maybe you should take a break."
 
-    hide mariko grinning
+    hide mariko grin
     show mariko talk
 
     m "...sure... I take it you want to talk then?"
@@ -2550,13 +2550,13 @@ label MarikoChoice1:
             n "Isn't that because people stop looking once they find what they were looking for?"
 
             hide mariko upset talk
-            show mariko crying
+            show mariko cry
 
             m "I-I don't know. Maybe?"
 
             n "You sure you haven't seen anyone with it? If someone stole it-"
 
-            hide mariko crying
+            hide mariko cry
             show mariko sad talk
 
             m "I mean, I saw Kitsune with something that might be Kazz's, but I couldn't get a good look at it."
@@ -2578,14 +2578,14 @@ label MarikoCheck:
         call MarikoOutro
 label MarikoOutro:
 
-    show mariko crying
+    show mariko cry
 
     m "Sorry I couldn't be more help."
     m "I've been so busy with my own stuff, I haven't had time to really look around or talk to people."
 
     n "You seem to know a lot of people here though."
 
-    hide mariko crying
+    hide mariko cry
     show mariko sad talk
 
     m "Yeah, but that's just in passing. It's not the same."
@@ -2593,7 +2593,7 @@ label MarikoOutro:
     "I guess that's why she's working on posters alone."
 
     hide mariko sad talk
-    show mariko judging
+    show mariko judge
 
     m "I don't get why you're so hung up on this. In a couple of weeks, it won't even matter. People will move on."
 
@@ -2608,7 +2608,7 @@ label MarikoOutro:
 
     "If I stick around any longer, I'll get roped into making posters for a club I'm not in. I should go."
 
-    hide mariko judging
+    hide mariko judge
     return #connect to main game loop
 
 label MarikoInt:
@@ -2616,7 +2616,7 @@ label MarikoInt:
     #[IF Intel > ? This option will be available to the player]
     #(If from Mariko Interrogation)
     #(AN: All pieces of evidence will be on screen. There will be breaks in the dialogue where the player will be encouraged to present evidence. [ = the option needed to continue the scene. Letters will denote which path the player's going down if there is more than one right answer.)
-    show mariko judging
+    show mariko judge
 
     "Between what everyone’s been seeing, and how she's been acting, I'm sure she's behind the PA Incident."
     "However, it’s too soon to get her to admit it, especially with how defensive she’s been lately."
@@ -2634,7 +2634,7 @@ label MarikoInt:
     "No good. I'll have to work backwards then and show proof someone thinks they're close to her."
     # Choose clue goes here
 
-    hide mariko judging
+    hide mariko judge
 label Mariko1:
     #[1: Friends List]
 
@@ -2707,13 +2707,13 @@ label Mariko3A:
     n "Then do you still have it?"
 
     hide mariko mad talk
-    show mariko glaring
+    show mariko glare
 
     m "N-no. I hid it somewhere else. Like I said, none of us could get in."
 
     "Now that's just a bold-faced lie."
 
-    hide mariko glaring
+    hide mariko glare
 
     menu: 
         "Club Ad": 
@@ -2728,14 +2728,14 @@ label Mariko3A:
 label Mariko4A:
     #[4A: PA Access]
 
-    show mariko glaring
+    show mariko glare
     
     n "You're one of the few people who could get in at all."
     n "Even Setsuna couldn't get in. That made you the perfect pawn for Dyre's prank."
     n "Not only that, it gave you a pretty good alibi too. No one would question why you had his stuff if Dyre was talking up a prank you were helping with."
 
-    hide mariko glaring
-    show mariko judging
+    hide mariko glare
+    show mariko judge
 
     m "So? Nagen, are you seriously accusing me of manipulating my classmates?"
 
@@ -2750,7 +2750,7 @@ label Mariko4A:
 
     m "All of this is just gossip, Nagen. Even if Kietsu kept track of when the club leaders had the key, none of that proves I was ever in the booth."
     
-    hide mariko judging
+    hide mariko judge
     
     # Choose Clue Menu goes here
 
@@ -2766,12 +2766,12 @@ label Mariko4A:
 label Mariko5A:
     #[5A: Cheer Ad]
 
-    show mariko glaring
+    show mariko glare
     
     n "This is your ad, right here, and it was turned in after the other club leaders."
     n "You were the last person in the booth before the announcement went off."
     
-    hide mariko glaring
+    hide mariko glare
     
     call MarikoSuccess
 label Mariko3B:
@@ -2799,7 +2799,7 @@ label Mariko3B:
     n "You had access to Kazz's whole setup and he gave you just enough information that you could use it."
 
     hide mariko cringe
-    show mariko judging
+    show mariko judge
 
     m "Use it for what? Nagen, do I look like I'm someone who needs a digital assistant?"
 
@@ -2807,7 +2807,7 @@ label Mariko3B:
 
     "Without it, there'd be no way for her to have used the PA mic without getting caught."
     
-    hide mariko judging
+    hide mariko judge
     # Choose Clue Menu goes here
     menu:
         "Alexa Commands":
@@ -2834,13 +2834,13 @@ label Mariko4B:
     n "It could be remotely activated with anything Kazz was logged into, like his phone for instance. It has been missing for quite a while."
 
     hide mariko talk
-    show mariko judging
+    show mariko judge
     m "I did not steal his phone! Kitsune's the one who was wandering around school with something that didn't belong to her." 
     m "Ask Ichita, he was with her this morning."
 
     "Interesting she brought her up, since their stories contradict each other."
     
-    hide mariko judging
+    hide mariko judge
     # Choose Clue Menu goes here
     menu:
         "Mystery Noise":
@@ -2853,15 +2853,15 @@ label Mariko4B:
             call MarikoFail
 label Mariko5B:
     #[5B: Baton Pass]
-    show mariko judging
+    show mariko judge
     n "She's been telling everyone she gave it to you."
 
     m "So you're just going to believe her over me, just like that? How is that remotely just?"
 
     n "Well, it helps that Rei saw it happen."
 
-    hide mariko judging
-    show mariko crying
+    hide mariko judge
+    show mariko cry
 
     m "...Rei?"
 
@@ -2875,7 +2875,7 @@ label Mariko5B:
     "She's just going to keep denying stuff until I spell it out for her. I know for a fact it didn't go 'straight to the teachers'."
     "Multiple people have said as much."
 
-    hide mariko crying
+    hide mariko cry
     # Choose Clue Menu goes here
     menu:
         "Missing Phone":
@@ -2931,12 +2931,12 @@ label Mariko6C:
     n "No need. I just wanted to make sure we agree that's your locker now."
 
     hide mariko cringe
-    show mariko glaring
+    show mariko glare
 
     m "So what if it is? It's like you said, I'm using it to hold club supplies."
     m "Even if you told the teachers, I wouldn't get in trouble over that."
     
-    hide mariko glaring
+    hide mariko glare
 
     menu: 
         "Locker Number":
@@ -2950,7 +2950,7 @@ label Mariko6C:
 label Mariko7:
     #[7B+C: Locker #] 
 
-    show mariko glaring
+    show mariko glare
     
     n "Multiple people heard the siren coming from your cheer locker."
     n "It got so bad, Setsuna had to bust into it to get the noise to stop."
@@ -2958,12 +2958,12 @@ label Mariko7:
     n "If it wasn't, she might not have given it to the teachers at all."
     n "Both of them thought the locker still belonged to Mu, which I'm sure you were counting on."
     n "Also it's weird it was locked considering Kazz doesn't lock his phone."
-    hide mariko glaring
+    hide mariko glare
 
     call MarikoSuccess
 
 label MarikoSuccess:  
-    show mariko judging
+    show mariko judge
 
     m "So?"
 
@@ -2974,7 +2974,7 @@ label MarikoSuccess:
 
     n "Support what exactly?"
 
-    hide mariko judging
+    hide mariko judge
     show mariko mad talk
 
     m "You've seen this place, it's not safe. It's a place to hide us until we're adults no one's responsible for."
@@ -2988,7 +2988,7 @@ label MarikoSuccess:
     n "Says who?"
 
     hide mariko mad talk
-    show mariko glaring
+    show mariko glare
 
     m "Like I'd tell you anything. I know I'm taking a gamble, but I'm not going to blow it by saying something I shouldn't."
 
@@ -3000,7 +3000,7 @@ label MarikoSuccess:
 
     m "Hiro took everything I cared about and you just sat by and watched it happen. What else could you possibly do to me?"
 
-    hide mariko glaring
+    hide mariko glare
     menu:
         "Blackmail you":
             $ Villain += 1  
@@ -3050,7 +3050,7 @@ label MarikoSuccess:
             "She shivers, gaunt and ghostly pale."
 
             hide mariko upset talk
-            show mariko crying
+            show mariko cry
 
             m "Whoever sent it knew about all of us and they knew where this place was."
             m "We're not safe here. I thought I could use them to get Rei and I out of Guwon entirely."
@@ -3105,7 +3105,7 @@ label MarikoFail:
 
     #[If Accusation = Fail]
 
-    show mariko glaring
+    show mariko glare
     
     m "It's your word versus mine, Nagen and let's face it, people trust me more than they trust you."
     m "They want me to be here more than you. They need me to protect them."
@@ -3115,7 +3115,7 @@ label MarikoFail:
 
     m "If I find out you've been harassing the other girls like this, you're a dead man."
 
-    hide mariko glaring
+    hide mariko glare
 
     return #call main game loop
 

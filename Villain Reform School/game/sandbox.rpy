@@ -184,7 +184,7 @@ screen test:
     modal True
 
     imagemap:
-        alpha False
+        alpha True
 
         ground None
         idle "images/Interactables/ch1idle.png"

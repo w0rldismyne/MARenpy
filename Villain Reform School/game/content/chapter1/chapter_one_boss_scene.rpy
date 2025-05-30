@@ -41,12 +41,12 @@ label chapter1_boss_scene:
     s "We had the same suspicions. Well, most of us did."
 
     hide uitto serious
-    show mariko glaring at left
+    show mariko glare at left
 
     m "This has nothing to do with you, Setsuna; it’s between me and them."
 
-    hide mariko glaring
-    show mariko judging at left
+    hide mariko glare
+    show mariko judge at left
 
     m "Even though Hiro’s not with you, I’ll still forgive you, if you were planning on giving him to me."
     m "After all, it’s not your fault someone else beat you to the punch."
@@ -58,7 +58,7 @@ label chapter1_boss_scene:
 
     j "...Where is he?"
 
-    hide mariko judging
+    hide mariko judge
     show mariko mad talk at left
 
     m "How disappointing. I really wanted to avoid hurting other people."
@@ -71,7 +71,7 @@ label chapter1_boss_scene:
     re "Mariko, this is enough! You’re scaring me."
 
     hide mariko mad talk
-    show mariko crying at left
+    show mariko cry at left
 
     m "...I’m sorry."
 
@@ -80,14 +80,14 @@ label chapter1_boss_scene:
 
     "She snaps her fingers and with solemn expressions, the other girls turn to us. Uitto and Jona end up pinned before I know it."
 
-    hide mariko crying
-    show mariko glaring
+    hide mariko cry
+    show mariko glare
 
     m "This wouldn’t have happened if you just listened to me in the first place."
 
     u "Nagen, don’t just stand there, do something!"
 
-    hide mariko glaring
+    hide mariko glare
     show mariko mad talk
 
     m "This is your chance to wash your hands of this whole mess, Nagen. Turn tail and run. Run as far away as you can from this place."
@@ -120,13 +120,13 @@ label chapter1_boss_scene:
         u "Do not agree with the psycho head cheerleader!"
 
         hide mariko upset talk
-        show mariko crying
+        show mariko cry
 
         m "I think that might be why I was chosen. I don’t have anyone to rely on other than Rei and they still found us."
 
         n "...Who’s they?"
 
-        hide mariko crying
+        hide mariko cry
         show mariko upset talk
 
         m "I’m not sure, but they seem to know a lot about you. I think it’s the people you used to work for."
@@ -134,7 +134,7 @@ label chapter1_boss_scene:
         "Could it be Lethe’s old allies? But then why target us?"
 
         hide mariko upset talk
-        show mariko crying
+        show mariko cry
 
         m "Nagen, when you turned yourselves in, they wanted me to- I’m supposed to be Hiro’s replacement."
         m "What do you think they’ll do to me if I refuse to go through with this?"
@@ -143,17 +143,17 @@ label chapter1_boss_scene:
 
         m "Nagen, please. Run."
 
-        hide mariko crying
+        hide mariko cry
         hide uitto serious
         hide jona depressed
 
         g "It seems your opponent doesn’t want to fight you. This is your chance to convince them to join your side. One wrong move and combat will begin."
 
-        show mariko crying
+        show mariko cry
 
         n "I’m not going to fight anyone."
 
-        hide mariko crying
+        hide mariko cry
 
         menu:
             "Where's Hiro":
@@ -178,7 +178,7 @@ label chapter1_boss_scene:
                 jump chapter1_boss_intro
             "It's not your responsibility":
                 pass
-        show mariko crying
+        show mariko cry
 
         n "You don’t have to take on everything yourself. No one’s blaming you for what happened, but trying to fix things by yourself, it just makes things worse."
 
@@ -190,8 +190,8 @@ label chapter1_boss_scene:
 
         n "Let us help you. You’ve been fighting alone for too long. Tell us where Hiro is so we can get you out of this mess."
 
-        hide mariko crying
-        show mariko judging
+        hide mariko cry
+        show mariko judge
 
         m "...Okay…"
 
@@ -201,7 +201,7 @@ label chapter1_boss_scene:
 
         u "About time. What’s their damage anyway?"
 
-        hide mariko judging
+        hide mariko judge
         show mariko upset talk
 
         m "I’m not allowed to say. Honestly, if Hiro hadn’t cooperated, I would have been in more trouble than I already am."
@@ -211,11 +211,11 @@ label chapter1_boss_scene:
         j "He turned himself in?"
 
         hide mariko upset talk
-        show mariko crying
+        show mariko cry
 
         m "...Yeah. He didn’t want you guys getting in trouble because of him. I guess that’s the one thing we can agree on... Once the teachers find out about what happened, I might not see you for a while."
 
-        hide mariko crying
+        hide mariko cry
 
         "She turns and walks off the field, not wanting to face Hiro after what she’s done. Both cheerleaders are having to support his weight as they bring him to us."
 
@@ -316,12 +316,12 @@ label chapter1_boss_scene:
 
     if mRep >= 10:
 
-        show mariko crying
+        show mariko cry
 
         m "I promised, didn’t I? ‘No matter what happens, I’ll protect you.’"
         m "This is the only thing I can do right now."
 
-        hide mariko crying
+        hide mariko cry
 
         jump mariko_bonus_scene
 
