@@ -3403,7 +3403,7 @@ label introduction_momoko:
             mh "Oh, well, I was messing around with some new hair dye formulas and it kinda nuked my eyebrows..." id introduction_momoko_897d16f6
             mh "And my lashes..." id introduction_momoko_bb0c6d32
             mh "And my bangs..." id introduction_momoko_c4d1731c
-            mh "It exploded." introduction_momoko_4e75cd10
+            mh "It exploded." id introduction_momoko_4e75cd10
 
             n "That isn't too surprising."
             n "But I meant all of this; the clothes, the bigness. You're so different."
@@ -3629,7 +3629,7 @@ label introduction_rei:
             show rei optimistic
 
             re "Right, you're right! I'll get them back eventually." id introduction_rei_c4765718
-            re "For now, I'll just settle for plastic props. They're a shame compared to her craftsmanship." id introduction_rei_c4765718
+            re "For now, I'll just settle for plastic props. They're a shame compared to her craftsmanship." id introduction_rei_deb643fa
             
             n "I'd like to see them sometime."
 
@@ -3881,8 +3881,7 @@ label introduction_rise:
                     r "So the facility itself is the obstacle?" id introduction_rise_2c63c660
                     r "Well, that certainly explains a lot, but you should not put too much pressure on yourself." id introduction_rise_37f37735
                     r "I am sure they will take roll tomorrow and you will have your answer then regardless." id introduction_rise_7b280cd3
-                    r "It certainly would be more efficient."
-                    id introduction_rise_ad2dd6b3
+                    r "It certainly would be more efficient." id introduction_rise_ad2dd6b3
 
                     n "No good. If I don't try my hardest, it will just keep me up all night."
 
