@@ -599,7 +599,7 @@ label life_1:
 
     scene backgroundcarin
 
-    play sound "car sedan door open 1.ogg"
+    play audio "car sedan door open 1.ogg"
 
     n "Maimai?"
 
@@ -607,8 +607,8 @@ label life_1:
 
     mm "The one and only." id interrogation_end_665582e8
 
-    play sound "car sedan door shut 1.ogg"
-    play sound ["car_inside.ogg"]
+    play audio "car sedan door shut 1.ogg"
+    play sound "car_inside.ogg" loop
 
     n "You're my appointed guardian? This has to be a mistake, you're a registered villain."
 
@@ -736,7 +736,7 @@ label life_1:
 
     play music "music/LateNights.mp3"
 
-    play sound "car sedan door open 1.ogg"
+    play audio "car sedan door open 1.ogg"
     
     "As we step out of the car, I can smell the faint, eerie scent of velvet kiss growing up by the walkway."
     "The dreary gray estate looms in front of me. Utterly unwelcoming."
@@ -1020,7 +1020,7 @@ label life_1:
     #[Pan out, Lethe is standing behind her, smiling]
 
     scene backgroundP1:
-        size (1920, 1080) crop (300, 500, 640, 360)
+        size (1920, 1080) crop (300, 400, 640, 360)
         linear 2 crop (600, 0, 960, 540)
 
     l "Hello, little ones! It's so inspiring to see young people take an interest in our initiative." id prologue2_9a7f5aa7
@@ -1030,7 +1030,7 @@ label life_1:
 
     n "O-of course! I mean, who wouldn't want to become a real live hero?"
 
-    scene backgroundP1 with fade:
+    scene backgroundP1:
         size (1920, 1080) crop (600, 0, 960, 540)
         linear 2 crop (0, 0, 1920, 1080)
     
@@ -1049,8 +1049,8 @@ label life_1:
     l "Do you feel safe at home?" id prologue2_e12ba218
 
     scene backgroundP2 with fade:
-        size (1920, 1080) crop (700, 200, 640, 360)
-        linear 4 crop (0, 0, 1920, 1080)
+        size (1920, 1080) crop (1100, 320, 528, 297)
+        ease 20 crop (0, 0, 1920, 1080)
 
     play music "music/Nostalgia.mp3"
 
@@ -1121,7 +1121,7 @@ label life_1:
 
     scene backgroundcar
 
-    play sound "car_idling.ogg"
+    play audio "car sedan door open 1.ogg"
 
     n "I hate this."
     
@@ -1136,8 +1136,8 @@ label life_1:
 
     scene backgroundcarin
 
-    play sound "car sedan door shut 1.ogg"
-    play sound "car_inside.ogg"
+    play audio "car sedan door shut 1.ogg"
+    play sound "car_inside.ogg" loop
 
     "We drive a few hours to get to the school."
 
@@ -1149,6 +1149,7 @@ label life_1:
     "It's one of the few buildings that survived the riots."
 
     stop sound 
+    play audio "car sedan door open 1.ogg"
 
     scene backgroundschool
     with dissolve
@@ -1248,14 +1249,14 @@ label life_1:
     "We get up to leave. I can't hold my tongue any longer."
 
     scene backgroundP3 with dissolve:
-        size (1920, 1080) crop (0, 0, 1920, 1080)
+        size (1920, 1080) crop (320, 204, 1280, 816)
 
     n "You ruined my life."
 
     mm "Nagen, please." id prologue2_28f173df
 
     scene backgroundP3:
-        size (1920, 1080) crop (0, 0, 1920, 1080)
+        size (1920, 1080) crop (320, 204, 1280, 816)
         linear 1.5 size (1920, 1080) crop (0, 0, 2400, 1525)
 
 
