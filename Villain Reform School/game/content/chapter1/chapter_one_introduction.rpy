@@ -2255,7 +2255,7 @@ label introduction_taiga:
     show taiga
 
     t "Looking for a way out too?" id introduction_taiga_e2a241c5
-    t "If you were thinking of running off into that there forest, you best forget about it." id introduction_taiga_cd9c9aa8
+    t "If you were thinking of running off into that forest, you best forget about it." id introduction_taiga_cd9c9aa8
 
     n "Did you read about that in the brochure?"
 
