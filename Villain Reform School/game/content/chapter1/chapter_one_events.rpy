@@ -1,8 +1,10 @@
 #11111
 label chapter1_day1_event_morning:
 
-    play music "music/CryingOverYou.mp3"
     scene backgroundroom
+    with Fade(0.5, 1.0, 0.5)
+
+    play music "music/CryingOverYou.mp3"
 
     kk "Good morning, brotato chips!"
     kk "We're going to start this school year with a banging opening ceremony in the amphitheater before classes start."

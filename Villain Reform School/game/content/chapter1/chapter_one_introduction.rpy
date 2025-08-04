@@ -129,6 +129,8 @@ label chapter1_introduction:
 
     scene backgroundroom
 
+    play audio "405454__ranne_madsen__bag-drop (x1).ogg"
+
     "I get to the room and set down my things."
     "I'm not sure what I can expect from this school, but I do know one thing."
     "By the end of the year, the student body will be in the palm of my hand."
@@ -953,7 +955,7 @@ label introduction_yoku:
     "I wander into a back hallway on the second floor."
     "I assume all of the art classes will be taking place here based on the glass display cases."
     "With all the classrooms locked, there isn't much to see right now."
-    "Though I don't seem to be the only person wandering around campus right now."
+    "Though I don't seem to be the only person wandering around."
     "He has a beaten-up piece of paper in his hand and seems lost."
     "When he looks up at me, I feel a chill run down my spine."
 
@@ -3009,6 +3011,8 @@ label introduction_setsuna:
 
     show setsuna
 
+    play audio "274806__barkerspinhead__alarm-timer-watch-countdown(edit).ogg"
+
     "A high pitched alarm rings from her wristwatch."
 
     show setsuna impatient
@@ -4091,7 +4095,7 @@ label introduction_dyre:
 
             n "I was hoping you'd forget that part."
 
-            show dyre smiletalk
+            show dyre smile talk
 
             d "Hah! No way." id introduction_dyre_596f70bc
             d "But that's totally my point, you get all worked up and you don't take time to see the other side." id introduction_dyre_68ffeb0e
@@ -4200,7 +4204,7 @@ label introduction_jona:
     play music "music/SpeedWins.mp3"
 
     "I follow a paved walkway behind the field to a sparsely wooded area."
-    "Hidden behind rows of planters is a small concrete stage"
+    "Hidden behind rows of planters is a small concrete stage."
     "It looks like it hasn't been long since the poppies were watered. The earth smells damp and cool."
 
     show jona relaxed
@@ -4276,6 +4280,8 @@ label introduction_jona:
             n "I mean, steampunk is definitely more mainstream, but still..."
             n "Yeah, it's uh, it's neat. The wordless staring you were doing, not so much."
 
+            show jona relaxed
+
             j "Aw shoot, you're making me blush." id introduction_jona_0d55c412
 
             n "....."
@@ -4287,8 +4293,6 @@ label introduction_jona:
             j "Are you flustered?" id introduction_jona_9af85d90
 
             n "N-no."
-
-            show jona relaxed
 
             j "Really? But you're stuttering and your face is changing colors." id introduction_jona_9382612a
             j "Hiro said that happens when you're flustered." id introduction_jona_407517a0
@@ -4733,6 +4737,7 @@ label Meeting:
         "I can't postpone returning to my dorm any longer."
 
         scene backgroundroomn
+        with Fade(0.5, 1.0, 0.5)
 
         "Part of my aversion comes from how barren and sterile the rooms are."
         "I'd compare this place to a prison, but at least prisons are fully indoors."

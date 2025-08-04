@@ -758,9 +758,18 @@ label life_1:
     hide maimai
 
     "Of course. Why would I expect any different?"
+
+    play audio "406100__funwithsound__rustling-leaves.ogg"
+
     "I stumble after her through the leaves."
     "With her bottom lip clenched between her teeth, she fishes a metal chain out of the overgrowth of trees and pulls."
+
+    play audio "73678__daytripper__tollbell.ogg"
+
     "The building groans as a sizable bell rings from a tower above the gate."
+
+    play audio "403044__kneeling__opening-gate1.ogg"
+
     "When the door opens, I begin to understand why Maimai described my appointed guardian as a potato."
 
     show maimai smile at left_center
@@ -812,6 +821,10 @@ label life_1:
 
     hide maimai
     hide ken
+
+    #play audio 
+
+    pause(1.0)
 
     "What happened to not leaving me alone in a strange place?"
     "The man sighs and lets me in anyway."
@@ -902,6 +915,8 @@ label life_1:
     kan "Same difference." id prologue2_1847cff7
 
     n "No, it's the Junior Gladiators, get it right."
+
+    play audio "353240__korndeftones123__dell-dimension-l600r(edit).ogg"
 
     "The computer next to him roars to life."
     "He has no keyboard or mouse, yet it seems to be working just fine."
@@ -1272,6 +1287,9 @@ label life_1:
     scene backgroundhall2
 
     "I practically get pushed out of the room by Maimai."
+
+    play audio "80929__bennstir__door-slam-2.ogg"
+
     "The wooden doors slam shut, but her hands never leave my shoulders."
 
     show maimai
@@ -1345,6 +1363,9 @@ label life_1:
     scene backgroundschool
 
     "I really don't want to go, but I can't keep putting it off."
+
+    play audio "141998__radiooaf__opel-vectra-16-gsi-abfahr(edit)t.ogg"
+
     "We say our final goodbyes and I watch as the car drives off. Tomorrow will be my first day of school."
     "I can see other kids unloading their luggage and milling about the grounds. Now would be a good chance to find my friends."
 
