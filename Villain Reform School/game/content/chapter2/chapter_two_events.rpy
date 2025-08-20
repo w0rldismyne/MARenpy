@@ -1,9 +1,5 @@
 label chapter2_day1_event1:
 
-    #Day 1 Event 1
-
-    #[BG: Dorm]
-
     scene backgroundroom
 
     kk "Good morning, brotatos, and welcome to another amazing week at school. To get you in the mood, a request from the heart, it's Innuendo by Queen."
@@ -12,8 +8,6 @@ label chapter2_day1_event1:
     "Unfortunately, I'm more akin to a zombie. Even a full weekend of rest wasn't enough to feel refreshed. Especially after what happened last week."
     "Mariko... she got her instructions from someone. Could it be someone at this school? It'd make the most sense, but where could they be hiding?"
     "I roll over and check the time. If I don't get up soon, I'll be late for my first unofficial student council meeting."
-
-    #[BG: Stuco Dim]
 
     scene backgroundstuco
 
@@ -266,10 +260,10 @@ label chapter2_day1_event1:
     scene backgroundblack with fade
     return
 
-    #[Class Scene]
-
 label chapter2_classes:
+
     scene backgroundschool
+
     menu:
         "Vigor":
             $ Vigor += 1
@@ -286,7 +280,9 @@ label chapter2_classes:
         "Vision":
             $ Vision += 1
             call chapter2_vision
+
     scene backgroundblack with fade
+
     return
 
 label chapter2_vigor:
@@ -649,6 +645,7 @@ label chapter2_vision:
 
     scene backgroundblack with fade
     return
+
 label chapter2_charm:
 
     scene backgorundcharm
@@ -971,10 +968,8 @@ label chapter2_intel:
     scene backgroundblack with fade
 
     return
-label chapter2_day1_event2:
-    #Day 1 Scene 2
 
-    #[BG: (tba)]
+label chapter2_day1_event2:
 
     scene backgroundclass
 
@@ -1275,9 +1270,6 @@ label Chapter2_pointandclick:
     #[Freetime Event]
 
 label chapter2_day1_event3:
-    #Day 1 Scene 3
-
-    #[BG: Courtyard]
 
     scene backgroundcourtyard
 
@@ -1405,8 +1397,6 @@ label chapter2_day1_event3:
 
         return
 
-    #[Return to Main Branch]
-
     show kietsu confused at left
     show hiro guilty
 
@@ -1440,10 +1430,8 @@ label chapter2_day1_event3:
 
     scene backgroundblack with fade
     return
-    #[Freetime Event]
 
 label chapter2_day1_night:
-    #Day 1 (Night)
 
     scene backgroundroomn
 
@@ -1478,6 +1466,7 @@ label chapter2_day1_night:
     "Unlike the rest of us, he had no one willing to claim him. Even if he wanted to leave the riots behind, we were all he had. Now he's a ward of the state."
     scene backgroundblack with fade
     return
+
 label chapter2_day2_event1:
         #Day 2 Event 1
     #BG: Nagen's Room Day]
@@ -1655,7 +1644,6 @@ label chapter2_day2_event1:
     #Freetime Event
 
 label chapter2_day2_event2:
-    #Day 2 Event 2
 
     scene backgroundsew
 
@@ -1826,7 +1814,6 @@ label chapter2_day2_event2:
 
     scene backgroundblack with fade
     return
-    #Freetime Event
 
 label chapter2_day2_event3:
     #Day 2 Event 3
@@ -1901,9 +1888,6 @@ label chapter2_day2_event3:
     #Freetime Event
 
 label chapter2_day2_event4:
-    #Day 2 Event 4
-
-    #BG: Courtyard
 
     scene backgroundcourtyard
 
@@ -2466,8 +2450,8 @@ label chapter2_day3_event3:
     "I need to do some damage control; if nothing else, to slow the progress of rumors. And I'm not going to make the same mistake twice."
     "I already got Hiro to promise to run things by me. Now I just have to convince the others to get on the same page."
 
-    show yoku furious1 left
-    show ichita angry right
+    show yoku furious1 at left
+    show ichita angry at right
 
     y "Just cut a-all of the king and queen nonse-ense."
 
@@ -3212,7 +3196,6 @@ label chapter2_day5_event1:
     #Freetime Event
 
 label chapter2_day5_event2:
-    #Day 5 Event 2"
 
     scene backgroundcafe
 
@@ -3475,9 +3458,6 @@ label chapter2_day5_event2:
     return
 
 label chapter2_day5_event3:
-    #"Day 5 Event 3"
-
-    #BG: Tba
 
     scene backgroundlibrary
 
@@ -3540,9 +3520,6 @@ label chapter2_day5_event3:
     #Freetime Event
 
 label chapter2_day5_event4:
-    #"Day 5 Event 4"
-
-    #BG: Amphitheater
 
     scene backgroundamp
 
@@ -3691,9 +3668,6 @@ label chapter2_day5_event4:
     #Freetime Event
 
 label chapter2_day5_night:
-    #"Day 5 Night"
-
-    #BG: Nagen's Dorm Night
 
     scene backgroundroomn
 
@@ -3881,6 +3855,8 @@ label chapter2_day6_event1:
     "He pulls out a crumpled handful of paper."
 
     n "I'll get rid of them. Come on, we don't want to be late."
+
+    return
 
 label chapter2_day6_event2:
     #"Day 6 Event 2"
@@ -5660,6 +5636,7 @@ label chapter2_day8_event2:
     n "Pleasure doing business with you."
 
     #Put detention scenes here
+    return
 
 
 

@@ -1,4 +1,7 @@
 label chapter_two:
+
+    # Intro
+    
     call chapter2_day1_event1
 
     call chapter2_classes
@@ -68,3 +71,6 @@ label chapter_two:
     call chapter2_day8_event1
 
     call chapter2_day8_event2
+
+    # Chapter 3
+    return

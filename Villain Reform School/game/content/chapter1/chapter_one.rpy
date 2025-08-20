@@ -120,7 +120,7 @@ label chapter_one:
     call chapter1_day5_event_night
 
     # Chapter 2
-    return
+    jump chapter_two
 
 label chapter1_freetime:
 
