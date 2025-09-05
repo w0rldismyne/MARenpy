@@ -155,7 +155,7 @@ label chapter2_day1_event1:
     s "Prizes? We don't have the funds for decorations, let alone 'prizes'."
 
     hide setsuna glare
-    show ichita lecture
+    show ichita talk1
 
     i "But you gotta have a king and queen of a school dance. Everyone expects it, it's tradition or whatever. We should be able to be voted for too."
 
@@ -178,13 +178,13 @@ label chapter2_day1_event1:
 
     n "Not everyone has money-"
     
-    hide ichita lecture
+    hide kietsu confused
     show ichita
 
     i "Door charge could be snacks then. Or stuff that makes the party better."
 
     hide hiro empty
-    show hiro smile at right
+    show hiro at right
 
     h "That's a good idea!"
 
@@ -1742,7 +1742,9 @@ label chapter2_day2_event2:
 
     j "Being treated better isn't the same as an apology. And they aren't going to apologize. You have to think you've done something wrong to want to apologize."
 
-    n "Even if they did apologize, it wouldn't make me feel any better. We're all in one class now, that should be all that matters. Everyone's just so defensive now. Either they're trying really hard to seem happy or they're not trying to do anything at all. I'm not sure what's worse."
+    n "Even if they did apologize, it wouldn't make me feel any better."
+    n "We're all in one class now, that should be all that matters. Everyone's just so defensive now."
+    n "Either they're trying really hard to seem happy or they're not trying to do anything at all. I'm not sure what's worse."
 
     hide jona relaxed
     show jona depressed at left
@@ -1781,7 +1783,7 @@ label chapter2_day2_event2:
     n "This is going to take forever to put together."
 
     hide jona depressed
-    show jona relaxed
+    show jona relaxed at left
 
     j "Yeah, but it'll be worth it when it's all done."
 
@@ -1795,7 +1797,7 @@ label chapter2_day2_event2:
     hide shoma lie
     show shoma fear
     hide jona relaxed
-    show jona mad
+    show jona mad at left
 
     sh "What are you doing?!"
 
@@ -1820,9 +1822,12 @@ label chapter2_day2_event3:
 
     #BG: Nurse's Office
 
+    scene backgroundnurse
+
     "Mu said the nurse would be stopping by the school to see me. Though at this point, I feel much better."
     "Still, if I keep avoiding it, he'll chase me down in the halls. I come in to find a stoic woman in a mask manning the desk."
 
+    scene backgroundCh2_Nurse1
     Nurse "Name?"
 
     n "Um, Nagen Tesuta. "
@@ -1840,6 +1845,8 @@ label chapter2_day2_event3:
     "She's writing down a few from memory as she speaks."
 
     n "No. Half of them were made up and the other half were to sedate me. I don't need any of them."
+
+    scene backgroundCh2_Nurse2
 
     Nurse "So you're sleeping okay now? No more night terrors?"
 
@@ -1864,6 +1871,8 @@ label chapter2_day2_event3:
     n "Yeah, I'm not with my family anymore. Am I okay to go yet?"
 
     "She sets down her pen, looking directly at me. I don't like that look. That's the 'here are your options' look."
+
+    scene backgroundCh2_Nurse3
 
     Nurse "You don't need that port anymore. Well, you never needed an implanted medical device, we both know that."
     Nurse "After we fix it up, it'll be fine for a while, but it's only a matter of time before it gives you problems again. Alternatively, over break, you could have it removed."
@@ -1934,6 +1943,8 @@ label chapter2_day2_event4:
     hide dyre disturbed
 
     #Display Hiro portrait
+
+    scene backgroundJonaDraw1
 
     "That's... unsettling. It looks like one of those ink-blot tests, but the shapes were obviously made by hand."
     "One of them looks kind of familiar..."
@@ -3023,9 +3034,13 @@ label chapter2_day4_event3:
 
     "I manage to get through another round of antibiotics with minimal interaction with the nurse."
     "I know she means well, but I really don't have the energy to make small talk."
+
+    scene backgroundhall1
     "I don't have much energy at all. As I exit the office, I notice a drawing taped to the far wall."
     "At first glance, one might lump it in with the educational posters, but the person who posted this deliberately avoided putting it on the bulletin board and it definitely wasn't there when I went in earlier."
     "I take the picture off the wall."
+
+    scene backgroundJonaDraw2
 
     #CG of Nagen's portrait
 
@@ -3035,13 +3050,18 @@ label chapter2_day4_event3:
     "I never told anyone about those. How does he..."
 
     #Hide CG
+    scene backgroundhall1
 
     "I can't get distracted. Whoever stole his sketchbook wanted me to find this picture."
     "Probably for the same reason they put Hiro's portrait where he might find it... Still..."
 
     #CG of Nagen's portrait
 
+    scene backgroundJonaDraw2
+
     "Is this supposed to be me? Is this how Jona sees me?"
+
+    scene backgroundhall1
 
     #Hide CG
 
@@ -3391,7 +3411,8 @@ label chapter2_day5_event2:
     hide uitto talk
     show uitto sigh
 
-    u "Kinda, but at the same time... I don't know if any guys or girls here would want to deal with all my baggage. Not exactly ready to trust other kids here either. What about you?"
+    u "Kinda, but at the same time... I don't know if any guys or girls here would want to deal with all my baggage."
+    u "Not exactly ready to trust other kids here either. What about you?"
 
     n "What about me?"
 
@@ -3729,7 +3750,7 @@ label chapter2_day6_event1:
     "He hung up on me! I scramble out of bed and out the door just in time to see Uitto run into the main hall. Curse her stupid long legs!"
 
     scene backgroundblack with fade
-    scene backgroundhall1
+    scene backgroundhall2
     #BG: Hallway
 
     "Over half the school is here whispering to each other and craning their necks to look at the announcement boards."
@@ -3754,16 +3775,17 @@ label chapter2_day6_event1:
 
     "She pushes past the girls and I follow, just as Ichita's fingers brush the bottom of a drawing."
 
-    hide uitto yell
-    hide chisei sad talk2
-    hide rei sad talk
 
     #CG: Uitto's Portrait
+
+    scene backgroundJonaDraw3
 
     "Unlike the previous portraits, there's no doubt that's Uitto. The implications make my stomach flip. Uitto stands there, her eyes wide, but otherwise motionless."
     "Mu heaves Ichita up as high as he can and he manages to grab it, tearing the drawing in half as he falls to the ground. At least it was the suggestive part."
 
     #Hide CG
+
+    scene backgroundCh2_UittoSees
 
     u "Who's responsible for this?"
 
@@ -3780,11 +3802,20 @@ label chapter2_day6_event1:
     "She looks at everyone around us like a cornered animal. No one here is judging her or making fun of her, but it doesn't seem to matter."
     "She runs through the split in the crowd towards the front entrance just as someone else opens the door."
 
+    scene backgroundhall2
+
+    show uitto sad
+    show jona relaxed at left
+
     j "What's everyone doing here so early?"
 
     "Uitto skitters back, holding her arms close to herself."
 
+    show uitto yell
+
     u "Get out of my way."
+
+    show jona depressed at left
 
     j "Uitto, what's wrong?"
 
@@ -3792,9 +3823,17 @@ label chapter2_day6_event1:
 
     "He steps to the side to let her pass."
 
+    hide uitto yell
+    hide jona depressed
+    show rise disappointed
+
     r "Alright, everyone, enough gawking. We all still have classes to go to, regardless of personal drama."
 
+    hide rise disappointed
+
     "The student body distributes as she bullies students into going their own ways. Jona walks up to me, seemingly indifferent to the stares."
+
+    show jona depressed
 
     j "Nagen..."
 
