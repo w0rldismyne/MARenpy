@@ -465,7 +465,7 @@ label chapter2_vision:
 
     ch "Jona, is everything alright?"
 
-    show JonaDepressed at right
+    show jona depressed at right
 
     j "It's… I'll be fine. Not a big talking day."
 
@@ -473,7 +473,7 @@ label chapter2_vision:
 
     hide kietsu
     hide chisei sad talk1
-    hide JonaDepressed
+    hide jona
 
     show vivaldi
 
@@ -648,7 +648,7 @@ label chapter2_vision:
 
 label chapter2_charm:
 
-    scene backgorundcharm
+    scene backgroundcharm
 
     "Lecture begins as usual, with Ms. Yamamoto reclining on her couch."
 
@@ -1944,7 +1944,7 @@ label chapter2_day2_event4:
 
     #Display Hiro portrait
 
-    scene backgroundJonaDraw1
+    show backgroundJonaDraw1
 
     "That's... unsettling. It looks like one of those ink-blot tests, but the shapes were obviously made by hand."
     "One of them looks kind of familiar..."
@@ -1965,7 +1965,7 @@ label chapter2_day2_event4:
 
     n "I don't know."
 
-    scene backgroundcourtyard
+    hide backgroundJonaDraw1
 
     show dyre disturbed at left
     show kazz dead
@@ -2444,7 +2444,7 @@ label chapter2_day3_event2:
 
     hide jona depressed
     hide hiro sad smile
-    hide Uittobase
+    hide uitto
 
     scene backgroundblack with fade
 
@@ -2502,7 +2502,7 @@ label chapter2_day3_event3:
     y "I cou-uld have sworn the Oshima's ha-ad an heir our age. Must be a co-ommon last name then..."
 
     hide ichita annoyed
-    show ichita lecture at right
+    show ichita scowl at right
 
     i "It's like Nagen said, we're normal kids. We expect normal things like potato chips and a prom court!"
 
@@ -2943,7 +2943,7 @@ label chapter2_day4_event2:
 
     u "I got everything on your list and Nagen's filling in the gaps. If you have any problems, I wrote down who all agreed to help and what they said they'd bring."
 
-    hide JonaFrustrated
+    hide jona
     show hiro sad smile
 
     h "Ui, I think Nagen was hoping you'd need more time to get everything."
@@ -3008,7 +3008,7 @@ label chapter2_day4_event2:
     "I hand Hiro a scrap paper with a hasty recreation of the recipe."
 
     hide hiro guilty
-    show hiro happy
+    show hiro happy at right
 
     h "You've been working your butt off for everyone else, you deserve the right chicken soup."
 
@@ -3040,28 +3040,28 @@ label chapter2_day4_event3:
     "At first glance, one might lump it in with the educational posters, but the person who posted this deliberately avoided putting it on the bulletin board and it definitely wasn't there when I went in earlier."
     "I take the picture off the wall."
 
-    scene backgroundJonaDraw2
+    show backgroundJonaDraw2
 
     #CG of Nagen's portrait
 
     "That's my port... The details aren't exact, but I'd know that shape anywhere."
     "Not only that, but this thing, it's like a map of everywhere I've had an IV."
-    "There are rough, repeated lines in bright yellow that remind me of the feeding tubes they'd shove down my nose."
+    "There are rough, repeated lines in wirey black that remind me of the feeding tubes they'd shove down my nose."
     "I never told anyone about those. How does he..."
 
     #Hide CG
-    scene backgroundhall1
+    hide backgroundJonaDraw2
 
     "I can't get distracted. Whoever stole his sketchbook wanted me to find this picture."
     "Probably for the same reason they put Hiro's portrait where he might find it... Still..."
 
     #CG of Nagen's portrait
 
-    scene backgroundJonaDraw2
+    show backgroundJonaDraw2
 
     "Is this supposed to be me? Is this how Jona sees me?"
 
-    scene backgroundhall1
+    hide backgroundJonaDraw2
 
     #Hide CG
 
@@ -3386,7 +3386,7 @@ label chapter2_day5_event2:
 
     show jona relaxed
     show hiro suppress at left
-    show Uittobase at right
+    show uitto gurl at right
 
     h "Can we throw out this..."
 
@@ -3401,7 +3401,7 @@ label chapter2_day5_event2:
 
     "They gather the pile and shuffle off toward the trash cans. Uitto lingers behind."
 
-    hide Uittobase
+    hide uitto
     show uitto talk
 
     u "A date, hunh?"
@@ -3778,11 +3778,12 @@ label chapter2_day6_event1:
 
     #CG: Uitto's Portrait
 
-    scene backgroundJonaDraw3
+    show backgroundJonaDraw3
 
     "Unlike the previous portraits, there's no doubt that's Uitto. The implications make my stomach flip. Uitto stands there, her eyes wide, but otherwise motionless."
     "Mu heaves Ichita up as high as he can and he manages to grab it, tearing the drawing in half as he falls to the ground. At least it was the suggestive part."
 
+    hide backgroundJonaDraw3
     #Hide CG
 
     scene backgroundCh2_UittoSees
@@ -3841,9 +3842,15 @@ label chapter2_day6_event1:
     "Ichita shoves his half of the torn up scrap into his Duct Taped backpack with a bunch of other crumpled up pieces of paper."
     "He just keeps silently standing there until Hiro joins us."
 
+    show hiro sad smile at left
+
     h "I think that was the last of them. Good job, guys, now-"
 
+    show mu cringe at right
+
     mu "It's too late, man, she saw 'em."
+
+    show hiro grumpy at left 
 
     h "Nagen, you had one job!"
 
@@ -3851,13 +3858,22 @@ label chapter2_day6_event1:
 
     j "....."
 
+    show hiro mad
+
     h "And you, what are all these?"
 
+    show jona mad
+
     j "....."
+
+    show jona frustrated
+    show hiro judge at left
 
     "What's he doing with his hands?"
 
     h "Well?"
+
+    show jona mad
 
     j "....."
 
@@ -3865,23 +3881,42 @@ label chapter2_day6_event1:
 
     n "Get out of his face, Hiro, he can't talk."
 
+    show hiro serious at left
+
     h "What do you mean, he can't talk? Wait, now? Seriously?!"
 
+    show jona frustrated
+
     j "....."
+    
+    show jona depressed
 
     "There's still a bunch of people lingering around. I need to give him an excuse to leave quickly before things get worse."
 
     n "Jona, I left my bag in my room. Could you go get it for me and text me when you get there?"
 
-    "I hand him my key and he nods. He walks away and out the door, the whole time twisting his hands in knots. The hallways are mostly clear now..."
+    "I hand him my key and he nods."
+
+    hide jona depressed
+    
+    "He walks away and out the door, the whole time twisting his hands in knots. The hallways are mostly clear now..."
 
     n "What the hell is going on?"
 
+    hide hiro serious
+    show hiro guilty
+
     h "Someone posted these weird pics of Uitto all over the school. There's like, forty of them easy. It looks bad, Nagen. Real bad."
+
+    show ichita sad talk2 at left
 
     i "After the second one I found, I tried to round up enough people to get 'em down before everyone could see 'em, but there's only so fast three mad hombres can run through the halls."
 
+    show mu shame at right
+
     mu "I'm not sure what to make of all this, but all of those drawings were too specific to just be nothing. Someone should check on them after class. I'd go, but-"
+
+    show hiro sad talk
 
     h "Uitto won't open up to strangers about this and Jona's... it might take a bit for Jona to talk at all."
 
@@ -3889,11 +3924,17 @@ label chapter2_day6_event1:
 
     "The first bell rings."
 
+    hide mu shame
+    show ichita talk1 at left
+
     i "Yeah. Oh! Before you go, what should I do with these?"
 
     "He pulls out a crumpled handful of paper."
 
     n "I'll get rid of them. Come on, we don't want to be late."
+
+    hide ichita
+    hide hiro
 
     return
 
@@ -3907,7 +3948,17 @@ label chapter2_day6_event2:
     "We don't have a lot of time between classes. Hiro and I thought it would be best to split up and check on them at the same time."
     "We both have someone we're closer with, but sometimes that makes you the worst person to talk to in situations. That's why I'm checking on..."
 
-    #"A. Uitto (+Uitto)"
+    menu:
+        "Uitto":
+            call chapter2_checkuitto
+        "Jona":
+            call chapter2_checkjona
+
+label chapter2_checkuitto:
+
+    scene backgrounddorm
+
+    #+Uittorep
 
     "I need to let Uitto know what Jona told me about that sketchbook. Maybe knowing what they were drawn for would help her feel better."
     "I knock on her door and wait. She opens the door with puffy eyes."
@@ -3915,6 +3966,8 @@ label chapter2_day6_event2:
     n "Hey... can I come in?"
 
     "She nods and I enter. Her room is so plain compared to mine. Did she bring nothing from home?"
+
+    scene backgroundCh2_CheckUitto
 
     u "...How many people do you think saw?"
 
@@ -3933,8 +3986,6 @@ label chapter2_day6_event2:
 
     u "Can I see them?"
 
-    #Give player option to look at gallery
-
     "They're all half finished. Some aren't even from this year. She flips through the stack of papers."
     "When she gets to the last one, she sighs. She sits there on her bed staring at it."
 
@@ -3942,18 +3993,17 @@ label chapter2_day6_event2:
 
     "Her thumb traces over the shadows in the background."
 
+    scene backgroundCh2_UittoMemory
+
     u "There's a lot that happened while I was working as a Rosette that I just try not to think about."
     u "Towards the end there, my manager would come to our play rehearsals and try to pressure me into dropping out so I could work more."
+    u "Jona never left me alone when he was on the set. One time, my manager grabbed me by the shoulder and Jona..."
 
-    #Show CG Uitto + Jona backstage with some dude
-
-    u "Jona never left me alone when he was on the set. One time, he grabbed me by the shoulder and Jona..."
-
-    #Bite CG
+    scene backgroundCh2_UittoMemory2
 
     u "Jona bit him. They put him in the 'bad kids' class after that, so I always thought he'd just do that to people. I never thought that..."
 
-    #Hide CG
+    scene backgroundCh2_CheckUitto
 
     u "I mean, he can see people's emotions, right? So, he must have seen that I was scared to be alone with them... I guess..."
     u "I just hoped he wouldn't figure out why, but... he's always been there. How could he not know?"
@@ -3968,12 +4018,22 @@ label chapter2_day6_event2:
 
     u "Come on, we have classes to get to."
 
+    scene backgroundblack with fade
+
+    pass
+
+label chapter2_checkjona:
+
     #"B. Jona (+Jona)"
+
+    scene backgrounddorm
 
     "If I send Hiro to check on Jona, he's probably just going to make things worse. As much as I'd like to ask Uitto about those pictures, I should focus on damage control."
     "I text Jona and ask him to let me into my room."
 
     #BG: Nagen's Dorm
+
+    scene backgroundCh2_CheckJona
 
     j "....."
 
@@ -4019,11 +4079,15 @@ label chapter2_day6_event2:
 
     n "I wish I knew how to fix this."
 
-    "He shrugs. Not sure what that's supposed to mean. The bell rings."
+    "He shrugs. I'm not sure what that's supposed to mean. The bell rings."
 
     n "I have to go. Are you going to be ok?"
 
     "He shrugs again. I can't be late to class."
+
+    scene backgroundblack with fade
+
+    pass
 
     #Freetime, Jona not accessible
 
@@ -4031,9 +4095,16 @@ label chapter2_day6_event2:
 
     #BG: Outside of Dorms
 
-    "Classes are finally over for the day. There's still so much that needs to get done, but... I'm just so tired. I chugged an energy drink earlier and still, nothing."
+label chapter2_day6_event3:
+
+    scene backgroundhall1
+
+    "Classes are finally over for the day. There's still so much that needs to get done, but... I'm just so tired."
+    "I chugged an energy drink earlier and still, nothing."
 
     #BG: Dorm
+
+    scene backgroundroom
 
     "It's only 6PM... but I don't think I can do anything right now. I collapse onto the bed. Maybe if I just lay here a few minutes..."
     "I wonder when Jona finally made it back to his room?"
@@ -4116,37 +4187,64 @@ label chapter2_day7_event2:
 
     #BG: Sewing Shop
 
+    scene backgroundsew
+
     "We all agreed to meet up to get our stuff for the dance before lunch. Uitto bursts into the room behind us."
+
+    show uitto smirk at left
 
     u "Smell that, boys? That is the smell of victory. For after this moment the trade chain is complete!"
 
+    show hiro at hmm right
+
     h "You seem in high spirits."
 
-    u "I'm trying to focus on the positives and not... y'know. I just gotta keep this up until something super embarrassing happens to someone else; like you guys!"
+    show uitto sigh at left
+    u "I'm trying to focus on the positives and not... y'know."
+    show uitto playful at left
+
+    u "I just gotta keep this up until something super embarrassing happens to someone else; like you guys!"
+
+    show shoma frown
 
     sh "Hey! They aren't that bad."
 
     "Shoma pulls out a red suit covered in sequins. The jacket looks a little short."
 
+    show shoma talk1
+    
     sh "Matadors are plenty sophisticated-"
+
+    show hiro at right
 
     h "Dibs!"
 
     n "Hey!"
 
-    h "You're lucky I'm wearing anything fancy at all. I'm doing this as a favor for you. Besides, dibs."
+    show hiro sassy at right
+
+    h "You're lucky I'm wearing anything fancy at all. I'm doing this as a favor for you."
+    h "Besides, dibs."
 
     "He takes the scratchy suit to go try it on."
 
+    show shoma observe
+
     sh "Guess that leaves you with the swan."
+
+    show uitto smile at left
 
     u "What a perfect fit!"
 
     n "Because swans are assholes?"
 
+    show uitto smirk at left
+
     u "Pretty assholes. I was going to give you pretty."
 
     n "...thanks..."
+
+    show shoma sad
 
     sh "Could you please stop looking at my work with such distaste? You haven't even tried it on."
     sh "I promise, I did not design anything that would make people look bad. Just... trust me, you'll look fine."
@@ -4156,6 +4254,10 @@ label chapter2_day7_event2:
     u "Do you need help putting it on?"
 
     n "I'm going, alright?!"
+
+    hide showma
+    hide uitto 
+    hide hiro
 
     "I take the folded suit behind one of the privacy screens Shoma has set up. I haven't had to wear formal wear since elementary school. It feels... strange."
 
@@ -4182,6 +4284,12 @@ label chapter2_day7_event2:
 
     #Hide CGs
 
+    backgroundsew
+
+    show uitto cringe at left
+    show hiro happy at right
+    show shoma lie
+
     u "Oh my."
 
     sh "It's an easy fix. I'd rather take something in than let it out."
@@ -4192,21 +4300,35 @@ label chapter2_day7_event2:
 
     n "What about you, Uitto? Don't you have a dress to try on?"
 
+    show uitto playful at left
+
     u "I brought one from home. Sorry to disappoint you."
 
     n "So unfair."
 
+    show uitto smile at left
+
     u "Your misery makes me feel better in these trying times."
+
+    show shoma mad
 
     sh "They aren't that bad! I'm grossly underappreciated, I swear."
 
+    show hiro sad smile at right
+
     h "Sorry, Shoma; the clothes are cool. I'm sure everyone looks great."
+
+    show shoma grin
 
     sh "Thank you, Hiro. After the party, forgive me if I go full walking dead for the next couple days. After a week of crunching, I look forward to a nice sleep coma."
 
     n "Honestly, same."
 
     "At least people are still excited about the party. If it wasn't for that, all people would have to talk about is, well, us."
+
+    hide uitto
+    hide hiro
+    hide shoma
 
     scene backgroundblack with fade
 
@@ -4218,6 +4340,7 @@ label chapter2_day7_event3:
 
     #BG: StuCo Room
 
+    scene backgroundstuco
     "The council wanted to have one last meeting before the dance. We all busted our butts trying to get everything together in time."
 
     #IF characters helping = 0
@@ -4343,26 +4466,49 @@ label chapter2_day7_event4:
     #Day 7 Event 4"
 
     #BG: Dorms
+    scene backgrounddorm
 
     "Jona's sketchbook... The person who stole it pulled out very specific pictures, but I wonder..."
 
     #"-Look through sketchbook?-"
 
-    #"A. Yes"
+    menu:
+        "Look through sketchbook":
 
-    #The sketchbook shows the progression of the riots from Jona's POV. Nagen's able to recognize a few key images. Image 1 is Odori's crutches embedded in a tree. Jona's goggles are hanging from a rotting branch. Image 2 is Jona's kitchen, two parallel shadows are cast on the fridge, his mom's portrait in the shadows. Image 3 is Nagen's mother's office. A marionette is behind the desk, puppeteered by barbed wire.
+            show backgroundJonaDraw6
 
-    #After image three
+            "That looks like Odori's cruch."
+            "Trees like this don't grow in Guwon, certainly not long enough to die like this."
 
-    "Is that mom's office?"
+            show backgroundJonaDraw9
 
-    #"B. No"
+            "Mom's office?"
+            "He doesn't usually like to draw people. Why draw her?"
 
-    "I shouldn't."
+            show backgroundJonaDraw8
 
-    #Return to Main Branch
+            "Jona's kitchen, I never saw what it looked like clean."
+            "Did it ever look like this, or is it wishful thinking?"
+            "No idea what the note on the fridge is supposed to say."
 
-    "I knock on Jona's door. He answers, but holds the door close to him, as if ready to close it at a moment's notice. He's still in his pajamas, though he is wearing his goggles."
+            scene backgrounddorm
+
+            "There's a bunch of other pictures too: stuff from the riots, cherry trees, Lethe's things swallowed by blots of watered down ink-"
+
+            if hero > Villain
+
+                "-and a pompom strangled by pink wires. The last sketch is similar, but I can't tell what's being wrapped up."
+
+            else
+                "-and a blue shield. Not just any blue, but the same ink he used in my portriat."
+
+        "Don't":
+
+            "I shouldn't."
+
+    "I knock on Jona's door. He answers, but holds the door close to him, as if ready to close it at a moment's notice."
+
+    "He's still in his pajamas, though he is wearing his goggles."
 
     n "Hey... I, uh, we found your sketchbook..."
 
@@ -4384,13 +4530,18 @@ label chapter2_day7_event4:
 
     n "What do you mean?"
 
-    j "...They wanted me to be homeschooled. My fosters... they thought coming here would be too much... I don't want to go back, but... I can't go to class yet... I... my body feels awful..."
+    j "...They wanted me to be homeschooled."
+    j "My fosters... they thought coming here would be too much..."
+    j "I don't want to go back, but... I can't go to class yet... I... my body feels awful..."
 
     n "You're not going to get in trouble for being sick."
 
-    j "...There's still pages missing from my book... They won't hurt anyone here, but... I don't want anyone seeing them... I don't think I'll be better in time for the dance... Sorry..."
+    j "...There's still pages missing from my book..."
+    j "They won't hurt anyone here, but... I don't want anyone seeing them... I don't think I'll be better in time for the dance... Sorry..."
 
-    "He closes the door without another word. This is bad. He hasn't had to miss class like this in a while. I'll let the others know he's doing okay. Though I may leave out that he's surviving on cereal for his sake. The last thing he needs is Hiro trying to shove food through the door."
+    "He closes the door without another word. This is bad. He hasn't had to miss class like this in a while."
+    "I'll let the others know he's doing okay. Though I may leave out that he's surviving on cereal for his sake."
+    "The last thing he needs is Hiro trying to shove food through the door."
     scene backgroundblack with fade
 
     return
