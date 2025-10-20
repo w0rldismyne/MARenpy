@@ -539,7 +539,6 @@ image backgroundJonaDraw3 = "CGs/JonaDraw3.png"
 image backgroundJonaDraw4 = "CGs/JonaDraw4.png"
 image backgroundJonaDraw5 = "CGs/JonaDraw5.png"
 image backgroundJonaDraw6 = "CGs/JonaDraw6.png"
-image backgroundJonaDraw7 = "CGs/JonaDraw7.png"
 image backgroundJonaDraw8 = "CGs/JonaDraw8.png"
 image backgroundJonaDraw9 = "CGs/JonaDraw9.png"
 image backgroundUPath = "CGs/UPath.png"
@@ -695,14 +694,18 @@ default chapter1_investigation_success = False
 default kazzPhoneFound = False
 
 # Chapter 2 Variables
+default date = False
 default dateRise = False
 default dateNanase = False
 default dateMomoko = False
 default dateKitsune = False
+default dateChisei = False
 default dateHiro = False
 default dateYoku = False
 default dateMu = False
 default dateTaiga = False
+
+default characters_helping = 0
 
 init python:
     listOfDirectories = ["Apex",

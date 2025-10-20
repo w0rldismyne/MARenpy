@@ -4195,7 +4195,7 @@ label chapter2_day7_event2:
 
     u "Smell that, boys? That is the smell of victory. For after this moment the trade chain is complete!"
 
-    show hiro at hmm right
+    show hiro hmm at right
 
     h "You seem in high spirits."
 
@@ -4284,7 +4284,7 @@ label chapter2_day7_event2:
 
     #Hide CGs
 
-    backgroundsew
+    scene backgroundsew
 
     show uitto cringe at left
     show hiro happy at right
@@ -4495,11 +4495,11 @@ label chapter2_day7_event4:
 
             "There's a bunch of other pictures too: stuff from the riots, cherry trees, Lethe's things swallowed by blots of watered down ink-"
 
-            if hero > Villain
+            if hero > Villain:
 
                 "-and a pompom strangled by pink wires. The last sketch is similar, but I can't tell what's being wrapped up."
 
-            else
+            else:
                 "-and a blue shield. Not just any blue, but the same ink he used in my portriat."
 
         "Don't":
