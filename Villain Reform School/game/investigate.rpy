@@ -11,6 +11,8 @@ default reveal5 = False
 
 default clipboard = True
 
+define temporary_investigation_flashback = False
+
 init python:
     class Profile:
         def __init__(self, Identifier, Name, Order):
@@ -62,7 +64,7 @@ default profile_tab = 0
 
 label profile_cards_setup:
 
-    $ all_clipboard_profiles = [profile_kazz, profile_momoko, profile_mariko, profile_chisei]
+    $ all_clipboard_profiles = [profile_kazz, profile_momoko, profile_mariko, profile_chisei, profile_setsuna, profile_dyre, profile_kitsune, profile_rei, profile_ichita, profile_mu]
     $ clipboard_profiles = []
 
     return
@@ -78,6 +80,7 @@ label investigation_progress_update:
 
     # Reset clipboard animation
     $ clipboard = True
+    $ temporary_investigation_flashback = True
 
     show screen investigate
 
@@ -85,6 +88,8 @@ label investigation_progress_update:
     pause
 
     hide screen investigate
+
+    $ temporary_investigation_flashback = False
 
     return
 
@@ -109,13 +114,14 @@ screen investigate():
         yanchor 0.5
         text_size 55
 
-    textbutton "Back":
-        xpos 0.1
-        ypos 0.1
-        xanchor 0.5
-        yanchor 0.5
-        text_size 55
-        action Jump("chapter1_freetime")
+    if temporary_investigation_flashback is False:
+        textbutton "Back":
+            xpos 0.1
+            ypos 0.1
+            xanchor 0.5
+            yanchor 0.5
+            text_size 55
+            action Jump("chapter1_freetime")
 
     image "images/Interactables/Manga Background.png":
         xpos 0.5
@@ -205,118 +211,118 @@ screen investigate():
             xanchor 0.5
             if reveal_flag5 is True:
                 at ch1_inv_img_5
-
-    imagebutton:
-        xpos 0.5
-        ypos 0.1
-        xanchor 0.5
-        yanchor 1.0
-        focus_mask True
-        idle "images/Interactables/clipboard.png"
-        hover "images/Interactables/clipboard.png"
-        if clipboard is False:
-            at clipboard_slide_up
-        action SetVariable("clipboard", True), Jump("investigation_interaction_clipboard_mode")
-
-    $ profile_count = 0
-    $ clipboard_profiles.clear()
-
-    for profile in all_clipboard_profiles:
-        if (profile.Visibility is True):
-            $ clipboard_profiles.append(profile)
-            $ profile_count += 1
-
-    $ profile_tracker = 4 * profile_tab
-
-    if (profile_tracker < profile_count):
-        image f"images/Interactables/{clipboard_profiles[profile_tracker].ID}profile.png":
-            xpos 608
-            ypos -0.69
-            xanchor 0.0
-            yanchor 0.5
-
+    if temporary_investigation_flashback is False:
+        imagebutton:
+            xpos 0.5
+            ypos 0.1
+            xanchor 0.5
+            yanchor 1.0
+            focus_mask True
+            idle "images/Interactables/clipboard.png"
+            hover "images/Interactables/clipboard.png"
             if clipboard is False:
-                at profile_1_slide_up
-
-        text f"{clipboard_profiles[profile_tracker].Name}":
-            xpos 1338
-            ypos -0.69
-            xanchor 1.0
-            yanchor 0.5
-            size 60
-            font "true-crimes.ttf"
-            color '#888888'
-
-            if clipboard is False:
-                at profile_1_slide_up
-
-    if (profile_tracker + 1 < profile_count):
-        image f"images/Interactables/{clipboard_profiles[profile_tracker + 1].ID}profile.png":
-            xpos 608
-            ypos -0.52
-            xanchor 0.0
-            yanchor 0.5
-
-            if clipboard is False:
-                at profile_2_slide_up
-
-        text f"{clipboard_profiles[profile_tracker + 1].Name}":
-            xpos 1338
-            ypos -0.52
-            xanchor 1.0
-            yanchor 0.5
-            size 60
-            font "true-crimes.ttf"
-            color '#888888'
-
-            if clipboard is False:
-                at profile_2_slide_up
-
-    if (profile_tracker + 2 < profile_count):
-        image f"images/Interactables/{clipboard_profiles[profile_tracker + 2].ID}profile.png":
-            xpos 608
-            ypos -0.35
-            xanchor 0.0
-            yanchor 0.5
-
-            if clipboard is False:
-                at profile_3_slide_up
-
-        text f"{clipboard_profiles[profile_tracker + 2].Name}":
-            xpos 1338
-            ypos -0.35
-            xanchor 1.0
-            yanchor 0.5
-            size 60
-            font "true-crimes.ttf"
-            color '#888888'
-
-            if clipboard is False:
-                at profile_3_slide_up
-
-    if (profile_tracker + 3 < profile_count):
-        image f"images/Interactables/{clipboard_profiles[profile_tracker + 3].ID}profile.png":
-            xpos 608
-            ypos -0.18
-            xanchor 0.0
-            yanchor 0.5
-
-            if clipboard is False:
-                at profile_4_slide_up
-
-        text f"{clipboard_profiles[profile_tracker + 3].Name}":
-            xpos 1338
-            ypos -0.18
-            xanchor 1.0
-            yanchor 0.5
-            size 60
-            font "true-crimes.ttf"
-            color '#888888'
-
-            if clipboard is False:
-                at profile_4_slide_up
-
-    $ profile_tab = 0
+                at clipboard_slide_up
+            action SetVariable("clipboard", True), Jump("investigation_interaction_clipboard_mode")
+    
+        $ profile_count = 0
+        $ clipboard_profiles.clear()
+    
+        for profile in all_clipboard_profiles:
+            if (profile.Visibility is True):
+                $ clipboard_profiles.append(profile)
+                $ profile_count += 1
+    
+        $ profile_tracker = 4 * profile_tab
+    
+        if (profile_tracker < profile_count):
+            image f"images/Interactables/{clipboard_profiles[profile_tracker].ID}profile.png":
+                xpos 608
+                ypos -0.69
+                xanchor 0.0
+                yanchor 0.5
+    
+                if clipboard is False:
+                    at profile_1_slide_up
+    
+            text f"{clipboard_profiles[profile_tracker].Name}":
+                xpos 1338
+                ypos -0.69
+                xanchor 1.0
+                yanchor 0.5
+                size 60
+                font "true-crimes.ttf"
+                color '#888888'
+    
+                if clipboard is False:
+                    at profile_1_slide_up
+    
+        if (profile_tracker + 1 < profile_count):
+            image f"images/Interactables/{clipboard_profiles[profile_tracker + 1].ID}profile.png":
+                xpos 608
+                ypos -0.52
+                xanchor 0.0
+                yanchor 0.5
+    
+                if clipboard is False:
+                    at profile_2_slide_up
+    
+            text f"{clipboard_profiles[profile_tracker + 1].Name}":
+                xpos 1338
+                ypos -0.52
+                xanchor 1.0
+                yanchor 0.5
+                size 60
+                font "true-crimes.ttf"
+                color '#888888'
+    
+                if clipboard is False:
+                    at profile_2_slide_up
+    
+        if (profile_tracker + 2 < profile_count):
+            image f"images/Interactables/{clipboard_profiles[profile_tracker + 2].ID}profile.png":
+                xpos 608
+                ypos -0.35
+                xanchor 0.0
+                yanchor 0.5
+    
+                if clipboard is False:
+                    at profile_3_slide_up
+    
+            text f"{clipboard_profiles[profile_tracker + 2].Name}":
+                xpos 1338
+                ypos -0.35
+                xanchor 1.0
+                yanchor 0.5
+                size 60
+                font "true-crimes.ttf"
+                color '#888888'
+    
+                if clipboard is False:
+                    at profile_3_slide_up
+    
+        if (profile_tracker + 3 < profile_count):
+            image f"images/Interactables/{clipboard_profiles[profile_tracker + 3].ID}profile.png":
+                xpos 608
+                ypos -0.18
+                xanchor 0.0
+                yanchor 0.5
+    
+                if clipboard is False:
+                    at profile_4_slide_up
+    
+            text f"{clipboard_profiles[profile_tracker + 3].Name}":
+                xpos 1338
+                ypos -0.18
+                xanchor 1.0
+                yanchor 0.5
+                size 60
+                font "true-crimes.ttf"
+                color '#888888'
+    
+                if clipboard is False:
+                    at profile_4_slide_up
+    
+        $ profile_tab = 0
 
 screen clipboard():
 

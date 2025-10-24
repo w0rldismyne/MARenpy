@@ -1451,7 +1451,7 @@ label chapter1_investigation_mu_loop:
                     $ inventory.ShowClue(clue_brag)
                     $ inventory.ShowClue(clue_prank)
 
-                    jump MuInterrogation1
+                    jump chapter1_investigation_mu_loop
 
                 "Computer":
 
