@@ -4,25 +4,25 @@ label chapter1_boss_scene:
     
     "I run to the practice field with all my might while keeping my phone close, hoping that at any moment, Hiro will answer my calls."
     "As the grass caves under my boots, I see three girls arguing amongst themselves. For a brief second, I thought I had made it in time."
-    "After all, it isn’t uncommon for the cheerleaders to monopolize the field. However..."
+    "After all, it isn't uncommon for the cheerleaders to monopolize the field. However..."
 
     s "Answer the question." #(Irritated)
     
     m "....."
 
-    re "Making me pick sides like this again… I can’t." #(Sad/desperate)
+    re "Making me pick sides like this again… I can't." #(Sad/desperate)
     
-    m "If you’re not going to help me, just leave."
+    m "If you're not going to help me, just leave."
 
-    re "We’re trying, but revenge isn’t going to help anyone. Please, let this go."
+    re "We're trying, but revenge isn't going to help anyone. Please, let this go."
 
     "Mariko looks up at me with a brow raised."
 
-    m "I don’t see Hiro with you, though it looks like you’re bringing everyone else instead."
+    m "I don't see Hiro with you, though it looks like you're bringing everyone else instead."
 
     "The other cheerleaders look up as Uitto and Jona join me at my side."
 
-    n "I think you already know why Hiro isn’t with us."
+    n "I think you already know why Hiro isn't with us."
 
     m "Is that so? Then were you planning on bringing him to me as well?"
 
@@ -34,7 +34,7 @@ label chapter1_boss_scene:
 
     show rei disappointed
 
-    re "It’s not like that! I noticed Hiro wasn’t in class and…"
+    re "It's not like that! I noticed Hiro wasn't in class and…"
 
     show setsuna cringe at right 
 
@@ -43,15 +43,15 @@ label chapter1_boss_scene:
     hide uitto serious
     show mariko glare at left
 
-    m "This has nothing to do with you, Setsuna; it’s between me and them."
+    m "This has nothing to do with you, Setsuna; it's between me and them."
 
     hide mariko glare
     show mariko judge at left
 
-    m "Even though Hiro’s not with you, I’ll still forgive you, if you were planning on giving him to me."
-    m "After all, it’s not your fault someone else beat you to the punch."
+    m "Even though Hiro's not with you, I'll still forgive you, if you were planning on giving him to me."
+    m "After all, it's not your fault someone else beat you to the punch."
 
-    n "We’d never do something like that!"
+    n "We'd never do something like that!"
 
     hide setsuna cringe
     show jona mad at right
@@ -62,18 +62,18 @@ label chapter1_boss_scene:
     show mariko mad talk at left
 
     m "How disappointing. I really wanted to avoid hurting other people."
-    m "But if you’re going to continue to defend him, then you’re just as guilty."
+    m "But if you're going to continue to defend him, then you're just as guilty."
 
     hide uitto serious
     hide rei disappointed
     show rei sad 
 
-    re "Mariko, this is enough! You’re scaring me."
+    re "Mariko, this is enough! You're scaring me."
 
     hide mariko mad talk
     show mariko cry at left
 
-    m "...I’m sorry."
+    m "...I'm sorry."
 
     hide rei sad
     hide jona mad
@@ -83,9 +83,9 @@ label chapter1_boss_scene:
     hide mariko cry
     show mariko glare
 
-    m "This wouldn’t have happened if you just listened to me in the first place."
+    m "This wouldn't have happened if you just listened to me in the first place."
 
-    u "Nagen, don’t just stand there, do something!"
+    u "Nagen, don't just stand there, do something!"
 
     hide mariko glare
     show mariko mad talk
@@ -105,15 +105,15 @@ label chapter1_boss_scene:
 
         show mariko upset talk
 
-        m "Please, I don’t want to fight you."
+        m "Please, I don't want to fight you."
 
-        n "If you don’t want to fight me, then let them go."
+        n "If you don't want to fight me, then let them go."
 
-        m "Sorry, but I don’t exactly trust your ‘friends’ right now."
+        m "Sorry, but I don't exactly trust your ‘friends' right now."
 
         show jona depressed at left
 
-        j "That’s fair."
+        j "That's fair."
 
         show uitto serious at right
 
@@ -122,22 +122,22 @@ label chapter1_boss_scene:
         hide mariko upset talk
         show mariko cry
 
-        m "I think that might be why I was chosen. I don’t have anyone to rely on other than Rei and they still found us."
+        m "I think that might be why I was chosen. I don't have anyone to rely on other than Rei and they still found us."
 
-        n "...Who’s they?"
+        n "...Who's they?"
 
         hide mariko cry
         show mariko upset talk
 
-        m "I’m not sure, but they seem to know a lot about you. I think it’s the people you used to work for."
+        m "I'm not sure, but they seem to know a lot about you. I think it's the people you used to work for."
 
-        "Could it be Lethe’s old allies? But then why target us?"
+        "Could it be Lethe's old allies? But then why target us?"
 
         hide mariko upset talk
         show mariko cry
 
-        m "Nagen, when you turned yourselves in, they wanted me to- I’m supposed to be Hiro’s replacement."
-        m "What do you think they’ll do to me if I refuse to go through with this?"
+        m "Nagen, when you turned yourselves in, they wanted me to- I'm supposed to be Hiro's replacement."
+        m "What do you think they'll do to me if I refuse to go through with this?"
 
         "His... replacement?"
 
@@ -147,27 +147,27 @@ label chapter1_boss_scene:
         hide uitto serious
         hide jona depressed
 
-        g "It seems your opponent doesn’t want to fight you. This is your chance to convince them to join your side. One wrong move and combat will begin."
+        g "It seems your opponent doesn't want to fight you. This is your chance to convince them to join your side. One wrong move and combat will begin."
 
         show mariko cry
 
-        n "I’m not going to fight anyone."
+        n "I'm not going to fight anyone."
 
         hide mariko cry
 
         menu:
             "Where's Hiro":
                 jump chapter1_boss_intro
-            "I’m no coward":
+            "I'm no coward":
                 jump chapter1_boss_intro
-            "You’re hurt":
+            "You're hurt":
                 pass
 
         show mariko cringe
 
-        n "We both know you’re in no position to fight right now. If you keep pushing yourself like this, you’re going to pass out again. Wait, is this why you’ve been freaking out about not having enough time? Do you think something’s going to happen to you?"
+        n "We both know you're in no position to fight right now. If you keep pushing yourself like this, you're going to pass out again. Wait, is this why you've been freaking out about not having enough time? Do you think something's going to happen to you?"
 
-        m "They found this place and where I live, they even know where my friends are. I have every right to be scared. I’m not being paranoid."
+        m "They found this place and where I live, they even know where my friends are. I have every right to be scared. I'm not being paranoid."
 
         hide mariko cringe
 
@@ -180,15 +180,15 @@ label chapter1_boss_scene:
                 pass
         show mariko cry
 
-        n "You don’t have to take on everything yourself. No one’s blaming you for what happened, but trying to fix things by yourself, it just makes things worse."
+        n "You don't have to take on everything yourself. No one's blaming you for what happened, but trying to fix things by yourself, it just makes things worse."
 
         #[If Vision > ?] For later ...
         #
-        #n "Believe me, I’ve tried to get this right so many times."
+        #n "Believe me, I've tried to get this right so many times."
 
-        m "Don’t you think I know that!? My original squad is gone, and even though I know they made their own choices, that doesn’t help either. Nothing I do is working, but I can’t stop trying. What else am I supposed to do?"
+        m "Don't you think I know that!? My original squad is gone, and even though I know they made their own choices, that doesn't help either. Nothing I do is working, but I can't stop trying. What else am I supposed to do?"
 
-        n "Let us help you. You’ve been fighting alone for too long. Tell us where Hiro is so we can get you out of this mess."
+        n "Let us help you. You've been fighting alone for too long. Tell us where Hiro is so we can get you out of this mess."
 
         hide mariko cry
         show mariko judge
@@ -199,12 +199,12 @@ label chapter1_boss_scene:
 
         show uitto cringe at left
 
-        u "About time. What’s their damage anyway?"
+        u "About time. What's their damage anyway?"
 
         hide mariko judge
         show mariko upset talk
 
-        m "I’m not allowed to say. Honestly, if Hiro hadn’t cooperated, I would have been in more trouble than I already am."
+        m "I'm not allowed to say. Honestly, if Hiro hadn't cooperated, I would have been in more trouble than I already am."
 
         show jona frustrated at right
 
@@ -213,11 +213,11 @@ label chapter1_boss_scene:
         hide mariko upset talk
         show mariko cry
 
-        m "...Yeah. He didn’t want you guys getting in trouble because of him. I guess that’s the one thing we can agree on... Once the teachers find out about what happened, I might not see you for a while."
+        m "...Yeah. He didn't want you guys getting in trouble because of him. I guess that's the one thing we can agree on... Once the teachers find out about what happened, I might not see you for a while."
 
         hide mariko cry
 
-        "She turns and walks off the field, not wanting to face Hiro after what she’s done. Both cheerleaders are having to support his weight as they bring him to us."
+        "She turns and walks off the field, not wanting to face Hiro after what she's done. Both cheerleaders are having to support his weight as they bring him to us."
 
         hide jona frustrated
         show jona mad at right
@@ -226,7 +226,7 @@ label chapter1_boss_scene:
 
         show hiro guilty
 
-        h "I’m awake, it’s just hard to move with all this crap they put on me."
+        h "I'm awake, it's just hard to move with all this crap they put on me."
 
         hide jona mad
         hide uitto cringe
@@ -234,11 +234,11 @@ label chapter1_boss_scene:
         show rei depressed at right
         show setsuna at left
 
-        re "I’m so sorry, Hiro. I honestly don’t know what to think anymore."
+        re "I'm so sorry, Hiro. I honestly don't know what to think anymore."
 
-        s "We should go talk to Principal Thani. I’m sure these guys can handle taking care of Hiro."
+        s "We should go talk to Principal Thani. I'm sure these guys can handle taking care of Hiro."
 
-        "Rei hesitates a moment before letting him go and following in Mariko’s footsteps."
+        "Rei hesitates a moment before letting him go and following in Mariko's footsteps."
 
         hide setsuna
         hide rei depressed
@@ -250,7 +250,7 @@ label chapter1_boss_scene:
         hide hiro guilty
         show hiro beans
 
-        h "Are you kidding? I thought they’d never leave."
+        h "Are you kidding? I thought they'd never leave."
 
         "Uitto and Jona fuss with the overlapping belts as he speaks."
 
@@ -259,12 +259,12 @@ label chapter1_boss_scene:
 
         h "I never thought Mariko would resort to something so underhanded. Guess all that self righteous talk was just that, talk."
 
-        n "I could have told you that. I can’t believe after all we went through, you’d just turn yourself in like that."
+        n "I could have told you that. I can't believe after all we went through, you'd just turn yourself in like that."
 
         hide hiro serious
         show hiro sad talk
 
-        h "Because it’s my fault we all got stuck here. If I hadn’t convinced people to put on those helmets, things wouldn’t have gotten so bad."
+        h "Because it's my fault we all got stuck here. If I hadn't convinced people to put on those helmets, things wouldn't have gotten so bad."
 
         hide hiro sad talk
 
@@ -272,7 +272,7 @@ label chapter1_boss_scene:
 
             show hiro insulted
 
-            n "That doesn’t mean you should throw yourself to the wolves. What if you’d actually gotten hurt?"
+            n "That doesn't mean you should throw yourself to the wolves. What if you'd actually gotten hurt?"
 
             h "....."
 
@@ -296,15 +296,15 @@ label chapter1_boss_scene:
         show hiro mad
         show uitto sigh
 
-        n "It’s not like putting them on was your idea to begin with. Besides we- I wasn’t completely honest about what they did."
+        n "It's not like putting them on was your idea to begin with. Besides we- I wasn't completely honest about what they did."
 
         j "Nagen!"
 
-        n "But it’s true. I thought if you knew how… complete the brainwashing was, you wouldn’t go through with it, so we lied. All of us did."
+        n "But it's true. I thought if you knew how… complete the brainwashing was, you wouldn't go through with it, so we lied. All of us did."
 
-        h "But I did know. I’m not stupid, Nagen, I could see what was happening out there. I just convinced myself it would all be worth it in the end. I wanted to believe we’re the good guys."
+        h "But I did know. I'm not stupid, Nagen, I could see what was happening out there. I just convinced myself it would all be worth it in the end. I wanted to believe we're the good guys."
 
-        u "We are the good guys! Don’t let all this mess with your head. Good guys make mistakes too."
+        u "We are the good guys! Don't let all this mess with your head. Good guys make mistakes too."
 
         n "And right now, we gotta figure out who's behind this. Hopefully, that tape will give us some answers."
 
@@ -318,7 +318,7 @@ label chapter1_boss_scene:
 
         show mariko cry
 
-        m "I promised, didn’t I? ‘No matter what happens, I’ll protect you.’"
+        m "I promised, didn't I? ‘No matter what happens, I'll protect you.'"
         m "This is the only thing I can do right now."
 
         hide mariko cry
@@ -327,7 +327,7 @@ label chapter1_boss_scene:
 
 label chapter1_boss_intro:
     
-    m "I gave you a chance to run. It’s not my fault you didn’t listen to me."
+    m "I gave you a chance to run. It's not my fault you didn't listen to me."
 
     show backgroundwhite
     with dissolve
@@ -342,23 +342,23 @@ label chapter1_boss_intro:
     show screen boss_mariko_s1
     with dissolve
 
-    m "Call me over ambitious, but if I’m taking over as leader, the whole team is going to need a massive overhaul."
+    m "Call me over ambitious, but if I'm taking over as leader, the whole team is going to need a massive overhaul."
 
-    "She’s covered in glittering mesh from the neck down, perched atop thin stiletto boots."
+    "She's covered in glittering mesh from the neck down, perched atop thin stiletto boots."
 
     n "Have you actually lost your mind? What do you mean taking over?"
 
-    m "Isn’t it obvious? I’m the new leader of the Junior Gladiators and you’ve been kicked off the team."
+    m "Isn't it obvious? I'm the new leader of the Junior Gladiators and you've been kicked off the team."
 
     "Long, thin blades pop out of her gauntlets, poised to strike."
 
     n "How the hell?"
 
-    m "It’s all plastic. I’ve been told it’ll hurt just as much as real blades. Why don’t we test that out?"
+    m "It's all plastic. I've been told it'll hurt just as much as real blades. Why don't we test that out?"
 
-    n "I don’t want to fight you."
+    n "I don't want to fight you."
 
-    m "I’m afraid you don’t have a choice."
+    m "I'm afraid you don't have a choice."
 
     jump chapter1_boss_battle_initial
 
@@ -366,9 +366,9 @@ label chapter1_boss_battle_midfight_scene:
 
     "Wait, does she... want me to hit her?"
     
-    n "This isn’t going anywhere. Just give up already."
+    n "This isn't going anywhere. Just give up already."
 
-    m "Oh? But I’ve come too far to give up now. It’s not like you’re my target anyway. I just need you to teach him a very important lesson."
+    m "Oh? But I've come too far to give up now. It's not like you're my target anyway. I just need you to teach him a very important lesson."
 
     window hide
     hide screen boss_mariko_s1
@@ -378,9 +378,9 @@ label chapter1_boss_battle_midfight_scene:
 
     "The scoreboard that overlooks the field lights up, revealing where Hiro had been bound and gagged."
 
-    m "How does it feel, Morine? Watching your friends get injured while you’re helpless to do anything about it?"
+    m "How does it feel, Morine? Watching your friends get injured while you're helpless to do anything about it?"
 
-    "I attempt to knock her out while she’s distracted, but when I hit her..."
+    "I attempt to knock her out while she's distracted, but when I hit her..."
 
     h "Mpmph!"
 
@@ -392,7 +392,7 @@ label chapter1_boss_battle_midfight_scene:
     m "I can make him feel what they felt."
     m "What it was like to be one of your mindless minions."
 
-    n "This isn’t the same thing."
+    n "This isn't the same thing."
 
     scene backgroundmariko
 
@@ -403,24 +403,24 @@ label chapter1_boss_battle_midfight_scene:
     m "My squad felt every wound they took for you only to lie nameless in the streets."
     m "The world treats them like a footnote in your casefile!"
     m "I will not let their deaths be treated like a cautionary tale while the people at fault get to move on with their lives."
-    m "They should have been here! Don’t you understand that?!"
+    m "They should have been here! Don't you understand that?!"
     m "Hiro sent them off to die because he was too scared to fight for himself and I will NEVER forgive him for that."
 
-    n "He didn’t know."
+    n "He didn't know."
 
     hide screen boss_mariko_s1
 
     if Hero > Villain:
 
-        #[CG of Hiro’s Injury]
+        #[CG of Hiro's Injury]
         scene backgroundfb11
 
-        "Hiro never wanted anyone to get hurt. He would sooner get himself killed than let others fight for him. No matter how awful people were, he’d always make excuses for them. He wanted everyone to be happy."
+        "Hiro never wanted anyone to get hurt. He would sooner get himself killed than let others fight for him. No matter how awful people were, he'd always make excuses for them. He wanted everyone to be happy."
 
         #[CG of Odori and Nagen flanking young Hiro, offering a gun.]
         scene backgroundfb5
 
-        "So we lied to him about Lethe’s predictions. We told him no one would get hurt as long as he did exactly what we told him. As crazy as our plan was, he never could figure out how to tell us no."
+        "So we lied to him about Lethe's predictions. We told him no one would get hurt as long as he did exactly what we told him. As crazy as our plan was, he never could figure out how to tell us no."
 
         #[CG of Hiro blocking out the world with headphones]
         scene backgroundfb2
@@ -442,7 +442,7 @@ label chapter1_boss_battle_midfight_scene:
 
         scene backgroundB4
 
-        "He tried to face the people responsible head on... and lost. I thought I’d never see him again."
+        "He tried to face the people responsible head on... and lost. I thought I'd never see him again."
 
         # Back to Boss Arena
         scene backgroundmariko
@@ -451,18 +451,18 @@ label chapter1_boss_battle_midfight_scene:
 
         n "The only reason Hiro came to you was to stop anyone else from getting hurt, including you. He already felt guilty for what happened. What more do you want?"
 
-        m "I want to guarantee my friends’ safety. Your pretty words aren’t enough to save anyone."
+        m "I want to guarantee my friends' safety. Your pretty words aren't enough to save anyone."
         return
     else:
-        #[CG of Hiro’s Injury]
+        #[CG of Hiro's Injury]
         scene backgroundfb11
     
-        "Hiro wanted to see the good in anyone, even when they hurt him. It made him easy to manipulate. If I so much as looked disappointed, he’d immediately cave. It’s why he made such a wonderful puppet."
+        "Hiro wanted to see the good in anyone, even when they hurt him. It made him easy to manipulate. If I so much as looked disappointed, he'd immediately cave. It's why he made such a wonderful puppet."
 
         #[CG of Odori and Nagen flanking young Hiro, offering a gun.]
         scene backgroundfb5
     
-        "We’d feed him our ideas and Hiro would blindly spread them to anyone who’d listen. As long as he thought he was in charge, it didn’t matter what we said, he’d still do it. After all, it’s a leader’s job to make the hard decisions."
+        "We'd feed him our ideas and Hiro would blindly spread them to anyone who'd listen. As long as he thought he was in charge, it didn't matter what we said, he'd still do it. After all, it's a leader's job to make the hard decisions."
 
         #[CG of Hiro blocking out the world with headphones]
         scene backgroundfb2
@@ -473,49 +473,49 @@ label chapter1_boss_battle_midfight_scene:
 
         scene backgroundB4
     
-        "When the time came, he served his purpose as our figurehead. Everyone associates his face as the mastermind behind the attacks. Even now, he’s taking the blame in our place, all of his own volition. He’s too useful of a pawn to throw out like this."
+        "When the time came, he served his purpose as our figurehead. Everyone associates his face as the mastermind behind the attacks. Even now, he's taking the blame in our place, all of his own volition. He's too useful of a pawn to throw out like this."
 
         #[Return to Boss Battle arena]
         scene backgroundmariko
 
         show screen boss_mariko_s1
     
-        n "It’s not Hiro’s fault people trusted him more than you, Mariko. You’re only making things worse by picking a fight you will lose."
+        n "It's not Hiro's fault people trusted him more than you, Mariko. You're only making things worse by picking a fight you will lose."
 
-        m "As long as I breathe, I’m not done fighting. I'll leave you with scars that will outlive me."
+        m "As long as I breathe, I'm not done fighting. I'll leave you with scars that will outlive me."
         return
 
 label chapter1_boss_spare:
     
-    "I know she wrecked havoc, but I really can’t kick a person while they’re down."
+    "I know she wrecked havoc, but I really can't kick a person while they're down."
 
-    n "Rei, Setsuna; let my friends go. I’m- We aren’t going to hurt her."
+    n "Rei, Setsuna; let my friends go. I'm- We aren't going to hurt her."
 
     j "Are you joking!?"
 
-    u "Look at her, she’s a mess. Nagen can handle her, we need to worry about Hiro."
+    u "Look at her, she's a mess. Nagen can handle her, we need to worry about Hiro."
 
-    "It seems like they aren’t going to move at first, but soon Rei releases Uitto in tears."
+    "It seems like they aren't going to move at first, but soon Rei releases Uitto in tears."
 
-    re "Uitto, I’m so sorry! I- Setsuna, are you still...?"
+    re "Uitto, I'm so sorry! I- Setsuna, are you still...?"
 
     "Setsuna slowly releases Jona, her hands shaking."
 
     s "How could I let this happen?"
 
-    re "Go get help. I’ll stay here."
+    re "Go get help. I'll stay here."
 
     "Uitto and Jona run to free Hiro while I stare down my opponent."
 
-    n "There’s no way you prepared all of this by yourself in five days. Who told you we were coming here?"
+    n "There's no way you prepared all of this by yourself in five days. Who told you we were coming here?"
 
-    m "I- I can’t tell you. If I say something I shouldn’t, they’ll come after Rei."
+    m "I- I can't tell you. If I say something I shouldn't, they'll come after Rei."
 
-    re "Mariko, I’m more than capable of fighting for myself. You shouldn’t have gone behind our backs like this, this isn’t helping anyone."
+    re "Mariko, I'm more than capable of fighting for myself. You shouldn't have gone behind our backs like this, this isn't helping anyone."
 
-    m "...I left a tape in Hiro’s locker like I was told, that’s the only thing I can say. Even if you hate me, don’t let them get my friends."
+    m "...I left a tape in Hiro's locker like I was told, that's the only thing I can say. Even if you hate me, don't let them get my friends."
 
-    n "No one’s ‘getting’ anyone. Though it looks like you’re in serious trouble with the school."
+    n "No one's ‘getting' anyone. Though it looks like you're in serious trouble with the school."
 
     m "Nagen, school is the least of our worries."
 
@@ -525,23 +525,23 @@ label chapter1_boss_spare:
 
 label chapter1_boss_punish:
     
-    n "Of course I’ll forgive you, you provided valuable entertainment for everyone."
+    n "Of course I'll forgive you, you provided valuable entertainment for everyone."
 
     m "What are you talking about?"
 
-    n "When you tell people what you plan to do, they can make other arrangements. Like, say, borrowing a few burner phones for a special school-wide stream. Of course, there’s no audio, but that kind of works in my favor. Especially when I’ve been super calm about everything and you’re bawling your eyes out after attacking me with knives. It’s not a good look for you."
+    n "When you tell people what you plan to do, they can make other arrangements. Like, say, borrowing a few burner phones for a special school-wide stream. Of course, there's no audio, but that kind of works in my favor. Especially when I've been super calm about everything and you're bawling your eyes out after attacking me with knives. It's not a good look for you."
 
     m "So? Everyone knows what kind of person you are."
 
-    n "True, but you’re the psycho stalker that broadcasted a threat letter to everyone and lashed out at me and your own friends. At best, you’ll be ridiculed, at worst, expelled. Either way, no one’s going to believe you."
+    n "True, but you're the psycho stalker that broadcasted a threat letter to everyone and lashed out at me and your own friends. At best, you'll be ridiculed, at worst, expelled. Either way, no one's going to believe you."
 
     m "No one believed me before. I know who you really are and I know I made the right decision."
 
-    m "All I can do is hope my friends don’t fall for your bullshit a second time."
+    m "All I can do is hope my friends don't fall for your bullshit a second time."
 
     "Mariko snaps her fingers and in an instant, my friends are let go. I can see Setsuna running as far from the field as possible out of the corner of my eye. Uitto and Jona run to help Hiro while Rei lingers behind."
 
-    re "After everything that’s happened, I can’t believe you’d put us through this again... You..."
+    re "After everything that's happened, I can't believe you'd put us through this again... You..."
 
     re "You both really need help."
 
@@ -555,11 +555,11 @@ label chapter1_boss_punish:
 
     v "You all have to come too."
 
-    n "What!? I’m the victim here!"
+    n "What!? I'm the victim here!"
 
-    v "That’s what everyone thinks when they’re in a fight."
+    v "That's what everyone thinks when they're in a fight."
 
-    v "I’ll talk with the others later. For now, you’ll have to come into my office."
+    v "I'll talk with the others later. For now, you'll have to come into my office."
 
     n "But-"
 
@@ -569,7 +569,7 @@ label chapter1_boss_punish:
 
     "I spend over three hours in her office explaining everything in detail. In the end, she says nothing and sends me away."
 
-    "I don’t think I’m in trouble, at least not directly, but I’m definitely worried she’ll call my fosters and tell them what happened."
+    "I don't think I'm in trouble, at least not directly, but I'm definitely worried she'll call my fosters and tell them what happened."
 
     jump chapter1_tape_scene 
 
@@ -663,7 +663,7 @@ label mariko_bonus_scene:
 label chapter1_tape_scene:
     #[BG: Outside the Dorm]
     
-    "After all was said and done, Mariko was the one who got in trouble and the rest of us were let go. We still haven’t told them about the tape. After all, we don't even know what’s on it. I wanted a chance to talk to Hiro before the others come meet up with us to watch it. Hiro doesn't seem so thrilled."
+    "After all was said and done, Mariko was the one who got in trouble and the rest of us were let go. We still haven't told them about the tape. After all, we don't even know what's on it. I wanted a chance to talk to Hiro before the others come meet up with us to watch it. Hiro doesn't seem so thrilled."
 
     h "You wanted to yell at me too?"
 

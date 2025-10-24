@@ -4199,9 +4199,11 @@ label chapter2_day7_event2:
 
     h "You seem in high spirits."
 
-    show uitto sigh at left
+    show uitto sigh
+    
     u "I'm trying to focus on the positives and not... y'know."
-    show uitto playful at left
+    
+    show uitto playful
 
     u "I just gotta keep this up until something super embarrassing happens to someone else; like you guys!"
 

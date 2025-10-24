@@ -1,3 +1,21 @@
+default next_scene = None
+
+label chapter1_freetime:
+
+    if chapter1_event is chapter1_free_time_morning_break:
+        scene backgroundschool
+    elif chapter1_event is chapter1_free_time_after_school:
+        scene backgroundschoolnoon
+    elif chapter1_event is chapter1_free_time_evening:
+        scene backgroundcourtyardnight
+
+    # Reset clipboard animation
+    $ clipboard = True
+
+    call screen freetime
+
+    return
+
 default selected_freetime_action = ""
 
 screen freetime:
@@ -28,7 +46,7 @@ screen freetime:
             hover "Investigate_Hover"
             hovered SetVariable("selected_freetime_action", "Investigate"), renpy.restart_interaction
             unhovered SetVariable("selected_freetime_action", ""), renpy.restart_interaction
-            action Hide("freetime"), Show("investigate")
+            action Jump("investigation_interaction_mode")
 
         imagebutton:
             xysize 456, 442
@@ -40,9 +58,6 @@ screen freetime:
             hover "Hangout_Hover"
             hovered SetVariable("selected_freetime_action", "Hang Out"), renpy.restart_interaction
             unhovered SetVariable("selected_freetime_action", ""), renpy.restart_interaction
-            action Hide("freetime")
-
-        # 
 
 image Investigate_Hover:
     xysize (501, 486)

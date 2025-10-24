@@ -113,6 +113,8 @@ label chapter_one:
 
     call chapter1_day5_event4 
 
+    return # Test
+
     if chapter1_investigation_success is False:
         # Boss Battle
         call chapter1_boss_scene
@@ -121,39 +123,6 @@ label chapter_one:
 
     # Chapter 2
     jump chapter_two
-
-label chapter1_freetime:
-
-    if chapter1_event is chapter1_free_time_morning_break:
-        scene backgroundschool
-    elif chapter1_event is chapter1_free_time_after_school:
-        scene backgroundschoolnoon
-    elif chapter1_event is chapter1_free_time_evening:
-        scene backgroundcourtyardnight
-
-    call screen freetime
-
-    #menu:
-    #    "Freetime"
-    #    "Hang Out":
-    #        menu:
-    #            "Uitto":
-    #                call UittoVisit
-    #            "Jona":
-    #                call JonaVisit
-    #            "Hiro":
-    #                call HiroVisit
-    #            "Nanase":
-    #                call NanaseVisit
-    #            "Mariko":
-    #                call MarikoVisit
-    #            "Yoku":
-    #                call YokuVisit
-
-    #    "Investigate":
-    #        call chapter1_investigation
-
-    return
 
 label chapter1_investigation:
     #INVESTIGATION SCENES 

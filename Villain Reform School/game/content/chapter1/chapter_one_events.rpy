@@ -6,10 +6,10 @@ label chapter1_day1_event_morning:
 
     play music "music/CryingOverYou.mp3"
 
-    kk "Good morning, brotato chips!"
-    kk "We're going to start this school year with a banging opening ceremony in the amphitheater before classes start."
-    kk "You got one hour to be up and ready this morning."
-    kk "And now, a request from the heart, an original mix by your's truly to start your day with fighting spirit."
+    kk "Good morning, brotato chips!" id chapter1_day1_event_morning_2f16aef3
+    kk "We're going to start this school year with a banging opening ceremony in the amphitheater before classes start." id chapter1_day1_event_morning_b996a9f9
+    kk "You got one hour to be up and ready this morning." id chapter1_day1_event_morning_e47619ef
+    kk "And now, a request from the heart, an original mix by your's truly to start your day with fighting spirit." id chapter1_day1_event_morning_b8dd626f
 
     "I wake up to a song I've never heard blaring from an old radio alarm clock."
     "My dorm is uncomfortably cold compared to my bed, but I have to cross the room in order to turn it off."
@@ -20,19 +20,19 @@ label chapter1_day1_event_morning:
 
     play music "music/TheChase.mp3"
 
-    h "Come on, Nagen, we got to get going if we want to sit together."
+    h "Come on, Nagen, we got to get going if we want to sit together." id chapter1_day1_event_morning_352dd733
 
     n "Just save me a seat, I'll meet up with you later."
 
-    j "I tried that, he wouldn't stop knocking until I opened the door. Do NOT let him in."
+    j "I tried that, he wouldn't stop knocking until I opened the door. Do NOT let him in." id chapter1_day1_event_morning_a5249a1f
 
-    h "If I don't bug you guys, you'll just go back to sleep and we'll be laaate."
+    h "If I don't bug you guys, you'll just go back to sleep and we'll be laaate." id chapter1_day1_event_morning_8a2ff3c6
 
     "The banging increases tenfold."
 
-    j "I can't stop him. His desire to be annoying is too strong."
+    j "I can't stop him. His desire to be annoying is too strong." id chapter1_day1_event_morning_62bb8a39
 
-    h "Open the doooor."
+    h "Open the doooor." id chapter1_day1_event_morning_dc162498
 
     "I get dressed in record time and slip out before either of my friends can barge in."
 
@@ -44,17 +44,17 @@ label chapter1_day1_event_morning:
     show jona frustrated at right_center
     show hiro happy at left_center
 
-    j "Where's your school stuff?"
+    j "Where's your school stuff?" id chapter1_day1_event_morning_7dd09f7a
 
     n "In my locker, you nut case."
 
     show jona depressed 
 
-    j "Sorry."
+    j "Sorry." id chapter1_day1_event_morning_4a443ba0
 
     show hiro puppy
 
-    h "Come on, Uitto's saving us a spot with her giraffe legs. We gotta go."
+    h "Come on, Uitto's saving us a spot with her giraffe legs. We gotta go." id chapter1_day1_event_morning_ef44cdbe
 
     hide hiro
     hide jona
@@ -67,76 +67,68 @@ label chapter1_day1_event_morning:
 
     show hiro happy at left
 
-    h "You can sit next to me."
+    h "You can sit next to me." id chapter1_day1_event_morning_4cdcc30e
 
     show uitto cringe at center
 
-    u "Did you get ready together or something? What took you so long?"
+    u "Did you get ready together or something? What took you so long?" id chapter1_day1_event_morning_878f5f7e
 
     show jona depressed at right
 
-    j "I didn't unpack anything yesterday, sorry."
+    j "I didn't unpack anything yesterday, sorry." id chapter1_day1_event_morning_1a344e81
 
-    u "Next time, just send someone ahead. You know I hate-"
+    u "Next time, just send someone ahead. You know I hate-" id chapter1_day1_event_morning_6cb6ff9a
 
-    hide jona depressed
-    hide hiro happy
+    hide jona
     show hiro grumpy at left
     show kitsune smug at right
 
     play music "music/WeAre.mp3"
 
-    k "Well well well, your entourage is real after all."
+    k "Well well well, your entourage is real after all." id chapter1_day1_event_morning_cc215f44
 
     "Uitto lets out an ugly sigh."
 
-    hide kitsune smug
     show kitsune catty at right
 
-    k "Though I suppose anyone can catch attention with the amount of makeup you put on. Careful not to touch, boys, I heard she doesn't use sealing spray."
+    k "Though I suppose anyone can catch attention with the amount of makeup you put on. Careful not to touch, boys, I heard she doesn't use sealing spray." id chapter1_day1_event_morning_2e701a53
 
-    hide uitto cringe
-    hide hiro grumpy
+    hide hiro
     show uitto sigh at left
 
-    u "They could care less what I'm wearing, and so should you. This thing you're doing, it's not cute. Just go sit down somewhere, these seats are clearly taken."
+    u "They could care less what I'm wearing, and so should you. This thing you're doing, it's not cute. Just go sit down somewhere, these seats are clearly taken." id chapter1_day1_event_morning_427d34d1
     
     "She sounds so tired. I'm able to grab her attention and silently ask if she knows this girl from before."
     "Uitto pantomimes a long winded ‘no'. Kitsune, completely oblivious, sits on Jona's other side."
 
-    hide kitsune catty
     show kitsune apathetic at right
 
-    k "I could have my fans follow me around all the time, but I was afraid it would make me too unapproachable."
-    k "People could get the wrong idea and think I'm a stuck up attention hog."
+    k "I could have my fans follow me around all the time, but I was afraid it would make me too unapproachable." id chapter1_day1_event_morning_1eb7fa41
+    k "People could get the wrong idea and think I'm a stuck up attention hog." id chapter1_day1_event_morning_0c0fb8ae
     
-    hide uitto sigh
     show uitto at left
 
-    u "People will think a lot of things no matter what you do. I retired so I could stop worrying about my image."
+    u "People will think a lot of things no matter what you do. I retired so I could stop worrying about my image." id chapter1_day1_event_morning_d0b8ffcb
     
     "I can practically hear the wheels turn as Kitsune tries to think of a comeback."
 
     n "Did you want to watch the assembly with us?"
 
-    hide kitsune apathetic
     show kitsune shocked at right
     
-    k "H-hunh?"
+    k "H-hunh?" id chapter1_day1_event_morning_c6a1f7a8
 
     n "Isn't that why you came here?"
 
-    hide kitsune shocked
     show kitsune talk1 at right
 
-    k "N-no-"
+    k "N-no-" id chapter1_day1_event_morning_a7151e68
 
     n "Then why did you sit down?"
 
-    hide kitsune talk1
     show kitsune sulk at right
 
-    k "I just wanted to talk to Uitto, so-"
+    k "I just wanted to talk to Uitto, so-" id chapter1_day1_event_morning_19f1161c
 
     n "What exactly did you want her to say to you?"
 
@@ -144,98 +136,90 @@ label chapter1_day1_event_morning:
 
     play music "music/TheLoyalist.mp3"
 
-    hide kitsune sulk
+    hide kitsune
 
     "She gets up quietly and leaves to sit with some other girls."
 
-    hide uitto
     show uitto cringe
 
-    u "Thank god. I seriously don't know what I'd do without you guys."
+    u "Thank god. I seriously don't know what I'd do without you guys." id chapter1_day1_event_morning_7a8cb341
     
     show hiro beans at right
-    
 
-    h "Why didn't you just tell her to go away?"
+    h "Why didn't you just tell her to go away?" id chapter1_day1_event_morning_d3763c41
 
-    hide uitto cringe
     show uitto sad talk
 
-    u "It's the first day of school."
-    u "I'm not going to shit on someone's self esteem for seeking validation, that'd be pointlessly cruel."
-    u "It just sucks that the one person who wanted to talk to me just wanted to compete."
+    u "It's the first day of school." id chapter1_day1_event_morning_ddb53ae4
+    u "I'm not going to shit on someone's self esteem for seeking validation, that'd be pointlessly cruel." id chapter1_day1_event_morning_cb7a292d
+    u "It just sucks that the one person who wanted to talk to me just wanted to compete." id chapter1_day1_event_morning_fa9f89fc
 
-    hide uitto sad talk
-    hide hiro beans
+    hide uitto
+    hide hiro
     
     "We're interrupted by a comical scale of trumpets as the vice principal bounds on stage. Principal Vivaldi follows close behind in silence."
 
     show inukai
     
-    ik "Welcome, everyone! I hope you all had a good night's sleep!"
+    ik "Welcome, everyone! I hope you all had a good night's sleep!" id chapter1_day1_event_morning_d2eb5220
 
     "No one responds."
 
-    ik "We'll work on that later. Right now, we wanted to remind you all of a few important school rules before classes start."
-    ik "With a lot of hard work, we hope this place can become like home to you."
+    ik "We'll work on that later. Right now, we wanted to remind you all of a few important school rules before classes start." id chapter1_day1_event_morning_02f048dc
+    ik "With a lot of hard work, we hope this place can become like home to you." id chapter1_day1_event_morning_702b81ba
 
-    hide inukai
     show inukai frown at left
     show vivaldi at center
     
-    v "All students are to remain on campus at all times."
-    v "That means staying out of the wooded areas surrounding the school."
-    v "It's easy to get lost out there and we don't want anyone to get hurt."
+    v "All students are to remain on campus at all times." id chapter1_day1_event_morning_3093e845
+    v "That means staying out of the wooded areas surrounding the school." id chapter1_day1_event_morning_8de411c5
+    v "It's easy to get lost out there and we don't want anyone to get hurt." id chapter1_day1_event_morning_eda5a194
 
-    hide inukai frown
     show inukai sad at left
     
-    ik "There is a zero tolerance policy toward anyone who commits an act of violence or aggression."
-    ik "Hurting another student, or threatening another student, will result in immediate detention."
+    ik "There is a zero tolerance policy toward anyone who commits an act of violence or aggression." id chapter1_day1_event_morning_7544ee22
+    ik "Hurting another student, or threatening another student, will result in immediate detention." id chapter1_day1_event_morning_1801de58
     
-    hide vivaldi
     show vivaldi disappointed
-    v "Finally, no student is allowed in the computer lab without an instructor present."
-    v "This is to ensure a safe environment."
-    v "It is also the reason many of your electronic devices were confiscated before entering the dorms."
-    v "We apologize for any inconveniences this might have caused."
+
+    v "Finally, no student is allowed in the computer lab without an instructor present." id chapter1_day1_event_morning_ab879c2a
+    v "This is to ensure a safe environment." id chapter1_day1_event_morning_f0656269
+    v "It is also the reason many of your electronic devices were confiscated before entering the dorms." id chapter1_day1_event_morning_3a82228d
+    v "We apologize for any inconveniences this might have caused." id chapter1_day1_event_morning_ec713379
     
     "They didn't even let me transfer my music onto their cheap burner phone. At least I know my stuff's safe with Maimai."
     
-    ik "Now to end on a happier note, here's Mariko with some announcements about school clubs."
+    ik "Now to end on a happier note, here's Mariko with some announcements about school clubs." id chapter1_day1_event_morning_3f9226bc
 
     show mariko grin at right
     
-    m "How's everyone feeling this morning!?"
+    m "How's everyone feeling this morning!?" id chapter1_day1_event_morning_429f4bc2
 
     play music "music/leaf.mp3"
 
-    hide inukai sad
-    hide vivaldi disappointed
-    hide mariko grin
+    hide inukai
+    hide vivaldi
     show mariko cackle at center
     
     "We murmur amongst ourselves with one brave soul demanding more sleep."
     
-    m "Sleep is for the weak willed! You lot have spent the last year and a half lazing around already."
-    m "If we're going to make it through another year, we have to face it with fists full of fire!"
+    m "Sleep is for the weak willed! You lot have spent the last year and a half lazing around already." id chapter1_day1_event_morning_3b301221
+    m "If we're going to make it through another year, we have to face it with fists full of fire!" id chapter1_day1_event_morning_4baea0bf
     
     "Her little speech inspires laughter. It may not have been the reaction she wanted, but it's lifted the mood."
     
-    hide mariko cackle
     show mariko cry
 
-    m "A-anyway, the point is, this year could really suck if we don't have the right attitude going in."
-    m "Anyone that wants to make a club has to gather at least three interest members before all the faculty advisors get snatched up!"
+    m "A-anyway, the point is, this year could really suck if we don't have the right attitude going in." id chapter1_day1_event_morning_46ee5bc9
+    m "Anyone that wants to make a club has to gather at least three interest members before all the faculty advisors get snatched up!" id chapter1_day1_event_morning_b8ce71e5
     
-    hide mariko cry
     show mariko sheepish
     
-    m "So, if you have the guts, you should join the cheer squad."
+    m "So, if you have the guts, you should join the cheer squad." id chapter1_day1_event_morning_83b88bc9
     
     "She scans the crowd. With each passing moment, her bravado falters. She's shaking."
     
-    m "I-if you do, you can learn how to do this."
+    m "I-if you do, you can learn how to do this." id chapter1_day1_event_morning_669f9392
 
     hide mariko
 
@@ -250,37 +234,35 @@ label chapter1_day1_event_morning:
 
     show rei surprised at left
     
-    re "Mariko!"
+    re "Mariko!" id chapter1_day1_event_morning_faeb399b
     
     "Her friend rushes out to get her, followed by Mu at a lethargic pace. Mariko tries to shoo them away."
 
     show mariko sad talk at center
     
-    m "I'm fine. God, this is embarrassing."
+    m "I'm fine. God, this is embarrassing." id chapter1_day1_event_morning_b786008d
 
     show mu angry at right
     
-    mu "Stop trying to put weight on it, stupid, there's a reason you lost some range of motion."
+    mu "Stop trying to put weight on it, stupid, there's a reason you lost some range of motion." id chapter1_day1_event_morning_fe12d2d4
     
-    m "I said I'm fine. People are staring."
+    m "I said I'm fine. People are staring." id chapter1_day1_event_morning_88e3d2e6
     
     "Rei swiftly hoists Mariko onto her back."
 
-    hide mariko sad talk
-    hide mu angry
-    hide rei surprised
+    hide mariko
+    hide mu
     show rei depressed
     
-    re "Just humor us and let us take a look at it later."
+    re "Just humor us and let us take a look at it later." id chapter1_day1_event_morning_eab116c5
     
     "She turns to us with a grin."
 
-    hide rei depressed
     show rei brag
     
-    re "She's a-okay everyone! If you're interested in joining, talk to me or Mariko!"
+    re "She's a-okay everyone! If you're interested in joining, talk to me or Mariko!" id chapter1_day1_event_morning_38a563cc
 
-    hide rei brag
+    hide rei
     
     "Mariko buries her face into Rei's back as she's carried off stage."
     "Everyone claps out of pity. The second hand embarrassment is palpable."
@@ -294,36 +276,36 @@ label chapter1_day1_event_morning:
 
         show hiro sad smile
 
-        h "Hey, she tried her best. Hopefully she gets some more members soon."
+        h "Hey, she tried her best. Hopefully she gets some more members soon." id chapter1_day1_event_morning_3b0569d3
 
         n "You're seriously going to support her?"
 
-        h "...Yeah? You got something against cheerleaders?"
+        h "...Yeah? You got something against cheerleaders?" id chapter1_day1_event_morning_c500b6b6
 
-        hide hiro sad smile
+        hide hiro
         show uitto
 
-        u "To be fair, that was a pretty cringey performance. Can you imagine a whole team of that?"
+        u "To be fair, that was a pretty cringey performance. Can you imagine a whole team of that?" id chapter1_day1_event_morning_cde7743d
 
         hide uitto
         show jona happy
 
-        j "I'd stop skipping pep rallies if it was just watching people fall on their faces. Maybe they could add pies or something."
+        j "I'd stop skipping pep rallies if it was just watching people fall on their faces. Maybe they could add pies or something." id chapter1_day1_event_morning_929768b4
 
-        hide jona happy
+        hide jona
         show uitto cringe
 
-        u "No. You just described clowns. I don't do clowns."
+        u "No. You just described clowns. I don't do clowns." id chapter1_day1_event_morning_ed1f7523
 
-        hide uitto cringe
+        hide uitto
 
         n "....."
 
         show hiro pout
 
-        h "Hey, you okay, man?"
+        h "Hey, you okay, man?" id chapter1_day1_event_morning_fd466231
 
-        hide hiro pout
+        hide hiro
 
         n "Yeah... yeah, I just... it felt weird coming from you is all. Sorry."
 
@@ -369,26 +351,25 @@ label chapter1_day1_event1_classes_vigor:
 
     show hiro at right
      
-    h "Nagen, thank god! See, I told you guys there are more people on my side."
+    h "Nagen, thank god! See, I told you guys there are more people on my side." id chapter1_day1_event1_classes_vigor_073d03ff
 
     show mariko cringe at left
      
-    m "Cyberdork isn't a Vigor Major, he doesn't count."
+    m "Cyberdork isn't a Vigor Major, he doesn't count." id chapter1_day1_event1_classes_vigor_157fe795
 
-    hide hiro
     show hiro sulk at right
 
-    h "He does too! Now that we have even teams, we can go back to normal exercises."
+    h "He does too! Now that we have even teams, we can go back to normal exercises." id chapter1_day1_event1_classes_vigor_99d97fcc
 
-    m "Group team building is normal! Us girls have always had to pick up the slack around here. The least you could do in return is fall in line."
+    m "Group team building is normal! Us girls have always had to pick up the slack around here. The least you could do in return is fall in line." id chapter1_day1_event1_classes_vigor_5baa42eb
 
     show rei sad talk at center
     
-    re "That wasn't the nicest way to put it, but she's right."
+    re "That wasn't the nicest way to put it, but she's right." id chapter1_day1_event1_classes_vigor_ff44c349
 
-    hide rei sad talk
-    hide mariko cringe
-    hide hiro sulk
+    hide rei
+    hide mariko
+    hide hiro
     
     "Hiro tears away from me to argue. They're talking over Professor Inukai the whole time."
     "Completely lost, I gravitate to the two people who aren't up in arms."
@@ -397,48 +378,46 @@ label chapter1_day1_event1_classes_vigor:
 
     show shoma fear at center
     
-    sh "Well, Mariko and Hiro used to be class reps, but there's not enough students to justify splitting the class by gender."
-    sh "So now they're trying to figure out who gets to be in charge."
+    sh "Well, Mariko and Hiro used to be class reps, but there's not enough students to justify splitting the class by gender." id chapter1_day1_event1_classes_vigor_95e5a7e9
+    sh "So now they're trying to figure out who gets to be in charge." id chapter1_day1_event1_classes_vigor_27cd1562
     
     n "That's not good."
     
     show kitsune apathetic at left
 
-    k "Says you. Every minute they argue is another minute we don't have to do lunges or mindless exercises. This course was always a joke."
+    k "Says you. Every minute they argue is another minute we don't have to do lunges or mindless exercises. This course was always a joke." id chapter1_day1_event1_classes_vigor_283177a1
     
     "Shoma nods. I feel out of place sitting alongside them. Second guessing my decision, I go to leave, but Hiro calls out to me again."
 
-    hide kitsune apathetic
-    hide shoma fear
+    hide kitsune
+    hide shoma
     show hiro talk2 at center
     
-    h "Wait, Nagen, don't go! You gotta stay. I didn't mean to ignore you."
+    h "Wait, Nagen, don't go! You gotta stay. I didn't mean to ignore you." id chapter1_day1_event1_classes_vigor_c7d6c2e5
     
     n "Dude, I don't think I belong here, the culture shock alone..."
 
-    hide hiro talk2
     show hiro sulk at right
     show inukai at center
 
-    ik "This isn't going to be a traditional Vigor class. That means no 'teams' or competitions."
+    ik "This isn't going to be a traditional Vigor class. That means no 'teams' or competitions." id chapter1_day1_event1_classes_vigor_85a56ecd
     
     show mariko mad talk at left
 
-    m "But, but what about nationals-"
+    m "But, but what about nationals-" id chapter1_day1_event1_classes_vigor_cd0065b6
 
-    h "You have to be joking!"
+    h "You have to be joking!" id chapter1_day1_event1_classes_vigor_d2cb8ee3
 
-    hide mariko mad talk
+    hide mariko
     show kitsune mad at left
     
-    k "Then what's the point-"
+    k "Then what's the point-" id chapter1_day1_event1_classes_vigor_5ba4f77d
 
-    hide kitsune mad
-    hide hiro sulk
-    hide inukai
+    hide kitsune
+    hide hiro
     show inukai concerned
     
-    ik "Now, now guys, I'm sure we can find a way to make everyone happy."
+    ik "Now, now guys, I'm sure we can find a way to make everyone happy." id chapter1_day1_event1_classes_vigor_b64e0271
     
     "Mariko and Hiro are glaring daggers at each other with Rei caught in between them."
     "Shoma tunes everyone out and starts sewing small patterns into the hem of his coat."
@@ -446,56 +425,50 @@ label chapter1_day1_event1_classes_vigor:
     
     n "Don't you have a lesson plan or something?"
 
-    hide inukai concerned
     show inukai sad talk
     
-    ik "I have a few ideas, but there's not a lot in the books to base them on. So I don't know-"
+    ik "I have a few ideas, but there's not a lot in the books to base them on. So I don't know-" id chapter1_day1_event1_classes_vigor_35c1beef
 
     show hiro serious at right
      
-    h "This is supposed to be the fun 'no homework' class. Y'know, strength training and junk."
+    h "This is supposed to be the fun 'no homework' class. Y'know, strength training and junk." id chapter1_day1_event1_classes_vigor_fe0acbed
 
     show mariko talk at left
     
-    m "We're the school's breadwinners. That's why we use class time to prepare for competitions."
+    m "We're the school's breadwinners. That's why we use class time to prepare for competitions." id chapter1_day1_event1_classes_vigor_e583114c
     
-    hide inukai sad talk
     show inukai tired
 
-    ik "There actually won't-"
+    ik "There actually won't-" id chapter1_day1_event1_classes_vigor_70a9c17c
 
-    hide hiro serious
     show hiro mad at right
     
-    h "We're all going to get stuck doing the same thing."
-    h "That's why it should be something fun, not repeating the same flips and twists over and over again!"
+    h "We're all going to get stuck doing the same thing." id chapter1_day1_event1_classes_vigor_a0d679e3
+    h "That's why it should be something fun, not repeating the same flips and twists over and over again!" id chapter1_day1_event1_classes_vigor_9675e96b
     
-    hide mariko talk
-    hide inukai tired
     show inukai concerned
     show mariko mad talk at left
 
-    m "I never said we had to do cheer."
+    m "I never said we had to do cheer." id chapter1_day1_event1_classes_vigor_47fbe1f1
 
-    hide hiro mad
     show hiro empty at right
     
-    h "You were thinking it!"
+    h "You were thinking it!" id chapter1_day1_event1_classes_vigor_71191f63
 
-    hide hiro empty
+    hide hiro
     show rei depressed at right
     
-    re "Guys, please."
+    re "Guys, please." id chapter1_day1_event1_classes_vigor_8e9cec13
 
-    hide mariko mad talk
+    hide mariko
     show kitsune apathetic at left
     
-    k "What a colossal waste of time. I knew I should have ditched."
+    k "What a colossal waste of time. I knew I should have ditched." id chapter1_day1_event1_classes_vigor_8795527e
 
-    hide kitsune apathetic
-    hide rei depressed
+    hide kitsune
+    hide rei
     
-    ik "Please don't!"
+    ik "Please don't!" id chapter1_day1_event1_classes_vigor_d7db9f50
     
     "This is a nightmare. The teacher is in way over his head and clearly doesn't know how to hold a class..."
     "Hiro, please forgive me for what I'm about to do."
@@ -504,75 +477,67 @@ label chapter1_day1_event1_classes_vigor:
     
     "I feel three different people glare at me. Rei watches on with pity in her eyes."
 
-    hide inukai concerned
+    hide inukai
     show hiro serious
     
-    h "Dude!"
+    h "Dude!" id chapter1_day1_event1_classes_vigor_2b615b9b
 
     show shoma fear at left
     
-    sh "Test? What test?"
+    sh "Test? What test?" id chapter1_day1_event1_classes_vigor_65a0b201
 
-    hide hiro serious
     show hiro serious at right
     show inukai sigh
     
-    ik "Excellent questions! Umm, since there's no curriculum guidelines for what I want to do, I'm having to make everything from scratch."
-    ik "So we're kinda playing it by ear."
+    ik "Excellent questions! Umm, since there's no curriculum guidelines for what I want to do, I'm having to make everything from scratch." id chapter1_day1_event1_classes_vigor_0745dae1
+    ik "So we're kinda playing it by ear." id chapter1_day1_event1_classes_vigor_33528fc2
     
     n "But there is going to be a test?"
 
-    hide hiro serious
     show hiro wait at right
     
-    h "DUDE!"
+    h "DUDE!" id chapter1_day1_event1_classes_vigor_68865b96
 
-    hide inukai sigh
     show inukai
     
-    ik "Yes. Today we'll be assessing how bad the damage is."
+    ik "Yes. Today we'll be assessing how bad the damage is." id chapter1_day1_event1_classes_vigor_edebc610
 
-    hide shoma fear
+    hide shoma
     show rei surprised at left
     
-    re "Damage!?"
+    re "Damage!?" id chapter1_day1_event1_classes_vigor_290a5b55
 
-    hide rei surprised
-    hide hiro wait
+    hide rei
+    hide hiro
 
-    hide inukai
     show inukai sad talk
      
-    ik "Not like that. Sorry, poor word choice. Umm, you all were chosen by Estella for your unique abilities and were forced to put all your eggs in one basket."
-    ik "And then they sold the baskets like they were their eggs."
+    ik "Not like that. Sorry, poor word choice. Umm, you all were chosen by Estella for your unique abilities and were forced to put all your eggs in one basket." id chapter1_day1_event1_classes_vigor_d7b301b9
+    ik "And then they sold the baskets like they were their eggs." id chapter1_day1_event1_classes_vigor_5ce239f5
 
-    hide inukai sad talk
     show inukai sigh
 
-    ik "But they didn't teach you anything about chickens or farming or anything."
-    ik "So you could be making bad eggs right now, and putting them in a basket with a hole in it."
+    ik "But they didn't teach you anything about chickens or farming or anything." id chapter1_day1_event1_classes_vigor_7e5ef653
+    ik "So you could be making bad eggs right now, and putting them in a basket with a hole in it." id chapter1_day1_event1_classes_vigor_5725ff4c
     
-    hide inukai sigh
     show inukai tired talk
     
-    ik "Does that make any sense?"
+    ik "Does that make any sense?" id chapter1_day1_event1_classes_vigor_82e12f42
     
     "It was definitely long."
     
     n "What exactly do you want us to do?"
 
-    hide inukai tired talk
     show inukai
     
-    ik "A pretest of sorts. Everyone take a clipboard and pencil."
-    ik "After this, we'll all do ten laps around the field."
+    ik "A pretest of sorts. Everyone take a clipboard and pencil." id chapter1_day1_event1_classes_vigor_9c7037ef
+    ik "After this, we'll all do ten laps around the field." id chapter1_day1_event1_classes_vigor_c864e625
 
-    hide inukai
     show inukai sad talk
 
-    ik "Me included. No point in making you guys do something I wouldn't do myself."
+    ik "Me included. No point in making you guys do something I wouldn't do myself." id chapter1_day1_event1_classes_vigor_fa214627
 
-    hide inukai sad talk
+    hide inukai
     
     "With some minor complaints, everyone completes a variety of benign physical exams."
     "The teacher forgot to bring something to write down everyone's results, so I'm put in charge of remembering everyone's numbers."
@@ -581,12 +546,12 @@ label chapter1_day1_event1_classes_vigor:
 
     show inukai
     
-    ik "Alright, everyone, huddle up!"
+    ik "Alright, everyone, huddle up!" id chapter1_day1_event1_classes_vigor_9a62959b
     
     "He waits patiently for everyone to calm down."
     
-    ik "Competitions, while they make for good advertising for schools, they're hell on your body. I'll text you this week's homework once I've finished crunching the numbers."
-    ik "What is smarter when things are okay?"
+    ik "Competitions, while they make for good advertising for schools, they're hell on your body. I'll text you this week's homework once I've finished crunching the numbers." id chapter1_day1_event1_classes_vigor_274b6645
+    ik "What is smarter when things are okay?" id chapter1_day1_event1_classes_vigor_acc88bc5
     
     Everyone "?????"
     
@@ -594,16 +559,15 @@ label chapter1_day1_event1_classes_vigor:
     
     Everyone "The mind?"
     
-    ik "What is smarter when things are going wrong?"
+    ik "What is smarter when things are going wrong?" id chapter1_day1_event1_classes_vigor_a3edfea3
     
-    Everyone "...the body?"
+    Everyone "...The body?"
 
-    hide inukai
     show inukai sigh
     
-    ik "We'll keep working on that."
+    ik "We'll keep working on that." id chapter1_day1_event1_classes_vigor_f2f4adbb
 
-    hide inukai sigh
+    hide inukai
 
     scene backgroundblack with fade
 
@@ -619,61 +583,55 @@ label chapter1_day1_event1_classes_charm:
 
     show sato talk
     
-    sa "My lectures are, and only will be, a summary of the most important things you'll need to know."
-    sa "If that is not enough for you, or you're hopelessly confused, read the chapter."
-    sa "If I find you in my office crying about how you don't understand the material, the first thing I'm going to ask is if you read the chapter and you will definitely be instructed to read it again."
-    sa "I would strongly suggest downloading the book now to save yourself the tissue cost."
-    sa "You'll find the link on my faculty page. It will be free for the duration of the course, but if you want to keep it after, you'll have to pay full price."
-    sa "I may not be a sadist, but I am a capitalist at heart. That said, I notice some of you here aren't actually enrolled in the course..."
+    sa "My lectures are, and only will be, a summary of the most important things you'll need to know." id chapter1_day1_event1_classes_charm_dff57960
+    sa "If that is not enough for you, or you're hopelessly confused, read the chapter." id chapter1_day1_event1_classes_charm_e59ba988
+    sa "If I find you in my office crying about how you don't understand the material, the first thing I'm going to ask is if you read the chapter and you will definitely be instructed to read it again." id chapter1_day1_event1_classes_charm_b52e1def
+    sa "I would strongly suggest downloading the book now to save yourself the tissue cost." id chapter1_day1_event1_classes_charm_619660b7
+    sa "You'll find the link on my faculty page. It will be free for the duration of the course, but if you want to keep it after, you'll have to pay full price." id chapter1_day1_event1_classes_charm_dc8889a3
+    sa "I may not be a sadist, but I am a capitalist at heart. That said, I notice some of you here aren't actually enrolled in the course..." id chapter1_day1_event1_classes_charm_c1ee0253
     
     "She's staring directly at me as she says this."
 
-    hide sato talk
     show sato smile talk
     
-    sa "Feel free to take a seat closer to the front."
-    sa "If this is how you want to spend your freetime, you might as well get a good seat."
+    sa "Feel free to take a seat closer to the front." id chapter1_day1_event1_classes_charm_c2c028ba
+    sa "If this is how you want to spend your freetime, you might as well get a good seat." id chapter1_day1_event1_classes_charm_2d518c42
     
     "I refuse to move. Most of us are crowded into the back rows anyway. Like hell I'm going to call attention to myself and put myself where everyone can see me."
     
-    hide sato smile talk
     show sato sigh
 
-    sa "Suit yourself."
+    sa "Suit yourself." id chapter1_day1_event1_classes_charm_cb47f9df
     
     "She shuffles to a luxurious fainting couch and crawls up onto the fluffy cushion."
     "Once stretched out on the chair, she begins her lecture."
     "I'm surprised how captivating she can be without moving a muscle."
 
-    hide sato sigh
     show sato talk
     
-    sa "Now then, the reason you're here is up until now, you have excelled using the invisible tools that are social and emotional intelligence."
-    sa "They are skills that anyone can learn, seldom are taught, and are easily abandoned."
-    sa "In spite of that you have, through the years, demonstrated desirable attributes when it comes to communicating with others."
-    sa "You must understand this, because unlike Vigor or Intelligence Majors, the societal validity of your powers are dependent on how others treat you."
-    sa "At this point, success in whatever path you choose is best measured by social prowess."
-    sa "Focus your sights less on the immediate gratification of popularity and more on the ambitions it can serve."
+    sa "Now then, the reason you're here is up until now, you have excelled using the invisible tools that are social and emotional intelligence." id chapter1_day1_event1_classes_charm_f048e1d9
+    sa "They are skills that anyone can learn, seldom are taught, and are easily abandoned." id chapter1_day1_event1_classes_charm_507a3328
+    sa "In spite of that you have, through the years, demonstrated desirable attributes when it comes to communicating with others." id chapter1_day1_event1_classes_charm_bee988e8
+    sa "You must understand this, because unlike Vigor or Intelligence Majors, the societal validity of your powers are dependent on how others treat you." id chapter1_day1_event1_classes_charm_cdce565f
+    sa "At this point, success in whatever path you choose is best measured by social prowess." id chapter1_day1_event1_classes_charm_610ff17f
+    sa "Focus your sights less on the immediate gratification of popularity and more on the ambitions it can serve." id chapter1_day1_event1_classes_charm_f722defe
     
-    hide sato talk
     show sato impatient
     
-    sa "World leaders, Nobel Prize winners, CEOs and religious zealots; all were given platforms to make change by other people."
-    sa "Before you can be given your own platforms, you must earn and maintain your influence over others."
+    sa "World leaders, Nobel Prize winners, CEOs and religious zealots; all were given platforms to make change by other people." id chapter1_day1_event1_classes_charm_db7ac932
+    sa "Before you can be given your own platforms, you must earn and maintain your influence over others." id chapter1_day1_event1_classes_charm_3d658b81
     
-    hide sato impatient
     show sato
     
-    sa "This week, I want you to study how you interact with others."
-    sa "Really try to pinpoint what behaviors or habits bring you the most success versus the ones that create a wall between you and your target."
-    sa "Take note, especially of the methods you favor and any body language you use."
-    sa "To get a good start, I want you to get into groups of three."
-    sa "Two of you will talk while the third records any patterns of effective communication, like touch or mirroring."
+    sa "This week, I want you to study how you interact with others." id chapter1_day1_event1_classes_charm_e9142ad7
+    sa "Really try to pinpoint what behaviors or habits bring you the most success versus the ones that create a wall between you and your target." id chapter1_day1_event1_classes_charm_37f36a59
+    sa "Take note, especially of the methods you favor and any body language you use." id chapter1_day1_event1_classes_charm_5ac2ce34
+    sa "To get a good start, I want you to get into groups of three." id chapter1_day1_event1_classes_charm_262f2fd6
+    sa "Two of you will talk while the third records any patterns of effective communication, like touch or mirroring." id chapter1_day1_event1_classes_charm_ba46f0c1
 
-    hide sato
     show nanase
     
-    nk "What do you mean mirroring?"
+    nk "What do you mean mirroring?" id chapter1_day1_event1_classes_charm_88370183
 
     hide nanase
     
@@ -691,97 +649,89 @@ label chapter1_day1_event1_classes_intelligence:
     
     show kazz complain
 
-    kk "And Nagen makes five; that's everyone then."
+    kk "And Nagen makes five; that's everyone then." id chapter1_day1_event1_classes_intelligence_fa6126ed
 
     show yoku bummed at left
     
-    y "Judging by the setting, I suppo-ose this will be more of a theory than i-independent practice."
+    y "Judging by the setting, I suppo-ose this will be more of a theory than i-independent practice." id chapter1_day1_event1_classes_intelligence_fc0ae787
 
     "He begrudgingly shoves his instrument case under the table."
 
     show momoko angry at right
     
-    mh "Aww, that's no fun. Ah well, what can you do?"
+    mh "Aww, that's no fun. Ah well, what can you do?" id chapter1_day1_event1_classes_intelligence_72b7dead
 
-    hide yoku bummed
+    hide yoku
     show mu irate at left
     
-    mu "Are we going to be tested on everyone's subjects? If so, that's what, twenty-five exams?"
+    mu "Are we going to be tested on everyone's subjects? If so, that's what, twenty-five exams?" id chapter1_day1_event1_classes_intelligence_1051ccdc
 
     
-    mh "Make that twenty, taking tests isn't a subject I don't think."
+    mh "Make that twenty, taking tests isn't a subject I don't think." id chapter1_day1_event1_classes_intelligence_51255e8e
     
     n "Literally, there are so many college courses on data collection and human psychology it's not even funny."
 
-    hide mu irate
     show mu shame at left
     
-    mu "At least psych would be useful."
+    mu "At least psych would be useful." id chapter1_day1_event1_classes_intelligence_92373ebd
 
-    hide mu shame
     show yoku furious1 at left
 
-    y "Not for Chisei, or any other creatives for that matter. How un-nfortunate."
+    y "Not for Chisei, or any other creatives for that matter. How un-nfortunate." id chapter1_day1_event1_classes_intelligence_496bb467
 
-    hide kazz complain
     show kazz oh
     
-    kk "Umm, dudes, where's the teacher?"
+    kk "Umm, dudes, where's the teacher?" id chapter1_day1_event1_classes_intelligence_4eca893c
     
     "Class should have started ten minutes ago. We look around, but we can't find any evidence of the teacher's stuff either."
     "We are in the right room, I'm sure of it."
     
-    hide momoko angry
-    show momoko confused at right
+    show momoko confused
 
-    mh "Maybe Yaguchi's just late?"
+    mh "Maybe Yaguchi's just late?" id chapter1_day1_event1_classes_intelligence_b4ce6a1e
     
-    y "Unacceptable. Every-y teacher has the ability to directly contact us. If he was running behind, he shhhhould have told us."
+    y "Unacceptable. Every-y teacher has the ability to directly contact us. If he was running behind, he shhhhould have told us." id chapter1_day1_event1_classes_intelligence_4d6612f9
     
-    hide kazz oh
     show kazz grin
 
-    kk "So, like, free period then?"
+    kk "So, like, free period then?" id chapter1_day1_event1_classes_intelligence_779968eb
     
     n "No, hell no, if we have to be here, so does he."
 
-    hide yoku furious1
+    hide yoku
     show mu grin at left
     
-    mu "Worried you'll get a zero are you?"
+    mu "Worried you'll get a zero are you?" id chapter1_day1_event1_classes_intelligence_18e9ba0c
     
     n "Yeah?! I'm not going to get marked off points for being absent when he's the one who didn't show up!"
 
-    hide momoko confused
-    show momoko happy at right
+    show momoko happy
     
-    mh "Maybe he's in his office? Let's go catch him red-handed!"
+    mh "Maybe he's in his office? Let's go catch him red-handed!" id chapter1_day1_event1_classes_intelligence_1dd5e8df
 
-    hide kazz grin
     show kazz oh
     
-    kk "Red handed doing what?"
+    kk "Red handed doing what?" id chapter1_day1_event1_classes_intelligence_411f345b
 
     hide mu grin
     show yoku furious2 at left
     
-    y "Neglecting his duties."
+    y "Neglecting his duties." id chapter1_day1_event1_classes_intelligence_da6da01a
 
-    hide kazz grin
     show kazz complain
     
-    kk "You guys really want to provoke a brotentate of this place over grades?"
+    kk "You guys really want to provoke a brotentate of this place over grades?" id chapter1_day1_event1_classes_intelligence_17ec4ae3
 
     hide yoku furious2
     show mu angry at left
 
-    mu "Nagen, you know where everything is, right? Where's his office at?"
+    mu "Nagen, you know where everything is, right? Where's his office at?" id chapter1_day1_event1_classes_intelligence_9903bfed
     
-    kk "We're really doing this?"
+    kk "We're really doing this?" id chapter1_day1_event1_classes_intelligence_50ec620f
 
-    hide kazz complain
-    hide mu angry
-    hide momoko happy
+    hide kazz
+    hide mu
+    hide momoko
     
     n "I'm bad at giving directions, but I can show you where it is."
     
@@ -799,80 +749,73 @@ label chapter1_day1_event1_classes_intelligence:
 
     show yaguchi talk1
     
-    ya "That's because it's what I was hired for. I agreed to babysit you until they found proper tutors that wanted to work with you."
+    ya "That's because it's what I was hired for. I agreed to babysit you until they found proper tutors that wanted to work with you." id chapter1_day1_event1_classes_intelligence_a420c34d
     
     "He gestures to one of the monitors."
     
-    ya "I know you showed up, so don't worry about participation points or whatever they're called; you'll all get A's."
+    ya "I know you showed up, so don't worry about participation points or whatever they're called; you'll all get A's." id chapter1_day1_event1_classes_intelligence_5adf816d
     
     "He continues working on a large hard drive, soldering bits of copper to each other in incomprehensible patterns."
  
     show yoku at left
 
-    y "Is that all?"
+    y "Is that all?" id chapter1_day1_event1_classes_intelligence_cb2be97d
 
-    hide yaguchi talk1
     show yaguchi talk2
     
-    ya "Yeah. I'm not going to assign a bunch of busy work for you to finish just to see if you will."
-    ya "Just stay out of trouble. Go study whatever you want, or don't."
+    ya "Yeah. I'm not going to assign a bunch of busy work for you to finish just to see if you will." id chapter1_day1_event1_classes_intelligence_12ac6f34
+    ya "Just stay out of trouble. Go study whatever you want, or don't." id chapter1_day1_event1_classes_intelligence_e57ffdff
 
-    hide yoku
     show yoku furious1 at left
     
-    y "Aren't you g-going to... teach us?"
+    y "Aren't you g-going to... teach us?" id chapter1_day1_event1_classes_intelligence_67eadbc0
 
-    hide yaguchi talk1
     show yaguchi talk2
     
-    ya "What the hell could I teach you? I'm a metal head engineer, none of that fits under your umbrellas. And y'all too specialized to pick one to study up on."
-    ya "So what am I supposed to do if you ask a question, Google it? You could do that yourself and cut out the middle man."
+    ya "What the hell could I teach you? I'm a metal head engineer, none of that fits under your umbrellas. And y'all too specialized to pick one to study up on." id chapter1_day1_event1_classes_intelligence_c55d5b09
+    ya "So what am I supposed to do if you ask a question, Google it? You could do that yourself and cut out the middle man." id chapter1_day1_event1_classes_intelligence_11d131d1
     
     n "So you're too stupid to teach us."
     
     "He sets down his tools with a grim expression."
 
-    hide yaguchi talk2
     show yaguchi
     
-    ya "Do you know anything about graduate level robotics or thermodynamics?"
+    ya "Do you know anything about graduate level robotics or thermodynamics?" id chapter1_day1_event1_classes_intelligence_f90c99f1
     
     n "No."
     
-    ya "Are any of you remotely interested in doing it as a career?"
+    ya "Are any of you remotely interested in doing it as a career?" id chapter1_day1_event1_classes_intelligence_14f40a86
     
     "We all shake our heads."
 
-    hide yaguchi
     show yaguchi yell
     
-    ya "Then by your definition, Mr. Reverse Psychology, you're stupid."
-    ya "You don't know something you have no interest in, which makes you stupid because I know it. Does that make it true?"
-    ya "You a stupid kid?"
+    ya "Then by your definition, Mr. Reverse Psychology, you're stupid." id chapter1_day1_event1_classes_intelligence_b1907c6b
+    ya "You don't know something you have no interest in, which makes you stupid because I know it. Does that make it true?" id chapter1_day1_event1_classes_intelligence_9a7dbcb8
+    ya "You a stupid kid?" id chapter1_day1_event1_classes_intelligence_fb5ba1d9
     
     n "N-no!"
 
-    hide yaguchi yell
     show yaguchi talk2
     
-    ya "Then don't go around comparing intelligence to how much you know like you're collecting Pokémon cards."
-    ya "What good is understanding astrophysics when what makes you happy is making sandwiches?"
-    ya "That's what being smart is, figuring out what makes you happy and how to get it."
+    ya "Then don't go around comparing intelligence to how much you know like you're collecting Pokémon cards." id chapter1_day1_event1_classes_intelligence_6e98cfe9
+    ya "What good is understanding astrophysics when what makes you happy is making sandwiches?" id chapter1_day1_event1_classes_intelligence_b20866f4
+    ya "That's what being smart is, figuring out what makes you happy and how to get it." id chapter1_day1_event1_classes_intelligence_77924431
     
     show mu angry at right
 
-    mu "What would make me happy is a teacher who does his job."
+    mu "What would make me happy is a teacher who does his job." id chapter1_day1_event1_classes_intelligence_21362cb3
 
-    hide yaguchi talk2
     show yaguchi talk1
 
-    ya "Jesus, college kids would just take the day off when their teacher's absent."
-    ya "Can't you just take a day off?"
+    ya "Jesus, college kids would just take the day off when their teacher's absent." id chapter1_day1_event1_classes_intelligence_b8496cc8
+    ya "Can't you just take a day off?" id chapter1_day1_event1_classes_intelligence_867ba301
 
     y "....."
 
-    hide mu angry
-    hide yoku furious1
+    hide mu
+    hide yoku
     show momoko manic at left
     
     mh "....."
@@ -880,142 +823,133 @@ label chapter1_day1_event1_classes_intelligence:
     "No one's answering, which in itself is an answer, I guess."
     "I'm just glad I'm not the only one that feels guilty if I'm not working on something."
     
-    hide yoku furious1
+    hide yoku
     show kazz at right
 
-    kk "Is that gonna be an essay prompt or something?"
+    kk "Is that gonna be an essay prompt or something?" id chapter1_day1_event1_classes_intelligence_5c462a54
 
     hide kazz
-    hide momoko manic
+    hide momoko
 
     stop music
     
-    ya "Sit down, all of you."
-    ya "I'm going to ask you something, and I'm afraid I already know the answer."
-    ya "How many of you actually want to have a job in the field you were assigned?"
-    ya "Not because you were told to or it's easy for you, but because you enjoy it."
+    ya "Sit down, all of you." id chapter1_day1_event1_classes_intelligence_93ad3637
+    ya "I'm going to ask you something, and I'm afraid I already know the answer." id chapter1_day1_event1_classes_intelligence_0ec568fe
+    ya "How many of you actually want to have a job in the field you were assigned?" id chapter1_day1_event1_classes_intelligence_c735940d
+    ya "Not because you were told to or it's easy for you, but because you enjoy it." id chapter1_day1_event1_classes_intelligence_575c84fe
     
     "Only Yoku and Mu raise their hands. I can see Momoko thinking about it, but even she isn't sure."
     
-    hide yoku talk
+    hide yoku
     show yaguchi talk2
 
-    ya "See, the problem with labeling you kids by what you find easy to understand is you get pigeonholed into a lifestyle that isn't sustainable."
-    ya "As soon as you get to the higher level stuff, it's going to be real work to keep progressing, and that's going to be hell if the end result isn't what makes you happy."
-    ya "If you're just here to make someone else proud of you, then just stop. Stop measuring your self-worth by milestones other people set for you."
-    ya "It's not worth the stress. Trust me."
+    ya "See, the problem with labeling you kids by what you find easy to understand is you get pigeonholed into a lifestyle that isn't sustainable." id chapter1_day1_event1_classes_intelligence_3729ea8e
+    ya "As soon as you get to the higher level stuff, it's going to be real work to keep progressing, and that's going to be hell if the end result isn't what makes you happy." id chapter1_day1_event1_classes_intelligence_19d420db
+    ya "If you're just here to make someone else proud of you, then just stop. Stop measuring your self-worth by milestones other people set for you." id chapter1_day1_event1_classes_intelligence_2e15ae27
+    ya "It's not worth the stress. Trust me." id chapter1_day1_event1_classes_intelligence_9d46babf
     
     n "So what, we're just supposed to peak in highschool?"
 
-    hide yaguchi talk2
     show yaguchi frown
     
-    ya "With as much grace and dignity as you can muster."
-    ya "You only got a few more years of this micro society to go before people stop keeping tabs on you and you gotta worry about real shit."
-    ya "Don't spend it all working your ass off for no reason, have fun for God's sake."
+    ya "With as much grace and dignity as you can muster." id chapter1_day1_event1_classes_intelligence_a2836377
+    ya "You only got a few more years of this micro society to go before people stop keeping tabs on you and you gotta worry about real shit." id chapter1_day1_event1_classes_intelligence_2f22faf5
+    ya "Don't spend it all working your ass off for no reason, have fun for God's sake." id chapter1_day1_event1_classes_intelligence_2d42ccd5
 
-    show kazz dead at right
+    show kazz dead
 
-    kk "Well that's just depressing."
+    kk "Well that's just depressing." id chapter1_day1_event1_classes_intelligence_158c4410
 
-    hide kazz dead
-    hide yaguchi frown
+    hide kazz
     show yaguchi talk1
     
-    ya "What's depressing is the army of kids that feel like failures when they remind people they're human."
-    ya "I saw a kid have a breakdown because he got an 89 on one test. It's not like getting A's ever made him happy either."
-    ya "All demanding perfection ever does is take the joy from your accomplishments."
-    ya "It took me almost a decade to undo what that kind of thinking did to me."
-    ya "The least I can do is put a tourniquet on your bleeding hearts before you completely fall apart in your thirties."
+    ya "What's depressing is the army of kids that feel like failures when they remind people they're human." id chapter1_day1_event1_classes_intelligence_66ee5d4b
+    ya "I saw a kid have a breakdown because he got an 89 on one test. It's not like getting A's ever made him happy either." id chapter1_day1_event1_classes_intelligence_a71dc148
+    ya "All demanding perfection ever does is take the joy from your accomplishments." id chapter1_day1_event1_classes_intelligence_0a5825ed
+    ya "It took me almost a decade to undo what that kind of thinking did to me." id chapter1_day1_event1_classes_intelligence_600289db
+    ya "The least I can do is put a tourniquet on your bleeding hearts before you completely fall apart in your thirties." id chapter1_day1_event1_classes_intelligence_db9ffc54
     
-    hide kazz dead
+    hide kazz
     show mu cringe at right
 
-    mu "And how do you plan to do that?"
+    mu "And how do you plan to do that?" id chapter1_day1_event1_classes_intelligence_59e84883
 
-    hide yaguchi talk1
     show yaguchi frown
     
-    ya "For starters, getting you to do things outside of your Proficiency."
+    ya "For starters, getting you to do things outside of your Proficiency." id chapter1_day1_event1_classes_intelligence_10bd4469
 
-    hide momoko manic
+    hide momoko
     show yoku at left
     
-    y "Uh... w-what?"
+    y "Uh... w-what?" id chapter1_day1_event1_classes_intelligence_266c98ff
     
-    ya "You're putting all your self-esteem into one thing. That's a shit idea. God forbid you go deaf, what would you do?"
+    ya "You're putting all your self-esteem into one thing. That's a shit idea. God forbid you go deaf, what would you do?" id chapter1_day1_event1_classes_intelligence_fa20aea4
     
     "Yoku visibly pales."
 
     hide yoku
-    hide mu cringe
-    hide yaguchi frown
+    hide mu
     show yaguchi talk2
     
-    ya "That's an extreme example, but you get the idea."
-    ya "Having a Proficiency should be a perk, not a life sentence."
-    ya "So we're going to mix it up, each of you is going to pick a random thing and we'll all look into it together."
-    ya "It can literally be anything-"
+    ya "That's an extreme example, but you get the idea." id chapter1_day1_event1_classes_intelligence_8e2ccb02
+    ya "Having a Proficiency should be a perk, not a life sentence." id chapter1_day1_event1_classes_intelligence_77a2fe2a
+    ya "So we're going to mix it up, each of you is going to pick a random thing and we'll all look into it together." id chapter1_day1_event1_classes_intelligence_a45934d0
+    ya "It can literally be anything-" id chapter1_day1_event1_classes_intelligence_55fb9f27
 
     show momoko surprised at left
     
-    mh "Cosmetology!"
+    mh "Cosmetology!" id chapter1_day1_event1_classes_intelligence_deaf877a
 
     hide momoko
-
-    hide yaguchi talk2
     show yaguchi frown
     
     ya "....."
 
-    hide momoko surprised
-    show momoko sad talk at left
+    show momoko sad talk
     
-    mh "I, uh, please? It's just a hobby right now, but I'd like to be able to do more than dye extensions if I could."
+    mh "I, uh, please? It's just a hobby right now, but I'd like to be able to do more than dye extensions if I could." id chapter1_day1_event1_classes_intelligence_299287da
     
     n "I don't think-"
 
     play music "music/Lights.mp3"
 
-    show yaguchi frown
     show yaguchi bleh
     
-    ya "Perfect, we'll start with that."
+    ya "Perfect, we'll start with that." id chapter1_day1_event1_classes_intelligence_b7790a4e
 
-    hide momoko sad talk
     show momoko happy at left
     show mu pout at right
     
-    mu "...really?"
+    mu "...Really?" id chapter1_day1_event1_classes_intelligence_37063cf4
 
-    hide yaguchi bleh
     show yaguchi frown
     
-    ya "She had an idea first. If you come up with anything, send it my way and we'll rotate through the year."
+    ya "She had an idea first. If you come up with anything, send it my way and we'll rotate through the year." id chapter1_day1_event1_classes_intelligence_2b58230f
     
     "I have no idea what to pick. At least Kazz and Momoko have some idea of what they want to learn. That'll buy me a few weeks."
-    hide mu pout
+
     show mu shame at right
     
-    mu "I don't understand how this is better than studying in the nurse's office."
+    mu "I don't understand how this is better than studying in the nurse's office." id chapter1_day1_event1_classes_intelligence_279483dd
 
-    hide mu shame
-    hide momoko happy
+    hide mu
+    hide momoko
     show yoku think at left
     
-    y "Be-ethoven went deaf a-and continued to compo-ose. As long as I can see and fffeel, I can still write mu-usic."
+    y "Be-ethoven went deaf a-and continued to compo-ose. As long as I can see and fffeel, I can still write mu-usic." id chapter1_day1_event1_classes_intelligence_5d7b86e7
     
-    hide yoku think
+    hide yoku
 
     "This is going to be a long year."
 
-    hide yaguchi frown
+    hide yaguchi
 
     scene backgroundblack with fade
 
     return
 
 label chapter1_day1_event1_classes_vision:
+
     scene backgroundclass
 
     play music "music/LoveofAll.mp3"
@@ -1026,120 +960,109 @@ label chapter1_day1_event1_classes_vision:
 
     show jona happy
     
-    j "Nagen, did you get lost?"
+    j "Nagen, did you get lost?" id chapter1_day1_event1_classes_vision_76af0820
 
     show chisei smile talk1 at right
 
-    ch "Maybe he is a fellow brood parasite."
+    ch "Maybe he is a fellow brood parasite." id chapter1_day1_event1_classes_vision_d501cbb2
 
-    hide jona happy
     show jona depressed
     
-    j "I don't think he's here to lay eggs, Chisei."
+    j "I don't think he's here to lay eggs, Chisei." id chapter1_day1_event1_classes_vision_b1f4b0d4
 
     show ichita angry at left
     
-    i "He better not be."
+    i "He better not be." id chapter1_day1_event1_classes_vision_d7408a5d
 
-    hide chisei smile talk1
-    show chisei talk2 at right
+    show chisei talk2
     
-    ch "What I mean is, maybe he has been lying about which major he belongs to."
+    ch "What I mean is, maybe he has been lying about which major he belongs to." id chapter1_day1_event1_classes_vision_1dc6f2d6
 
     "Ichita and Jona hone in on me with renewed interest."
 
-    hide ichita angry
-    show ichita think at left
+    show ichita think
 
-    i "Oh shoot, can you literally read minds or something?"
+    i "Oh shoot, can you literally read minds or something?" id chapter1_day1_event1_classes_vision_16415d3f
     
-    ch "And I thought my ability was intrusive, you poor thing."
+    ch "And I thought my ability was intrusive, you poor thing." id chapter1_day1_event1_classes_vision_3307c708
 
     show jona frustrated
     
-    j "Who's thoughts have you been reading, young man?"
+    j "Who's thoughts have you been reading, young man?" id chapter1_day1_event1_classes_vision_f4a4c783
     
     n "N-no, I don't- There's no rule that says I can't be here."
 
-    hide jona frustrated
     show jona mad
     
-    j "So you have tried to read my mind then."
+    j "So you have tried to read my mind then." id chapter1_day1_event1_classes_vision_cda0f5d3
 
-    hide ichita think
+    hide ichita
     show kietsu laugh at left
     
-    ki "Lay off the new kid, guys, he'll tell us in his own time. You're makin' him uncomfortable by swarmin' him like that."
+    ki "Lay off the new kid, guys, he'll tell us in his own time. You're makin' him uncomfortable by swarmin' him like that." id chapter1_day1_event1_classes_vision_f4eb7f23
     
-    hide jona mad
     show jona depressed
 
     n "This isn't everyone, is it?"
 
-    hide kietsu laugh
-    show kietsu dontworry at left
+    show kietsu dontworry
     
-    ki "'Fraid so. There might be a few border-liners who could qualify, but this is more than I was expectin' to be honest."
+    ki "'Fraid so. There might be a few border-liners who could qualify, but this is more than I was expectin' to be honest." id chapter1_day1_event1_classes_vision_1dc8ddb1
 
-    hide kietsu dontworry
-    hide jona depressed
-    hide chisei talk2
+    hide kietsu
+    hide jona
+    hide chisei
     show vivaldi
     
-    v "Indeed, it can be quite difficult for people to acknowledge the abnormal nature of their abilities."
+    v "Indeed, it can be quite difficult for people to acknowledge the abnormal nature of their abilities." id chapter1_day1_event1_classes_vision_b21ead79
     
     "A hush falls over the room as our principal stands where a teacher should be."
     "She gestures for us to sit down. It takes a bit to get everyone to settle."
     "If I knew she'd be teaching, I wouldn't have come."
     "Everyone is waiting for me to sit too. I'll stay for this one class."
 
-    hide vivaldi
     show vivaldi smile
     
-    v "Coming here took a lot of courage."
-    v "I've spent a great deal of my life trying to prove to others that my ability is real and there are others like me."
+    v "Coming here took a lot of courage." id chapter1_day1_event1_classes_vision_c485281a
+    v "I've spent a great deal of my life trying to prove to others that my ability is real and there are others like me." id chapter1_day1_event1_classes_vision_596c8df0
     
-    hide vivaldi smile
     show vivaldi sad
 
-    v "The definition of what it means to be a Vision Major is vague by design, to accommodate any new proficiencies that may come along."
-    v "I am most familiar with ones concerning the dead, but it is my goal for all of you to have better control over your abilities by the end of the year."
+    v "The definition of what it means to be a Vision Major is vague by design, to accommodate any new proficiencies that may come along." id chapter1_day1_event1_classes_vision_b4cf386a
+    v "I am most familiar with ones concerning the dead, but it is my goal for all of you to have better control over your abilities by the end of the year." id chapter1_day1_event1_classes_vision_93c0cdd8
     
     n "What makes you qualified to teach? You were a police officer, not a scientist."
     
-    hide vivaldi sad
     show vivaldi disappointed
 
-    v "Ms. Chisei, if you're comfortable with assisting me in this matter, I would appreciate it."
+    v "Ms. Chisei, if you're comfortable with assisting me in this matter, I would appreciate it." id chapter1_day1_event1_classes_vision_d738cfcb
 
     show chisei sad talk1 at right
     
-    ch "I am not sure what I can do, but okay."
+    ch "I am not sure what I can do, but okay." id chapter1_day1_event1_classes_vision_4f5cd668
     
     "She joins the teacher at the front of the room."
     
-    v "Your left hand is prone to possession; may we borrow it?"
+    v "Your left hand is prone to possession; may we borrow it?" id chapter1_day1_event1_classes_vision_c8fe6ebc
 
     "Chisei goes pale."
 
-    hide chisei sad talk1
-    show chisei sad talk2 at right
+    show chisei sad talk2
 
-    ch "I, uh- Who is we?"
+    ch "I, uh- Who is we?" id chapter1_day1_event1_classes_vision_82450e51
  
     "Vivaldi points to her broach."
 
-    hide vivaldi disappointed
     show vivaldi smile
  
-    v "Takahara Kenji, 8th grade, he's agreed to help with our lessons."
+    v "Takahara Kenji, 8th grade, he's agreed to help with our lessons." id chapter1_day1_event1_classes_vision_7a08a372
   
-    ch "Umm... Okay then."
+    ch "Umm... Okay then." id chapter1_day1_event1_classes_vision_1c3e982e
 
-    v "I will have Takahara read the last text on your phone, Mr. Tesuta, and have him transcribe it on the board using Chisei's hand. Is that agreeable to you?"
+    v "I will have Takahara read the last text on your phone, Mr. Tesuta, and have him transcribe it on the board using Chisei's hand. Is that agreeable to you?" id chapter1_day1_event1_classes_vision_832f14f3
 
-    hide vivaldi smile
-    hide chisei sad talk2
+    hide vivaldi
+    hide chisei
     
     "I check my phone to make sure no one sent me anything embarrassing. The last thing I got was from Uitto confirming she had my new number."
     
@@ -1151,11 +1074,11 @@ label chapter1_day1_event1_classes_vision:
     
     "She starts drawing a shaky stick figure drawing, her expression changing from confusion to horror."
     
-    ch "Umm... is this going to be appropriate for class?"
+    ch "Umm... is this going to be appropriate for class?" id chapter1_day1_event1_classes_vision_91f31642
     
     "I can't help but laugh. Jona grabs my shoulders."
         
-    j "Dude, did you plan this?"
+    j "Dude, did you plan this?" id chapter1_day1_event1_classes_vision_5767cd34
     
     n "No, man, Hiro must have sent me something after I checked it."
 
@@ -1164,92 +1087,87 @@ label chapter1_day1_event1_classes_vision:
     show vivaldi migraine
     show chisei mad2 at left
     
-    v "That's enough, Takahara."
+    v "That's enough, Takahara." id chapter1_day1_event1_classes_vision_bf68bcb8
     
     "Chisei throws down the chalk, her face flushed."
 
-    hide vivaldi migraine
     show vivaldi smile
     
-    v "Thank you, Chisei, you may take your seat."
+    v "Thank you, Chisei, you may take your seat." id chapter1_day1_event1_classes_vision_2b12d4ba
     
     "Jona and I are trying our best not to laugh as Chisei speed-walks to her chair."
 
-    ch "That was unnecessary and you know it."
+    ch "That was unnecessary and you know it." id chapter1_day1_event1_classes_vision_bebfebf0
 
-    hide chisei mad2
+    hide chisei
     
     "Vivaldi claps her hands together, silencing the room."
     
-    hide vivaldi smile
     show vivaldi talk
 
-    v "As you can see, Vision Proficiencies are difficult to control."
-    v "With a little patience and introspection, you can prevent them from dominating your life."
-    v "In due time, your abilities could be refined as a tool you can use."
-    v "However, it's best to keep our goals small at first."
-    v "The smallest set back can feel devastating when we're setting our expectations based on how we view other people."
+    v "As you can see, Vision Proficiencies are difficult to control." id chapter1_day1_event1_classes_vision_d32f2ff3
+    v "With a little patience and introspection, you can prevent them from dominating your life." id chapter1_day1_event1_classes_vision_cf375e4d
+    v "In due time, your abilities could be refined as a tool you can use." id chapter1_day1_event1_classes_vision_8cf8bb9a
+    v "However, it's best to keep our goals small at first." id chapter1_day1_event1_classes_vision_e6eda055
+    v "The smallest set back can feel devastating when we're setting our expectations based on how we view other people." id chapter1_day1_event1_classes_vision_ea8ef485
     
     "She turns and draws a small table on the board."
 
-    hide vivaldi talk
     show vivaldi frown
     
-    v "Each of your abilities are unique, so it's been difficult to try to design exercises that will apply to all of you."
-    v "We'll start by taking five minutes to write down all of the things about your power that upsets you."
+    v "Each of your abilities are unique, so it's been difficult to try to design exercises that will apply to all of you." id chapter1_day1_event1_classes_vision_df48abcd
+    v "We'll start by taking five minutes to write down all of the things about your power that upsets you." id chapter1_day1_event1_classes_vision_d70a7d7e
     
     "She waits patiently for everyone to finish."
     
-    v "Now, raise your hand if you wrote less than three things on your list."
+    v "Now, raise your hand if you wrote less than three things on your list." id chapter1_day1_event1_classes_vision_53d0072a
     
     "No one raises their hand."
 
-    hide vivaldi frown
     show vivaldi
     
-    v "Less than eight."
+    v "Less than eight." id chapter1_day1_event1_classes_vision_f751165f
     
     "Still nothing."
     
-    v "Eight or more."
+    v "Eight or more." id chapter1_day1_event1_classes_vision_46432497
     
     "Everyone raises their hand."
 
-    hide vivaldi
     show vivaldi smile
     
-    v "Even though your abilities deal with the unseen, the effects they have on us are very real."
-    v "The struggle with negative intrusive thoughts creates an illusion of isolation."
-    v "As you can see, everyone in this room shares this struggle. You may put down your hands."
+    v "Even though your abilities deal with the unseen, the effects they have on us are very real." id chapter1_day1_event1_classes_vision_6a618af4
+    v "The struggle with negative intrusive thoughts creates an illusion of isolation." id chapter1_day1_event1_classes_vision_2fc6ac5f
+    v "As you can see, everyone in this room shares this struggle. You may put down your hands." id chapter1_day1_event1_classes_vision_6febdcf6
     
     "She proceeds to collect examples from the class to put into the first column of her table."
     
-    hide vivaldi smile
     show vivaldi talk
 
-    v "Now, look at your own list without the context of your abilities, environment, and so on."
-    v "If you feel comfortable, you can trade lists with someone to aid in this part of the exercise."
-    v "I want you to break these items into two categories; things that can change, and things that can't."
+    v "Now, look at your own list without the context of your abilities, environment, and so on." id chapter1_day1_event1_classes_vision_b45b5cb7
+    v "If you feel comfortable, you can trade lists with someone to aid in this part of the exercise." id chapter1_day1_event1_classes_vision_188f4828
+    v "I want you to break these items into two categories; things that can change, and things that can't." id chapter1_day1_event1_classes_vision_43a3bf17
 
-    hide vivaldi talk
+    hide vivaldi
     
     "Jona stares at his piece of paper for a long time before taping on my shoulder."
 
     show jona depressed
     
-    j "Do you, uh, could you trade with me?"
+    j "Do you, uh, could you trade with me?" id chapter1_day1_event1_classes_vision_da826119
 
-    hide jona depressed
+    hide jona
 
     menu:
         "Trade":
+
             $ jRep += 1
 
             show jona happy
     
             "I trade papers and look at his list. It's surprisingly long."
 
-            hide jona happy
+            hide jona
             
             #/Hard to look at people/Getting stronger?/makes people uncomfortable/can't focus/useless/can't trust people/know things I shouldn't/can't turn it off/exhausting/manipulative/belonged to mom/
             #(Circle the ones that can be changed) 
@@ -1263,21 +1181,21 @@ label chapter1_day1_event1_classes_vision:
             
             "Probably should have thought of that before I wrote it for an assignment!"
 
-            hide jona depressed
+            hide jona
 
     show vivaldi
 
-    v "Now, throughout the week, I want you to document how often your abilities trigger."
-    v "Include emotions, activities, environmental factors, and your reaction to the trigger."
-    v "When we know what to expect, it's easier to de-escalate and disrupt the intrusive episodes."
+    v "Now, throughout the week, I want you to document how often your abilities trigger." id chapter1_day1_event1_classes_vision_d44bcda2
+    v "Include emotions, activities, environmental factors, and your reaction to the trigger." id chapter1_day1_event1_classes_vision_3734ec76
+    v "When we know what to expect, it's easier to de-escalate and disrupt the intrusive episodes." id chapter1_day1_event1_classes_vision_d9efc88f
 
     show ichita think at left
     
-    i "What about the lists?"
+    i "What about the lists?" id chapter1_day1_event1_classes_vision_537a13f3
 
-    hide ichita think
+    hide ichita
     
-    v "Hold onto those in a safe place. We will use them again at a later date."
+    v "Hold onto those in a safe place. We will use them again at a later date." id chapter1_day1_event1_classes_vision_d427cc2e
 
     hide vivaldi
 
@@ -1289,7 +1207,7 @@ label chapter1_day1_event2:
     scene backgroundhall1
     
     play music "music/Interloper.mp3"
-    #BG: Hallway
+
     "It's surreal being thrown back into school life without my friends in every class."
     "Back at Estella, we had been clumped together for everything year after year. Hearing the bell ring is a relief."
 
@@ -1297,23 +1215,23 @@ label chapter1_day1_event2:
     "No doubt many of my classmates had also packed up several minutes before the bell, waiting for the floodgates to open."
     "As I wade through the crowd to meet up with my friends, the PA system sparks to life."
 
-    PA "Attention all students."
+    PA "Attention all students." id chapter1_day1_event2_4d340b99
 
     "That voice isn't human. Or, if it is, it's distorted beyond recognition. The disturbing pitch is enough to interrupt everyone's conversations."
 
-    PA "I would like to commend you all for overcoming your fears to be here today."
-    PA "Many of us are still recovering from the Guwon Riots."
-    PA "Our bodies, families, and minds have been torn apart, which is why it pains me to announce this school is not the safe haven it appears to be."
-    PA "No doubt you've noticed the surrounding town has been abandoned, evacuated, no signs of reconstruction for miles."
-    PA "It's the ideal place to put a school; if you don't want your students to leave."
+    PA "I would like to commend you all for overcoming your fears to be here today." id chapter1_day1_event2_13a81946
+    PA "Many of us are still recovering from the Guwon Riots." id chapter1_day1_event2_43a47c58
+    PA "Our bodies, families, and minds have been torn apart, which is why it pains me to announce this school is not the safe haven it appears to be." id chapter1_day1_event2_b9eff354
+    PA "No doubt you've noticed the surrounding town has been abandoned, evacuated, no signs of reconstruction for miles." id chapter1_day1_event2_ebfb124f
+    PA "It's the ideal place to put a school; if you don't want your students to leave." id chapter1_day1_event2_ef5bc6a8
 
     "A staff member bolts out of the classroom and down the hall."
 
     "Mr. Yaguchi tries to cover the voice from the PA with his own instructions, but it's too late."
 
-    PA "Nagen Tesuta, Uitto Hanatabe, Jona Oshima; you have five days to turn in your leader, Hiromichi Morine."
-    PA "If he is not restrained on the practice field by then, the punishment will be tenfold."
-    PA "Only the valiant shall escape the shore of corpses."
+    PA "Nagen Tesuta, Uitto Hanatabe, Jona Oshima; you have five days to turn in your leader, Hiromichi Morine." id chapter1_day1_event2_14baf7c8
+    PA "If he is not restrained on the practice field by then, the punishment will be tenfold." id chapter1_day1_event2_c65653d5
+    PA "Only the valiant shall escape the shore of corpses." id chapter1_day1_event2_053b7aad
 
     "The message cuts out."
     "I assume, on blind faith alone, that whoever is responsible will be caught."
@@ -1322,21 +1240,21 @@ label chapter1_day1_event2:
 
     "Everyone is staring. Everyone knows. They may not have beforehand, but now it's like being under a spotlight."
 
-    re "It's not true, is it?"
+    re "It's not true, is it?" id chapter1_day1_event2_86f017aa
 
     "Rei, my old classmate, refuses to be shepherded away from us by her friends."
 
-    re "Guys, tell them you had nothing to do with riots. There has to be a mistake. We were all together. We-"
+    re "Guys, tell them you had nothing to do with riots. There has to be a mistake. We were all together. We-" id chapter1_day1_event2_b001fa30
 
-    mu "Why did you think they were missing during the evacuation?"
+    mu "Why did you think they were missing during the evacuation?" id chapter1_day1_event2_b81c1179
 
-    re "Nagen was sick, and I saw Hiro."
+    re "Nagen was sick, and I saw Hiro." id chapter1_day1_event2_5813d23d
 
     "Rei glares at Mu with tears in her eyes."
 
-    re "He came back to get us. The gym wasn't safe so we had to relocate, isn't that right? Hiro, tell them, please. Tell them the truth."
+    re "He came back to get us. The gym wasn't safe so we had to relocate, isn't that right? Hiro, tell them, please. Tell them the truth." id chapter1_day1_event2_7ae2f866
 
-    j "Do you want him to tell the truth or tell them he wasn't involved? He can't do both."
+    j "Do you want him to tell the truth or tell them he wasn't involved? He can't do both." id chapter1_day1_event2_64426f23
 
     n "Jona, stop helping."
 
@@ -1344,56 +1262,57 @@ label chapter1_day1_event2:
 
     show rei sad talk
 
-    re "You lied to us!?"
+    re "You lied to us!?" id chapter1_day1_event2_ab70d7ac
 
     show yoku furious2 at left
 
-    y "So wher-re are the other-rs?"
+    y "So wher-re are the other-rs?" id chapter1_day1_event2_63b7c6a9
 
     n "There were no 'others', it was just us."
 
     show dyre mad at right
 
-    d "All of you knew. You knew, and then you just show up here like nothing happened? How long were you planning to lie to us?"
+    d "All of you knew. You knew, and then you just show up here like nothing happened? How long were you planning to lie to us?" id chapter1_day1_event2_205a3e19
 
-    hide yoku furious2
+    hide yoku
     show taiga grumpy at left
 
-    t "Does it matter? What's done is done."
+    t "Does it matter? What's done is done." id chapter1_day1_event2_91d980a8
 
-    hide dyre mad
+    hide dyre
     show ichita angry at right
 
-    i "Do you want to take your licks all at once or in small doses throughout the year?"
+    i "Do you want to take your licks all at once or in small doses throughout the year?" id chapter1_day1_event2_41106977
 
-    hide taiga grumpy
+    hide taiga
     show chisei mad1 at left
 
-    ch "Violence begets more violence."
-    ch "Demanding retribution will only further the cycle, no matter how deserved."
-    ch "Deliverance should only have been provided to the ones it was owed."
+    ch "Violence begets more violence." id chapter1_day1_event2_55a21504
+    ch "Demanding retribution will only further the cycle, no matter how deserved." id chapter1_day1_event2_66e595f5
+    ch "Deliverance should only have been provided to the ones it was owed." id chapter1_day1_event2_334896b5
 
-    hide chisei mad1
-    hide ichita angry
+    hide chisei
+    hide ichita
     show uitto yell at left
 
-    u "We don't owe you shit."
-    u "You don't like that we're here? Fine!"
-    u "Then leave us the fuck alone." 
-    u "We didn't come here to start shit, we came because we were forced to."
-    u "If anyone lays a hand on Hiro, I'll claw your eyes out."
+    u "We don't owe you shit." id chapter1_day1_event2_73453515
+    u "You don't like that we're here? Fine!" id chapter1_day1_event2_c344030f
+    u "Then leave us the fuck alone." id chapter1_day1_event2_fb7b33f6
+    u "We didn't come here to start shit, we came because we were forced to." id chapter1_day1_event2_3f7dc76c
+    u "If anyone lays a hand on Hiro, I'll claw your eyes out." id chapter1_day1_event2_b3192025
 
-    re "...You're not even going to apologize?"
+    re "...You're not even going to apologize?" id chapter1_day1_event2_f3a6ce21
 
     "Rei pleads with her last bit of hope. Everyone else looks on with a mixture of grief and loathing."
     "Uitto stands between us, acting as a rage-filled human shield. I can hear staff thundering down the stairs after us."
 
-    hide rei sad talk
-    hide uitto yell
+    hide rei
+    hide uitto
 
     menu:
 
         "Apologize":
+
             $ reRep += 1
             $ jRep -= 1
 
@@ -1403,13 +1322,13 @@ label chapter1_day1_event2:
 
             show jona mad at left
 
-            j "But it's not our fault they have survivor's guilt."
+            j "But it's not our fault they have survivor's guilt." id chapter1_day1_event2_834870e5
 
-            hide jona mad
+            hide jona
 
             n "Seriously dude, not helping."
 
-            hide rei sad talk
+            hide rei
 
         "Stay silent":
             $ Reputation -= 1
@@ -1420,23 +1339,23 @@ label chapter1_day1_event2:
 
             show hiro sad talk at left
 
-            h "I'm the one that owes you an apology."
+            h "I'm the one that owes you an apology." id chapter1_day1_event2_4eb7fa30
 
             show uitto serious at right
 
-            u "Hiro, no."
+            u "Hiro, no." id chapter1_day1_event2_fcdc1acd
 
-            h "But they're right; I failed as your leader. I should have taken better care of you all. I'm sorry."
+            h "But they're right; I failed as your leader. I should have taken better care of you all. I'm sorry." id chapter1_day1_event2_6a6c4d2d
 
-            hide hiro sad talk
-            hide uitto serious
-            hide rei sad talk
+            hide hiro
+            hide uitto
+            hide rei
 
     show vivaldi
 
     play music "music/Still.mp3"
 
-    v "Children, please disperse. If you have any concerns with your current situation, you are to bring them to me. That goes for all of you."
+    v "Children, please disperse. If you have any concerns with your current situation, you are to bring them to me. That goes for all of you." id chapter1_day1_event2_eba73956
 
     hide vivaldi
 
@@ -1448,62 +1367,55 @@ label chapter1_day1_event2:
 
     show uitto serious
 
-    u "Good. Then we'll be able to show them what happens when you fuck with the 'bad' kids."
+    u "Good. Then we'll be able to show them what happens when you fuck with the 'bad' kids." id chapter1_day1_event2_fa94f3cd
 
     n "We?"
 
-    hide uitto serious
     show uitto embarrassed
 
-    u "Did you not want my help?"
+    u "Did you not want my help?" id chapter1_day1_event2_5fa2fae2
 
     n "I didn't mean it like that, I just thought you hated me."
 
-    u "I don't hate you, dummy. Yeah, I'm still pissed that you ratted on us, but no one gets away with threatening my friends."
+    u "I don't hate you, dummy. Yeah, I'm still pissed that you ratted on us, but no one gets away with threatening my friends." id chapter1_day1_event2_2de40de5
 
     show hiro sad talk at left
 
-    h "Guys, we can't go around talking like this, people hate us enough as is. We're supposed to be laying low, remember?"
+    h "Guys, we can't go around talking like this, people hate us enough as is. We're supposed to be laying low, remember?" id chapter1_day1_event2_f9ead69c
 
     show jona frustrated at right
 
-    j "We've already been exposed and you're their main target, Hiro. Are you suggesting we sit back and watch you get attacked?"
+    j "We've already been exposed and you're their main target, Hiro. Are you suggesting we sit back and watch you get attacked?" id chapter1_day1_event2_f29b0411
 
-    hide hiro sad talk
-    show hiro beans at left
+    show hiro beans
 
-    h "No one said anything about being attacked."
+    h "No one said anything about being attacked." id chapter1_day1_event2_9d93dcd2
 
-    hide uitto embarrassed
     show uitto
 
-    u "Either way, a bounty's on your head, and it made everyone think it was okay to come for you."
+    u "Either way, a bounty's on your head, and it made everyone think it was okay to come for you." id chapter1_day1_event2_0351b130
 
     n "I'm not saying we have to start a fight with them, but Uitto's right. If we don't see this through, other people could jump on the bandwagon."
     n "With one message, they've butt fucked my campaign and our chances at going through school under the radar." 
     n "I'm going to find them and shut them down."
 
-    hide uitto
     show uitto playful
 
-    u "The lil' bitch gotta pay."
+    u "The lil' bitch gotta pay." id chapter1_day1_event2_9c1a2f5e
 
-    hide hiro beans
     show hiro guilty at left
 
-    h "You two are impossible."
+    h "You two are impossible." id chapter1_day1_event2_4e902fb8
 
-    hide jona frustrated
     show jona depressed at right
 
-    j "I'm not against helping, if you have a use for me that is."
+    j "I'm not against helping, if you have a use for me that is." id chapter1_day1_event2_afe384f1
 
+    h "Guys... Okay, fine. But no one gets hurt. We got a reputation to fix." id chapter1_day1_event2_59f97910
 
-    h "Guys... Okay, fine. But no one gets hurt. We got a reputation to fix."
-
-    hide hiro guilty
-    hide jona depressed
-    hide uitto playful
+    hide hiro
+    hide jona
+    hide uitto
 
     g "Reputation can be gained or lost during events. You can increase your reputation by helping other students."
     g "This is not the same as alignment. A villainous character can have a good reputation."
@@ -1521,10 +1433,9 @@ label chapter1_day1_event2:
     return
 
 label chapter1_day1_event3:
+
     play music "music/leaf.mp3"
     scene backgroundavroom
-
-    #[BG: PA Room (interior)]
 
     "Good, it's still unlocked."
     "The teachers' must have forgotten to lock it when they came back for us."
@@ -1538,50 +1449,45 @@ label chapter1_day1_event3:
 
     show uitto
 
-    u "There's not much here."
+    u "There's not much here." id chapter1_day1_event3_aba19869
 
     show jona frustrated at right
 
-    j "The teachers' might have confiscated everything already."
+    j "The teachers' might have confiscated everything already." id chapter1_day1_event3_bc7e67c0
 
     show kazz shine at left
 
-    kk "Nonononono; what are you doing!? No one's allowed in the booth!"
+    kk "Nonononono; what are you doing!? No one's allowed in the booth!" id chapter1_day1_event3_dc52391a
 
-    hide jona frustrated
-    show jona depressed at right
+    show jona depressed
 
-    j "I'm very much outside the booth. It's too small to fit all of us."
+    j "I'm very much outside the booth. It's too small to fit all of us." id chapter1_day1_event3_b57441e1
 
-    hide kazz shine
-    show kazz complain at left
+    show kazz complain
 
-    kk "Bro, just, okay?"
+    kk "Bro, just, okay?" id chapter1_day1_event3_b55ef952
 
     "Kazz runs in and turns off the overhead mic. Has that been on the whole time?"
 
-    kk "I get you're ticked off, but don't drag my equipment into this. I already lost half my tech today, I can't lose Pepper too."
+    kk "I get you're ticked off, but don't drag my equipment into this. I already lost half my tech today, I can't lose Pepper too." id chapter1_day1_event3_d1e7221c
 
-    hide uitto
     show uitto cringe
 
-    u "Pepper?"
+    u "Pepper?" id chapter1_day1_event3_1c7428f0
 
-    hide kazz complain
-    hide jona depressed
-    show jona frustrated at right
-    show kazz worry at left
+    show jona frustrated
+    show kazz worry
 
-    kk "My boom mic. Now get out. I'm the only one who's managed to keep PA privileges and I plan to keep it that way."
+    kk "My boom mic. Now get out. I'm the only one who's managed to keep PA privileges and I plan to keep it that way." id chapter1_day1_event3_6b738ae2
 
-    hide jona frustrated
+    hide jona
     show hiro empty at right
 
-    h "Alright, fine. We'll leave you alone with... Pepper."
+    h "Alright, fine. We'll leave you alone with... Pepper." id chapter1_day1_event3_8f1b17e4
 
-    hide kazz worry
-    hide hiro empty
-    hide uitto cringe
+    hide kazz
+    hide hiro
+    hide uitto
 
     "I think I have enough to start questioning people, but where to start?"
 
@@ -1608,29 +1514,29 @@ screen chapter1_point_and_click_objects:
     if check_book is False:
         imagebutton:
             focus_mask True
-            idle "images/Interactables/announcementlistidle.png"
-            hover "images/Interactables/announcementlist.png"
+            idle "images/Chapter1/PA/announcementlistidle.png"
+            hover "images/Chapter1/PA/announcementlist.png"
             action SetVariable("check_book", True), Hide("chapter1_point_and_click_objects"), Jump("chapter1_point_and_click_objects_book")
 
     if check_cd is False:
         imagebutton:
             focus_mask True
-            idle "images/Interactables/cdsidle.png"
-            hover "images/Interactables/cds.png"
+            idle "images/Chapter1/PA/cdsidle.png"
+            hover "images/Chapter1/PA/cds.png"
             action SetVariable("check_cd", True), Hide("chapter1_point_and_click_objects"), Jump("chapter1_point_and_click_objects_cd")
 
     if check_mic is False:
         imagebutton:
             focus_mask True
-            idle "images/Interactables/microphoneidle.png"
-            hover "images/Interactables/microphone.png"
+            idle "images/Chapter1/PA/microphoneidle.png"
+            hover "images/Chapter1/PA/microphone.png"
             action SetVariable("check_mic", True), Hide("chapter1_point_and_click_objects"), Jump("chapter1_point_and_click_objects_mic")
 
     if check_laptop is False:
         imagebutton:
             focus_mask True
-            idle "images/Interactables/laptopidle.png"
-            hover "images/Interactables/laptop.png"
+            idle "images/Chapter1/PA/laptopidle.png"
+            hover "images/Chapter1/PA/laptop.png"
             action SetVariable("check_laptop", True), Hide("chapter1_point_and_click_objects"), Jump("chapter1_point_and_click_objects_laptop")
 
 label chapter1_point_and_click_objects_book:
@@ -1712,11 +1618,11 @@ label chapter1_day2_event1:
 
     show jona happy at right_center
 
-    j "You're alive! No one else wanted to pair up with me, I had to work in a group of three because of you."
+    j "You're alive! No one else wanted to pair up with me, I had to work in a group of three because of you." id chapter1_day2_event1_5dc4e302
 
     show uitto smirk at left_center
 
-    u "If you're going to ditch, you could at least text us first. We were worried about you."
+    u "If you're going to ditch, you could at least text us first. We were worried about you." id chapter1_day2_event1_c7c121df
 
     n "Sorry, I set my alarm, but-"
 
@@ -1727,73 +1633,66 @@ label chapter1_day2_event1:
 
     show mariko mad talk at left
 
-    m "Seriously, Kazz, what's with killing the broadcast? I was almost late to class because of you."
+    m "Seriously, Kazz, what's with killing the broadcast? I was almost late to class because of you." id chapter1_day2_event1_2edfa01c
 
     show kazz worry
 
-    kk "I appreciate your concern, but you're at an eight and I need you at a five or less, my dude. We can't all be eights. Mu, please try again."
+    kk "I appreciate your concern, but you're at an eight and I need you at a five or less, my dude. We can't all be eights. Mu, please try again." id chapter1_day2_event1_f6a602a2
 
     show mu cringe at right
 
-    mu "I am trying. I've called, like, ten times. It's not down here."
+    mu "I am trying. I've called, like, ten times. It's not down here." id chapter1_day2_event1_ddbf4452
 
-    kk "Have you actually called ten times or are you estimating?"
+    kk "Have you actually called ten times or are you estimating?" id chapter1_day2_event1_7b1a8db8
 
-    hide mu cringe
+    hide mu
     show taiga grumpy at right
 
-    t "He could call forty and it wouldn't matter if it died in the middle of the night."
-    t "I'm sure it'll turn up eventually. You can live a few days without your phone, can't you?"
+    t "He could call forty and it wouldn't matter if it died in the middle of the night." id chapter1_day2_event1_aa4a9ba0
+    t "I'm sure it'll turn up eventually. You can live a few days without your phone, can't you?" id chapter1_day2_event1_4581b49a
 
-    hide kazz worry
     show kazz dead
 
-    kk "I can see my life flash before my eyes. So many choice memes."
+    kk "I can see my life flash before my eyes. So many choice memes." id chapter1_day2_event1_2488afbe
 
-    hide kazz dead
     show kazz shine
-    hide mariko mad talk
+    hide mariko
     show kitsune cry talk1 at left
 
-    k "...My demo reels."
+    k "...My demo reels." id chapter1_day2_event1_e8c5c68e
 
-    kk "...The embarrassing pictures of Dyre."
+    kk "...The embarrassing pictures of Dyre." id chapter1_day2_event1_1bb59f0c
 
-    hide taiga grumpy
-    show taiga at right
+    show taiga
 
-    t "How embarrassing?"
+    t "How embarrassing?" id chapter1_day2_event1_bee1859c
 
-    hide kazz shine
     show kazz talk
 
-    kk "Don't know; he hasn't seen them yet... I think."
+    kk "Don't know; he hasn't seen them yet... I think." id chapter1_day2_event1_75544a6e
 
-    hide kitsune cry talk1
-    show kitsune apathetic at left
+    show kitsune apathetic
 
-    k "Dyre didn't take your phone, ding dong, it's obviously one of them."
+    k "Dyre didn't take your phone, ding dong, it's obviously one of them." id chapter1_day2_event1_5d8c21da
 
-    hide kitsune apathetic
-    show kitsune mad at left
+    show kitsune mad
 
     "Kitsune glares at us."
 
     hide taiga
     show mariko upset talk at right
 
-    m "Let's not jump to thinking it's stolen. It's probably under his pillow or something stupid."
+    m "Let's not jump to thinking it's stolen. It's probably under his pillow or something stupid." id chapter1_day2_event1_f49489b5
 
-    hide mariko upset talk
-    hide kazz talk
+    hide mariko
+    hide kazz
     show hiro sad talk at right
 
-    h "Exactly, there's no reason for us to take Kazz's phone. All of us have the same crappy model anyway."
+    h "Exactly, there's no reason for us to take Kazz's phone. All of us have the same crappy model anyway." id chapter1_day2_event1_81b31a86
 
-    hide kitsune mad
-    show kitsune apathetic at left
+    show kitsune apathetic
 
-    k "She would. She's been so jelly of me ever since we got here and now she's trying to sabotage my debut a second time!"
+    k "She would. She's been so jelly of me ever since we got here and now she's trying to sabotage my debut a second time!" id chapter1_day2_event1_dd1c881c
 
     show uitto sigh
 
@@ -1801,41 +1700,40 @@ label chapter1_day2_event1:
 
     n "Second time?"
 
-    u "...Yeah, I was hoping you'd know what they're talking about. You sure I never complained about a mouthy, white-haired peacock?"
+    u "...Yeah, I was hoping you'd know what they're talking about. You sure I never complained about a mouthy, white-haired peacock?" id chapter1_day2_event1_c4052692
 
     n "Nope, I got nothing."
 
-    u "Well, if Nagen doesn't remember it, it didn't happen."
+    u "Well, if Nagen doesn't remember it, it didn't happen." id chapter1_day2_event1_e2c8988d
 
-    hide kitsune apathetic
-    show kitsune mad2 at left
+    show kitsune mad2
 
     "Kitsune trembles, her jaw clenched tight."
 
-    k "You take that back, you self-centered harlot."
+    k "You take that back, you self-centered harlot." id chapter1_day2_event1_104a816d
 
-    hide uitto sigh
     show uitto serious 
 
-    u "Honey, it's not a bit we're doing."
-    u "I honestly don't remember what you're talking about and we have zero interest in that nerd's little trinket."
+    u "Honey, it's not a bit we're doing." id chapter1_day2_event1_c8917fc7
+    u "I honestly don't remember what you're talking about and we have zero interest in that nerd's little trinket." id chapter1_day2_event1_58da3833
 
-    hide hiro sad talk
-    show hiro sad smile at right
+    show hiro sad smile
 
     "Hiro steps between the two feuding girls with a stern expression."
 
-    h "No one here has stolen anything."
-    h "If you want our help looking for Kazz's phone, that's one thing, but don't go blaming us for everything that goes wrong just because you can."
-    h "Kazz, what does it look like?"
+    h "No one here has stolen anything." id chapter1_day2_event1_41abcaec
+    h "If you want our help looking for Kazz's phone, that's one thing, but don't go blaming us for everything that goes wrong just because you can." id chapter1_day2_event1_b3081f5d
+    h "Kazz, what does it look like?" id chapter1_day2_event1_218ec27d
 
-    hide uitto serious
+    hide uitto
     show kazz talk
 
-    kk "Black with an hourglass full of skulls on the back."
+    kk "Black with an hourglass full of skulls on the back." id chapter1_day2_event1_09b74ba3
 
-    hide hiro sad smile
-    hide kitsune mad2
+    hide hiro
+    hide kitsune
+
+    call investigation_profile_set(profile_kazz, True)
 
     #[Player Choice]
     #A. We'll keep an eye out ( No quest for now, we gotta slim down the scope )
@@ -1850,39 +1748,39 @@ label chapter1_day2_event1:
 
     show mu shame at left
 
-    mu "That's what everyone's been saying."
+    mu "That's what everyone's been saying." id chapter1_day2_event1_f259f0ae
 
     n "I don't know what else to tell you, man."
 
     show mariko upset talk at right
 
-    m "Come on guys, let's check somewhere else. We might have better luck if we split up."
+    m "Come on guys, let's check somewhere else. We might have better luck if we split up." id chapter1_day2_event1_b050d855
 
-    hide mariko upset talk
-    hide kazz talk
-    hide mu shame
+    hide mariko
+    hide kazz
+    hide mu
 
     "The bell rings, leaving us only five minutes until our next class. As the others depart, Jona shakes his head."
 
     show jona depressed
 
-    j "Things would be so much easier if some of us were nicer."
+    j "Things would be so much easier if some of us were nicer." id chapter1_day2_event1_1caf8e0c
 
     show hiro grumpy at left
 
-    h "Hey!"
+    h "Hey!" id chapter1_day2_event1_7e06c1c3
 
     show jona frustrated
 
-    j "I'm not bagging on you, man, but I'm not spending any of my breaks looking for someone else's stuff."
-    j "One of you two should do it, you were the meanest."
+    j "I'm not bagging on you, man, but I'm not spending any of my breaks looking for someone else's stuff." id chapter1_day2_event1_f06b78bd
+    j "One of you two should do it, you were the meanest." id chapter1_day2_event1_2081fae7
 
     n "What did I do?"
 
     show uitto at right
 
-    u "Defended me it seems, but hey, I'm not complaining."
-    u "Anyway, Jona, no one promised we'd find it."
+    u "Defended me it seems, but hey, I'm not complaining." id chapter1_day2_event1_f8272c6e
+    u "Anyway, Jona, no one promised we'd find it." id chapter1_day2_event1_6d271c99
 
     hide uitto
     hide jona
@@ -2162,7 +2060,7 @@ label chapter1_day2_event3:
     "I guess I'll come back later."
     "I turn around to leave and come face to chest with one of Kazz's friends."
 
-    show Mu
+    show mu
 
     mu "You again? Do you need something?"
 

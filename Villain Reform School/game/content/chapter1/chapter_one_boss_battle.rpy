@@ -537,13 +537,13 @@ label post_nagen_turn:
 
         if turns_passed == 0:
 
-            m "It doesn’t matter what you do, Nagen, I won’t feel a thing."
+            m "It doesn't matter what you do, Nagen, I won't feel a thing."
 
-            "But just because she can’t feel it, doesn’t mean she can’t be injured."
+            "But just because she can't feel it, doesn't mean she can't be injured."
 
         elif turns_passed == 1:
 
-            m "This is nothing compared to cheer camp. Do you know how many broken bones I’ve walked off? What’s the matter, Nagen, scared to fight a girl?"
+            m "This is nothing compared to cheer camp. Do you know how many broken bones I've walked off? What's the matter, Nagen, scared to fight a girl?"
 
             "Why is she purposely egging me on?"
 
@@ -558,7 +558,7 @@ label post_nagen_turn:
 
         elif turns_passed == mariko_halfway_post_turns + 4:
 
-            "Mariko’s ankle gives out beneath her. A tangled mess of belts and heels lays helpless on the ground."
+            "Mariko's ankle gives out beneath her. A tangled mess of belts and heels lays helpless on the ground."
 
     return
 
@@ -568,13 +568,13 @@ label post_mariko_turn:
     if mariko_halfway is False:
         if turns_passed == 2:
 
-            m "You’re making this too easy. Even the bottom left of the pyramid could deck you with one punch."
+            m "You're making this too easy. Even the bottom left of the pyramid could deck you with one punch."
 
             "She says that, but she can barely move in that costume."
 
         elif turns_passed == 3:
 
-            m "This isn’t going to work if you don’t fight back. C’mon! Don’t you want to save your friend?"
+            m "This isn't going to work if you don't fight back. C'mon! Don't you want to save your friend?"
 
     elif mariko_halfway is True:
         if turns_passed == mariko_halfway_post_turns + 1:
@@ -583,13 +583,13 @@ label post_mariko_turn:
         
         elif turns_passed == mariko_halfway_post_turns + 3:
 
-            m "Did any of them think of me at all while I was looking for them? If I can just... take you down. They’ll forgive me... they’ll have to forgive me."
+            m "Did any of them think of me at all while I was looking for them? If I can just... take you down. They'll forgive me... they'll have to forgive me."
 
         elif turns_passed == mariko_halfway_post_turns + 4:
 
             m "Please... forgive me."
 
-            "But I know she isn’t talking to me."
+            "But I know she isn't talking to me."
 
     return
 
