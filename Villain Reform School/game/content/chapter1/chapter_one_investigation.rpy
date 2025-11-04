@@ -9,6 +9,8 @@ label chapter1_investigation_chisei:
 
     n "Need some help?"
 
+    show chisei sad talk2
+
     ch "I suppose."
     ch "Do I look that silly?"
 
@@ -16,6 +18,8 @@ label chapter1_investigation_chisei:
 
     "I pick up the chalk."
     "Before I can hand it to her, she points at the ground."
+
+    show chisei smile talk1
 
     ch "A line, please. I need the size of the stage."
 
@@ -26,11 +30,15 @@ label chapter1_investigation_chisei:
 
     n "Can't you get the dimensions from the teachers?"
 
+    show chisei talk1
+
     ch "The plans are 'around here somewhere'."
     ch "I can measure it all myself before Mr. Inukai can hunt it down..."
     ch "You can laugh. I know I am slow."
 
     n "Oh. Sorry, I had something on my mind."
+
+    show chisei talk2
 
     ch "What is it?"
 
@@ -44,7 +52,7 @@ label chapter1_investigation_chisei_loop:
 
             n "What were you doing the day before the first day of class?"
 
-            show chisei
+            show chisei sad talk1
 
             ch "I wanted to find some potential plays for the drama club before drafting the recruitment announcement."
             ch "So that night, I went to look around the shelves on the first floor."
@@ -52,10 +60,14 @@ label chapter1_investigation_chisei_loop:
 
             n "The hallways do get really eerie at night."
 
+            show chisei talk3
+
             ch "Exactly! The lack of artificial light at night is welcoming to the stars, but it shrouds the interior in shadows."
             ch "Confronting sirens, armed only with a flashlight, I felt my heart stop for a second."
 
             n "Metaphorical sirens or weird noises?"
+
+            show chisei sad talk3
 
             ch "A loud series of noises, around the lockers, I think."
             ch "I did not pursue the matter further."
@@ -78,13 +90,15 @@ label chapter1_investigation_chisei_loop:
 
             "I show her the announcement list."
  
-            show chisei
+            show chisei talk2
 
             ch "I am glad Ms. Yamamoto is a patron of the arts."
             ch "Without her support, I would not have been granted approval for the drama club."
             ch "Now it is just a matter of gathering members."
 
             n "Does that mean she submitted your ad for you?"
+
+            show chisei talk1
 
             ch "No, I had to sign out a key from the student council."
             ch "I managed to get my ad in after Momoko, but before the head cheerleader."
@@ -100,7 +114,7 @@ label chapter1_investigation_chisei_loop:
         "Leave":
             pass
 
-    show chisei
+    show chisei frown2
 
     ch "....."
 
@@ -120,6 +134,8 @@ label chapter1_investigation_chisei_loop:
 
     n "What did it say, if you don't mind me asking?"
 
+    show chisei sad talk1
+
     ch "....."
     ch "Attack the crowd and be thrown to the lions."
 
@@ -131,6 +147,7 @@ label chapter1_investigation_chisei_loop:
 
     n "The only thing around here is Taiga's rabbit and pigeons."
 
+    show chisei sad talk2
     ch "I hope it is nothing. I never know what to do with anonymous messages, especially cryptic ones."
     ch "All it does is bum people out, but then I wonder if I have a moral obligation to share?"
 
@@ -141,11 +158,14 @@ label chapter1_investigation_chisei_loop:
     n "Then don't worry too much about it."
     n "You're not a spiritual post office."
 
+    show chisei scheme
+
     ch "Y-yeah."
     ch "Yeah! I am not everyone's personal fortune cookie, I am a different kind of snack."
 
     "Her sudden burst of energy catches me off guard and I can't help myself; I laugh."
 
+    show chisei smile talk1
     ch "I finally got you to smile!"
 
     hide chisei
@@ -182,6 +202,8 @@ label chapter1_investigation_dyre:
 
     n "But why here? It's basically outdoors."
 
+    show dyre smile
+
     d "It's also one of the few places without security cameras."
     d "None of the teachers have time to come up here, so it's the perfect spot to set up shop. Metaphorically speaking that is."
 
@@ -190,10 +212,14 @@ label chapter1_investigation_dyre:
 
     n "Cool. Look, I actually came to talk to you about something else."
 
+    show dyre smirk 
+
     d "Oooh, let me guess, you're playing detective and want to cross examine me as a witness."
     d "Are you going for a Sherlock vibe or Batman?"
 
     n "This is serious, Dyre."
+
+    show dyre talk1
 
     d "I'm just trying to figure out how long this is going to take."
     d "No need to take it so personally."
@@ -206,7 +232,7 @@ label chapter1_investigation_dyre_loop:
 
         "Alibi":
 
-            show dyre
+            show dyre talk1
 
             d "It was the first day of school; there was a bunch of 'get to know you' lectures and other nonsense."
             d "Huge waste of time, but everyone saw me in class."
@@ -218,15 +244,22 @@ label chapter1_investigation_dyre_loop:
 
             "He says with a knowing smile, then sighs."
 
+            show dyre talk2
+
             d "I'm sure you've heard by now, but Kazz brought in a bunch of contraband into the school."
             d "It's a bunch of tech stuff, which I wanted to be able to borrow, but he wouldn't shut up about having it."
             d "So, I got worried it'd get confiscated or stolen."
 
             n "What did you do?"
 
+            show dyre smirk
+
             d "I had Genki hide his Echo in the recording booth when she was dropping off her club request form."
             d "I thought it'd be funny to have him freak out for a bit just to have it be right under his nose."
             d "Y'know, teach him a lesson before he got his stuff taken away."
+            
+            show dyre sad talk
+            
             d "Turns out I was a little late for that."
 
             n "So Mariko's the last one to touch his echo?"
@@ -243,7 +276,7 @@ label chapter1_investigation_dyre_loop:
 
                 "Computer":
 
-                    show dyre
+                    show dyre disturbed
 
                     n "Someone was having trouble getting the echo to do what they wanted."
                     n "The history is full of searches on how to leave a recorded message."
@@ -251,6 +284,8 @@ label chapter1_investigation_dyre_loop:
                     d "...that idiot."
 
                     n "So you know who it is?"
+
+                    show dyre talk2
 
                     d "I was making a general statement."
                     d "Whoever left without clearing their internet history is an idiot."
@@ -263,7 +298,7 @@ label chapter1_investigation_dyre_loop:
 
                 "Announcment List":
 
-                    show dyre
+                    show dyre sad talk
 
                     d "That many people want to start a club, hunh?"
                     d  "No wonder Mariko's been so competitive with recruiting."
@@ -278,7 +313,7 @@ label chapter1_investigation_dyre_loop:
 
                 "CDs":
 
-                    show dyre
+                    show dyre talk2
 
                     d "Kazz already gave me a tour of the booth. I don't need a second."
 
@@ -293,7 +328,7 @@ label chapter1_investigation_dyre_loop:
         "Leave":
             pass
 
-    show dyre
+    show dyre talk1
 
     "By this point, Dyre has completely abandoned his attempt to rearrange the roof."
     "He regards me with the same amount of intrigue and confusion one might have toward a foreign commercial."
@@ -302,16 +337,22 @@ label chapter1_investigation_dyre_loop:
 
     n "Yeah. I think everyone has made that abundantly clear."
 
+    show dyre 
+
     d "Forgive me for doubting, I just didn't want to believe it, even though the truth was so obvious."
     d "It's just so disappointing to see how low you've sunk."
 
     "Honestly, I don't know what to say. He doesn't even look that mad."
+
+    show dyre scowl
 
     d "You need to figure out real quick what you stand for or you're not going to like the results."
     d "No one's going to wait around for you to make up your mind."
 
     n "What are you talking about?"
     n "I know what happened wasn't ideal, but it was the only way to protect my friends."
+
+    show dyre talk2
 
     d "If you really believed that, you wouldn't be here."
 
@@ -347,6 +388,8 @@ label chapter1_investigation_ichita:
 
     n "Dude, you know they don't want us in there. There's some kind of amoeba in it or something."
 
+    show ichita think
+
     i "Those only live in standing water, all this stuff is an offshoot of the river."
 
     "He lays back on the dock, his legs dangling over the edge."
@@ -355,6 +398,8 @@ label chapter1_investigation_ichita:
     i "We'd be totally fine with a few floaties or something."
 
     n "It's really too cold to be doing that kind of stuff anyway."
+
+    show ichita shout
 
     i "Why you gotta constantly crush my dreams, man? I know you're not here to fight, so what do you want?"
 
@@ -370,6 +415,8 @@ label chapter1_investigation_ichita:
 
     n "I don't know, literally anything noteworthy or out of the ordinary."
 
+    show ichita surprised
+
     i "I mean, I'll try, but I don't make any promises."
 
     hide ichita
@@ -380,7 +427,7 @@ label chapter1_investigation_ichita_loop:
 
         "Alibi":
 
-            show ichita
+            show ichita mock
 
             i "I spend every chance I get outside. The grounds here are huge; I still haven't seen everything yet."
             i "Besides, the school building's kinda creepy, don't you think?"
@@ -392,12 +439,17 @@ label chapter1_investigation_ichita_loop:
 
             n "People? Who?"
 
+            show ichita think
+
             i "Chisei and Kietsu mentioned it, but maybe it's just a Vision Major thing."
             i "Or a 'don't be in the school unsupervised' thing."
 
             n "Let's hope for the second."
 
             i "I guess. But what good is an alarm if there's no one to respond to it?"
+            
+            show ichita angry
+            
             i "Unless... You don't think we're being recorded, do you?"
 
             n "I didn't... before."
@@ -408,23 +460,25 @@ label chapter1_investigation_ichita_loop:
 
             i "Sorry. I'm used to having a camera in my room, so it seemed like the next logical conclusion."
 
-            hide ichita
-
             n "Not helping."
 
             "Please god, don't let there be a camera in my room."
+
+            hide ichita 
 
             jump chapter1_investigation_ichita_loop
 
         "Show Evidence":
 
-            "I asked Nagen about the missing phone."
+            "I asked Ichita about the missing phone."
 
-            show ichita
+            show ichita surprised
             
             i "Wait, that was Kazz's. I think I might know where it is?"
 
             n "Really?"
+
+            show ichita annoyed
 
             i "Yeah, Kitsune n' I found this black thing in the dirt by the dorm."
             i "I thought it was a taser at first because the case was covered in skulls n' junk."
@@ -432,6 +486,8 @@ label chapter1_investigation_ichita_loop:
             i "So she went to Setsuna for help."
 
             n "Did you see her give it to Setsuna?"
+
+            show ichita sad talk2
 
             i "Well, no, but the thing was basically a paperweight without a passcode."
             i "I can't imagine it'd be too useful to anyone other than Kazz."
@@ -450,7 +506,7 @@ label chapter1_investigation_ichita_loop:
 
     #-Outro-
 
-    show ichita
+    show ichita shout
     
     i "What exactly are you going to do when you figure out who it is?"
 
@@ -460,9 +516,13 @@ label chapter1_investigation_ichita_loop:
 
     n "What? No! I'll- that isn't any of your business."
 
+    show ichita angry
+
     i "Like hell it isn't! That bastard scared the shit out of everybody with that announcement, going off like we're trapped here. It's making people stir crazy."
 
     "...Is that why he's out here?"
+
+    show ichita scowl
 
     i "We have to be here for at least three years and they start us out with this nightmare-fuel calling card, what an asshole."
 
@@ -472,13 +532,19 @@ label chapter1_investigation_ichita_loop:
 
     n "...Great."
 
+    show ichita shout
+
     i "But, I'm also not going to support a hypocrite that wants to drag everyone into their drama. As far as I'm concerned, you're both the same. If I ever find them, I will shove them into a locker."
 
     "I can barely fit my backpack into my locker, but I don't think it's a good idea to bring that up."
 
     n "Umm... thanks, I guess."
 
+    show ichita mock
+
     i "No problem. Now, if you don't mind, I'm going to take a nap."
+
+    hide ichita
 
     "He still doesn't get up."
 
@@ -488,7 +554,6 @@ label chapter1_investigation_ichita_loop:
 
     "Damn, that was fast. I should go now."
 
-    hide ichita
 
     $ reveal_flag2 = True
 
@@ -591,7 +656,7 @@ label chapter1_investigation_kazz_loop:
     
                 n "I found it, but..."
 
-                show kazz talk
+                show kazz worry
 
                 kk "Oh no, what happened? Did it get put in rice in time?"
 
@@ -602,6 +667,8 @@ label chapter1_investigation_kazz_loop:
                 n "It kept making noise in the lockers and she didn't know who it belonged to."
                 n "The teachers probably don't know either, otherwise you'd be in trouble already."
 
+                show kazz dead 
+
                 kk "Awesome! Wait, no, not awesome."
                 kk "If I don't claim it, it could end up in the garbage, but then I would get detention."
                 kk "Who's locker was it in? I checked all the empty ones three times."
@@ -610,13 +677,19 @@ label chapter1_investigation_kazz_loop:
 
                 "Everything's a mess right now, but the bottom line is Kazz's 'friends' were the ones running off with his stuff."
 
-                kk "That traitor is dead to me now. Welp, nothing I can do about it now, I guess."
+                kk "That traitor is dead to me now."
+
+                show kazz talk
+
+                kk "Welp, nothing I can do about it now, I guess."
                 kk "I don't have any money, but here, would this be an okay reward?"
 
                 "He hands me a foil card in a plastic sleeve."
 
                 n "Is this a KG card? Where did you get this?"
                 n "They stopped making them years ago."
+
+                show kazz sad talk 
 
                 kk "I used to collect them when I was real little."
                 kk "It's a golden age hero, so it might be worth five bucks if you can find a collector that still buys them."
@@ -625,6 +698,8 @@ label chapter1_investigation_kazz_loop:
 
                 "I had to leave my old collection behind when I ran away from home."
                 "Maybe I should try collecting them again."
+
+                show kazz grin
 
                 kk "Glad you like it!" #(+Memento Mori Card)
             
@@ -762,12 +837,16 @@ label chapter1_investigation_kazz_loop:
 
                 "Computer":
 
+                    show kazz worry
+
                     n "Your Echo was in there too, but it got confiscated before I could get there."
 
                     kk "It shouldn't have been in there at all."
                     kk "Maybe it was Setsuna's and she got in to use the computer. She has one too, you know."
 
                     n "Any way to prove it?"
+
+                    show kazz sad talk
 
                     kk "Well, you can ask it to ID the account attached."
                     kk "Plus, mine plays Booty Pirate every morning at 8AM."
@@ -777,6 +856,8 @@ label chapter1_investigation_kazz_loop:
                     n "Someone new to the device was trying to get it to play that message automatically."
 
                     "And that could be anyone." 
+
+                    hide kazz
                     
                     $ inventory.ShowClue(clue_account)
 
@@ -808,16 +889,16 @@ label chapter1_investigation_kazz_loop:
 
                     #[B/W CG of Rei confronting Nagen]
 
-                    scene Ch1_1
+                    scene backgroundCh1_1
     
                     "It would have been impossible to make it back in time without being out of breath."
-
-                    scene backgroundhide
 
                     $ inventory.ShowClue(clue_friends_list)
 
                     #[Rei, Mu, Yoku, Dyre, Taiga, Ichita, and Chisei have been removed from the suspect list]
                     "Rei, Mu, Yoku, Dyre, Taiga, Ichita and Chisei... they're not the one's responsible."
+
+                    scene backgroundhide
 
                     jump chapter1_investigation_kazz_loop
 
@@ -1034,12 +1115,13 @@ label chapter1_investigation_kitsune:
     "I find Kitsune in the library with her head down on one of the desks."
     "She usually seems so put together, or at least, she tries really hard to seem that way. For a moment, I'm seriously worried."
 
-    show kitsune
+    show kitsune sulk
 
     k "You wouldn't happen to have Tylenol or something, would you?"
 
     n "No. Shouldn't you go to the nurse's office for something like that?"
 
+    show kitsune cry
     k "Absolutely no, I'd have to walk."
 
     "She kicks at a pair of abandoned heels."
@@ -1055,14 +1137,27 @@ label chapter1_investigation_kitsune:
 
     n "I might know where to get some, but afterward I need to talk to you."
 
+    show kitsune 
+
     k "Yes, anything. You're literally a life saver."
+
+    scene backgroundblack 
+    #add timer
+
+    scene backgroundlibrary
+    
+    show kitsune
 
     "I return with a ziplock bag and a 'no questions asked' debt to Jona."
     "Kitsune accepts it with abundant appreciation."
 
+    show kitsune shocked
+
     k "I seriously underestimated how much endurance it takes to look this good everyday."
 
     "Yeah, she's definitely feeling better."
+
+    show kitsune smug
 
     k "Well, I did say I would owe you, so what exactly were you hoping to talk to me about?"
 
@@ -1074,7 +1169,7 @@ label chapter1_investigation_kitsune_loop:
 
         "Alibi":
 
-            show kitsune
+            show kitsune smug
 
             "Why do I get the feeling I'm going to regret asking this?"
 
@@ -1088,9 +1183,14 @@ label chapter1_investigation_kitsune_loop:
 
             n "You tried making your own clothes?"
 
+            show kitsune mad
+
             k "I have a very specific image of what I want to look like."
             k "Unfortunately, my skills aren't up to speed with my taste level."
             k "Shoma caught me trying to dispose of the evidence and was kind enough to salvage my mess into this."
+            
+            show kitsune sulk
+
             k "Though I wish he'd just teach me instead of forcing me to pay him every time I need a new outfit."
             k "I can't afford to be indebted to someone like that."
             
@@ -1104,7 +1204,7 @@ label chapter1_investigation_kitsune_loop:
 
                 "Microphone":
 
-                    show kitsune
+                    show kitsune apathetic
 
                     k "It's a shame, isn't it?"
                     k "There's no recording equipment available to the students."
@@ -1112,12 +1212,16 @@ label chapter1_investigation_kitsune_loop:
 
                     n "How can you tell?"
 
+                    show kitsune talk2
+
                     k "When you have a telephone chain of recording devices and speakers, there will always be feedback or artifacts."
                     k "Something was set up to play the clip directly into the mic, live."
                     k "There's no way that was a person speaking either. Every person has a specific rhythm they speak in, but computers are flat."
                     k "Something that unnatural sounding had to be computer generated."
 
                     n "Why would that matter?"
+
+                    show kitsune talk1
 
                     k "Everything seems to have been done using Kazz's stuff, but he has ways of recording audio with the stuff he brought in."
                     k "We were supposed to start working on a few singles this weekend, but now...."
@@ -1130,7 +1234,7 @@ label chapter1_investigation_kitsune_loop:
 
                 "Missing Phone":
 
-                    show kitsune
+                    show kitsune mad
 
                     k "I should have known that was his, he's the only person I know who's snuck in tech they shouldn't have."
                     k "I just didn't take him for a skull kind of guy."
@@ -1141,6 +1245,8 @@ label chapter1_investigation_kitsune_loop:
                     k "I told him I was going to take it to the lost and found, but... I didn't want to get someone in trouble for losing something they cared about."
                     k "So I went to find someone on the council when I ran into Rei and Mariko."
 
+                    show kitsune teary
+
                     "She bites her lip."
 
                     k "Mariko recognized it, so I gave it to her."
@@ -1148,6 +1254,8 @@ label chapter1_investigation_kitsune_loop:
                     k "I just didn't think to question it."
 
                     n "But Kazz still hasn't found it. So she didn't give it back to him."
+
+                    show kitsune shocked
 
                     k "Do you think she stole it? They're pretty close, why would she do something like that to him?"
                     k "You don't think she's just pretending to be friends with him so she can take advantage of him?"
@@ -1170,7 +1278,7 @@ label chapter1_investigation_kitsune_loop:
 
             pass
 
-    show kitsune
+    show kitsune cry talk2
 
     "She gently tugs at her hair, threading her thumbs through her pigtails."
     "I think something's still bothering her."
@@ -1185,6 +1293,8 @@ label chapter1_investigation_kitsune_loop:
 
     n "Yeah... I'm glad someone else here is taking this seriously. A lot of people have been making me feel like I'm being paranoid."
 
+    show kitsune mad
+
     k "People generally send threats hoping fear will be enough to get them what they want."
     k "If they really wanted to fight, they wouldn't have warned you guys at all. Instead, all of you stayed."
 
@@ -1194,6 +1304,8 @@ label chapter1_investigation_kitsune_loop:
     k "And if the scare tactics aren't working, how else are they going to guarantee Hiro won't come to class?"
 
     "A number of things come to mind, none of them good."
+
+    show kitsune apathetic
 
     k "If I were you, I wouldn't be investigating on your own like this."
     k "Especially when meeting people in places without witnesses."
@@ -1222,6 +1334,8 @@ label chapter1_investigation_kitsune_loop:
 label chapter1_investigation_momoko:
 
     scene backgroundlab
+
+    #insert loud music
     
     "Momoko's music is so loud I can hear it down the hall."
     "I peer in through the window to make sure she isn't handling any chemicals before opening the door."
@@ -1230,23 +1344,32 @@ label chapter1_investigation_momoko:
 
     "No good, she can't hear me."
     "I flick one of the light switches on and off."
-    "She jumps, but the minute she sees me a huge smile spreads across her face."
-    "I can see her lips moving, but all I hear is the music."
 
+    show momoko happy
+    "She jumps, but the minute she sees me a huge smile spreads across her face."
+    show momoko surprised
+    "I can see her lips moving, but all I hear is the music."
+    show momoko manic
     n "Where's the stereo!? THE STEREO?"
+
+    #turn off loud music
 
     "Click."
 
-    show momoko
+    show momoko worry
 
     mh "-keep telling them it's not my fault; the sinks smelled when I got here."
 
     n "Glad to see you're not trying to avoid me."
 
+    show momoko confused
+
     mh "Eh, what's the point when you could find me anyway?"
     mh "We're stuck in this fish bowl together for the next four years, why make enemies now?"
 
     n "...Thanks."
+
+    show momoko
 
     mh "You're welcome! Did you need something?"
 
@@ -1258,7 +1381,7 @@ label chapter1_investigation_momoko_loop:
 
         "Alibi":
 
-            show momoko
+            show momoko confused
 
             mh "The first day of school... I was here."
             mh "Every lab has a system for where things go."
@@ -1267,6 +1390,8 @@ label chapter1_investigation_momoko_loop:
 
             n "Anybody come by the lab?"
 
+            show momoko
+
             mh "Kazz helped me set up the stereo. That was nice."
             mh "Especially since I could just give him my club ad in person."
             mh "The more I can avoid the stairs, the better."
@@ -1274,6 +1399,8 @@ label chapter1_investigation_momoko_loop:
             "Right, the skates. It's probably a pain to take them off every time she wants to go to a different floor."
 
             n "I take it you haven't gone to the third floor then."
+
+            show momoko angry
 
             mh "There's nothing for me there."
 
@@ -1285,7 +1412,7 @@ label chapter1_investigation_momoko_loop:
 
             "I show Momoko the computer."
 
-            show momoko
+            show momoko puzzled 
 
             mh "Well, they certainly weren't shopping for an Alexa, no one's willing to drive this far for small deliveries."
             mh "Trust me, the next shipment of lighter fluid won't be here for two months."
@@ -1298,10 +1425,14 @@ label chapter1_investigation_momoko_loop:
 
             n "Really?"
 
+            show momoko worry
+
             mh "Yeah, I'm like; hello, chemistry and technology are two different zones."
             mh "'Oh Momo, you're smart, you must know–' No! I only know chemicals."
 
             n "You think anyone else has one?"
+            
+            show momoko talk1
 
             mh "Not likely. Or if they do, they're smart enough to actually hide it."
             mh "After this, we'll be lucky to keep our school phones."
@@ -1325,9 +1456,11 @@ label chapter1_investigation_momoko_loop:
 
     #-Outro-
 
+    show momoko
+
     n "...Is that beaker supposed to be smoking?"
 
-    show momoko
+    show momoko surprised
 
     mh "Spinach-laced-ridilin, turn off the lights!"
 
@@ -1336,6 +1469,8 @@ label chapter1_investigation_momoko_loop:
     mh "Not another one- Nagen, the lights!"
 
     "I plunge the room into darkness and the fire dissipates."
+
+    show momoko manic
 
     mh "Now I have to start from scratch! ...Maybe that's why the lashes were melting instead of gluing..."
 
@@ -1364,15 +1499,19 @@ label chapter1_investigation_mu:
     "I mean, I know he's a student here, but I assumed he'd spend his free time hiding in a corner getting high."
     "He's sitting at the stone table when I find him and looks up from his burner phone at me in surprise."
 
-    show mu
+    show mu laugh
 
     mu "I thought vampires hated the sunlight."
 
     n "You would know. Pretty sure your whole squad's allergic to sleeping."
 
+    show mu cringe
+
     mu "Don't remind me."
 
     "Hit a little too close to home I see."
+
+    show mu pout
 
     mu "I'm on break right now, but if it's an emergency-"
 
@@ -1380,6 +1519,8 @@ label chapter1_investigation_mu:
     n "I just wanted to ask you some questions about what's been going on at the school."
 
     "He gestures at the seat across from him. I take that as an open invitation."
+
+    show mu
 
     mu "Just questions. If you turn this into a cross examination, I'm leaving."
 
@@ -1395,17 +1536,21 @@ label chapter1_investigation_mu_loop:
 
         "Alibi":
 
-            show mu
+            show mu talk1
 
             mu "When I haven't been hanging out with Kazz and Dyre, I've been talking to you."
 
             n "Really?"
+
+            show mu shame
 
             mu "Yeah, funny how that works."
             mu "It's been nice to talk to other people, even if everyone's a little high strung."
             mu "What a way to start the year though. I thought the wrestling team's hazing was bad."
 
             n "I don't think the goblin on the PA system was hazing us."
+
+            show mu talk1
 
             mu "Wasn't thinking about that. Buuut, can you really rule out the possibility?"
 
@@ -1419,7 +1564,7 @@ label chapter1_investigation_mu_loop:
 
                 "Missing Phone":
 
-                    show mu
+                    show mu disgust
 
                     mu "I feel bad for Kazz, I really do, but bringing stuff you aren't supposed to have doesn't make you cool."
                     mu "He kept showing off and trying to impress people with all the stuff he managed to slip by the teachers."
@@ -1428,17 +1573,23 @@ label chapter1_investigation_mu_loop:
 
                     n "Does he know you guys took something from him as well?"
 
+                    show mu irate talk
+
                     mu "All they did was sneak it into his PA booth without telling him."
                     mu "Honestly, I'm surprised it took him so long to notice they moved it."
                     mu "Even then, we had to tell him where it was."
 
                     n "'They' not 'we'?"
 
+                    show mu cringe
+
                     mu "I'm just an idea man. I didn't have a clue how to get in the booth without raising suspicion."
                     mu "You've seen how guarded he is about it."
                     mu "I thought it'd be better to just hide it in a locker, but Dyre and Mariko were determined to hide it right under his nose."
 
                     n "When did all this happen?"
+
+                    show mu talk2
 
                     mu "During move-in day."
 
@@ -1455,7 +1606,7 @@ label chapter1_investigation_mu_loop:
 
                 "Computer":
 
-                    show mu
+                    show mu shame
 
                     "When I show him the search history, his face darkens."
 
@@ -1472,6 +1623,8 @@ label chapter1_investigation_mu_loop:
                     "I don't think he'll tell me who, but he might be able to confirm something else."
 
                     n "Is there a way to tell who gave it new commands?"
+
+                    show mu pout
 
                     mu "No. It can tell you what account it's logged into and what date it was added, but that's about it."
                     
@@ -1492,20 +1645,23 @@ label chapter1_investigation_mu_loop:
     #"I'm just going to let that one go."
 
     #-Outro-
-    
-    "I think it's fair to say that someone he's close with is involved."
+    show mu shame
 
-    show mu
+    "I think it's fair to say that someone he's close with is involved."
 
     mu "Nagen, I swear, I'll try my best to get to the bottom of this."
     mu "I don't know what I can do about it though."
 
     "Well, that's more than I was expecting."
 
+    show mu angry
+
     mu "It's just, I don't want to throw someone under the bus without evidence."
 
     n "You just hope that the conclusion you came to is wrong."
     n "Funny you won't share it with me."
+
+    show mu irate talk
 
     mu "It's not you I'm worried about."
     mu "It's the little murder hobos that you hang out with that has me worried."
@@ -1513,6 +1669,8 @@ label chapter1_investigation_mu_loop:
     mu "The last thing we need is a fight."
 
     "He gets up to leave."
+
+    show mu talk2
 
     mu "I'm sorry things ended up like this."
     mu "I thought I could trust my own friends."
@@ -1654,33 +1812,37 @@ label chapter1_investigation_rei:
 
     "She catches her blade one last time, but refuses to look at me."
 
-    show rei
+    show rei sad talk
 
     re "Say whatever you want."
 
     "I think that's as close as I'll get to a yes."
 
-    hide rei
-
     #-Negotiation-
     g "There will come times when people won't want to talk to you."
     g "You'll have one chance to convince them you're worth their time, though Charisma Majors may have more luck."
     
+    hide rei   
     menu:
 
         "What's wrong?":
-            n "You only practice like this when you're upset."
 
-            show rei
+            show rei irate
+
+            n "You only practice like this when you're upset."
 
             re "Am I not allowed to be angry?"
 
             n "That's not what I said. I'm just concerned is all."
 
+            show rei sad talk
+
             re "Well, I'm glad when you see me face to face, I'm worthy of your concern."
             re "For a second there, I thought you'd become a total sociopath."
 
             n "Rei-"
+
+            show rei disappointed
 
             re "I don't even know how to fully process this, okay?"
             re "Just- I'm trying to be mature and not mean, but it's hard."
@@ -1694,10 +1856,10 @@ label chapter1_investigation_rei:
 
         "I didn't know...":
     
+            show rei disappointed
+
             n "I never meant to hurt you or any of the other kids at school."
             n "I'm sorry things turned out like this."
-
-            show rei
 
             re "I just feel so stupid."
             re "We were all in the same class together for four years."
@@ -1706,15 +1868,19 @@ label chapter1_investigation_rei:
 
             n "Rei, it's not like that-"
 
+            show rei depressed
+
             re "It's not just you. No one here-"
             re "I think I'm the only one that thought we were all friends."
 
             "There are definitely people here I could have gone my whole life without seeing again."
             "I don't think there's anything I can say to make this right, but..."
-
+        
             n "I wanted to keep everyone safe too."
             n "That's why I couldn't leave you behind."
             n "I really was relieved to see you again, even if you don't want to talk to me again."
+
+            show rei sad
 
             re "I don't want to be mad at you. I really don't."
             re "If we're going to stay friends, you can't hide stuff from me."
@@ -1734,7 +1900,7 @@ label chapter1_investigation_rei_loop:
 
         "Alibi":
 
-            show rei
+            show rei think
     
             re "I've been mostly helping Mariko revive the cheer squad."
             re "We've been making posters, working on banners; we even got a spot on the announcements!"
@@ -1742,17 +1908,23 @@ label chapter1_investigation_rei_loop:
             n "What about flag line? That's why you brought all your armaments, isn't it?"
             n "There isn't a lot of opportunity for you to dance if you're a cheerleader."
 
+            show rei disappointed
+
             re "Most of my stuff's been confiscated."
             re "It'll take weeks to make decent prop replacements."
             re "Besides, cheer is more accessible to rookies than twirling."
 
             n "That sounds like Mariko talking, not you."
 
+            show rei irate
+
             re "She needs this more than I need flag line."
             re "Anything to make this place feel like a normal school, a place to make new friends, will help her."
             re "She's really starting to worry me."
 
             n "She doesn't seem that different to me."
+
+            show rei depressed
 
             re "Ever since we got here, even before we found out there could only be three clubs, she's been pushing herself without rest to form the squad."
             re "I've never seen her fumble during a performance like she did during the opening ceremony."
@@ -1765,6 +1937,8 @@ label chapter1_investigation_rei_loop:
 
             n "I'm sure she appreciates it."
 
+            show rei disappointed
+
             re "It's such a hopeless feeling watching her like this when I know something's wrong."
             re "I keep hoping she'll tell me what's really bothering her, but I'm not sure she knows how to."
 
@@ -1774,6 +1948,8 @@ label chapter1_investigation_rei_loop:
             $ inventory.ShowClue(clue_cheerad)
 
             jump chapter1_investigation_rei_loop
+
+            hide rei
 
         "Show Evidence":
 
@@ -1788,6 +1964,8 @@ label chapter1_investigation_rei_loop:
 
                     n "Kazz could have just logged into his account through the computer and programmed new commands through that, but this page is talking about how to use the app."
                     n "Plus, his phone was missing during that time. It's the only other way to program the thing."
+
+                    show rei sad talk
 
                     re "Maybe someone was borrowing it from him."
 
@@ -1805,7 +1983,7 @@ label chapter1_investigation_rei_loop:
 
                 "Missing Phone":
 
-                    show rei
+                    show rei talk2
 
                     re "Yeah, I've seen it."
                     re "But why? Kazz should have gotten it back by now."
@@ -1820,6 +1998,8 @@ label chapter1_investigation_rei_loop:
 
                     n "So you didn't see her give it to him?"
 
+                    show rei sad talk
+
                     re "No. But I don't see why she'd lie to me."
                     re "Besides, the two of them are friends, sort of..."
 
@@ -1830,7 +2010,7 @@ label chapter1_investigation_rei_loop:
 
                 "CDs":
 
-                    show rei
+                    show rei talk1
     
                     re "Between everyone here, that's not a bad collection."
                     re "Too bad he's not accepting MP3s. I might have some old music on a thumb drive somewhere."
@@ -1843,17 +2023,21 @@ label chapter1_investigation_rei_loop:
 
                 "Announcement List":
 
-                    show rei
+                    show rei sad talk
     
                     re "We're dead last on the list? That doesn't seem right."
 
                     n "Spots were first come, first serve. Was Mariko in there before the other girls?"
+
+                    show rei pout
 
                     re "Dyre had pulled her aside wanting to sneak something into the booth."
                     re "I had assumed that she dropped off the ad when she helped Dyre."
                     re "Maybe something came up?"
                     
                     n "At least you got in on time."
+
+                    show rei sad
 
                     re "....."
                     re "Yeah."
@@ -1867,7 +2051,7 @@ label chapter1_investigation_rei_loop:
         "Leave":
             pass
 
-    show rei
+    show rei irate
 
     re "After all this drama, I don't think I'll sleep well tonight."
 
@@ -1877,19 +2061,27 @@ label chapter1_investigation_rei_loop:
 
     "To a Vigor Major like her, maybe it's not."
 
+    show rei surprised
+
     re "But I should at least try and rest."
 
     "She hesitates and fumbles with her baton."
+
+    show rei depressed
 
     re "You know, some of us like to hang out in the cafe at night."
     re "If you came alone, I don't think people would chase you away."
 
     n "Quite the compelling pitch you got there."
 
+    show rei irate
+
     re "I'm just saying, if you have the energy, maybe you should drop by."
     re "It could be a good way to make new friends."
 
     n "You're asking me to ignore curfew and participate in a ritual B and E? You really are a troublemaker, aren't you?"
+
+    show rei brag
 
     re "Greatest memory in the world and you always seem to forget that."
     re "Besides, there's no rule against going in at night, so technically, it's okay."
@@ -1903,6 +2095,8 @@ label chapter1_investigation_rei_loop:
     n "I'd like to, but I like to sleep more."
 
     "Vigor Majors can be almost inhuman sometimes."
+
+    show rei talk2
 
     re "I'll see you around, Nagen."
 
@@ -2092,16 +2286,22 @@ label chapter1_investigation_setsuna_loop:
 
             "She groans into her hands."
 
+            show setsuna cringe
+
             s "I mean, for god's sake, there isn't enough time or mentors for everyone to get what they want."
             s "That isn't the council's fault."
 
             n "Are people still trying to get their clubs approved?"
+
+            show setsuna scoff
 
             s "More like they're yelling at me because all the spots got taken on the first day."
             s "We got a drama club, gaming club, cheer squad, and the student council. That's it."
             s "And it's not like I'm saying people can't hangout, they just can't get school credit for it."
 
             n "And how many of those clubs are you in?"
+
+            show setsuna relaxed
 
             s "All of them, obviously."
 
@@ -2115,7 +2315,7 @@ label chapter1_investigation_setsuna_loop:
 
         "Computer":
 
-            show setsuna
+            show setsuna tired talk
 
             s "Well there's two reasons the computer's search history's like that."
             s "Either A: the Echo was new or B: someone was borrowing it."
@@ -2124,9 +2324,13 @@ label chapter1_investigation_setsuna_loop:
 
             n "Not on the computer."
 
+            show setsuna relaxed
+
             s "Maybe the echo was stolen then."
 
             n "Hunh?"
+
+            show setsuna tired talk
 
             s "Think about it: if you were going to set up commands, why use mobile when the desktop was right there?"
             s "It would have been faster to type up that message on the computer rather than on a tiny screen."
@@ -2144,7 +2348,7 @@ label chapter1_investigation_setsuna_loop:
     #s "That's supposed to be there, it was donated to the school."
         "Missing Phone":
 
-            show setsuna
+            show setsuna scoff
 
             s "I gave that noisy thing to the principal."
             s "I mean, I assume that's the one you're talking about."
@@ -2152,16 +2356,22 @@ label chapter1_investigation_setsuna_loop:
 
             n "Where was it?"
 
+            show setsuna glare
+
             s "In Mu's locker of all places, and it was the only thing in there."
             s "I had to go through a stack of papers a mile high just to find the locker combination."
 
             n "Why didn't you just ask him?"
+
+            show setsuna impatient
 
             s "Why do you think? Starting out school with contraband is obviously suspicious."
             s "It's either his or belongs to someone he knows."
             s "I wouldn't put it past him to cover up for someone if he knew we were onto them."
 
             n "And you're sure it's Kazz's?"
+
+            show setsuna annoyed
 
             s "Everything seems to line up, unless someone has an identical phone case and ringtone."
             s "The screen was password locked, so I can't say with a hundred percent certainty."
@@ -2187,6 +2397,8 @@ label chapter1_investigation_setsuna_loop:
 
     n "Are you actually warming up to the idea of me being Student Council President?"
 
+    show setsuna cringe
+
     s "Barely. But I have to admit, there's only so much the three of us can do at this point."
     s "The school's full of strong personalities and we're seriously outnumbered."
     s "Besides, you respect me enough to listen to what I have to say, which is more than any opponent I could find would do."
@@ -2195,12 +2407,16 @@ label chapter1_investigation_setsuna_loop:
 
     n "If you didn't sign up for every club, you'd have the time to run the council yourself if it matters that much to you."
 
+    show setsuna glare
+
     s "A nice sentiment, but I'd run into the same problem only tenfold."
     s "It's one thing to be ignored as an accountant, but as a leader- Not worth the stress."
     s "Our best strategy is to make use of how you scare people to get them to listen to us."
     s "They've already given you a golden opportunity."
 
     n "You're expecting me to make an example of this?"
+
+    show setsuna apathetic
 
     s "I sure hope so. The real question is what kind of example you want to set."
 
@@ -2209,6 +2425,8 @@ label chapter1_investigation_setsuna_loop:
     s "I'll be watching you. We all will."
 
     "She turns her attention back to the overgrowth."
+
+    show setsuna cringe
 
     s "In the meantime, I'll need a pair of scissors."
 

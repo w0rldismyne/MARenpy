@@ -2634,7 +2634,7 @@ label chapter1_day4_event2:
     mh "Come on, you guys, this is the smartest idea I've had in a while."
     mh "But it'll only work if we have enough members."
 
-    show UCringe at left
+    show uitto cringe at left
 
     u "I don't think anyone will join if we're in your club, no offense."
 
@@ -2662,14 +2662,14 @@ label chapter1_day4_event2:
 
     "Before Momoko can seal the deal, Chisei bellows from down the hall."
 
-    hide UCringe
+    hide Uitto
     show chisei at left
 
     ch "Hark, deceiver!"
 
     "She's not terribly fast, but she makes up for it by shouting as she walks."
 
-    hide UCringe
+
     show chisei mad1 at left
 
     ch "You promised a fair duel."
