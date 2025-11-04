@@ -13,7 +13,9 @@ default clipboard = True
 
 define temporary_investigation_flashback = False
 
-init python:
+define temporary_prevent_clipboard_animations = False
+
+python early:
     class Profile:
         def __init__(self, Identifier, Name, Order):
             self._Identifier = Identifier
@@ -44,16 +46,16 @@ init python:
             else:
                 raise ValueError("Cannot be a value other than True or False.")
 
-define profile_kazz = Profile("kazz", "Kazz Kataki", 0)
-define profile_momoko = Profile("momoko", "Momoko Yoshino", 1)
-define profile_mariko = Profile("mariko", "Mariko Genki", 2)
-define profile_chisei = Profile("chisei", "Chisei Jikoma", 3)
-define profile_setsuna = Profile("setsuna", "Setsuna Hori", 4)
-define profile_dyre = Profile("dyre", "Dyre Okami", 5)
-define profile_kitsune = Profile("kitsune", "Kitsune Sumizome", 6)
-define profile_rei = Profile("rei", "Rei Watabe", 7)
-define profile_ichita = Profile("ichita", "Ichita Kinoshita", 8)
-define profile_mu = Profile("mu", "Oshin Murakami", 9)
+default profile_kazz = Profile("kazz", "Kazz Kataki", 0)
+default profile_momoko = Profile("momoko", "Momoko Yoshino", 1)
+default profile_mariko = Profile("mariko", "Mariko Genki", 2)
+default profile_chisei = Profile("chisei", "Chisei Jikoma", 3)
+default profile_setsuna = Profile("setsuna", "Setsuna Hori", 4)
+default profile_dyre = Profile("dyre", "Dyre Okami", 5)
+default profile_kitsune = Profile("kitsune", "Kitsune Sumizome", 6)
+default profile_rei = Profile("rei", "Rei Watabe", 7)
+default profile_ichita = Profile("ichita", "Ichita Kinoshita", 8)
+default profile_mu = Profile("mu", "Oshin Murakami", 9)
 
 default all_clipboard_profiles = []
 default clipboard_profiles = []
@@ -95,6 +97,7 @@ label investigation_progress_update:
 
 label investigation_interaction_mode:
 
+    $ temporary_prevent_clipboard_animations = False
     call screen investigate
 
 label investigation_interaction_clipboard_mode:
@@ -223,27 +226,27 @@ screen investigate():
             if clipboard is False:
                 at clipboard_slide_up
             action SetVariable("clipboard", True), Jump("investigation_interaction_clipboard_mode")
-    
+
         $ profile_count = 0
         $ clipboard_profiles.clear()
-    
+
         for profile in all_clipboard_profiles:
             if (profile.Visibility is True):
                 $ clipboard_profiles.append(profile)
                 $ profile_count += 1
-    
+
         $ profile_tracker = 4 * profile_tab
-    
+
         if (profile_tracker < profile_count):
             image f"images/Interactables/{clipboard_profiles[profile_tracker].ID}profile.png":
                 xpos 608
                 ypos -0.69
                 xanchor 0.0
                 yanchor 0.5
-    
+
                 if clipboard is False:
                     at profile_1_slide_up
-    
+
             text f"{clipboard_profiles[profile_tracker].Name}":
                 xpos 1338
                 ypos -0.69
@@ -252,20 +255,20 @@ screen investigate():
                 size 60
                 font "true-crimes.ttf"
                 color '#888888'
-    
+
                 if clipboard is False:
                     at profile_1_slide_up
-    
+
         if (profile_tracker + 1 < profile_count):
             image f"images/Interactables/{clipboard_profiles[profile_tracker + 1].ID}profile.png":
                 xpos 608
                 ypos -0.52
                 xanchor 0.0
                 yanchor 0.5
-    
+
                 if clipboard is False:
                     at profile_2_slide_up
-    
+
             text f"{clipboard_profiles[profile_tracker + 1].Name}":
                 xpos 1338
                 ypos -0.52
@@ -274,20 +277,20 @@ screen investigate():
                 size 60
                 font "true-crimes.ttf"
                 color '#888888'
-    
+
                 if clipboard is False:
                     at profile_2_slide_up
-    
+
         if (profile_tracker + 2 < profile_count):
             image f"images/Interactables/{clipboard_profiles[profile_tracker + 2].ID}profile.png":
                 xpos 608
                 ypos -0.35
                 xanchor 0.0
                 yanchor 0.5
-    
+
                 if clipboard is False:
                     at profile_3_slide_up
-    
+
             text f"{clipboard_profiles[profile_tracker + 2].Name}":
                 xpos 1338
                 ypos -0.35
@@ -296,20 +299,20 @@ screen investigate():
                 size 60
                 font "true-crimes.ttf"
                 color '#888888'
-    
+
                 if clipboard is False:
                     at profile_3_slide_up
-    
+
         if (profile_tracker + 3 < profile_count):
             image f"images/Interactables/{clipboard_profiles[profile_tracker + 3].ID}profile.png":
                 xpos 608
                 ypos -0.18
                 xanchor 0.0
                 yanchor 0.5
-    
+
                 if clipboard is False:
                     at profile_4_slide_up
-    
+
             text f"{clipboard_profiles[profile_tracker + 3].Name}":
                 xpos 1338
                 ypos -0.18
@@ -318,10 +321,10 @@ screen investigate():
                 size 60
                 font "true-crimes.ttf"
                 color '#888888'
-    
+
                 if clipboard is False:
                     at profile_4_slide_up
-    
+
         $ profile_tab = 0
 
 screen clipboard():
@@ -334,7 +337,7 @@ screen clipboard():
         xanchor 0.5
         yanchor 0.5
         text_size 55
-        action SetVariable("clipboard", False), ui.ChoiceJump("Interaction", "investigation_interaction_mode"), Hide("investigate")
+        action SetVariable("clipboard", False), Jump("investigation_interaction_mode"), Hide("investigate")
 
     frame:
 
@@ -343,11 +346,11 @@ screen clipboard():
         image "images/Interactables/clipboard.png"
 
         xpos 0.5
-        ypos 0.1
+        ypos 1.0
         xanchor 0.5
         yanchor 1.0
 
-        if clipboard is True:
+        if clipboard is True and temporary_prevent_clipboard_animations is False:
             at clipboard_slide_down
 
     $ profile_count = 0
@@ -358,6 +361,42 @@ screen clipboard():
             $ clipboard_profiles.append(profile)
             $ profile_count += 1
 
+    imagebutton:
+        if profile_tab is 0:
+            idle "images/Interactables/TabPink.png"
+        else:
+            idle "images/Interactables/TabPinkFalse.png"
+            action SetVariable("profile_tab", 0), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+        focus_mask True
+        hover None
+
+    imagebutton:
+        if profile_tab is 1:
+            idle "images/Interactables/TabBlue.png"
+        else:
+            idle "images/Interactables/TabBlueFalse.png"
+            action SetVariable("profile_tab", 1), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+        focus_mask True
+        hover None
+
+    imagebutton:
+        if profile_tab is 2:
+            idle "images/Interactables/TabPurple.png"
+        else:
+            idle "images/Interactables/TabPurpleFalse.png"
+            action SetVariable("profile_tab", 2), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+        focus_mask True
+        hover None
+
+    imagebutton:
+        if profile_tab is 3:
+            idle "images/Interactables/TabGreen.png"
+        else:
+            idle "images/Interactables/TabGreenFalse.png"
+            action SetVariable("profile_tab", 3), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+        focus_mask True
+        hover None
+
     $ profile_tracker = 4 * profile_tab
 
     if (profile_tracker < profile_count):
@@ -367,7 +406,7 @@ screen clipboard():
             xanchor 0.0
             yanchor 0.5
 
-            if clipboard is True:
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
                 at profile_1_slide_down
 
         textbutton f"{clipboard_profiles[profile_tracker].Name}":
@@ -378,7 +417,7 @@ screen clipboard():
             text_size 60
             action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker].ID}")
             
-            if clipboard is True:
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
                 at profile_1_slide_down
 
     if (profile_tracker + 1 < profile_count):
@@ -388,7 +427,7 @@ screen clipboard():
             xanchor 0.0
             yanchor 0.5
 
-            if clipboard is True:
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
                 at profile_2_slide_down
 
         textbutton f"{clipboard_profiles[profile_tracker + 1].Name}":
@@ -399,7 +438,7 @@ screen clipboard():
             text_size 60
             action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker + 1].ID}")
             
-            if clipboard is True:
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
                 at profile_2_slide_down
 
     if (profile_tracker + 2 < profile_count):
@@ -409,7 +448,7 @@ screen clipboard():
             xanchor 0.0
             yanchor 0.5
 
-            if clipboard is True:
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
                 at profile_3_slide_down
 
         textbutton f"{clipboard_profiles[profile_tracker + 2].Name}":
@@ -420,7 +459,7 @@ screen clipboard():
             text_size 60
             action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker + 2].ID}")
             
-            if clipboard is True:
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
                 at profile_3_slide_down
 
     if (profile_tracker + 3 < profile_count):
@@ -430,7 +469,7 @@ screen clipboard():
             xanchor 0.0
             yanchor 0.5
 
-            if clipboard is True:
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
                 at profile_4_slide_down
 
         textbutton f"{clipboard_profiles[profile_tracker + 3].Name}":
@@ -441,7 +480,7 @@ screen clipboard():
             text_size 60
             action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker + 3].ID}")
             
-            if clipboard is True:
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
                 at profile_4_slide_down
 
 

@@ -5,7 +5,7 @@ style Inventory:
     hover_color "#444444"
    
 
-init python:
+python early:
     class Clue:
         def __init__(self, Identifier, Name, Description):
             self._Identifier = Identifier
