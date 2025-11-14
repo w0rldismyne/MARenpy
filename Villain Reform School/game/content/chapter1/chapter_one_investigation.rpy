@@ -2986,6 +2986,17 @@ label MarikoInt:
     #[IF Intel > ? This option will be available to the player]
     #(If from Mariko Interrogation)
     #(AN: All pieces of evidence will be on screen. There will be breaks in the dialogue where the player will be encouraged to present evidence. [ = the option needed to continue the scene. Letters will denote which path the player's going down if there is more than one right answer.)
+    "I know who did this."
+    "The person responsible was someone close to Kazz."
+    "They would have known the stuff that he smuggled in from day one since he was bragging so much."
+    "When they had an opportunity to take his phone, that’s when they put their plan in action."
+    "They made sure they were the last person in the PA booth and set up his alexa to play a command right as everyone was out of class."
+    "In order to keep from getting caught, they hid his phone somewhere that would incriminate a different classmate."
+    "I’m sure they thought they’d have plenty of time to run back to the main halls so it would look like they had an alibi when the announcement went off."
+    "But, even without feeling pain, I’m sure running on an injured leg is difficult."
+
+    n "Isn’t that right Mariko?"
+    
     show mariko judge
 
     "Between what everyone's been seeing, and how she's been acting, I'm sure she's behind the PA Incident."
@@ -3092,7 +3103,7 @@ label Mariko3A:
             call MarikoFail
         "PA Access":
             call Mariko4A
-        "Brag":
+        "Kazz's Bragfest":
             call MarikoFail
     # Choose Clue Menu goes here
 label Mariko4A:
@@ -3129,7 +3140,7 @@ label Mariko4A:
             call Mariko5A
         "Alexa Commands":
             call MarikoFail
-        "Baton Pass":
+        "Found Phone":
             call MarikoFail
         "Locker Number":
             call MarikoFail
@@ -3182,7 +3193,7 @@ label Mariko3B:
     menu:
         "Alexa Commands":
             call Mariko4B
-        "Baton Pass":
+        "Found Phone":
             call MarikoFail
         "Missing Phone":
             call MarikoFail
@@ -3215,11 +3226,11 @@ label Mariko4B:
     menu:
         "Mystery Noise":
             call MarikoFail
-        "Baton Pass":
+        "Found Phone":
             call Mariko5B
         "Missing Phone":
             call MarikoFail
-        "Brag":
+        "Kazzz's Bragfest":
             call MarikoFail
 label Mariko5B:
     #[5B: Baton Pass]
@@ -3250,7 +3261,7 @@ label Mariko5B:
     menu:
         "Missing Phone":
             call MarikoFail
-        "Baton Pass":
+        "Found Phone":
             call MarikoFail
         "Mystery Noise":
             call Mariko6B
@@ -3279,9 +3290,9 @@ label Mariko6B:
     menu: 
         "Locker Number":
             call Mariko7
-        "Baton Pass":
+        "Found Phone":
             call MarikoFail
-        "Prank":
+        "Dyre's Prank":
             call MarikoFail
         "Brag":
             call MarikoFail
@@ -3311,11 +3322,11 @@ label Mariko6C:
     menu: 
         "Locker Number":
             call Mariko7
-        "Baton Pass":
+        "Found Phone":
             call MarikoFail
-        "Prank":
+        "Dyre's Prank":
             call MarikoFail
-        "Brag":
+        "Kazz's Bragfest":
             call MarikoFail
 label Mariko7:
     #[7B+C: Locker #] 
@@ -3405,7 +3416,7 @@ label MarikoSuccess:
             hide mariko upset talk
 
             $ mRep -= 1
-            call MarikoOutro
+            pass
         "Protect you":
             $ Hero += 1   
 
@@ -3451,6 +3462,7 @@ label MarikoSuccess:
             
             $ mRep += 1
             #(Enemy Neutralized)
+            pass
     show mariko upset talk
     
     "Mariko hands me an unmarked VHS tape from her bag."
@@ -3468,8 +3480,9 @@ label MarikoSuccess:
     m "Don't thank me yet."
 
     hide mariko upset talk
-
-    call MarikoOutro
+    
+    pass
+    
 
 label MarikoFail:
 
@@ -3493,6 +3506,30 @@ label MarikoFail:
     #Investigation Helper Scenes 
     
     #"There's no way I can talk to everyone before the deadline. Maybe one of the guys overheard something in one of their classes. At the very least, it'll give me a place to start."
+label Chapter1 Investigation Fail:
+    scene backgroundfield
+    
+    "I know who did this."
+    "The person responsible was someone close to Kazz."
+    "They would have known the stuff that he smuggled in from day one since he was bragging so much."
+    "When they had an opportunity to take his phone, that’s when they put their plan in action."
+    "They made sure they were the last person in the PA booth and set up his alexa to play a command right as everyone was out of class."
+    "In order to keep from getting caught, they hid his phone somewhere that would incriminate a different classmate. “
+
+    show inukai concerned
+    
+    ik "Nagen, do you have any proof this person did it?"
+    
+    n "I mean… not exactly, but it's possible."
+
+    show inukai sad
+
+    ik "I appreciate you wanting to help out a friend Nagen, but I can’t get someone in trouble for being on campus without a teacher present."
+    ik "Has anyone else seen this student with Kazz’s things and they had access to the PA room?"
+
+    "Maybe I need to ask around some more."
+
+    pass
 
 label JonaInv1:
     scene backgroundamp

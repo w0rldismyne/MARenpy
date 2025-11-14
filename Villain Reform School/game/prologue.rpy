@@ -905,6 +905,10 @@ label life_1:
             kan "Follow me, we have a lot to talk about." id life_1_c6fea334
 
     "I follow him into a cluttered study."
+
+    hide ken
+
+    scene backgroundP6
     "He takes a long drink of coffee before he sits down."
     "He prompts me to find a seat with a casual wave of his hand."
 
@@ -1007,12 +1011,13 @@ label life_1:
 
     n "Right."
 
+    scene backgroundMansion
+
     "I high-tail it out of his office, eager to escape the oppressive air."
     "The room I've been given shares a striking resemblance to the one I grew up in as a kid."
     "It's not quite the same shade of blue and the books are too new to be mine."
     "It's equally eerie and comforting."
 
-    hide ken
 
     scene backgroundblack
 

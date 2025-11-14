@@ -3522,6 +3522,12 @@ label chapter1_day5_event_night:
     hide hiro smile
     hide jona happy
     hide uitto smile
+
+    if $ chapter1_investigation_success = True :
+        jump investigation_good_end
+
+    else:
+        pass
     
     scene backgroundC1_E
 

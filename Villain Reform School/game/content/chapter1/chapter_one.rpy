@@ -231,6 +231,12 @@ label investigation_good_end:
 
     #Bg forbidden door
 
+    scene backgrounddoor
+    with Fade(0.5, 1.0, 0.5)
+
+    play music "music/LateNights.mp3"
+
+
     "I gave up on sleep and walked around the school. I hoped to find a dry fantasy novel or something to quit feeling so restless."
     "But the computer lab was glowing. I thought no one was supposed to be in there. So why does it feel like, no, I know someone's in there."
     "I tested the handle and it opened. There were rows of dead monitors. The room lacked the telltale hum of machinery. At the end of the room as light."
@@ -238,9 +244,16 @@ label investigation_good_end:
         "Fuck this":
             "I've seen too many horror movies to go blindly into strange places. I should just go to bed."
             # (end scene)
+            return
         "Go in":
             #continue scene
             pass
+    
+    scene backgrounddetention
+    with Fade(0.5, 1.0, 0.5)
+
+    play music "music/Descent.mp3"
+
     "I used one of the old books to keep the door from closing behind me."
     "The last thing I need is to get locked in a place I'm not supposed to be in."
     "The further down I went, the brighter and more high tech things got. The basement level was a wide hall with rooms in glass boxes."
@@ -251,44 +264,57 @@ label investigation_good_end:
 
     m "....."
 
+    scene backgroundMarikoDentention
+
     #(if punish = yes)
 
-    "She turned away from me and turned out her light. The teachers just said she was in detention not that she'd been detained. What the hell is going on here?"
- 
+    if $ chapter1_investigation_success = False:
+
+        "She turned away from me and turned out her light."
+        "The teachers just said she was in detention not that she'd been detained."
+        "What the hell is going on here?"
     #(continue to main branch)
 
     #(else)
 
-    m "Nagen!? What are you doing here? No one's supposed to be down here, especially S-T-U-D-E-N-T-Ss"
+    else:
+        play music "music/mt_talking_1_final.mp3"
 
-    n "Then what are you doing here?"
+        m "Nagen!? What are you doing here?"
+        m "No one's supposed to be down here, especially S-T-U-D-E-N-T-Ss"
 
-    "Something chirped in her room. She sat down on the floor, not wanting to look at me."
+        n "Then what are you doing here?"
 
-    m "Apparently I'm sick, physically. Most people in my position wouldn't be able to stand, but I don't feel pain so… I'm on a week of strict bedrest."
+        "Something chirped in her room."
+        "She sat down on the floor, not wanting to look at me."
 
-    "That might have been what the beeping was, some kind of bed alarm."
+        m "Apparently I'm sick, physically."
+        m "Most people in my position wouldn't be able to stand, but I don't feel pain so…"
+        m "I'm on a week of strict bedrest."
 
-    m "...Please don't tell anyone I'm here."
+        "That might have been what the beeping was, some kind of bed alarm."
 
-    n "Why?"
+        m "...Please don't tell anyone I'm here."
 
-    m "It's embarrassing! They have to watch me eat and…" 
+        n "Why?"
 
-    "She sniffles"
+        m "It's embarrassing! They have to watch me eat and…" 
 
-    "It's not as easy as it sounds. And that's what everyone will say."
-    "Just do it and you'll get out faster, but it's so hard. Being forced to sit around all day is hard too. I don't want people to see me like this."
+        "She sniffles"
 
-    n "Okay. I'll pretend like I was never here. Can I at least tell people you're okay?"
+        "It's not as easy as it sounds. And that's what everyone will say."
+        "Just do it and you'll get out faster, but it's so hard."
+        "Being forced to sit around all day is hard too. I don't want people to see me like this."
 
-    m "Yeah."
+        n "Okay. I'll pretend like I was never here. Can I at least tell people you're okay?"
 
-    n "Is it just you down here?"
+        m "Yeah."
 
-    m "Kinda… I don't want to jinx it, but… We're not exactly alone right now."
+        n "Is it just you down here?"
 
-    "I don't like the sound of that. I don't get the feeling she feels threatened though."
+        m "Kinda… I don't want to jinx it, but… We're not exactly alone right now."
+
+        "I don't like the sound of that. I don't get the feeling she feels threatened though."
 
     #(Main branch)
 
@@ -296,7 +322,14 @@ label investigation_good_end:
 
     m "Oh no, it's awake."
 
-    "A hologram of a stuffed rabbit projected itself on the glass. It reminded me of the old point and click games I used to play as a kid."
+    scene backgrounddetention
+
+    play music "music/SpeedWins.mp3"
+
+    show chiriyo talk
+
+    "A hologram of a stuffed rabbit projected itself on the glass."
+    "It reminded me of the old point and click games I used to play as a kid."
 
     n "What the hell is that?"
 
@@ -304,27 +337,39 @@ label investigation_good_end:
 
     m "My feelings are not hurt by this twink cursing."
 
-    "She rubbed her temples."
+    "Mariko rubbed her temples."
 
-    m "This is the school's therapist. Or at least, it's supposed to be, but it's for kids, like kid kids. It won't even let me say the ‘s' word."
+    m "This is the school's therapist."
+    m "Or at least, it's supposed to be, but it's for kids, like kid kids. It won't even let me say the 's' word."
 
-    n "What ‘s' word?"
+    n "What 's' word?"
 
     m "...stupid."
 
-    q "Now Mariko, we've talked about this. There are better words you can use that describe your situation without being mean to yourself."
+    show chiriyo sad talk
+
+    q "Now Mariko, we've talked about this."
+    q "There are better words you can use that describe your situation without being mean to yourself."
 
     m "Ugh! Nagen, don't ever get in trouble, you'll have this thing as a roommate."
 
-    q "Nagen? I don't recognize that name. Are you a student or a teacher?"
+    show chiriyo talk
+
+    q "Nagen? I don't recognize that name."
+    q "Are you a student or a teacher?"
     menu:
         "Teacher":
+            show chiriyo cry
+
             q "Ah! Please don't tell the other faculty about this."
 
             n "Why?"
 
+            show chiriyo pout
+
             q "Well, I'm supposed to be on firewall duty, but my students need me!"
         "Student":
+            show chiriyo smile
             q "Righty-o. I promise to keep all your secrets!"
             q "Oh, but I'm not sure how you can fill out your profile without your friend hearing."
             q "Once everything's back online we can fill it out together."
@@ -335,21 +380,30 @@ label investigation_good_end:
 
     #-mainbranch-
 
+    show chiriyo talk
+
     q "I just wasnt to do what I was designed to do. Even if everyone is older than I'm used to."
 
     n "And what exactly are you?"
+
+    show chiriyo happy
 
     ci "Chiriyo!"
 
     n "...right… but are you a demon bunny?"
 
+    show chiriyo smile
+
     ci "I'm a babbit! Half bunny, half bat. The two most loveable animals combined."
 
     n "Since when?"
 
+    show chiriyo happy
+
     ci "Since my students voted. They picked out this design for me and by golly I won't change it!"
 
-    "Designed by children for children, that explains a lot actually. Though I really question the focus group they used."
+    "Designed by children for children, that explains a lot actually."
+    "Though I really question the focus group they used."
 
     ci "While it is good to talk to friends, the average teen needs ten hours of sleep."
 
@@ -369,8 +423,11 @@ label investigation_good_end:
 
             ci "Next time you come by, the door will open."
         "No":
+            show chiriyo talk
 
             ci "Your friend is in good paws. Please be safe on your way back."
+
+    hide chiriyo
 
     "I started to make my way up the stairs."
 
