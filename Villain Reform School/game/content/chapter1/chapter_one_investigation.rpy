@@ -3574,7 +3574,7 @@ label UittoInv1:
 
     u "I can't believe you wanted me to talk to Kitsune for you."
 
-    n "...did you?"
+    n "...Did you?"
 
     u "I could tell you exactly what she'd say. 'Memememe and also me.'"
     u "There you go, you got the full experience."

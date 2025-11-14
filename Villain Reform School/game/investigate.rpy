@@ -15,6 +15,8 @@ define temporary_investigation_flashback = False
 
 define temporary_prevent_clipboard_animations = False
 
+define investigation_solve = False
+
 python early:
     class Profile:
         def __init__(self, Identifier, Name, Order):
@@ -110,13 +112,6 @@ screen investigate():
 
     image "#FFFFFF"
 
-    textbutton "?":
-        xpos 0.5
-        ypos 0.85
-        xanchor 0.5
-        yanchor 0.5
-        text_size 55
-
     if temporary_investigation_flashback is False:
         textbutton "Back":
             xpos 0.1
@@ -126,59 +121,141 @@ screen investigate():
             text_size 55
             action Jump("chapter1_freetime")
 
+        textbutton "SOLVE":
+            xpos 0.5
+            ypos 0.85
+            xanchor 0.5
+            yanchor 0.5
+            text_size 55
+            if reveal1 is True and reveal2 is True and reveal3 is True and reveal4 is True and reveal5 is True:
+                action SetVariable("investigation_solve", True), renpy.restart_interaction
+    
+        if investigation_solve is True:
+            vbox:
+                xpos 1.0
+                ypos 0.5
+                xanchor 0.25
+                yanchor 0.5
+
+                textbutton "Chisei":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+    
+                textbutton "Dyre":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Hiro":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Ichita":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Jona":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Kazz":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+            
+                textbutton "Kietsu":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Kitsune":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Mariko":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("MarikoInt")
+
+                textbutton "Momoko":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Mu":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Nanase":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Rei":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Rise":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Setsuna":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Shoma":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Taiga":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Uitto":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
+                textbutton "Yoku":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+
     image "images/Interactables/Manga Background.png":
         xpos 0.5
         xanchor 0.5
 
-    imagebutton:
+    image "images/Interactables/Manga_Ch1_Panel_1.png":
         xpos 0.5
         xanchor 0.5
-        focus_mask True
-        idle "images/Interactables/Manga_Ch1_Panel_1.png"
-        hover "images/Interactables/Manga_Ch1_Panel_1.png"
-        #if reveal1 is False:
-        #    foreground "images/Clues/Manga_Ch1_Panel_1black.png"
-        #action SetVariable("reveal1", not reveal1), renpy.restart_interaction
 
-    imagebutton:
+    image "images/Interactables/Manga_Ch1_Panel_2.png":
         xpos 0.5
         xanchor 0.5
-        focus_mask True
-        idle "images/Interactables/Manga_Ch1_Panel_2.png"
-        hover "images/Interactables/Manga_Ch1_Panel_2.png"
-        #if reveal2 is False:
-        #    foreground "images/Clues/Manga_Ch1_Panel_2black.png"
-        #action SetVariable("reveal2", not reveal2), renpy.restart_interaction
 
-    imagebutton:
+    image "images/Interactables/Manga_Ch1_Panel_3.png":
         xpos 0.5
         xanchor 0.5
-        focus_mask True
-        idle "images/Interactables/Manga_Ch1_Panel_3.png"
-        hover "images/Interactables/Manga_Ch1_Panel_3.png"
-        #if reveal3 is False:
-        #    foreground "images/Clues/Manga_Ch1_Panel_3black.png"
-        #action SetVariable("reveal3", not reveal3), renpy.restart_interaction
 
-    imagebutton:
+    image "images/Interactables/Manga_Ch1_Panel_4.png":
         xpos 0.5
         xanchor 0.5
-        focus_mask True
-        idle "images/Interactables/Manga_Ch1_Panel_4.png"
-        hover "images/Interactables/Manga_Ch1_Panel_4.png"
-        #if reveal4 is False:
-        #    foreground "images/Clues/Manga_Ch1_Panel_4black.png"
-        #action SetVariable("reveal4", not reveal4), renpy.restart_interaction
 
-    imagebutton:
+    image "images/Interactables/Manga_Ch1_Panel_5.png":
         xpos 0.5
         xanchor 0.5
-        focus_mask True
-        idle "images/Interactables/Manga_Ch1_Panel_5.png"
-        hover "images/Interactables/Manga_Ch1_Panel_5.png"
-        #if reveal5 is False:
-        #    foreground "images/Clues/Manga_Ch1_Panel_5black.png"
-        #action SetVariable("reveal5", not reveal5), renpy.restart_interaction
 
     if reveal1 is False:
         image "images/Interactables/Manga_Ch1_Panel_1black.png":
@@ -214,6 +291,7 @@ screen investigate():
             xanchor 0.5
             if reveal_flag5 is True:
                 at ch1_inv_img_5
+
     if temporary_investigation_flashback is False:
         imagebutton:
             xpos 0.5
@@ -225,7 +303,7 @@ screen investigate():
             hover "images/Interactables/clipboard.png"
             if clipboard is False:
                 at clipboard_slide_up
-            action SetVariable("clipboard", True), Jump("investigation_interaction_clipboard_mode")
+            action SetVariable("clipboard", True), SetVariable("profile_tab", 0), Jump("investigation_interaction_clipboard_mode")
 
         $ profile_count = 0
         $ clipboard_profiles.clear()
@@ -236,6 +314,57 @@ screen investigate():
                 $ profile_count += 1
 
         $ profile_tracker = 4 * profile_tab
+
+        if profile_count > 4:
+            imagebutton:
+                xpos 0.5
+                ypos 0.1
+                xanchor 0.5
+                yanchor 1.0
+                if profile_tab is 0:
+                    idle "images/Interactables/TabPink.png"
+                else:
+                    idle "images/Interactables/TabPinkFalse.png"
+                if clipboard is False:
+                    at clipboard_slide_up
+
+            imagebutton:
+                xpos 0.5
+                ypos 0.1
+                xanchor 0.5
+                yanchor 1.0
+                if profile_tab is 1:
+                    idle "images/Interactables/TabBlue.png"
+                else:
+                    idle "images/Interactables/TabBlueFalse.png"
+                if clipboard is False:
+                    at clipboard_slide_up
+
+        if profile_count > 8:
+            imagebutton:
+                xpos 0.5
+                ypos 0.1
+                xanchor 0.5
+                yanchor 1.0
+                if profile_tab is 2:
+                    idle "images/Interactables/TabPurple.png"
+                else:
+                    idle "images/Interactables/TabPurpleFalse.png"
+                if clipboard is False:
+                    at clipboard_slide_up
+
+        if profile_count > 12:
+            imagebutton:
+                xpos 0.5
+                ypos 0.1
+                xanchor 0.5
+                yanchor 1.0
+                if profile_tab is 3:
+                    idle "images/Interactables/TabGreen.png"
+                else:
+                    idle "images/Interactables/TabGreenFalse.png"
+                if clipboard is False:
+                    at clipboard_slide_up
 
         if (profile_tracker < profile_count):
             image f"images/Interactables/{clipboard_profiles[profile_tracker].ID}profile.png":
@@ -325,8 +454,6 @@ screen investigate():
                 if clipboard is False:
                     at profile_4_slide_up
 
-        $ profile_tab = 0
-
 screen clipboard():
 
     modal True
@@ -361,41 +488,68 @@ screen clipboard():
             $ clipboard_profiles.append(profile)
             $ profile_count += 1
 
-    imagebutton:
-        if profile_tab is 0:
-            idle "images/Interactables/TabPink.png"
-        else:
-            idle "images/Interactables/TabPinkFalse.png"
-            action SetVariable("profile_tab", 0), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
-        focus_mask True
-        hover None
+    if profile_count > 4:
+        imagebutton:
+            xpos 0.5
+            ypos 1.0
+            xanchor 0.5
+            yanchor 1.0
+            if profile_tab is 0:
+                idle "images/Interactables/TabPink.png"
+            else:
+                idle "images/Interactables/TabPinkFalse.png"
+                hover "images/Interactables/TabPinkFalse_Highlight.png"
+                action SetVariable("profile_tab", 0), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+            focus_mask True
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at clipboard_slide_down
 
-    imagebutton:
-        if profile_tab is 1:
-            idle "images/Interactables/TabBlue.png"
-        else:
-            idle "images/Interactables/TabBlueFalse.png"
-            action SetVariable("profile_tab", 1), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
-        focus_mask True
-        hover None
+        imagebutton:
+            xpos 0.5
+            ypos 1.0
+            xanchor 0.5
+            yanchor 1.0
+            if profile_tab is 1:
+                idle "images/Interactables/TabBlue.png"
+            else:
+                idle "images/Interactables/TabBlueFalse.png"
+                hover "images/Interactables/TabBlueFalse_Highlight.png"
+                action SetVariable("profile_tab", 1), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+            focus_mask True
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at clipboard_slide_down
 
-    imagebutton:
-        if profile_tab is 2:
-            idle "images/Interactables/TabPurple.png"
-        else:
-            idle "images/Interactables/TabPurpleFalse.png"
-            action SetVariable("profile_tab", 2), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
-        focus_mask True
-        hover None
+    if profile_count > 8:
+        imagebutton:
+            xpos 0.5
+            ypos 1.0
+            xanchor 0.5
+            yanchor 1.0
+            if profile_tab is 2:
+                idle "images/Interactables/TabPurple.png"
+            else:
+                idle "images/Interactables/TabPurpleFalse.png"
+                hover "images/Interactables/TabPurpleFalse_Highlight.png"
+                action SetVariable("profile_tab", 2), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+            focus_mask True
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at clipboard_slide_down
 
-    imagebutton:
-        if profile_tab is 3:
-            idle "images/Interactables/TabGreen.png"
-        else:
-            idle "images/Interactables/TabGreenFalse.png"
-            action SetVariable("profile_tab", 3), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
-        focus_mask True
-        hover None
+    if profile_count > 12:
+        imagebutton:
+            xpos 0.5
+            ypos 1.0
+            xanchor 0.5
+            yanchor 1.0
+            if profile_tab is 3:
+                idle "images/Interactables/TabGreen.png"
+            else:
+                idle "images/Interactables/TabGreenFalse.png"
+                hover "images/Interactables/TabGreenFalse_Highlight.png"
+                action SetVariable("profile_tab", 3), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+            focus_mask True
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at clipboard_slide_down
 
     $ profile_tracker = 4 * profile_tab
 
