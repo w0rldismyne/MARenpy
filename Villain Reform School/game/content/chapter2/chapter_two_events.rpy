@@ -467,7 +467,7 @@ label chapter2_vision:
 
     show jona depressed at right
 
-    j "It's… I'll be fine. Not a big talking day."
+    j "It's... I'll be fine. Not a big talking day."
 
     "I forgot, most of these kids haven't shared a class with us before."
 
@@ -477,7 +477,7 @@ label chapter2_vision:
 
     show vivaldi
 
-    v "Alright everyone, settle down. Today we'll be talking about something… controversial."
+    v "Alright everyone, settle down. Today we'll be talking about something... controversial."
     "Everyone immediately quiets."
     v "When trying to establish Vision as a major, abilities were sorted into two categories: internal and external."
     v "It took having over a hundred people with external abilities before the classification of major was even considered."
@@ -550,14 +550,14 @@ label chapter2_vision:
     hide vivaldi smile
     show vivaldi sad talk2
     
-    v "I'm sure some of you are familiar with my first case, but… it was the hardest trial I had to speak at."
+    v "I'm sure some of you are familiar with my first case, but... it was the hardest trial I had to speak at."
    
     hide vivaldi sad talk1
    
     #-CG Vivaldi on the stand-
-    v "I had first heard my father's voice at the funeral, all he could do was answer questions with on word,  and the second…"
+    v "I had first heard my father's voice at the funeral, all he could do was answer questions with on word,  and the second..."
     #-Add a man to the stan-
-    v "Was when I was helping with the laundry. My uncle failed to notice a blood stain… It was the only evidence I had, and if no one believed me, I would have been forced to live with a murderer who watched me testify against him."
+    v "Was when I was helping with the laundry. My uncle failed to notice a blood stain... It was the only evidence I had, and if no one believed me, I would have been forced to live with a murderer who watched me testify against him."
     #-CG gone-
 
     show vivaldi talk
@@ -617,7 +617,7 @@ label chapter2_vision:
 
     v "And Vision was recognized as a proficiency when?"
     
-    n "...Fifteen years ago…"
+    n "...Fifteen years ago..."
     
     "I hate when my memory gets used against me. Jona's got his mask on, but I can feel the vindictive glee radiating off him."
     
@@ -630,7 +630,7 @@ label chapter2_vision:
     
     v "So the classifications we have now involve death and a separate plane of existence." 
     
-    i "What about… it's just mine's, I don't want to use other things, but real, living people."
+    i "What about... it's just mine's, I don't want to use other things, but real, living people."
     
     "The same would go for Jona. He sees auras around people."
     "She makes another column on the black board."
@@ -769,7 +769,7 @@ label chapter2_intel:
     mh "Alright everyone take a head! This part's always been my favorite."
     mh "Uh, couldn't get my hands on any wigs made of real human hair for obvious reasons, so we'll have to make do with synthetics."
     
-    "Wait a minute… The only things coming in are things like food and soap"
+    "Wait a minute... The only things coming in are things like food and soap"
     
     n "Are these yours? Like {i}yours{/i} yours?"
     
@@ -803,7 +803,7 @@ label chapter2_intel:
     
     kk "You're going to wear these?"
     
-    mh "Yeah… why wouldn't I?"
+    mh "Yeah... why wouldn't I?"
     
     "BBecause none of us know what we're doing?!"
     "I'm glad I'm not the only one freaked out by this."
@@ -815,7 +815,7 @@ label chapter2_intel:
     
     show mu cringe at right
 
-    mu "Do we just… do anything?"
+    mu "Do we just... do anything?"
     
     n "I guess?"
     
@@ -885,7 +885,7 @@ label chapter2_intel:
     ya "Then you got no metric for what's easy for you."
     ya "You literally can't fail this class, quit beating yourself up about it."
     
-    "He doesn't get it. Everyone's staring and I actually tried…"
+    "He doesn't get it. Everyone's staring and I actually tried..."
     
     n "I have to get out of here."
 
@@ -917,7 +917,7 @@ label chapter2_intel:
     ya "I know."
 
     n "No, you don't."
-    n "No matter what I learn, I can ace any test, but the second it comes to actually doing it…"
+    n "No matter what I learn, I can ace any test, but the second it comes to actually doing it..."
     
     "He didn't interrupt me this time, he just waited."
     
@@ -5793,7 +5793,7 @@ label chapter2_day8_event2:
 
     n "Rise?"
 
-    r "I'll be okay… I have to be…"
+    r "I'll be okay... I have to be..."
 
     "I had to walk her back to her room."
 

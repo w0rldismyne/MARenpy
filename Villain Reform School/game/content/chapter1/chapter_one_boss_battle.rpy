@@ -554,7 +554,7 @@ label post_nagen_turn:
 
         elif turns_passed == mariko_halfway_post_turns + 3:
 
-            m "Ty and Kiki… They stayed together the whole time, brainwashing be damned..."
+            m "Ty and Kiki... They stayed together the whole time, brainwashing be damned..."
 
         elif turns_passed == mariko_halfway_post_turns + 4:
 

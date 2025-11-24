@@ -705,7 +705,7 @@ default check_cd = False
 default check_mic = False
 default check_laptop = False
 
-default chapter1_investigation_success = False
+define chapter1_solved = False
 default kazzPhoneFound = False
 
 # Chapter 2 Variables

@@ -3771,7 +3771,7 @@ label introduction_rise:
     "By the large bay window sits a poised girl with a tea set."
     "Rise Kisaki, her Proficiency is Allure, which I never fully understood."
     "According to Uitto, it means she's a people magnet, like a lot of Charisma majors."
-    "With me being in the “bad kids” class, I never really talked to her."
+    "With me being in the "bad kids” class, I never really talked to her."
     "Her far off stare reminds me of a china doll. Across from her is an empty cup and chair."
 
     n "I'm sorry, were you waiting for someone?"

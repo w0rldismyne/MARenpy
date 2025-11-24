@@ -111,11 +111,9 @@ label chapter_one:
     
     # Dusk
 
-    call chapter1_day5_event4 
+    call chapter1_day5_event4
 
-    return # Test
-
-    if chapter1_investigation_success is False:
+    if chapter1_solved is False:
         # Boss Battle
         call chapter1_boss_scene
 
@@ -268,7 +266,7 @@ label investigation_good_end:
 
     #(if punish = yes)
 
-    if $ chapter1_investigation_success = False:
+    if chapter1_solved is False:
 
         "She turned away from me and turned out her light."
         "The teachers just said she was in detention not that she'd been detained."
@@ -289,7 +287,7 @@ label investigation_good_end:
         "She sat down on the floor, not wanting to look at me."
 
         m "Apparently I'm sick, physically."
-        m "Most people in my position wouldn't be able to stand, but I don't feel pain so…"
+        m "Most people in my position wouldn't be able to stand, but I don't feel pain so..."
         m "I'm on a week of strict bedrest."
 
         "That might have been what the beeping was, some kind of bed alarm."
@@ -298,7 +296,7 @@ label investigation_good_end:
 
         n "Why?"
 
-        m "It's embarrassing! They have to watch me eat and…" 
+        m "It's embarrassing! They have to watch me eat and..." 
 
         "She sniffles"
 
@@ -312,7 +310,7 @@ label investigation_good_end:
 
         n "Is it just you down here?"
 
-        m "Kinda… I don't want to jinx it, but… We're not exactly alone right now."
+        m "Kinda... I don't want to jinx it, but... We're not exactly alone right now."
 
         "I don't like the sound of that. I don't get the feeling she feels threatened though."
 
@@ -344,7 +342,7 @@ label investigation_good_end:
 
     n "What 's' word?"
 
-    m "...stupid."
+    m "...Stupid."
 
     show chiriyo sad talk
 
@@ -390,7 +388,7 @@ label investigation_good_end:
 
     ci "Chiriyo!"
 
-    n "...right… but are you a demon bunny?"
+    n "...right... but are you a demon bunny?"
 
     show chiriyo smile
 

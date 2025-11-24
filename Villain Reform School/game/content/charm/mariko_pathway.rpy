@@ -52,7 +52,7 @@ label MarikoP1:
 
     n "Twenty minutes before lunch ends, right?"
 
-    m "Right… So, what's up?"
+    m "Right... So, what's up?"
 
     hide mariko
 
@@ -175,7 +175,7 @@ label MarikoP1:
 
     n "Do what?"
 
-    m "Start the riots… Why? What made you think that was okay?"
+    m "Start the riots... Why? What made you think that was okay?"
     m "What possess somebody to do something like that?"
 
     n "I was just trying to protect my friends."
@@ -186,7 +186,7 @@ label MarikoP1:
     hide mariko judge
     show mariko talk
 
-    m "What… what were you protecting them from?"
+    m "What... what were you protecting them from?"
 
     n "It's not really my place to tell you, you'd have to ask them yourself."
     n "To be vague, I guess I'd say bad people. Or rather, people who were trying to hurt them."
@@ -209,7 +209,7 @@ label MarikoP1:
     hide mariko judge
     show mariko cry
 
-    m "I… thanks. Really. It's been… Adjusting's been hard."
+    m "I... thanks. Really. It's been... Adjusting's been hard."
     m "I'm fine. It's fine. Everything's going to be okay."
 
     hide mariko cry
@@ -261,7 +261,7 @@ label Mariko2P:
 
             show mariko cry
 
-            m "I didn't actually mean… good god."
+            m "I didn't actually mean... good god."
 
             "She looked so disturbed."
 
@@ -272,7 +272,7 @@ label Mariko2P:
 
             m "Double-Ds."
 
-            n "...Like fat dudes or…?"
+            n "...Like fat dudes or...?"
             n "No way."
             n "Where do you get off judging me?"
             n "At least my ideal is realistic."
@@ -362,7 +362,7 @@ label Mariko2P:
 
             n "Huh?"
 
-            m "You watching me, is it… You're not trying to start anything again, are you?"
+            m "You watching me, is it... You're not trying to start anything again, are you?"
 
             n "No."
 
@@ -398,7 +398,7 @@ label Mariko2P:
 
     m "Fufu, I bet you don't even own a pair of sweats."
 
-    n "Hey, I work out… periodically."
+    n "Hey, I work out... periodically."
 
     m "Uh huh, prove it."   
 
@@ -481,7 +481,7 @@ label Mariko3P:
     hide mariko smile talk
     show mariko upset talk
 
-    m "Oh… you noticed."
+    m "Oh... you noticed."
 
     n "That's not the only thing I've noticed."
 
@@ -493,7 +493,7 @@ label Mariko3P:
 
             show mariko upset talk
 
-            n "You're the captain, but none of the girls seem to talk to you… Wait, you are the Captain right?"
+            n "You're the captain, but none of the girls seem to talk to you... Wait, you are the Captain right?"
 
             m "Of course I am!"
             m "I'm the one who brought everyone together. Who else would be a better Captain then me?"
@@ -560,7 +560,7 @@ label Mariko3P:
             hide mariko glare
             show mariko upset talk
 
-            m "Rei… is… a trusted comrade. I would never do anything to jeopardize that."
+            m "Rei... is... a trusted comrade. I would never do anything to jeopardize that."
             m "Which is why I wasn't ogling!"
 
             n "I'm not buying any of it."
@@ -643,7 +643,7 @@ label Mariko3P:
 
     m "Do I need to take you shopping? You're showing your underwear again."
 
-    n "No I'm fine… And what do you mean again?"
+    n "No I'm fine... And what do you mean again?"
 
     m "I mean it seems like every pair of pants you own are either too tight or obviously not made for you."
 
@@ -692,7 +692,7 @@ label MarikoP4:
 
     m "Fine, here we'll start with a basic shoulder sit."
 
-    n "Cool… and that would be."
+    n "Cool... and that would be."
 
     hide mariko talk
     show mariko judge
@@ -712,7 +712,7 @@ label MarikoP4:
 
     n "Mariko?"
 
-    "She felt warm… Too warm. Why isn't she moving? What's going on!?"
+    "She felt warm... Too warm. Why isn't she moving? What's going on!?"
 
     show backgroundMPath
 
@@ -753,7 +753,7 @@ label MarikoP4:
     hide mariko mad talk
     show mariko upset talk
 
-    m "Don't look at me like that. Why are you even here. Where… Where am I?"
+    m "Don't look at me like that. Why are you even here. Where... Where am I?"
 
     n "You're in the nurse's office. You totally passed out on my shoulders."
 
@@ -786,7 +786,7 @@ label MarikoP4:
             hide mariko cry
             show mariko talk
 
-            m "Haha… Hey Nagen, is it normal to… Do you ever have nightmares about your friends dying?"
+            m "Haha... Hey Nagen, is it normal to... Do you ever have nightmares about your friends dying?"
 
             n "Sometimes."
 
@@ -821,7 +821,7 @@ label MarikoP4:
             n "Not eating or drinking, and working yourself until you pass out?"
             n "You're going to get yourself killed at this rate."
 
-            m "I… I'm not doing this on purpose."
+            m "I... I'm not doing this on purpose."
             m "There are more important things to worry about right now."
 
             n "What's more important than your own wellbeing?"
@@ -846,20 +846,20 @@ label MarikoP4:
 
             n "You were crying in your sleep about people following someone."
 
-            m "Oh…"
+            m "Oh..."
 
             n "You don't have to tell me if it's too painful."
 
             hide mariko talk
             show mariko cry
 
-            m "It's… I mean, I can, I just... I don't want to think about it too much."
+            m "It's... I mean, I can, I just... I don't want to think about it too much."
 
             "I waited patiently for her to continue."
 
             m "I was dreaming about when we were in the shelter after Lethe launched her first attack."
             m "The teachers from Estella gathered everyone they could to the gym, told us to wait there for our parents to show up."
-            m "Hiro suggested that we should leave…"
+            m "Hiro suggested that we should leave..."
 
             "Wait a minute, Hiro went back to Estella? That doesn't seem right."
 
@@ -899,7 +899,7 @@ label MarikoP4:
         hide mariko
         show mariko talk
 
-        m "I'm not sure yet. I have… a lot of thinking to do."
+        m "I'm not sure yet. I have... a lot of thinking to do."
 
         n "If there's anything I can help with, let me know."
 

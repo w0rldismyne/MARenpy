@@ -10,7 +10,7 @@ label chapter1_boss_scene:
     
     m "....."
 
-    re "Making me pick sides like this again… I can't." #(Sad/desperate)
+    re "Making me pick sides like this again... I can't." #(Sad/desperate)
     
     m "If you're not going to help me, just leave."
 
@@ -34,7 +34,7 @@ label chapter1_boss_scene:
 
     show rei disappointed
 
-    re "It's not like that! I noticed Hiro wasn't in class and…"
+    re "It's not like that! I noticed Hiro wasn't in class and..."
 
     show setsuna cringe at right 
 
@@ -193,7 +193,7 @@ label chapter1_boss_scene:
         hide mariko cry
         show mariko judge
 
-        m "...Okay…"
+        m "...Okay..."
 
         "She snaps her fingers again, signaling to Rei and Setsuna to go to the scoreboard."
 
@@ -300,7 +300,7 @@ label chapter1_boss_scene:
 
         j "Nagen!"
 
-        n "But it's true. I thought if you knew how… complete the brainwashing was, you wouldn't go through with it, so we lied. All of us did."
+        n "But it's true. I thought if you knew how... complete the brainwashing was, you wouldn't go through with it, so we lied. All of us did."
 
         h "But I did know. I'm not stupid, Nagen, I could see what was happening out there. I just convinced myself it would all be worth it in the end. I wanted to believe we're the good guys."
 
@@ -337,7 +337,7 @@ label chapter1_boss_intro:
     hide backgroundwhite
     with dissolve
 
-    "The stadium lights turn on without warning and once my eyes adjust to the blinding lights…"
+    "The stadium lights turn on without warning and once my eyes adjust to the blinding lights..."
 
     show screen boss_mariko_s1
     with dissolve
@@ -600,7 +600,7 @@ label mariko_bonus_scene:
 
     re "I can tell you when you've hurt yourself if you tell me when I should take a break; deal?"
 
-    m "But when the riots started…"
+    m "But when the riots started..."
     
     scene background_Mfb4
 

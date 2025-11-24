@@ -277,7 +277,7 @@ label ReiInterrogation2:
                     re "Before I left, my cousin offloaded her entire nail polish collection on me."
                     re "It's been quite handy as a bartering chip now that we're in here."
                     n "Do you remember who borrowed this one?"
-                    re "Hmm… I didn't pay the closest attention. Nanase, Rise, and Chisei all took an interest in it. Momoko can never settle on a color too long."
+                    re "Hmm... I didn't pay the closest attention. Nanase, Rise, and Chisei all took an interest in it. Momoko can never settle on a color too long."
                     re "She's one of the few that has nail polish remover, so she can switch colors whenever she wants."
                     jump ReiInterrogation2
                 "Red Hair":

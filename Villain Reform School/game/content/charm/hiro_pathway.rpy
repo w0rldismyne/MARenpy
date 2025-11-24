@@ -81,12 +81,12 @@ label Hiro1:
 
             n "I have no idea what will happen to you once we get out of school."
             n "I mean when we were kids, you wanted to be the leader of the Power Rangers."
-            n "And it's not like your Proficiency…"
+            n "And it's not like your Proficiency..."
 
             hide hiro suppress
             show hiro ashamed
 
-            h "Yeah, I get it… Ha ha…"
+            h "Yeah, I get it... Ha ha..."
 
             hide hiro ashamed
             show hiro sassy
@@ -94,7 +94,7 @@ label Hiro1:
             h "Dude, I have no idea what I'm going to do."
             h "I, uh, I didn't think I'd make it this far."
 
-            n "When we got caught or…"
+            n "When we got caught or..."
             
             hide hiro sassy
             show hiro sad talk
@@ -154,7 +154,7 @@ label Hiro1:
 
             "I'm really worried about him. If he can't figure out what he wants to do, it won't matter whether or not he gets out of this mess."
 
-            h "Yeah…"
+            h "Yeah..."
 
             hide hiro empty
 
@@ -171,7 +171,7 @@ label Hiro1:
             hide hiro guilty
             show hiro grumpy
 
-            h "...right...And you jumped from that to me because…"
+            h "...right...And you jumped from that to me because..."
 
             n "Other than being the only Vigor major I know."
             n "I need help brainstorming some ideas."
@@ -344,7 +344,7 @@ label Hiro2:
     hide hiro sad smile
     show hiro suppress
 
-    h "No… Well, yeah, but not what I was going for."
+    h "No... Well, yeah, but not what I was going for."
 
     hide hiro suppress
     show hiro happy
@@ -363,7 +363,7 @@ label Hiro2:
     h "Our biggest focus lately is thinking outside the box; how doing things you normally would do isn't always a good thing."
     h "It's been really helpful, you should try it."
 
-    n "Okay…"
+    n "Okay..."
 
     hide hiro
     show hiro talk1
@@ -434,7 +434,7 @@ label Hiro2:
             hide hiro embarrassed
             show hiro blush
 
-            h "I mean, yeah, that… that makes sense. Wait, no! You're missing the point."
+            h "I mean, yeah, that... that makes sense. Wait, no! You're missing the point."
 
             n "Hunh?"
 
@@ -590,7 +590,7 @@ label Hiro3:
     scene backgroundtown
 
     "I stumbled after him for about fifteen minutes through the woods before we finally reached the city surrounding our school."
-    "At any other academy, you'd be able to take trips into town to go out to eat or shop. But this place…"
+    "At any other academy, you'd be able to take trips into town to go out to eat or shop. But this place..."
 
     n "It's a ghost town."
 
@@ -624,7 +624,7 @@ label Hiro3:
     h "You're the smartest guy I know, maybe ever."
     h "I want to make better choices now, but I still need a lot of help."
     h "It's hard for me to think further into the future than a single day."
-    h "It's just not how I was trained. Do you… is it just me?"
+    h "It's just not how I was trained. Do you... is it just me?"
 
     "I looked back at what remained of the town."
     "When the world is collapsing all around you, it's hard to picture anything else."
@@ -689,7 +689,7 @@ label Hiro3:
             hide hiro sad fine
             show hiro sad talk
 
-            h "I don't know man…"
+            h "I don't know man..."
 
             n "Just try it. What do you want to be able to do five years from now?"
 
@@ -721,7 +721,7 @@ label Hiro3:
             n "The trick is changing without changing."
             n "I know they say fake it til you make it, but faking it is exhausting."
 
-            h "Tell me about it…"
+            h "Tell me about it..."
             h "Do you think it's too late to learn German?"
 
             hide hiro sassy
@@ -752,7 +752,7 @@ label Hiro3:
 
             n "Running away would be easier."
 
-            h "Yeah… but it's not going to fix anything."
+            h "Yeah... but it's not going to fix anything."
 
             n "We'll keep that as a plan ‘B'."
             
@@ -827,7 +827,7 @@ label Hiro4:
     hide hiro puppy
     show hiro suppress
 
-    h "Yeah… You're not the only one who thought that."
+    h "Yeah... You're not the only one who thought that."
 
     n "Bit you in the butt that fast?"
 
@@ -877,14 +877,14 @@ label Hiro4:
 
     h "Well yeah, but why does that matter now?"
 
-    "I know logically this doesn't change anything. We were just dumb kids, and she's gone, but still if I had known…"
+    "I know logically this doesn't change anything. We were just dumb kids, and she's gone, but still if I had known..."
 
     n "I never got the chance to tell her how I felt. I can't help feeling a little jaded."
 
     hide hiro judge
     show hiro serious
 
-    h "Come on man, she knew how you felt… Everyone did."
+    h "Come on man, she knew how you felt... Everyone did."
 
     "I didn't mean to make him feel bad."
 
@@ -908,18 +908,18 @@ label Hiro4:
             hide hiro serious
             show hiro confess
 
-            h "Yeah… You really mean that?"
+            h "Yeah... You really mean that?"
 
             n "Of course."
 
             "He took a deep breath. After a while, he couldn't look me in the eye."
 
-            h "It isn't… wasn't Odori I was trying to impress."
+            h "It isn't... wasn't Odori I was trying to impress."
 
             "He finally looked at me."
 
             n "Oh."
-            n "Ohhh…"
+            n "Ohhh..."
             n "Wait, what are you saying?"
 
             hide hiro confess
@@ -941,15 +941,15 @@ label Hiro4:
 
                     show hiro ashamed
 
-                    n "And, uhh… how do you feel now?"
+                    n "And, uhh... how do you feel now?"
 
-                    h "...The same. Is that… Is that okay?"
+                    h "...The same. Is that... Is that okay?"
 
                     "I shouldn't be this surprised. I just never thought about this sort of thing."
                     "Odori was everything I thought I was supposed to want; pretty, intelligent, and demure. We fought endlessly to be in the spotlight of her stage."
-                    "I was looked back on those days with fondness, but is it because of her… or him?"
+                    "I was looked back on those days with fondness, but is it because of her... or him?"
 
-                    n "Yeah… It's a little more than okay."
+                    n "Yeah... It's a little more than okay."
 
                     show hiro blush
 
@@ -1043,7 +1043,7 @@ label Hiro4:
             n "If I had confessed, and by some miracle she accepted, I might have been able to spend more time with her."
             n "I could have been with her when Guwon came crashing down around us."
 
-            h "How is… I wasn't with her either. You chose-"
+            h "How is... I wasn't with her either. You chose-"
 
             n "I got stuck running around the city snipping people from skyscrapers, you made sure of that!"
             n "You put everyone on the front lines and didn't have the decency to make sure our base was protected!"
@@ -1061,7 +1061,7 @@ label Hiro4:
 
             hide hiro serious
             show hiro mad fine
-            h "I didn't stop you from doing anything. This… now's not a good time for this."
+            h "I didn't stop you from doing anything. This... now's not a good time for this."
 
             hide hiro mad fine
 

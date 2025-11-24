@@ -141,97 +141,115 @@ screen investigate():
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
     
                 textbutton "Dyre":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Hiro":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Ichita":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Jona":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Kazz":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
             
                 textbutton "Kietsu":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Kitsune":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Mariko":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
-                    action Jump("MarikoInt")
+                    action Jump("chapter1_interrogation")
 
                 textbutton "Momoko":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Mu":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Nanase":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Rei":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Rise":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Setsuna":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Shoma":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Taiga":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Uitto":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
                 textbutton "Yoku":
                     xanchor 1.0
                     yanchor 0.5
                     text_size 50
+                    action Jump("chapter1_investigation_fail")
 
     image "images/Interactables/Manga Background.png":
         xpos 0.5

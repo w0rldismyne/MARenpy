@@ -3523,7 +3523,7 @@ label chapter1_day5_event_night:
     hide jona happy
     hide uitto smile
 
-    if $ chapter1_investigation_success = True :
+    if chapter1_solved is True :
         jump investigation_good_end
 
     else:

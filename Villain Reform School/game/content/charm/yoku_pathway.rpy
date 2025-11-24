@@ -19,7 +19,7 @@ scene backgroundclass
 "The fourth floor consisted of vacant offices for the teachers and an archive room left over from when this place was a library."
 "The third floor was split between computer labs and electives classes."
 "The rest of the central building just looked like regular classrooms. Hard to tell with most of the doors still locked."
-"There was one thing that bothered me. The internal layout, it reminded me of Estella…"
+"There was one thing that bothered me. The internal layout, it reminded me of Estella..."
 "What am I thinking? Of course it's familiar, there's only so many ways to build a school, why reinvent the wheel?"
 "I'm just overthinking things."
 
@@ -132,7 +132,7 @@ menu:
 
         y "It's a necessity if you want to survive. Talent and joy doesn't breed success, persi-si-stence does."
 
-        "I get what he's saying. I mean, I wouldn't be here if it wasn't for the hours I put into studying. Even still…"
+        "I get what he's saying. I mean, I wouldn't be here if it wasn't for the hours I put into studying. Even still..."
 
         n "The most successful are the ones who possess both. Otherwise you end up suffering and loose whatever interest you had."
 
@@ -150,7 +150,7 @@ menu:
         hide yoku think
         show yoku furious2
 
-        y "Is that so? Hmm… You've giv-ven me so-omething to think about."
+        y "Is that so? Hmm... You've giv-ven me so-omething to think about."
 
         hide yoku furious2
 
@@ -244,7 +244,7 @@ label Yoku2:
     y "Gladly, as soon as they change my room a-assignment. My neighbor apparently has night terrors."
     y "I don't do well with s-sudden screams in the night, though that's not why you ca-ame to talk to me."
 
-    n "Night terrors…"
+    n "Night terrors..."
 
     y "You know, that an-n-noying thing when someone can't tell the difference between dreams and reality, often involves sc-creaming."
 
@@ -335,7 +335,7 @@ label Yoku2:
             hide yoku furious2
             show yoku
 
-            y "“I suggest you inv-vest in a pair of ear plugs, otherw-wise it will be a long night."
+            y ""I suggest you inv-vest in a pair of ear plugs, otherw-wise it will be a long night."
 
             n "If you don't give a shit about me, fine, but you'll be waking everyone else up if you play."
 
@@ -450,7 +450,7 @@ label Yoku3:
             hide yoku furious1
             show yoku bummed
 
-            y "That's not… status was based on bl-l-loodline more than skill."
+            y "That's not... status was based on bl-l-loodline more than skill."
             y "I was at a disadvantage! That isn't the reason at all. You're twisting my words."
 
             n "Right, whatever you say."
@@ -558,14 +558,14 @@ label Yoku3:
     hide yoku daydream
     show yoku
 
-    y "I came here because it w-would bring me closer to my goal, regardless of the risks…"
+    y "I came here because it w-would bring me closer to my goal, regardless of the risks..."
     y "Why are you here?"
 
     "This again."
 
     n "I already told you, I-"
 
-    "I… I don't think I've actually thought about it. I mean, technically I'm forced to be here, but I can't tell him that. "
+    "I... I don't think I've actually thought about it. I mean, technically I'm forced to be here, but I can't tell him that. "
     
     n "I.."
 
@@ -592,21 +592,21 @@ label Yoku4:
 
     show yoku
 
-    y "You're a person…"
+    y "You're a person..."
 
     n "Yes, have been my whole life."
 
     hide yoku
     show yoku talk
 
-    y "So you know what p-people would like…"
+    y "So you know what p-people would like..."
 
     n "I'd like to believe I have a loose understanding of the trends, yes."
 
     hide yoku talk
     show yoku think
 
-    y "And girls a-are people…"
+    y "And girls a-are people..."
 
     "Oh, I don't like where this is going."
 
@@ -631,7 +631,7 @@ label Yoku4:
 
     "He fumbled with the controls and soon followed the sound of a violin accompanied by a piano. It was a strange duet. A little tinny, but good. He was staring me down as I listened."
 
-    y "So…"
+    y "So..."
 
     n "Well, it's definitely a song. Not really my genre of choice."
 
@@ -661,7 +661,7 @@ label Yoku4:
 
             y "Really, Beethoven's 5th is b-better bass boosted?"
 
-            n "I know you're being sarcastic, but it's literally the first thing that pops up when I search “bass boosted classical”. Followed by ‘Mozart and Rise of the Valkyries'."
+            n "I know you're being sarcastic, but it's literally the first thing that pops up when I search "bass boosted classical”. Followed by ‘Mozart and Rise of the Valkyries'."
 
             y "That d-doesn't make it better."
 
@@ -677,7 +677,7 @@ label Yoku4:
             n "He'll make the same invention three, four times before he finds out what about the idea appeals to him and perfects it."
             n "If doing that seems like a chore, then it's probably best to junk the whole thing."
 
-            y "I see… Perhaps I am overth-thinking things."
+            y "I see... Perhaps I am overth-thinking things."
 
             n "You keep practicing the violin, but maybe you should try writing with the instrument you're the most comfortable performing with."
             n "Then compose from there. Or, I don't know, anything that will make it more sincere."
@@ -707,13 +707,13 @@ label Yoku4:
 
             y "That's what it's su-upposed to do."
 
-            n "Oh… then don't change anything, it's fine."
+            n "Oh... then don't change anything, it's fine."
 
             y "I mean, I was going for more so-omething more saudade with hopeful overtones, but sad and nost-stalgic is a good place to start."
 
             n "It's just a song."
 
-            y "It's not… I mean, it is. Someone like you w-wouldn't understand."
+            y "It's not... I mean, it is. Someone like you w-wouldn't understand."
     $ yTurn += 1
     $ Intel += 1
 
@@ -741,7 +741,7 @@ label Yoku4:
 
     y "I can't cha-ange the way I talk, or the way people see me."
 
-    n "Yeah, no, that's not what I meant. Like… you keep talking about being a great musician and junk, but what is it ultimately for?"
+    n "Yeah, no, that's not what I meant. Like... you keep talking about being a great musician and junk, but what is it ultimately for?"
     n "What are you trying to do?"
 
     y "I just want to sup-p-port myself and the people I care ab-bout while doing the thing I lo.ove to do."
@@ -755,7 +755,7 @@ label Yoku4:
 
     y "Are you one of those p-people; the type that doesn't know what they wa-ant?"
 
-    n "I mean… yeah. I just want to be happy. Which is bland I know, I just don't know what to do to get there."
+    n "I mean... yeah. I just want to be happy. Which is bland I know, I just don't know what to do to get there."
     n "I thought Guwon was the key to that, but that didn't make things any better, it just made things different."
     n "After the year is over, I don't know what I'm going to do."
 
@@ -764,12 +764,12 @@ label Yoku4:
 
     y "Then you do have a g-goal. Even if it's small, y-you have a purpose."
     
-    n "Yeah… Yeah, you're right!"
+    n "Yeah... Yeah, you're right!"
 
     hide yoku daydream
     show yoku
 
-    y "I always thought you were far more… ca-alculating then you seem."
+    y "I always thought you were far more... ca-alculating then you seem."
 
     n "Hey I am calculating, I just don't have a formula that works for me yet. I'm working on it."
 
@@ -788,7 +788,7 @@ label Yoku4:
     hide yoku joy
 
     "Wow"
-    "Just… I'm not sure how to feel."
+    "Just... I'm not sure how to feel."
     "Having someone like that in my corner would definitely benefit me in the future."
     "Provided he's able to actually market himself as a musician. I gotta make sure that dork doesn't get himself into trouble."
     return
