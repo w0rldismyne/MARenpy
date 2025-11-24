@@ -3254,44 +3254,125 @@ label chapter1_day5_event4:
     play music "music/Interloper.mp3"
     scene backgroundcafexn
 
-    "Jona and I are on the way to the cafeteria when we run into Uitto."
+    if chapter1_investigation_success = True :
+        $ Reputation += 5
 
-    show uitto sad talk
-    
-    "She seems scared."
+        "Hiro runs up to me."
 
-    u "Where's Hiro?"
+        show hiro guilty
 
-    show jona depressed at left
+        h "Did you hear? Mariko turned herself in to the principal's office, she confessed to everything."
 
-    j "He's supposed to be with you. You're the one that shares last period with him."
+        "Glad to see she kept her word."
 
-    u "I know that, but he didn't show. I thought he ditched class to hide with you guys."
+        h "Nagen, did you have anything to do with this?"
 
-    "I haven't seen him all day. I just assumed Uitto had been with him instead."
-    "Unease settles into my stomach as I dial his number on my burner phone. No answer."
+        if hero > villain:
+            $ hRep += 2
+            n "Yeah. I promised I didn't scare her too bad. I just told her we knew she did it and she should come clean."
+            n "It seemed like the best way to avoid a fight."
 
-    n "Did that idiot really try and turn himself in?"
+            show hiro blush
 
-    "Uitto goes pale."
+            h "Wow, Nagen. That's like, the kind of hero stuff they'd do on tv."
 
-    hide jona depressed
-    show jona relaxed at left
+            n "What do you mean?"
 
-    j "I'm sure someone has seen him. Before we panic, we should try finding him first."
+            show hiro smug
 
-    hide uitto sad talk
-    show uitto serious
+            h "You like, took down someone's evil scheme. That's pretty cool."
 
-    u "Right, we'll cover more ground if we split up. Whoever finds him should call the others."
+            n "Come on, you'd do the same for me."
 
-    hide uitto serious
-    hide jona relaxed
+            "I don't know how successful he'd be, but he would try."
+            "He's right though, I think this is the first time I've stopped a crime from happening."
+            "It feels pretty good."
+        else: 
+            n "I did what I had to. You were going to turn yourself in."
 
-    "Before I can get a word in, they run off. By now, he should be at the field where we were supposed to surrender."
-    "The question is, who's behind this?"
-    scene backgroundblack with fade
-    return
+            show hiro suppress
+
+            n "I knew it!"
+
+            h "She needed closure man, if I could give that to her-"
+
+            n "She wanted to hurt you."
+            n "She thinks you're the evil mastermind, and you know what 'heroes' do to evil masterminds."
+
+            show hiro sad talk
+
+            h "I guess."
+
+            n "Besides, if nothing happens, that means everyone else doesn't care enough to do anything. We took care of the one person who tried to pick a fight."
+
+            show hiro sad smile
+
+            h "Yeah."
+
+            show hiro
+
+            h "Yeah! This it probably for the best."
+        
+        show hiro happy
+
+        h "We should celebrate!"
+
+        n "Really?"
+
+        h "Yeah, back home when we hit a milestone, we celebrate with little rewards."
+        h "You did something really cool."
+
+        "He spots Uitto and Jona coming up the path."
+
+        h "Hey, guys! Party at Nagen's dorm!"
+
+        n "Keep it down!"
+        n "Seriously man, we could get in trouble for this."
+
+        "It's too late, the others are just as excited to sleepover at my dorm."
+        "Hopefully none of the teachers heard."
+
+        call chapter1_day5_event_night
+    else:
+
+        "Jona and I are on the way to the cafeteria when we run into Uitto."
+
+        show uitto sad talk
+        
+        "She seems scared."
+
+        u "Where's Hiro?"
+
+        show jona depressed at left
+
+        j "He's supposed to be with you. You're the one that shares last period with him."
+
+        u "I know that, but he didn't show. I thought he ditched class to hide with you guys."
+
+        "I haven't seen him all day. I just assumed Uitto had been with him instead."
+        "Unease settles into my stomach as I dial his number on my burner phone. No answer."
+
+        n "Did that idiot really try and turn himself in?"
+
+        "Uitto goes pale."
+
+        hide jona depressed
+        show jona relaxed at left
+
+        j "I'm sure someone has seen him. Before we panic, we should try finding him first."
+
+        hide uitto sad talk
+        show uitto serious
+
+        u "Right, we'll cover more ground if we split up. Whoever finds him should call the others."
+
+        hide uitto serious
+        hide jona relaxed
+
+        "Before I can get a word in, they run off. By now, he should be at the field where we were supposed to surrender."
+        "The question is, who's behind this?"
+        scene backgroundblack with fade
+        return
 
 label chapter1_day5_event_night:
     play music "music/TheySay.mp3"
