@@ -3254,7 +3254,7 @@ label chapter1_day5_event4:
     play music "music/Interloper.mp3"
     scene backgroundcafexn
 
-    if chapter1_investigation_success = True :
+    if chapter1_solved is True :
         $ Reputation += 5
 
         "Hiro runs up to me."
@@ -3268,7 +3268,9 @@ label chapter1_day5_event4:
         h "Nagen, did you have anything to do with this?"
 
         if hero > villain:
+
             $ hRep += 2
+
             n "Yeah. I promised I didn't scare her too bad. I just told her we knew she did it and she should come clean."
             n "It seemed like the best way to avoid a fight."
 
@@ -3287,7 +3289,9 @@ label chapter1_day5_event4:
             "I don't know how successful he'd be, but he would try."
             "He's right though, I think this is the first time I've stopped a crime from happening."
             "It feels pretty good."
-        else: 
+
+        else:
+
             n "I did what I had to. You were going to turn yourself in."
 
             show hiro suppress
@@ -3332,7 +3336,7 @@ label chapter1_day5_event4:
         "It's too late, the others are just as excited to sleepover at my dorm."
         "Hopefully none of the teachers heard."
 
-        call chapter1_day5_event_night
+        return
     else:
 
         "Jona and I are on the way to the cafeteria when we run into Uitto."
@@ -3371,7 +3375,9 @@ label chapter1_day5_event4:
 
         "Before I can get a word in, they run off. By now, he should be at the field where we were supposed to surrender."
         "The question is, who's behind this?"
+
         scene backgroundblack with fade
+
         return
 
 label chapter1_day5_event_night:
@@ -3606,9 +3612,6 @@ label chapter1_day5_event_night:
 
     if chapter1_solved is True :
         jump investigation_good_end
-
-    else:
-        pass
     
     scene backgroundC1_E
 
