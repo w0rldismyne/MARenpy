@@ -235,9 +235,13 @@ label investigation_good_end:
     play music "music/LateNights.mp3"
 
 
-    "I gave up on sleep and walked around the school. I hoped to find a dry fantasy novel or something to quit feeling so restless."
-    "But the computer lab was glowing. I thought no one was supposed to be in there. So why does it feel like, no, I know someone's in there."
-    "I tested the handle and it opened. There were rows of dead monitors. The room lacked the telltale hum of machinery. At the end of the room as light."
+    "I gave up on sleep, deciding to take a walk around the school. I’m hoping to find a dry fantasy novel or something to stop feeling so restless."
+    "The computer lab is glowing."
+    "I thought no one was supposed to be in there. So why does it feel like-"
+    "No, not feel like. I know someone's in there."
+    "I test the handle and the door swings open."
+    "There arre rows of dead monitors, the room lacking the telltale hum of machinery."
+    "At the end of the room is another light."
     menu:
         "Fuck this":
             "I've seen too many horror movies to go blindly into strange places. I should just go to bed."
@@ -252,11 +256,12 @@ label investigation_good_end:
 
     play music "music/Descent.mp3"
 
-    "I used one of the old books to keep the door from closing behind me."
+    "I use one of the old books to keep the door from closing behind me."
     "The last thing I need is to get locked in a place I'm not supposed to be in."
-    "The further down I went, the brighter and more high tech things got. The basement level was a wide hall with rooms in glass boxes."
-    "It's too reminiscent of my dad's old lab. At the end of the hall, one cubical was lit up."
-    "Under the florescent lights, the person inside looked gaunt and pale."
+    "The further down I go, the brighter and more high tech things get."
+    "The basement level is a wide hall with rooms in glass boxes."
+    "It's too reminiscent of my dad's old lab. One cubical is lit up at the end of the hall."
+    "Under the florescent lights, the person inside looks gaunt and pale."
 
     n "Mariko?"
 
@@ -268,8 +273,8 @@ label investigation_good_end:
 
     if chapter1_solved is False:
 
-        "She turned away from me and turned out her light."
-        "The teachers just said she was in detention not that she'd been detained."
+        "She turns away from me.."
+        "The teachers said she was in detention, not that she's been detained."
         "What the hell is going on here?"
     #(continue to main branch)
 
@@ -283,8 +288,8 @@ label investigation_good_end:
 
         n "Then what are you doing here?"
 
-        "Something chirped in her room."
-        "She sat down on the floor, not wanting to look at me."
+        "Something chirps in her room."
+        "She sits down on the floor, not wanting to look at me."
 
         m "Apparently I'm sick, physically."
         m "Most people in my position wouldn't be able to stand, but I don't feel pain so..."
@@ -300,11 +305,11 @@ label investigation_good_end:
 
         "She sniffles"
 
-        "It's not as easy as it sounds. And that's what everyone will say."
-        "Just do it and you'll get out faster, but it's so hard."
-        "Being forced to sit around all day is hard too. I don't want people to see me like this."
+        m "It's not as easy as it sounds. And that's what everyone will say."
+        m "Just do it and you'll get out faster, but it's so hard."
+        m "Being forced to sit around all day is hard too. I don't want people to see me like this."
 
-        n "Okay. I'll pretend like I was never here. Can I at least tell people you're okay?"
+        n "Okay, I'll pretend like I was never here. Can I at least tell people you're okay?"
 
         m "Yeah."
 
@@ -312,7 +317,7 @@ label investigation_good_end:
 
         m "Kinda... I don't want to jinx it, but... We're not exactly alone right now."
 
-        "I don't like the sound of that. I don't get the feeling she feels threatened though."
+        "I don't like the sound of that, but I don't get the feeling she feels threatened though."
 
     #(Main branch)
 
@@ -326,8 +331,8 @@ label investigation_good_end:
 
     show chiriyo talk
 
-    "A hologram of a stuffed rabbit projected itself on the glass."
-    "It reminded me of the old point and click games I used to play as a kid."
+    "A hologram of a stuffed rabbit projects itself on the glass."
+    "It reminds me of the old point-and-click games I used to play as a kid."
 
     n "What the hell is that?"
 
@@ -433,7 +438,8 @@ label investigation_good_end:
 
     m "Shut up, he still might be able to hear you!"
 
-    "I think I'd go crazy if I was locked up with that thing. Maybe I should come back here again."
+    "I think I'd go crazy if I was locked up with that thing."
+    "I don't know when I'll be able to get down here again."
 
     #(The final part of Mariko's pathway is unlocked)
 
