@@ -3832,7 +3832,7 @@ label chapter2_day6_event1:
 
     hide rise disappointed
 
-    "The student body distributes as she bullies students into going their own ways. Jona walks up to me, seemingly indifferent to the stares."
+    "The student body disperses as she bullies students into going their own ways. Jona walks up to me, seemingly indifferent to the stares."
 
     show jona depressed
 
@@ -3997,7 +3997,7 @@ label chapter2_checkuitto:
 
     u "There's a lot that happened while I was working as a Rosette that I just try not to think about."
     u "Towards the end there, my manager would come to our play rehearsals and try to pressure me into dropping out so I could work more."
-    u "Jona never left me alone when he was on the set. One time, my manager grabbed me by the shoulder and Jona..."
+    u "Jona never left me alone when he was on the set. One time, my manager grabbed me, and Jona..."
 
     scene backgroundCh2_UittoMemory2
 

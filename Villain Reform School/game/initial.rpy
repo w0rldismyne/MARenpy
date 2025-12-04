@@ -567,18 +567,17 @@ image backgroundDisc1 = "Prologue/disclaimer.png"
 image backgroundDisc2 = "Prologue/disclaimer2.png"
 
 #Hiros Flashbacks
-
-image backgroundfb1 = "Chapter1/HFB1.jpg"
-image backgroundfb2 = "Chapter1/HFB2.jpg"
-image backgroundfb3 = "Chapter1/HFB3.jpg"
-image backgroundfb4 = "Chapter1/HFB4.jpg"
-image backgroundfb5 = "Chapter1/HFB5.jpg"
-image backgroundfb6 = "Chapter1/HFB6.jpg"
-image backgroundfb7 = "Chapter1/HFB7.jpg"
-image backgroundfb8 = "Chapter1/HFB8.jpg"
-image backgroundfb9 = "Chapter1/HFB9.jpg"
-image backgroundfb10 = "Chapter1/HFB10.jpg" #Doesn't exist
-image backgroundfb11 = "Chapter1/HFB11.jpg"
+image flashback_ch1_1 = "Chapter1/HFB1.jpg"
+image flashback_ch1_2 = "Chapter1/HFB2.jpg"
+image flashback_ch1_3 = "Chapter1/HFB3.jpg"
+image flashback_ch1_4 = "Chapter1/HFB4.jpg"
+image flashback_ch1_5 = "Chapter1/HFB5.jpg"
+image flashback_ch1_6 = "Chapter1/HFB6.jpg"
+image flashback_ch1_7 = "Chapter1/HFB7.jpg" #Not used?
+image flashback_ch1_8 = "Chapter1/HFB8.jpg"
+image flashback_ch1_9 = "Chapter1/HFB9.jpg"
+image flashback_ch1_10 = "Chapter1/HFB10.jpg" #Doesn't exist
+image flashback_ch1_11 = "Chapter1/HFB11.jpg"
 
 #Marikos Flashbacks
 image background_Mfb1 = "Chapter1/MFB_1.png"

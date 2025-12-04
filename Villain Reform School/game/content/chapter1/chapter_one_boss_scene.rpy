@@ -413,17 +413,17 @@ label chapter1_boss_battle_midfight_scene:
     if Hero > Villain:
 
         #[CG of Hiro's Injury]
-        scene backgroundfb11
+        scene flashback_ch1_11 with fade
 
         "Hiro never wanted anyone to get hurt. He would sooner get himself killed than let others fight for him. No matter how awful people were, he'd always make excuses for them. He wanted everyone to be happy."
 
         #[CG of Odori and Nagen flanking young Hiro, offering a gun.]
-        scene backgroundfb5
+        scene flashback_ch1_5 with dissolve
 
         "So we lied to him about Lethe's predictions. We told him no one would get hurt as long as he did exactly what we told him. As crazy as our plan was, he never could figure out how to tell us no."
 
         #[CG of Hiro blocking out the world with headphones]
-        scene backgroundfb2
+        scene flashback_ch1_2 with dissolve
 
         "After people started to die, he shut everyone out. Despite our best efforts to hide the truth, I could see him counting how many people made it back every night. He blamed himself for everything going to shit."
 
@@ -455,17 +455,17 @@ label chapter1_boss_battle_midfight_scene:
         return
     else:
         #[CG of Hiro's Injury]
-        scene backgroundfb11
+        scene flashback_ch1_11 with pixellate
     
         "Hiro wanted to see the good in anyone, even when they hurt him. It made him easy to manipulate. If I so much as looked disappointed, he'd immediately cave. It's why he made such a wonderful puppet."
 
         #[CG of Odori and Nagen flanking young Hiro, offering a gun.]
-        scene backgroundfb5
+        scene flashback_ch1_5 with pixellate
     
         "We'd feed him our ideas and Hiro would blindly spread them to anyone who'd listen. As long as he thought he was in charge, it didn't matter what we said, he'd still do it. After all, it's a leader's job to make the hard decisions."
 
         #[CG of Hiro blocking out the world with headphones]
-        scene backgroundfb2
+        scene flashback_ch1_2 with pixellate
     
         "After his father was out of the picture and Lethe passed, we were all he had left. It was kind of pathetic watching him talk to the brainwashed soldiers like they would answer him."
 

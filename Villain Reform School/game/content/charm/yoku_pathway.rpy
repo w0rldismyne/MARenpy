@@ -335,7 +335,7 @@ label Yoku2:
             hide yoku furious2
             show yoku
 
-            y ""I suggest you inv-vest in a pair of ear plugs, otherw-wise it will be a long night."
+            y "I suggest you inv-vest in a pair of ear plugs, otherw-wise it will be a long night."
 
             n "If you don't give a shit about me, fine, but you'll be waking everyone else up if you play."
 
@@ -661,7 +661,7 @@ label Yoku4:
 
             y "Really, Beethoven's 5th is b-better bass boosted?"
 
-            n "I know you're being sarcastic, but it's literally the first thing that pops up when I search "bass boosted classical”. Followed by ‘Mozart and Rise of the Valkyries'."
+            n "I know you're being sarcastic, but it's literally the first thing that pops up when I search \"bass boosted classical\". Followed by ‘Mozart and Rise of the Valkyries'."
 
             y "That d-doesn't make it better."
 

@@ -2082,13 +2082,14 @@ label chapter1_day2_event_night:
     "I try to drown out my thoughts with the tinny music on my phone, but not too far in, my mind wanders."
     "Why target Hiro?"
 
-    scene backgroundfb1
+    scene flashback_ch1_1 with pixellate
 
     Dark "He was the leader of our army."
 
     "But he wasn't terrible. He at least tried to make an effort to call people by name, even when they couldn't respond."
 
-    scene backgroundfb2
+    scene flashback_ch1_2 with dissolve
+
 
     Dark "He never listened."
 
@@ -2096,7 +2097,7 @@ label chapter1_day2_event_night:
     "He wouldn't take his headphones off and she didn't feel like fighting with him over bad news."
     "I was the strategist anyway; his duty as a recruiter had long since finished."
 
-    scene backgroundfb3
+    scene flashback_ch1_3 with dissolve
 
     Dark "Something was off."
 
@@ -2433,21 +2434,21 @@ label chapter1_day3_event_night:
     "Granted, being casually avoided doesn't feel great either, but it's better than what I expected."
     "If you had told us when we ran away we would have come here, I think Hiro would've been the only one to go through with it."
 
-    scene backgroundfb4
+    scene flashback_ch1_4 with pixellate
 
     Dark "He couldn't sneak out."
 
     "A week after we ran away, we realized he only brought a few things in his backpack. He said it was because he forgot when we were leaving."
     "That's when Lethe asked if he left a note."
 
-    scene backgroundfb5
+    scene flashback_ch1_5 with dissolve
 
     Dark "They made him go back."
 
     "He was too scared to grab his stuff, of course he didn't leave a note. I emptied out one of my pistols and lent it to him so he could feel safe."
     "Odori even checked the cylinder to make sure. The house should have been empty when he went."
 
-    scene backgroundfb6
+    scene flashback_ch1_6 with dissolve
 
     Dark "He came back empty handed."
 
@@ -2662,13 +2663,12 @@ label chapter1_day4_event2:
 
     "Before Momoko can seal the deal, Chisei bellows from down the hall."
 
-    hide Uitto
+    hide uitto
     show chisei at left
 
     ch "Hark, deceiver!"
 
     "She's not terribly fast, but she makes up for it by shouting as she walks."
-
 
     show chisei mad1 at left
 
@@ -2873,7 +2873,7 @@ label chapter1_day4_event_night:
     "He didn't have to try to make friends. He just had them."
     "I lashed out so much back then."
 
-    scene backgroundfb8
+    scene flashback_ch1_8 with pixellate
 
     Dark "He never fought back."
 
@@ -2881,7 +2881,7 @@ label chapter1_day4_event_night:
     "It frustrated the hell out of me that I couldn't shake him."
     "Our arguments got so bad, the school had to get involved."
 
-    scene backgroundfb9
+    scene flashback_ch1_9 with dissolve
 
     Dark "I watched him drive off with his dad."
 
@@ -2894,7 +2894,7 @@ label chapter1_day4_event_night:
 
     Dark "He never told me what happened."
 
-    scene backgroundfb11
+    scene flashback_ch1_11 with dissolve
 
     "His face... it was unrecognizable."
     "He wanted me to give him stitches, like I'd seen in a documentary, but bones were broken."

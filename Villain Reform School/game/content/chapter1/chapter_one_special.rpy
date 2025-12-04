@@ -8,13 +8,13 @@ label chapter1_interrogation:
     "I know who did this."
     "The person responsible was someone close to Kazz."
     "They would have known the stuff that he smuggled in from day one since he was bragging so much."
-    "When they had an opportunity to take his phone, that’s when they put their plan in action."
+    "When they had an opportunity to take his phone, that's when they put their plan in action."
     "They made sure they were the last person in the PA booth and set up his alexa to play a command right as everyone was out of class."
     "In order to keep from getting caught, they hid his phone somewhere that would incriminate a different classmate."
-    "I’m sure they thought they’d have plenty of time to run back to the main halls so it would look like they had an alibi when the announcement went off."
-    "But, even without feeling pain, I’m sure running on an injured leg is difficult."
+    "I'm sure they thought they'd have plenty of time to run back to the main halls so it would look like they had an alibi when the announcement went off."
+    "But, even without feeling pain, I'm sure running on an injured leg is difficult."
 
-    n "Isn’t that right Mariko?"
+    n "Isn't that right Mariko?"
     
     show mariko judge
 
@@ -45,7 +45,7 @@ label chapter1_interrogation:
     m "'What have you been up to?' That kind of stuff. Why does it matter that I talk to other people?"
 
     "She's trying to downplay their connection, but it explains some things."
-    "If they knew each other before, it's make sense that he'd want to impress her."
+    "If they knew each other before, it makes sense that he'd want to impress her."
 
     hide mariko
 
@@ -246,7 +246,7 @@ label chapter1_interrogation_b:
             pass
         "Missing Phone":
             jump chapter1_interrogation_unsuccessful
-        "Kazzz's Bragfest":
+        "Kazz's Bragfest":
             jump chapter1_interrogation_unsuccessful
 
     #[5B: Baton Pass]
@@ -540,7 +540,7 @@ label chapter1_investigation_fail:
     "I know who did this."
     "The person responsible was someone close to Kazz."
     "They would have known the stuff that he smuggled in from day one since he was bragging so much."
-    "When they had an opportunity to take his phone, that’s when they put their plan in action."
+    "When they had an opportunity to take his phone, that's when they put their plan in action."
     "They made sure they were the last person in the PA booth and set up his alexa to play a command right as everyone was out of class."
     "In order to keep from getting caught, they hid his phone somewhere that would incriminate a different classmate."
 
@@ -552,8 +552,8 @@ label chapter1_investigation_fail:
 
     show inukai sad
 
-    ik "I appreciate you wanting to help out a friend Nagen, but I can’t get someone in trouble for being on campus without a teacher present."
-    ik "Has anyone else seen this student with Kazz’s things and they had access to the PA room?"
+    ik "I appreciate you wanting to help out a friend Nagen, but I can't get someone in trouble for being on campus without a teacher present."
+    ik "Has anyone else seen this student with Kazz's things and also in the PA room?"
 
     "Maybe I need to ask around some more."
 

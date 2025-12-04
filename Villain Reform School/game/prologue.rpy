@@ -1069,8 +1069,8 @@ label life_1:
     l "Do you feel safe at home?" id prologue2_e12ba218
 
     scene backgroundP2 with fade:
-        size (1920, 1080) crop (1100, 320, 528, 297)
-        ease 20 crop (0, 0, 1920, 1080)
+        size (1920, 1080) crop (960, 270, 960, 540)
+        linear 8 crop (0, 0, 1920, 1080)
 
     play music "music/Nostalgia.mp3"
 

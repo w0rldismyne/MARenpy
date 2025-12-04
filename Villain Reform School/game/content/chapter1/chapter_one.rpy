@@ -235,7 +235,7 @@ label investigation_good_end:
     play music "music/LateNights.mp3"
 
 
-    "I gave up on sleep, deciding to take a walk around the school. I’m hoping to find a dry fantasy novel or something to stop feeling so restless."
+    "I gave up on sleep, deciding to take a walk around the school. I'm hoping to find a dry fantasy novel or something to stop feeling so restless."
     "The computer lab is glowing."
     "I thought no one was supposed to be in there. So why does it feel like-"
     "No, not feel like. I know someone's in there."

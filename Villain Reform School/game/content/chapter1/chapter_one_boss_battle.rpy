@@ -338,7 +338,7 @@ transform boss_hint2:
         repeat
 
 screen floating_text:
-    if turns_passed % 3 is 1:
+    if turns_passed % 3 == 1:
         text "Mariko brandishes her claws ...":
             xanchor 0.5
             yanchor 0.5
@@ -393,7 +393,7 @@ label mariko_turn:
 
     $ boss_active = boss_attack
 
-    if turns_passed % 3 is 1:
+    if turns_passed % 3 == 1:
 
         $ mariko_next_attack = mariko_strong_attack
 

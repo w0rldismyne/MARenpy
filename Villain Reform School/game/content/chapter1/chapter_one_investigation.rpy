@@ -889,7 +889,7 @@ label chapter1_investigation_kazz_loop:
 
                     #[B/W CG of Rei confronting Nagen]
 
-                    scene backgroundCh1_1
+                    scene backgroundC1_1
     
                     "It would have been impossible to make it back in time without being out of breath."
 

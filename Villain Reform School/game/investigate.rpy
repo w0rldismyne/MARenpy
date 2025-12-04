@@ -339,7 +339,7 @@ screen investigate():
                 ypos 0.1
                 xanchor 0.5
                 yanchor 1.0
-                if profile_tab is 0:
+                if profile_tab == 0:
                     idle "images/Interactables/TabPink.png"
                 else:
                     idle "images/Interactables/TabPinkFalse.png"
@@ -351,7 +351,7 @@ screen investigate():
                 ypos 0.1
                 xanchor 0.5
                 yanchor 1.0
-                if profile_tab is 1:
+                if profile_tab == 1:
                     idle "images/Interactables/TabBlue.png"
                 else:
                     idle "images/Interactables/TabBlueFalse.png"
@@ -364,7 +364,7 @@ screen investigate():
                 ypos 0.1
                 xanchor 0.5
                 yanchor 1.0
-                if profile_tab is 2:
+                if profile_tab == 2:
                     idle "images/Interactables/TabPurple.png"
                 else:
                     idle "images/Interactables/TabPurpleFalse.png"
@@ -377,7 +377,7 @@ screen investigate():
                 ypos 0.1
                 xanchor 0.5
                 yanchor 1.0
-                if profile_tab is 3:
+                if profile_tab == 3:
                     idle "images/Interactables/TabGreen.png"
                 else:
                     idle "images/Interactables/TabGreenFalse.png"
@@ -512,7 +512,7 @@ screen clipboard():
             ypos 1.0
             xanchor 0.5
             yanchor 1.0
-            if profile_tab is 0:
+            if profile_tab == 0:
                 idle "images/Interactables/TabPink.png"
             else:
                 idle "images/Interactables/TabPinkFalse.png"
@@ -527,7 +527,7 @@ screen clipboard():
             ypos 1.0
             xanchor 0.5
             yanchor 1.0
-            if profile_tab is 1:
+            if profile_tab == 1:
                 idle "images/Interactables/TabBlue.png"
             else:
                 idle "images/Interactables/TabBlueFalse.png"
@@ -543,7 +543,7 @@ screen clipboard():
             ypos 1.0
             xanchor 0.5
             yanchor 1.0
-            if profile_tab is 2:
+            if profile_tab == 2:
                 idle "images/Interactables/TabPurple.png"
             else:
                 idle "images/Interactables/TabPurpleFalse.png"
@@ -559,7 +559,7 @@ screen clipboard():
             ypos 1.0
             xanchor 0.5
             yanchor 1.0
-            if profile_tab is 3:
+            if profile_tab == 3:
                 idle "images/Interactables/TabGreen.png"
             else:
                 idle "images/Interactables/TabGreenFalse.png"
