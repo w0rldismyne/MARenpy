@@ -1,4 +1,16 @@
 #[Rise is available during mornings after class]
+label RiseVisit:
+
+    if rTurn == 0:
+        jump Rise1
+    elif rTurn == 1:
+        jump Rise2
+    elif rTurn == 2:
+        jump Rise3
+    elif rTurn == 3:
+        jump Rise4
+    else:
+        jump Rise5
 
 label Rise1:
     scene backgroundpond

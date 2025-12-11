@@ -3400,21 +3400,32 @@ label chapter1_day5_event_night:
 
     j "I'll change later. I can't sleep in clothes that have outside smell on them."
 
-    show hiro happy at right
+    if chapter1_solved = True:
 
-    h "A sleepover, seriously?"
+        show hiro happy at right
+        h "The party has arrived!"
+        n "What's with the pajamas?"
+        "I know they wanted to have a party, but this looks supiciously like..."
+        show uitto smug
+        u "Sleepover!"
+    
+    else:
 
-    hide jona happy
-    show jona depressed at left
+        show hiro happy at right
 
-    j "It'd be unnerving to sleep by yourself after everything that happened, don't you think?"
+        h "A sleepover, seriously?"
 
-    n "It couldn't hurt."
+        hide jona happy
+        show jona depressed at left
 
-    hide hiro happy
-    show hiro confess at right 
+        j "It'd be unnerving to sleep by yourself after everything that happened, don't you think?"
 
-    h "But you guys could get in serious trouble if they catch you, especially you, Uitto."
+        n "It couldn't hurt."
+
+        hide hiro happy
+        show hiro confess at right 
+
+        h "But you guys could get in serious trouble if they catch you, especially you, Uitto."
 
     u "There's no rules about sleeping in someone else's dorms."
 
