@@ -3400,29 +3400,30 @@ label chapter1_day5_event_night:
 
     j "I'll change later. I can't sleep in clothes that have outside smell on them."
 
-    if chapter1_solved = True:
+    show hiro happy at right
 
-        show hiro happy at right
+    if chapter1_solved is True:
+
         h "The party has arrived!"
+        
         n "What's with the pajamas?"
+
         "I know they wanted to have a party, but this looks supiciously like..."
+        
         show uitto smug
+
         u "Sleepover!"
     
     else:
 
-        show hiro happy at right
-
         h "A sleepover, seriously?"
 
-        hide jona happy
         show jona depressed at left
 
         j "It'd be unnerving to sleep by yourself after everything that happened, don't you think?"
 
         n "It couldn't hurt."
 
-        hide hiro happy
         show hiro confess at right 
 
         h "But you guys could get in serious trouble if they catch you, especially you, Uitto."
@@ -3431,7 +3432,6 @@ label chapter1_day5_event_night:
 
     j "Not yet."
 
-    hide uitto smile
     show uitto smirk
 
     u "And we plan on taking full advantage of that loophole."
@@ -3440,52 +3440,52 @@ label chapter1_day5_event_night:
 
     n "My room?"
 
-    hide jona depressed
     show jona happy at left
 
     j "It's already clean, isn't it?"
 
     n "...Yeah."
 
-    hide hiro confess
     show hiro at right
 
     h "Alright, yeah, let's go!"
 
-    hide jona happy
     show jona depressed at left
 
     j "...You don't want to grab a change of clothes?"
 
     h "...No? All my stuff can double as sleep clothes."
 
-    hide hiro
     show hiro guilty at right
 
     h "Why wear anything else when you can be comfortable all the time?"
 
     n "You're the only human being alive that's comfortable all the time."
 
+    hide jona
+    hide uitto
+    hide hiro
+
     scene backgroundroomn
 
     "Everyone crams themselves into my tiny dorm. Because, of course, after only a week of being here, I have the cleanest room."
     "We fight to find an outlet for the TV, opting to balance it on a pile of textbooks so everyone can see."
 
-    hide hiro guilty
     show hiro sad smile at right
 
     h "We'll get the spooky tape out of the way and then have fun, right?"
 
+    show uitto smirk
+
     u "Of course, no ending the night on a bummer."
 
-    hide jona depressed
     show jona mad at left
 
     j "No bummers!"
 
-    hide jona mad
-    hide hiro sad smile
-    hide uitto smirk
+    hide jona
+    hide hiro
+    hide uitto
 
     scene backgroundstatic
 
@@ -3503,7 +3503,7 @@ label chapter1_day5_event_night:
     show uitto serious
     show jona relaxed at left
 
-    h "...the Karmic Gladiators sent her? Why!? We were junior heroes for them."
+    h "...The Karmic Gladiators sent her? Why!? We were junior heroes for them."
 
     n "The DVP is busy rounding up Lethe's old pawns, which means this could have come from the members who opposed her or..."
 
@@ -3515,22 +3515,21 @@ label chapter1_day5_event_night:
 
     n "I don't remember her ever mentioning an 'Apex'. Did any of you know a hero by that name?"
 
-    hide uitto serious
     show uitto talk
+
     u "No, but they could have changed their name after the media turned on Lethe."
 
     u "It's not uncommon to rebrand after a scandal."
 
-    hide jona relaxed
     show jona frustrated at left
 
     j "Or maybe it's a title? Like captain or boss?"
 
     h "A new leader that doesn't like us... that can't be good."
 
-    hide jona frustrated
-    hide uitto talk
-    hide hiro judge
+    hide jona
+    hide uitto
+    hide hiro
 
     play music "music/VHS.mp3"
 
@@ -3592,18 +3591,15 @@ label chapter1_day5_event_night:
 
     play music "music/WeAre.mp3"
 
-    hide uitto serious
     show uitto smile
 
     u "Right!? This could be the only night we get away with this, so we gotta make the most of it!"
 
-    hide jona relaxed
     show jona happy at left
     
     j "I've got puzzles, games, old DnD stuff, and a bunch of old sci-fi movies."
 
-    hide hiro sad talk
-    show hiro smile at right
+    show hiro happy at right
 
     h "Please tell me you got Were-Sheep. I need a good laugh right now."
 

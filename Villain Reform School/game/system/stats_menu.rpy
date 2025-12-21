@@ -237,4 +237,4 @@ screen stats_chapter_one():
         ypos 0.5
 
         text "Day: [chapter1_day]"
-        text "Event: [chapter1_event]"
+        text "Event: [chapter_event]"

@@ -691,9 +691,11 @@ default introductionReiMet     = False
 default introductionRiseMet    = False
 default introductionDyreMet    = False
 
+# Generic Chapter Variables
+default chapter_event = -1
+
 # Chapter 1 Variables
 default chapter1_day = 1
-default chapter1_event = -1
 define chapter1_free_time_morning_break = 0
 define chapter1_free_time_after_school = 1
 define chapter1_free_time_evening = 2
@@ -789,7 +791,7 @@ label start:
                 "Introduction":
                     jump introduction_meet_students
                 "Freetime":
-                    jump chapter1_freetime
+                    jump freetime
                 "Boss Battle":
                     jump chapter1_boss_scene
                 "Secret Shortcut":

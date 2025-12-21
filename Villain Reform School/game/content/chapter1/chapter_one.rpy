@@ -11,15 +11,15 @@ label chapter_one:
 
     call chapter1_day1_event_morning
 
-    $ chapter1_event = chapter1_free_time_morning_break
+    $ chapter_event = chapter1_free_time_morning_break
 
     call chapter1_day1_event1 # Classes
 
-    $ chapter1_event = chapter1_free_time_after_school
+    $ chapter_event = chapter1_free_time_after_school
 
     call chapter1_day1_event2
 
-    $ chapter1_event = chapter1_free_time_evening
+    $ chapter_event = chapter1_free_time_evening
 
     call chapter1_day1_event3
 
@@ -30,19 +30,19 @@ label chapter_one:
 
     call chapter1_day2_event_morning
 
-    $ chapter1_event = chapter1_free_time_morning_break
+    $ chapter_event = chapter1_free_time_morning_break
 
     # Woke up late, no free time
     call chapter1_day2_event1
 
-    $ chapter1_event = chapter1_free_time_after_school
+    $ chapter_event = chapter1_free_time_after_school
 
-    call chapter1_freetime
+    call freetime
     call chapter1_day2_event2
 
-    $ chapter1_event = chapter1_free_time_evening
+    $ chapter_event = chapter1_free_time_evening
     
-    call chapter1_freetime
+    call freetime
     call chapter1_day2_event3
 
     call chapter1_day2_event_night
@@ -52,19 +52,19 @@ label chapter_one:
 
     call chapter1_day3_event_morning
 
-    $ chapter1_event = chapter1_free_time_morning_break
+    $ chapter_event = chapter1_free_time_morning_break
 
-    call chapter1_freetime
+    call freetime
     call chapter1_day3_event1
 
-    $ chapter1_event = chapter1_free_time_after_school
+    $ chapter_event = chapter1_free_time_after_school
 
-    call chapter1_freetime
+    call freetime
     call chapter1_day3_event2
 
-    $ chapter1_event = chapter1_free_time_evening
+    $ chapter_event = chapter1_free_time_evening
     
-    call chapter1_freetime
+    call freetime
     call chapter1_day3_event3
 
     call chapter1_day3_event_night
@@ -74,19 +74,19 @@ label chapter_one:
 
     call chapter1_day4_event_morning
 
-    $ chapter1_event = chapter1_free_time_morning_break
+    $ chapter_event = chapter1_free_time_morning_break
 
-    call chapter1_freetime
+    call freetime
     call chapter1_day4_event1
 
-    $ chapter1_event = chapter1_free_time_after_school
+    $ chapter_event = chapter1_free_time_after_school
 
-    call chapter1_freetime
+    call freetime
     call chapter1_day4_event2
 
-    $ chapter1_event = chapter1_free_time_evening
+    $ chapter_event = chapter1_free_time_evening
     
-    call chapter1_freetime
+    call freetime
 
     call chapter1_day4_event_night
 
@@ -95,17 +95,17 @@ label chapter_one:
 
     call chapter1_day5_event_morning
 
-    $ chapter1_event = chapter1_free_time_morning_break
+    $ chapter_event = chapter1_free_time_morning_break
 
-    call chapter1_freetime
+    call freetime
     call chapter1_day5_event1
 
-    $ chapter1_event = chapter1_free_time_after_school
+    $ chapter_event = chapter1_free_time_after_school
 
-    call chapter1_freetime
+    call freetime
     call chapter1_day5_event2 # Special Event - Requires Vision
 
-    $ chapter1_event = chapter1_free_time_evening
+    $ chapter_event = chapter1_free_time_evening
     
     call chapter1_day5_event3
     

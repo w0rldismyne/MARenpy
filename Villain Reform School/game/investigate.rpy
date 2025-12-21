@@ -119,7 +119,7 @@ screen investigate():
             xanchor 0.5
             yanchor 0.5
             text_size 55
-            action Jump("chapter1_freetime")
+            action Jump("freetime")
 
         textbutton "SOLVE":
             xpos 0.5

@@ -3954,6 +3954,8 @@ label chapter2_day6_event2:
         "Jona":
             call chapter2_checkjona
 
+    return
+
 label chapter2_checkuitto:
 
     scene backgrounddorm
@@ -4020,7 +4022,7 @@ label chapter2_checkuitto:
 
     scene backgroundblack with fade
 
-    pass
+    return
 
 label chapter2_checkjona:
 
@@ -4087,7 +4089,7 @@ label chapter2_checkjona:
 
     scene backgroundblack with fade
 
-    pass
+    return
 
     #Freetime, Jona not accessible
 

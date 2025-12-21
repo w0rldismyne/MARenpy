@@ -386,7 +386,7 @@ label chapter1_interrogation_success:
 
     n "You're being paranoid."
 
-    m "And who's fault is that exactly? I know it would be easier to run away, but I can't just leave Rei here by herself like that."
+    m "And whose fault is that exactly? I know it would be easier to run away, but I can't just leave Rei here by herself like that."
     m "Hiro's my ticket for getting both of us out of here."
 
     n "Says who?"
