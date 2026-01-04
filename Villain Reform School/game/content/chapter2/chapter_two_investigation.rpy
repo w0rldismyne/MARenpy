@@ -626,6 +626,21 @@ label chapter2_investigation_kietsu_loop:
                     "I'll have to confirm for myself before I jump to conclusions."
                     
                     jump chapter2_investigation_kietsu_loop
+
+                "Location of Note":
+                    ki "It had to be put in there after Ichita locked up."
+
+                    n "What do you mean?"
+
+                    ki "The class leaders are in charge of tidying up the classroom and locking it up at the end of the day."
+                    ki "I was helping him out yesterday and saw him lock the door."
+                    ki "There wasn't anything on Jona's desk then."
+
+                    "But he saw it first thing in the morning..."
+
+                    n "Would anyone other than the teachers be able to get in?"
+
+                    ki "Anyone in the council or class reps I guess."
         "Motive":
             
             ki "Everyone here has so much history with each other. I've never been so thankful to not know anyone."
@@ -767,6 +782,10 @@ label chapter2_investigation_yoku_loop:
             n "So you benefit from him being where he is?"
             
             y "It's more that I don't have to think about him at all. After school, our lives will never cross paths again."
+            y "Whoever did do this had to have gotten a key from one of the class representitives to do it."
+            y "I can't imagine anyone leaving that note in Principal Vivaldi's classroom when she might see it first."
+
+            "That's true. A teacher would have taken it right away."
             
             jump chapter2_investigation_yoku_loop
 
@@ -853,6 +872,7 @@ label chapter2_investigation_setsuna_loop:
                     
                     s "Maybe. It'll either be patched up or redone entirely." 
                     
+                    n "It'd be easier to find a hair than the nail polish."
                     jump chapter2_investigation_setsuna_loop
 
                 "Magazine Cippings":
