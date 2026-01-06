@@ -127,10 +127,12 @@ screen investigate():
             xanchor 0.5
             yanchor 0.5
             text_size 55
-            if reveal1 is True and reveal2 is True and reveal3 is True and reveal4 is True and reveal5 is True:
+            if reveal1 is True and reveal2 is True and reveal3 is True and reveal4 is True and reveal5 is True and chapter1_interrogation_chance is True:
                 action SetVariable("investigation_solve", True), renpy.restart_interaction
+            if investigation_solve is True:
+                action SetVariable("investigation_solve", False), renpy.restart_interaction
     
-        if investigation_solve is True:
+        if investigation_solve is True and chapter1_interrogation_chance is True:
             vbox:
                 xpos 1.0
                 ypos 0.5

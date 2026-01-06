@@ -554,7 +554,6 @@ label chapter1_investigation_ichita_loop:
 
     "Damn, that was fast. I should go now."
 
-
     $ reveal_flag2 = True
 
     call investigation_progress_update

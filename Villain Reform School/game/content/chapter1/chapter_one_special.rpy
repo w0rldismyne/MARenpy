@@ -1,5 +1,7 @@
 label chapter1_interrogation:
 
+    scene backgroundclass
+
     #[Boss Accusation]
     #[IF Intel > ? This option will be available to the player]
     #(If from Mariko Interrogation)
@@ -512,7 +514,8 @@ label chapter1_interrogation_success:
 
 label chapter1_interrogation_unsuccessful:
 
-    #[If Accusation = Fail]
+    $ chapter1_interrogation_chance = False
+    $ investigation_solve = False
 
     show mariko glare
     
@@ -558,111 +561,3 @@ label chapter1_investigation_fail:
     "Maybe I need to ask around some more."
 
     return
-
-label JonaInv1:
-    scene backgroundamp
-    "Jona doesn't really like talking to people alone, so I appreciate he was willing to do this for me."
-
-    show jona frustrated
-
-    j "I wasn't sure what to ask people about, but I think I found some stuff."
-    j "Kietsu's been really busy, so he let club leaders go into the PA booth alone."
-    j "They're the only ones who could have gone in."
-    j "Ichita thought he found Kazz's phone, but someone else went to give it to Setsuna."
-
-    n "Anything else?"
-
-    hide jona frustrated
-    show jona relaxed
-
-    j "No one in my class is responsible for the incident."
-    j "Or at least, they weren't lying when they were talking to me."
-
-    n "Well that narrows it down a little."
-
-    hide jona relaxed
-    show jona happy
-
-    j "Oh good." #(+PA Access)
-
-    $ inventory.AddClue(clue_pa_access)
-
-    hide jona happy
-    return #connect to main game loop
-
-label HiroInv1:
-    scene backgroundamp
-    "I felt a little nervous sending Hiro out on his own. Still, he insisted and when he returned..."
-
-    show hiro
-
-    h "Mariko and Rei wouldn't even talk to me."
-
-    n "Really?"
-
-    "I shouldn't be too surprised, but I thought Hiro was friends with everyone."
-    "I guess even he has his limit."
-
-    hide hiro
-    show hiro sad smile
-
-    h "They were totally afraid of me. It was such a gross feeling."
-    h "Even before I could say anything, they were trying to get away from me."
-
-    n "There's not much we can do about that at the moment."
-
-    hide hiro sad smile
-    show hiro sad talk
-
-    h "I know... A-anyway, I was able to talk to Shoma."
-    h "He's borrowing one of those Alexa thingies too, so I was able to ask him all about it."
-    h "I guess in order to get it to play stuff like it did, it'd have to have some kind of remote like a phone or a laptop."
-    h "That way they could set it to go off at a specific time."
-    h "He also showed me his to check what account it's using, to see who it belongs to."
-    h "I also overheard a few Intel Majors going off about Kazz bringing in a bunch of banned stuff."
-    h "You might want to try asking him about what happened. It sounds like he might be a victim in this too."
-
-    n "I'll definitely keep that in mind. Thanks for the info." 
-    
-    hide hiro sad talk
-
-    $ inventory.ShowClue(clue_account)
-    $ inventory.ShowClue(clue_brag)
-
-    return #connect to main game loop
-
-label UittoInv1:
-    scene backgroundstuco
-    "I ask Uitto if she was able to dig up anything."
-
-    show uitto
-
-    u "I can't believe you wanted me to talk to Kitsune for you."
-
-    n "...Did you?"
-
-    u "I could tell you exactly what she'd say. 'Memememe and also me.'"
-    u "There you go, you got the full experience."
-
-    n "Anyone else have anything to say?"
-
-    hide uitto
-    show uitto talk
-
-    u "Well, all the student council kids got spooked this morning."
-    u "I guess a ghost or something is haunting the lockers."
-    u "Setsuna told me which one, but I forgot."
-    u "Oh! I do know who's responsible for the Echo in the PA room."
-    u "Dyre had a friend of his sneak it in after it was stolen from Kazz."
-
-    n "Isn't that Kazz's booth though?"
-
-    u "Exactly. Who knows how long they were going to be playing musical chairs with his stuff?"
-    u "That would drive me bananas."
-
-    n "Thanks, Uitto." #(+Mystery Noise, +Prank)
-    $ inventory.ShowClue(clue_mysterious_noise)
-    $ inventory.ShowClue(clue_prank)
-
-    hide uitto talk
-    return #connect to main game loop

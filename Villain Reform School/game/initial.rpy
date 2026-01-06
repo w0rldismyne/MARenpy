@@ -695,6 +695,9 @@ default introductionDyreMet    = False
 default chapter_event = -1
 
 # Chapter 1 Variables
+default chapter1_solved = False
+default chapter1_interrogation_chance = True
+
 default chapter1_day = 1
 define chapter1_free_time_morning_break = 0
 define chapter1_free_time_after_school = 1
@@ -706,7 +709,6 @@ default check_cd = False
 default check_mic = False
 default check_laptop = False
 
-define chapter1_solved = False
 default kazzPhoneFound = False
 
 # Chapter 2 Variables
