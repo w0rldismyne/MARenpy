@@ -538,10 +538,16 @@ image backgroundCh2_CheckJona = "Chapter2/Ch2_CheckJona.png"
 image backgroundCh2_CheckUitto = "Chapter2/Ch2_CheckUitto.png"
 image backgroundCh2_ChiseiProm = "Chapter2/Ch2_ChiseiProm.png"
 image backgroundCh2_KitProm = "Chapter2/Ch2_KitProm.png"
+image backgroundCh2_HiroProm = "Chapter2/Ch2_HiroProm.png"
 image backgroundCh2_MuProm = "Chapter2/Ch2_MuProm.png"
+image backgroundCh2_NagenProm = "Chapter2/Ch2_NagenProm.png"
+image backgroundCh2_NagenProm2 = "Chapter2/Ch2_NagenProm2.png"
 image backgroundCh2_Nurse1 = "Chapter2/Ch2_Nurse1.png"
 image backgroundCh2_Nurse2 = "Chapter2/Ch2_Nurse2.png"
 image backgroundCh2_Nurse3 = "Chapter2/Ch2_Nurse3.png"
+image backgroundCh2_RiseCloseup = "Chapter2/Ch2_RiseCloseup.png"
+image backgroundCh2_RiseReveal = "Chapter2/Ch2_RiseReveal.png"
+image backgroundCh2_RiseReveal2 = "Chapter2/Ch2_RiseReveal2.png"
 image backgroundCh2_RiseArena = "Chapter2/Ch2_RisesArena.png"
 image backgroundCh2_RiseCrash = "Chapter2/Ch2_RiseCrash.png"
 image backgroundCh2_UittoSees = "Chapter2/Ch2_UittoSees.png"
@@ -601,6 +607,15 @@ image background_Jfb8 = "Chapter2/JFB8.png"
 image background_Jfb9 = "Chapter2/JFB9.png"
 image background_Jfb10 = "Chapter2/JFB10.png"
 image background_Jfb11 = "Chapter2/JFB11.png"
+image background_JFBCouch = "Chapter2/JFBCouch.png"
+image background_JFBCouch2 = "Chapter2/JFBCouch2.png"
+image background_JFBSleepover1 = "Chapter2/JFBSleepover1.png"
+image background_JFBSleepover2 = "Chapter2/JFBSleepover2.png"
+
+#Rise Flashbacks
+image backgroundCh2_RiseFB1 = "Chapter2/RiseFB1.png"
+image backgroundCh2_RiseFB2 = "Chapter2/RiseFB2.png"
+image backgroundCh2_RiseFB3 = "Chapter2/RiseFB3.png"
 
 #Odori Flashbacks
 image background_Ofb1 = "Chapter2/OFB1.png"
@@ -724,6 +739,10 @@ default dateMu = False
 default dateTaiga = False
 
 default characters_helping = 0
+
+default promChisei = False
+default promKit = False
+default promMu = False
 
 init python:
     listOfDirectories = ["Apex",

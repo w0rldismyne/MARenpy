@@ -1,13 +1,17 @@
 label NanaseVisit:
 
-    if uTurn == 0:
+    if nkTurn == 0:
         jump Nanase1
-    elif uTurn == 1:
+    elif nkTurn == 1:
         jump Nanase2
-    elif uTurn == 2:
+    elif nkTurn == 2:
         jump Nanase3
-    elif uTurn == 3:
+    elif nkTurn == 3:
         jump Nanase4
+    elif nkTurn == 4:
+        jump Nanase5
+    elif nkTurn ==5:
+        jump Nanase6    
     else:
         jump NanaseF
 
@@ -661,8 +665,250 @@ label Nanase3:
     hide nanase ashamed
 
     return
-
 label Nanase4:
+    scene backgroundclearing
+
+    "Nanase has been using every ounce of daylight to flip through the book she always carries."
+    show nanase ashamed
+    "She runs her thumb over a section with torn out pages."
+
+    n "Hey."
+
+    "She jumps and slam the book closed."
+
+    n "Sorry, didn't mean to scare you."
+
+    show nanase embarrassed
+
+    nk "It's fine. It's impossible not to spook people out here." 
+
+    n "Am I allowed to know what you're reading?"
+
+    show nanase irate
+
+    nk "It's my old diary. There's huge gaps in it, even though I was trying to write everyday."
+    nk "I apologized every time for not keeping better track, but I'm sure that's what happens when you don't think your life is interesting enough to write about."
+    nk "It's a shame. I am interested in those ordinary days, even if the old me thought they were nothing."
+
+    n "I never tried it."
+
+    "Diaries just always seemed like a thing girls kept."
+    "If I had written in a journal, I'd have more evidence now about what Estella let slip by them."
+
+    n "I did the way cooler thing of talking to a stuffed animal like it could hear me."
+
+    "She laughs, her grip on the book loosening a little."
+
+    n "I know everyone's been freaking out since the trip started. Are you doing okay?"
+
+    show nanase sad1
+
+    nk "Something the teachers said scared me and I'm trying to figure out why."
+    nk "The fact we can't get rid of the statues, even though no one wants them here, it just-"
+
+    "She looks like she's about to cry."
+
+    show nanase sad2
+
+    nk "It felt familiar in a bad way."
+
+    hide nanase
+
+    menu:
+        "Why do you need your diary to do that?":
+
+            show nanase surprised
+
+            nk "People's memories change."
+            nk "This is the most accurate recording of me, even if I was never a reliable narrator."
+            nk "Stuff that seemed normal then, I know better now."
+
+            n "Such as?"
+
+            show nanase sad2
+
+            nk "I, well... I kept agreeing to do things I didn't want to do, and then got mad at the people who wanted me to do them."
+            nk "I kept hoping someone would tell me ‘no' for me. People don't work that way."
+
+            n "Did you tell them no?"
+
+            show nanase irate
+
+            nk "No idea, there's no exact quotes to go off of. I was ten after all."
+            nk "I had other things on my mind, pointless things. Who knows, maybe they'll seem less pointless when I'm older."
+
+        "Did you find something?":
+            
+            $ nkRep += 1
+            show nanase sad smile
+
+            nk "I think so. Nagen, you had strict parents right?"
+
+            n "Yeah."
+
+            show nanase ashamed
+
+            nk "Did you ever get in trouble for throwing something away?"
+            nk "Like, if you tossed out an empty bottle, would they ground you for it?"
+
+            n "No. Granted, I never had a lot of stuff to begin with."
+
+            show nanase sad1
+
+            nk "My memory's not good, even compared to other kids."
+            nk "I thought I was blocking out the riots, but now I'm wondering if it was this."
+
+            show nanase scold
+
+            nk "There's so many times in here I got mad at my mom for putting something in my room, or using my Proficiency to keep me from cleaning."
+            nk "I have no idea how bad it was or if I was just exaggerating things to seem more interesting."
+
+            "It sounds like something a hoarder would do. "
+
+            n "You don't do that now from what I've seen. I think you should trust yourself a little more."
+
+        "They bother me too.":
+
+            $ nkRep -= 1
+
+            show nanase irate
+
+            n "Then again, I'm a control freak and they're really freaking creepy. To that weird old guy, it might be like your diary."
+            n "People don't want things important to them vanishing when they're gone."
+
+            show nanase cry
+
+            nk "That's ridiculous."
+            nk "It's just stuff."
+            nk "If something happened to me, I wouldn't want you guys holding onto my trash."
+
+            n "Even if it's stuff you didn't think was trash?"
+
+            nk "Especially then. Burdening other people with a chore... Only a selfish person wants that to be their dying wish."
+
+            "I feel like she's talking about someone else."
+            "Perhaps age has made me wiser, but I feel like I'm not going to like what she says if I keep pushing forward."
+
+    show nanase sad smile
+
+    nk "I guess you wouldn't have this problem. You don't forget anything."
+
+    "She looks back at her book with a frown."
+
+    show nanase surprised
+
+    nk "I wonder though, and don't feel pressured to answer. How do you know if your memories are accurate?"
+
+    n "I took a million tests, and I could recreate any book I read."
+
+    "Hunh. I guess right now, that would be kind of handy. There could be books and stuff that got destroyed during the riots."
+
+    n "I haven't failed a test in years."
+
+    nk "Well yeah, but what about things involving other people?"
+    nk "Like, when I was a kid, I didn't get why there were certain rules I had to follow, and I'd make up the reason so it'd make more sense."
+    nk "Have you ever done something like that?"
+
+    elif vision ==1:
+        n "Maybe... I'm not sure. I've been trying to figure out why my proficiency's going on the fritz lately."
+        n "It's usually stuff involving other people."
+        n "It's not like I have other people's thoughts in my head though, and there's changes in what I say."
+        n "So it's not like it's just me being unable to keep straight how I felt about things."
+
+        show nanase embarrassed
+
+        nk "You're having problems remembering things too?"
+
+        n "S-sort of, not really, forget I said anything."
+
+        show nanase blush
+
+        nk "Nagen, it's okay. Even if you're having problems, you'll always have a better memory than me.
+    else:
+
+        n "I don't think so. I could always revisit the memory whenever I wanted."
+        n "I might feel differently about it now, but it's not like I'm misremembering the people I knew." 
+
+        nk "Really? You remember people exactly as they are?"
+
+        n "Yeah."
+
+        show nanase sad smile
+
+        nk "Does that include me?" 
+
+        n "Of course."
+
+        nk "That's good. It's nice to have more than one view of a person. I should start writing again too."
+
+    n "I'm sure you've had all kinds of exciting things to write about now."
+
+    show nanase sad1
+
+    nk "Yeah, though I don't know who would believe me."
+    
+    show nanase sad smile
+
+    nk "Spooky statues, masquerade balls, I never thought those sort of things would happen to me without someone's help."
+    nk "I spent so many of these pages wishing someone would save me." 
+
+    "She stands up, dusting off her skirt with a sad smile on her face."
+
+    show nanase blush
+
+    nk "I know we didn't know each other very well in school, and what you did hurt a lot of people, but..."
+    
+    show nanase cry
+
+    nk "You ended up being the person I was hoping for. No one knew how bad the house was."
+    nk "Even I don't anymore, but I finally get to live with my dad again."
+    
+    show nanase cry smile
+
+    nk "I get to decide what to do with my proficiency instead of having it used against me."
+
+    hide nanase
+
+    #[CG]
+
+    nk "You're kind of like my hero."
+
+    "No one's said that to me before. Not my friends or Lethe. My entire life, all I've ever wanted to do was be a Karmic Gladiator."
+    "I thought I failed when they took the costume away."
+
+    nk "A-are you okay?"
+
+    "It's a stupid thing to cry over. I'm not crying! It's probably dirt in my eye or something."
+    "I'm not getting choked up over a little praise. That'd be ridiculous."
+
+    n "I'm fine."
+
+    "Ugh, can you sound a little more like you mean it? "
+
+    nk "This is a secret obviously. I don't want people getting mad at either of us. I just thought you should know."
+
+    elif Hero > Villain:
+
+        nk "The more I get to know you, the more I believe it."
+
+    else:
+
+        nk "I know you're capable of great things."
+
+        n "Yeah, yeah. Don't lay it on too thick or it'll go to my head."
+
+        nk "I'm being serious!"
+
+        n "I know, it's just- It's weird to hear."
+
+        nk "It'll get less weird the more you help people, sir." 
+
+    "I'm curious what's in that book that got her saying all this stuff."
+    "There's no way she'd let me see it though. So, instead, we walk back to camp."
+
+    return
+
+label Nanase5:
     scene backgroundstuco
 
     show nanase smile talk
@@ -915,7 +1161,7 @@ label Nanase4:
 
     n "It's okay, I'd tell you if you were bothering me." 
     n "I like hanging out with you." 
-    n "If there's anything I could do to help you, let me know." 
+    n "If there's anything you want to talk to me about." 
 
     "I watched as all emotion drained from her face. She stared at me blankly, maybe thinking something over, I'm not sure."
     
@@ -955,6 +1201,230 @@ label Nanase4:
     hide nanase ashamed
 
     return
+label Nanase6:
+    scene backgroundroof
+
+    "Nanase has been avoiding being alone with me ever since she had that shut down."
+    "I can tell she's scared, but for whatever reason, she can't seem to tell me what's wrong."
+    "I've been trying to treat her exactly the same, but I can't forget someone acting like a robot for a second just to then act like nothing happened. It's odd."
+
+    "After all this time, she sent a text saying she was ready to talk to me."
+    "On the roof, she stares up at a howling sky. A plane, for the first time in weeks, is flying near Guwon."
+    "Her hair's pulled up tighter than usual. On the back of her neck is a scar that dips into her turtle neck."
+
+    n "You've known the whole time, haven't you?"
+
+    "The fact she forgot the riots, how she runs from anyone that used to be close to her..."
+    "She must be an imposter. A robot, or sleeper agent, or any other type of stepford wife nonsense."
+    "There is no way someone like her would be nice to me without an ulterior motive."
+
+    show nanase cry
+
+    nk "Of course I knew something wasn't adding up."
+    nk "Pages from my diary were torn out and my computer had been rolled back before being given to me."
+    nk "Someone was trying to erase part of the past."
+
+    n "Who are you?"
+
+    nk "I don't know."
+
+    show nanase cry smile
+
+    nk "Nanase Keisan is patient K from Mu's stupid campfire story."
+
+    hide nanase
+
+    #[CG]
+
+    nk "A person who can't make old or new memories without the help of a computer, running on a language model made from what was left behind."
+    nk "Without me, Nanase would still be comatose in bed. That's what I am."
+
+    scene backgroundroof
+
+    show nanase cry
+
+    nk "My entire goal was to be her until she could be herself again, but… even though she's awake, she still can't do anything without me."
+    nk "I've been trying to figure out why this whole time."
+
+    "She flips through the diary."
+
+    nk "I'd die without you."
+    nk "You trust me, don't you?."
+    nk "If you love me, you'll listen to me."
+
+    show nanase irate
+
+    nk "What if it's like what happened to Chisei and Mu?"
+    nk "I am only as smart and as capable as the person telling me what to do wants me to be."
+    nk "I think someone wanted Nanase to be completely dependent on them."
+
+    hide nanase
+
+    menu:
+        "Do you think it's me?":
+            $ nkRep += 1
+
+            show nanase sad smile
+
+            nk "No. From the moment I saw you I- she felt relieved."
+            nk "I mean, I was excited to see people in general, but there has always been this feeling that something bad happened."
+
+            "The riots for one, but she seems to be talking about something else."
+
+            show nanase blush 
+
+            nk "Seeing you be you... I don't know, it was like some happy accident."
+            nk "You're the only person other than my dad I- she was happy to see."
+            nk "I decided to trust it, even if you didn't know Nanase Keisan."
+
+            n "Then why did you run away?"
+
+            show nanase ashamed
+
+            nk "There are so many holes in my memory. I started to doubt if any of it was real."
+            nk "That maybe following you was a command too."
+
+            if dateNanase = True:
+
+                show nanase blush
+
+                "She holds her hands over her heart."
+
+                nk "You're the first person I want to talk to."
+                nk "Being around you makes everything easier. Even if I was given a command, this love I have for you is real."
+
+            else:
+                
+                show nanase sad1
+
+                nk "The last thing I want to do is harm you."
+                nk "That's why the thought I could, even by accident, scared me."
+                nk "I don't like not being one hundred percent in control of my own body."
+
+        "Who told you those things?":
+            show nanase sad2
+
+            nk "My mom."
+
+            "Jesus fucking Christ."
+
+            show nanase surprised
+
+            nk "It's written down so casually, but clearly something about those words stuck out enough to write down."
+            nk "There are things Dyre and Kazz said too."
+            nk "I'd like to believe none of them realized what they were doing, but... there's so many veiled commands to be silent, cooperative unless talked to."
+
+            n "How did no one else know about this?"
+
+            show nanase irate
+            nk "I was told not to complain. Being with you is like the polar opposite of that."
+            nk "You expect me to do things when you're not in the room."
+            nk "Or like, when you caught me shredding the threat letters, you didn't tell me to stop what I was doing while I was doing it."
+            
+            show nanase smile2
+            
+            nk "It was such a small thing, but it meant so much to me."
+
+        "Can she hear me?":
+            $ nkRep =- 1
+
+            show nanase surprised
+
+            nk "You mean, the patient?"
+
+            "She looks away from me."
+
+            show nanase irate
+
+            nk "Yes, she can hear you. She's heard everything that's happened."
+            nk "It would be bad if everyone at the school knew about this."
+            nk "I don't like the idea of people treating her as anything other than a normal girl."
+            nk "That's my job after all."
+
+            n "Can you hear her thoughts?"
+
+            show nanase disappointed
+
+            nk "She needs me to have them, so yes, but not in the way you're describing."
+
+            n "Does she need you to live?"
+
+            nk "Without total care assistance? Yes, she needs me to be able to take care of herself."
+
+            n "Is obedience her proficiency or yours?"
+
+            show nanase irate
+
+            nk "Both, I guess. An AI isn't proficient in anything other than following commands."
+
+    show nanase
+
+    nk "These feelings are the only way the patient can communicate with me, so I've been trying to honor them."
+
+    n "You keep talking about them like they're your feelings."
+
+    nk "Yes, well, the programming says I am Nanase. It's difficult to put into words-"
+
+    n "No, I mean, they're your feelings too, aren't they?"
+
+    "Her hand is warm, she's trying not to cry, and the look in her eyes is completely human."
+    "I've seen what people move like when they're being controlled against their will."
+    "If there are two wills inside her, they're moving together."
+
+    show nanase sad smile
+
+    nk "That's not what the doctors say."
+    n "I think you should get a second opinion on that."
+
+    show nanase ashamed
+
+    nk "Nagen, there is something I'd like to try."
+    nk "If it is what I think, and my proficiency is preventing me from getting better, another command might overwrite it."
+
+    "If it does work though, that would mean I would have complete control over her. She's shaking, but determined as ever."
+    "She looks prepared for the worst. After what Rise and Kitsune said about someone always watching, I have to be careful."
+
+    n "Nanase, you don't have to tell me, but I need you to remember who did this to you."
+
+    "A look of horror comes over her face."
+
+    #[CG]
+
+    n "Hey, hey it's okay."
+
+    nk "I did."
+
+    n "That's impossible. You didn't fry your brain on purpose, or implant a chip in your head-"
+
+    "Wait, am I talking to Nanase or whatever is controlling her?"
+
+    nk "No, but I wanted to forget. I ran away from home convinced I could elope with my teacher and he rejected me."
+    nk "I was so embarrassed and heartbroken knowing nothing was going to change that I- I didn't want to be 'me' anymore."
+    nk "Other people took advantage of that, but I could have stopped it."
+
+    "I don't believe that. I don't think anyone would do this to themselves on purpose."
+    "She's been so scared and lost this whole time, and now we know she could be told to do anything and she'd be compelled to do it."
+    "She could have been a Vision Major before what happened and not realized it."
+
+    n "I think, if you didn't know what you were agreeing to do, it isn't your fault."
+
+    scene backgroundroof
+
+    "Uitto would be so much better at this than me, but I get why she wouldn't want me to tell anyone else."
+    "She's clinging to me, sobbing. I'm not sure if there's anything I could say that would make her feel better."
+
+    show nanase cry
+
+    nk "I'm sorry."
+
+    "There's nothing to apologize for, but the more she apologizes the more this feeling of dread rises up."
+
+    n "Are you saying sorry for something you did, or something you're going to do?"
+
+    "She couldn't answer me."
+
+    return
+
 
 label NanaseF:
     scene backgroundstuco
