@@ -9,3 +9,9 @@ transform right_center:
     xpos 0.75
     ypos 1.0
     yanchor 1.0
+
+transform brighter:
+    matrixcolor TintMatrix("#FFFFFF88")
+
+transform darker:
+    matrixcolor TintMatrix("#00000088")

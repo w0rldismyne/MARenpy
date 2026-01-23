@@ -374,9 +374,25 @@ label chapter1_boss_battle_midfight_scene:
     hide screen boss_mariko_s1
     with dissolve
 
-    scene backgroundB5
+    scene backgroundB5 with dissolve:
+        size (1920, 1080) crop (320, 360, 1280, 720)
+
+    pause
+    window show dissolve
 
     "The scoreboard that overlooks the field lights up, revealing where Hiro had been bound and gagged."
+
+    window hide
+
+    show backgroundwhite
+    with dissolve
+
+    hide backgroundwhite
+    with dissolve
+
+    scene backgroundB5 with fade:
+        size (1920, 1080) crop (320, 360, 1280, 720)
+        linear 2.5 crop (0, 0, 1920, 1080)
 
     m "How does it feel, Morine? Watching your friends get injured while you're helpless to do anything about it?"
 

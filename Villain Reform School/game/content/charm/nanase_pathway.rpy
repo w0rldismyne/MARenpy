@@ -809,7 +809,7 @@ label Nanase4:
     nk "Like, when I was a kid, I didn't get why there were certain rules I had to follow, and I'd make up the reason so it'd make more sense."
     nk "Have you ever done something like that?"
 
-    elif vision ==1:
+    if vision == 1:
         n "Maybe... I'm not sure. I've been trying to figure out why my proficiency's going on the fritz lately."
         n "It's usually stuff involving other people."
         n "It's not like I have other people's thoughts in my head though, and there's changes in what I say."
@@ -823,7 +823,7 @@ label Nanase4:
 
         show nanase blush
 
-        nk "Nagen, it's okay. Even if you're having problems, you'll always have a better memory than me.
+        nk "Nagen, it's okay. Even if you're having problems, you'll always have a better memory than me."
     else:
 
         n "I don't think so. I could always revisit the memory whenever I wanted."
@@ -887,7 +887,7 @@ label Nanase4:
 
     nk "This is a secret obviously. I don't want people getting mad at either of us. I just thought you should know."
 
-    elif Hero > Villain:
+    if Hero > Villain:
 
         nk "The more I get to know you, the more I believe it."
 

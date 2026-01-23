@@ -3267,7 +3267,7 @@ label chapter1_day5_event4:
 
         h "Nagen, did you have anything to do with this?"
 
-        if hero > villain:
+        if Hero > Villain:
 
             $ hRep += 2
 
@@ -3382,7 +3382,7 @@ label chapter1_day5_event4:
 
 label chapter1_day5_event_night:
     play music "music/TheySay.mp3"
-    scene backgrounddorm
+    scene backgrounddorm at darker
 
     show uitto smile
     

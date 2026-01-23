@@ -1,8 +1,15 @@
 # Boss Sprites
 default boss_active = "images/Sprites/Mariko/Boss1.png"
-define boss_idle = "images/Sprites/Mariko/Boss1.png"
-define boss_attack = "images/Sprites/Mariko/4.png"
-define boss_hurt = "images/Sprites/Mariko/3.png"
+default boss_idle = "images/Sprites/Mariko/Boss1.png"
+default boss_attack = "images/Sprites/Mariko/4.png"
+default boss_hurt = "images/Sprites/Mariko/3.png"
+
+define boss_idle_p1 = "images/Sprites/Mariko/Boss1.png"
+define boss_attack_p1 = "images/Sprites/Mariko/4.png"
+define boss_hurt_p1 = "images/Sprites/Mariko/3.png"
+define boss_idle_p2 = "images/Sprites/Mariko/Boss1injured.png"
+define boss_attack_p2 = "images/Sprites/Mariko/4injured.png"
+define boss_hurt_p2 = "images/Sprites/Mariko/3injured.png"
 
 # UI Panels
 default info_overlay = "New Assets/Fight/fight_frame.png"
@@ -213,7 +220,11 @@ label chapter1_boss_battle_initial:
     $ turn_order = nagen_turn
     $ fight_end_state = -1
 
-    # Mariko's Sprite
+    # Mariko's Sprites
+    $ boss_idle = boss_idle_p1
+    $ boss_attack = boss_attack_p1
+    $ boss_hurt = boss_hurt_p1
+
     $ boss_active = boss_idle
     scene backgroundmariko
 
@@ -475,6 +486,12 @@ label chapter1_boss_battle_conditions:
             $ mariko_halfway = True
             $ mariko_halfway_post_turns = turns_passed
 
+            # New Spriteset
+
+            $ boss_idle = boss_idle_p2
+            $ boss_attack = boss_attack_p2
+            $ boss_hurt = boss_hurt_p2
+
             hide screen nagen_hp_bars
             hide screen mariko_hp_bars
             hide screen boss_overlay
@@ -523,6 +540,8 @@ label chapter1_boss_battle_evaluations:
             "Crap, I am too hurt ..."
 
             g "You Lose!"
+
+            $ renpy.full_restart()
 
         elif mariko_current_health <= 0:
 
