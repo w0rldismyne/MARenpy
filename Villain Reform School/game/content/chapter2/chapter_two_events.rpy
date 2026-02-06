@@ -2729,7 +2729,6 @@ label chapter2_day3_night:
 
     scene backgroundblack
 
-    #CG of Jona and Nagen near a nameless grave in the forest. Nagen's covering his eyes. There's buckets everywhere.
 
     j "It's okay, Nagen, I can take care of this. You don't have to stay." #[Sound: Wet cement poured from a bucket.
 
@@ -3042,28 +3041,21 @@ label chapter2_day4_event3:
 
     show backgroundJonaDraw2
 
-    #CG of Nagen's portrait
-
     "That's my port... The details aren't exact, but I'd know that shape anywhere."
     "Not only that, but this thing, it's like a map of everywhere I've had an IV."
     "There are rough, repeated lines in wirey black that remind me of the feeding tubes they'd shove down my nose."
     "I never told anyone about those. How does he..."
 
-    #Hide CG
     hide backgroundJonaDraw2
 
     "I can't get distracted. Whoever stole his sketchbook wanted me to find this picture."
     "Probably for the same reason they put Hiro's portrait where he might find it... Still..."
-
-    #CG of Nagen's portrait
 
     show backgroundJonaDraw2
 
     "Is this supposed to be me? Is this how Jona sees me?"
 
     hide backgroundJonaDraw2
-
-    #Hide CG
 
     "I should talk to Jona about this before jumping to conclusions."
     "But I don't want to talk to Jona about the things he drew, especially if it's of me. Now all I can think about is the feeling of the damn thing going down my nose."
@@ -3698,6 +3690,8 @@ label chapter2_day5_night:
 
     Dark "That sleepover had been a disaster."
 
+    scene background_JFBSleepover2
+
     "There was no one in the house when we came in after school. Laundry and dishes were piled so high, it was impossible to tell what was dirty and what was clean."
     "He had invited me over to show the murals he painted on the walls, but I kept getting distracted by the garbage."
 
@@ -3710,9 +3704,13 @@ label chapter2_day5_night:
 
     "He had tried to describe the auras he saw to me before, but it was hard for him to put into words."
 
+    scene background_JFBCouch
+
     j "Mom's is like black paint."
 
     "He mixed a few drops into a puddle of yellow paint, the color growing muddy."
+
+    scene background_JFBCouch2
 
     j "It doesn't matter what color she tries to be, it always has black in it. Some days it's darker than others."
     j "Those days she sleeps the most, so I try not to do anything that makes it darken."
@@ -3775,16 +3773,12 @@ label chapter2_day6_event1:
 
     "She pushes past the girls and I follow, just as Ichita's fingers brush the bottom of a drawing."
 
-
-    #CG: Uitto's Portrait
-
     show backgroundJonaDraw3
 
     "Unlike the previous portraits, there's no doubt that's Uitto. The implications make my stomach flip. Uitto stands there, her eyes wide, but otherwise motionless."
     "Mu heaves Ichita up as high as he can and he manages to grab it, tearing the drawing in half as he falls to the ground. At least it was the suggestive part."
 
     hide backgroundJonaDraw3
-    #Hide CG
 
     scene backgroundCh2_UittoSees
 
@@ -4126,18 +4120,18 @@ label chapter2_day6_night:
     "It can be really easy for him to shut down when he doesn't know how to handle things."
 
     Dark "I noticed the clothes first."
+    Dark "No one could convince him to change."
 
     "No one really liked the school uniform. It was stiff and uncomfortable and a bunch of kids got in trouble for breaking dress code by wearing the wrong color socks."
     "Jona coming to class in street clothes one day wasn't super surprising on its own, but even with the pant legs rolled up, I could tell they were an adult's clothes."
-
-    Dark "No one could convince him to change."
-
     "We didn't want him to get in trouble, but he didn't care. He started racking up detentions and every day, he'd come to school in a new set of oversized clothes."
     "After four days, they called him to the office to meet with his mom. She said the next day he'd be in his uniform."
 
     Dark "He wasn't at school the next day."
 
-    "We didn't hear from him the whole weekend. That Monday he was dropped off in tears, but in uniform."
+    "We didn't hear from him the whole weekend."
+    #cg
+    "That Monday he was dropped off in tears, but in uniform."
     "He kept screaming at his mom's car, but she didn't turn back."
     "His uniform looked a little wrinkled, but otherwise fine, yet he kept crying because his clothes were 'still dirty'."
 
@@ -4265,12 +4259,12 @@ label chapter2_day7_event2:
 
     "I take the folded suit behind one of the privacy screens Shoma has set up. I haven't had to wear formal wear since elementary school. It feels... strange."
 
-    #CG: Nagen in the mirror
+    scene backgroundCh2_NagenProm
 
     "Honestly, compared to what I normally wear, this looks normal..."
     "So why do I feel like I look silly? Maybe it's the mask Jona made for it, or the fact whoever this was made for was at least five inches taller than me."
 
-    #CG: Hiro bursting into the dressing room
+    scene backgroundCh2_NagenProm2
 
     h "You're so quiet."
 
@@ -4285,8 +4279,6 @@ label chapter2_day7_event2:
     n "Like my clothes! Get out!"
 
     h "Alright, fine. Next time pay attention when people are asking you questions. They want to see it on ya."
-
-    #Hide CGs
 
     scene backgroundsew
 
@@ -4346,119 +4338,177 @@ label chapter2_day7_event3:
 
     scene backgroundstuco
     "The council wanted to have one last meeting before the dance. We all busted our butts trying to get everything together in time."
+    show kietsu
+    show setsuna apathetic at left
+    show nanase smile at right
 
-    #IF characters helping = 0
+    if characters_helping == 0:
 
-    s "We'll just have to hope Uitto and Rise were able to pull something together in time."
+        s "We'll just have to hope Uitto and Rise were able to pull something together in time."
 
-    nk "We did the best we could given the time constraints. With as many people who were excited, not too many volunteered to help."
+        show nanase sad1 at right
 
-    ki "Eh, when not directly asked, a lot of people just don't think about it."
+        nk "We did the best we could given the time constraints. With as many people who were excited, not too many volunteered to help."
 
-    n "It'll be fine."
+        show kietsu upset1
 
-    #IF characters helping ≤ 3, rep +1
+        ki "Eh, when not directly asked, a lot of people just don't think about it."
 
-    nk "I think we got just enough help to meet people's expectations!"
+        n "It'll be fine."
 
-    ki "Good job findin' the extra help, Nagen."
+    elif characters_helping <= 4:
+        $ Reputation += 1
 
-    n "Oh... uh, thanks."
+        nk "I think we got just enough help to meet people's expectations!"
 
-    s "Now if we can make sure the event goes off without a hitch, we'll be in the clear."
+        show kiestu laugh
 
-    n "What's that supposed to mean?"
+        ki "Good job findin' the extra help, Nagen."
 
-    #IF characters helping > 3, rep +2
+        n "Oh... uh, thanks."
 
-    s "Man, everyone's really excited about this party."
+        show setsuna relaxed at left
 
-    ki "Yep! This did exactly what I thought it would. When people have a common goal to work towards, they're more likely to get along."
+        s "Now if we can make sure the event goes off without a hitch, we'll be in the clear."
 
-    nk "So this was supposed to be some elaborate team building exercise?"
+        n "What's that supposed to mean?"
 
-    ki "How else did you think we got permission from the teachers to throw this?"
+    else:
 
-    n "I think it's going to take more than one team building exercise to get everyone to cooperate with each other."
+        show setsuna grin at left
 
-    #Return to Main Branch
+        s "Man, everyone's really excited about this party."
+
+        show kiestu laugh
+
+        ki "Yep! This did exactly what I thought it would. When people have a common goal to work towards, they're more likely to get along."
+
+        show nanase blushing
+
+        nk "So this was supposed to be some elaborate team building exercise?"
+
+        ki "How else did you think we got permission from the teachers to throw this?"
+
+        n "I think it's going to take more than one team building exercise to get everyone to cooperate with each other."
+
+    show kiestu serious
 
     ki "About that... I didn't want to end the meeting on a downer note, but I found somethin' in the gym today."
 
     "He pulls out Jona's sketchbook. Half the pages have been torn out; it's definitely seen better days."
 
+    show setsuna glare at left
+
     s "Aren't there security cameras everywhere in school? Won't that tell us who did it?"
+
+    show nanase scold at right
 
     nk "Technically, it's illegal to store recordings like that without consent. It's more likely that the cameras stream."
 
     n "Which means, if one of the teachers isn't looking at the feed, no one sees it."
 
+    show setsuna scoff at left
+
     s "How would they know? The student that is. Isn't the whole point of the cameras to give the illusion of supervision?"
 
     n "That's... that's a really good point. How have they been able to avoid getting caught this whole time?"
+
+    show kiestu upset1
 
     ki "I don't know, but I figured Jona would want this back. Or at the very least to know they don't have it anymore."
 
     n "Thanks."
 
+    show setsuna relaxed at left
+
     s "So, we've got our assigned jobs."
-    s "I'll handle concessions, Kietsu has volunteer wrangling, Nanase's on door duty, and you make sure no one's causing any trouble. Especially your friends."
+    s "I'll handle concessions, Kietsu has volunteer wrangling, Nanase's on door duty, and you make sure no one's causing any trouble."
+    s "Especially your friends."
 
     n "...Got it."
+
+    show kiestu
 
     ki "That should cover it for today's meeting. Get a lot of rest, guys. Tomorrow's goin' to be crazy."
 
     "Everyone groans and packs up their things. It's my turn to clean and lock up, but Nanase is staying behind to help."# [IF Nanase is Date, skip to Main Branch
 
-    nk "So... the umm... some people are going together, like together together, to the dance..."
-    nk "I know you're going to be hanging out with your friends, but do you... are you going with someone else?"
+    hide kiestu
+    hide setsuna
+    show nanase blushing
+    if $dateNanase = False:
 
-    # IF Date = Yes
+        nk "So... the umm... some people are going together, like together together, to the dance..."
+        nk "I know you're going to be hanging out with your friends, but do you... are you going with someone else?"
 
-    n "Yeah, it seemed kind of weird not to. Not exactly my idea of a first date. It's probably just going to be a bunch of standing around while music plays."
+        if $date = True:
 
-    nk "...Right, probably..."
+            n "Yeah, it seemed kind of weird not to. Not exactly my idea of a first date."
 
-    n "But if you wanna stand around with us, you're more than welcome to."
+            show nanase sad1
 
-    nk "Really?"
+            n "It's probably just going to be a bunch of standing around while music plays."
 
-    n "Yeah, you're still trying to avoid Dyre, right? It's easier to avoid talking to people in a group."
+            nk "...Right, probably..."
 
-    #IF Date = No
+            n "But if you wanna stand around with us, you're more than welcome to."
 
-    n "No, just my friends. I'm going to be pretty distracted and I don't want to, like, just run off and leave someone if something comes up."
-    n "And it's just so early to think about that kinda stuff. I don't get how everyone can settle in so easily."
+            show nanase surprise
 
-    "She laughs a little."
+            nk "Really?"
 
-    nk "These things are supposed to be fun, but it's just been a source of stress for me."
-    nk "Everyone's put so much effort into it, so if I don't do everything by the book, am I not gonna have any fun?"
-    nk "Or do people just say those things are fun because they put so much time in it? It's like, before I knew it, this thing turned into a couple's thing."
+            n "Yeah, you're still trying to avoid Dyre, right? It's easier to avoid talking to people in a group."
 
-    n "Really?"
+        else:
 
-    nk "Maybe it's just me. I think Kietsu and Setsuna are going together."
+            n "No, just my friends. I'm going to be pretty distracted and I don't want to, like, just run off and leave someone if something comes up."
+            n "And it's just so early to think about that kinda stuff. I don't get how everyone can settle in so easily."
 
-    n "What?! Man, I'm worse at reading people than I thought."
+            show nanase sad smile
 
-    nk "But, other than them, you're the only person I talk to. So, if you don't mind, could I hang out with you guys at the dance?"
+            "She laughs a little."
 
-    n "Sure, I don't mind."
+            nk "These things are supposed to be fun, but it's just been a source of stress for me."
+            nk "Everyone's put so much effort into it, so if I don't do everything by the book, am I not gonna have any fun?"
+            nk "Or do people just say those things are fun because they put so much time in it? It's like, before I knew it, this thing turned into a couple's thing."
 
-    nk "Great, I'll see you there!"
+            n "Really?"
 
-    #Return to Main Branch
+            show nanase disappointed
 
-    nk "Thanks for the ticket to the dance, Nagen. I can't come in until the last ticket is returned, but it's nice to know there are people to hang out with inside."
+            nk "Maybe it's just me. I think Kietsu and Setsuna are going together."
 
-    nk "Not that there's no one to talk to. Just, it's different knowing someone's waiting for you."
+            n "What?! Man, I'm worse at reading people than I thought."
 
-    n "I know what you mean."
+            show nanase ashamed
 
-    "She finishes stacking the stairs and dusts off her hands."
+            nk "But, other than them, you're the only person I talk to. So, if you don't mind, could I hang out with you guys at the dance?"
 
-    nk "Thank you again. It really means a lot to me."
+            n "Sure, I don't mind."
+
+            show nanase smile
+
+            nk "Great, I'll see you there!"
+    else:
+
+        show nanase smile
+
+        nk "Thanks for the ticket to the dance, Nagen."
+        nk "I can't come in until the last ticket is returned, but it's nice to know there are people to hang out with inside."
+
+        show nanase ashamed
+
+        nk "Not that there's no one to talk to. Just, it's different knowing someone's waiting for you."
+
+        n "I know what you mean."
+
+        "She finishes stacking the stairs and dusts off her hands."
+
+        show nanase smile
+
+        nk "Thank you again. It really means a lot to me."
+
+    hide nanase
 
     scene backgroundblack with fade
 
@@ -4469,7 +4519,6 @@ label chapter2_day7_event3:
 label chapter2_day7_event4:
     #Day 7 Event 4"
 
-    #BG: Dorms
     scene backgrounddorm
 
     "Jona's sketchbook... The person who stole it pulled out very specific pictures, but I wonder..."
@@ -4512,6 +4561,8 @@ label chapter2_day7_event4:
 
     "I knock on Jona's door. He answers, but holds the door close to him, as if ready to close it at a moment's notice."
 
+    show jona depressed
+
     "He's still in his pajamas, though he is wearing his goggles."
 
     n "Hey... I, uh, we found your sketchbook..."
@@ -4530,9 +4581,13 @@ label chapter2_day7_event4:
 
     n "Hey, you don't need to apologize."
 
+    show jona frustrated
+
     j "But I promised... I want to be here with you guys. I don't want to get sent back home over something I had no control over."
 
     n "What do you mean?"
+
+    show jona depressed
 
     j "...They wanted me to be homeschooled."
     j "My fosters... they thought coming here would be too much..."
@@ -4540,8 +4595,12 @@ label chapter2_day7_event4:
 
     n "You're not going to get in trouble for being sick."
 
+    show jona mad
+
     j "...There's still pages missing from my book..."
     j "They won't hurt anyone here, but... I don't want anyone seeing them... I don't think I'll be better in time for the dance... Sorry..."
+
+    hide jona
 
     "He closes the door without another word. This is bad. He hasn't had to miss class like this in a while."
     "I'll let the others know he's doing okay. Though I may leave out that he's surviving on cereal for his sake."
@@ -4551,9 +4610,8 @@ label chapter2_day7_event4:
     return
 
 label chapter2_day7_night:
-    #"Day 7 Night"
 
-    #BG: Nagen's Dorm Night
+    scene backgroundroomn
 
     "Tomorrow's the dance; there's nothing more I can do to prepare for it. I can't help but feel nervous about tomorrow. "
 
@@ -4587,9 +4645,11 @@ label chapter2_day8_event1:
     #"Day 8 Event 1"
     #BG: Nagen's Room Day
 
+    scene backgroundroom
+
     "Today's the day of the dance, I should check in with the others before I get swept up in setting up."
 
-    #BG: Cafe
+    scene backgroundcafe
 
     u "....."
 
@@ -4643,263 +4703,269 @@ label chapter2_day8_event1:
 
     #These scenes will be different based on who Nagen's date is. These scenes will be separated by character name.
 
-    #"Momoko"
+    if date = True:
+        if dateMomoko = True:
 
-    "We had agreed to meet up right outside the entrance; something about a surprise."
+            "We had agreed to meet up right outside the entrance; something about a surprise."
 
-    mh "Shut up!"
+            mh "Shut up!"
 
-    "I turn to see Momoko covered in black lace, and her mask... she's also a swan?"
+            "I turn to see Momoko covered in black lace, and her mask... she's also a swan?"
 
-    mh "We match! So gross, we're gonna give people cavities."
+            mh "We match! So gross, we're gonna give people cavities."
 
-    "She gives me a huge hug."
+            "She gives me a huge hug."
 
-    mh "You ready?"
+            mh "You ready?"
 
-    n "Kind of..."
+            n "Kind of..."
 
-    mh "It'll be fine as long as people have fun, right? So let's go have fun!"
+            mh "It'll be fine as long as people have fun, right? So let's go have fun!"
 
-    n "Yeah... Oh! I almost forgot."
+            n "Yeah... Oh! I almost forgot."
 
-    "She tilts her head to the left."
+            "She tilts her head to the left."
 
-    n "You look beautiful."
+            n "You look beautiful."
 
-    "She blushes and turns away."
+            "She blushes and turns away."
 
-    n "I mean it."
+            n "I mean it."
 
-    mh "I know you mean it, you little weirdo. Just, y'know, brain. Words."
+            mh "I know you mean it, you little weirdo. Just, y'know, brain. Words."
 
-    "She shrugs and takes my hand."
+            "She shrugs and takes my hand."
 
-    mh "Thanks."
+            mh "Thanks."
+        elif dateKitsune = True:
+            "Kitsune had been busy up until the last minute trying to campaign for the queen of the dance."
+            "She still made time to text me updates in between. Well, that and a list of expectations."
+            "Heaven forbid I wear the wrong shoes. We meet up at the front entrance."
+            "I'm not sure what she's supposed to be, but it's elaborate. She covers her mouth with her hands."
 
-    #"Kitsune"
+            k "Nagen..."
 
-    "Kitsune had been busy up until the last minute trying to campaign for the queen of the dance. She still made time to text me updates in between. Well, that and a list of expectations. Heaven forbid I wear the wrong shoes. We meet up at the front entrance. I'm not sure what she's supposed to be, but it's elaborate. She covers her mouth with her hands."
+            "She's kind of bouncing up and down, making a circular motion with her finger."
 
-    k "Nagen..."
+            k "I want to see."
 
-    "She's kind of bouncing up and down, making a circular motion with her finger."
+            "Oh, she's talking about me. I turn and when I circle back, she's beaming."
 
-    k "I want to see."
+            k "It's perfect! Like straight out of a fairytale."
 
-    "Oh, she's talking about me. I turn and when I circle back, she's beaming."
+            "What's supposed to come next? Oh yeah, the corsage thing. I think it goes on the wrist, but which one? She never specified."
 
-    k "It's perfect! Like straight out of a fairytale."
+            k "Nagen, relax."
 
-    "What's supposed to come next? Oh yeah, the corsage thing. I think it goes on the wrist, but which one? She never specified."
+            "She holds out her left hand and I fumble trying to get the silly thing on."
+            "She tilts my chin up with her other hand, hesitating before patting my cheek."
 
-    k "Nagen, relax."
+            k "We're going to blow everyone away. Tonight's our night."
 
-    "She holds out her left hand and I fumble trying to get the silly thing on. She tilts my chin up with her other hand, hesitating before patting my cheek."
+            "Easy for her to say, I still feel like I don't know what I'm doing. Well, too late to turn back now."
+            "I offer her an elbow and escort her in."
+        elif dateChisei = True:
 
-    k "We're going to blow everyone away. Tonight's our night."
+            "Chisei is already at the entrance waiting for me when I show up. I hope I didn't keep her waiting too long."
 
-    "Easy for her to say, I still feel like I don't know what I'm doing. Well, too late to turn back now. I offer her an elbow and escort her in."
+            n "Sorry, I didn't-"
 
-    #"Chisei"
+            "She turns and I forget to breathe for a moment. Her mask and arm look like they're made out of porcelain; she's like a doll."
 
-    "Chisei is already at the entrance waiting for me when I show up. I hope I didn't keep her waiting too long."
+            ch "Good silence or bad silence?"
 
-    n "Sorry, I didn't-"
+            n "Ah, g-good."
 
-    "She turns and I forget to breathe for a moment. Her mask and arm look like they're made out of porcelain; she's like a doll."
+            "She smiles."
 
-    ch "Good silence or bad silence?"
+            ch "You look quite dashing as well, for someone with a foul reputation."
 
-    n "Ah, g-good."
+            "Fowl, bird. I groan and she smiles even wider. Why does she revel in my misery?"
 
-    "She smiles."
+            ch "I am sure everyone will flock towards you when they see you."
 
-    ch "You look quite dashing as well, for someone with a foul reputation."
+            n "Stop, please!"
 
-    "Fowl, bird. I groan and she smiles even wider. Why does she revel in my misery?"
+            ch "Music to my ears."
 
-    ch "I am sure everyone will flock towards you when they see you."
+            n "You keep this up and I will throw this mask in the trash."
 
-    n "Stop, please!"
+            ch "Oh, there is no need for that. You look really handsome."
 
-    ch "Music to my ears."
+            "She kisses the back of my hand."
 
-    n "You keep this up and I will throw this mask in the trash."
+            ch "Shall we?"
 
-    ch "Oh, there is no need for that. You look really handsome."
+            "I guess we're going in?"
+        elif dateNanase = True:
 
-    "She kisses the back of my hand."
+            "Nanase's collecting tickets at the entrance; people are slowly trickling in. Which is fine, I guess, but it's delaying my night. She looks nice in her vintage gown."
 
-    ch "Shall we?"
+            nk "I forgot, some people take event start times as a suggestion."
 
-    "I guess we're going in?"
+            "Glad I'm not the only one that's irritated about this."
 
-    #"Nanase"
+            d "What's your hurry, wallflower?"
 
-    "Nanase's collecting tickets at the entrance; people are slowly trickling in. Which is fine, I guess, but it's delaying my night. She looks nice in her vintage gown."
+            "Kazz and Dyre. I step in and take their tickets."
 
-    nk "I forgot, some people take event start times as a suggestion."
+            n "Well, some of us have dates that aren't a dressed up body pillow."
 
-    "Glad I'm not the only one that's irritated about this."
+            "A really well dressed body pillow, damn."
 
-    d "What's your hurry, wallflower?"
+            d "Yeah, well, everyone's going to want to dance with my date."
 
-    "Kazz and Dyre. I step in and take their tickets."
+            "He's got me there."
 
-    n "Well, some of us have dates that aren't a dressed up body pillow."
+            nk "Nagen, will you get me some food? I think this is going to take a while."
 
-    "A really well dressed body pillow, damn."
+            "Hunh, she seems really unhappy."
 
-    d "Yeah, well, everyone's going to want to dance with my date."
+            n "Yeah sure."
 
-    "He's got me there."
+            "I come back and Nanase is by herself again."
 
-    nk "Nagen, will you get me some food? I think this is going to take a while."
+            nk "Thank you."
 
-    "Hunh, she seems really unhappy."
+            "She stares at the plate in bitter silence."
 
-    n "Yeah sure."
+            nk "You should go in without me."
 
-    "I come back and Nanase is by herself again."
+            n "What? But we-"
 
-    nk "Thank you."
+            nk "I know, I just need a moment and everyone's not here yet. I don't want you missing the dance because of me."
 
-    "She stares at the plate in bitter silence."
+            "It has been thirty minutes since the dance started."
 
-    nk "You should go in without me."
+            n "...Are you sure?"
 
-    n "What? But we-"
+            nk "...Yeah..."
 
-    nk "I know, I just need a moment and everyone's not here yet. I don't want you missing the dance because of me."
+            "If she says so, I guess I'll go in alone. It shouldn't take too long for the stragglers to show up."
+        elif dateRise = True:
 
-    "It has been thirty minutes since the dance started."
+            "I get a string of texts."
 
-    n "...Are you sure?"
+            r "I will not be able to meet with you on time."
+            r "There is an issue I must attend to first. I am truly grateful you accepted my invitation."
+            r "It pains me that I cannot fulfill that promise."
+            r "Enjoy the party without me. I will try to attend as soon as I can.'"
 
-    nk "...Yeah..."
+            "Did I just get stood up?"
+        elif dateMu = True:
+            "Mu comes to pick me up and walk me to the dance hall."
+            "He's not all that dressed up actually; just a nice blazer and a plain mask and..."
 
-    "If she says so, I guess I'll go in alone. It shouldn't take too long for the stragglers to show up."
+            n "Earplugs?"
 
-    #"Rise"
+            mu "Hunh? Oh, ye, kind of embarrassing, but there are some types of sounds that really bother me."
+            mu "I never know what to expect at events like this, so I wear em just in case. I can still hear you though."
 
-    "I get a string of texts."
+            n "That's fair. I just wish I knew sooner, I would've vetted the playlist for you."
 
-    r "'I will not be able to meet with you on time. There is an issue I must attend to first. I am truly grateful you accepted my invitation. It pains me that I cannot fulfill that promise. Enjoy the party without me. I will try to attend as soon as I can.'"
+            mu "No, no; that's totally unnecessary. Wouldn't be fair to the other people either, but I appreciate it."
 
-    "Did I just get stood up?"
+            n "Let me do things for you."
 
-    #"Mu"
+            "I can't shake this gross feeling that I'm a crummy date."
+            "He hasn't said anything negative and we haven't done much; but it's still there, like I haven't earned it for some reason."
+            "I offer my elbow for him to take and try to hide my embarrassment. He kinda laughs and links his arm through mine."
 
-    "Mu comes to pick me up and walk me to the dance hall. He's not all that dressed up actually; just a nice blazer and a plain mask and..."
+            mu "I'll try my best. It's just... going to take getting used to."
 
-    n "Earplugs?"
+            "It should be illegal to be that attractive. How am I going to make it three hours without looking like an idiot?"
+        elif dateYoku = True:
 
-    mu "Hunh? Oh, ye, kind of embarrassing, but there are some types of sounds that really bother me. I never know what to expect at events like this, so I wear em just in case. I can still hear you though."
+            "Yoku is pacing outside of the dance hall. I know Shoma's talented, but there's no way he had time to make a suit and a cape with that much detail. He had to have brought it from home. When he sees me, he relaxes a little."
 
-    n "That's fair. I just wish I knew sooner, I would've vetted the playlist for you."
+            y "I'm starting to think I'm overdressed."
 
-    mu "No, no; that's totally unnecessary. Wouldn't be fair to the other people either, but I appreciate it."
+            n "Nonsense, this is amazing."
 
-    n "Let me do things for you."
+            "It's kind of funny how a little bit of flattery can leave him so flustered."
 
-    "I can't shake this gross feeling that I'm a crummy date. He hasn't said anything negative and we haven't done much; but it's still there, like I haven't earned it for some reason. I offer my elbow for him to take and try to hide my embarrassment. He kinda laughs and links his arm through mine."
+            y "Are you sure this is okay?"
 
-    mu "I'll try my best. It's just... going to take getting used to."
+            "He adjusts my mask for me, probably just looking for something to do with his hands."
 
-    "It should be illegal to be that attractive. How am I going to make it three hours without looking like an idiot?"
+            y "I mean, I know these kinds of events hold different meanings than the ones I'm used to, but still, your friends will see us."
 
-    #"Yoku"
+            n "They'll like you, I'm sure of it. I already told them you're my date, so it's not like they'll be surprised."
 
-    "Yoku is pacing outside of the dance hall. I know Shoma's talented, but there's no way he had time to make a suit and a cape with that much detail. He had to have brought it from home. When he sees me, he relaxes a little."
+            "He's acting like he's meeting my parents. It's kind of cute."
 
-    y "I'm starting to think I'm overdressed."
+            n "Come on. The longer we stay out here, the more worried you'll get."
 
-    n "Nonsense, this is amazing."
+            y "Y-you're right."
+        elif dateTaiga = True:
+                    
+            "Usually Taiga wears clothes that are easy to move around in, stuff he once used as a circus performer. Tonight he's in a high waisted skirt or pair of pants; I can't really tell. An ornate robe threatens to swallow him whole. He has a white blouse underneath and no mask. Despite all the fabric, he's still moving quickly and lifts me up by the waist."
 
-    "It's kind of funny how a little bit of flattery can leave him so flustered."
+            n "Woah!"
 
-    y "Are you sure this is okay?"
+            "I have to steady myself with my hands on his shoulders."
 
-    "He adjusts my mask for me, probably just looking for something to do with his hands."
+            t "No kiss?"
 
-    y "I mean, I know these kinds of events hold different meanings than the ones I'm used to, but still, your friends will see us."
+            "I am going to die of embarrassment. People are walking by us and I can tell by that smile he's doing it on purpose. I muster enough courage to give him a peck on the forehead and he puts me down."
 
-    n "They'll like you, I'm sure of it. I already told them you're my date, so it's not like they'll be surprised."
+            t "Heh, if I didn't know any better, I'd think you had a gay little crush on me."
 
-    "He's acting like he's meeting my parents. It's kind of cute."
+            n "Probably because I do."
 
-    n "Come on. The longer we stay out here, the more worried you'll get."
+            t "That's okay. I do too."
 
-    y "Y-you're right."
+            "There is only so much my heart can handle. I have enough adrenaline running through my system to rival six cups of coffee."
 
-    #"Taiga"
+            t "So, are we going to go in or are we just going to stand here?"
 
-    "Usually Taiga wears clothes that are easy to move around in, stuff he once used as a circus performer. Tonight he's in a high waisted skirt or pair of pants; I can't really tell. An ornate robe threatens to swallow him whole. He has a white blouse underneath and no mask. Despite all the fabric, he's still moving quickly and lifts me up by the waist."
+            "I take his hand and lead him inside."
 
-    n "Woah!"
+            n "You're lucky you're cute."
 
-    "I have to steady myself with my hands on his shoulders."
+            t "You hear that everyone? He thinks I'm cute!"
 
-    t "No kiss?"
+            "I'm pretty sure everyone is well aware we're on a date right now, but that's not going to stop him from bringing it up at every opportunity like a dork."
+        else:
 
-    "I am going to die of embarrassment. People are walking by us and I can tell by that smile he's doing it on purpose. I muster enough courage to give him a peck on the forehead and he puts me down."
+            "Hiro and I are getting ready together. I suppose there isn't a better time than now to give it to him. I hand him a corsage made with blue silk. It doesn't exactly go with his outfit, but it's the best way I could think of to show we're going together."
 
-    t "Heh, if I didn't know any better, I'd think you had a gay little crush on me."
+            h "Hunh, what's this?"
 
-    n "Probably because I do."
+            n "It's, um, you pin it to your jacket."
 
-    t "That's okay. I do too."
+            h "...Why?"
 
-    "There is only so much my heart can handle. I have enough adrenaline running through my system to rival six cups of coffee."
+            n "Well, it's kind of traditional to give one to your date, but if you don't want it..."
 
-    t "So, are we going to go in or are we just going to stand here?"
+            "Hiro drops the box."
 
-    "I take his hand and lead him inside."
+            h "This is a date? Like, a 'date' date? Like, a romantic kind of date?"
 
-    n "You're lucky you're cute."
+            n "Yeah. Did I not make that clear? I'm sorry. If you... if you don't-"
 
-    t "You hear that everyone? He thinks I'm cute!"
+            "Man, I can't even say it."
 
-    "I'm pretty sure everyone is well aware we're on a date right now, but that's not going to stop him from bringing it up at every opportunity like a dork."
+            h "Nonono, I just- God I'm so stupid. I would have brought flowers and junk. Uitto even asked if I wanted help and I said 'no' like an idiot. I'm messing this all up."
 
-    #Hiro
+            "He covers his face with his hands."
 
-    "Hiro and I are getting ready together. I suppose there isn't a better time than now to give it to him. I hand him a corsage made with blue silk. It doesn't exactly go with his outfit, but it's the best way I could think of to show we're going together."
+            h "How do I put the pin thing on?"
 
-    h "Hunh, what's this?"
+            "I've never seen him so flustered before. I can't help but laugh."
 
-    n "It's, um, you pin it to your jacket."
+            n "Come here, I'll put it on."
 
-    h "...Why?"
+            h "Okay."
+    else:
+        "Let's do this."
 
-    n "Well, it's kind of traditional to give one to your date, but if you don't want it..."
+    scene backgroundparty
 
-    "Hiro drops the box."
-
-    h "This is a date? Like, a 'date' date? Like, a romantic kind of date?"
-
-    n "Yeah. Did I not make that clear? I'm sorry. If you... if you don't-"
-
-    "Man, I can't even say it."
-
-    h "Nonono, I just- God I'm so stupid. I would have brought flowers and junk. Uitto even asked if I wanted help and I said 'no' like an idiot. I'm messing this all up."
-
-    "He covers his face with his hands."
-
-    h "How do I put the pin thing on?"
-
-    "I've never seen him so flustered before. I can't help but laugh."
-
-    n "Come here, I'll put it on."
-
-    h "Okay."
-
-    #Return to Main Branch
-
-    #BG: Rooftop Night
-
-    "I climb up the stairs to the roof, and man does it look good! Rise did a great job disguising all the junk as decorations. Music is playing, there's food; it actually looks like a dance! Yoku and Kazz are arguing about the music choice. Dyre's body pillow date is crowd surfing. Everyone seems to be having a good time. All that's left to do is vote for the king and queen for the dance. I can feel Uitto looking over my shoulder."
+    "I climb up the stairs to the roof, and man does it look good! Rise did a great job disguising all the junk as decorations."
+    "Music is playing, there's food; it actually looks like a dance! Yoku and Kazz are arguing about the music choice."
+    "Dyre's body pillow date is crowd surfing. Everyone seems to be having a good time."
+    "All that's left to do is vote for the king and queen for the dance. I can feel Uitto looking over my shoulder."
 
     n "I thought you were taking pictures."
 
@@ -4915,7 +4981,8 @@ label chapter2_day8_event1:
 
     "Liar."
 
-    u "But it would be a good idea to vote for someone dramatic, who shares your love of long words. I gotta be careful with the hints, she might hear."
+    u "But it would be a good idea to vote for someone dramatic, who shares your love of long words."
+    u "I gotta be careful with the hints, she might hear."
 
     n "If you wanted me to vote for someone specific, you should have said something earlier."
 
@@ -4931,7 +4998,8 @@ label chapter2_day8_event1:
 
     "Too late, she's already running."
 
-    k "I don't care what she told you. I'm the only one here that cares about winning the crown. It's only fair I get it. Do the right thing, Nagen."
+    k "I don't care what she told you. I'm the only one here that cares about winning the crown. It's only fair I get it."
+    k "Do the right thing, Nagen."
 
     n "I-"
 
@@ -4965,91 +5033,96 @@ label chapter2_day8_event1:
 
     #"Chisei"
 
-    kk "Chisei!"
+    if promChisei = True:
 
-    ch "WHAT?!"
+        scene backgroundCh2_ChiseiProm
 
-    #CG Chisei on stage
+        kk "Chisei!"
 
-    ch "There really is no need for such fanfare."
+        ch "WHAT?!"
 
-    #Hide CG
+        ch "There really is no need for such fanfare."
 
-    "She says that, but I can tell she's happy. They even got a little crown for her to wear. I haven't seen her smile this much since we were kids. Out of the corner of my eye, I see Ichita practically lift Uitto in the air."
+        scene backgroundparty
 
-    i "Thank you so much, you're amazing!"
+        "She says that, but I can tell she's happy. They even got a little crown for her to wear. I haven't seen her smile this much since we were kids. Out of the corner of my eye, I see Ichita practically lift Uitto in the air."
 
-    u "Cool it with the PDA! You want her to find out that quick?"
+        i "Thank you so much, you're amazing!"
 
-    n "Is that what you've been up to?"
+        u "Cool it with the PDA! You want her to find out that quick?"
 
-    u "Don't be weird about it, this is her moment."
+        n "Is that what you've been up to?"
 
-    "Kitsune"
+        u "Don't be weird about it, this is her moment."
+    else:
 
-    kk "Kitsune!"
+        kk "Kitsune!"
 
-    k "...I won?"
+        k "...I won?"
 
-    #CG Kitsune in the spotlight
+        scene backgroundCh2_KitProm
 
-    k "I WON! Oh my goodness, thank you!"
+        k "I WON! Oh my goodness, thank you!"
 
-    #Hide CG
+        scene backgroundparty
 
-    u "Man. Sorry, Ichita. I tried."
+        u "Man. Sorry, Ichita. I tried."
 
-    i "Not your fault she's so persistent."
+        i "Not your fault she's so persistent."
 
-    "Kitsune snatches the plastic crown from Kazz and puts it on her head. That's a lot of tears for someone so giddy."
+        "Kitsune snatches the plastic crown from Kazz and puts it on her head. That's a lot of tears for someone so giddy."
 
-    u "I can't believe I'm doing this."
+        u "I can't believe I'm doing this."
 
-    "Uitto mutters under her breath before riffling around for some makeup tubes in her purse."
+        "Uitto mutters under her breath before riffling around for some makeup tubes in her purse."
 
-    u "Gurl, your mascara is everywhere, don't touch your face with those white gloves."
+        u "Gurl, your mascara is everywhere, don't touch your face with those white gloves."
 
-    #Return to Main Branch
+    scene backgroundCh2_HiroProm
 
     kk "And for the king of the dance..."
 
-    "Hiro"
+    if $ promMu = True:
 
-    kk "Hiro?"
+        scene backgroundCh2_MuProm
 
-    h "Wait, what? But I thought council members couldn't win."
+        kk "Mu!"
 
-    ch "An exception was made."
+        "The spotlight swivels around the floor until it finds him at the food table. He turns around mid snack with a dumbfounded look on his face."
 
-    h "Wait, Nagen, is this legit?"
+        mu "Hunh?"
 
-    n "Yeah man, they got a cape and everything."
+        kk "You won, man."
 
-    h "You guys!"
+        mu "...Why?"
 
-    "Hiro sheepishly goes up to get coronated with costume props. He's a little embarrassed, but he's grinning ear to ear."
+        kk "What do you mean why? People voted for you, come on up."
 
-    h "I don't know what to do with this, but thanks!"
+        "He hesitantly puts down his plate and makes his way to the stage, still very confused. For how much he helps other people, he really doesn't consider whether or not they like him."
 
-    #"Mu"
+        mu "...thanks..."
 
-    kk "Mu!"
+        scene backgroundparty
+    else:
+        "Hiro"
 
-    "The spotlight swivels around the floor until it finds him at the food table. He turns around mid snack with a dumbfounded look on his face."
+        kk "Hiro?"
 
-    mu "Hunh?"
+        h "Wait, what? But I thought council members couldn't win."
 
-    kk "You won, man."
+        scene backgroundparty
 
-    mu "...Why?"
+        ch "An exception was made."
 
-    kk "What do you mean why? People voted for you, come on up."
+        h "Wait, Nagen, is this legit?"
 
-    "He hesitantly puts down his plate and makes his way to the stage, still very confused. For how much he helps other people, he really doesn't consider whether or not they like him."
+        n "Yeah man, they got a cape and everything."
 
-    mu "...thanks..."
+        h "You guys!"
 
-    #Return to Main Branch
+        "Hiro sheepishly goes up to get coronated with costume props. He's a little embarrassed, but he's grinning ear to ear."
+
+        h "I don't know what to do with this, but thanks!"
 
     kk "And now the king and queen should share a dance."
 
@@ -5231,9 +5304,13 @@ label chapter2_day8_event2:
 
     #CG: Rise holding hands with parents of either side
 
+    scene backgroundCh2_RiseFB1
+
     r "I never had to fight for my parents' approval like my peers. Rather, they fought for mine, as if my favoring them proved who was in the right."
 
     #CG: Gifts pile up on either side, it appears like Rise is getting pulled
+
+    scene backgroundCh2_RiseFB2
 
     r "Father wanted me to make strong connections with people who would take care of me, who would give me company shoes and a cushy job. Mother wanted me to seduce the weak and feeble, teaching me how to steal things and put them in my name. I didn't want to disappear into someone else's family, so I put off choosing a side."
 
