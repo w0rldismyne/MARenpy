@@ -9,7 +9,7 @@ label chapter2_day1_event1:
     "Mariko... she got her instructions from someone. Could it be someone at this school? It'd make the most sense, but where could they be hiding?"
     "I roll over and check the time. If I don't get up soon, I'll be late for my first unofficial student council meeting."
 
-    scene backgroundstuco
+    scene backgroundstuco at darker
 
     "The lights aren't on. Am I that late? I can't imagine we'd have that much to discuss. As I'm about to leave, the door swings open."
 
@@ -26,6 +26,8 @@ label chapter2_day1_event1:
     show kietsu laugh at right
 
     ki "I got it, hold on."
+
+    scene backgroundstuco
 
     "The lights flicker on and I can see the members in homemade party hats with a plate of brownies in front of them."
 
