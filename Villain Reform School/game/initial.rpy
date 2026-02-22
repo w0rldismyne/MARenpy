@@ -290,6 +290,7 @@ image mariko talk = "Sprites/Mariko/Marikotalk.png"
 image momoko = "Sprites/Momoko/momokobase.png"
 image momoko angry = "Sprites/Momoko/momokoanger.png"
 image momoko angry talk = "Sprites/Momoko/momokoangertalk.png"
+image momoko blush = "Sprites/Momoko/momokosurpriseblush.png"
 image momoko confused = "Sprites/Momoko/momokoconfused.png"
 image momoko happy = "Sprites/Momoko/momokohappy.png"
 image momoko manic = "Sprites/Momoko/momokomanic1.png"
@@ -527,6 +528,8 @@ image backgroundC1_3 = "Chapter1/Ch1_3.png"
 image backgroundC1_4 = "Chapter1/Ch1_4.png"
 image backgroundC1_T = "Chapter1/Ch1_T.png"
 image backgroundC1_E = "Chapter1/Ch1_E.png"
+image backgroundCh1_MarikoLoose = "Chapter1/Ch1_MarikoLoose.png"
+image backgroundCh1_MarikoWin = "Chapter1/Ch1_MarikoWin.png"
 image backgroundB1 = "Chapter1/Boss1_1.png"
 image backgroundB2 = "Chapter1/Boss1_2.png"
 image backgroundB3 = "Chapter1/Boss1_3.png"
@@ -546,10 +549,11 @@ image backgroundCh2_Nurse1 = "Chapter2/Ch2_Nurse1.png"
 image backgroundCh2_Nurse2 = "Chapter2/Ch2_Nurse2.png"
 image backgroundCh2_Nurse3 = "Chapter2/Ch2_Nurse3.png"
 image backgroundCh2_RiseCloseup = "Chapter2/Ch2_RiseCloseup.png"
+image backgroundCh2_RiseCrash = "Chatper2/Ch2_RiseCrash.png"
 image backgroundCh2_RiseReveal = "Chapter2/Ch2_RiseReveal.png"
 image backgroundCh2_RiseReveal2 = "Chapter2/Ch2_RiseReveal2.png"
 image backgroundCh2_RiseArena = "Chapter2/Ch2_RisesArena.png"
-image backgroundCh2_RiseCrash = "Chapter2/Ch2_RiseCrash.png"
+image backgroundCh2_Title = "Chapter2/Ch2_Title.png"
 image backgroundCh2_UittoSees = "Chapter2/Ch2_UittoSees.png"
 image backgroundCh2_UittoMemory = "Chapter2/Ch1_UittoMemory.png"
 image backgroundCh2_UittoMemory2 = "Chapter2/Ch1_UittoMemory_2.png"
@@ -609,8 +613,15 @@ image background_Jfb10 = "Chapter2/JFB10.png"
 image background_Jfb11 = "Chapter2/JFB11.png"
 image background_JFBCouch = "Chapter2/JFBCouch.png"
 image background_JFBCouch2 = "Chapter2/JFBCouch2.png"
-image background_JFBSleepover1 = "Chapter2/JFBSleepover1.png"
+image background_JFBMeet1 = "Chapter2/JFBMeet1.png"
+image background_JFBMeet2 = "Chapter2/JFBMeet2.png"
+image background_JFBMourn = "Chapter2/JFBMourn.png"
+image background_JFBRoundabout = "Chapter2/JFBRoundabout.png"
+image background_JFBRoundabout2 = "Chapter2/JFBRoundaboutJona.png"
+image background_JFBSleepover1 = "Chapter2/JFBSleepover1.jpg"
 image background_JFBSleepover2 = "Chapter2/JFBSleepover2.png"
+image background_JFBSleebover3 = "Chapter2/JFBSleepover3.png"
+image background_JFBUniform = "Chapter2/JFBUniform.png"
 
 #Rise Flashbacks
 image backgroundCh2_RiseFB1 = "Chapter2/RiseFB1.png"
@@ -620,6 +631,20 @@ image backgroundCh2_RiseFB3 = "Chapter2/RiseFB3.png"
 #Odori Flashbacks
 image background_Ofb1 = "Chapter2/OFB1.png"
 image background_Ofb2 = "Chapter2/OFB2.png"
+
+#Nagen Flashbacks
+image background_NagenFB_Camp = "Chapter4/NagenFB_Camp.png"
+image background_NagenFB_CheckUp = "Chapter4/NagenFB_CheckUp.png"
+image background_NagenFB_CheckUp_Eyes = "Chapter4/NagenFB_Checkup_Eyes.png"
+image background_NagenFB_CheckUp_Nurse = "Chapter4/NagenFB_Checkup_Nurse.png"
+image background_NagenFB_Lethe = "Chapter4/NagenFB_Checkup_Lethe.png"
+image background_NagenFB_Lethe_Butterfly = "Chapter4/NagenFB_Lethe_Butterfly.png"
+image background_NagenFB_Odori = "Chapter4/NagenFB_Odori.png"
+image background_NagenFB_Odori_AndOthers = "Chapter4/NagenFB_Odori_AndOthers.png"
+image background_NagenFB_OdoriTV = "Chapter4/NagenFB_OdoriTV.png"
+image background_NagenFB_Testing = "Chapter4/NagenFB_Testing.png"
+image background_NagenFB_VivaldiCameraGraveyard = "Chapter4/NagenFB_VivaldiCameraGraveyard.png"
+image background_NagenFB_VivaldiOnTV = "Chapter4/NagenFB_VivaldiOnTV.png"
 
 # Player's Stats
 default Vigor = 0
@@ -727,6 +752,10 @@ default check_laptop = False
 default kazzPhoneFound = False
 
 # Chapter 2 Variables
+default chapter2_solved = False
+default chapter2_interrogation_chance = True
+
+
 default date = False
 default dateRise = False
 default dateNanase = False

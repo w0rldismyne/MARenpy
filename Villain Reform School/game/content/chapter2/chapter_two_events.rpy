@@ -292,7 +292,8 @@ label chapter2_vigor:
     # [BG: Ampetheater]
     scene backgroundamp
     
-    "After everything that happened this week, I need a mental break. Besides, I'm not entirely comfortable with Hiro being by himself for obvious reasons."
+    "After everything that happened this week, I need a mental break."
+    "Besides, I'm not entirely comfortable with Hiro being by himself for obvious reasons."
     
     show rei irate at left
     
@@ -341,7 +342,8 @@ label chapter2_vigor:
     show hiro smirk at right
 
     h "Deal!"
-    "They both took a fighting stance. Their fists collided in the most aggressive fist bump I have ever seen. I guess that makes sense. They both could get in serious trouble if they were caught fighting."
+    "They both took a fighting stance. Their fists collided in the most aggressive fist bump I have ever seen."
+    "I guess that makes sense. They both could get in serious trouble if they were caught fighting."
     
     hide rei think
     show rei brag
@@ -500,7 +502,8 @@ label chapter2_vision:
     hide vivaldi smile
     show vivaldi lecture
 
-    v "You remember last week's demonstration? How Chisei and I can influence each other's abilities? It's because we both can communicate with the dead."
+    v "You remember last week's demonstration? How Chisei and I can influence each other's abilities?"
+    v "It's because we both can communicate with the dead."
     "She gestures to Kietsu."
     v "Is Siri or Alexa here with us?"
     "Kietsu sits up, a little embarrassed to have people watch him scan an empty room."
@@ -559,7 +562,8 @@ label chapter2_vision:
     #-CG Vivaldi on the stand-
     v "I had first heard my father's voice at the funeral, all he could do was answer questions with on word,  and the second..."
     #-Add a man to the stan-
-    v "Was when I was helping with the laundry. My uncle failed to notice a blood stain... It was the only evidence I had, and if no one believed me, I would have been forced to live with a murderer who watched me testify against him."
+    v "Was when I was helping with the laundry. My uncle failed to notice a blood stain..."
+    v "It was the only evidence I had, and if no one believed me, I would have been forced to live with a murderer who watched me testify against him."
     #-CG gone-
 
     show vivaldi talk
@@ -1195,7 +1199,7 @@ label Chapter2_pointandclick:
 
     "Not exactly, but it's a start."
 
-    "'N' in Dacne: It's misspelled. Furthermore, it looks like these were all cut out from the same issue of a magazine. (+Magazine Clippings +Dance)"
+    "'N' in Dacne: It's misspelled. Furthermore, it looks like these were all cut out from the same issue of a magazine."
 
     u "You're not thinking of correcting the note, are you?"
 
@@ -1465,7 +1469,8 @@ label chapter2_day1_night:
 
     Dark "He had nowhere to go."
 
-    "Unlike the rest of us, he had no one willing to claim him. Even if he wanted to leave the riots behind, we were all he had. Now he's a ward of the state."
+    "Unlike the rest of us, he had no one willing to claim him. Even if he wanted to leave the riots behind, we were all he had."
+    "Now he's a ward of the state."
     scene backgroundblack with fade
     return
 
@@ -1943,8 +1948,6 @@ label chapter2_day2_event4:
 
     hide kazz complain
     hide dyre disturbed
-
-    #Display Hiro portrait
 
     show backgroundJonaDraw1
 
@@ -2662,26 +2665,62 @@ label chapter2_day3_event4:
 
     "She seems to be taking this personally."
 
-    n "Hey, it's okay. I'm well aware things are getting out of hand, but we need something that will either meet expectations or bring them back down."
-
-    "She looks out at the school grounds."
-
     hide rise mad
-    show rise
 
-    r "What about having it on the roof of the gym? Rooftop parties use less decorations and we could make being out past curfew the main feature of the party."
-    r "'A night under the stars', only instead of cheap decorations, we will have the real thing."
+    if Vision >= 10:
+        show rise frown
 
-    n "That could work, but we have class the next day."
+        n "We can't move the dance, I've tried everything I could."
 
-    "She laughs."
+        r "...I see."
 
-    hide rise
-    show rise scheme
+        n "I'm surprised you're so against it, seeing how all of this is your idea."
+        n "You could have picked something a few months out. Then all of us would have more time to prepare."
 
-    r "Fine, an extra two hours to curfew then. It will have a similar effect."
+        show rise think
 
-    hide rise scheme
+        r "Hypothetically, if you are given an assignment, do you wait until the last minute to complete it?"
+
+        n "No."
+
+        show rise disappointed
+
+        r "It would make you anxious, correct? Especially if it was the difference between passing or failing."
+        r "You would want to do everything as quickly and efficiently as possible."
+        r "I am the same. The longer you put off something, the harder it is to execute."
+
+        n "You're having second thoughts?"
+
+        show rise frown
+
+        r "...Nagen, given enough time, I think anyone could convince themselves they could have made a better choice."
+        r "Not that it helps us much in the present. I would be careful how much I overthink things if I were you."
+
+        show rise scheme
+
+        r "You are too smart to get stuck in your own head."
+
+    else:
+        n "Hey, it's okay. I'm well aware things are getting out of hand, but we need something that will either meet expectations or bring them back down."
+
+        "She looks out at the school grounds."
+
+        hide rise mad
+        show rise
+
+        r "What about having it on the roof of the gym? Rooftop parties use less decorations and we could make being out past curfew the main feature of the party."
+        r "'A night under the stars', only instead of cheap decorations, we will have the real thing."
+
+        n "That could work, but we have class the next day."
+
+        "She laughs."
+
+        hide rise
+        show rise scheme
+
+        r "Fine, an extra two hours to curfew then. It will have a similar effect."
+
+        hide rise scheme
     show rise hearts
 
     r "Was there anything else you wanted to ask me?"
@@ -2693,8 +2732,8 @@ label chapter2_day3_event4:
 
     r "I see... Well then, I will send you a list of what I require in the morning."
     r "I do hope everything will go as planned."
-
-    hide rise frown
+         
+    hide rise
 
     "She leaves without another word as the wind picks up."
 
@@ -3380,7 +3419,7 @@ label chapter2_day5_event2:
 
     show jona relaxed
     show hiro suppress at left
-    show uitto gurl at right
+    show uitto serious at right
 
     h "Can we throw out this..."
 
@@ -3674,13 +3713,38 @@ label chapter2_day5_event4:
 
     j "It's an excellent coat rack."
 
-    hide jona relaxed
+    if Vision >=10:
+
+        n "Can I ask you something?"
+
+        show jona depressed
+
+        j "Is something wrong?"
+
+        n "I'm not sure. Normally, my memory is perfect, but lately I'll be talking with someone and... and they act like they don't know me."
+        n "It's like I'm remembering things that haven't happened. I think maybe..."
+        n "Did your abilities get worse after the riots?"
+
+        j "It comes and goes depending how overwhelmed I get. I've never had it stuck in overdrive though."
+
+        n "Maybe that's it. I'm probably just over tired and stressed."
+
+        j "If it gets really bad, maybe you should talk with Vivaldi?"
+
+        n "Why would I do that?"
+
+        show jona frustrated
+
+        j "In case you're not going crazy and your ability has changed."
+
+        "I really hope that's not the case."
+    else:
+        pass
+    hide jona
 
     scene backgroundblack with fade
 
     return
-
-    #Freetime Event
 
 label chapter2_day5_night:
 
@@ -3698,6 +3762,8 @@ label chapter2_day5_night:
     "He had invited me over to show the murals he painted on the walls, but I kept getting distracted by the garbage."
 
     Dark "We ended up spending most of the night hiding in his room."
+
+    scene background_JFBSleebover3
 
     "He hadn't asked permission to invite a friend over. Didn't have the time, he said. I saw her briefly come in and throw on the TV, quickly falling asleep on the couch."
     "She didn't even say hi to him."
@@ -4124,12 +4190,16 @@ label chapter2_day6_night:
     Dark "I noticed the clothes first."
     Dark "No one could convince him to change."
 
+    scene background_JFBRoundabout2
+
     "No one really liked the school uniform. It was stiff and uncomfortable and a bunch of kids got in trouble for breaking dress code by wearing the wrong color socks."
     "Jona coming to class in street clothes one day wasn't super surprising on its own, but even with the pant legs rolled up, I could tell they were an adult's clothes."
     "We didn't want him to get in trouble, but he didn't care. He started racking up detentions and every day, he'd come to school in a new set of oversized clothes."
     "After four days, they called him to the office to meet with his mom. She said the next day he'd be in his uniform."
 
     Dark "He wasn't at school the next day."
+
+    scene background_JFBRoundabout
 
     "We didn't hear from him the whole weekend."
     #cg
@@ -4139,11 +4209,15 @@ label chapter2_day6_night:
 
     Dark "I offered to switch clothes with him."
 
+    scene background_JFBUniform
+
     "It was the best thing we could think of at the time and it seemed to help a little."
     "He finally told me that his grandma was the one who did laundry and made his breakfast before school every morning."
     "His mom had tried, but she just didn't do things the same way and she assumed he knew how to do things he didn't."
 
     Dark "He'd brought a sealed wooden box to school."
+
+    scene background_JFBMourn
 
     "For weeks after, he'd keep it with him to watch over, hoping it would start sprouting like our lima beans in science class."
     "It was supposed to be a cherry tree one day and he wanted to know the moment it would start growing."
@@ -4363,7 +4437,7 @@ label chapter2_day7_event3:
 
         nk "I think we got just enough help to meet people's expectations!"
 
-        show kiestu laugh
+        show kietsu laugh
 
         ki "Good job findin' the extra help, Nagen."
 
@@ -4381,7 +4455,7 @@ label chapter2_day7_event3:
 
         s "Man, everyone's really excited about this party."
 
-        show kiestu laugh
+        show kietsu laugh
 
         ki "Yep! This did exactly what I thought it would. When people have a common goal to work towards, they're more likely to get along."
 
@@ -4393,7 +4467,7 @@ label chapter2_day7_event3:
 
         n "I think it's going to take more than one team building exercise to get everyone to cooperate with each other."
 
-    show kiestu serious
+    show kietsu serious
 
     ki "About that... I didn't want to end the meeting on a downer note, but I found somethin' in the gym today."
 
@@ -4415,7 +4489,7 @@ label chapter2_day7_event3:
 
     n "That's... that's a really good point. How have they been able to avoid getting caught this whole time?"
 
-    show kiestu upset1
+    show kietsu upset1
 
     ki "I don't know, but I figured Jona would want this back. Or at the very least to know they don't have it anymore."
 
@@ -4429,13 +4503,13 @@ label chapter2_day7_event3:
 
     n "...Got it."
 
-    show kiestu
+    show kietsu
 
     ki "That should cover it for today's meeting. Get a lot of rest, guys. Tomorrow's goin' to be crazy."
 
     "Everyone groans and packs up their things. It's my turn to clean and lock up, but Nanase is staying behind to help."# [IF Nanase is Date, skip to Main Branch
 
-    hide kiestu
+    hide kietsu
     hide setsuna
     show nanase blushing
     if $dateNanase = False:
@@ -4550,7 +4624,7 @@ label chapter2_day7_event4:
 
             "There's a bunch of other pictures too: stuff from the riots, cherry trees, Lethe's things swallowed by blots of watered down ink-"
 
-            if hero > Villain:
+            if Hero > Villain:
 
                 "-and a pompom strangled by pink wires. The last sketch is similar, but I can't tell what's being wrapped up."
 
@@ -4622,11 +4696,15 @@ label chapter2_day7_night:
 
     Dark "They made me sit next to the other new kid."
 
+    scene background_JFBMeet1
+
     "I didn't know how to talk to new people or make friends, so I spent every lunch period inside reading."
     "Jona would be at his desk sorting the same deck of cards into different piles."
     "He still wore his uniform back then. We spent weeks next to each other in silence."
 
     Dark "It was like opening a dam."
+
+    scene background_JFBMeet2
 
     "One question about his collection sent him into a detailed history on Golden Age era heroes from the Karmic Gladiators. Not that I minded."
     "His favorite hero was the founder Siren; controversies aside, she was kind of a boring choice in my opinion. But he liked how easily she found other heroes like her."
@@ -4637,9 +4715,9 @@ label chapter2_day7_night:
 
     "He didn't even ask to be liked, just tolerated. In exchange, he gave me a foil Lethe card."
 
-    Dark "I kept my promise."
-
     scene backgroundblack with fade
+
+    Dark "I kept my promise."
 
     return
 
@@ -4653,17 +4731,32 @@ label chapter2_day8_event1:
 
     scene backgroundcafe
 
+    show uitto serious 
+    show hiro guilty at left
+
     u "....."
 
     h "Are you having second thoughts about going?"
+
+    show uitto cringe
 
     u "And third and fourth thoughts, but we worked so hard... I need to take pics of everyone in costume, but I probably won't stick around after they hand out the crowns. I think it's mostly nerves."
 
     n "You should have someone walk you back. I can-"
 
-    u "Don't. I have it covered. You of all people should have fun tonight. I don't want you guys calling it a night on my account."
+    show uitto sad
 
+    u "Don't. I have it covered."
+
+    show uitto sigh
+
+    u "You of all people should have fun tonight. I don't want you guys calling it a night on my account."
+
+    show hiro sad talk at left
+    
     h "Does that mean you and Jona are talking now?"
+
+    show uitto cringe
 
     u "...No... I tried, but he hasn't messaged me back. I'm trying to be patient..."
 
@@ -4671,19 +4764,32 @@ label chapter2_day8_event1:
 
     "Well, relatively. He just hasn't left his room yet."
 
-    h "When I get my hands on the person responsible for this- Ugh, but I'd get in trouble for fighting! Maybe I could chew 'em out real good. Uitto, quick, I need some generic stuff from your archive of hate to get started. Something really devastating."
+    show hiro mad at left
 
+    h "When I get my hands on the person responsible for this- Ugh, but I'd get in trouble for fighting! Maybe I could chew 'em out real good."
+    h "Uitto, quick, I need some generic stuff from your archive of hate to get started. Something really devastating."
+
+    show uitto sad
+    
     u "I appreciate the offer, but the most devastating insults come from a place of sincerity."
+
+    show hiro sad fine at left
 
     h "But I'm not good at coming up with stuff on the fly."
 
     n "Oh, you're good at it. It's just usually you're not trying to be insulting."
 
+    show hiro talk2 at left
+
     h "Like when?"
 
     n "Like when you said I was the most athletic Redditor you ever met?"
 
+    show uitto talk
+
     u "Oh my God, I forgot about that. When you were wheezing after the beep test."
+
+    show hiro talk1 at left
 
     h "I was trying to be encouraging... probably. I still stand by it."
 
@@ -4693,15 +4799,22 @@ label chapter2_day8_event1:
 
     h "Marshmallow cereal treats?"
 
+    show uitto smile
+
     u "It doesn't matter what cereal, as long as it's held together with gobs of butter and marshmallow!"
 
     n "Got it."
 
     "I really hope we can pull this off."
 
+    hide uitto 
+    hide hiro
+
+    scene backgroundblack with fade
+
     #"Day 8 Event 2"
 
-    #BG: Gym Evening
+    scene background cafe
 
     #These scenes will be different based on who Nagen's date is. These scenes will be separated by character name.
 
@@ -4709,6 +4822,8 @@ label chapter2_day8_event1:
         if dateMomoko = True:
 
             "We had agreed to meet up right outside the entrance; something about a surprise."
+
+            show momoko happy
 
             mh "Shut up!"
 
@@ -4718,9 +4833,13 @@ label chapter2_day8_event1:
 
             "She gives me a huge hug."
 
+            show momoko
+
             mh "You ready?"
 
             n "Kind of..."
+
+            show momoko sad talk
 
             mh "It'll be fine as long as people have fun, right? So let's go have fun!"
 
@@ -4730,6 +4849,8 @@ label chapter2_day8_event1:
 
             n "You look beautiful."
 
+            show momoko blush
+
             "She blushes and turns away."
 
             n "I mean it."
@@ -4738,12 +4859,18 @@ label chapter2_day8_event1:
 
             "She shrugs and takes my hand."
 
+            show momoko
+
             mh "Thanks."
+
+            hide momoko
         elif dateKitsune = True:
             "Kitsune had been busy up until the last minute trying to campaign for the queen of the dance."
             "She still made time to text me updates in between. Well, that and a list of expectations."
             "Heaven forbid I wear the wrong shoes. We meet up at the front entrance."
             "I'm not sure what she's supposed to be, but it's elaborate. She covers her mouth with her hands."
+
+            show kitsune smug
 
             k "Nagen..."
 
@@ -4753,19 +4880,27 @@ label chapter2_day8_event1:
 
             "Oh, she's talking about me. I turn and when I circle back, she's beaming."
 
+            show kitsune shocked
+
             k "It's perfect! Like straight out of a fairytale."
 
             "What's supposed to come next? Oh yeah, the corsage thing. I think it goes on the wrist, but which one? She never specified."
+
+            show kitsune 
 
             k "Nagen, relax."
 
             "She holds out her left hand and I fumble trying to get the silly thing on."
             "She tilts my chin up with her other hand, hesitating before patting my cheek."
 
+            show kitsune smug
+
             k "We're going to blow everyone away. Tonight's our night."
 
             "Easy for her to say, I still feel like I don't know what I'm doing. Well, too late to turn back now."
             "I offer her an elbow and escort her in."
+            
+            hide kitsune
         elif dateChisei = True:
 
             "Chisei is already at the entrance waiting for me when I show up. I hope I didn't keep her waiting too long."
@@ -4774,16 +4909,22 @@ label chapter2_day8_event1:
 
             "She turns and I forget to breathe for a moment. Her mask and arm look like they're made out of porcelain; she's like a doll."
 
+            show chisei sad talk2
+
             ch "Good silence or bad silence?"
 
             n "Ah, g-good."
 
             "She smiles."
 
+            show chisei smile talk1
+
             ch "You look quite dashing as well, for someone with a foul reputation."
 
             "Fowl, bird. I groan and she smiles even wider. Why does she revel in my misery?"
 
+            show chisei smile talk2
+            
             ch "I am sure everyone will flock towards you when they see you."
 
             n "Stop, please!"
@@ -4792,6 +4933,8 @@ label chapter2_day8_event1:
 
             n "You keep this up and I will throw this mask in the trash."
 
+            show chisei smile talk1
+            
             ch "Oh, there is no need for that. You look really handsome."
 
             "She kisses the back of my hand."
@@ -4799,25 +4942,38 @@ label chapter2_day8_event1:
             ch "Shall we?"
 
             "I guess we're going in?"
+
+            hide chisei
+
         elif dateNanase = True:
 
             "Nanase's collecting tickets at the entrance; people are slowly trickling in. Which is fine, I guess, but it's delaying my night. She looks nice in her vintage gown."
+
+            show nanase ashamed
 
             nk "I forgot, some people take event start times as a suggestion."
 
             "Glad I'm not the only one that's irritated about this."
 
+            show dyre smirk at left
+            show kazz sad talk at right
+
             d "What's your hurry, wallflower?"
 
             "Kazz and Dyre. I step in and take their tickets."
 
+            show nanase irate
             n "Well, some of us have dates that aren't a dressed up body pillow."
 
             "A really well dressed body pillow, damn."
 
+            show dyre tease at left
+
             d "Yeah, well, everyone's going to want to dance with my date."
 
             "He's got me there."
+
+            show nanase offended
 
             nk "Nagen, will you get me some food? I think this is going to take a while."
 
@@ -4825,7 +4981,17 @@ label chapter2_day8_event1:
 
             n "Yeah sure."
 
+            hide dyre
+            hide kazz
+            hide nanase
+        
+            scene backgroundblack with fade
+
             "I come back and Nanase is by herself again."
+        
+            scene backgroundcafe
+
+            show nanase ashamed
 
             nk "Thank you."
 
@@ -4844,6 +5010,9 @@ label chapter2_day8_event1:
             nk "...Yeah..."
 
             "If she says so, I guess I'll go in alone. It shouldn't take too long for the stragglers to show up."
+        
+            hide nanase
+
         elif dateRise = True:
 
             "I get a string of texts."
@@ -4858,12 +5027,16 @@ label chapter2_day8_event1:
             "Mu comes to pick me up and walk me to the dance hall."
             "He's not all that dressed up actually; just a nice blazer and a plain mask and..."
 
+            show mu cringe
+
             n "Earplugs?"
 
             mu "Hunh? Oh, ye, kind of embarrassing, but there are some types of sounds that really bother me."
             mu "I never know what to expect at events like this, so I wear em just in case. I can still hear you though."
 
             n "That's fair. I just wish I knew sooner, I would've vetted the playlist for you."
+
+            show mu grin
 
             mu "No, no; that's totally unnecessary. Wouldn't be fair to the other people either, but I appreciate it."
 
@@ -4873,10 +5046,17 @@ label chapter2_day8_event1:
             "He hasn't said anything negative and we haven't done much; but it's still there, like I haven't earned it for some reason."
             "I offer my elbow for him to take and try to hide my embarrassment. He kinda laughs and links his arm through mine."
 
-            mu "I'll try my best. It's just... going to take getting used to."
+            show mu talk2
 
+            mu "I'll try my best. It's just... going to take getting used to."
+            
             "It should be illegal to be that attractive. How am I going to make it three hours without looking like an idiot?"
+        
+            hide mu
+
         elif dateYoku = True:
+
+            show yoku bashful
 
             "Yoku is pacing outside of the dance hall. I know Shoma's talented, but there's no way he had time to make a suit and a cape with that much detail. He had to have brought it from home. When he sees me, he relaxes a little."
 
@@ -4885,6 +5065,8 @@ label chapter2_day8_event1:
             n "Nonsense, this is amazing."
 
             "It's kind of funny how a little bit of flattery can leave him so flustered."
+
+            show yoku blush
 
             y "Are you sure this is okay?"
 
@@ -4898,8 +5080,15 @@ label chapter2_day8_event1:
 
             n "Come on. The longer we stay out here, the more worried you'll get."
 
+            show yoku daydream
+
             y "Y-you're right."
+
+            hide yoku
+
         elif dateTaiga = True:
+
+            show taiga grin
                     
             "Usually Taiga wears clothes that are easy to move around in, stuff he once used as a circus performer. Tonight he's in a high waisted skirt or pair of pants; I can't really tell. An ornate robe threatens to swallow him whole. He has a white blouse underneath and no mask. Despite all the fabric, he's still moving quickly and lifts me up by the waist."
 
@@ -4911,6 +5100,8 @@ label chapter2_day8_event1:
 
             "I am going to die of embarrassment. People are walking by us and I can tell by that smile he's doing it on purpose. I muster enough courage to give him a peck on the forehead and he puts me down."
 
+            show taiga scheme
+
             t "Heh, if I didn't know any better, I'd think you had a gay little crush on me."
 
             n "Probably because I do."
@@ -4919,16 +5110,25 @@ label chapter2_day8_event1:
 
             "There is only so much my heart can handle. I have enough adrenaline running through my system to rival six cups of coffee."
 
+            show taiga grimace
+
             t "So, are we going to go in or are we just going to stand here?"
 
             "I take his hand and lead him inside."
 
             n "You're lucky you're cute."
 
+            show taiga grin
+
             t "You hear that everyone? He thinks I'm cute!"
 
             "I'm pretty sure everyone is well aware we're on a date right now, but that's not going to stop him from bringing it up at every opportunity like a dork."
+        
+            hide taiga
+
         else:
+
+            show hiro confess
 
             "Hiro and I are getting ready together. I suppose there isn't a better time than now to give it to him. I hand him a corsage made with blue silk. It doesn't exactly go with his outfit, but it's the best way I could think of to show we're going together."
 
@@ -4941,6 +5141,8 @@ label chapter2_day8_event1:
             n "Well, it's kind of traditional to give one to your date, but if you don't want it..."
 
             "Hiro drops the box."
+
+            show hiro embarrassed
 
             h "This is a date? Like, a 'date' date? Like, a romantic kind of date?"
 
@@ -4958,7 +5160,11 @@ label chapter2_day8_event1:
 
             n "Come here, I'll put it on."
 
+            show hiro blush
+
             h "Okay."
+
+            hide hiro
     else:
         "Let's do this."
 
@@ -4967,7 +5173,10 @@ label chapter2_day8_event1:
     "I climb up the stairs to the roof, and man does it look good! Rise did a great job disguising all the junk as decorations."
     "Music is playing, there's food; it actually looks like a dance! Yoku and Kazz are arguing about the music choice."
     "Dyre's body pillow date is crowd surfing. Everyone seems to be having a good time."
-    "All that's left to do is vote for the king and queen for the dance. I can feel Uitto looking over my shoulder."
+    "All that's left to do is vote for the king and queen for the dance."
+    "I can feel Uitto looking over my shoulder."
+
+    show uitto smile
 
     n "I thought you were taking pictures."
 
@@ -4978,6 +5187,8 @@ label chapter2_day8_event1:
     u "Who you gonna vote for?"
 
     n "Why? Is there someone you had in mind?"
+
+    show uitto smirk
 
     u "...no."
 
@@ -4992,7 +5203,11 @@ label chapter2_day8_event1:
 
     n "Weird how?"
 
+    show kitsune mad at left
+
     k "You! Quit trying to steal my votes."
+
+    show uitto sigh
 
     u "No one's stealing anything. Sorry, Nagen, gotta keep moving."
 
@@ -5005,11 +5220,31 @@ label chapter2_day8_event1:
 
     n "I-"
 
+    hide uitto
+    hide kitsune
+
     "She runs off after Uitto. What should I do?"
 
-    #While all characters can be voted for, Chisei, Kitsune, Mu, and Hiro are the only viable candidates. Voting for them guarantees they win. Voting for anyone else triggers a stat check. If reputation is good, Hiro wins. If Hero > Villain, Chisei wins, else Kitsune wins.
+    menu:
+        "Chisei":
+            $promChisei = True
+        "Kitsune":
+            $promKit = True
+
+    menu:
+        "Mu":
+            $promMu = True
+        "Hiro":
+            $hRep += 1
+
+    #While all characters can be voted for, Chisei, Kitsune, Mu, and Hiro are the only viable candidates. Voting for them guarantees they win. 
+    #Voting for anyone else triggers a stat check. If reputation is good, Hiro wins. If Hero > Villain, Chisei wins, else Kitsune wins.
 
     #"Player Votes"
+
+    show nanase smile talk at left
+    show uitto talk
+    show hiro at right
 
     nk "Not too late, I hope. It's only been thirty minutes and there's already so many abandoned shoes."
 
@@ -5023,13 +5258,20 @@ label chapter2_day8_event1:
 
     n "No, nononono, you are not making me dance in public, no."
 
+    show hiro judge at right
+
     h "Fine, be boring."
 
-    "He backs away a little and starts dancing. At least, that's the easiest way to describe it. It's not any good and Uitto starts laughing uncontrollably, but..."
+    "He backs away a little and starts dancing. At least, that's the easiest way to describe it."
+    "It's not any good and Uitto starts laughing uncontrollably, but..."
+
+    hide nanase
+    show taiga grin at left
 
     t "You call that dancing? I'll show you dancing!"
 
-    "More people start joining in. Of course, most of the Vigor majors are the best. Rei is classically trained and Kitsune's pretty good at something Uitto identifies as voguing."
+    "More people start joining in. Of course, most of the Vigor majors are the best."
+    "Rei is classically trained and Kitsune's pretty good at something Uitto identifies as voguing."
 
     kk "Alright, everyone; it's the time you've all been waiting for! The votes are in and this years queen of the dance is..."
 
@@ -5047,7 +5289,12 @@ label chapter2_day8_event1:
 
         scene backgroundparty
 
-        "She says that, but I can tell she's happy. They even got a little crown for her to wear. I haven't seen her smile this much since we were kids. Out of the corner of my eye, I see Ichita practically lift Uitto in the air."
+        "She says that, but I can tell she's happy. They even got a little crown for her to wear."
+        "I haven't seen her smile this much since we were kids."
+        "Out of the corner of my eye, I see Ichita practically lift Uitto in the air."
+
+        show uitto smile
+        show ichita grin at left
 
         i "Thank you so much, you're amazing!"
 
@@ -5056,29 +5303,43 @@ label chapter2_day8_event1:
         n "Is that what you've been up to?"
 
         u "Don't be weird about it, this is her moment."
+
+        hide ichita
+        hide uitto
     else:
+
+        scene backgroundCh2_KitProm
 
         kk "Kitsune!"
 
         k "...I won?"
 
-        scene backgroundCh2_KitProm
-
         k "I WON! Oh my goodness, thank you!"
 
         scene backgroundparty
+
+        show uitto sad
+        show ichita sad talk at left 
 
         u "Man. Sorry, Ichita. I tried."
 
         i "Not your fault she's so persistent."
 
+        show kitsune cry
+
         "Kitsune snatches the plastic crown from Kazz and puts it on her head. That's a lot of tears for someone so giddy."
+
+        show uitto cringe
 
         u "I can't believe I'm doing this."
 
         "Uitto mutters under her breath before riffling around for some makeup tubes in her purse."
 
         u "Gurl, your mascara is everywhere, don't touch your face with those white gloves."
+
+        hide kitsune
+        hide uitto
+        hide ichita
 
     scene backgroundCh2_HiroProm
 
@@ -5090,7 +5351,8 @@ label chapter2_day8_event1:
 
         kk "Mu!"
 
-        "The spotlight swivels around the floor until it finds him at the food table. He turns around mid snack with a dumbfounded look on his face."
+        "The spotlight swivels around the floor until it finds him at the food table."
+        "He turns around mid snack with a dumbfounded look on his face."
 
         mu "Hunh?"
 
@@ -5100,12 +5362,15 @@ label chapter2_day8_event1:
 
         kk "What do you mean why? People voted for you, come on up."
 
-        "He hesitantly puts down his plate and makes his way to the stage, still very confused. For how much he helps other people, he really doesn't consider whether or not they like him."
+        "He hesitantly puts down his plate and makes his way to the stage, still very confused."
+        "For how much he helps other people, he really doesn't consider whether or not they like him."
 
         mu "...thanks..."
 
         scene backgroundparty
     else:
+
+        scene backgroundCh2_HiroProm
         "Hiro"
 
         kk "Hiro?"
@@ -5114,11 +5379,17 @@ label chapter2_day8_event1:
 
         scene backgroundparty
 
+        show chisei smile
+
         ch "An exception was made."
+
+        show hiro surprised at right
 
         h "Wait, Nagen, is this legit?"
 
         n "Yeah man, they got a cape and everything."
+
+        show hiro smile at right
 
         h "You guys!"
 
@@ -5126,7 +5397,14 @@ label chapter2_day8_event1:
 
         h "I don't know what to do with this, but thanks!"
 
+        hide chisei
+        hide hiro
+
     kk "And now the king and queen should share a dance."
+
+    show uitto sad at left
+    show ichita sad talk2
+    show nanase surprised at right
 
     i "Aw man..."
 
@@ -5136,19 +5414,33 @@ label chapter2_day8_event1:
 
     nk "If you want to dance with her, why don't you just ask?"
 
+    show ichita talk
+
     i "...that's boring."
+
+    hide ichita 
 
     u "Well, on that note..."
 
     "Uitto checks her phone and frowns."
 
+    show uitto serious at left
+
     u "Nagen, what exactly did that threat letter to Jona say?"
 
     n "I will strike during the dance. Why?"
 
+    show uitto yell at left
+
     u "During, not at, ugh I'm so stupid! The dance is the distraction! Nanase, did anyone bail on coming last minute?"
 
-    nk "Just Jona and... Oh, oh no. Rise still hasn't shown up."
+    show nanase condescending at right
+
+    nk "Just Jona and..."
+
+    show nanase surprised at right
+
+    nk "Oh, oh no. Rise still hasn't shown up."
 
     n "She picked the location of the party too."
 
@@ -5156,43 +5448,73 @@ label chapter2_day8_event1:
 
     n "Uitto, go check Jona's room in case he's still there. Hiro!"
 
+    hide uitto
+    show hiro grump
+
     h "What?!"
 
     "I motion for him to break away from the crowd."
 
     n "I need you to check the café for Jona or Rise."
 
+    show hiro serious
+
     h "On it."
+
+    hide hiro
 
     nk "What can I do?"
 
     "I appreciate that she wants to help, but I don't know her that well."
 
+    show nanase sad2 at left
+
     n "Keep the party going. I'm going to check downstairs."
 
     "The others run off as I dash down the stairs."
+    hide nanase
 
+    scene backgroundblack with fade
+    
 #Tape
 label chapter2_day8_event2:
     #"Chapter 2 Tape Scene"
 
     #BG: Nagen's Room
 
-    "Everyone dragged themselves to my room. It's too late for everyone to stay over again, but I doubt anyone could sleep without knowing what was on it. Hiro and I are a little anxious about Uitto and Jona being in the same room again, but..."
+    scene backgroundroomn
+
+    "Everyone dragged themselves to my room."
+    "It's too late for everyone to stay over again, but I doubt anyone could sleep without knowing what was on it."
+    "Hiro and I are a little anxious about Uitto and Jona being in the same room again, but..."
+
+    show hiro guilt at left
+    show uitto sigh
+    show jona relaxed
 
     u "You can draw me if, and only if, you ask me to model for you first. Otherwise, it's not really a picture of me, is it?"
 
-    "I'm impressed by her ability to rationalize so quickly. Jona isn't ready to talk so soon after everything that happened, but I can see him spinning a pencil around in his hand with his sketchbook in his lap. She sighs."
+    "I'm impressed by her ability to rationalize so quickly."
+    "Jona isn't ready to talk so soon after everything that happened, but I can see him spinning a pencil around in his hand with his sketchbook in his lap. She sighs."
 
     u "Go ahead. I'll let you know if there's anything important on screen."
 
-    "Like a racehorse out of the gate, Jona is consumed by sketching. She's not going to be able to move from that spot for a while, I hope she knows that. I cue up the tape and take a seat on the floor next to Hiro. The Karmic Gladiators' logo comes on screen."
+    "Like a racehorse out of the gate, Jona is consumed by sketching. She's not going to be able to move from that spot for a while, I hope she knows that."
+    "I cue up the tape and take a seat on the floor next to Hiro. The Karmic Gladiators' logo comes on screen."
 
     a "Rise Kisaki. Despite not having a real proficiency, you were able to make the social elite grovel for your approval. It would be a shame to let such talents go to waste; that's why we'd like to give you a second chance. We will help maintain the lie your parents set in motion and forge the information you need to keep your false pedigree. In exchange, you will help us eliminate an equally powerful influence. This is your chance to rewrite history, don't pass it up. Sincerely, Apex of the Karmic Gladiators."
+
+    scene backgroundstatic
 
     "The video cuts to static."
 
     h "You need to be more careful."
+
+    scene backgroundroomn
+
+    show uitto talk
+    show hiro grump at right
+    show jona depressed at left
 
     u "He spent half the week in his room, can't get more careful than that."
 
@@ -5200,41 +5522,80 @@ label chapter2_day8_event2:
 
     "Jona has a tight hold on Uitto's wrist. She doesn't pull away."
 
+    show uitto sigh
+
     u "As if they'd stand a chance. My life's an open book and Nagen's the one who bailed you guys out, remember?"
 
-    n "Still, it wouldn't hurt to be more proactive. We accidentally helped someone make the trap meant for us. Rather than be more careful, maybe we could lay a trap of our own? Get them to come out of hiding, but how?"
+    n "Still, it wouldn't hurt to be more proactive. We accidentally helped someone make the trap meant for us."
+    n "Rather than be more careful, maybe we could lay a trap of our own? Get them to come out of hiding, but how?"
 
-    u "Until we know who the next target is for sure, we can't easily counter their methods. The best we could do is a buddy system of some kind."
+    show uitto cringe
+    show jona happy at left
+
+    u "Until we know who the next target is for sure, we can't easily counter their methods."
+    u "The best we could do is a buddy system of some kind."
 
     h "That'll work for now."
 
+    show hiro empty at right
+
     h "Now that I think about it, everyone here has a proficiency."
 
+    show uitto talk
+
     u "So? Most of us came from Estella."
+
+    show hiro insulted at right
 
     h "But not everyone from Estella came here. There were other survivors that didn't come here."
 
     "Hiro would know best. His job was keeping track of the soldiers."
 
-    n "It wasn't uncommon for kids to 'loose' their status after entering highschool. That's what happens when everyone else catches up to you while you get stuck."
+    n "It wasn't uncommon for kids to 'loose' their status after entering highschool."
+    n "That's what happens when everyone else catches up to you while you get stuck."
 
     u "But in that case, where did everyone else go?"
 
     h "I don't know. Maybe... maybe they're still at the shelter."
 
-    "There's no way that many kids lost their proficiencies. It's just a coincidence. Either way, Apex used that fear to target Rise. The whole tone of this tape is different from Mariko's. It almost sounds like blackmail. The tape sputters to life. This time, Apex is sitting on a lavish throne with a masquerade mask. How did she- Did Rise draw inspiration from the tape or are we being watched in the school?"
+    "There's no way that many kids lost their proficiencies. It's just a coincidence."
+    "Either way, Apex used that fear to target Rise. The whole tone of this tape is different from Mariko's."
+    "It almost sounds like blackmail. The tape sputters to life. This time, Apex is sitting on a lavish throne with a masquerade mask."
+    "How did she- Did Rise draw inspiration from the tape or are we being watched in the school?"
+
+    hide uitto
+    hide hiro
+    hide jona
+
+    scene backgroundCh2_Apex
 
     #IF Villian
 
-    a "Hello, my lovelies. It seems despite my champion's best efforts, she still couldn't persuade you to abandon your more harmful tendencies. We don't get to choose our circumstances, but a hero has the wisdom to make an effort to do good, not just to help themself. And yet, in trying to help you, she left herself open to be hurt. Where is the justice for wounds caused by empathy?"
+    if $Villain >= Hero:
 
-    #IF Hero
-
-    a "Hello, my lovelies. Let this be a cautionary tale; if you think you can double cross me, you've already lost. When you're cast in a role, you don't get to suddenly decide to switch up the script. There are good guys and bad guys; it's as simple as that. The minute you're in it for yourself, it ruins everything! I should have known that selfishness would get in the way."
+        a "Hello, my lovelies."
+        a "It seems despite my champion's best efforts, she still couldn't persuade you to abandon your more harmful tendencies."
+        a "We don't get to choose our circumstances, but a hero has the wisdom to make an effort to do good, not just to help themself."
+        a "And yet, in trying to help you, she left herself open to be hurt. Where is the justice for wounds caused by empathy?"
+    else:
+        a "Hello, my lovelies. Let this be a cautionary tale; if you think you can double cross me, you've already lost."
+        a "When you're cast in a role, you don't get to suddenly decide to switch up the script."
+        a "There are good guys and bad guys; it's as simple as that."
+        a "The minute you're in it for yourself, it ruins everything!"
+        a "I should have known that selfishness would get in the way."
 
     #Return to Main Branch
 
-    a "It's so hard to find people willing to set aside their differences to work together, even when everyone believes in the same goal. Is it enough to pass a test, or do such measures of greatness only benefit the ones who cheat? For your sake, I hope you're cheating for the right reasons and not just to save yourself. Au Revoir."
+    a "It's so hard to find people willing to set aside their differences to work together, even when everyone believes in the same goal."
+    a "Is it enough to pass a test, or do such measures of greatness only benefit the ones who cheat?"
+    a "For your sake, I hope you're cheating for the right reasons and not just to save yourself."
+    a "Au Revoir."
+
+    scene backgroundroomn
+
+    show jona depressed at left
+    show uitto sad
+    show hiro sad at right
 
     j "....."
 
@@ -5248,11 +5609,17 @@ label chapter2_day8_event2:
 
     n "Y-yeah, from now on I won't hide things from you guys."
 
+    show uitto smirk
+
     u "...Nope."
+
+    show jona happy at left
 
     j "Okay."
 
     n "Okay? What do you mean okay?"
+
+    show hiro guilt at right
 
     h "I think what Jona's trying to say is it'd be easier to predict the enemy if we knew what weaknesses they might target."
 
@@ -5262,6 +5629,9 @@ label chapter2_day8_event2:
 
     n "Oh, just nosey hunh? In that case; it was a crisp October evening in 1999, I had just turned five-"
 
+    show hiro at right
+    show uitto cringe
+
     h "See what you've done to us?!"
 
     "Hiro throws a pillow at me that I easily dodge."
@@ -5270,38 +5640,82 @@ label chapter2_day8_event2:
 
     u "Make him stop!"
 
+    hide uitto
+    hide jona
+    hide hiro
+
     #CG: Jona's new drawings of his friends
+
+    return
 
     #"Vision Bonus Teacher Scene"
 
     #BG: Office
 
-    ya "If they got into the sim lab's program, there's a chance the whole security system is compromised. I'll need at least a week to quarantine the problem and rebuild the system."
+    label teachers_CH2:
 
-    sa "So that's it? All this work only to send them back less than a month later?"
+        if vision >=10:
 
-    v "No, we're not giving up so easily just because the computer system is offline."
+            scene backgroundstuco
 
-    ya "Well the computer system was our main way of keeping everyone safe. So if anyone has an idea how to keep an eye on everyone without technology, I'm all ears."
+            show yaguchi talk
 
-    ik "...Touch grass?"
+            ya "If they got into the sim lab's program, there's a chance the whole security system is compromised."
+            ya "I'll need at least a week to quarantine the problem and rebuild the system."
 
-    ya "Now listen here you-"
+            show sato dissatisfaction at left 
 
-    ik "No no no, instead of evacuating, we take the kids on a field trip. No devices whatsoever, just good old fashioned communing with nature and a few changes of clothes. If we frame it as a reward, we can get everyone to cooperate."
+            sa "So that's it? All this work only to send them back less than a month later?"
 
-    sa "A reward for what? I can barely get them to do their assigned reading as it is."
+            show vivaldi lecture at right
 
-    v "A team building exercise then. Something to encourage them to work together."
+            v "No, we're not giving up so easily just because the computer system is offline."
 
-    sa "You've got to be kidding. Vi, I can't be that far from civilization for long."
+            show yaguchi mad
 
-    v "One week. If we can't get everything in control within the week, then we'll send the students home and think of something else."
+            ya "Well the computer system was our main way of keeping everyone safe."
+            ya "So if anyone has an idea how to keep an eye on everyone without technology, I'm all ears."
 
-    sa "What about the other students?"
+            hide vivaldi
+            show inukai sigh at right
 
-    ya "The medbay's on a different network network entirely, I'm not stupid. We'll leave them in her hands for now."
+            ik "...Touch grass?"
 
+            ya "Now listen here you-"
+
+            show inukai tired smile at right
+
+            ik "No no no, instead of evacuating, we take the kids on a field trip."
+            ik "No devices whatsoever, just good old fashioned communing with nature and a few changes of clothes."
+            ik "If we frame it as a reward, we can get everyone to cooperate."
+
+            show sato annoyed at left
+
+            sa "A reward for what? I can barely get them to do their assigned reading as it is."
+
+            hide inukai
+            show vivaldi smile at right
+
+            v "A team building exercise then. Something to encourage them to work together."
+
+            sa "You've got to be kidding. Vi, I can't be that far from civilization for long."
+
+            v "One week. If we can't get everything in control within the week, then we'll send the students home and think of something else."
+
+            sa "What about the other students?"
+
+            show yaguchi talk2
+
+            ya "The medbay's on a different network network entirely, I'm not stupid. We'll leave them in her hands for now."
+
+            hide yaguchi
+            hide sato
+            hide vivaldi
+
+        else:
+            pass
+
+label bonus_Rise_Ch2:
     #"Bonus Rise Flashback [IF Rise=Max
 
     #CG: Rise holding hands with parents of either side
@@ -5332,6 +5746,8 @@ label chapter2_day8_event2:
 
     #CG: Rise on the floor covering her eyes
 
+    scene backgroundCh2_RiseFB3
+
     r "After all that effort, what do I have to show for it? My training was for a different sort of life. What good is a pretty doll without a dollhouse?"
 
     #"Vision Bonus Scene Day 3 [After event 4
@@ -5352,563 +5768,905 @@ label chapter2_day8_event2:
 
     r "...Nagen, given enough time, I think anyone could convince themselves they could have made a better choice. Not that it helps us much in the present. I would be careful how much I overthink things if I were you. You are too smart to get stuck in your own head."
 
-    #"Vision Bonus Scene Day 5 [After event 4
-
-    n "Can I ask you something?"
-
-    j "Is something wrong?"
-
-    n "I'm not sure. Normally, my memory is perfect, but lately I'll be talking with someone and... and they act like they don't know me. It's like I'm remembering things that haven't happened. I think maybe... Did your abilities get worse after the riots?"
-
-    j "It comes and goes depending how overwhelmed I get. I've never had it stuck in overdrive though."
-
-    n "Maybe that's it. I'm probably just over tired and stressed."
-
-    j "If it gets really bad, maybe you should talk with Vivaldi?"
-
-    n "Why would I do that?"
-
-    j "In case you're not going crazy and your ability has changed."
-
-    "I really hope that's not the case."
-
-    #"Rise Boss Negotiation"
+label Ch2_Boss_Negotiation:
+    #add to Boss fought
 
     n "Promising to help me includes helping my friends, whether you like them or not."
 
-    r "I do not care for them, you are correct, but Hiro has potential and Uitto has my pity. That does not mean their goals align with yours in the long run. You will drift apart when you are older. But Jona..."
+    r "I do not care for them, you are correct, but Hiro has potential and Uitto has my pity."
+    r "That does not mean their goals align with yours in the long run. You will drift apart when you are older."
+    r "But Jona..."
 
-    #IF Villian
+    if Villain > Hero:
 
-    r "He will cling to you like a parasite."
+        r "He will cling to you like a parasite."
+    else:
 
-    #IF Hero
+        r "He will try to bring you down before that happens."
 
-    r "He will try to bring you down before that happens."
+    r "When that day comes, you will feel responsible for his actions."
+    r "I am giving you a chance to cut him off and wash your hands of it."
+    r "Whatever happens here, I am to blame."
 
-    #Return to Main Branch
+    menu:
+        "How are you so sure?":
 
-    r "When that day comes, you will feel responsible for his actions. I am giving you a chance to cut him off and wash your hands of it. Whatever happens here, I am to blame."
+            r "History. Look at the people above you. How many of them are still besties with their old highschool chums?"
+            r "Everyone has some nightmarish tale about a self proclaimed friend turning on them."
 
-    #"A. How are you so sure?"
+            n "You have no proof Jona's like that."
 
-    r "History. Look at the people above you. How many of them are still besties with their old highschool chums? Everyone has some nightmarish tale about a self proclaimed friend turning on them."
+            r "Do I not? He has not tried to defend himself once."
 
-    n "You have no proof Jona's like that."
+            #fail, link to boss battle
+        "What do you get out of it?":
 
-    r "Do I not? He has not tried to defend himself once."
+            n "Forget how it supposedly benefits me. How does getting rid of Jona specifically help you?"
 
-    #Fail
+            r "I am limited in what I can say. You never know who might be watching."
 
-    #"B. What do you get out of it?"
+            "She thinks for a moment, wary of the security cameras."
 
-    n "Forget how it supposedly benefits me. How does getting rid of Jona specifically help you?"
+            r "It would be easier if you asked a different question. I was chosen for a reason."
 
-    r "I am limited in what I can say. You never know who might be watching."
+            "Mariko had also mentioned someone approaching her. They knew what to say to get her to act."
+            "There has to be something they have in common..."
 
-    "She thinks for a moment, wary of the security cameras."
+            #Success, move to next menu
+    menu:
+        "Did you hold a grudge before school started?":
 
-    r "It would be easier if you asked a different question. I was chosen for a reason."
+            r "It would seem so."
 
-    "Mariko had also mentioned someone approaching her. They knew what to say to get her to act. There has to be something they have in common..."
+            "Which means they didn't pick their targets. Someone chose Rise to attack Jona."
 
-    #Success, move to next menu
+            n "You didn't have a say in the matter."
 
-    #"A. Did you hold a grudge before school started?"
+            "She hesitates, looking a little skittish."
 
-    r "It would seem so."
+            r "Yes, well, everyone is entitled to their opinions. What matters is that I promised to 'get rid of' Jona. Promises are meant to be kept."
 
-    "Which means they didn't pick their targets. Someone chose Rise to attack Jona."
+            "That's why she tried to bully him into leaving first. If he dropped out, she'd have fulfilled her contract to the letter."
 
-    n "You didn't have a say in the matter."
+            n "If that's the case, you could have asked for help."
 
-    "She hesitates, looking a little skittish."
+            r "No."
 
-    r "Yes, well, everyone is entitled to their opinions. What matters is that I promised to 'get rid of' Jona. Promises are meant to be kept."
+            "She holds up a finger on either hand."
 
-    "That's why she tried to bully him into leaving first. If he dropped out, she'd have fulfilled her contract to the letter."
+            r "A promise for a promise."
 
-    n "If that's the case, you could have asked for help."
+            "She adds her middle fingers."
 
-    r "No."
+            r "An eye for an eye."
 
-    "She holds up a finger on either hand."
+            "Then three on each hand."
 
-    r "A promise for a promise."
+            r "It is only fair, would you not say so?"
 
-    "She adds her middle fingers."
+            "Then four."
 
-    r "An eye for an eye."
+            r "I prefer games that are fair."
 
-    "Then three on each hand."
+            "She has five fingers held up on one hand and takes one away from the other."
 
-    r "It is only fair, would you not say so?"
+            r "Do you not?"
 
-    "Then four."
+            n "Yes."
 
-    r "I prefer games that are fair."
+            r "Then you will help me, if I help you."
 
-    "She has five fingers held up on one hand and takes one away from the other."
+            "She holds up four fingers on each side before tucking her hands away."
 
-    r "Do you not?"
+            r "I cannot go back on my word, but I will do what it takes to get what I want."
 
-    n "Yes."
+            #Success, next menu
+        "Are you being blackmailed?":
 
-    r "Then you will help me, if I help you."
+            r "Do not be ridiculous, I am not- You have to be withholding something for someone to hold it over you."
+            r "No one I can reach holds my fortune, that is the problem."
 
-    "She holds up four fingers on each side before tucking her hands away."
+            n "Sounds like they're withholding help."
 
-    r "I cannot go back on my word, but I will do what it takes to get what I want."
+            r "I suppose; but if that is the case, then what are you doing?"
 
-    #Success, next menu
+            n "I'm trying to help my friend."
 
-    #"B. Are you being blackmailed?"
+            r "At my expense."
 
-    r "Do not be ridiculous, I am not- You have to be withholding something for someone to hold it over you. No one I can reach holds my fortune, that is the problem."
+            #Fail
+        "This has nothing to do with Jona?":
 
-    n "Sounds like they're withholding help."
+            r "Well, I would not say that. He was also chosen for a reason, one I am sure he knows by now."
 
-    r "I suppose; but if that is the case, then what are you doing?"
+            "I highly doubt that."
 
-    n "I'm trying to help my friend."
+            r "I gave him plenty of warnings, he chose to ignore them. Just as he chose to let you fight for him."
 
-    r "At my expense."
+            n "You're severely overestimating- He's not an evil mastermind. I'm here because I want to help."
 
-    #Fail
+            r "Not making a choice is a choice. By staying in hiding, he has chosen to put you in danger."
 
-    #"C. This has nothing to do with Jona?"
+            #Fail
 
-    r "Well, I would not say that. He was also chosen for a reason, one I am sure he knows by now."
+    menu:
+        "What do you need me for?":
+            #"A. What do you need me for?"
 
-    "I highly doubt that."
+            n "You seem plenty self-sufficient to me."
 
-    r "I gave him plenty of warnings, he chose to ignore them. Just as he chose to let you fight for him."
+            "I smell a trap."
 
-    n "You're severely overestimating- He's not an evil mastermind. I'm here because I want to help."
+            n "You could just let us go and focus on climbing ladders that will actually get you somewhere."
 
-    r "Not making a choice is a choice. By staying in hiding, he has chosen to put you in danger."
+            r "A flattering sentiment, but you are naive about how things work in Guwon. By the time I am old enough to do anything, I will have been replaced."
 
-    #Fail
+            #Fail
+        "You can't stay if you hurt Jona.":
 
-    #"A. What do you need me for?"
+            n "You'll get expelled, it doesn't matter what your reason is. Just look at what happened to Mariko."
 
-    n "You seem plenty self-sufficient to me."
+            r "Mariko's situation differs from mine, but I suppose in their eyes we are the same. I think that also may be why we were chosen. Without help, we could not have come back."
 
-    "I smell a trap."
+            n "What do you mean?"
 
-    n "You could just let us go and focus on climbing ladders that will actually get you somewhere."
+            r "I think it is foolish to think our lowered numbers are just because of the riots. Child prodigy, by its definition, has an expiration date."
 
-    r "A flattering sentiment, but you are naive about how things work in Guwon. By the time I am old enough to do anything, I will have been replaced."
+            n "But Mariko has a proficiency, she-"
 
-    #Fail
+            r "She has a neurological disorder and rich parents. Which do you think the school actually cared about? The difference between them and us is that we never believed these talents were ours in the first place. They are titles that can be taken away. I cannot afford to lose mine."
 
-    #"B. You can't stay if you hurt Jona"
+            n "Then stop causing trouble for the people that believe you'll keep it."
 
-    n "You'll get expelled, it doesn't matter what your reason is. Just look at what happened to Mariko."
+            r "...like you?"
 
-    r "Mariko's situation differs from mine, but I suppose in their eyes we are the same. I think that also may be why we were chosen. Without help, we could not have come back."
+            "She rifles around in her backpack and produces a tape. As I go to take it, she grabs my wrist and pulls me close so only I can hear her."
 
-    n "What do you mean?"
+            r "I don't gamble. Once you take care of Apex, come back for me."
 
-    r "I think it is foolish to think our lowered numbers are just because of the riots. Child prodigy, by its definition, has an expiration date."
+            "She lets me go, a deceptively placid smile on her face."
 
-    n "But Mariko has a proficiency, she-"
+            r "I conceded. As long as you keep your friend on a tight leash, I see no issues."
 
-    r "She has a neurological disorder and rich parents. Which do you think the school actually cared about? The difference between them and us is that we never believed these talents were ours in the first place. They are titles that can be taken away. I cannot afford to lose mine."
+            "She winces, something in her eyes goes white. She blinks over and over trying to move her pupils away from the lenses."
 
-    n "Then stop causing trouble for the people that believe you'll keep it."
+            r "I can't-"
 
-    r "...like you?"
+            "Jona pulls himself out of the pool."
 
-    "She rifles around in her backpack and produces a tape. As I go to take it, she grabs my wrist and pulls me close so only I can hear her."
+            j "Hold still."
 
-    r "I don't gamble. Once you take care of Apex, come back for me."
+            "She flinches, but resists clawing out her eyes and latches onto my wrist instead. Her grip is so tight, I think she might break skin. Her face is covered in tears as Jona carefully removes two glowing contact lenses from her eyes."
 
-    "She lets me go, a deceptively placid smile on her face."
+            n "What the hell just happened?"
 
-    r "I conceded. As long as you keep your friend on a tight leash, I see no issues."
+            r "One of the 'perks'."
 
-    "She winces, something in her eyes goes white. She blinks over and over trying to move her pupils away from the lenses."
+            "Her eyes are scrunched shut."
 
-    r "I can't-"
+            r "A way to keep an eye on everyone here; but to overheat them just because I chose diplomacy..."
 
-    "Jona pulls himself out of the pool."
+            "When she opens her eyes, she can't focus on anything."
 
-    j "Hold still."
+            r "Miss Apex is a sore loser."
 
-    "She flinches, but resists clawing out her eyes and latches onto my wrist instead. Her grip is so tight, I think she might break skin. Her face is covered in tears as Jona carefully removes two glowing contact lenses from her eyes."
+            j "Can you see anything?"
 
-    n "What the hell just happened?"
+            r "...no."
 
-    r "One of the 'perks'."
+            "Jona and I have to walk her to the nurse's office."
 
-    "Her eyes are scrunched shut."
+            #Success, return to main branch bg hallway
+        "The Order of Ragnarok is outside the school.":
+            n "If you want revenge, go after them. They're the ones behind tearing your family down, not Jona."
 
-    r "A way to keep an eye on everyone here; but to overheat them just because I chose diplomacy..."
+            r "Revenge? Nagen, I am not some puppy chasing my own tail. I know their members were responsible, but it will not do me any good to chase them down directly. I have to get into a position of power above them, then systematically limit their control. Jona is just an offering to someone who can grant me those resources."
 
-    "When she opens her eyes, she can't focus on anything."
+            "What the hell?"
 
-    r "Miss Apex is a sore loser."
+            r "Why do you look so offended? Is that not what you did for Lethe? The riots you instigated on her behalf affected the general public more than Estella itself."
 
-    j "Can you see anything?"
+            n "I'm nothing like you."
 
-    r "...no."
+            r "If you cannot understand the effects your actions had, perhaps you are more of a liability than an ally."
 
-    "Jona and I have to walk her to the nurse's office."
+            #Fail
+    pass
+label chapter2_boss_interrogation:
+        
+        scene backgroundroof
 
-    #Success, return to main branch bg hallway
+        "The person responsible for this had to have close enough connections to the event to know my every move."
+        "They planted Jona's drawings around the school and tried to keep me busy by raising the students expectations of the dance through the power of rumors."
+        "They even tried to make sure I'd be distracted by other things during the event."
+        "Thanks to Mariko, I think they were trying to be more careful about doing things in secret, but their note was sloppy."
+        "I have everything I need to prove who did it."
 
-    #"C. The Order of Ragnarok is outside the school"
+        if :
+            $ chapter2_solved = False
+            call chapter2_boss_wrong_culprit
+        else :
+            $ chapter2_interrogation_chance = False
 
-    n "If you want revenge, go after them. They're the ones behind tearing your family down, not Jona."
+            show rise disappointed
 
-    r "Revenge? Nagen, I am not some puppy chasing my own tail. I know their members were responsible, but it will not do me any good to chase them down directly. I have to get into a position of power above them, then systematically limit their control. Jona is just an offering to someone who can grant me those resources."
+            "I show Rise the note, but she has no reaction to it, she just looks at me."
 
-    "What the hell?"
+            r "What do you want, Nagen? It is not like you to be so indirect."
 
-    r "Why do you look so offended? Is that not what you did for Lethe? The riots you instigated on her behalf affected the general public more than Estella itself."
+            n "I want you to admit that you did this."
 
-    n "I'm nothing like you."
+            r "I see, and why would I do that?"
 
-    r "If you cannot understand the effects your actions had, perhaps you are more of a liability than an ally."
+            n "Because, if you agree to work with me, I can keep you out of trouble."
+            n "You'll be exposed either way, at least this way it'll be on your terms."
+            
+            show rise mad
 
-    #Fail
+            r "'My terms' sounds an awful lot like your terms. Besides, you have no proof it was me."
+            r "Any number of people could have left that note on Jona's desk."
 
-    #"Investigations"
+            "That may be true, but there's a good reason to suspect her."
 
-    #"Rise Investigation"
+            hide rise
 
-    #BG: Cafe
+            menu:
+                "Location of note":
 
-    "Rise is at one for the cafe tables, but for once it isn't for tea. She has a bunch of binders and calligraphy pens out with a huge pile of stuff in the middle."
+                    #Branch A. Q1. Answer: Location of note
 
-    n "Why does no one ever use the art room?"
+                    show rise stare
 
-    "She startles, a long glob of contact cement goes flying close to her hair."
+                    n "I never told you where the note was found."
 
-    n "Sorry, didn't mean to surprise you."
+                    r "Are you sure?"
 
-    r "It is alright."
+                    n "I have superhuman memory, so yes, I'm sure."
+                    n "Besides, you're one of the few people who could have gotten into the classroom before class."
 
-    "She dabs her front with a napkin."
+                    show rise disappointed
 
-    r "I was the one tuning out my surroundings."
+                    r "You may have perfect memory, but I do not. I... think it is reasonable to assume it was at his desk."
+                    r "However, whoever did this used materials available to several other people who could have entered the room."
+                    r "When people lack information, they often fill in the gaps with their own conclusions instead of the truth."
+                    r "Are you immune to that as well?"
 
-    n "What is all this stuff?"
+                    "She's pretty good at making it sound like she's in the right, but she's refusing to outright lie."
+                    "I might be able to use that to my advantage. The threat letter lines up with something else that happened."
+                    "If I use that, I can get her."
 
-    "I pick up one of the binders. It's full of fabric swatches and pictures of tables."
+                    hide rise
 
-    r "Planners. An elegant party always has some kind of theme or aesthetic. These were ones I brought from home, but I am afraid they are outside of our means now."
+                    call chapter2_boss_interrogation_branchA
 
-    "She flips the drying pages to the front. Cut out pictures of candles in jars and repurposed palettes are carefully organized with little notes next to them."
+                "Magazine":
+                    #Branch B, Q1. Answer: Magazines
 
-    n "This could work."
+                    show rise surprised
 
-    r "'Rustic' is a theme I usually try to avoid. At least this way, it will look purposeful."
+                    n "You said yourself these could have come from your magazines. Lending them out would make for the perfect cover."
+                    n "Especially since it would have been after this note was made. No one else knew about the dance until later that day."
 
-    n "It looks fine, what's your worry?"
+                    show rise mad
 
-    r "You only get one chance at a first impression. If... if my name is tied to this party, I want it to be one people remember fondly... Is something bothering you, Nagen? I know your new role has been quite demanding."
+                    r "I also said there could be issues from the library here. There are thousands of books and magazines here."
+                    r "You have no way to prove those clippings could not have come from there."
 
-    #"-Help with party-"
+                    n "But damaging the collection's against the rules!"
 
-    n "I know you're helping Uitto organize, but I was wondering if you could find some flowers for us?"
+                    show rise flirt
 
-    r "Flowers?"
+                    r "...So is threatening a student."
 
-    n "Hiro thought it would be a good idea to make those little flower things. We can handle picking and making them, we just don't know what kinds grow here, if any."
+                    "Right. I can't prove she owned the magazines, but that doesn't mean she didn't do it. The method of making the note matches something else."
+                    hide rise
+                    call chapter2_boss_interrogation_branchB
+                "Red hair":
+                    show rise stare
 
-    r "I could do that."
+                    n "I know you planted a hair on that note to frame someone else."
 
-    "She holds up a small notebook."
+                    r "You saw who did it?"
 
-    r "I could even make pressings of what I find."
+                    n "Well no."
 
-    n "Awesome, thanks!"
+                    r "So then how do you know the hair was planted in first place?"
+                    r "If someone's going to bother framing another person, who's to say I'm not the one being framed."
+                    
+                    hide rise
 
-    r "Is there anything else?" # [Yes, go to menu; no, go to outro]
+                    call chapter2_boss_interrogation_fail
+                    #fail
+label chapter2_boss_interrogation_branchA:
 
-    #"-Alibi-"
+        menu: 
+            "Magazine Clipings":
 
-    n "Someone left a threat note for Jona."
+                show rise surprised
+                n "You're the only one I know who makes collages out of magazine clipings."
 
-    r "What an awful thing to do, and so soon after Mariko lashed out. Do you think she ended up inspiring someone to act after all?"
+                r "I am not the only who can though."
+                r "After all the libray has a fair share of magazines, just ask Chisei."
+                
+                show rise scheme
+                
+                r "Not to mention how many of us still share our things."
+                r "All it takes is one person asking to borrow something to get their hands on the needed supplies."
+                r "Are you also suggesting I am the only one who knows where to find a pair of scissors?"
 
-    n "I'm not sure, Jona says it... I guess this kind of thing happens to him often, but it doesn't hurt to be careful. You didn't see anything out of the ordinary this weekend, did you?"
+                "Shit, I thought I had her"
 
-    r "I fear not. This is something I am unable to help with, unfortunately."
+                hide rise
 
-    n "What were you doing before class?"
+                call chapter2_boss_interrogation_fail
+                #fail
+            "Jona's Sketchbook":
+                #Branch A. Q2. Answe: Sketchbook Paper or Jona's Sketchbook
+                show rise surprised
+                n "No, you're right."
+                n "Except, I wonder where they got this paper from?"
+                n "Jona's sketchbook went missing for a while."
+                n "It's be nice if we could get him a backup."
 
-    r "Working on my collages."
+                show rise disappointed
 
-    n "Anyone else around that saw you?"
+                r "They probably just used a page from the book when they stole it."
 
-    r "Ichita and Uitto. Quite the odd pair, if I must say. You may have better luck asking other vision majors, they share first period with him after all."
+                n "I never said it was stolen, but it's interesting you assume the same person did both as well."
 
-    #"-Red Hair-"
+                r "...Great minds think alike."
 
-    r "Red hair, and a short one at that... Ichita or maybe even Mu would fit that description. Come to think of it, Ichita is also one of the class representatives. He would have known about the dance before most."
+                "Again, she won't outright deny it. Though all of this is circumstantial, none of it provides a motive."
+                "However, what she did with it gave away her intentions."
+                hide rise
+                call chapter2_boss_interrogation_fail
+                #success
 
-    n "Are you saying he did it?"
+            "Nail Polish":
 
-    r "It would be rude to blame someone based on so little evidence. I am simply stating facts."
+                show rise mad
 
-    #"-M Clippings-"
+                n "Anyone with the supplies could, but does just anyone have pink nail polish."
 
-    n "Look familiar?"
+                r "No."
+                r "That shade of pink is a popular color at the moment."
+                
+                show rise frown
 
-    r "Yes, they are from Vogue. It is possible the school has copies."
+                r "Have you seriously not considered the culprit had an accomplice?"
+                r "Someone to make the note, another to get it into the classroom."
+                r "There are quite a few people that find your friends' presence here unsettling, and Jona makes for a weak link."
 
-    n "I suppose, but you also have magazines right there."
+                "An accomplice would completely ruin my theory. I don't think there is one, but I'm not sure how to prove there isn't."
+                
+                hide rise
 
-    r "I have a decent collection. You are welcome to borrow them for costume ideas if you like. Our peers have found them quite useful."
+                call chapter2_boss_interrogation_fail
+                #fail
+        menu:
+            "Popularity":
 
-    n "Like who?"
+                show rise flirt
 
-    r "Ichita, Shoma, Rei, Chisei, and Kitsune. I would like to believe none of them have cut up the issues I leant to them. I have yet to have any returned to me however..."
+                n "I've seen movies, you're just trying to make yourself look cool by bullying someone other people don't like."
 
-    n "I see." #[Magazine]
+                r "Nagen."
+                r "I have a collective networth larger than the school itself."
+                r "Models were chosen for magazines based on my appearance."
+                r "I do not need any help 'looking cool'."
 
-    #"-Other-"
+                n "Yeah, but-"
 
-    r "I fail to see why you need my input. You seem to have covered it thoroughly enough on your own."
+                show rise disappointed
 
-    "I should try something else."
+                r "Not to mention, I do not see anyone envying Mariko's position."
+                r "There is no social benefit in this tiny hierachy to causing conflict."
+                r "Though, if Jona were to leave, maybe that would finally end the tension once and for all."
 
-    #"-Outro-"
+                "She's seriously blaming Jona for this? He's gone out of his way to do nothing!"
+                
+                hide rise
 
-    r "You have enough on your plate as it is. This may be out of line for me to say, but have you considered that your friends can handle this without you?"
+                call chapter2_boss_interrogation_fail
+                #fail
+            "Humiliating Uitto":
+                #-rise
 
-    n "What do you mean?"
+                $ rRep -= 1
 
-    r "You have a whole event to plan. It just seems unfair Jona asked for your help and not Hiro's."
+                show rise disappointed
 
-    n "Jona didn't ask for my help."
+                n "You're jealous of Uitto!"
 
-    r "I see."
+                r "The poor thing being stalked by someone she thought was a friend?"
+                
+                show rise mad
+                
+                r "No, not jealous in the slightest."
+                r "In fact, I find it troubling the teachers saw no issue with those drawings."
+                r "We may not get along personally, but I despise the fact several people wanted to keep those drawings a secret from her."
+                r "I mean, how would you feel if someone close to you lied about their intentions?"
 
-    n "He shouldn't have to."
+                n "They're just drawings. He drew all of us. She didn't want people to think of her like that."
 
-    r "But are you shown the same courtesy? If they really are your friends, you should be able to rely on them to do that much."
+                show rise surprised
 
-    r "I have said something that upset you, my apologies."
+                r "Exactly, and someone close to her does."
+                r "Are you saying you would keep something like that from her, just because it didn't make you uncomfortable?"
 
-    n "I need to check on the others. Like you said, I'm kind of busy."
+                n "N-no, but putting it out there for everyone to see-"
 
-    "I leave without another word."
+                show rise mad
 
-    #"-Interrogate-"
+                r "Exactly, everyone believes Uitto was the victim in this, and not someone causing drama."
+                r "I sincerely am disappointed you continue to keep Jona in your company after that."
+                r "I thought you were smarter than that."
+                hide rise
 
-    "I show Rise the note, but she has no reaction to it, she just looks at me."
+                call chapter2_boss_interrogation_fail
+                #fail
+            "Bullying Jona":
+                #Branch A. Q3. Answer: Jona's Sketches
 
-    r "What do you want, Nagen? It is not like you to be so indirect."
+                hide rise disappointed
 
-    n "I want you to admit that you did this."
+                n "Very peculiar they chose to share some of his drawings all over the school."
+                n "They must have really wanted us to see how much Jona LOVED Uitto."
 
-    r "I see, and why would I do that?"
+                r "A little too much, I would say."
 
-    n "Because, if you agree to work with me, I can keep you out of trouble. You'll be exposed either way, at least this way it'll be on your terms."
+                n "Yeah, too bad he didn't draw any of us."
 
-    r "'My terms' sounds an awful lot like your terms. Besides, you have no proof it was me. Any number of people could have left that note on Jona's desk."
+                "She purses her lips."
 
-    "That may be true, but there's a good reason to suspect her."
+                n "I would have loved to see what I'd look like."
 
-    #Branch A. Q1. Answer: Location of note
+                "Her eyebrow twitches."
 
-    n "I never told you where the note was found."
+                n "He rarely draws people unless he really likes them."
 
-    r "Are you sure?"
+                show rise talk
 
-    n "I have superhuman memory, so yes, I'm sure."
+                r "Quite a charitable reading."
+                r "Neither I nor Uitto found the drawings of her flattering, and we rarely agree."
+                r "IF there were drawings of you, I do not think you would want anyone seeing them."
+                
+                show rise scheme
 
-    r "You may have perfect memory, but I do not. I... think it is reasonable to assume it was at his desk. When people lack information, they often fill in the gaps with logical conclusions. Are you immune to that as well?"
+                r "In fact, I think you would pocket it so fast no one else would have a chance to see it."
+                r "Your right pocket, probably."
 
-    "She's pretty good at making it sound like she's in the right, but she's refusing to outright lie. I might be able to use that to my advantage. The threat letter lines up with something else that happened. If I use that, I can get her."
+                show rise disappointed
 
-    #Branch A. Q2. Answer: Sketchbook Paper or Jona's Sketchbook
+                r "So before acting so coy, consider that other people may have a clearer understanding of what is going on than you."
 
-    n "No, you're right. I wonder where they got this paper from. Jona's sketchbook went missing for a while. It's be nice if we could get him a backup."
+                "How the hell did she know which pocket I put it in?"
+                "I can't let her get into my head. She's clearly backed into a corner."
+                "She may be good at dressing things up, but she gave herself away the minute she made the note."
 
-    r "They probably just used a page from the book when they stole it."
+                hide rise
 
-    n "I never said it was stolen, but it's interesting you assume the same person did both as well."
+                #success, main branch
+                call chapter2_boss_interrogation_main
 
-    r "...Great minds think alike."
+label chapter2_boss_interrogation_branchB:
 
-    "Again, she won't outright deny it. Though all of this is circumstantial, none of it provides a motive. However, what she did with it gave away her intentions."
+    menu:
+        "Event Planning Book":
+            #Branch B. Q2. Answer: Clippings
 
-    #Branch A. Q3. Answer: Jona's Sketches
+            show rise disappointed
 
-    n "Very peculiar they chose to share some of his drawings all over the school. They must have really wanted us to see how much Jona LOVED Uitto."
+            n "You're also the only one I've seen cutting up magazines at all. Those little party books of yours are mostly magazine collages."
 
-    r "A little too much, I would say."
+            r "Those 'party books' were made before the riots. Just because you saw me make one, does not implicate me as some sort of bully."
 
-    n "Yeah, too bad he didn't draw any of us."
+            "But she left something behind that proves she made it."
 
-    "She purses her lips."
+            hide rise
 
-    n "I would have loved to see what I'd look like."
+            show chapter2_boss_interrogation_fail
+            #success
+        "Fashion Magazines":
+            
+            show rise mad
+            
+            r "Shoma has them as well, have you lobbied the same accusations at him?"
 
-    "Her eyebrow twitches."
+            n "No-"
 
-    n "He rarely draws people unless he really likes them."
+            r "Jona looked through them as well, as far as you know the culprit stole magazines along with his sketch book."
+            r "It would not be out of the ordinary for a thief to steal other things."
+            
+            hide rise
+            show chapter2_boss_interrogation_fail
+            #fail
+        "Dacne":
+            show rise surprised
+            r "What does that have to do with me?"
+            r "I have good grades in English."
+            r "The only one I know who would mispell something like that is Hiro."
 
-    r "Quite a charitable reading. Neither I nor Uitto found the drawings of her flattering, and we rarely agree. IF there were drawings of you, I do not think you would want anyone seeing them. In fact, I think you would pocket it so fast no one else would have a chance to see it. Your right pocket, probably. So before acting so coy, consider that other people may have a clearer understanding of what is going on than you."
+            n "Getting a little defensive over a spelling error, aren't we?"
 
-    "How the hell did she know which pocket I put it in? I can't let her get into my head. She's clearly backed into a corner. She may be good at dressing things up, but she gave herself away the minute she made the note."
+            show rise mad
+            r "You would do the same if someone implied a spelling error meant you were responsible for something."
 
-    #Branch B, Q1. Answer: Magazines
+            "I guess she's right about that."
 
-    n "You said yourself these could have come from your magazines. Lending them out would make for the perfect cover. Especially since it would have been after this note was made. No one else knew about the dance until later that day."
+            hide rise
+            show chapter2_boss_interrogation_fail
+            #fail
 
-    r "I also said there could be issues from the library here. There are thousands of books and magazines here. You have no way to prove those clippings could not have come from there."
+        #Branch B. Q3. Answer: Nail Polish
+    menu:
+        "Location of the note":
 
-    n "But damaging the collection's against the rules!"
+            show rise disappointed
 
-    r "...So is threatening a student."
+            r "Any class representivitve could have left it there, as could any vision major."
 
-    "Right. I can't prove she owned the magazines, but that doesn't mean she didn't do it. The method of making the note matches something else."
+            n "Ichita didn't see anything before he locked up for the night."
 
-    #Branch B. Q2. Answer: Clippings
+            r "Sounds to me like you found your answer and it has nothing to do with me."
 
-    n "You're also the only one I've seen cutting up magazines at all. Those little party books of yours are mostly magazine collages."
+            "Man she is not letting up on framing him."
 
-    r "Those 'party books' were made before the riots. Just because you saw me make one, does not implicate me as some sort of bully."
+            hide rise disappointed
+            show chapter2_boss_interrogation_fail
+            #fail
+        "Nail Polish":
 
-    "But she left something behind that proves she made it."
+            show rise stare 
 
-    #Branch B. Q3. Answer: Nail Polish
+            n "No, what implicates you is the nail polish you left behind. The smudges on the page match the color you're wearing."
 
-    n "No, what implicates you is the nail polish you left behind. The smudges on the page match the color you're wearing."
+            r "As you can see, my manicure is intact. I have been more than willing to share my cosmetics with anyone."
 
-    r "As you can see, my manicure is intact. I have been more than willing to share my cosmetics with anyone."
+            "She must have redone them to cover her tracks?"
 
-    "She must have redone them to cover her tracks?"
+            r "If we are talking about hard evidence, you would be better off checking who that hair belongs to. I am a natural blonde so it is not mine."
 
-    r "If we are talking about hard evidence, you would be better off checking who that hair belongs to. I am a natural blonde so it is not mine."
+            n "That would be convenient for you, which is probably why you planted it there."
 
-    n "That would be convenient for you, which is probably why you planted it there."
+            show rise disappointed
 
-    r "Honestly Nagen, none of our classmates have gone around saying I pulled hairs out of their head, have they? We all lock our doors when we leave. How could I get someone else's hair to put there in the first place?"
+            r "Honestly Nagen, none of our classmates have gone around saying I pulled hairs out of their head, have they?"
+            r "We all lock our doors when we leave."
+            r "How could I get someone else's hair to put there in the first place?"
+            
+            hide rise
+            show chapter2_boss_interrogation_fail
+            #success
+        "Color of Magazine Clippings":
+            
+            show rise frown
 
-    #Branch B. Q4. Answer: Location of the Note
+            r "Are you saying I am the only one who likes the color green?"
 
-    n "Ichita shares the same homeroom as Jona. I haven't seen any janitors around here, have you? It's entirely possible that you found one while dropping off the note. In fact, I bet you got the idea from your own hair flailing on the page and messed up your nails trying to get it out."
+            n "Well, no."
 
-    r "So you proved it is not Ichita. That does not excuse the fact that someone else with the same nail color did what you said I did."
+            r "Then what does the color of the clippings have to do with me?"
 
-    "True, but when you look at the note closely, there's one last thing that points to her."
+            "She's worse than a lawyer."
 
-    #Main Branch. Answer: Dance
+            hide rise
+            show chapter2_boss_interrogation_fail
+            #fail
+    menu:
+        "Location of Note":
+            #Branch B. Q4. Answer: Location of the Note
 
-    n "The student council originally planned to throw a party. You and Ichita were the ones pushing for a dance. You're also the only one in that room that wears nail polish."
+            show rise mad
 
-    r "You wear nail polish."
+            n "Ichita shares the same homeroom as Jona. I haven't seen any janitors around here, have you?"
+            n "It's entirely possible that you found one while dropping off the note."
+            n "In fact, I bet you got the idea from your own hair flailing on the page and messed up your nails trying to get it out."
 
-    n "Mine's black and I wouldn't do this to my own friend. I'm interrogating you!"
+            r "So you proved it is not Ichita. That does not excuse the fact that someone else with the same nail color did what you said I did."
 
-    r "You still do not have any solid proof. All of your evidence is purely circumstantial. If it comes down to a he-said, she-said; I have the upper hand. You are a convicted criminal and I am one of your victims."
+            "True, but when you look at the note closely, there's one last thing that points to her."
+            
+            hide rise
 
-    n "Yeah, well, that's a risk I'm willing to take."
+            call chapter2_boss_interrogation_main
+            #success
+        "Stuco Meeting":
 
-    r "What do you want?"
+            show rise frown
 
-    #Player Choice
+            r "You were there, did you see me touch anyone during the meeting?"
 
-    #"A. Surrender (+Hero, +Rep)"
+            n "No."
 
-    r "That is all?"
+            r "Did you see me pick anything off the floor or a table?"
 
-    n "We both suffer if this escalates further. Just leave Jona alone."
+            n "No."
 
-    r "I gave him plenty of opportunities to leave peacefully. If I fail to fulfill my end of the bargain, I will lose everything I worked for."
+            show rise mad
 
-    n "And what's that?"
+            r "Then how could I have gotten a hair without you noticing?"
 
-    r "I need my father's company back."
+            "It had to be from somewhere else I guess."
 
-    n "Your father? I thought Jusa Cosmetics belonged to your mom."
+            hide rise
+            call chapter2_boss_interrogation_fail
+            #fail
+        "Hair brush":
 
-    r "I do not care about some beauty empire. I am more concerned about the legion of scientists carrying on our fathers' research while we are stuck here."
+            show rise scheme
 
-    #CG Nagen in the testing center
+            r "Why would someone give me their hairbrush?"
 
-    #Present
+            "I guess she does look like the kind of person who'd have a bunch of her own."
 
-    n "Why didn't you say something sooner?!"
+            show rise frown
 
-    r "It would leave me vulnerable to failure. Can you promise me, whe this is all over, I will have control of that horrible place?"
+            r "Something like that would be odd enough to come up in your investigation."
+            r "Saying I got my hands on someone else's personal care items without anyone knowing is a stretch to say the least."
+            r "Circumstantial evidence is not proof."
+            r "I believe that is why you are able to wander the school grounds as we speak."
+            
+            hide rise
+            call chapter2_boss_interrogation_fail
+            #fail
 
-    n "....."
+label chapter2_boss_interrogation_main:
 
-    #"1. No (-Rise, -Rep)"
+    menu:
+        "Queen of the Dance":
+            show rise frown
 
-    r "Then we have no deal."
+            r "That was Ichita's idea."
+            r "If you recall, I did not agree that anyone in the council should be elligible to win a prize at an event we were hosting."
 
-    "I made good on my threats but so did she. I'm not sure what she told people, but even though the teachers sided with me, everyone's more wary than before."
+            "Right, she didn't even imply we should."
 
-    #"2. Yes (+Rise +Rep)"
+            r "If that is your rational, you have the wrong person Nagen."
+            hide rise
+            call chapter2_boss_interrogation_fail
+            #fail
+        "The Dance":
+            #Main Branch. Answer: Dance
+            show rise frown
+            n "The student council originally planned to throw a party. You and Ichita were the ones pushing for a dance."
+            n "You're also the only one in that room that wears nail polish."
 
-    r "...Thank you. I know it is difficult to trust people right now. "
+            r "You wear nail polish."
 
-    "She held out her hand then flinched. Her eyes are bloodshot. They weren't like that before."
+            n "Mine's black and I wouldn't do this to my own friend. I'm interrogating you!"
 
-    n "Rise?"
+            show rise mad
 
-    r "I need a mirror."
+            r "You still do not have any solid proof. All of your evidence is purely circumstantial."
+            r "If it comes down to a he-said, she-said; I have the upper hand. You are a convicted criminal and I am one of your victims."
 
-    "She kept grabbing the air, and scrunched her eyes closed. A constant stream of tears made her makeup run."
+            n "Yeah, well, that's a risk I'm willing to take."
 
-    n "What the hell's going on?"
+            r "What do you want?"
 
-    r "The walls have ears Nagen, please. "
+            hide rise 
 
-    "I walked her to the restroom."
+            call chapter2_boss_success
+            #success
+        "The date of the dance":
+            show rise mad
+            n "You were the one who picked the date."
+            
+            r "I wanted to change the date after I realized it feel on the anniversary of an event I used to go to."
+            r "You were the one that said it was set in stone."
 
-    n "Maybe we should get you to a nurse?"
+            n "Yeah, like reverse psychology thing."
 
-    r "I'm fine, they're just sticking."
+            show rise frown
 
-    "Contacts shouldn't stick. I didn't think I should follow her into the bathroom, but she's crying and something wet definitely hit the counter."
+            r "No, like a regular psychology. I asked you to change the date, and you said there was nothing you could do."
+            r "It makes me wonder if you are doing this investigation for attention."
 
-    n "Rise?"
+            "Damn it, I don't know what else to do."
+            "I know she's not being honest, but she hasn't said anything that's an outright lie."
+            hide rise
+            show chapter2_boss_interrogation_fail
+            #fail
 
-    r "I'll be okay... I have to be..."
+label chapter2_boss_success:
+        menu:
+            "Surrender":
+                $ Hero += 1
+                $ Reputation += 1
 
-    "I had to walk her back to her room."
+                show rise disappointed
 
-    #"B) Money (+Villain, -Rise, +Rep)"
+                r "That is all?"
 
-    r "Nagen, I'm sixteen, what makes you think I have any money?"
+                n "We both suffer if this escalates further. Just leave Jona alone."
 
-    n "Your parents were ridiculously wealthy. Even if you don't have a trust fund, you have to have assets of some kind. That dress alone is a couple hundred dollars."
+                r "I gave him plenty of opportunities to leave peacefully. If I fail to fulfill my end of the bargain, I will lose everything I worked for."
 
-    r "Maybe before the riots, but luxuries are not in high demand right now. I will be penniless until graduation, that's part of the reason I'm so desperate right now."
+                n "And what's that?"
 
-    n "I want half."
+                show rise mad
 
-    r "Half of what?"
+                r "I need my father's company back."
 
-    n "I want half of everything you're worth, or I'll let that cultist group know who and where you are."
+                n "Your father? I thought Jusa Cosmetics belonged to your mom."
 
-    "She went pale."
+                r "I do not care about some beauty empire."
+                r "I am more concerned about the legion of scientists carrying on our fathers' research while we are stuck here."
 
-    n "They'll also be around after we graduate."
+                hide rise
 
-    r "You'd really stoop so low? Those monsters burned people at the stake!"
+                show background_NagenFB_Testing
 
-    n "Well I'd rather have the money. I just don't trust you to keep your word without proper motivation."
+                #CG Nagen in the testing center
 
-    "She nodded, though she looked like she was going to be sick."
+                #Present
 
-    n "Obviously, this stays between us. You wouldn't want to risk the people here hating you."
+                hide background_NagenFB_Testing
 
-    "She nodded again."
+                show rise frown
 
-    n "Pleasure doing business with you."
+                n "Why didn't you say something sooner?!"
 
-    #Put detention scenes here
+                r "It would leave me vulnerable to failure. Can you promise me, whe this is all over, I will have control of that horrible place?"
+
+                n "....."
+
+                hide rise
+
+                menu:
+                    "No":
+
+                        #"1. No (-Rise, -Rep)"
+                        $ rRep -= 1
+                        $ Reputation -= 1
+
+                        show rise mad
+
+                        r "Then we have no deal."
+
+                        "I made good on my threats but so did she."
+                        "I'm not sure what she told people, but even though the teachers sided with me, everyone's more wary than before."
+                        hide rise
+                    "Yes":
+                        #"2. Yes (+Rise +Rep)"
+                        $ rRep += 1
+                        $ Reputation += 1
+
+                        show rise frown
+
+                        r "...Thank you. I know it is difficult to trust people right now. "
+
+                        "She held out her hand then flinched."
+
+                        show rise surprised
+
+                        "Her eyes are bloodshot. They weren't like that before."
+                        #need to have crying sprite
+                        n "Rise?"
+
+                        r "I need a mirror."
+
+                        "She kept grabbing the air, and scrunched her eyes closed. A constant stream of tears made her makeup run."
+
+                        n "What the hell's going on?"
+
+                        r "The walls have ears Nagen, please. "
+
+                        "I walked her to the restroom."
+
+                        n "Maybe we should get you to a nurse?"
+
+                        r "I'm fine, they're just sticking."
+
+                        "Contacts shouldn't stick."
+                        "I didn't think I should follow her into the bathroom."
+                        "Even from the hallway, I can hear she's crying and something wet definitely hit the counter."
+
+                        n "Rise?"
+
+                        r "I'll be okay..."
+                        r "I have to be..."
+
+                        "I had to walk her back to her room."
+
+                        hide rise
+            "Money":
+                #"B) Money (+Villain, -Rise, +Rep)"
+
+                $ Villain += 1
+                $ rRep -= 1
+                $ Reputation += 1
+
+                show rise disappointed
+
+                r "Nagen, I'm sixteen, what makes you think I have any money?"
+
+                n "Your parents were ridiculously wealthy."
+                n "Even if you don't have a trust fund, you have to have assets of some kind. That dress alone is a couple hundred dollars."
+
+                r "Maybe before the riots, but luxuries are not in high demand right now."
+                r "I will be penniless until graduation, that's part of the reason I'm so desperate right now."
+
+                n "I want half."
+
+                show rise surprised
+
+                r "Half of what?"
+
+                n "I want half of everything you're worth, or I'll let that cultist group know who and where you are."
+
+                "She went pale."
+
+                n "They'll also be around after we graduate."
+
+                show rise flirt
+
+                r "You'd really stoop so low? Those monsters burned people at the stake!"
+
+                n "Well I'd rather have the money. I just don't trust you to keep your word without proper motivation."
+
+                "She nodded, though she looked like she was going to be sick."
+
+                n "Obviously, this stays between us. You wouldn't want to risk the people here hating you."
+
+                "She nodded again."
+
+                n "Pleasure doing business with you."
+
+                hide rise
+
+                #Put detention scenes here
+label chapter2_boss_interrogation_fail:
+
+    show rise disappointed
+
+    r "It seems you have no concrete proof of your suspicions."
+    r "I hope you leave the rest of our classmates alone about this."
+    r "Besides looking paranoids, what happens to Jona has nothing to do with you."
+    r "I mean, has he asked you to do this?"
+
+    n "No."
+
+    "In fact, he wanted me to stay out of it."
+
+    show rise talk
+
+    r "Respect his wishes then. He may be trying to protect you as well."
+
+    "She left without another word."
+
+    hide rise
+
+    return
+label chapter2_boss_wrong_culprit:
+
+    scene backgroundclass
+
+    n "So if we do something now, then there shouldn't be any problems, right?"
+
+    show sato sigh
+
+    sa "Nagen, I understand your first week was... difficult."
+    sa "And while what you said sounds plausible, I think you're jumping to conclusions about who did it."
+
+    show sato annoyed
+
+    sa "Anyone here would know you'd try to look into it, which means they could be framing someone else."
+    sa "Not to mention the fact Jona hasn't come to any of us about what's been going on."
+    sa "I know you want to protect your friend, but involving innocent people into this would make things worse for both of you."
+    sa "Consider someone might have lied to you, even by ommission."
+    sa "If you compare multiple accounts, you'll have a stronger arguement for who did it."
+
+    "So if I have more people who agree with me, she'll consider it."
+
+    n "Any idea who I should talk to?"
+
+    sa "The note was found in the Vivaldi's class. Try seeing what her students saw before the note was found."
+
+    hide sato
+        
+    "Guess I have to keep looking."
     return
 
 
