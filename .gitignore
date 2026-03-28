@@ -33,3 +33,19 @@ Villain Reform School/game/cache/bytecode-39.rpyb
 Villain Reform School/game/cache/screens.rpyb
 Villain Reform School/game/saves/persistent
 Villain Reform School/game/cache/py3analysis.rpyb
+/.vs
+/doc
+/gui
+/launcher
+/lib
+/module
+/renpy
+/renpy.app/Contents
+/sdk-fonts
+/the_question
+/tmp
+/tutorial
+/update 
+/renpy.sh
+/LICENSE.txt
+/renpy.py
