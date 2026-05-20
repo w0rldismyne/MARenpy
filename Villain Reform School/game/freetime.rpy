@@ -1,5 +1,3 @@
-default next_scene = None
-
 label freetime:
 
     if chapter_event is chapter1_free_time_morning_break:
@@ -8,11 +6,6 @@ label freetime:
         scene backgroundschoolnoon
     elif chapter_event is chapter1_free_time_evening:
         scene backgroundcourtyardnight
-
-    # Ch 2 backgrounds
-
-    # Reset clipboard animation
-    $ clipboard = True
 
     call screen freetime
 
@@ -43,12 +36,12 @@ screen freetime:
             xpos 0.5
             ypos 0.5
             xanchor 0.5
-            yanchor 0.5    
+            yanchor 0.5
             idle "images/Interactables/Investigate.png"
             hover "Investigate_Hover"
             hovered SetVariable("selected_freetime_action", "Investigate"), renpy.restart_interaction
             unhovered SetVariable("selected_freetime_action", ""), renpy.restart_interaction
-            action Jump("investigation_interaction_mode")
+            action Jump("investigation_board")
 
         imagebutton:
             xysize 456, 442

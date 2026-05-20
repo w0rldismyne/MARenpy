@@ -755,6 +755,11 @@ default kazzPhoneFound = False
 default chapter2_solved = False
 default chapter2_interrogation_chance = True
 
+    # Minigame
+default check_paper = False
+default check_e = False
+default check_n = False
+default check_smudge = False
 
 default date = False
 default dateRise = False
@@ -820,13 +825,18 @@ label start:
     camera:
         perspective True
 
-    call profile_cards_setup
-    call inventory
+    #$ current_chapter = c_chapter_one
+    #$ i_chapter_layouts[c_chapter_one][1]["panel1"]["state"] = c_i_to_be_revealed
+    #call profile_cards_setup
+    #call inventory
 
     #jump prologue
 
+    show screen debug()
+
     menu:
         "Prologue":
+            $ current_chapter = c_chapter_prologue
             menu:
                 g "Where in Prologue?"
                 "Start of the Game":
@@ -838,16 +848,13 @@ label start:
                 g "Where in Chapter One?"
                 "Beginning":
                     jump chapter_one
-                "Introduction":
-                    jump introduction_meet_students
-                "Freetime":
-                    jump freetime
                 "Boss Battle":
                     jump chapter1_boss_scene
-                "Secret Shortcut":
-                    jump chapter1_day2_event1
         "Chapter Two":
             jump chapter_two
         #chapter3
         "Sandbox":
             jump sandbox
+
+screen debug():
+    text "Current Chapter: [current_chapter]"

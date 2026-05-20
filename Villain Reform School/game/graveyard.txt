@@ -102,6 +102,31 @@ label Ask_For_Help:
 
 ///
 
+# Graveyard?
+label askforhelp2:
+    menu:
+        "Uitto":
+            u "I don't get along well with most of the people in my class."
+            u "A lot of them have been spreading rumors about Jona. Family stuff."
+            u "Rise was busy with whatever you guys were doing before class started, so she showed up late. Guess not everyone knows how to run in heels."
+            u "I have heard the nail polish color used was popular. You might want to check with Momoko, she's the beauty guru. She'll know more about it than me." 
+        "Hiro":
+            h "I like being the first in the door for class."
+            h "I am the leader after all."
+            h "Shoma said someone slashed up a fashion magazine to make the note we found."
+            h "Rei's just as worried as we are; she told me everyone who might've worn that color of nail polish..."
+            h "I uh, probably should've written that down. Chisei was one of them."
+        "Jona":
+            j "No one in class said they wrote a note."
+            j "They didn't see anyone entering the room either."
+            j "Ichita had the stuco meeting, so he came in a little after everyone else. Not sure if that's much help."
+            j "He said there was nothing in the classroom when he locked up for the night."
+        "Back":
+            #return to menu
+            pass
+
+///
+
 label JonaInv1:
     scene backgroundamp
     "Jona doesn't really like talking to people alone, so I appreciate he was willing to do this for me."
@@ -169,8 +194,8 @@ label HiroInv1:
     
     hide hiro sad talk
 
-    $ inventory.ShowClue(clue_account)
-    $ inventory.ShowClue(clue_brag)
+    #$ inventory.ShowClue(clue_account)
+    #$ inventory.ShowClue(clue_brag)
 
     return #connect to main game loop
 
@@ -204,8 +229,1450 @@ label UittoInv1:
     u "That would drive me bananas."
 
     n "Thanks, Uitto." #(+Mystery Noise, +Prank)
-    $ inventory.ShowClue(clue_mysterious_noise)
-    $ inventory.ShowClue(clue_prank)
+    #$ inventory.ShowClue(clue_mysterious_noise)
+    #$ inventory.ShowClue(clue_prank)
 
     hide uitto talk
     return #connect to main game loop
+
+    -----------------------------------------
+
+default reveal_flag1 = False
+default reveal_flag2 = False
+default reveal_flag3 = False
+default reveal_flag4 = False
+default reveal_flag5 = False
+default reveal1 = False
+default reveal2 = False
+default reveal3 = False
+default reveal4 = False
+default reveal5 = False
+
+default clipboard = True
+
+define temporary_investigation_flashback = False
+
+define temporary_prevent_clipboard_animations = False
+
+define investigation_solve = False
+
+python early:
+    class Profile:
+        def __init__(self, Identifier, Name, Order):
+            self._Identifier = Identifier
+            self._Name = Name
+            self._Order = Order
+            self._Show = False
+
+        @property
+        def ID(self):
+            return self._Identifier
+        
+        @property
+        def Name(self):
+            return self._Name
+
+        @property
+        def Order(self):
+            return self._Order
+
+        @property
+        def Visibility(self):
+            return self._Show
+
+        @Visibility.setter
+        def SetVisibility(self, value):
+            if value is True or value is False:
+                self._Show = value
+            else:
+                raise ValueError("Cannot be a value other than True or False.")
+
+default profile_kazz = Profile("kazz", "Kazz Kataki", 0)
+default profile_momoko = Profile("momoko", "Momoko Yoshino", 1)
+default profile_mariko = Profile("mariko", "Mariko Genki", 2)
+default profile_chisei = Profile("chisei", "Chisei Jikoma", 3)
+default profile_setsuna = Profile("setsuna", "Setsuna Hori", 4)
+default profile_dyre = Profile("dyre", "Dyre Okami", 5)
+default profile_kitsune = Profile("kitsune", "Kitsune Sumizome", 6)
+default profile_rei = Profile("rei", "Rei Watabe", 7)
+default profile_ichita = Profile("ichita", "Ichita Kinoshita", 8)
+default profile_mu = Profile("mu", "Oshin Murakami", 9)
+
+default all_clipboard_profiles = []
+default clipboard_profiles = []
+default profile_count = 0
+default profile_tab = 0
+
+# call investigation_profile_set(profile_mariko, True)
+
+label profile_cards_setup:
+
+    $ all_clipboard_profiles = [profile_kazz, profile_momoko, profile_mariko, profile_chisei, profile_setsuna, profile_dyre, profile_kitsune, profile_rei, profile_ichita, profile_mu]
+    $ clipboard_profiles = []
+
+    return
+
+label investigation_profile_set(object, value = False):
+
+    $ all_clipboard_profiles[all_clipboard_profiles.index(object)].SetVisibility = value
+
+    return
+
+
+label investigation_progress_update:
+
+    # Reset clipboard animation
+    $ clipboard = True
+    $ temporary_investigation_flashback = True
+
+    show screen investigate
+
+    window hide
+    pause
+
+    hide screen investigate
+
+    $ temporary_investigation_flashback = False
+
+    return
+
+label investigation_interaction_mode:
+
+    $ temporary_prevent_clipboard_animations = False
+    call screen investigate
+
+label investigation_interaction_clipboard_mode:
+
+    show screen investigate
+    call screen clipboard
+
+screen investigate():
+    modal False
+
+    image "#FFFFFF"
+
+    if temporary_investigation_flashback is False:
+        textbutton "Back":
+            xpos 0.1
+            ypos 0.1
+            xanchor 0.5
+            yanchor 0.5
+            text_size 55
+            action Jump("freetime")
+
+        textbutton "SOLVE":
+            xpos 0.5
+            ypos 0.85
+            xanchor 0.5
+            yanchor 0.5
+            text_size 55
+            if reveal1 is True and reveal2 is True and reveal3 is True and reveal4 is True and reveal5 is True and chapter1_interrogation_chance is True:
+                action SetVariable("investigation_solve", True), renpy.restart_interaction
+            if investigation_solve is True:
+                action SetVariable("investigation_solve", False), renpy.restart_interaction
+    
+        if investigation_solve is True and chapter1_interrogation_chance is True:
+            vbox:
+                xpos 1.0
+                ypos 0.5
+                xanchor 0.25
+                yanchor 0.5
+
+                textbutton "Chisei":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+    
+                textbutton "Dyre":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Hiro":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Ichita":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Jona":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Kazz":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+            
+                textbutton "Kietsu":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Kitsune":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Mariko":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_interrogation")
+
+                textbutton "Momoko":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Mu":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Nanase":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Rei":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Rise":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Setsuna":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Shoma":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Taiga":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Uitto":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Yoku":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+    image "images/Interactables/Manga Background.png":
+        xpos 0.5
+        xanchor 0.5
+
+    image "images/Interactables/Manga_Ch1_Panel_1.png":
+        xpos 0.5
+        xanchor 0.5
+
+    image "images/Interactables/Manga_Ch1_Panel_2.png":
+        xpos 0.5
+        xanchor 0.5
+
+    image "images/Interactables/Manga_Ch1_Panel_3.png":
+        xpos 0.5
+        xanchor 0.5
+
+    image "images/Interactables/Manga_Ch1_Panel_4.png":
+        xpos 0.5
+        xanchor 0.5
+
+    image "images/Interactables/Manga_Ch1_Panel_5.png":
+        xpos 0.5
+        xanchor 0.5
+
+    if reveal1 is False:
+        image "images/Interactables/Manga_Ch1_Panel_1black.png":
+            xpos 0.5
+            xanchor 0.5
+            if reveal_flag1 is True:
+                at ch1_inv_img_1
+
+    if reveal2 is False:
+        image "images/Interactables/Manga_Ch1_Panel_2black.png":
+            xpos 0.5
+            xanchor 0.5
+            if reveal_flag2 is True:
+                at ch1_inv_img_2
+
+    if reveal3 is False:
+        image "images/Interactables/Manga_Ch1_Panel_3black.png":
+            xpos 0.5
+            xanchor 0.5
+            if reveal_flag3 is True:
+                at ch1_inv_img_3
+
+    if reveal4 is False:
+        image "images/Interactables/Manga_Ch1_Panel_4black.png":
+            xpos 0.5
+            xanchor 0.5
+            if reveal_flag4 is True:
+                at ch1_inv_img_4
+            
+    if reveal5 is False:
+        image "images/Interactables/Manga_Ch1_Panel_5black.png":
+            xpos 0.5
+            xanchor 0.5
+            if reveal_flag5 is True:
+                at ch1_inv_img_5
+
+    if temporary_investigation_flashback is False:
+        imagebutton:
+            xpos 0.5
+            ypos 0.1
+            xanchor 0.5
+            yanchor 1.0
+            focus_mask True
+            idle "images/Interactables/clipboard.png"
+            hover "images/Interactables/clipboard.png"
+            if clipboard is False:
+                at clipboard_slide_up
+            action SetVariable("clipboard", True), SetVariable("profile_tab", 0), Jump("investigation_interaction_clipboard_mode")
+
+        $ profile_count = 0
+        $ clipboard_profiles.clear()
+
+        for profile in all_clipboard_profiles:
+            if (profile.Visibility is True):
+                $ clipboard_profiles.append(profile)
+                $ profile_count += 1
+
+        $ profile_tracker = 4 * profile_tab
+
+        if profile_count > 4:
+            imagebutton:
+                xpos 0.5
+                ypos 0.1
+                xanchor 0.5
+                yanchor 1.0
+                if profile_tab == 0:
+                    idle "images/Interactables/TabPink.png"
+                else:
+                    idle "images/Interactables/TabPinkFalse.png"
+                if clipboard is False:
+                    at clipboard_slide_up
+
+            imagebutton:
+                xpos 0.5
+                ypos 0.1
+                xanchor 0.5
+                yanchor 1.0
+                if profile_tab == 1:
+                    idle "images/Interactables/TabBlue.png"
+                else:
+                    idle "images/Interactables/TabBlueFalse.png"
+                if clipboard is False:
+                    at clipboard_slide_up
+
+        if profile_count > 8:
+            imagebutton:
+                xpos 0.5
+                ypos 0.1
+                xanchor 0.5
+                yanchor 1.0
+                if profile_tab == 2:
+                    idle "images/Interactables/TabPurple.png"
+                else:
+                    idle "images/Interactables/TabPurpleFalse.png"
+                if clipboard is False:
+                    at clipboard_slide_up
+
+        if profile_count > 12:
+            imagebutton:
+                xpos 0.5
+                ypos 0.1
+                xanchor 0.5
+                yanchor 1.0
+                if profile_tab == 3:
+                    idle "images/Interactables/TabGreen.png"
+                else:
+                    idle "images/Interactables/TabGreenFalse.png"
+                if clipboard is False:
+                    at clipboard_slide_up
+
+        if (profile_tracker < profile_count):
+            image f"images/Interactables/{clipboard_profiles[profile_tracker].ID}profile.png":
+                xpos 608
+                ypos -0.69
+                xanchor 0.0
+                yanchor 0.5
+
+                if clipboard is False:
+                    at profile_1_slide_up
+
+            text f"{clipboard_profiles[profile_tracker].Name}":
+                xpos 1338
+                ypos -0.69
+                xanchor 1.0
+                yanchor 0.5
+                size 60
+                font "true-crimes.ttf"
+                color '#888888'
+
+                if clipboard is False:
+                    at profile_1_slide_up
+
+        if (profile_tracker + 1 < profile_count):
+            image f"images/Interactables/{clipboard_profiles[profile_tracker + 1].ID}profile.png":
+                xpos 608
+                ypos -0.52
+                xanchor 0.0
+                yanchor 0.5
+
+                if clipboard is False:
+                    at profile_2_slide_up
+
+            text f"{clipboard_profiles[profile_tracker + 1].Name}":
+                xpos 1338
+                ypos -0.52
+                xanchor 1.0
+                yanchor 0.5
+                size 60
+                font "true-crimes.ttf"
+                color '#888888'
+
+                if clipboard is False:
+                    at profile_2_slide_up
+
+        if (profile_tracker + 2 < profile_count):
+            image f"images/Interactables/{clipboard_profiles[profile_tracker + 2].ID}profile.png":
+                xpos 608
+                ypos -0.35
+                xanchor 0.0
+                yanchor 0.5
+
+                if clipboard is False:
+                    at profile_3_slide_up
+
+            text f"{clipboard_profiles[profile_tracker + 2].Name}":
+                xpos 1338
+                ypos -0.35
+                xanchor 1.0
+                yanchor 0.5
+                size 60
+                font "true-crimes.ttf"
+                color '#888888'
+
+                if clipboard is False:
+                    at profile_3_slide_up
+
+        if (profile_tracker + 3 < profile_count):
+            image f"images/Interactables/{clipboard_profiles[profile_tracker + 3].ID}profile.png":
+                xpos 608
+                ypos -0.18
+                xanchor 0.0
+                yanchor 0.5
+
+                if clipboard is False:
+                    at profile_4_slide_up
+
+            text f"{clipboard_profiles[profile_tracker + 3].Name}":
+                xpos 1338
+                ypos -0.18
+                xanchor 1.0
+                yanchor 0.5
+                size 60
+                font "true-crimes.ttf"
+                color '#888888'
+
+                if clipboard is False:
+                    at profile_4_slide_up
+
+screen clipboard():
+
+    modal True
+
+    textbutton "Back":
+        xpos 0.1
+        ypos 0.1
+        xanchor 0.5
+        yanchor 0.5
+        text_size 55
+        action SetVariable("clipboard", False), Jump("investigation_interaction_mode"), Hide("investigate")
+
+    frame:
+
+        background None
+
+        image "images/Interactables/clipboard.png"
+
+        xpos 0.5
+        ypos 1.0
+        xanchor 0.5
+        yanchor 1.0
+
+        if clipboard is True and temporary_prevent_clipboard_animations is False:
+            at clipboard_slide_down
+
+    $ profile_count = 0
+    $ clipboard_profiles.clear()
+
+    for profile in all_clipboard_profiles:
+        if (profile.Visibility is True):
+            $ clipboard_profiles.append(profile)
+            $ profile_count += 1
+
+    if profile_count > 4:
+        imagebutton:
+            xpos 0.5
+            ypos 1.0
+            xanchor 0.5
+            yanchor 1.0
+            if profile_tab == 0:
+                idle "images/Interactables/TabPink.png"
+            else:
+                idle "images/Interactables/TabPinkFalse.png"
+                hover "images/Interactables/TabPinkFalse_Highlight.png"
+                action SetVariable("profile_tab", 0), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+            focus_mask True
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at clipboard_slide_down
+
+        imagebutton:
+            xpos 0.5
+            ypos 1.0
+            xanchor 0.5
+            yanchor 1.0
+            if profile_tab == 1:
+                idle "images/Interactables/TabBlue.png"
+            else:
+                idle "images/Interactables/TabBlueFalse.png"
+                hover "images/Interactables/TabBlueFalse_Highlight.png"
+                action SetVariable("profile_tab", 1), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+            focus_mask True
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at clipboard_slide_down
+
+    if profile_count > 8:
+        imagebutton:
+            xpos 0.5
+            ypos 1.0
+            xanchor 0.5
+            yanchor 1.0
+            if profile_tab == 2:
+                idle "images/Interactables/TabPurple.png"
+            else:
+                idle "images/Interactables/TabPurpleFalse.png"
+                hover "images/Interactables/TabPurpleFalse_Highlight.png"
+                action SetVariable("profile_tab", 2), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+            focus_mask True
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at clipboard_slide_down
+
+    if profile_count > 12:
+        imagebutton:
+            xpos 0.5
+            ypos 1.0
+            xanchor 0.5
+            yanchor 1.0
+            if profile_tab == 3:
+                idle "images/Interactables/TabGreen.png"
+            else:
+                idle "images/Interactables/TabGreenFalse.png"
+                hover "images/Interactables/TabGreenFalse_Highlight.png"
+                action SetVariable("profile_tab", 3), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+            focus_mask True
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at clipboard_slide_down
+
+    $ profile_tracker = 4 * profile_tab
+
+    if (profile_tracker < profile_count):
+        image f"images/Interactables/{clipboard_profiles[profile_tracker].ID}profile.png":
+            xpos 608
+            ypos 0.21
+            xanchor 0.0
+            yanchor 0.5
+
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_1_slide_down
+
+        textbutton f"{clipboard_profiles[profile_tracker].Name}":
+            xpos 1344
+            ypos 0.21
+            xanchor 1.0
+            yanchor 0.5
+            text_size 60
+            action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker].ID}")
+            
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_1_slide_down
+
+    if (profile_tracker + 1 < profile_count):
+        image f"images/Interactables/{clipboard_profiles[profile_tracker + 1].ID}profile.png":
+            xpos 608
+            ypos 0.38
+            xanchor 0.0
+            yanchor 0.5
+
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_2_slide_down
+
+        textbutton f"{clipboard_profiles[profile_tracker + 1].Name}":
+            xpos 1344
+            ypos 0.38
+            xanchor 1.0
+            yanchor 0.5
+            text_size 60
+            action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker + 1].ID}")
+            
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_2_slide_down
+
+    if (profile_tracker + 2 < profile_count):
+        image f"images/Interactables/{clipboard_profiles[profile_tracker + 2].ID}profile.png":
+            xpos 608
+            ypos 0.55
+            xanchor 0.0
+            yanchor 0.5
+
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_3_slide_down
+
+        textbutton f"{clipboard_profiles[profile_tracker + 2].Name}":
+            xpos 1344
+            ypos 0.55
+            xanchor 1.0
+            yanchor 0.5
+            text_size 60
+            action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker + 2].ID}")
+            
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_3_slide_down
+
+    if (profile_tracker + 3 < profile_count):
+        image f"images/Interactables/{clipboard_profiles[profile_tracker + 3].ID}profile.png":
+            xpos 608
+            ypos 0.72
+            xanchor 0.0
+            yanchor 0.5
+
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_4_slide_down
+
+        textbutton f"{clipboard_profiles[profile_tracker + 3].Name}":
+            xpos 1344
+            ypos 0.72
+            xanchor 1.0
+            yanchor 0.5
+            text_size 60
+            action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker + 3].ID}")
+            
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_4_slide_down
+
+
+transform ch1_inv_img_1:
+    alpha 1.0
+    easein 2.0 alpha 0.0
+
+transform ch1_inv_img_2:
+    alpha 1.0
+    easein 2.0 alpha 0.0
+
+transform ch1_inv_img_3:
+    alpha 1.0
+    easein 2.0 alpha 0.0
+
+transform ch1_inv_img_4:
+    alpha 1.0
+    easein 2.0 alpha 0.0
+
+transform ch1_inv_img_5:
+    alpha 1.0
+    easein 2.0 alpha 0.0
+
+transform clipboard_slide_down:
+    ypos 0.1
+    easein 1.5 ypos 1.0
+
+transform clipboard_slide_up:
+    ypos 1.0
+    easein 1.5 ypos 0.1
+
+transform profile_1_slide_down:
+    ypos -0.69
+    easein 1.5 ypos 0.21
+
+transform profile_1_slide_up:
+    ypos 0.21
+    easein 1.5 ypos -0.69
+
+transform profile_2_slide_down:
+    ypos -0.52
+    easein 1.5 ypos 0.38
+
+transform profile_2_slide_up:
+    ypos 0.38
+    easein 1.5 ypos -0.52
+
+transform profile_3_slide_down:
+    ypos -0.35
+    easein 1.5 ypos 0.55
+
+transform profile_3_slide_up:
+    ypos 0.55
+    easein 1.5 ypos -0.35
+
+transform profile_4_slide_down:
+    ypos -0.18
+    easein 1.5 ypos 0.72
+
+transform profile_4_slide_up:
+    ypos 0.72
+    easein 1.5 ypos -0.18
+
+screen inventory_item(name, action):
+    frame:
+        text name
+        textbutton "Equip" action action
+
+screen inventory():
+    vbox:
+        use inventory_item("Sword", Equip("sword"))
+        use inventory_item("Shield", Equip("shield"))
+
+style menu_button:
+    background "#333"
+    color "#fff"
+    padding (10, 20)
+
+textbutton "Start" style "menu_button"
+
+python early:
+    class Profile:
+        def __init__(self, Identifier, Name, Order):
+            self._Identifier = Identifier
+            self._Name = Name
+            self._Order = Order
+            self._Show = False
+
+        @property
+        def ID(self):
+            return self._Identifier
+        
+        @property
+        def Name(self):
+            return self._Name
+
+        @property
+        def Order(self):
+            return self._Order
+
+        @property
+        def Visibility(self):
+            return self._Show
+
+        @Visibility.setter
+        def SetVisibility(self, value):
+            if value is True or value is False:
+                self._Show = value
+            else:
+                raise ValueError("Cannot be a value other than True or False.")
+
+default profile_kazz = Profile("kazz", "Kazz Kataki", 0)
+default profile_momoko = Profile("momoko", "Momoko Yoshino", 1)
+default profile_mariko = Profile("mariko", "Mariko Genki", 2)
+default profile_chisei = Profile("chisei", "Chisei Jikoma", 3)
+default profile_setsuna = Profile("setsuna", "Setsuna Hori", 4)
+default profile_dyre = Profile("dyre", "Dyre Okami", 5)
+default profile_kitsune = Profile("kitsune", "Kitsune Sumizome", 6)
+default profile_rei = Profile("rei", "Rei Watabe", 7)
+default profile_ichita = Profile("ichita", "Ichita Kinoshita", 8)
+default profile_mu = Profile("mu", "Oshin Murakami", 9)
+
+default all_clipboard_profiles = []
+default clipboard_profiles = []
+default profile_count = 0
+default profile_tab = 0
+
+# call investigation_profile_set(profile_mariko, True)
+
+label profile_cards_setup:
+
+    $ all_clipboard_profiles = [profile_kazz, profile_momoko, profile_mariko, profile_chisei, profile_setsuna, profile_dyre, profile_kitsune, profile_rei, profile_ichita, profile_mu]
+    $ clipboard_profiles = []
+
+    return
+
+label investigation_profile_set(object, value = False):
+
+    $ all_clipboard_profiles[all_clipboard_profiles.index(object)].SetVisibility = value
+
+    return
+
+
+label investigation_progress_update:
+
+    # Reset clipboard animation
+    $ clipboard = True
+    $ temporary_investigation_flashback = True
+
+    show screen investigate
+
+    window hide
+    pause
+
+    hide screen investigate
+
+    $ temporary_investigation_flashback = False
+
+    return
+
+
+label investigation_interaction_clipboard_mode:
+
+    show screen investigate
+    call screen clipboard
+
+screen investigate():
+    modal False
+
+    image "#FFFFFF"
+
+    if temporary_investigation_flashback is False:
+        textbutton "Back":
+            xpos 0.1
+            ypos 0.1
+            xanchor 0.5
+            yanchor 0.5
+            text_size 55
+            action Jump("freetime")
+
+        textbutton "SOLVE":
+            xpos 0.5
+            ypos 0.85
+            xanchor 0.5
+            yanchor 0.5
+            text_size 55
+            if reveal1 is True and reveal2 is True and reveal3 is True and reveal4 is True and reveal5 is True and chapter1_interrogation_chance is True:
+                action SetVariable("investigation_solve", True), renpy.restart_interaction
+            if investigation_solve is True:
+                action SetVariable("investigation_solve", False), renpy.restart_interaction
+    
+        if investigation_solve is True and chapter1_interrogation_chance is True:
+            vbox:
+                xpos 1.0
+                ypos 0.5
+                xanchor 0.25
+                yanchor 0.5
+
+                textbutton "Chisei":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+    
+                textbutton "Dyre":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Hiro":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Ichita":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Jona":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Kazz":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+            
+                textbutton "Kietsu":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Kitsune":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Mariko":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_interrogation")
+
+                textbutton "Momoko":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Mu":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Nanase":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Rei":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Rise":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Setsuna":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Shoma":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Taiga":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Uitto":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+                textbutton "Yoku":
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+
+    image "images/Interactables/Manga Background.png":
+        xpos 0.5
+        xanchor 0.5
+
+    image "images/Interactables/Manga_Ch1_Panel_1.png":
+        xpos 0.5
+        xanchor 0.5
+
+    image "images/Interactables/Manga_Ch1_Panel_2.png":
+        xpos 0.5
+        xanchor 0.5
+
+    image "images/Interactables/Manga_Ch1_Panel_3.png":
+        xpos 0.5
+        xanchor 0.5
+
+    image "images/Interactables/Manga_Ch1_Panel_4.png":
+        xpos 0.5
+        xanchor 0.5
+
+    image "images/Interactables/Manga_Ch1_Panel_5.png":
+        xpos 0.5
+        xanchor 0.5
+
+    if reveal1 is False:
+        image "images/Interactables/Manga_Ch1_Panel_1black.png":
+            xpos 0.5
+            xanchor 0.5
+            if reveal_flag1 is True:
+                at ch1_inv_img_1
+
+    if reveal2 is False:
+        image "images/Interactables/Manga_Ch1_Panel_2black.png":
+            xpos 0.5
+            xanchor 0.5
+            if reveal_flag2 is True:
+                at ch1_inv_img_2
+
+    if reveal3 is False:
+        image "images/Interactables/Manga_Ch1_Panel_3black.png":
+            xpos 0.5
+            xanchor 0.5
+            if reveal_flag3 is True:
+                at ch1_inv_img_3
+
+    if reveal4 is False:
+        image "images/Interactables/Manga_Ch1_Panel_4black.png":
+            xpos 0.5
+            xanchor 0.5
+            if reveal_flag4 is True:
+                at ch1_inv_img_4
+            
+    if reveal5 is False:
+        image "images/Interactables/Manga_Ch1_Panel_5black.png":
+            xpos 0.5
+            xanchor 0.5
+            if reveal_flag5 is True:
+                at ch1_inv_img_5
+
+    if temporary_investigation_flashback is False:
+        imagebutton:
+            xpos 0.5
+            ypos 0.1
+            xanchor 0.5
+            yanchor 1.0
+            focus_mask True
+            idle "images/Interactables/clipboard.png"
+            hover "images/Interactables/clipboard.png"
+            if clipboard is False:
+                at clipboard_slide_up
+            action SetVariable("clipboard", True), SetVariable("profile_tab", 0), Jump("investigation_interaction_clipboard_mode")
+
+        $ profile_count = 0
+        $ clipboard_profiles.clear()
+
+        for profile in all_clipboard_profiles:
+            if (profile.Visibility is True):
+                $ clipboard_profiles.append(profile)
+                $ profile_count += 1
+
+        $ profile_tracker = 4 * profile_tab
+
+        if profile_count > 4:
+            imagebutton:
+                xpos 0.5
+                ypos 0.1
+                xanchor 0.5
+                yanchor 1.0
+                if profile_tab == 0:
+                    idle "images/Interactables/TabPink.png"
+                else:
+                    idle "images/Interactables/TabPinkFalse.png"
+                if clipboard is False:
+                    at clipboard_slide_up
+
+            imagebutton:
+                xpos 0.5
+                ypos 0.1
+                xanchor 0.5
+                yanchor 1.0
+                if profile_tab == 1:
+                    idle "images/Interactables/TabBlue.png"
+                else:
+                    idle "images/Interactables/TabBlueFalse.png"
+                if clipboard is False:
+                    at clipboard_slide_up
+
+        if profile_count > 8:
+            imagebutton:
+                xpos 0.5
+                ypos 0.1
+                xanchor 0.5
+                yanchor 1.0
+                if profile_tab == 2:
+                    idle "images/Interactables/TabPurple.png"
+                else:
+                    idle "images/Interactables/TabPurpleFalse.png"
+                if clipboard is False:
+                    at clipboard_slide_up
+
+        if profile_count > 12:
+            imagebutton:
+                xpos 0.5
+                ypos 0.1
+                xanchor 0.5
+                yanchor 1.0
+                if profile_tab == 3:
+                    idle "images/Interactables/TabGreen.png"
+                else:
+                    idle "images/Interactables/TabGreenFalse.png"
+                if clipboard is False:
+                    at clipboard_slide_up
+
+        if (profile_tracker < profile_count):
+            image f"images/Interactables/{clipboard_profiles[profile_tracker].ID}profile.png":
+                xpos 608
+                ypos -0.69
+                xanchor 0.0
+                yanchor 0.5
+
+                if clipboard is False:
+                    at profile_1_slide_up
+
+            text f"{clipboard_profiles[profile_tracker].Name}":
+                xpos 1338
+                ypos -0.69
+                xanchor 1.0
+                yanchor 0.5
+                size 60
+                font "true-crimes.ttf"
+                color '#888888'
+
+                if clipboard is False:
+                    at profile_1_slide_up
+
+        if (profile_tracker + 1 < profile_count):
+            image f"images/Interactables/{clipboard_profiles[profile_tracker + 1].ID}profile.png":
+                xpos 608
+                ypos -0.52
+                xanchor 0.0
+                yanchor 0.5
+
+                if clipboard is False:
+                    at profile_2_slide_up
+
+            text f"{clipboard_profiles[profile_tracker + 1].Name}":
+                xpos 1338
+                ypos -0.52
+                xanchor 1.0
+                yanchor 0.5
+                size 60
+                font "true-crimes.ttf"
+                color '#888888'
+
+                if clipboard is False:
+                    at profile_2_slide_up
+
+        if (profile_tracker + 2 < profile_count):
+            image f"images/Interactables/{clipboard_profiles[profile_tracker + 2].ID}profile.png":
+                xpos 608
+                ypos -0.35
+                xanchor 0.0
+                yanchor 0.5
+
+                if clipboard is False:
+                    at profile_3_slide_up
+
+            text f"{clipboard_profiles[profile_tracker + 2].Name}":
+                xpos 1338
+                ypos -0.35
+                xanchor 1.0
+                yanchor 0.5
+                size 60
+                font "true-crimes.ttf"
+                color '#888888'
+
+                if clipboard is False:
+                    at profile_3_slide_up
+
+        if (profile_tracker + 3 < profile_count):
+            image f"images/Interactables/{clipboard_profiles[profile_tracker + 3].ID}profile.png":
+                xpos 608
+                ypos -0.18
+                xanchor 0.0
+                yanchor 0.5
+
+                if clipboard is False:
+                    at profile_4_slide_up
+
+            text f"{clipboard_profiles[profile_tracker + 3].Name}":
+                xpos 1338
+                ypos -0.18
+                xanchor 1.0
+                yanchor 0.5
+                size 60
+                font "true-crimes.ttf"
+                color '#888888'
+
+                if clipboard is False:
+                    at profile_4_slide_up
+
+screen clipboard():
+
+    modal True
+
+    textbutton "Back":
+        xpos 0.1
+        ypos 0.1
+        xanchor 0.5
+        yanchor 0.5
+        text_size 55
+        action SetVariable("clipboard", False), Jump("investigation_interaction_mode"), Hide("investigate")
+
+    frame:
+
+        background None
+
+        image "images/Interactables/clipboard.png"
+
+        xpos 0.5
+        ypos 1.0
+        xanchor 0.5
+        yanchor 1.0
+
+        if clipboard is True and temporary_prevent_clipboard_animations is False:
+            at clipboard_slide_down
+
+    $ profile_count = 0
+    $ clipboard_profiles.clear()
+
+    for profile in all_clipboard_profiles:
+        if (profile.Visibility is True):
+            $ clipboard_profiles.append(profile)
+            $ profile_count += 1
+
+    if profile_count > 4:
+        imagebutton:
+            xpos 0.5
+            ypos 1.0
+            xanchor 0.5
+            yanchor 1.0
+            if profile_tab == 0:
+                idle "images/Interactables/TabPink.png"
+            else:
+                idle "images/Interactables/TabPinkFalse.png"
+                hover "images/Interactables/TabPinkFalse_Highlight.png"
+                action SetVariable("profile_tab", 0), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+            focus_mask True
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at clipboard_slide_down
+
+        imagebutton:
+            xpos 0.5
+            ypos 1.0
+            xanchor 0.5
+            yanchor 1.0
+            if profile_tab == 1:
+                idle "images/Interactables/TabBlue.png"
+            else:
+                idle "images/Interactables/TabBlueFalse.png"
+                hover "images/Interactables/TabBlueFalse_Highlight.png"
+                action SetVariable("profile_tab", 1), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+            focus_mask True
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at clipboard_slide_down
+
+    if profile_count > 8:
+        imagebutton:
+            xpos 0.5
+            ypos 1.0
+            xanchor 0.5
+            yanchor 1.0
+            if profile_tab == 2:
+                idle "images/Interactables/TabPurple.png"
+            else:
+                idle "images/Interactables/TabPurpleFalse.png"
+                hover "images/Interactables/TabPurpleFalse_Highlight.png"
+                action SetVariable("profile_tab", 2), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+            focus_mask True
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at clipboard_slide_down
+
+    if profile_count > 12:
+        imagebutton:
+            xpos 0.5
+            ypos 1.0
+            xanchor 0.5
+            yanchor 1.0
+            if profile_tab == 3:
+                idle "images/Interactables/TabGreen.png"
+            else:
+                idle "images/Interactables/TabGreenFalse.png"
+                hover "images/Interactables/TabGreenFalse_Highlight.png"
+                action SetVariable("profile_tab", 3), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
+            focus_mask True
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at clipboard_slide_down
+
+    $ profile_tracker = 4 * profile_tab
+
+    if (profile_tracker < profile_count):
+        image f"images/Interactables/{clipboard_profiles[profile_tracker].ID}profile.png":
+            xpos 608
+            ypos 0.21
+            xanchor 0.0
+            yanchor 0.5
+
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_1_slide_down
+
+        textbutton f"{clipboard_profiles[profile_tracker].Name}":
+            xpos 1344
+            ypos 0.21
+            xanchor 1.0
+            yanchor 0.5
+            text_size 60
+            action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker].ID}")
+            
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_1_slide_down
+
+    if (profile_tracker + 1 < profile_count):
+        image f"images/Interactables/{clipboard_profiles[profile_tracker + 1].ID}profile.png":
+            xpos 608
+            ypos 0.38
+            xanchor 0.0
+            yanchor 0.5
+
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_2_slide_down
+
+        textbutton f"{clipboard_profiles[profile_tracker + 1].Name}":
+            xpos 1344
+            ypos 0.38
+            xanchor 1.0
+            yanchor 0.5
+            text_size 60
+            action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker + 1].ID}")
+            
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_2_slide_down
+
+    if (profile_tracker + 2 < profile_count):
+        image f"images/Interactables/{clipboard_profiles[profile_tracker + 2].ID}profile.png":
+            xpos 608
+            ypos 0.55
+            xanchor 0.0
+            yanchor 0.5
+
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_3_slide_down
+
+        textbutton f"{clipboard_profiles[profile_tracker + 2].Name}":
+            xpos 1344
+            ypos 0.55
+            xanchor 1.0
+            yanchor 0.5
+            text_size 60
+            action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker + 2].ID}")
+            
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_3_slide_down
+
+    if (profile_tracker + 3 < profile_count):
+        image f"images/Interactables/{clipboard_profiles[profile_tracker + 3].ID}profile.png":
+            xpos 608
+            ypos 0.72
+            xanchor 0.0
+            yanchor 0.5
+
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_4_slide_down
+
+        textbutton f"{clipboard_profiles[profile_tracker + 3].Name}":
+            xpos 1344
+            ypos 0.72
+            xanchor 1.0
+            yanchor 0.5
+            text_size 60
+            action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker + 3].ID}")
+            
+            if clipboard is True and temporary_prevent_clipboard_animations is False:
+                at profile_4_slide_down
+
+
+transform ch1_inv_img_1:
+    alpha 1.0
+    easein 2.0 alpha 0.0
+
+transform ch1_inv_img_2:
+    alpha 1.0
+    easein 2.0 alpha 0.0
+
+transform ch1_inv_img_3:
+    alpha 1.0
+    easein 2.0 alpha 0.0
+
+transform ch1_inv_img_4:
+    alpha 1.0
+    easein 2.0 alpha 0.0
+
+transform ch1_inv_img_5:
+    alpha 1.0
+    easein 2.0 alpha 0.0
+
+transform clipboard_slide_down:
+    ypos 0.1
+    easein 1.5 ypos 1.0
+
+transform clipboard_slide_up:
+    ypos 1.0
+    easein 1.5 ypos 0.1
+
+transform profile_1_slide_down:
+    ypos -0.69
+    easein 1.5 ypos 0.21
+
+transform profile_1_slide_up:
+    ypos 0.21
+    easein 1.5 ypos -0.69
+
+transform profile_2_slide_down:
+    ypos -0.52
+    easein 1.5 ypos 0.38
+
+transform profile_2_slide_up:
+    ypos 0.38
+    easein 1.5 ypos -0.52
+
+transform profile_3_slide_down:
+    ypos -0.35
+    easein 1.5 ypos 0.55
+
+transform profile_3_slide_up:
+    ypos 0.55
+    easein 1.5 ypos -0.35
+
+transform profile_4_slide_down:
+    ypos -0.18
+    easein 1.5 ypos 0.72
+
+transform profile_4_slide_up:
+    ypos 0.72
+    easein 1.5 ypos -0.18
+
+                #[
+                    #SetScreenVariable("clipboard_reset", True),
+                    #SetVariable("profile_page", 1),
+                    #SetScreenVariable("clipboard_reset", False)
+                #]

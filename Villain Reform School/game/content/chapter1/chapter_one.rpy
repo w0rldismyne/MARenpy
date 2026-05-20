@@ -4,6 +4,8 @@ label chapter_one:
     with dissolve
     pause
 
+    $ current_chapter = c_chapter_one
+
     call chapter1_introduction
 
     ### 1 ###
@@ -21,7 +23,7 @@ label chapter_one:
 
     $ chapter_event = chapter1_free_time_evening
 
-    call chapter1_day1_event3
+    call chapter1_day1_event3 # Point and Click
 
     call chapter1_day1_event_night
 

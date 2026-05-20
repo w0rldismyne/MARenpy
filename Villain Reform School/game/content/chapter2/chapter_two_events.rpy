@@ -18,7 +18,6 @@ label chapter2_day1_event1:
     nk "Wait, don't leave!"
 
     show setsuna at left
-    hide nanase surprised
     show nanase smile
 
     s "I told you turning off the lights was too much."
@@ -29,15 +28,19 @@ label chapter2_day1_event1:
 
     scene backgroundstuco
 
+    show setsuna at left
+    show nanase smile
+
     "The lights flicker on and I can see the members in homemade party hats with a plate of brownies in front of them."
 
     n "What on Earth-"
+
+    show kietsu laugh at right
 
     ki "Surprise! We wanted to welcome you to the student council properly this time."
 
     n "This is all for me?"
 
-    hide setsuna
     show setsuna scoff at left
 
     s "It's for all of us."
@@ -108,7 +111,7 @@ label chapter2_day1_event1:
 
     r "It is almost like deja vu, though thankfully Jona has been replaced with a more pleasing candidate."
 
-    i "I didn't have much of a choice. With half the class in the club positions, I was the only one free."
+    i "I didn't have much of a choice. With half the class in club leadership, I was the only one free."
 
     y "....."
 
@@ -259,7 +262,6 @@ label chapter2_day1_event1:
     hide kietsu tease
     hide nanase sad smile
 
-    scene backgroundblack with fade
     return
 
 label chapter2_classes:
@@ -283,7 +285,7 @@ label chapter2_classes:
             $ Vision += 1
             call chapter2_vision
 
-    scene backgroundblack with fade
+
 
     return
 
@@ -379,7 +381,6 @@ label chapter2_vigor:
     "Without a clear goal in mind, it's hard to keep everyone on task."
     "I'm still not sure what their even going to be tested on."
 
-    hide inukai
     show inukai talk1
     
     ik "Now, some of you might know this already, but Vigor was actually the second recognized major."
@@ -388,25 +389,23 @@ label chapter2_vigor:
     
     "Nooo, don't just say anyone. No one's raising their hand. God this is painful."
 
-    hide inukai talk1
     show inukai
 
     ik "Yes, Nagen."
 
     n "Because physical adaptations are easily observable."
 
-    hide inukai
     show inukai sad talk
+
     ik "Close. It's because being a Vigor major is an inherent part of who you are."
 
-    hide inukai sad talk
     show inukai concerned
+
     ik "It's not something you think about, or practice to achieve."
     ik "Because of that, we serve an important purpose for our community."
 
     "He sits down on the grass."
 
-    hide inukai concerned
     show inukai sad
 
     ik "People like Vi and Sato constantly have to defend and prove themselves in ways we don't have to."
@@ -416,13 +415,11 @@ label chapter2_vigor:
 
     sh "...why does that matter?"
 
-    hide inukai sad
     show inukai tired talk
 
     ik "The proficiency system only exists in Guwon."
     ik "If you have to leave for any reason, you're the only ones who can prove beyond a shadow of a doubt you can do things other people can't."
     
-    hide inukai tired talk
     show inukai frown
     
     ik "If that happens, don't forget to defend your fellow majors."
@@ -432,224 +429,24 @@ label chapter2_vigor:
     h "What do you mean it's only in Guwon? There has to be special people all over the world."
     h "Ichita was from the Philippines."
 
-    hide inukai frown
     show inukai sigh
 
     ik "You're right, but Guwon's the only place that recognizes those abilities as proficiencies."
    
-    hide shoma frown
-    show kitsune at left 
+    hide shoma
+    show kitsune at left
    
     k "Do they call it something else?"
     ik "They don't call it anything. It just is."
 
     hide kitsune
-    hide hiro judge
-    hide inukai sigh
+    hide hiro
+    hide inukai
 
     "We spent the rest of class interrogating him on what he meant by that, but it all circled back to the same answer."
     "Despite all evidence, Guwon was the only place that claimed people could be borderline superhuman."
     "My head hurts."
-    
-    scene backgroundblack with fade
-    return
 
-label chapter2_vision:
-
-    scene backgroundclass
-
-    "I don't know if I'll ever get used to class getting taught by the principal. I get she's plenty qualified, it's just weird."
-    "Jona is already drumming on his desk. I wish I could offer him something, but until we find his sketchbook, this is really the best he can do."
-    
-    show kietsu
-    
-    ki "Heck yeah, one-hundred percent retainment!"
-
-    show chisei sad talk1 at left
-
-    ch "Jona, is everything alright?"
-
-    show jona depressed at right
-
-    j "It's... I'll be fine. Not a big talking day."
-
-    "I forgot, most of these kids haven't shared a class with us before."
-
-    hide kietsu
-    hide chisei sad talk1
-    hide jona
-
-    show vivaldi
-
-    v "Alright everyone, settle down. Today we'll be talking about something... controversial."
-    "Everyone immediately quiets."
-    v "When trying to establish Vision as a major, abilities were sorted into two categories: internal and external."
-    v "It took having over a hundred people with external abilities before the classification of major was even considered."
-    
-    "Oh, she meant the boring kind of controversial."
-    
-    hide vivaldi
-    show vivaldi smile
-
-    v "Right now we're trying to push to have the subclassification of majors change and you will be an integral part of that."
-    
-    n "Why?"
-    
-    "I should have raised my hand, but there's so few people here, it hardly feels like class."
-    
-    n "Why doe it matter?"
-    
-    hide vivaldi smile
-    show vivaldi lecture
-
-    v "You remember last week's demonstration? How Chisei and I can influence each other's abilities?"
-    v "It's because we both can communicate with the dead."
-    "She gestures to Kietsu."
-    v "Is Siri or Alexa here with us?"
-    "Kietsu sits up, a little embarrassed to have people watch him scan an empty room."
-
-    show kietsu cringe at left 
-
-    ki "Yeah. On your class notes."
-    "She places her hand on the table."
-
-    hide vivaldi lecture
-    show vivaldi frown
-
-    v "I fell no presence, there's nothing I can speak with."
-
-    "She tries to lift her notecards, but they bend like something is sitting on them."
-
-    hide vivaldi frown
-    show vivaldi talk
-
-    v "And yet, as you can see, there clearly is something in the room with us."
-    "Kietsu sinks in his chair."
-    v "It is my belief, that while our abilities interact with the unseen, the unseen planes of existence are not always the same."
-    
-    show ichita talk1 at right
-
-    i "Does anyone else believe that?"
-
-    hide vivaldi talk
-    show vivaldi disappointed
-
-    v "I'm afraid more people have been concerned with identifying a cause."
-
-    hide ichita talk1
-    hide kietsu cringe
-
-    "She was the first vision Major; shouldn't she know what the cause is?"
-    
-    n "Did something cause your ability? Mutant spider? Acid bath?"
-
-    hide vivaldi disappointed
-    show vivaldi smile
-    
-    "That actually gets her to smile."
-    
-    v "It's hard to say. I speak to the dead by touching the body. As you can imagine, that is not a common scenario to stumble into."
-    
-    "She traces the pendant on her chest."
-
-    hide vivaldi smile
-    show vivaldi sad talk2
-    
-    v "I'm sure some of you are familiar with my first case, but... it was the hardest trial I had to speak at."
-   
-    hide vivaldi sad talk1
-   
-    #-CG Vivaldi on the stand-
-    v "I had first heard my father's voice at the funeral, all he could do was answer questions with on word,  and the second..."
-    #-Add a man to the stan-
-    v "Was when I was helping with the laundry. My uncle failed to notice a blood stain..."
-    v "It was the only evidence I had, and if no one believed me, I would have been forced to live with a murderer who watched me testify against him."
-    #-CG gone-
-
-    show vivaldi talk
-
-    v "After that, the dead could speak to me in short phrases."
-    v "With each new case I took the stronger my ability became."
-    v "There's no way of knowing if that's because I was getting older, or had more practice, or if it was from being put in the same traumatic position over and over again."
-    
-    show chisei sad talk2 at left
-
-    ch "...Why did you tell people? Everyone thought you were a genius detective."
-    ch "Why did you tell them you were talking to ghosts?"
-    
-    "After she came out as a psychic, everyone was quick to discredit her."
-    "Estella wanted nothing to do with her after that."
-    
-    hide vivaldi talk
-    show vivaldi sad talk1
-
-    v "...I wish I could say it was for something noble, like finding others like me."
-    v "The truth is, I realized even the dead have reasons to lie and I wanted to have a say in who I was forced to talk to."
-    v "They tried to bury my confession, so I went public. That's how I was scouted by the Karmic Gladiator."
-
-    hide chisei sad talk2
-    show ichita think at left
-
-    i "I don't remember any Vision majors in the Gladiators."
-
-    show jona happy at right 
-
-    j "There was Memento Mori, Lethe and I still say Babylon counts."
-    
-    n "You just assume she doesn't study the language before she understands it, that doesn't' mean-"
-    
-    "Everyone is staring."
-
-    hide vivaldi sad talk1
-    show vivaldi talk
-
-    v "In answer to your earlier question Mr. Tesuta, this is why I'm more interested in expanding the subclassifications."
-    v "I think our abilities are more complex than what others can see. Because Mr. Oshima is correct."
-    
-    hide ichita think
-
-    j "Ha! I told you, she just knew them!"
-    
-    n "But her card says she's an Intelligence major."
-
-    v "When was that card mode?"
-    
-    "I have to go way back, but when I bought the card, the packaging looked a specific way."
-    
-    n "Twenty five years ago."
-    
-    hide vivaldi talk
-    show vivaldi smile
-
-    v "And Vision was recognized as a proficiency when?"
-    
-    n "...Fifteen years ago..."
-    
-    "I hate when my memory gets used against me. Jona's got his mask on, but I can feel the vindictive glee radiating off him."
-    
-    v "Good to see you participating in class Mr. Tesuta."
-    
-    "That doesn't make me feel any better."
-    
-    hide vivaldi smile
-    show vivaldi talk
-    
-    v "So the classifications we have now involve death and a separate plane of existence." 
-    
-    i "What about... it's just mine's, I don't want to use other things, but real, living people."
-    
-    "The same would go for Jona. He sees auras around people."
-    "She makes another column on the black board."
-    
-    v "Fair point. Now, in order to make this a classification, we have to narrow down what qualities set it apart."
-    v "Involving the living is a good start. Any other ideas?"
-
-    hide vivaldi talk
-    hide jona happy
-    
-    "We throw around ideas up until the bell rings."
-
-    scene backgroundblack with fade
     return
 
 label chapter2_charm:
@@ -663,96 +460,81 @@ label chapter2_charm:
     sa "Establishing Charisma as a recognized major was no easy task."
     sa "Despite being more valuable then intelligence when it comes to achievement or fulfillment, it was hard to provide the numbers to back our claims."
     
-    hide sato
     show sato annoyed
     
     sa "That being, some individuals have a higher capacity to learn it than others. The other challenge was to identify Proficiencies within that Major."
     sa "It's easy to sort kids by their best subject, not so much by their best social quality." 
     
-    hide sato annoyed
     show sato dissatisfaction
     
     sa "If any of you are irritated by your assigned labels, that would be why. Quite frankly, we guessed."
     
     "The room flies into an uproar. I guess that's what happens when you tell a room full of passionate people they aren't as special as they thought."
     
-    hide sato dissatisfaction
-    show sato glare
+    show sato scold
 
-    sa "If you want to whine about your participation Proficiencies, save if for 'rate my teacher'."
+    sa "If you want to whine about your participation Proficiencies, save it for 'rate my teacher'."
     sa "The world does'nt owe you shit, if you want recognition for your abilities, you have to earn it."
     
-    hide sato glare
-    show sato scold
-    
-    sa "Otherwise you'll be written off as entitled after thoughts. It took twenty years of fighting for us to build up our Major to where it is today."
+    sa "Otherwise you'll be written off as entitled afterthoughts. It took twenty years of fighting for us to build up our Major to where it is today."
     sa "If you think for a second that that's all it takes you can ride those coat tails back home."
     
-    hide sato scold
     show sato impatient
     
-    sa "Being underestimated is in our blood, but it makes us silent killers. If you're descreate about the cords you have to play, you can work your way to the top."
+    sa "Being underestimated is in our blood, but it makes us silent killers. If you're discrete about the cords you have to play, you can work your way to the top."
     sa "Reveal your hand too soon and your strengths will become targets. Many a great Charisma Major found themselves thrown to the wolves over trivial matters."
     sa "You don't want to end up like Siren."
     
     "A hush falls over the class."
 
-    hide sato impatient
     show sato smile talk
     
     sa "Oh, so you all know her story?"
     sa "Funny, seeing as it happened before most of you were born. She was a financial genius."
     sa "Turning people's Proficiencies into superhero personas for profit."
-    sa "Her moto 'Anyone can be a hero' was the crown jewel in supporting the foundation of Charisma."
-    sa "After all, one woman uniting thirty-some 'heroes' in there days was a not worthy achievement."
+    sa "Her motto 'Anyone can be a hero' was the crown jewel in supporting the foundation of Charisma."
+    sa "After all, one woman uniting thirty-some 'heroes' in their days was a noteworthy achievement."
    
     "Her expression darkens as the tone of her voice turns grim."
 
-    hide sato smile talk
     show sato scold
    
     sa "Or perhaps you had a different story in mind. Does the term violent assault come to mind?"
     
-    hide sato scold
     show sato sigh
     
-    sa "In all the articles and stories that circulated five mention she was a manager and not a field agent of the Karmic Gladiators, two mentioned she was off duty and only one stated the crime happened while she was taking out the garbage of her own home."
+    sa "In all the articles and stories that circulated, five mention she was a manager and not a field agent of the Karmic Gladiators, two mentioned she was off duty and only one stated the crime happened while she was taking out the garbage of her own home."
     
-    hide sato sigh
     show sato scold
     
     sa "All of them bring up she was a Charisma Major, every last one of them. As soon as they found a chink in her armor, they tore her down and everything she worked for."
     
-    hide sato scold
-    show sato glare
+    show sato talk
 
     "With a cleansing breath, her features soften."
     
     sa "Anyone can spin a tragedy into a media circus with the proper technique."
     sa "You can either be the lion roaring on display or the ring master calling the shots."
     
-    hide sato glare
     show sato
     
     sa "Think about this carefully when choosing who you associate with."
-    sa "The easily swayed my seem like the best option, but you'll soon find they can just as easily turn against you."
+    sa "The easily swayed may seem like the best option, but you'll soon find they can just as easily turn against you."
     
     show dyre smirk at left
 
     d "Oh really, and who would you suggest?"
 
-    hide sato
     show sato smile talk
     
     sa "My circle is a multigenerational crime family."
     sa "If you're interested in attempting to find such individuals, there are plenty of future felons on campus to get you started. Choose wisely."
     
-    hide sato smile talk
-    hide dyre smirk
+    hide sato
+    hide dyre
     
     "No wonder she's so intimidating. Growing up around that kind of crowd must give you tough skin. And who's she calling future felons!?"
 
-    scene backgroundblack with fade
     return
 
 label chapter2_intel:
@@ -760,13 +542,13 @@ label chapter2_intel:
     scene backgroundlibrary
 
     "Momoko stands at the front of the library with a bunch of cobbled together wig heads. It's impressive how passionate she is about all this stuff."
-    "I don't really care about genetics or types of hair, but the way she goes on about is entertaining if nothing else."
+    "I don't really care about genetics or types of hair, but the way she goes on about it is entertaining if nothing else."
     
     show momoko happy
 
     mh "So, all these little scale things, if they're dry or damaged, won't let chemicals penetrate it the same way it will healthy hair."
 
-    "There's a small part of me that can't ignore she's teaching the class instead of Mr. Yaguichi. She basically had to beg him to sit in on her lectures."
+    "There's a small part of me that can't ignore she's teaching the class instead of Mr. Yaguchi. She basically had to beg him to sit in on her lectures."
     "Even then, he's ignoring her to work on other things. I know he claimed this is for us, but it really seems like he just wanted to get out of teaching us."
 
     hide momoko happy
@@ -775,11 +557,10 @@ label chapter2_intel:
     mh "Alright everyone take a head! This part's always been my favorite."
     mh "Uh, couldn't get my hands on any wigs made of real human hair for obvious reasons, so we'll have to make do with synthetics."
     
-    "Wait a minute... The only things coming in are things like food and soap"
+    "Wait a minute... The only things coming in are things like food and soap."
     
     n "Are these yours? Like {i}yours{/i} yours?"
     
-    hide momoko talk1
     show momoko talk2
 
     mh "Yeah? Go on, it's fine."
@@ -790,13 +571,12 @@ label chapter2_intel:
     
     show yaguchi at left
 
-    ya "Nagen, quite complaining and do the exercise."
+    ya "Nagen, quit complaining and do the exercise."
     
     "He wasn't even looking up."
     
     n "I'm not-"
     
-    hide yaguchi
     show yaguchi talk1 at left
     
     ya "Just take a damn head."
@@ -805,19 +585,19 @@ label chapter2_intel:
     show momoko sad talk
 
     mh "It's okay."
-    mh "If it's that bad, I just won't wear it and you and you can let me practice on you when my new dye's done."
+    mh "If it's that bad, I just won't wear it and you can let me practice on you when my new dye's done."
     
     kk "You're going to wear these?"
     
     mh "Yeah... why wouldn't I?"
     
-    "BBecause none of us know what we're doing?!"
+    "Because none of us know what we're doing?!"
     "I'm glad I'm not the only one freaked out by this."
 
     hide yaguchi talk1
     show yaguchi mad at left
 
-    "Mr. Yaguichi glares at me until I took a head back to my seat. I put the bleach on the hair, as the textbook says."
+    "Mr. Yaguchi glares at me until I took a head back to my seat. I put the bleach on the hair, as the textbook says."
     
     show mu cringe at right
 
@@ -971,13 +751,207 @@ label chapter2_intel:
     "I spent longer than I should have to muster the courage to go back in."
     "Thankfully no one said anything once I did. The rest of class was uneventful."
 
-    scene backgroundblack with fade
+    return
+
+label chapter2_vision:
+
+    scene backgroundclass
+
+    "I don't know if I'll ever get used to class getting taught by the principal. I get she's plenty qualified, it's just weird."
+    "Jona is already drumming on his desk. I wish I could offer him something, but until we find his sketchbook, this is really the best he can do."
+    
+    show kietsu
+    
+    ki "Heck yeah, one-hundred percent retainment!"
+
+    show chisei sad talk1 at left
+
+    ch "Jona, is everything alright?"
+
+    show jona depressed at right
+
+    j "It's... I'll be fine. Not a big talking day."
+
+    "I forgot, most of these kids haven't shared a class with us before."
+
+    hide kietsu
+    hide chisei sad talk1
+    hide jona
+
+    show vivaldi
+
+    v "Alright everyone, settle down. Today we'll be talking about something... controversial."
+    "Everyone immediately quiets."
+    v "When trying to establish Vision as a major, abilities were sorted into two categories: internal and external."
+    v "It took having over a hundred people with external abilities before the classification of major was even considered."
+    
+    "Oh, she meant the boring kind of controversial."
+    
+    hide vivaldi
+    show vivaldi smile
+
+    v "Right now we're trying to push to have the subclassification of majors change and you will be an integral part of that."
+    
+    n "Why?"
+    
+    "I should have raised my hand, but there's so few people here, it hardly feels like class."
+    
+    n "Why does it matter?"
+    
+    show vivaldi lecture
+
+    v "You remember last week's demonstration? How Chisei and I can influence each other's abilities?"
+    v "It's because we both can communicate with the dead."
+    "She gestures to Kietsu."
+    v "Is Siri or Alexa here with us?"
+    "Kietsu sits up, a little embarrassed to have people watch him scan an empty room."
+
+    show kietsu cringe at left 
+
+    ki "Yeah. On your class notes."
+    "She places her hand on the table."
+
+    hide vivaldi lecture
+    show vivaldi frown
+
+    v "I feel no presence, there's nothing I can speak with."
+
+    "She tries to lift her notecards, but they bend like something is sitting on them."
+
+    hide vivaldi frown
+    show vivaldi talk
+
+    v "And yet, as you can see, there clearly is something in the room with us."
+    "Kietsu sinks in his chair."
+    v "It is my belief, that while our abilities interact with the unseen, the unseen planes of existence are not always the same."
+    
+    show ichita talk1 at right
+
+    i "Does anyone else believe that?"
+
+    hide vivaldi talk
+    show vivaldi disappointed
+
+    v "I'm afraid more people have been concerned with identifying a cause."
+
+    hide ichita talk1
+    hide kietsu cringe
+
+    "She was the first vision Major; shouldn't she know what the cause is?"
+    
+    n "Did something cause your ability? Mutant spider? Acid bath?"
+
+    hide vivaldi disappointed
+    show vivaldi smile
+    
+    "That actually gets her to smile."
+    
+    v "It's hard to say. I speak to the dead by touching the body. As you can imagine, that is not a common scenario to stumble into."
+    
+    "She traces the pendant on her chest."
+
+    hide vivaldi smile
+    show vivaldi sad talk2
+    
+    v "I'm sure some of you are familiar with my first case, but... it was the hardest trial I had to speak at."
+   
+    hide vivaldi sad talk1
+   
+    #-CG Vivaldi on the stand-
+    v "I had first heard my father's voice at the funeral, all he could do was answer questions with one word,  and the second..."
+    #-Add a man to the stan-
+    v "Was when I was helping with the laundry. My uncle failed to notice a blood stain..."
+    v "It was the only evidence I had, and if no one believed me, I would have been forced to live with a murderer who watched me testify against him."
+    #-CG gone-
+
+    show vivaldi talk
+
+    v "After that, the dead could speak to me in short phrases."
+    v "With each new case I took the stronger my ability became."
+    v "There's no way of knowing if that's because I was getting older, or had more practice, or if it was from being put in the same traumatic position over and over again."
+    
+    show chisei sad talk2 at left
+
+    ch "...Why did you tell people? Everyone thought you were a genius detective."
+    ch "Why did you tell them you were talking to ghosts?"
+    
+    "After she came out as a psychic, everyone was quick to discredit her."
+    "Estella wanted nothing to do with her after that."
+    
+    hide vivaldi talk
+    show vivaldi sad talk1
+
+    v "...I wish I could say it was for something noble, like finding others like me."
+    v "The truth is, I realized even the dead have reasons to lie and I wanted to have a say in who I was forced to talk to."
+    v "They tried to bury my confession, so I went public. That's how I was scouted by the Karmic Gladiators."
+
+    hide chisei sad talk2
+    show ichita think at left
+
+    i "I don't remember any Vision majors in the Gladiators."
+
+    show jona happy at right 
+
+    j "There was Memento Mori, Lethe and I still say Babylon counts."
+    
+    n "You just assume she doesn't study the language before she understands it, that doesn't' mean-"
+    
+    "Everyone is staring."
+
+    hide vivaldi sad talk1
+    show vivaldi talk
+
+    v "In answer to your earlier question Mr. Tesuta, this is why I'm more interested in expanding the subclassifications."
+    v "I think our abilities are more complex than what others can see. Because Mr. Oshima is correct."
+    
+    hide ichita think
+
+    j "Ha! I told you, she just knew them!"
+    
+    n "But her card says she's an Intelligence major."
+
+    v "When was that card made?"
+    
+    "I have to go way back, but when I bought the card, the packaging looked a specific way."
+    
+    n "Twenty five years ago."
+    
+    hide vivaldi talk
+    show vivaldi smile
+
+    v "And Vision was recognized as a proficiency when?"
+    
+    n "...Fifteen years ago..."
+    
+    "I hate when my memory gets used against me. Jona's got his mask on, but I can feel the vindictive glee radiating off him."
+    
+    v "Good to see you participating in class Mr. Tesuta."
+    
+    "That doesn't make me feel any better."
+    
+    hide vivaldi smile
+    show vivaldi talk
+    
+    v "So the classifications we have now involve death and a separate plane of existence." 
+    
+    i "What about... it's just mine's, I don't want to use other things, but real, living people."
+    
+    "The same would go for Jona. He sees auras around people."
+    "She makes another column on the black board."
+    
+    v "Fair point. Now, in order to make this a classification, we have to narrow down what qualities set it apart."
+    v "Involving the living is a good start. Any other ideas?"
+
+    hide vivaldi talk
+    hide jona happy
+    
+    "We throw around ideas up until the bell rings."
 
     return
 
 label chapter2_day1_event2:
 
-    scene backgroundclass
+    scene backgroundclass with fade
 
     "After class, I go to meet up with Uitto and the others, hoping they might have some ideas. Unfortunately..."
 
@@ -1018,7 +992,7 @@ label chapter2_day1_event2:
 
     h "Can't you just draw on other paper?"
 
-    "Oh, if looks could kill, Hiro would be a deadman right now."
+    "Oh, if looks could kill, Hiro would be a dead man right now."
 
     hide jona frustrated
     show jona mad
@@ -1105,19 +1079,19 @@ label chapter2_day1_event2:
     "He hands it to me and I must say, it isn't a love note."
     "Someone used clippings to cobble together the following..."
 
-    #Image?
+    show image "images/Chapter2/letter.png"
+
     "I will strike during the dance."
 
-    hide uitto smirk
     show uitto at left
 
-    hide hiro
     show hiro beans at right
 
     h "You got a threat letter too..."
     h "Why didn't you show us this first instead of complaining about your sketchpad?"
 
-    hide jona relaxed
+    hide image "images/Chapter2/letter.png"
+
     show jona happy
 
     j "Because getting nasty notes isn't that unusual for me."
@@ -1149,24 +1123,84 @@ label chapter2_day1_event2:
 
     u "I guess. It's just... odd."
 
-    hide uitto yell
-    hide hiro curse
-    hide jona happy
-
-    scene backgroundblack with fade
-    return
-
-label Chapter2_pointandclick:
-
-    #Ch2 Investigation
-
-    #[BG: Tba]
+    hide uitto
+    hide hiro
+    hide jona
 
     "I don't have much to go off of other than this note. Maybe the culprit left us a clue?"
     g "Click on items to see if they lead to any clues."
 
-    #"Paper: 
-    
+    call chapter2_point_and_click
+
+    scene backgroundclass
+
+    show hiro at left
+    show jona depressed
+    show uitto at right
+
+    j "It's nice of you guys to worry, but honestly, I'd rather get my sketchbook back than bug other people about this."
+    j "Besides, you've got a lot to do for the masquerade ball."
+
+    n "It's not a ball! Where are you people getting that idea from?"
+
+    show hiro curse
+
+    h "Jona has a point, though. You're the student council president."
+    h "If everyone busts their asses getting ready and it sucks, people are going to wonder what you were doing."
+
+    g "During the investigation, you can ask fellow students to help with preparations for the dance. You know what they say in Colorado... \"One awesome party can fix everything.\""
+
+    n "I can make this work. I will make this work."
+
+    hide jona depressed
+    hide uitto
+    hide hiro curse
+
+    scene backgroundblack with fade
+    return
+
+label chapter2_point_and_click:
+    scene image "images/Chapter2/letter.png"
+    while check_paper is False or check_e is False or check_n is False or check_smudge is False:
+        call screen chapter2_point_and_click_objects
+        label chapter2_point_and_click_interaction_complete:
+            pass
+    return
+
+screen chapter2_point_and_click_objects:
+
+    modal True
+
+    if check_paper is False:
+        imagebutton:
+            focus_mask True
+            idle "images/Chapter2/letter/paperidle.png"
+            hover "images/Chapter2/letter/paper.png"
+            action SetVariable("check_paper", True), Hide("chapter2_point_and_click_objects"), Jump("chapter2_point_and_click_objects_paper")
+
+    if check_e is False:
+        imagebutton:
+            focus_mask True
+            idle "images/Chapter2/letter/Eidle.png"
+            hover "images/Chapter2/letter/E.png"
+            action SetVariable("check_e", True), Hide("chapter2_point_and_click_objects"), Jump("chapter2_point_and_click_objects_e")
+
+    if check_n is False:
+        imagebutton:
+            focus_mask True
+            idle "images/Chapter2/letter/Nidle.png"
+            hover "images/Chapter2/letter/N.png"
+            action SetVariable("check_n", True), Hide("chapter2_point_and_click_objects"), Jump("chapter2_point_and_click_objects_n")
+
+    if check_smudge is False:
+        imagebutton:
+            focus_mask True
+            idle "images/Chapter2/letter/Pinksmudgeidle.png"
+            hover "images/Chapter2/letter/Pinksmudge.png"
+            action SetVariable("check_smudge", True), Hide("chapter2_point_and_click_objects"), Jump("chapter2_point_and_click_objects_smudge")
+
+label chapter2_point_and_click_objects_paper:
+
     "It's thicker than normal paper, but it's too white to be cardstock."
 
     n "Jona, what color is your sketchbook paper?"
@@ -1179,10 +1213,10 @@ label Chapter2_pointandclick:
 
     "He's not listening, or maybe he's in denial. Still, it could be a page from his stolen sketchbook."
 
-    #+ SKetchbook Paper
+    jump chapter2_point_and_click_interaction_complete
 
-    #"Largest Letter: 
-    
+label chapter2_point_and_click_objects_e:
+
     "Something's sticking out from behind the letter. If I peel it back some..."
 
     u "What are you looking for, a secret code?"
@@ -1198,6 +1232,10 @@ label Chapter2_pointandclick:
     j "Then we know exactly who sent it."
 
     "Not exactly, but it's a start."
+
+    jump chapter2_point_and_click_interaction_complete
+
+label chapter2_point_and_click_objects_n:
 
     "'N' in Dacne: It's misspelled. Furthermore, it looks like these were all cut out from the same issue of a magazine."
 
@@ -1215,10 +1253,10 @@ label Chapter2_pointandclick:
 
     h "Please just tell me what it is or it's gonna bug me all day."
 
-    #Red Hair
+    jump chapter2_point_and_click_interaction_complete
 
-    #Pink Streak: 
-    
+label chapter2_point_and_click_objects_smudge:
+
     "What the hell is this? Uitto takes it from my hands and squints."
 
     u "Anyone got some glue or... wait, bingo!"
@@ -1243,37 +1281,7 @@ label Chapter2_pointandclick:
 
     "It's not a lot to go on, but at least we have somewhere to start."
 
-    #Nail polish chip
-
-    #[Return to Main Branch]
-
-    scene backgroundclass
-
-    show jona depressed
-    show uitto at right
-
-    j "It's nice of you guys to worry, but honestly, I'd rather get my sketchbook back than bug other people about this."
-    j "Besides, you've got a lot to do for the masquerade ball."
-
-    n "It's not a ball! Where are you people getting that idea from?"
-
-    show hiro curse at left
-
-    h "Jona has a point, though. You're the student council president."
-    h "If everyone busts their asses getting ready and it sucks, people are going to wonder what you were doing."
-
-    g "During the investigation, you can ask fellow students to help with preparations for the dance. You know what they say in Colorado... \"One awesome party can fix everything.\""
-
-    n "I can make this work. I will make this work."
-
-    hide jona depressed
-    hide uitto
-    hide hiro curse
-
-    scene backgroundblack with fade
-    return
-
-    #[Freetime Event]
+    jump chapter2_point_and_click_interaction_complete
 
 label chapter2_day1_event3:
 
@@ -1292,7 +1300,7 @@ label chapter2_day1_event3:
 
     ki "Not exactly."
 
-    "He shows us a white poster with hand written lettering."
+    "He shows us a white poster with handwritten lettering."
 
     hide hiro
     hide kietsu surprised
@@ -1449,7 +1457,7 @@ label chapter2_day1_night:
 
     scene background_Jfb1
 
-    Dark "He didn't used to be so secretive."
+    Dark "He didn't use to be so secretive."
 
     scene background_Jfb2
 
@@ -1471,14 +1479,14 @@ label chapter2_day1_night:
 
     "Unlike the rest of us, he had no one willing to claim him. Even if he wanted to leave the riots behind, we were all he had."
     "Now he's a ward of the state."
-    scene backgroundblack with fade
+
     return
 
 label chapter2_day2_event1:
         #Day 2 Event 1
     #BG: Nagen's Room Day]
 
-    scene backgroundroom
+    scene backgroundroom with fade
 
     kk "Good morning, broquittos!"
     kk "As many of you know, we got a masquerade rager coming up this Monday."
@@ -1556,7 +1564,7 @@ label chapter2_day2_event1:
     hide uitto
     show uitto sigh
 
-    u "You know; person A wants something from person B who wants something from person C, etcetera etcetera."
+    u "You know; person 'A' wants something from person 'B' who wants something from person 'C', etcetera etcetera."
     u "Luckily, most people want nice masks or outfits, but there's only a few people who know how to make that stuff."
     
     hide uitto sigh
@@ -1606,7 +1614,7 @@ label chapter2_day2_event1:
     show uitto sad talk
 
     u "Nagen, the only reason Rei still talks to us is that sense of classroom loyalty. The 'good kids' and 'bad kids' classes may be gone, but the pack mentality lingers."
-    u "We all went to the same elementary school, but I still feel like an outsider"
+    u "We all went to the same elementary school, but I still feel like an outsider."
     u "Maybe it's just me. Hiro seems to have been accepted by everyone again just fine and Jona's vibing as best he can."
 
     n "I know in my head that it doesn't matter if people here think we're cool but damn it, I'm sick of people feeling forced to talk to me."
@@ -1785,7 +1793,7 @@ label chapter2_day2_event2:
     n "Y-yeah."
 
     "I do my best to cut out all the pieces he'll need."
-    "By the end, there has to be at least one hundred pieces of carefully cut pieces amongst a pile of scraps."
+    "By the end, there has to be at least one hundred pieces of carefully cut fabrics amongst a pile of scraps."
 
     n "This is going to take forever to put together."
 

@@ -73,7 +73,7 @@ label chapter1_investigation_chisei_loop:
             ch "I did not pursue the matter further."
             ch "Though seeing as I have not gotten in trouble for wandering the grounds at night, I do not think it was something I triggered."
 
-            $ inventory.ShowClue(clue_mysterious_noise)
+            #$ inventory.ShowClue(clue_mysterious_noise)
 
             n "Have you heard it since?"
 
@@ -172,15 +172,27 @@ label chapter1_investigation_chisei_loop:
 
     "I came here looking for answers, but Chisei ended up cheering me up instead."
 
-    $ reveal_flag5 = True
+    $ fake_reveal_panel(1, "panel5")
 
-    call investigation_progress_update
+    call investigation_unlock
 
-    $ reveal5 = True
-    
-    call investigation_profile_set(profile_chisei, False)
-    call investigation_profile_set(profile_ichita, True)
-    call investigation_profile_set(profile_mu, True)
+    $ real_reveal_panel(1, "panel5")
+
+    $ set_profile_availability("chisei", c_i_profile_unavailable)
+
+    $ set_profile_availability("ichita", c_i_profile_available)
+    $ set_profile_availability("mu", c_i_profile_available)
+
+
+    #$ reveal_flag5 = True
+#
+    #call investigation_progress_update
+#
+    #$ reveal5 = True
+    #
+    #call investigation_profile_set(profile_chisei, False)
+    #call investigation_profile_set(profile_ichita, True)
+    #call investigation_profile_set(profile_mu, True)
 
     return
 
@@ -362,13 +374,21 @@ label chapter1_investigation_dyre_loop:
     "Just who does he think he is anyway? I can't let him get to me."
     "I should leave before I get caught."
 
-    $ reveal_flag5 = True
+    $ fake_reveal_panel(1, "panel5")
 
-    call investigation_progress_update
+    call investigation_unlock
 
-    $ reveal5 = True
-    
-    call investigation_profile_set(profile_dyre, False)
+    $ real_reveal_panel(1, "panel5")
+
+    $ set_profile_availability("dyre", c_i_profile_unavailable)
+
+    #$ reveal_flag5 = True
+#
+    #call investigation_progress_update
+#
+    #$ reveal5 = True
+    #
+    #call investigation_profile_set(profile_dyre, False)
 
     return #connect to loop
 
@@ -493,7 +513,7 @@ label chapter1_investigation_ichita_loop:
             i "I can't imagine it'd be too useful to anyone other than Kazz."
             
             #(+Found Phone)
-            $ inventory.ShowClue(clue_baton_pass)
+            #$ inventory.ShowClue(clue_baton_pass)
 
             hide ichita
 
@@ -554,13 +574,21 @@ label chapter1_investigation_ichita_loop:
 
     "Damn, that was fast. I should go now."
 
-    $ reveal_flag2 = True
+    $ fake_reveal_panel(1, "panel2")
 
-    call investigation_progress_update
+    call investigation_unlock
 
-    $ reveal2 = True
-    
-    call investigation_profile_set(profile_ichita, False)
+    $ real_reveal_panel(1, "panel2")
+
+    $ set_profile_availability("ichita", c_i_profile_unavailable)
+
+    #$ reveal_flag2 = True
+#
+    #call investigation_progress_update
+#
+    #$ reveal2 = True
+    #
+    #call investigation_profile_set(profile_ichita, False)
 
     return # connect to main game loop
 
@@ -762,8 +790,8 @@ label chapter1_investigation_kazz_loop:
 
             hide kazz
 
-            $ inventory.ShowClue(clue_brag)
-            $ inventory.ShowClue(clue_missing_phone)
+            ##$ inventory.ShowClue(clue_brag)
+            ##$ inventory.ShowClue(clue_missing_phone)
 
             #(+Brag, +PA Access, +Missing Phone)
 
@@ -798,8 +826,8 @@ label chapter1_investigation_kazz_loop:
                     hide kazz
 
                     #(+Cheer Ad, +PA Access)
-                    $ inventory.ShowClue(clue_pa_access)
-                    $ inventory.ShowClue(clue_cheerad)
+                    #$ inventory.ShowClue(clue_pa_access)
+                    #$ inventory.ShowClue(clue_cheerad)
 
                     jump chapter1_investigation_kazz_loop
 
@@ -858,7 +886,7 @@ label chapter1_investigation_kazz_loop:
 
                     hide kazz
                     
-                    $ inventory.ShowClue(clue_account)
+                    #$ inventory.ShowClue(clue_account)
 
                     jump chapter1_investigation_kazz_loop
 
@@ -892,7 +920,7 @@ label chapter1_investigation_kazz_loop:
     
                     "It would have been impossible to make it back in time without being out of breath."
 
-                    $ inventory.ShowClue(clue_friends_list)
+                    #$ inventory.ShowClue(clue_friends_list)
 
                     #[Rei, Mu, Yoku, Dyre, Taiga, Ichita, and Chisei have been removed from the suspect list]
                     "Rei, Mu, Yoku, Dyre, Taiga, Ichita and Chisei... they're not the one's responsible."
@@ -953,16 +981,28 @@ label chapter1_investigation_kazz_loop:
     "He shoves his hands in his pockets and leaves without another word."
     "Does he think I'm not going to fight or does he just not care what happens to me? Whatever, I got what I needed anyway."
     
-    $ reveal_flag1 = True
+    $ fake_reveal_panel(1, "panel1")
 
-    call investigation_progress_update
+    call investigation_unlock
 
-    $ reveal1 = True
+    $ real_reveal_panel(1, "panel1")
 
-    call investigation_profile_set(profile_kazz, False)
-    call investigation_profile_set(profile_momoko, True)
-    call investigation_profile_set(profile_mariko, True)
-    call investigation_profile_set(profile_chisei, True)
+    $ set_profile_availability("kazz", c_i_profile_unavailable)
+
+    $ set_profile_availability("chisei", c_i_profile_available)
+    $ set_profile_availability("mariko", c_i_profile_available)
+    $ set_profile_availability("momoko", c_i_profile_available)
+
+    #$ reveal_flag1 = True
+
+    #call investigation_progress_update
+
+    #$ reveal1 = True
+
+    #call investigation_profile_set(profile_kazz, False)
+    #call investigation_profile_set(profile_momoko, True)
+    #call investigation_profile_set(profile_mariko, True)
+    #call investigation_profile_set(profile_chisei, True)
 
     return
 
@@ -1269,7 +1309,7 @@ label chapter1_investigation_kitsune_loop:
 
                     hide kitsune
 
-                    $ inventory.ShowClue(clue_baton_pass)
+                    #$ inventory.ShowClue(clue_baton_pass)
 
             jump chapter1_investigation_kitsune_loop
 
@@ -1318,15 +1358,25 @@ label chapter1_investigation_kitsune_loop:
     "She hobbles out of the room and leaves me behind."
     "I'm the only one left in the library."
 
-    $ reveal_flag2 = True
-    $ reveal_flag3 = True
+    $ fake_reveal_panel(1, "panel2")
+    $ fake_reveal_panel(1, "panel3")
 
-    call investigation_progress_update
+    call investigation_unlock
 
-    $ reveal2 = True
-    $ reveal3 = True
-    
-    call investigation_profile_set(profile_kitsune, False)
+    $ real_reveal_panel(1, "panel2")
+    $ real_reveal_panel(1, "panel3")
+
+    $ set_profile_availability("kitsune", c_i_profile_unavailable)
+
+    #$ reveal_flag2 = True
+    #$ reveal_flag3 = True
+#
+    #call investigation_progress_update
+#
+    #$ reveal2 = True
+    #$ reveal3 = True
+    #
+    #call investigation_profile_set(profile_kitsune, False)
 
     return
 
@@ -1439,7 +1489,7 @@ label chapter1_investigation_momoko_loop:
             
             hide momoko
 
-            $ inventory.ShowClue(clue_account)
+            #$ inventory.ShowClue(clue_account)
 
             jump chapter1_investigation_momoko_loop
 
@@ -1477,16 +1527,26 @@ label chapter1_investigation_momoko_loop:
 
     "I should probably go."
 
-    $ reveal_flag5 = True
+    $ fake_reveal_panel(1, "panel5")
 
-    call investigation_progress_update
+    call investigation_unlock
 
-    #if reveal_flag5 is True:
-    $ reveal5 = True
+    $ real_reveal_panel(1, "panel5")
 
-    call investigation_profile_set(profile_momoko, False)
-    call investigation_profile_set(profile_setsuna, True)
-    call investigation_profile_set(profile_dyre, True)
+    $ set_profile_availability("momoko", c_i_profile_unavailable)
+
+    $ set_profile_availability("setsuna", c_i_profile_available)
+    $ set_profile_availability("dyre", c_i_profile_available)
+
+    #$ reveal_flag5 = True
+#
+    #call investigation_progress_update
+#
+    #$ reveal5 = True
+#
+    #call investigation_profile_set(profile_momoko, False)
+    #call investigation_profile_set(profile_setsuna, True)
+    #call investigation_profile_set(profile_dyre, True)
 
     return
 
@@ -1598,8 +1658,8 @@ label chapter1_investigation_mu_loop:
 
                     hide mu
 
-                    $ inventory.ShowClue(clue_brag)
-                    $ inventory.ShowClue(clue_prank)
+                    #$ inventory.ShowClue(clue_brag)
+                    #$ inventory.ShowClue(clue_prank)
 
                     jump chapter1_investigation_mu_loop
 
@@ -1627,7 +1687,7 @@ label chapter1_investigation_mu_loop:
 
                     mu "No. It can tell you what account it's logged into and what date it was added, but that's about it."
                     
-                    $ inventory.ShowClue(clue_account)
+                    #$ inventory.ShowClue(clue_account)
 
                     hide mu
 
@@ -1676,13 +1736,21 @@ label chapter1_investigation_mu_loop:
 
     hide mu
 
-    $ reveal_flag4 = True
+    $ fake_reveal_panel(1, "panel4")
 
-    call investigation_progress_update
+    call investigation_unlock
 
-    $ reveal4 = True
-    
-    call investigation_profile_set(profile_mu, False)
+    $ real_reveal_panel(1, "panel4")
+
+    $ set_profile_availability("mu", c_i_profile_unavailable)
+
+    #$ reveal_flag4 = True
+#
+    #call investigation_progress_update
+#
+    #$ reveal4 = True
+    #
+    #call investigation_profile_set(profile_mu, False)
 
     return #connect to loop
 
@@ -1944,7 +2012,7 @@ label chapter1_investigation_rei_loop:
             n "Don't forget to take care of yourself too."
             n "Coming here has been hard for everyone."
             #+ Cheer Ad
-            $ inventory.ShowClue(clue_cheerad)
+            #$ inventory.ShowClue(clue_cheerad)
 
             jump chapter1_investigation_rei_loop
 
@@ -2003,7 +2071,7 @@ label chapter1_investigation_rei_loop:
                     re "Besides, the two of them are friends, sort of..."
 
                     "Even she doesn't seem totally convinced by that explanation."
-                    $ inventory.ShowClue(clue_baton_pass)
+                    #$ inventory.ShowClue(clue_baton_pass)
 
                     hide rei
 
@@ -2101,13 +2169,21 @@ label chapter1_investigation_rei_loop:
 
     hide rei
 
-    $ reveal_flag3 = True
+    $ fake_reveal_panel(1, "panel3")
 
-    call investigation_progress_update
+    call investigation_unlock
 
-    $ reveal3 = True
-    
-    call investigation_profile_set(profile_rei, False)
+    $ real_reveal_panel(1, "panel3")
+
+    $ set_profile_availability("rei", c_i_profile_unavailable)
+
+    #$ reveal_flag3 = True
+#
+    #call investigation_progress_update
+#
+    #$ reveal3 = True
+    #
+    #call investigation_profile_set(profile_rei, False)
 
     return #connect to loop here
 
@@ -2193,7 +2269,7 @@ label RiseInterrogation1:
 
                     n "I see, thank you." #(+PA Access)
 
-                    $ inventory.ShowClue(clue_pa_access)
+                    #$ inventory.ShowClue(clue_pa_access)
 
                 "Missing Phone":
                     r "We have hardly been here a week and people have already started stealing? How distasteful."
@@ -2431,13 +2507,21 @@ label chapter1_investigation_setsuna_loop:
 
     hide setsuna
 
-    $ reveal_flag4 = True
+    $ fake_reveal_panel(1, "panel4")
 
-    call investigation_progress_update
+    call investigation_unlock
 
-    $ reveal4 = True
+    $ real_reveal_panel(1, "panel4")
 
-    call investigation_profile_set(profile_setsuna, False)
+    $ set_profile_availability("setsuna", c_i_profile_unavailable)
+
+    #$ reveal_flag4 = True
+#
+    #call investigation_progress_update
+#
+    #$ reveal4 = True
+#
+    #call investigation_profile_set(profile_setsuna, False)
 
     return #connect to game loop
 
@@ -2537,7 +2621,7 @@ label ShomaInterrogation1:
             "That's good to know. There was no login page in the computer's history and I doubt that someone would leave behind the search history if they were covering their tracks."
             "They must have some other way to log in."
 
-            $ inventory.ShowClue(clue_account)
+            #$ inventory.ShowClue(clue_account)
 
         "Leave":
             pass
@@ -2640,7 +2724,7 @@ label TaigaInterrogation1:
             "Isn't that extortion? Surely the school would have given her space to store club stuff if she asked."
             "Why go so far to rent someone else's locker?" 
 
-            $ inventory.ShowClue(clue_second_locker)
+            #$ inventory.ShowClue(clue_second_locker)
 
             n "Anyone else know about this?"
 
@@ -2768,7 +2852,7 @@ label YokuInvestigation1:
 
             hide yoku
 
-            $ inventory.ShowClue(clue_mysterious_noise)
+            #$ inventory.ShowClue(clue_mysterious_noise)
 
             jump YokuInvestigation1
 
@@ -2896,7 +2980,7 @@ label chapter1_investigation_mariko_loop:
             
             hide mariko
             
-            $ inventory.ShowClue(clue_cheerad)
+            #$ inventory.ShowClue(clue_cheerad)
 
             jump chapter1_investigation_mariko_loop
 
@@ -2972,10 +3056,18 @@ label chapter1_investigation_mariko_loop:
 
     hide mariko
 
-    call investigation_progress_update
+    call investigation_unlock
 
-    call investigation_profile_set(profile_mariko, False)
-    call investigation_profile_set(profile_kitsune, True)
-    call investigation_profile_set(profile_rei, True)
+    $ set_profile_availability("mariko", c_i_profile_unavailable)
+
+    $ set_profile_availability("kitsune", c_i_profile_available)
+    $ set_profile_availability("rei", c_i_profile_available)
+
+
+    #call investigation_progress_update
+#
+    #call investigation_profile_set(profile_mariko, False)
+    #call investigation_profile_set(profile_kitsune, True)
+    #call investigation_profile_set(profile_rei, True)
 
     return #connect to main game loop

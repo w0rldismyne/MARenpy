@@ -1,719 +1,598 @@
-default reveal_flag1 = False
-default reveal_flag2 = False
-default reveal_flag3 = False
-default reveal_flag4 = False
-default reveal_flag5 = False
-default reveal1 = False
-default reveal2 = False
-default reveal3 = False
-default reveal4 = False
-default reveal5 = False
+init python:
+    def panel_transforms(panel_state):
+        if panel_state is c_i_hidden:
+            return pitchblack
+        elif panel_state is c_i_to_be_revealed:
+            return reveal_panel
+        else:
+            return None
 
-default clipboard = True
+    def set_profile_availability(name, value):
+        i_profile_list[name]["available"] = value
+        return
 
-define temporary_investigation_flashback = False
+    def fake_reveal_panel(page, panel_name):
+        if i_chapter_layouts[current_chapter][page][panel_name]["state"] is c_i_hidden:
+            i_chapter_layouts[current_chapter][page][panel_name]["state"] = c_i_to_be_revealed
+        return
 
-define temporary_prevent_clipboard_animations = False
+    def real_reveal_panel(page, panel_name):
+        i_chapter_layouts[current_chapter][page][panel_name]["state"] = c_i_revealed
+        return
 
-define investigation_solve = False
+# Chapter Constant
+define c_chapter_prologue = 0
+define c_chapter_one = 1
+define c_chapter_two = 2
 
-python early:
-    class Profile:
-        def __init__(self, Identifier, Name, Order):
-            self._Identifier = Identifier
-            self._Name = Name
-            self._Order = Order
-            self._Show = False
+# Investigation States Constants
+define c_i_hidden = -1
+define c_i_to_be_revealed = 0
+define c_i_revealed = 1
 
-        @property
-        def ID(self):
-            return self._Identifier
-        
-        @property
-        def Name(self):
-            return self._Name
+# Profile States
+define c_i_profile_available = 1
+define c_i_profile_unavailable = 0
+define c_i_profile_hidden = -1
 
-        @property
-        def Order(self):
-            return self._Order
+# UI States
+define investigation_first_enter = True
+define profile_animation_lock = False
+default clipboard_opened_state = False
+define profile_page = 1
 
-        @property
-        def Visibility(self):
-            return self._Show
 
-        @Visibility.setter
-        def SetVisibility(self, value):
-            if value is True or value is False:
-                self._Show = value
-            else:
-                raise ValueError("Cannot be a value other than True or False.")
+define temp_culprit_list = False
 
-default profile_kazz = Profile("kazz", "Kazz Kataki", 0)
-default profile_momoko = Profile("momoko", "Momoko Yoshino", 1)
-default profile_mariko = Profile("mariko", "Mariko Genki", 2)
-default profile_chisei = Profile("chisei", "Chisei Jikoma", 3)
-default profile_setsuna = Profile("setsuna", "Setsuna Hori", 4)
-default profile_dyre = Profile("dyre", "Dyre Okami", 5)
-default profile_kitsune = Profile("kitsune", "Kitsune Sumizome", 6)
-default profile_rei = Profile("rei", "Rei Watabe", 7)
-default profile_ichita = Profile("ichita", "Ichita Kinoshita", 8)
-default profile_mu = Profile("mu", "Oshin Murakami", 9)
+# region UI Elements - Investigation
+image clipboard_idle:
+    "images/Interactables/clipboard_interactable.png"
 
-default all_clipboard_profiles = []
-default clipboard_profiles = []
-default profile_count = 0
-default profile_tab = 0
+image clipboard_hover:
+    "images/Interactables/clipboard_interactable.png"
+    matrixcolor BrightnessMatrix(0.1)
 
-# call investigation_profile_set(profile_mariko, True)
+image tab_pi_idle:
+    "images/Interactables/TabPinkFalse.png"
 
-label profile_cards_setup:
+image tab_pi_highlighted:
+    "images/Interactables/TabPinkFalse.png"
+    matrixcolor BrightnessMatrix(0.1)
 
-    $ all_clipboard_profiles = [profile_kazz, profile_momoko, profile_mariko, profile_chisei, profile_setsuna, profile_dyre, profile_kitsune, profile_rei, profile_ichita, profile_mu]
-    $ clipboard_profiles = []
+image tab_pi_active:
+    "images/Interactables/TabPink.png"
+
+image tab_bl_idle:
+    "images/Interactables/TabBlueFalse.png"
+
+image tab_bl_highlighted:
+    "images/Interactables/TabBlueFalse.png"
+    matrixcolor BrightnessMatrix(0.1)
+
+image tab_bl_active:
+    "images/Interactables/TabBlue.png"
+
+image tab_pu_idle:
+    "images/Interactables/TabPurpleFalse.png"
+
+image tab_pu_highlighted:
+    "images/Interactables/TabPurpleFalse.png"
+    matrixcolor BrightnessMatrix(0.1)
+
+image tab_pu_active:
+    "images/Interactables/TabPurple.png"
+
+image tab_gr_idle:
+    "images/Interactables/TabGreenFalse.png"
+
+image tab_gr_highlighted:
+    "images/Interactables/TabGreenFalse.png"
+    matrixcolor BrightnessMatrix(0.1)
+
+image tab_gr_active:
+    "images/Interactables/TabGreen.png"
+# endregion
+
+# region UI Elements - Profiles
+image i_profile_chisei:
+    "images/Interactables/chiseiprofile.png"
+
+image i_profile_chisei_hidden:
+    "images/Interactables/chiseiprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_chisei_inactive:
+    "images/Interactables/chiseiprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_dyre:
+    "images/Interactables/dyreprofile.png"
+
+image i_profile_dyre_hidden:
+    "images/Interactables/dyreprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_dyre_inactive:
+    "images/Interactables/dyreprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_ichita:
+    "images/Interactables/ichitaprofile.png"
+
+image i_profile_ichita_hidden:
+    "images/Interactables/ichitaprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_ichita_inactive:
+    "images/Interactables/ichitaprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_kazz:
+    "images/Interactables/kazzprofile.png"
+
+image i_profile_kazz_hidden:
+    "images/Interactables/kazzprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_kazz_inactive:
+    "images/Interactables/kazzprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_kietsu:
+    "images/Interactables/kietsuprofile.png"
+
+image i_profile_kietsu_hidden:
+    "images/Interactables/kietsuprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_kietsu_inactive:
+    "images/Interactables/kietsuprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_kitsune:
+    "images/Interactables/kitsuneprofile.png"
+
+image i_profile_kitsune_hidden:
+    "images/Interactables/kitsuneprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_kitsune_inactive:
+    "images/Interactables/kitsuneprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_mariko:
+    "images/Interactables/marikoprofile.png"
+
+image i_profile_mariko_hidden:
+    "images/Interactables/marikoprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_mariko_inactive:
+    "images/Interactables/marikoprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_momoko:
+    "images/Interactables/momokoprofile.png"
+
+image i_profile_momoko_hidden:
+    "images/Interactables/momokoprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_momoko_inactive:
+    "images/Interactables/momokoprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_mu:
+    "images/Interactables/muprofile.png"
+
+image i_profile_mu_hidden:
+    "images/Interactables/muprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_mu_inactive:
+    "images/Interactables/muprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_nanase:
+    "images/Interactables/nanaseprofile.png"
+
+image i_profile_nanase_hidden:
+    "images/Interactables/nanaseprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_nanase_inactive:
+    "images/Interactables/nanaseprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_setsuna:
+    "images/Interactables/setsunaprofile.png"
+
+image i_profile_setsuna_hidden:
+    "images/Interactables/setsunaprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_setsuna_inactive:
+    "images/Interactables/setsunaprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_shoma:
+    "images/Interactables/shomaprofile.png"
+
+image i_profile_shoma_hidden:
+    "images/Interactables/shomaprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_shoma_inactive:
+    "images/Interactables/shomaprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_taiga:
+    "images/Interactables/taigaprofile.png"
+
+image i_profile_taiga_hidden:
+    "images/Interactables/taigaprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_taiga_inactive:
+    "images/Interactables/taigaprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_rei:
+    "images/Interactables/reiprofile.png"
+
+image i_profile_rei_hidden:
+    "images/Interactables/reiprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_rei_inactive:
+    "images/Interactables/reiprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_rise:
+    "images/Interactables/riseprofile.png"
+
+image i_profile_rise_hidden:
+    "images/Interactables/riseprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_rise_inactive:
+    "images/Interactables/riseprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+
+image i_profile_yoku:
+    "images/Interactables/yokuprofile.png"
+
+image i_profile_yoku_hidden:
+    "images/Interactables/yokuprofile.png"
+    matrixcolor TintMatrix("#000000FF")
+
+image i_profile_yoku_inactive:
+    "images/Interactables/yokuprofile.png"
+    matrixcolor SaturationMatrix(0.1) * TintMatrix("#00000088")
+# endregion
+
+# region Panels
+# Ch 1 Panels
+define ch1_panel1 = "images/Interactables/Manga_Ch1_Panel_1.png"
+define ch1_panel2 = "images/Interactables/Manga_Ch1_Panel_2.png"
+define ch1_panel3 = "images/Interactables/Manga_Ch1_Panel_3.png"
+define ch1_panel4 = "images/Interactables/Manga_Ch1_Panel_4.png"
+define ch1_panel5 = "images/Interactables/Manga_Ch1_Panel_5.png"
+
+# Ch 2 Panels
+define ch2_p1panel1  = "images/Interactables/Manga_Ch2_Page1_Panel_1.png"
+define ch2_p1panel2  = "images/Interactables/Manga_Ch2_Page1_Panel_2.png"
+define ch2_p1panel3i = "images/Interactables/Manga_Ch2_Page1_Panel_3_I.png"
+define ch2_p1panel3r = "images/Interactables/Manga_Ch2_Page1_Panel_3_R.png"
+define ch2_p1panel4  = "images/Interactables/Manga_Ch2_Page1_Panel_4.png"
+define ch2_p1panel5  = "images/Interactables/Manga_Ch2_Page1_Panel_5.png"
+define ch2_p1panel6i = "images/Interactables/Manga_Ch2_Page1_Panel_6_I.png"
+define ch2_p1panel6r = "images/Interactables/Manga_Ch2_Page1_Panel_6_R.png"
+
+define ch2_p2panel1i  = "images/Interactables/Manga_Ch2_Page2_Panel_1_I.png"
+define ch2_p2panel1r  = "images/Interactables/Manga_Ch2_Page2_Panel_1_R.png"
+define ch2_p2panel2  = "images/Interactables/Manga_Ch2_Page2_Panel_2.png"
+define ch2_p2panel3 = "images/Interactables/Manga_Ch2_Page2_Panel_3.png"
+define ch2_p2panel4  = "images/Interactables/Manga_Ch2_Page2_Panel_4.png"
+define ch2_p2panel5  = "images/Interactables/Manga_Ch2_Page2_Panel_5.png"
+define ch2_p2panel6 = "images/Interactables/Manga_Ch2_Page2_Panel_6.png"
+
+# Ch 3 Panels
+# endregion
+
+# Investigation Layout Rules & Flags
+# EXTRA
+
+default i_chapter_layouts = {
+    c_chapter_one: {
+        1: {
+            "panel1": {"state": c_i_hidden, "image": ch1_panel1, "discovered": False, "group": None},
+            "panel2": {"state": c_i_hidden, "image": ch1_panel2, "discovered": False, "group": None},
+            "panel3": {"state": c_i_hidden, "image": ch1_panel3, "discovered": False, "group": None},
+            "panel4": {"state": c_i_hidden, "image": ch1_panel4, "discovered": False, "group": None},
+            "panel5": {"state": c_i_hidden, "image": ch1_panel5, "discovered": False, "group": None}
+        }
+    },
+
+    c_chapter_two: {
+        1: {
+            "panel1":  {"state": c_i_hidden, "image": ch2_p1panel1,  "discovered": False, "group": None},
+            "panel2":  {"state": c_i_hidden, "image": ch2_p1panel2,  "discovered": False, "group": None},
+            "panel3":  {"state": c_i_hidden, "image": ch2_p1panel3i, "discovered": False, "group": 213},
+            "panel4":  {"state": c_i_hidden, "image": ch2_p1panel4,  "discovered": False, "group": None},
+            "panel5":  {"state": c_i_hidden, "image": ch2_p1panel5,  "discovered": False, "group": None},
+            "panel6":  {"state": c_i_hidden, "image": ch2_p1panel6i, "discovered": False, "group": 216}
+        },
+        2: {
+            "panel1":  {"state": c_i_hidden, "image": ch2_p2panel1i, "discovered": False, "group": 221},
+            "panel2":  {"state": c_i_hidden, "image": ch2_p2panel2,  "discovered": False, "group": None},
+            "panel3":  {"state": c_i_hidden, "image": ch2_p2panel3,  "discovered": False, "group": None},
+            "panel4":  {"state": c_i_hidden, "image": ch2_p2panel4,  "discovered": False, "group": None},
+            "panel5":  {"state": c_i_hidden, "image": ch2_p2panel5,  "discovered": False, "group": None},
+            "panel6":  {"state": c_i_hidden, "image": ch2_p2panel6,  "discovered": False, "group": None}
+        }
+    }
+}
+
+default i_tab_layouts = {
+    "pink":   {"number": 1, "idle": "tab_pi_idle", "hovered": "tab_pi_highlighted", "selected": "tab_pi_active"},
+    "blue":   {"number": 2, "idle": "tab_bl_idle", "hovered": "tab_bl_highlighted", "selected": "tab_bl_active"},
+    "purple": {"number": 3, "idle": "tab_pu_idle", "hovered": "tab_pu_highlighted", "selected": "tab_pu_active"},
+    "green":  {"number": 4, "idle": "tab_gr_idle", "hovered": "tab_gr_highlighted", "selected": "tab_gr_active"}
+}
+
+default i_profile_list = {
+    "chisei":  {"name":"Chisei Jikoma",    "available": c_i_profile_unavailable},
+    "dyre":    {"name":"Dyre Okami",       "available": c_i_profile_unavailable},
+    "ichita":  {"name":"Ichita Kinoshita", "available": c_i_profile_unavailable},
+    "kazz":    {"name":"Kazz Kataki",      "available": c_i_profile_unavailable},
+    "kietsu":  {"name":"Kietsu Himura",    "available": c_i_profile_hidden},
+    "kitsune": {"name":"Kitsune Sumizome", "available": c_i_profile_unavailable},
+    "mariko":  {"name":"Mariko Genki",     "available": c_i_profile_unavailable},
+    "momoko":  {"name":"Momoko Yoshino",   "available": c_i_profile_unavailable},
+    "nanase":  {"name":"Nanase Keisan",    "available": c_i_profile_hidden},
+    "mu":      {"name":"Oshin Murakami",   "available": c_i_profile_unavailable},
+    "rei":     {"name":"Rei Watabe",       "available": c_i_profile_unavailable},
+    "rise":    {"name":"Rise Kisaki",      "available": c_i_profile_hidden},
+    "setsuna": {"name":"Setsuna Hori",     "available": c_i_profile_unavailable},
+    "shoma":   {"name":"Shoma Nishimoto",  "available": c_i_profile_hidden},
+    "taiga":   {"name":"Taiga Sakurai",    "available": c_i_profile_hidden},
+    "yoku":    {"name":"Yoku Teki",        "available": c_i_profile_hidden}
+}
+
+define i_profile_layouts = {
+    1: {"y":-0.69, "y2": 0.21},
+    2: {"y":-0.52, "y2": 0.38},
+    3: {"y":-0.35, "y2": 0.55},
+    4: {"y":-0.18, "y2": 0.72}
+}
+
+# Progress
+default investigation_solve = False
+default current_chapter = None
+define current_i_page = 1
+
+label investigation_board:
+
+    $ investigation_first_enter = True
+    $ clipboard_opened_state = False
+
+    $ temp_culprit_list = False
+
+    call investigation_check
+    call screen investigation_board()
+
+label investigation_check:
+    python:
+        investigation_solve = all(
+            data["discovered"] is True
+            for page, panels in i_chapter_layouts[current_chapter].items()
+            for panel, data in panels.items()
+        )
 
     return
 
-label investigation_profile_set(object, value = False):
+label investigation_unlock:
+    $ investigation_first_enter = True
+    $ clipboard_opened_state = False
 
-    $ all_clipboard_profiles[all_clipboard_profiles.index(object)].SetVisibility = value
+    $ temp_culprit_list = False
 
+    show screen investigation_board()
+    call screen block_interaction()
+
+    hide screen investigation_board
+    
     return
 
+screen block_interaction():
+    modal True
+    imagebutton:
+        idle "#00000000"
+        hover "#00000000"
+        action Return()
 
-label investigation_progress_update:
+screen investigation_board():
 
-    # Reset clipboard animation
-    $ clipboard = True
-    $ temporary_investigation_flashback = True
-
-    show screen investigate
-
-    window hide
-    pause
-
-    hide screen investigate
-
-    $ temporary_investigation_flashback = False
-
-    return
-
-label investigation_interaction_mode:
-
-    $ temporary_prevent_clipboard_animations = False
-    call screen investigate
-
-label investigation_interaction_clipboard_mode:
-
-    show screen investigate
-    call screen clipboard
-
-screen investigate():
     modal False
 
     image "#FFFFFF"
-
-    if temporary_investigation_flashback is False:
-        textbutton "Back":
-            xpos 0.1
-            ypos 0.1
-            xanchor 0.5
-            yanchor 0.5
-            text_size 55
-            action Jump("freetime")
-
-        textbutton "SOLVE":
-            xpos 0.5
-            ypos 0.85
-            xanchor 0.5
-            yanchor 0.5
-            text_size 55
-            if reveal1 is True and reveal2 is True and reveal3 is True and reveal4 is True and reveal5 is True and chapter1_interrogation_chance is True:
-                action SetVariable("investigation_solve", True), renpy.restart_interaction
-            if investigation_solve is True:
-                action SetVariable("investigation_solve", False), renpy.restart_interaction
-    
-        if investigation_solve is True and chapter1_interrogation_chance is True:
-            vbox:
-                xpos 1.0
-                ypos 0.5
-                xanchor 0.25
-                yanchor 0.5
-
-                textbutton "Chisei":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-    
-                textbutton "Dyre":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Hiro":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Ichita":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Jona":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Kazz":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-            
-                textbutton "Kietsu":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Kitsune":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Mariko":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_interrogation")
-
-                textbutton "Momoko":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Mu":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Nanase":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Rei":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Rise":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Setsuna":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Shoma":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Taiga":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Uitto":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-
-                textbutton "Yoku":
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
 
     image "images/Interactables/Manga Background.png":
         xpos 0.5
         xanchor 0.5
 
-    image "images/Interactables/Manga_Ch1_Panel_1.png":
-        xpos 0.5
-        xanchor 0.5
+    for panels, data in i_chapter_layouts[current_chapter][current_i_page].items():
+    
+        $ new_image = data["image"]
 
-    image "images/Interactables/Manga_Ch1_Panel_2.png":
-        xpos 0.5
-        xanchor 0.5
+        # REorganize layout by each slot -> 1 image only
 
-    image "images/Interactables/Manga_Ch1_Panel_3.png":
-        xpos 0.5
-        xanchor 0.5
-
-    image "images/Interactables/Manga_Ch1_Panel_4.png":
-        xpos 0.5
-        xanchor 0.5
-
-    image "images/Interactables/Manga_Ch1_Panel_5.png":
-        xpos 0.5
-        xanchor 0.5
-
-    if reveal1 is False:
-        image "images/Interactables/Manga_Ch1_Panel_1black.png":
+        image new_image:
             xpos 0.5
             xanchor 0.5
-            if reveal_flag1 is True:
-                at ch1_inv_img_1
+            at panel_transforms(data["state"])
 
-    if reveal2 is False:
-        image "images/Interactables/Manga_Ch1_Panel_2black.png":
-            xpos 0.5
-            xanchor 0.5
-            if reveal_flag2 is True:
-                at ch1_inv_img_2
+    textbutton "O":
+        xpos 0.7625
+        ypos 0.7125
+        xanchor 0.5
+        yanchor 0.5
+        text_size 55
+        if current_i_page == 1:
+            action SetVariable("current_i_page", 2), renpy.restart_interaction
+        else:
+            action SetVariable("current_i_page", 1), renpy.restart_interaction
 
-    if reveal3 is False:
-        image "images/Interactables/Manga_Ch1_Panel_3black.png":
-            xpos 0.5
-            xanchor 0.5
-            if reveal_flag3 is True:
-                at ch1_inv_img_3
+    textbutton "S O L V E":
+        xpos 0.5
+        ypos 0.85
+        xanchor 0.5
+        yanchor 0.5
+        text_size 55
+        if investigation_solve:
+            action SetVariable("temp_culprit_list", True), renpy.restart_interaction
 
-    if reveal4 is False:
-        image "images/Interactables/Manga_Ch1_Panel_4black.png":
-            xpos 0.5
-            xanchor 0.5
-            if reveal_flag4 is True:
-                at ch1_inv_img_4
+    if temp_culprit_list:
+        vbox:
+            xpos 1.0
+            ypos 0.5
+            xanchor 0.1
+            yanchor 0.5
+
+            for character, data in i_profile_list.items():
+                textbutton data["name"]:
+                    xanchor 1.0
+                    yanchor 0.5
+                    text_size 50
+                    action Jump("chapter1_investigation_fail")
+                    if character == "mariko":
+                        action Jump("chapter1_interrogation")
+
+    use investigation_board_interactives
+
+screen investigation_board_interactives():
+    # buttons and clipboards
+
+    # For Closing Animation
+    #default clipboard_reset = True
+
+    # Profile Variables
+    default profile_count = None
+    default profile_position = None
+    default profile_y = None
+    default profile_y2 = None
+    default new_image = None
+
+    default start = None
+    default end = None
+
+    image "images/Interactables/clipboard.png":
+        xpos 0.5
+        ypos 0.1
+        xanchor 0.5
+        yanchor 1.0
+        if not investigation_first_enter:
+            at (vertical_slide(0.1, 1.0, 1.5) if clipboard_opened_state else vertical_slide(1.0, 0.1, 1.5))
+
+    imagebutton:
+        xpos 0.5
+        ypos 0.1
+        xanchor 0.5
+        yanchor 1.0
+        focus_mask True
+        idle "clipboard_idle"
+        hover "clipboard_hover"
+
+        action [
+            If(clipboard_opened_state,
+                false = SetVariable("profile_page", 1)
+            ),
+
+            ToggleVariable("clipboard_opened_state"), SetVariable("investigation_first_enter", False), SetVariable("profile_animation_lock", False),
             
-    if reveal5 is False:
-        image "images/Interactables/Manga_Ch1_Panel_5black.png":
-            xpos 0.5
-            xanchor 0.5
-            if reveal_flag5 is True:
-                at ch1_inv_img_5
+            renpy.restart_interaction
+        ]
 
-    if temporary_investigation_flashback is False:
+        if not investigation_first_enter:
+            at (vertical_slide(0.1, 1.0, 1.5) if clipboard_opened_state else vertical_slide(1.0, 0.1, 1.5))
+
+    for tab, data in i_tab_layouts.items():
         imagebutton:
             xpos 0.5
             ypos 0.1
             xanchor 0.5
             yanchor 1.0
+
             focus_mask True
-            idle "images/Interactables/clipboard.png"
-            hover "images/Interactables/clipboard.png"
-            if clipboard is False:
-                at clipboard_slide_up
-            action SetVariable("clipboard", True), SetVariable("profile_tab", 0), Jump("investigation_interaction_clipboard_mode")
+            idle data["idle"]
+            hover data["hovered"]
+            insensitive data["selected"]
 
-        $ profile_count = 0
-        $ clipboard_profiles.clear()
+            if profile_page is not data["number"]:
+                action SetVariable("profile_page", data["number"]), SetVariable("profile_animation_lock", True), renpy.restart_interaction
 
-        for profile in all_clipboard_profiles:
-            if (profile.Visibility is True):
-                $ clipboard_profiles.append(profile)
-                $ profile_count += 1
-
-        $ profile_tracker = 4 * profile_tab
-
-        if profile_count > 4:
-            imagebutton:
-                xpos 0.5
-                ypos 0.1
-                xanchor 0.5
-                yanchor 1.0
-                if profile_tab == 0:
-                    idle "images/Interactables/TabPink.png"
-                else:
-                    idle "images/Interactables/TabPinkFalse.png"
-                if clipboard is False:
-                    at clipboard_slide_up
-
-            imagebutton:
-                xpos 0.5
-                ypos 0.1
-                xanchor 0.5
-                yanchor 1.0
-                if profile_tab == 1:
-                    idle "images/Interactables/TabBlue.png"
-                else:
-                    idle "images/Interactables/TabBlueFalse.png"
-                if clipboard is False:
-                    at clipboard_slide_up
-
-        if profile_count > 8:
-            imagebutton:
-                xpos 0.5
-                ypos 0.1
-                xanchor 0.5
-                yanchor 1.0
-                if profile_tab == 2:
-                    idle "images/Interactables/TabPurple.png"
-                else:
-                    idle "images/Interactables/TabPurpleFalse.png"
-                if clipboard is False:
-                    at clipboard_slide_up
-
-        if profile_count > 12:
-            imagebutton:
-                xpos 0.5
-                ypos 0.1
-                xanchor 0.5
-                yanchor 1.0
-                if profile_tab == 3:
-                    idle "images/Interactables/TabGreen.png"
-                else:
-                    idle "images/Interactables/TabGreenFalse.png"
-                if clipboard is False:
-                    at clipboard_slide_up
-
-        if (profile_tracker < profile_count):
-            image f"images/Interactables/{clipboard_profiles[profile_tracker].ID}profile.png":
-                xpos 608
-                ypos -0.69
-                xanchor 0.0
-                yanchor 0.5
-
-                if clipboard is False:
-                    at profile_1_slide_up
-
-            text f"{clipboard_profiles[profile_tracker].Name}":
-                xpos 1338
-                ypos -0.69
-                xanchor 1.0
-                yanchor 0.5
-                size 60
-                font "true-crimes.ttf"
-                color '#888888'
-
-                if clipboard is False:
-                    at profile_1_slide_up
-
-        if (profile_tracker + 1 < profile_count):
-            image f"images/Interactables/{clipboard_profiles[profile_tracker + 1].ID}profile.png":
-                xpos 608
-                ypos -0.52
-                xanchor 0.0
-                yanchor 0.5
-
-                if clipboard is False:
-                    at profile_2_slide_up
-
-            text f"{clipboard_profiles[profile_tracker + 1].Name}":
-                xpos 1338
-                ypos -0.52
-                xanchor 1.0
-                yanchor 0.5
-                size 60
-                font "true-crimes.ttf"
-                color '#888888'
-
-                if clipboard is False:
-                    at profile_2_slide_up
-
-        if (profile_tracker + 2 < profile_count):
-            image f"images/Interactables/{clipboard_profiles[profile_tracker + 2].ID}profile.png":
-                xpos 608
-                ypos -0.35
-                xanchor 0.0
-                yanchor 0.5
-
-                if clipboard is False:
-                    at profile_3_slide_up
-
-            text f"{clipboard_profiles[profile_tracker + 2].Name}":
-                xpos 1338
-                ypos -0.35
-                xanchor 1.0
-                yanchor 0.5
-                size 60
-                font "true-crimes.ttf"
-                color '#888888'
-
-                if clipboard is False:
-                    at profile_3_slide_up
-
-        if (profile_tracker + 3 < profile_count):
-            image f"images/Interactables/{clipboard_profiles[profile_tracker + 3].ID}profile.png":
-                xpos 608
-                ypos -0.18
-                xanchor 0.0
-                yanchor 0.5
-
-                if clipboard is False:
-                    at profile_4_slide_up
-
-            text f"{clipboard_profiles[profile_tracker + 3].Name}":
-                xpos 1338
-                ypos -0.18
-                xanchor 1.0
-                yanchor 0.5
-                size 60
-                font "true-crimes.ttf"
-                color '#888888'
-
-                if clipboard is False:
-                    at profile_4_slide_up
-
-screen clipboard():
-
-    modal True
-
-    textbutton "Back":
-        xpos 0.1
-        ypos 0.1
-        xanchor 0.5
-        yanchor 0.5
-        text_size 55
-        action SetVariable("clipboard", False), Jump("investigation_interaction_mode"), Hide("investigate")
-
-    frame:
-
-        background None
-
-        image "images/Interactables/clipboard.png"
-
-        xpos 0.5
-        ypos 1.0
-        xanchor 0.5
-        yanchor 1.0
-
-        if clipboard is True and temporary_prevent_clipboard_animations is False:
-            at clipboard_slide_down
+            if not investigation_first_enter:
+                at (vertical_slide(0.1, 1.0, 1.5) if clipboard_opened_state else vertical_slide(1.0, 0.1, 1.5))
 
     $ profile_count = 0
-    $ clipboard_profiles.clear()
+    $ start = (profile_page - 1) * 4
+    $ end = profile_page * 4
 
-    for profile in all_clipboard_profiles:
-        if (profile.Visibility is True):
-            $ clipboard_profiles.append(profile)
-            $ profile_count += 1
-
-    if profile_count > 4:
-        imagebutton:
-            xpos 0.5
-            ypos 1.0
-            xanchor 0.5
-            yanchor 1.0
-            if profile_tab == 0:
-                idle "images/Interactables/TabPink.png"
-            else:
-                idle "images/Interactables/TabPinkFalse.png"
-                hover "images/Interactables/TabPinkFalse_Highlight.png"
-                action SetVariable("profile_tab", 0), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
-            focus_mask True
-            if clipboard is True and temporary_prevent_clipboard_animations is False:
-                at clipboard_slide_down
-
-        imagebutton:
-            xpos 0.5
-            ypos 1.0
-            xanchor 0.5
-            yanchor 1.0
-            if profile_tab == 1:
-                idle "images/Interactables/TabBlue.png"
-            else:
-                idle "images/Interactables/TabBlueFalse.png"
-                hover "images/Interactables/TabBlueFalse_Highlight.png"
-                action SetVariable("profile_tab", 1), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
-            focus_mask True
-            if clipboard is True and temporary_prevent_clipboard_animations is False:
-                at clipboard_slide_down
-
-    if profile_count > 8:
-        imagebutton:
-            xpos 0.5
-            ypos 1.0
-            xanchor 0.5
-            yanchor 1.0
-            if profile_tab == 2:
-                idle "images/Interactables/TabPurple.png"
-            else:
-                idle "images/Interactables/TabPurpleFalse.png"
-                hover "images/Interactables/TabPurpleFalse_Highlight.png"
-                action SetVariable("profile_tab", 2), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
-            focus_mask True
-            if clipboard is True and temporary_prevent_clipboard_animations is False:
-                at clipboard_slide_down
-
-    if profile_count > 12:
-        imagebutton:
-            xpos 0.5
-            ypos 1.0
-            xanchor 0.5
-            yanchor 1.0
-            if profile_tab == 3:
-                idle "images/Interactables/TabGreen.png"
-            else:
-                idle "images/Interactables/TabGreenFalse.png"
-                hover "images/Interactables/TabGreenFalse_Highlight.png"
-                action SetVariable("profile_tab", 3), SetVariable("temporary_prevent_clipboard_animations", True), renpy.restart_interaction
-            focus_mask True
-            if clipboard is True and temporary_prevent_clipboard_animations is False:
-                at clipboard_slide_down
-
-    $ profile_tracker = 4 * profile_tab
-
-    if (profile_tracker < profile_count):
-        image f"images/Interactables/{clipboard_profiles[profile_tracker].ID}profile.png":
-            xpos 608
-            ypos 0.21
-            xanchor 0.0
-            yanchor 0.5
-
-            if clipboard is True and temporary_prevent_clipboard_animations is False:
-                at profile_1_slide_down
-
-        textbutton f"{clipboard_profiles[profile_tracker].Name}":
-            xpos 1344
-            ypos 0.21
-            xanchor 1.0
-            yanchor 0.5
-            text_size 60
-            action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker].ID}")
+    for name, data in i_profile_list.items():
+        $ profile_count += 1
+        if start < profile_count <= end:
+            $ profile_position = ((profile_count - 1) % 4) + 1
+            $ profile_y = i_profile_layouts[profile_position]["y"]
+            $ profile_y2 = i_profile_layouts[profile_position]["y2"]
             
-            if clipboard is True and temporary_prevent_clipboard_animations is False:
-                at profile_1_slide_down
+            if data["available"] is c_i_profile_available:
+                $ new_image = "i_profile_" + "[name]"
+            elif data["available"] is c_i_profile_unavailable:
+                $ new_image = "i_profile_" + "[name]" + "_inactive"
+            else:
+                $ new_image = "i_profile_" + "[name]" + "_hidden"
 
-    if (profile_tracker + 1 < profile_count):
-        image f"images/Interactables/{clipboard_profiles[profile_tracker + 1].ID}profile.png":
-            xpos 608
-            ypos 0.38
-            xanchor 0.0
-            yanchor 0.5
+            image new_image:
+                xpos 608
+                if clipboard_opened_state:
+                    ypos profile_y2
+                else:
+                    ypos profile_y
+                xanchor 0.0
+                yanchor 0.5
 
-            if clipboard is True and temporary_prevent_clipboard_animations is False:
-                at profile_2_slide_down
+                if not investigation_first_enter:
+                    at (vertical_slide(profile_y, profile_y2, 1.5) if clipboard_opened_state else vertical_slide(profile_y2, profile_y, 1.5))
+                
+                if profile_animation_lock:
+                    at None
 
-        textbutton f"{clipboard_profiles[profile_tracker + 1].Name}":
-            xpos 1344
-            ypos 0.38
-            xanchor 1.0
-            yanchor 0.5
-            text_size 60
-            action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker + 1].ID}")
-            
-            if clipboard is True and temporary_prevent_clipboard_animations is False:
-                at profile_2_slide_down
+            textbutton data["name"]:
+                xpos 1344
+                if clipboard_opened_state:
+                    ypos profile_y2
+                else:
+                    ypos profile_y
+                xanchor 1.0
+                yanchor 0.5
+                text_size 60
 
-    if (profile_tracker + 2 < profile_count):
-        image f"images/Interactables/{clipboard_profiles[profile_tracker + 2].ID}profile.png":
-            xpos 608
-            ypos 0.55
-            xanchor 0.0
-            yanchor 0.5
+                if data["available"] is c_i_profile_available:
+                    action Jump(f"chapter{current_chapter}_investigation_{name}")
+                else:
+                    action None
 
-            if clipboard is True and temporary_prevent_clipboard_animations is False:
-                at profile_3_slide_down
+                if not investigation_first_enter:
+                    at (vertical_slide(profile_y, profile_y2, 1.5) if clipboard_opened_state else vertical_slide(profile_y2, profile_y, 1.5))
+                
+                if profile_animation_lock:
+                    at None
 
-        textbutton f"{clipboard_profiles[profile_tracker + 2].Name}":
-            xpos 1344
-            ypos 0.55
-            xanchor 1.0
-            yanchor 0.5
-            text_size 60
-            action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker + 2].ID}")
-            
-            if clipboard is True and temporary_prevent_clipboard_animations is False:
-                at profile_3_slide_down
+transform reveal_panel:
+    matrixcolor TintMatrix("#000000FF")
+    easein 2.0 matrixcolor TintMatrix("#00000000")
 
-    if (profile_tracker + 3 < profile_count):
-        image f"images/Interactables/{clipboard_profiles[profile_tracker + 3].ID}profile.png":
-            xpos 608
-            ypos 0.72
-            xanchor 0.0
-            yanchor 0.5
-
-            if clipboard is True and temporary_prevent_clipboard_animations is False:
-                at profile_4_slide_down
-
-        textbutton f"{clipboard_profiles[profile_tracker + 3].Name}":
-            xpos 1344
-            ypos 0.72
-            xanchor 1.0
-            yanchor 0.5
-            text_size 60
-            action Hide("investigate"), Jump(f"chapter1_investigation_{clipboard_profiles[profile_tracker + 3].ID}")
-            
-            if clipboard is True and temporary_prevent_clipboard_animations is False:
-                at profile_4_slide_down
-
-
-transform ch1_inv_img_1:
-    alpha 1.0
-    easein 2.0 alpha 0.0
-
-transform ch1_inv_img_2:
-    alpha 1.0
-    easein 2.0 alpha 0.0
-
-transform ch1_inv_img_3:
-    alpha 1.0
-    easein 2.0 alpha 0.0
-
-transform ch1_inv_img_4:
-    alpha 1.0
-    easein 2.0 alpha 0.0
-
-transform ch1_inv_img_5:
-    alpha 1.0
-    easein 2.0 alpha 0.0
-
-transform clipboard_slide_down:
-    ypos 0.1
-    easein 1.5 ypos 1.0
-
-transform clipboard_slide_up:
-    ypos 1.0
-    easein 1.5 ypos 0.1
-
-transform profile_1_slide_down:
-    ypos -0.69
-    easein 1.5 ypos 0.21
-
-transform profile_1_slide_up:
-    ypos 0.21
-    easein 1.5 ypos -0.69
-
-transform profile_2_slide_down:
-    ypos -0.52
-    easein 1.5 ypos 0.38
-
-transform profile_2_slide_up:
-    ypos 0.38
-    easein 1.5 ypos -0.52
-
-transform profile_3_slide_down:
-    ypos -0.35
-    easein 1.5 ypos 0.55
-
-transform profile_3_slide_up:
-    ypos 0.55
-    easein 1.5 ypos -0.35
-
-transform profile_4_slide_down:
-    ypos -0.18
-    easein 1.5 ypos 0.72
-
-transform profile_4_slide_up:
-    ypos 0.72
-    easein 1.5 ypos -0.18
+transform vertical_slide(h_initial=0.0,h_dest=0.0,delta=0.0):
+    ypos h_initial
+    easein delta ypos h_dest

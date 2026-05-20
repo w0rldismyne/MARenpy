@@ -10,8 +10,17 @@ transform right_center:
     ypos 1.0
     yanchor 1.0
 
-transform brighter:
-    matrixcolor TintMatrix("#FFFFFF88")
+#transform brighter_filter:
+#    matrixcolor TintMatrix("#FFFFFF88")
 
-transform darker:
-    matrixcolor TintMatrix("#00000088")
+transform darker(value = "00000088"):
+    matrixcolor TintMatrix(value) * BrightnessMatrix(-0.5)
+
+transform pitchblack:
+    matrixcolor TintMatrix("#000000FF")
+
+transform clear:
+    matrixcolor TintMatrix("#00000000")
+
+transform brighter:
+    matrixcolor BrightnessMatrix(0.1)

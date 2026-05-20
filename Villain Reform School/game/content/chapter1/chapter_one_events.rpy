@@ -1733,7 +1733,8 @@ label chapter1_day2_event1:
     hide hiro
     hide kitsune
 
-    call investigation_profile_set(profile_kazz, True)
+    $ set_profile_availability("kazz", c_i_profile_available)
+    #call investigation_profile_set(profile_kazz, True)
 
     #[Player Choice]
     #A. We'll keep an eye out ( No quest for now, we gotta slim down the scope )
@@ -3382,7 +3383,7 @@ label chapter1_day5_event4:
 
 label chapter1_day5_event_night:
     play music "music/TheySay.mp3"
-    scene backgrounddorm at darker
+    scene backgrounddorm at darker("#1870dba4")
 
     show uitto smile
     

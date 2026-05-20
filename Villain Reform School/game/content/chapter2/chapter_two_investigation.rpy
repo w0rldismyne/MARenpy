@@ -1,361 +1,3 @@
-label chapter2_investigation_ichita:
-
-    scene backgroundpond
-
-    "Ichita has been scoping out areas for the party."
-    "I don't think the teachers will let us do anything near the water, unfortunately."
-    "He's digging around the plants with a puzzled expression."
-
-    show ichita angry
-
-    n "Did you lose something?"
-
-    "Ichita bolts up and stumbles out of the brush."
-
-    i "Naw, I was just looking for something."
-
-    show ichita happy
-
-    i "Hey, you're books smart, do you know where lilies grow?" 
-    
-    "I can see why he'd think to look here, but the only thing growing in the pond is algae."
-    
-    n "Sorry man, flower stuff wasn't one of the things I studied."
-    n "I'm sure there's flowers growing somewhere around here, but I bet they're going to be pretty small."
-    
-    show ichita irritated
-
-    i "Damn, I can't just get any old weeds. Everyone will be doing that." 
-    
-    "He sighs and shakes his head."
-
-    hide ichita 
-
-label chapter2_investigation_ichita_loop:
-
-    menu:
-        "Help with the Party":
-            #+Characters helping
-            $ characters_helping += 1
-            show ichita annoyed
-
-            n "Please tell me you have some ideas on how to make this whole party thing achievable."
-            n "You're one of the people who kept raising the scale of what we're doing."
-            
-            i "I mean, I don't think my ideas were that involved. Nanase can handle most of it." 
-            
-            "He must've heard how that sounds."
-            
-            show ichita sad talk
-            
-            i "Tell you what, I'll come in two hours early. Anything you need set up, I can handle."
-            i "Decorations, lights, all of it. If I turn it into a little competition, I'm sure I can get a bunch of other people to help out too." 
-            
-            n "What would they win?"
-            
-            i "Bragging rights." 
-            
-            n "Yeah, that'll work."
-            
-            hide ichita
-
-            jump chapter2_investigation_ichita_loop
-
-        "Show Evidence":
-            menu:
-                "Red Hair":
-
-                    show ichita surprised
-
-                    "It looks like a match"
-                    
-                    i "That's weird. Did they drop it on the ground?" 
-                    
-                    n "We found it behind one of the letters. I don't think dropping it would put it there."
-                    n "It must have fallen when the letter was being glued down."
-                    
-                    i "Then maybe they picked it up off the ground or maybe someone's clothes?" 
-                    
-                    n "Someone?"
-
-                    show ichita irritated
-                    
-                    i "Hey man, I'm not the only one with red hair. Mu, Dyre..." 
-                    
-                    "He trails off, thinking really hard."
-
-                    show ichita think
-                    
-                    i "Momoko, sometimes. Or heck, it might even be brown, and it just looks red because you only got the one."
-                    
-                    "He's making a lot of excuses for someone claiming to be innocent."
-                    
-                    hide ichita
-
-                    jump chapter2_investigation_ichita_loop
-
-                "Magazine Clippings":
-
-                    show ichita grin
-
-                    i "Kietsu wanted us to come up with ideas for something that people would like."
-                    i "I didn't want to come up with boring stuff, so I asked to borrow a few magazines to look at fancier types of parties." 
-                    
-                    n "Did any of them have green letters in them?"
-
-                    show ichita frown
-                    
-                    i "I don't know, probably. Chisei was the one who was able to find them for me. She knows where everything is in the library."
-                    
-                    hide ichita
-
-                    jump chapter2_investigation_ichita_loop
-
-                "Location of Note":
-
-                    show ichita annoyed
-                    
-                    n "Jona found it on his desk. You share homeroom with him; did you see anyone put it there?"
-                    
-                    i "All Vision Majors share homeroom with him. As class rep, it's my job to make sure the classroom is clean before everyone goes home."
-                    i "I didn't see anything out of the ordinary before I left. If someone put it there, it had to be before the teacher got to see it."
-                    
-                    show ichita frown
-
-                    i "They've been on the lookout for suspicious behavior lately."
-                    
-                    hide ichita
-
-                    jump chapter2_investigation_ichita_loop
-                
-                "Nail Polish":
-
-                    show ichita angry
-
-                    i "Don't wear any. Try asking one of the girls." 
-                    
-                    hide ichita
-
-                    jump chapter2_investigation_ichita_loop
-        "Motive":
-
-            show ichita irritated
-            
-            i "Creepy note, but as you remember, I was with you that morning."
-            
-            n "Yeah, but I'm not sure when it was made."
-
-            show ichita shout
-            
-            i "So? Look man, I'm a Vision Major too. We get enough of a hard time without doing petty shit like writing mean notes."
-            i "If I wanted to challenge him, I'd fight him in the hall." 
-            
-            "He did ask us if we wanted to get beat up now or later when Mariko first attacked. Would this be 'later'?"
-            
-            hide ichita
-            jump chapter2_investigation_ichita_loop
-
-        "Leave":
-            pass
-    show ichita grin
-
-    i "Hey, I know, maybe I could get Shoma to make flowers out of cloth?"
-    
-    "Somewhere in the distance, I hear the cries of an overworked designer."
-    
-    n "Maybe just have him show you how to make them. I'm sure he's busy with everything else." 
-    
-    show ichita sad talk2
-
-    i "I'm not the most crafty guy."
-    i "What about Jona?" 
-    
-    "I think about objecting, but given enough creative freedom, that's exactly in his wheelhouse."
-    
-    n "If what you want is something unique, I'm sure he could make it for you. Though if your heart's set on lilies, you'll need to find a reference."
-    
-    show ichita mock
-
-    i "That would involve looking at books. Too suspicious."
-
-    show ichita happy 
-
-    i "Guess I'll just have to hope for the best."
-    i "Thanks, Nagen!" 
-    
-    "Maybe he should wait and see what Jona comes up with before thanking either of us."
-    
-    hide ichita
-    return
-
-label chapter2_investigation_shoma:
-
-    scene backgroundsew
-    
-    "I hate bugging Shoma when he's already so busy. The claustrophobic room is a mess of pins, fabrics, and paper."
-    "The machine whines as he fights with a ream of glittery fabric folded multiple times over."
-    "Spiderweb thin threads are looped around corners and fraying from what looks like a bedsheet in his hands."
-    
-    "Somehow, the room smells like a wet dog rolled all over the floor."
-    
-    show shoma fear
-
-    sh "Don't you do it." 
-    
-    "The machine groans a sharp protest and grinds to a halt. He threatens the half finished piece with a pair of scissors."
-    
-    sh "For the love of God, why must you betray me in my hour of need?" 
-    
-    "He pops all the pieces open and gives a sharp tug. A tangled mess of thread fights to keep it tied to the machine."
-    
-    sh "I'm never touching organza again." 
-    
-    n "Maybe you could use a break?"
-    
-    "The look he gives me as he cuts the thread is absolutely feral. He relaxes a bit when he realizes it's me."
-    
-    show shoma frown
-
-    sh "Yes, a break." 
-    
-    "He leaves the sewing machine, but not before giving it a warning glare. He reaches under the cooler and tosses me a water bottle."
-    
-    show shoma
-
-    sh "What's on your mind?" 
-
-    hide shoma
-
-label chapter2_investigation_shoma_loop:
-
-    menu:
-        "Help with the Party":
-            $ characters_helping += 1
-
-            show shoma observe
-            "He gives me a long, hard look."
-            
-            n "I-I mean, I know you're already doing a lot for the people going, but is there anything you need to get stuff done on time?"
-            
-            sh "Oh... Now that you mention it, I could use a few things to make the garments more finished."
-            sh "I'm having a problem with things fraying. If I could get a lighter and some clear nail polish, that would be a great help."
-            
-            n "I know Mu has a lighter, and Uitto probably knows who'd have clear nail polish. You sure you don't want an extra set of hands though?"
-            
-            show shoma sad
-
-            sh "As much as I'd like to have other people sweat it out with me, I'm afraid teaching amateurs how to sew would take more time than it would save."
-            sh "Besides, I have a vision for how things are supposed to go. You know how it is." 
-            
-            "I do know. Hopefully he can get everything done on time."
-            
-            hide shoma
-
-            jump chapter2_investigation_shoma_loop
-
-        "Show Evidence":
-            menu:
-                "Nailpolish":
-
-                    show shoma
-                    
-                    n "Do you know which of the girls wears nail polish?"
-                    
-                    sh "No, but I know Dyre and Kazz will on occasion. I haven't seen them wear pink yet."
-                    
-                    "He snaps his fingers."
-
-                    show shoma grin
-                    
-                    sh "Some of the girls wear fake nails made of plastic or resin."
-                    sh "You can tell if they're wearing some by the raised edges near the nail beds."
-                    
-                    hide shoma
-
-                    jump chapter2_investigation_shoma_loop
-                
-                "Magazine Clippings":
-
-                    show shoma fear
-                    
-                    "His eyes widen, mouth agape."
-                    
-                    sh "Who would do this to an innocent issue of Vogue?!" 
-                    
-                    n "So it's a fashion magazine?"
-
-                    show shoma mad
-                    
-                    sh "I'd know that font anywhere. Ugh, most of the stuff in the library is dated, so it has to be something someone brought with them."
-                    sh "I imagine the longer we stay here, the more stuff from the outside will become valuable. How could they do this?"
-                    
-                    "He's more upset then Jona was when he got threatened. Though both of them are more concerned with what was used to make the note than the note itself."
-                    "No wonder they get along so well."
-
-                    hide shoma
-                    
-                    jump chapter2_investigation_shoma_loop
-
-                "Stolen Sketchbook":
-
-                    show shoma lie
-                    
-                    sh "I wish I knew where it was. I've offered for Jona some of my drafting paper to use in the meantime but-" 
-                    
-                    n "It's the wrong kind of paper."
-                    
-                    sh "Jona draws with such a heavy hand. It's impossible to erase on thin paper without tearing." (16)
-                    
-                    "Maybe there are imprints left in the sketchbook?"
-                    "All the drawings could have been ripped out of if by now, but not many people would think to check the blank pages."
-                    "It's a good thing to keep in mind."
-
-                    hide shoma
-                    
-                    jump chapter2_investigation_shoma_loop             
-        "Motive":
-
-            show shoma manic
-            
-            sh "I've personally never had any issues with Jona. I wouldn't let him in the shop if I did."
-            
-            n "That's fair. Do you know anyone who does?"
-            
-            sh "If there is anyone, it's probably someone from the upper class rings. Those people have such strange rules for what an 'undesirable' person is."
-            
-            n "I don't think anyone in our old class was that well-off."
-            
-            show shoma mad
-
-            sh "No. If memory serves correct, the rich kids favored colors you'd find in nature."
-            sh "Neutrals, golds, pretty much anything you'd find on an apple. We all brought our things from home."
-            sh "I'd try asking someone who looks the part."
-            
-            n "I'll keep that in mind."
-
-            hide shoma
-            
-            jump chapter2_investigation_shoma_loop
-
-        "Leave":
-            pass
-    
-    show shoma frown
-
-    sh "I should get back to fighting with that thing if I don't want to fall behind."
-    
-    "It looks mostly finished to me. He drags himself back to his seat and as he sits down, he shrieks."
-    
-    show shoma fear
-
-    sh "You rat bastard, you broke my needle!" 
-    
-    "I should get out of here."
-
-    hide shoma
-    
-    return
-
 label chapter2_investigation_chisei:
 
     scene backgroundlibrary
@@ -573,6 +215,1051 @@ label chapter2_investigation_chisei_loop:
     n "I'll see you around."
 
     hide chisei
+
+    $ fake_reveal_panel(2, "panel1")
+
+    $ current_i_page = 2
+
+    call investigation_unlock
+
+    $ current_i_page = 1
+
+    $ real_reveal_panel(2, "panel1")
+
+    $ set_profile_availability("chisei", c_i_profile_unavailable)
+
+    return
+
+label chapter2_investigation_dyre:
+
+    scene backgroundlibrary
+
+    "Dyre is sitting at a table, surrounded by piles of books. The covers have pictures of brains on them or bland white textbook covers."
+    "Lots of stuff on brain injuries and personality disorders. He seems kind of frustrated, but then he sees me and puts on that smarmy mask of his."
+    
+    show dyre
+
+    d "To what do I owe the pleasure?"
+    
+    n "I think you know what. Someone stole Jona's sketchbook and of everyone here, you're the only one that's tried to pull pranks on people."
+    
+    show dyre smile
+
+    d "Nagen, I'm no monster. I only jest with people who I know can hang. You haven't been in on the joke in years."
+    
+    n "I certainly don't find this funny. Last time you had an idea of who was harassing us and you chose to say nothing. I'm guessing you have some ideas again."
+    
+    show dyre smirk
+
+    d "Alright, I'll bite. What do you want to know?"
+
+    hide dyre
+
+label chapter2_investigation_dyre_loop:
+
+    menu:
+
+        "Help with the Party":
+
+            $ characters_helping +=1
+
+            show dyre smile talk
+            
+            d "Sure, I guess. What do you need?"
+            
+            n "Trash. There's going to be so much trash when we're done. If you could take the bags to the dumpster, that would be great."
+            
+            show dyre scowl
+
+            d "Hardly a glamorous job."
+            
+            n "That's why no one wants to do it."
+
+            show dyre talk2
+            
+            d "Alright. At least it's easy." 
+
+            hide dyre
+            
+            jump chapter2_investigation_dyre_loop
+
+        "Show Evidence":
+            menu:
+                "Magazine Clippings":
+
+                    show dyre talk1
+                    
+                    d "I've seen a lot of people looking at stuff like that."
+                    d "Chisei especially, she likes to have references when writing set descriptions."
+                    d "I don't see her cutting one up anytime soon. Whoever did this probably owned them."
+                    
+                    n "You think?" 
+
+                    show dyre talk2
+                    
+                    d "If it was stolen, we would have heard about it, like with Jona and Kazz's stuff."
+                    d "If it was borrowed, the borrower would get caught as soon as the magazines were given back."
+                    d "If you can find out who was lending them out, you'll be golden."
+                    
+                    hide dyre
+
+                    jump chapter2_investigation_dyre_loop
+
+                "Nail Polish":
+
+                    show dyre smirk
+                    
+                    d "The note is misspelled. Hard to say they caught it when all the nail goop is up by the hair instead."
+                    d "Doesn't look like the letters were moved around at all after they were placed."
+                    d "I wouldn't be surprised if the person laying them down thought of them more as pictures than letters."
+                    
+                    n "So someone artistic?"
+
+                    show dyre smile
+                    
+                    d "Depends on what you consider artistic."
+                    d "I know artists usually have bad handwriting, but there are other things they could have used to make this if art was their thing."
+                    
+                    hide dyre
+
+                    jump chapter2_investigation_dyre_loop
+
+                "Red Hair":
+                    
+                    show dyre talk2
+
+                    d "It isn't mine. I know it looks like I spend hours in the mirror, but that's to try and straighten my hair, not the other way around."
+                    d "Whoever's hair that is, it's naturally straight."
+                    d "Rather than focusing on that, it's really weird how vague the note is. Mariko had a set deadline, but this is open ended and can be interpreted several ways."
+                    
+                    n "Or they didn't know when exactly the dance was happening."
+                    
+                    show dyre talk2
+
+                    d "Also a possibility. I'm guessing they know how you think."
+                    
+                    hide dyre
+
+                    jump chapter2_investigation_dyre_loop
+
+        "Motive":
+
+            show dyre scowl
+            
+            d "People in the Charm department have had an issue with him and his family for years."
+            d "I'm sure you remember this, but his mom wasn't the nicest person when it came to him. She made it everyone's problem when the school tried to classify him as a Charm Major at first."
+            
+            n "That's news to me."
+
+            show dyre sad talk
+            
+            d "Well, Charm Proficiencies can get grandfathered down. Kinda like a peer reviewed ability, but his mom refused to believe he had her ability."
+            d "Kept accusing the staff of trying to curse him. They never could prove one way or another which class he should've been in."
+            d "Though I'm sure if you ask him, he'll double down on being a vision major."
+            
+            n "That's 'cause he is."
+            
+            "He's got the emotional intelligence of a shoe. Most of the time, he's guessing what to do based on auras, but it's not like he has a mood ring guide. "
+            
+            show dyre 
+
+
+            d "Or he could be lying to himself. You'd be surprised what people can convince themselves of when the alternative is violent rejection."
+            
+            "He shrugs."
+
+            show dyre talk2
+            
+            d "It doesn't matter if you think it's true, what matters is that other Charm Majors think it's true."
+            
+            hide dyre
+
+            jump chapter2_investigation_dyre_loop
+
+        "Leave":
+            pass
+    show dyre smile
+
+    "That was surprisingly helpful."
+    
+    n "Thanks."
+
+    show dyre disturbed
+    
+    d "What for?"
+    
+    n "For actually answering my questions."
+
+    show dyre talk2
+    
+    d "I have no horse in this race. Forgive me for being a little defensive of my friend when the last time you took issue with someone, they woke up in a war zone."
+
+    if Hero > Villain:
+
+        show dyre
+
+        d "It seems you learned your lesson."
+
+    else:
+        show dyre scowl
+
+        d "You haven't exactly been acting like someone who won't do it again."
+    
+    show dyre talk2 
+
+    n "Either way, I appreciate it."
+    
+    d "Yeah, whatever."
+    
+    "I leave him to his pile of books."
+
+    hide dyre
+
+    $ fake_reveal_panel(1, "panel1")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel1")
+
+    $ set_profile_availability("dyre", c_i_profile_unavailable)
+
+    return
+
+label chapter2_investigation_ichita:
+
+    scene backgroundpond
+
+    "Ichita has been scoping out areas for the party."
+    "I don't think the teachers will let us do anything near the water, unfortunately."
+    "He's digging around the plants with a puzzled expression."
+
+    show ichita angry
+
+    n "Did you lose something?"
+
+    "Ichita bolts up and stumbles out of the brush."
+
+    i "Naw, I was just looking for something."
+
+    show ichita happy
+
+    i "Hey, you're book smart, do you know where lilies grow?" 
+    
+    "I can see why he'd think to look here, but the only thing growing in the pond is algae."
+    
+    n "Sorry man, flower stuff wasn't one of the things I studied."
+    n "I'm sure there's flowers growing somewhere around here, but I bet they're going to be pretty small."
+    
+    show ichita irritated
+
+    i "Damn, I can't just get any old weeds. Everyone will be doing that." 
+    
+    "He sighs and shakes his head."
+
+    hide ichita 
+
+label chapter2_investigation_ichita_loop:
+
+    menu:
+        "Help with the Party":
+            
+            $ characters_helping += 1
+            show ichita annoyed
+
+            n "Please tell me you have some ideas on how to make this whole party thing achievable."
+            n "You're one of the people who kept raising the scale of what we're doing."
+            
+            i "I mean, I don't think my ideas were that involved. Nanase can handle most of it." 
+            
+            "He must've heard how that sounds."
+            
+            show ichita sad talk1
+            
+            i "Tell you what, I'll come in two hours early. Anything you need set up, I can handle."
+            i "Decorations, lights, all of it. If I turn it into a little competition, I'm sure I can get a bunch of other people to help out too." 
+            
+            n "What would they win?"
+            
+            i "Bragging rights." 
+            
+            n "Yeah, that'll work."
+            
+            hide ichita
+
+            jump chapter2_investigation_ichita_loop
+
+        "Show Evidence":
+            menu:
+                "Red Hair":
+
+                    show ichita surprised
+
+                    "It looks like a match."
+                    
+                    i "That's weird. Did they drop it on the ground?" 
+                    
+                    n "We found it behind one of the letters. I don't think dropping it would put it there."
+                    n "It must have fallen when the letter was being glued down."
+                    
+                    i "Then maybe they picked it up off the ground or maybe someone's clothes?" 
+                    
+                    n "Someone?"
+
+                    show ichita irritated
+                    
+                    i "Hey man, I'm not the only one with red hair. Mu, Dyre..." 
+                    
+                    "He trails off, thinking really hard."
+
+                    show ichita think
+                    
+                    i "Momoko, sometimes. Or heck, it might even be brown, and it just looks red because you only got the one."
+                    
+                    "He's making a lot of excuses for someone claiming to be innocent."
+                    
+                    hide ichita
+
+                    jump chapter2_investigation_ichita_loop
+
+                "Magazine Clippings":
+
+                    show ichita grin
+
+                    i "Kietsu wanted us to come up with ideas for something that people would like."
+                    i "I didn't want to come up with boring stuff, so I asked to borrow a few magazines to look at fancier types of parties." 
+                    
+                    n "Did any of them have green letters in them?"
+
+                    show ichita frown
+                    
+                    i "I don't know, probably. Chisei was the one who was able to find them for me. She knows where everything is in the library."
+                    
+                    hide ichita
+
+                    jump chapter2_investigation_ichita_loop
+
+                "Location of Note":
+
+                    show ichita annoyed
+                    
+                    n "Jona found it on his desk. You share homeroom with him; did you see anyone put it there?"
+                    
+                    i "All Vision Majors share homeroom with him. As class rep, it's my job to make sure the classroom is clean before everyone goes home."
+                    i "I didn't see anything out of the ordinary before I left. If someone put it there, it had to be before the teacher got to see it."
+                    
+                    show ichita frown
+
+                    i "They've been on the lookout for suspicious behavior lately."
+                    
+                    hide ichita
+
+                    jump chapter2_investigation_ichita_loop
+                
+                "Nail Polish":
+
+                    show ichita angry
+
+                    i "Don't wear any. Try asking one of the girls." 
+                    
+                    hide ichita
+
+                    jump chapter2_investigation_ichita_loop
+        "Motive":
+
+            show ichita irritated
+            
+            i "Creepy note, but as you remember, I was with you that morning."
+            
+            n "Yeah, but I'm not sure when it was made."
+
+            show ichita shout
+            
+            i "So? Look man, I'm a Vision Major too. We get enough of a hard time without doing petty shit like writing mean notes."
+            i "If I wanted to challenge him, I'd fight him in the hall." 
+            
+            "He did ask us if we wanted to get beat up now or later when Mariko first attacked. Would this be 'later'?"
+            
+            hide ichita
+            jump chapter2_investigation_ichita_loop
+
+        "Leave":
+            pass
+    show ichita grin
+
+    i "Hey, I know, maybe I could get Shoma to make flowers out of cloth?"
+    
+    "Somewhere in the distance, I hear the cries of an overworked designer."
+    
+    n "Maybe just have him show you how to make them. I'm sure he's busy with everything else." 
+    
+    show ichita sad talk2
+
+    i "I'm not the most crafty guy."
+    i "What about Jona?" 
+    
+    "I think about objecting, but given enough creative freedom, that's exactly in his wheelhouse."
+    
+    n "If what you want is something unique, I'm sure he could make it for you. Though if your heart's set on lilies, you'll need to find a reference."
+    
+    show ichita mock
+
+    i "That would involve looking at books. Too suspicious."
+
+    show ichita happy 
+
+    i "Guess I'll just have to hope for the best."
+    i "Thanks, Nagen!" 
+    
+    "Maybe he should wait and see what Jona comes up with before thanking either of us."
+    
+    hide ichita
+
+    $ fake_reveal_panel(1, "panel2")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel2")
+
+    $ set_profile_availability("ichita", c_i_profile_unavailable)
+
+    return
+
+label chapter2_investigation_kazz:
+
+    scene backgroundavroom
+
+    "Ever since the incident, Kazz has guarded the PA booth like a hawk. The key never leaves his belt loop. He's like a very dorkily dressed janitor."
+    "He's letting me in for the moment, but I can tell I'm being watched."
+    
+    show kazz complain
+
+    kk "So someone else has had their stuff stolen now. That's so twisted."
+    kk "It wasn't like he made a big deal about drawing in class, he was being quiet."
+    
+    n "Yeah. That paired with the threat letter he got afterwards falls into the pattern of what happened last week."
+    
+    show kazz grin
+
+    kk "Bummers all around. And I was so hyped for the party too."
+    
+    "He's the only person who still thinks of it as just a party. It's a small distinction, but I'm happy some people are keeping their expectations low."
+    
+    kk "I've had my nose to the grindstone with other things, so I'm not sure how much help I can be."
+
+    hide kazz
+    
+label chapter2_investigation_kazz_loop:
+
+    menu:
+        "Help with the Party":
+            $ characters_helping +=1
+
+            show kazz oh
+            
+            n "We need a DJ."
+            
+            "His eyes light up."
+            
+            show kazz grin
+            
+            kk "You want me to spin for the party?"
+            
+            n "That's your thing, right? The thing you want to do?"
+            
+            kk "Well, yeah, but I've never mixed live before."
+            
+            "How hard is it to pick a bunch of songs and make sure it plays? Even if he has no experience, I can't see him messing up. "
+            
+            kk "Hell yeah I'll help out! This is going to be so much fun."
+            
+            hide kazz
+
+            jump chapter2_investigation_kazz_loop
+
+        "Show Evidence":
+            menu:
+                "Red Hair":
+
+                    show kazz worry
+                    
+                    kk "Ew. You've been toting that around all day, bro?" 
+                    
+                    n "It's just hair."
+                    
+                    kk "It's still a piece of a person."
+
+                    show kazz dead
+                    
+                    "He wrinkles his nose."
+                    
+                    kk "Still, if it was left there, it's probably for a reason. You can pick something like that out with enough determination."
+                    kk "The paint, not so much."
+
+                    hide kazz
+                    
+                    jump chapter2_investigation_kazz_loop
+
+                "Location of Note":
+
+                    show kazz talk
+                    
+                    kk "I've been keeping a closer eye on who can go where now, for obvious reasons."
+                    kk "Anyone student council or student council adjacent can enter the classrooms whenever they want. At least, whenever Mr. Yaguichi's on campus."
+                    
+                    n "You think he saw something?"
+                    
+                    kk "Maybe, but you've seen how often that guy looks up from his work. If he had solid evidence, someone would be in trouble by now."
+                    
+                    "He has a point. I've seen him soldering more than I've seen him watching students."
+                    
+                    show kazz oh
+
+                    kk "It's a panopticon. The idea that someone might be watching is enough to deter most people from acting out."
+                    kk "I wonder if the person that did this had a way of knowing when he was watching."
+                    
+                    n "How could they do that?"
+
+                    show kazz sad talk
+                    
+                    kk "I don't know. It's either that or they have brass balls and don't care about getting caught."
+                    
+                    hide kazz
+
+                    jump chapter2_investigation_kazz_loop
+
+                "Magazine Clippings":
+
+                    show kazz worry
+                    
+                    kk "That's one dedicated stalker. Not that Mariko wasn't hauling ass, but this kind of thing takes time to put together."
+                    kk "They must really hate the guy."
+                    
+                    n "Yeah, but so far, I haven't had too many people admit to not liking him."
+                    
+                    show kazz sad talk
+
+                    kk "Well, you're his friend. I'm sure Uitto hasn't heard any of the rumors floating around the Charm department either."
+                    
+                    n "What rumors?"
+
+                    show kazz talk
+                    
+                    kk "That he's faking his proficiency."
+                    kk "Some people have been wondering if he's actually proficient in something like lying or manipulation and is covering it up with spooky stuff to seem cool."
+                    
+                    n "Where'd you hear that from?"
+                    
+                    kk "Dyre." 
+
+                    hide kazz
+                    
+                    jump chapter2_investigation_kazz_loop
+        "Motive":
+
+            show kazz sad talk
+            
+            kk "I've been trying to keep things as chill as possible on my end. The first week of school sucked. Real bummer it's happening again."
+            kk "And Mariko's off who knows where, so it has to be somebody else, right?"
+            
+            n "That's what it seems like."
+            
+            kk "Major buzzkill. I can't say I've ever gone out of my way to interact with Jona; he always avoided me. I have zero clue what would make someone do this."
+            
+            "That might be my fault. I wasn't exactly subtle about why I was transferred to the at risk class, or the people who failed to follow me there."
+            
+            hide kazz
+
+            jump chapter2_investigation_kazz_loop
+
+        "Leave":
+            pass
+
+    show kazz talk
+
+    kk "Is there anything else I can help with?"
+    
+    n "Nothing comes to mind."
+    
+    "Wait, why is he so eager to help? "
+    
+    n "What are you procrastinating on?"
+
+    show kazz sad talk
+    
+    kk "Ugh, busted. Kitsune wants me to redo the entire album we made since my stuff got confiscated."
+    kk "The first time we did it, she was just hyped to finally record. Now she's got standards, and I'm afraid neither of us is skilled enough to meet them."
+    kk "I've retooled the same bridge three times, and she's still not happy with it." 
+    
+    n "Try telling her you're going for authenticity."
+
+    show kazz oh
+    
+    kk "Dude, that's genius."
+    
+    n "Also, no one else is making new stuff at the school right now. It could be a six out of ten, and people would still like it."
+    
+    show kazz sad talk
+
+    kk "I'm not sure about that. This beast isn't for everyone."
+    
+    "He looks back at all the editing he has to do."
+    
+    kk "Alright, I gotta kick you out or I'll keep dragging my feet on this last round of edits." 
+    
+    n "You got this."
+
+    hide kazz
+
+    $ fake_reveal_panel(1, "panel6")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel6")
+
+    $ fake_reveal_panel(2, "panel1")
+
+    $ current_i_page = 2
+
+    call investigation_unlock
+
+    $ current_i_page = 1
+
+    $ real_reveal_panel(2, "panel1")
+
+    $ set_profile_availability("kazz", c_i_profile_unavailable)
+    
+    return
+
+label chapter2_investigation_kietsu:
+
+    scene backgroundstuco
+
+    "Papers are strewn about Kietsu's desk. It looks messy, but he clearly has a system."
+    "Students have been trying to anonymously sneak in their own suggestions for the dance into the piles."
+    "I'm against taking on more than we can handle, but Kietsu's been trying to accommodate as much as he can."
+    
+    show kietsu cringe
+
+    ki "Oh hey, Nagen. You wouldn't happen to know how to make dry ice, would you?"
+    
+    "Lord have mercy."
+    
+    n "That's something you'd have to buy. Not sure that's the wisest use of the budget Setsuna gave us."
+    
+    "Our budget is zero, and so far we've been making it work."
+
+    hide kietsu
+
+label chapter2_investigation_kietsu_loop:
+    menu:
+        "Help with the Party":
+            $ characters_helping +=1
+
+            show kietsu surprised
+
+            ki "What all do you need?"
+            
+            n "With all the decorations people are bringing, I'm going to need help getting them set up in time."
+            n "Would you be able to handle the lighting?"
+
+            show kietsu dontworry
+            
+            ki "Yeah, I could string up some lights."
+
+            hide kietsu
+            
+            jump chapter2_investigation_kietsu_loop
+
+        "Show Evidence":
+            menu: 
+                "Note":
+
+                    show kietsu cringe
+                    
+                    ki "Man, this is kinda embarrassing' to admit... It's a little hard for me to read this."
+                    
+                    n "Really?"
+
+                    show kietsu confused
+                    
+                    ki "I think all the different fonts and sizes are throwin' me off."
+                    ki "They actually make a special font that's easier for me to read, it's all slanted with wide spacing."
+                    ki "Easier to keep track of when the words start and end that way."
+                    
+                    "Interesting. Hiro might want to look into that."
+                    
+                    n "It says 'I will strike during the dance'."
+                    
+                    ki "Spooky. They would've had to make it fairly quick. We didn't want to announce anythin' until all the class reps were on board with the party idea." 
+                    
+                    hide kietsu
+
+                    jump chapter2_investigation_kietsu_loop
+
+                "Sketchbook Paper":
+
+                    show kietsu surprised
+                    
+                    ki "I haven't seen anyone drawin' stuff. I guess that's not the only thing it could be used for."
+                    ki "I just don't really pay attention to what other people are doin'." 
+                    
+                    n "You got enough on your plate anyway."
+
+                    show kietsu dontworry
+                    
+                    ki "We both do. Have you tried talkin' with the teachers about this?" 
+                    
+                    "I really don't want to go back to Vivaldi's office. I barely dodged getting in trouble the last time."
+                    
+                    n "What could they do?"
+
+                    show kietsu sad talk
+                    
+                    ki "They could do room searches. It's what we did at my old school." 
+                    
+                    n "I think that would just get everyone mad at me."
+                    
+                    show kietsu sympathetic
+
+                    ki "Suit yourself." 
+                    
+                    hide kietsu
+
+                    jump chapter2_investigation_kietsu_loop
+
+                "Red Hair":
+                    
+                    ki "Maybe it's animal hair? Those things get everywhere. Taiga brought a bunch of critters."
+                    
+                    "I haven't seen what his other rabbits look like."
+                    
+                    n "If so, it could be from anyone that's gone in his dorm."
+                    
+                    "I'll have to confirm for myself before I jump to conclusions."
+                    
+                    hide kietsu
+
+                    jump chapter2_investigation_kietsu_loop
+
+                "Location of Note":
+
+                    show kietsu talk
+                    
+                    ki "It had to be put in there after Ichita locked up."
+
+                    n "What do you mean?"
+
+                    show kietsu confused
+
+                    ki "The class leaders are in charge of tidying up the classroom and locking it up at the end of the day."
+                    ki "I was helping him out yesterday and saw him lock the door."
+                    ki "There wasn't anything on Jona's desk then."
+
+                    "But he saw it first thing in the morning..."
+
+                    n "Would anyone other than the teachers be able to get in?"
+
+                    show kietsu tease
+
+                    ki "Anyone in the council or class reps I guess."
+                    
+                    hide kietsu
+                    
+                    jump chapter2_investigation_kietsu_loop
+        "Motive":
+            show kietsu talk
+
+            ki "Everyone here has so much history with each other. I've never been so thankful to not know anyone."
+            
+            n "The classes in Estella were really insular, so it was easy for people to have an us versus them mentality."
+            
+            show kietsu surprised
+
+            ki "I can tell."
+            
+            n "Have you heard anyone saying bad things about Jona?"
+
+            show kietsu upset1 surprised
+            
+            ki "Vision Majors try to get along, even if we don't 'like' each other. The most I've heard is people bein' irritated that he shows up late to class."
+            ki "Though if somethin' of his was stolen, that explains why he was buggin' out."
+            
+            n "We think it was taken when Mariko attacked Hiro."
+            
+            ki "If he left it somewhere, anyone could've taken it." 
+
+            hide kietsu
+            
+            jump chapter2_investigation_kietsu_loop
+
+        "Leave":
+            pass
+
+    show kietsu tease
+    
+    ki "There has to be some way to put fog on the dancefloor. Or maybe bubbles?"
+    
+    n "Anything with soap could make someone fall."
+
+    show kietsu talk
+    
+    ki "I guess so. Can't have anyone slidin' off the roof now, can we? I'll have to sit on that one a bit longer before throwin' in the towel."
+    ki "It's a good thing to keep in mind for next year."
+    
+    "Anything we want to buy, we'll have to use more than once or Setsuna will kill us. Guess I should try somewhere else."
+
+    hide kietsu
+
+    $ fake_reveal_panel(1, "panel2")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel2")
+
+    $ fake_reveal_panel(2, "panel5")
+
+    $ current_i_page = 2
+
+    call investigation_unlock
+
+    $ current_i_page = 1
+
+    $ real_reveal_panel(2, "panel5")
+
+    $ set_profile_availability("kietsu", c_i_profile_unavailable)
+
+    
+    return
+
+label chapter2_investigation_kitsune:
+
+    scene backgroundstage
+
+    show kitsune
+
+    "Kitsune is standing on stage holding a tiny thing up to the stage lights. She tilts and rotates it around with a grim expression."
+    
+    k "Does this look like a rhinestone to you?"
+    
+    n "It looks like a gem."
+    
+    show kitsune smug
+    
+    k "We don't have any, so I'm trying to make due with glue and candy wrappers. The glass ended up being too heavy. It's better than nothing at least."
+    
+    "There are a few other rejected attempts in her pocket. A couple of masks are sitting in the wings."
+    "It seems anything she's thinking about wearing at the dance, she's brought to see how it would look on stage." 
+    
+    n "You're taking this dance really seriously." 
+
+    show kitsune shocked
+    
+    k "Of course! I'd like to keep doing fun things like this, but it only works if everyone's on board. You all have been working so hard, it only makes sense we should too."
+
+    hide kitsune
+
+label chapter2_investigation_kitsune_loop:
+    menu:
+        "Will you go to the dance with me?":
+
+            show kitsune shocked
+
+            k "Get out of here."
+            
+            n "I'm sorry?"
+
+            show kitsune apathetic
+            
+            k "No! I mean, like, you're serious. Like, for real, for real? You want to go to the dance with me?"
+            
+            n "Is that a problem?"
+
+            show kitsune smug
+            
+            k "Are you kidding? Broody bad boys were like, in before the world went to shit."
+            k "Being the only femme there with a date would totally show everyone who's actual prom queen material."
+            
+            "I feel like we're getting off topic."
+            
+            n "Is that a yes?"
+            
+            k "Um, yeah. Of course it's a yes."
+            k "My dress is based on a white peacock, dress accordingly."
+            
+            $ date == True
+            $ dateRise == False
+            $ dateNanase == False
+            $ dateMomoko == False
+            $ dateKitsune == True
+            $ dateChisei == False
+            $ dateHiro == False
+            $ dateYoku == False
+            $ dateMu == False
+            $ dateTaiga == False
+            
+            # kdate = true, date = true, 
+            jump chapter2_investigation_kitsune_loop
+
+        "Help with the Party":
+            $ characters_helping +=1
+
+            show kitsune
+            k "I'll be spending a lot of time getting ready beforehand."
+            k "Is there anything I could do after?"
+            
+            "I'm surprised she didn't ask to sing."
+            
+            n "We'll have a bunch of dishes that'll need to be brought back to the cafe. Think you can manage it?"
+            
+            show kitsune talk2
+
+            k "Of course."
+
+            hide kitsune
+
+            jump chapter2_investigation_kitsune_loop
+
+        "Show Evidence":
+            menu:
+                "Sketchbook Paper":
+
+                    show kitsune talk2
+                    
+                    k "Who cares about that?"
+                    
+                    n "Well, Jona does-"
+
+                    show kitsune apathetic
+                    
+                    k "Hasn't Ichita been acting super weird lately? He's all secretive and scheme-y and he won't tell me anything, called me a blabber mouth."
+                    k "Me? A blabber mouth? Can you imagine?!"
+                    
+                    "Quite easily."
+
+                    show kitsune mad
+                    
+                    k "I think he's up to something. I caught him whispering stuff to Uitto and they stopped talking as soon as they saw me."
+                    
+                    "Well, if Uitto's involved, they're definitely not going to tell you anything." 
+                    
+                    hide kitsune
+
+                    jump chapter2_investigation_kitsune_loop
+
+                "Nail Polish":
+
+                    show kitsune catty
+                    
+                    k "This is why all my colors are plastic."
+                    
+                    "She drills her fake nails against each other."
+
+                    show kitsune sulk
+                    
+                    k "That's a pretty popular color right now. Rise, Rei and Chisei all wanted to wear it."
+                    k "Speaking of Chisei, have you noticed everyone's been avoiding her lately?"
+                    
+                    n "What?"
+
+                    show kitsune talk1
+                    
+                    k "All the girls have been whispering behind her back. It's absolutely awful to watch. Be extra nice when you see her next."
+                    k "She doesn't want to go to any of the teachers about it. After the incident with Mariko, she's worried about 'overstating harm'."
+                    k "But I get it, there's not much the teachers can do to make people include her."
+                    
+                    hide kitsune
+
+                    jump chapter2_investigation_kitsune_loop
+
+                "Magazine Clippings":
+
+                    show kitsune talk1
+                    
+                    k "That's interesting."
+                    
+                    "She reaches into her backpack and pulls out a fashion magazine with a green cover."
+                    
+                    show kitsune sulk
+
+                    k "Look familiar?" 
+                    
+                    n "Where did you get that?"
+
+                    show kitsune talk1
+                    
+                    k "All of us with any taste pooled our collection together so everyone could look over references for the dance."
+                    k "I didn't include this one, because there were already duplicates. Whoever cut that up knew it wasn't the only copy, I guarantee it."
+                    
+                    n "Who else was pooling magazines together?"
+                    
+                    k "Shoma and I, obviously. Momoko had a few, Rise and Rei as well, and Jona actually."
+                    
+                    n "That's odd."
+
+                    show kitsune mad
+                    
+                    k "Kind of calculated if you ask me. As far as I could tell, it was a fun time seeing what everyone managed to fit in their suitcase."
+                    k "It kind of retroactively spoils it if he recognized the pieces like I did."
+                    
+                    hide kitsune
+
+                    jump chapter2_investigation_kitsune_loop
+        "Motive":
+
+            show kitsune sulk
+            
+            k "Ew, why would I go anywhere near that lice factory?"
+            
+            "I didn't realize that was common knowledge. When we were kids, his mom didn't take any of his concerns seriously."
+            "She put him scratching in the same category as crying over shirt tags. That was one of the grosser things Hiro and I had to teach him about."
+            
+            n "That was when we were ten."
+            
+            "She went silent."
+
+            show kitsune apathetic
+            
+            k "My point is, I don't think about him, period. I've got my own things I'm working on."
+            
+            hide kitsune
+
+            jump chapter2_investigation_kitsune_loop
+
+        "Leave":
+            pass
+
+    show kitsune catty
+
+    k "I can't wait until we can buy stuff again. My fosters keep sending me allowance and I have nothing to spend it on."
+    
+    n "You get an allowance?!"
+
+    show kitsune sulk
+    
+    k "Yeah... is that not normal?"
+    
+    n "For foster parents, no."
+
+    show kitsune talk1
+    
+    k "Well, it's all going to Shoma as soon as we can buy fabric. I should probably keep that to myself, hunh?"
+    
+    n "I would."
+    
+    "No one gets to know how much this jacket cost."
+    "It's the only birthday present I've gotten, and even that's just because Maimai was overcompensating for the whole getting arrested thing."
+    
+    hide kitsune
+
+    $ fake_reveal_panel(1, "panel1")
+    $ fake_reveal_panel(1, "panel4")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel1")
+    $ real_reveal_panel(1, "panel4")
+
+    $ set_profile_availability("kitsune", c_i_profile_unavailable)
     
     return
 
@@ -765,781 +1452,192 @@ label chapter2_investigation_rei_loop:
     "After what Mariko did, I highly doubt it."
 
     hide rei
+
+    $ fake_reveal_panel(1, "panel3")
+    $ fake_reveal_panel(1, "panel6")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel3")
+    $ real_reveal_panel(1, "panel6")
+
+    $ set_profile_availability("rei", c_i_profile_unavailable)
     
     return
 
-label chapter2_investigation_kietsu:
+label chapter2_investigation_shoma:
 
-    scene backgroundstuco
-
-    "Papers are strewn about Kietsu's desk. It looks messy, but he clearly has a system."
-    "Students have been trying to anonymously sneak in their own suggestions for the dance into the piles."
-    "I'm against taking on more than we can handle, but Kietsu's been trying to accommodate as much as he can."
+    scene backgroundsew
     
-    show kietsu cringe
-
-    ki "Oh hey, Nagen. You wouldn't happen to know how to make dry ice, would you?"
+    "I hate bugging Shoma when he's already so busy. The claustrophobic room is a mess of pins, fabrics, and paper."
+    "The machine whines as he fights with a ream of glittery fabric folded multiple times over."
+    "Spiderweb thin threads are looped around corners and fraying from what looks like a bedsheet in his hands."
     
-    "Lord have mercy."
+    "Somehow, the room smells like a wet dog rolled all over the floor."
     
-    n "That's something you'd have to buy. Not sure that's the wisest use of the budget Setsuna gave us."
+    show shoma fear
+
+    sh "Don't you do it." 
     
-    "Our budget is zero, and so far we've been making it work."
-
-    hide kietsu
-
-label chapter2_investigation_kietsu_loop:
-    menu:
-        "Help with the Party":
-            $ characters_helping +=1
-
-            show kietsu surprised
-
-            ki "What all do you need?"
-            
-            n "With all the decorations people are bringing, I'm going to need help getting them set up in time."
-            n "Would you be able to handle the lighting?"
-
-            show kietsu dontworry
-            
-            ki "Yeah, I could string up some lights."
-
-            hide kietsu
-            
-            jump chapter2_investigation_kietsu_loop
-
-        "Show Evidence":
-            menu: 
-                "Note":
-
-                    show kietsu cringe
-                    
-                    ki "Man, this is kinda embarrassing' to admit... It's a little hard for me to read this."
-                    
-                    n "Really?"
-
-                    show kietsu confused
-                    
-                    ki "I think all the different fonts and sizes are throwin' me off."
-                    ki "They actually make a special font that's easier for me to read, it's all slanted with wide spacing."
-                    ki "Easier to keep track of when the words start and end that way."
-                    
-                    "Interesting. Hiro might want to look into that."
-                    
-                    n "It says 'I will strike during the dance'."
-                    
-                    ki "Spooky. They would've had to make it fairly quick. We didn't want to announce anythin' until all the class reps were on board with the party idea." 
-                    
-                    hide kietsu
-
-                    jump chapter2_investigation_kietsu_loop
-
-                "Sketchbook Paper":
-
-                    show kietsu surprised
-                    
-                    ki "I haven't seen anyone drawin' stuff. I guess that's not the only thing it could be used for."
-                    ki "I just don't really pay attention to what other people are doin'." 
-                    
-                    n "You got enough on your plate anyway."
-
-                    show kietsu dontworry
-                    
-                    ki "We both do. Have you tried talkin' with the teachers about this?" 
-                    
-                    "I really don't want to go back to Vivaldi's office. I barely dodged getting in trouble the last time."
-                    
-                    n "What could they do?"
-
-                    show kietsu sad talk
-                    
-                    ki "They could do room searches. It's what we did at my old school." 
-                    
-                    n "I think that would just get everyone mad at me."
-                    
-                    show kietsu sympathetic
-
-                    ki "Suit yourself." 
-                    
-                    hide kietsu
-
-                    jump chapter2_investigation_kietsu_loop
-
-                "Red Hair":
-                    
-                    ki "Maybe it's animal hair? Those things get everywhere. Taiga brought a bunch of critters."
-                    
-                    "I haven't seen what his other rabbits look like."
-                    
-                    n "If so, it could be from anyone that's gone in his dorm."
-                    
-                    "I'll have to confirm for myself before I jump to conclusions."
-                    
-                    hide kietsu
-
-                    jump chapter2_investigation_kietsu_loop
-
-                "Location of Note":
-
-                    show kietsu talk
-                    
-                    ki "It had to be put in there after Ichita locked up."
-
-                    n "What do you mean?"
-
-                    show kietsu confused
-
-                    ki "The class leaders are in charge of tidying up the classroom and locking it up at the end of the day."
-                    ki "I was helping him out yesterday and saw him lock the door."
-                    ki "There wasn't anything on Jona's desk then."
-
-                    "But he saw it first thing in the morning..."
-
-                    n "Would anyone other than the teachers be able to get in?"
-
-                    show kietsu tease
-
-                    ki "Anyone in the council or class reps I guess."
-                    hide kietsu
-                    jump chapter2_investigation_kietsu_loop
-        "Motive":
-            show kietsu talk
-
-            ki "Everyone here has so much history with each other. I've never been so thankful to not know anyone."
-            
-            n "The classes in Estella were really insular, so it was easy for people to have an us versus them mentality."
-            
-            show kietsu surprised
-
-            ki "I can tell."
-            
-            n "Have you heard anyone saying bad things about Jona?"
-
-            show kietsu upset1 surprised
-            
-            ki "Vision Majors try to get along, even if we don't 'like' each other. The most I've heard is people bein' irritated that he shows up late to class."
-            ki "Though if somethin' of his was stolen, that explains why he was buggin' out."
-            
-            n "We think it was taken when Mariko attacked Hiro."
-            
-            ki "If he left it somewhere, anyone could've taken it." 
-
-            hide kietsu
-            
-            jump chapter2_investigation_kietsu_loop
-
-        "Leave":
-            pass
-
-    show kietsu tease
+    "The machine groans a sharp protest and grinds to a halt. He threatens the half finished piece with a pair of scissors."
     
-    ki "There has to be some way to put fog on the dancefloor. Or maybe bubbles?"
+    sh "For the love of God, why must you betray me in my hour of need?" 
     
-    n "Anything with soap could make someone fall."
+    "He pops all the pieces open and gives a sharp tug. A tangled mess of thread fights to keep it tied to the machine."
+    
+    sh "I'm never touching organza again." 
+    
+    n "Maybe you could use a break?"
+    
+    "The look he gives me as he cuts the thread is absolutely feral. He relaxes a bit when he realizes it's me."
+    
+    show shoma frown
 
-    show kietsu talk
+    sh "Yes, a break." 
     
-    ki "I guess so. Can't have anyone slidin' off the roof now, can we? I'll have to sit on that one a bit longer before throwin' in the towel."
-    ki "It's a good thing to keep in mind for next year."
+    "He leaves the sewing machine, but not before giving it a warning glare. He reaches under the cooler and tosses me a water bottle."
     
-    "Anything we want to buy, we'll have to use more than once or Setsuna will kill us. Guess I should try somewhere else."
+    show shoma
 
-    hide kietsu
-    pass
+    sh "What's on your mind?" 
 
-label chapter2_investigation_yoku:
+    hide shoma
 
-    scene backgroundcafe
-
-    show yoku furious1
-    
-    "I've never seen someone stare so intently at a menu before."
-    "He's scanning the coffee offerings like a man deciphering hieroglyphics."
-    
-    y "I don't suppose you could explain what the difference between a mocha latte and a latte with mocha sauce is, could you?" 
-    
-    "I look and sure enough, it's on the menu twice for some reason."
-    
-    n "I mean, if what you want is something full of sugar, I'd go with the mocha latte."
-    n "If it's more expensive, it's gotta have more of something in it."
-    
-    show yoku 
-
-    y "That's a fair point. Perhaps the number of pumps is the difference. If you get the other one, we could compare." 
-    
-    "Why do I have to buy one too? ...damn it, now I'm curious."
-    
-    n "Fine."
-    
-    "It'll be easier to ask him questions if we're both waiting for our drinks to cool anyway."
-
-    hide yoku
-label chapter2_investigation_yoku_loop:
+label chapter2_investigation_shoma_loop:
 
     menu:
-        "Will you go to the dance with me?":
-            if YokuRep >= 2:
-
-                show yoku blush1
-                
-                "He has no readable expression. I snap my fingers a bit to see if I can pull him out of his head."
-                
-                n "It's an easy question to answer. It's either yes or no."
-                
-                y "I'm just a little shocked is all. Are you sure that's what you want? People have been desperate for something to talk about."
-                
-                n "I don't care. It's just a dance, it'll be fun."
-                
-                y "Yes, fun." 
-                
-                "He takes a sip of coffee."
-
-                show yoku bashful
-                
-                y "Might as well."
-
-                $ date == True
-                $ dateRise == False
-                $ dateNanase == False
-                $ dateMomoko == False
-                $ dateKitsune == False
-                $ dateChisei == False
-                $ dateHiro == False
-                $ dateYoku == True
-                $ dateMu == False
-                $ dateTaiga == False
-
-                hide yoku
-
-            else:
-                show yoku furious2
-
-                y "You must be joking." 
-                
-                n "No, I was just asking-"
-                
-                y "I would never lower myself to be seen arm in arm with the likes of you."
-                
-                "Ow. A simple no would have been fine."
-
-                hide yoku
-                
-            jump chapter2_investigation_yoku_loop
-
-        "Help with the Party":
-            $ characters_helping +=1
-
-            show yoku eyeroll
-
-            y "You want my help?" 
-            
-            n "You're the music guy, aren't you?"
-
-            show yoku bashful
-            
-            y "I figured for a party type setting, you'd prefer Kazz and his little drum machines."
-            
-            n "Kazz can DJ all he wants, but I'd feel more comfortable with a concrete set list. That way we could know when things were wrapping up."
-            
-            y "I would be more than happy to throw my hat in the ring then."
-        
-            hide yoku
-
-            jump chapter2_investigation_yoku_loop
-
-        "Show Evidence":
-            menu:
-                "Magazine Clippings":
-
-                    show yoku furious1
-                    
-                    y "Well, someone fancies themselves intimidating. Though a ransom note typically works best when you have something to ransom."
-                    
-                    n "Like a stolen book?"
-
-                    show yoku
-                    
-                    y "Ah, maybe that's it. I know you've been drawn out to a school yard brawl in the past, but this seems to have nothing to do with you."
-                    y "It may just be in Jona's best interest not to go to the dance. There could be a bucket of trash waiting to get dunked on his head."
-                    
-                    n "I just want to be cautious."
-                    
-                    "After last time, I don't trust the 'it's just bullying' defense."
-                    
-                    hide yoku
-
-                    jump chapter2_investigation_yoku_loop
-
-                "Location of Note":
-
-                    show yoku furious1
-                    
-                    y "Interesting they should mention the dance specifically."
-                    
-                    n "What do you mean?"
-                    
-                    show yoku think
-
-                    y "Well, this was found after we had our meeting. Surely news doesn't cycle around that quickly."
-                    y "All of us were sworn to secrecy until we could confirm that the idea had been greenlit."
-                    y "I doubt anyone could have heard about it, made this, and snuck it into the Vision classroom in the short amount of time between the meeting and class."
-                    
-                    "So either they were in the Vision class, or they knew beforehand."
-                    
-                    n "Who all knew about the dance?"
-
-                    show yoku furious2
-                    
-                    y "Use your head, Nagen. You were at the meeting just as I was."
-                    
-                    hide yoku
-
-                    jump chapter2_investigation_yoku_loop
-
-        "Motive":
-            
-            show yoku think
-
-            y "Jona's family was part of the upper echelon before my family arrived."
-            y "My guess is that we were their replacements, though we did enter at the bottom of the food chain."
-            
-            n "So you benefit from him being where he is?"
-
-            show yoku furious2
-            
-            y "It's more that I don't have to think about him at all. After school, our lives will never cross paths again."
-            y "Whoever did do this had to have gotten a key from one of the class representitives to do it."
-            y "I can't imagine anyone leaving that note in Principal Vivaldi's classroom when she might see it first."
-
-            "That's true. A teacher would have taken it right away."
-
-            hide yoku
-            
-            jump chapter2_investigation_yoku_loop
-
-        "Leave":
-            pass
-
-    show yoku 
-
-    y "Let me try your coffee."
-    
-    "He seems to debate which part of the cup to drink from before making a decision and taking a sip."
-    
-    y "...I can't tell the difference." 
-    
-    "He pushes his cup my way. I try it. I'm no gourmand, but it tastes exactly the same."
-    
-    n "I think you paid extra for no reason."
-
-    show yoku blush1
-    
-    y "I should have trusted my instincts. It's serviceable at least." 
-    
-    "I leave a little poorer and wiser."
-
-    hide yoku
-    
-    return
-
-label chapter2_investigation_setsuna:
-    
-    scene backgroundcourtyard
-
-    show setsuna
-    
-    s "How's it going?"
-    
-    n "You know how it's going."
-    
-    s "Aww, don't be such a little baby. This is like, your one chance to prove you're competent."
-    s "I've been dying to see how you do."
-    
-    n "I'm sure you are."
-    
-    "Last time, she was directly involved with what was going on."
-    
-    n "If someone was trying to screw us over, you'd tell me right?"
-
-    show setsuna cringe
-    
-    s "Depends on what you expect me to tell."
-
-    hide setsuna
-
-label chapter2_investigation_setsuna_loop:
-
-    menu:
-        "Help with the Party":
-            $ characters_helping +=1
-
-            show setsuna impatient
-
-            s "I already am."
-            
-            n "But-"
-            
-            s "Nagen, do you want this thing to balloon even more out of control?"
-            
-            "Definitely not."
-
-            show setsuna embarrassed
-            
-            s "Then my job is to keep everyone's 'great' ideas off of Kietsu's desk."
-            s "I swear to God, all of you are trying so hard to be liked that you're overworking yourselves."
-            s "It's only been a few weeks."
-
-            hide setsuna
-            
-            jump chapter2_investigation_setsuna_loop
-
-        "Show Evidence":
-            menu:
-                "Red Hair":
-
-                    show setsuna mourning
-                    
-                    s "The only people I can think of with red hair are guys and maybe Rei, but it's too short to be her hair."
-                    s "Then again, maybe someone close to them framed the red head. You remember how hard someone tried to make Kazz and Mu look bad."
-                    
-                    n "Yeah, but who'd be able to get a hair without noticing?"
-                    
-                    "She looked down at her sweatshirt and pulled one of her own blond hairs that got shoved through the fibers."
-                    
-                    show setsuna tired talk
-
-                    s "Usually happens in the wash. I'm sure everyone's washed their clothes by now."
-                    
-                    "So they may not have felt it taken off them. A lot of people wear sweatshirts, though."
-                    
-                    hide setsuna
-                    jump chapter2_investigation_setsuna_loop
-
-                "Nail Polish":
-                
-                    show setsuna sad talk
-                    
-                    s "I can't stand the stuff. It's nice for like, one day and then it gets all messed up."
-                    s "Even if you try to patch it up, there'll be a dent."
-                    
-                    n "So if this happened to someone's nails, you'd be able to tell?"
-                    
-                    show setsuna apathetic
-
-                    s "Maybe. It'll either be patched up or redone entirely." 
-                    
-                    n "It'd be easier to find a hair than the nail polish."
-                    hide setsuna
-                    jump chapter2_investigation_setsuna_loop
-
-                "Magazine Cippings":
-                
-                    show setsuna shocked
-                    
-                    s "Ichita's a dead man if these are what I think they are."
-                    
-                    n "You know what magazines they are?"
-                    
-                    s "I recognize the O. He was borrowing them from someone, that's all I know."
-                    
-                    hide setsuna
-
-                    jump chapter2_investigation_setsuna_loop
-
-        "Motive":
-            
-            show setsuna tired talk
-
-            s "If some big dramatic confrontation happens during the dance, that is going to be a ton of paperwork for Nanase and a pain in my ass."
-            s "Why would anyone in the student council gamble what little good will we gained from the student body over some guy we don't know?" 
-            
-            n "Right, you and Kietsu never went to Estella."
-            
-            s "And Nanase barely remembers you were one of the guys responsible for the riots. Or at the very least, she doesn't care."
-            
-            n "Have you heard anyone say they don't like him?"
-            
-            "She thinks a bit."
-
-            show setsuna glare
-            
-            s "A lot of people in the Charm course know of him. I'm not sure if they've made the connection they were told not to like him."
-            
-            n "What do you mean?"
-            
-            s "He pushes people away and he doesn't compromise. You might not have seen it since he's your friend, but trust me, it's a huge issue."
-            
-            "So Charm Majors might not like him. Good to know."
-
-            hide setsuna
-            
-            jump chapter2_investigation_setsuna_loop
-
-        "Leave":
-            pass
-
-    show setsuna
-
-    s "I'm disappointed, I thought you were going to ask about something else." 
-    
-    n "Like what?"
-
-    show setsuna cringe
-    
-    s "Like the fact that anyone pierced by Mariko isn't allowed to take them out."
-    
-    n "Wait a minute, what do you mean?"
-    
-    s "With new piercings, you can't take them out or the wound will heal. You're supposed to rotate them though and mine haven't been."
-    s "The nurse told me to have Mr. Yaguchi take a look at them."
-    
-    n "Isn't he, like, a tech guy?"
-
-    show setsuna glare
-    
-    s "Yeah. Something was in them. He told me he 'turned them off' but not to take them out."
-    s "I've done some digging, but no one else has gotten new piercings, so I don't think it'll happen again."
-    s "It is curious. If Mariko had something that could control someone's nervous system, why'd she give it to us and not you guys?"
-    s "It would have been easier to capture you then."
-    
-    n "Were you being controlled during the fight?"
-    
-    s "Yeah. I get why everyone's freaked out about it. Poor Rei can't catch a break. It happened to her twice, and from a friend each time."
-    
-    n "I didn't know an education device could be that small."
-    
-    "The hardware needed for ours required full helmets and other types of equipment. I can't imagine how any of that could fit into a stud."
-    
-    show setsuna
-
-    s "You're not the only one who makes stuff. Well, later, Nagen. Unlike you, I'm busy with other things."
-    
-    hide setsuna
-    return
-
-label chapter2_investigation_nanase:
-
-    scene backgroundroof
-    
-    "Nanase is busy getting the dimensions for the roof. In her little notebook is a list of all the outlets and a map of the walkable areas."
-    
-    show nanase surprised
-
-    nk "Goodness, you startled me!"
-    
-    n "Sorry, I just had to ask you a couple of questions."
-
-    hide nanase
-
-label chapter2_investigation_nanase_loop:
-    
-    menu:
-        "Will you go to the dance with me?":
-            if nkRep >= 2:
-
-                show nanase sad smile
-                
-                nk "Yes!"
-                
-                "She's so excited."
-                
-                nk "Oh my goodness, we're going to have so much fun. Are any of your other friends bringing dates?"
-                
-                n "I think it's just us."
-                
-                "Hiro has no problem going stag. Finding a date is probably the last thing on Jona or Uitto's minds."
-                
-                show nanase smile talk
-
-                nk "Oh well. It'll be just us."
-
-                $ date == True
-                $ dateRise == False
-                $ dateNanase == True
-                $ dateMomoko == False
-                $ dateKitsune == False
-                $ dateChisei == False
-                $ dateHiro == False
-                $ dateYoku == False
-                $ dateMu == False
-                $ dateTaiga == False
-
-                hide nanase
-                
-            else:
-
-                show nanase sad2
-                
-                nk "I'd love to, but I'm on door duty, remember?"
-                
-                "Right, she volunteered to take tickets. We already don't have enough people to manage what we have planned."
-                
-                show nanase sad1
-
-                nk "You should ask someone who has time to enjoy the whole dance with you."
-                
-                "She looks disappointed. That makes both of us."
-
-                hide nanase
-
-            jump chapter2_investigation_nanase_loop
-
         "Help with the Party":
             $ characters_helping += 1
 
-            show nanase irate
+            show shoma observe
+            "He gives me a long, hard look."
+            
+            n "I-I mean, I know you're already doing a lot for the people going, but is there anything you need to get stuff done on time?"
+            
+            sh "Oh... Now that you mention it, I could use a few things to make the garments more finished."
+            sh "I'm having a problem with things fraying. If I could get a lighter and some clear nail polish, that would be a great help."
+            
+            n "I know Mu has a lighter, and Uitto probably knows who'd have clear nail polish. You sure you don't want an extra set of hands though?"
+            
+            show shoma sad
 
-            nk "Oh dear, what are we forgetting?"
+            sh "As much as I'd like to have other people sweat it out with me, I'm afraid teaching amateurs how to sew would take more time than it would save."
+            sh "Besides, I have a vision for how things are supposed to go. You know how it is." 
             
-            n "A chaperone."
+            "I do know. Hopefully he can get everything done on time."
+            
+            hide shoma
 
-            show nanase embarrassed
-            
-            nk "Goodness, you're right. We may have gotten permission to be on campus after hours, but we haven't asked any of the teachers to lend a hand."
-            
-            n "Would you be able to ask Ms. Sato to do it?"
-            
-            nk "Wouldn't Professor Inukai be more lax?"
-            
-            n "At the first school event? I think he'd try too hard to follow the rules."
-            n "I imagine that late at night, Ms. Sato would be happy to sit in her chair while we all do our thing."
-            
-            show nanase smile
-
-            nk "Excellent point. I'll draft a proposal once I'm done here." 
-            
-            hide nanase
-
-            jump chapter2_investigation_nanase_loop
+            jump chapter2_investigation_shoma_loop
 
         "Show Evidence":
             menu:
-                "Nail Polish":
+                "Nailpolish":
 
-                    show nanase surprised
+                    show shoma
                     
-                    nk "I almost used that one. It's the most popular color from Rei's collection."
-                    nk "I wanted to see what Shoma did with my mom's old dress before picking a color."
+                    n "Do you know which of the girls wears nail polish?"
                     
-                    n "You're not having him make something new?"
+                    sh "No, but I know Dyre and Kazz will on occasion. I haven't seen them wear pink yet."
+                    
+                    "He snaps his fingers."
 
-                    show nanase sad smile
+                    show shoma grin
                     
-                    nk "He's already overworked as it is."
+                    sh "Some of the girls wear fake nails made of plastic or resin."
+                    sh "You can tell if they're wearing some by the raised edges near the nail beds."
                     
-                    n "That's fair. Do you know who's used it?"
-                    
-                    nk "No, sorry."
+                    hide shoma
 
-                    hide nanase
-                    
-                    jump chapter2_investigation_nanase_loop
-
+                    jump chapter2_investigation_shoma_loop
+                
                 "Magazine Clippings":
 
-                    show nanase offended
+                    show shoma fear
                     
-                    nk "Scrapbooking glue."
+                    "His eyes widen, mouth agape."
+                    
+                    sh "Who would do this to an innocent issue of Vogue?!" 
+                    
+                    n "So it's a fashion magazine?"
 
-                    show nanase irate
+                    show shoma mad
                     
-                    "She narrows her eyes."
+                    sh "I'd know that font anywhere. Ugh, most of the stuff in the library is dated, so it has to be something someone brought with them."
+                    sh "I imagine the longer we stay here, the more stuff from the outside will become valuable. How could they do this?"
                     
-                    n "Not a fan of the hobby?"
-                    
-                    nk "I guess not? It's so strange. As soon as I smelled it, it felt like the room was crowded."
-                    nk "I can only imagine how much of a mess that would cause, all the little bits of paper and useless stuff sitting in piles."
-                    
-                    "She does seem to like to keep things neat and tidy."
-                    
-                    show nanase disappointed
+                    "He's more upset then Jona was when he got threatened. Though both of them are more concerned with what was used to make the note than the note itself."
+                    "No wonder they get along so well."
 
-                    nk "Then again, I'm not a fan of clutter in general."
+                    hide shoma
                     
-                    hide nanase
+                    jump chapter2_investigation_shoma_loop
 
-                    jump chapter2_investigation_nanase_loop
+                "Stolen Sketchbook":
 
-                "Sketchbook Paper":
+                    show shoma lie
                     
-                    show nanase disappointed
+                    sh "I wish I knew where it was. I've offered for Jona some of my drafting paper to use in the meantime but-" 
+                    
+                    n "It's the wrong kind of paper."
+                    
+                    sh "Jona draws with such a heavy hand. It's impossible to erase on thin paper without tearing."
+                    
+                    "Maybe there are imprints left in the sketchbook?"
+                    "All the drawings could have been ripped out of it by now, but not many people would think to check the blank pages."
+                    "It's a good thing to keep in mind."
 
-                    nk "So it belongs to Jona."
+                    hide shoma
                     
-                    n "You've seen it before?"
-                    
-                    nk "Kind of. Would you hold on a second?"
-                    
-                    "She left to go riffle through her backpack."
-
-                    show nanase smile
-                    
-                    nk "This is made by the same company."
-                    
-                    "She hands me a hardcover book with blank pages." 
-                    
-                    #(+New Sketchbook)
-                    
-                    nk "I thought it was going to be like a journal. I don't like writing in things without lines."
-                    
-                    "There are a few attempts with slanted handwriting so small that I could barely read it."
-                    
-                    show nanase smile talk
-
-                    nk "He can have it if it'll work as a replacement."
-                    
-                    n "Are you serious?" 
-                    
-                    "I know the guy hates hardbound sketchbooks, but it's better than nothing."
-                    
-                    show nanase sad1
-
-                    nk "It would feel wrong throwing away something I barely used. I'd rather it go to someone who needs it."
-                    
-                    n "Thank you so much."
-
-                    hide nanase
-
-                    jump chapter2_investigation_nanase_loop
+                    jump chapter2_investigation_shoma_loop             
         "Motive":
 
-            show nanase irate
+            show shoma manic
             
-            nk "I've heard a few people say he deserves this. It's so despicable. I don't see how this kind of retribution helps anyone."
+            sh "I've personally never had any issues with Jona. I wouldn't let him in the shop if I did."
             
-            n "Who's been saying that?"
+            n "That's fair. Do you know anyone who does?"
+            
+            sh "If there is anyone, it's probably someone from the upper class rings. Those people have such strange rules for what an 'undesirable' person is."
+            
+            n "I don't think anyone in our old class was that well-off."
+            
+            show shoma mad
 
-            show nanase
+            sh "No. If memory serves correct, the rich kids favored colors you'd find in nature."
+            sh "Neutrals, golds, pretty much anything you'd find on an apple. We all brought our things from home."
+            sh "I'd try asking someone who looks the part."
             
-            nk "Dyre mostly."
-            
-            "No surprises there."
-            
-            nk "Even Rise and Yoku agree. They mentioned some kind of cult."
-            
-            n "This isn't the first time Jona has had his art stolen."
-            n "Last time it was for this doomsday cult that hated Vision Majors. Seeing how he is one, that was clearly not what he intended with it."
-            
-            show nanase ashamed
+            n "I'll keep that in mind."
 
-            nk "That's terrible."
-
-            hide nanase
+            hide shoma
             
-            jump chapter2_investigation_nanase_loop
+            jump chapter2_investigation_shoma_loop
 
         "Leave":
             pass
+    
+    show shoma frown
 
-    show nanase disappointed
+    sh "I should get back to fighting with that thing if I don't want to fall behind."
+    
+    "It looks mostly finished to me. He drags himself back to his seat and as he sits down, he shrieks."
+    
+    show shoma fear
 
-    n "So, do we have enough space?"
+    sh "You rat bastard, you broke my needle!" 
     
-    nk "It'll be a little tight. If we can find some more extension cords, we can move the DJ booth over here and then the snacks could go there."
-    
-    "Her plans sounds more confusing than a football play, but I'll take her word for it."
-    
-    hide nanase
+    "I should get out of here."
+
+    hide shoma
+
+    $ fake_reveal_panel(1, "panel4")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel4")
+
+    $ set_profile_availability("shoma", c_i_profile_unavailable)
 
     return
 
@@ -1564,6 +1662,7 @@ label chapter2_investigation_momoko:
     mh "You're good, the drying stage is the most boring part.  How can I help you?"
 
     hide momoko
+
 label chapter2_investigation_momoko_loop:
     menu:
         "Will you go to the dance with me?":
@@ -1744,810 +1843,18 @@ label chapter2_investigation_momoko_loop:
     hide momoko
     
     "After the mess is cleaned up, we're given a stern lecture about not turning our backs on active chemicals."
-    
-    return
 
+    $ fake_reveal_panel(2, "panel1")
 
-label chapter2_investigation_kazz:
+    $ current_i_page = 2
 
-    scene backgroundavroom
+    call investigation_unlock
 
-    "Ever since the incident, Kazz has guarded the PA booth like a hawk. The key never leaves his belt loop. He's like a very dorkily dressed janitor."
-    "He's letting me in for the moment, but I can tell I'm being watched."
-    
-    show kazz complain
+    $ current_i_page = 1
 
-    kk "So someone else has had their stuff stolen now. That's so twisted."
-    kk "It wasn't like he made a big deal about drawing in class, he was being quiet."
-    
-    n "Yeah. That paired with the threat letter he got afterwards falls into the pattern of what happened last week."
-    
-    show kazz grin
+    $ real_reveal_panel(2, "panel1")
 
-    kk "Bummers all around. And I was so hyped for the party too."
-    
-    "He's the only person who still thinks of it as just a party. It's a small distinction, but I'm happy some people are keeping their expectations low."
-    
-    kk "I've had my nose to the grindstone with other things, so I'm not sure how much help I can be."
-
-    hide kazz
-label chapter2_investigation_kazz_loop:
-
-    menu:
-        "Help with the Party":
-            $ characters_helping +=1
-
-            show kazz oh
-            
-            n "We need a DJ."
-            
-            "His eyes light up."
-            
-            show kazz grin
-            
-            kk "You want me to spin for the party?"
-            
-            n "That's your thing, right? The thing you want to do?"
-            
-            kk "Well, yeah, but I've never mixed live before."
-            
-            "How hard is it to pick a bunch of songs and make sure it plays? Even if he has no experience, I can't see him messing up. "
-            
-            kk "Hell yeah I'll help out! This is going to be so much fun."
-            
-            hide kazz
-
-            jump chapter2_investigation_kazz_loop
-
-        "Show Evidence":
-            menu:
-                "Red Hair":
-
-                    show kazz worry
-                    
-                    kk "Ew. You've been toting that around all day, bro?" 
-                    
-                    n "It's just hair."
-                    
-                    kk "It's still a piece of a person."
-
-                    show kazz dead
-                    
-                    "He wrinkles his nose."
-                    
-                    kk "Still, if it was left there, it's probably for a reason. You can pick something like that out with enough determination."
-                    kk "The paint, not so much."
-
-                    hide kazz
-                    
-                    jump chapter2_investigation_kazz_loop
-
-                "Location of Note":
-
-                    show kazz talk
-                    
-                    kk "I've been keeping a closer eye on who can go where now, for obvious reasons."
-                    kk "Anyone student council or student council adjacent can enter the classrooms whenever they want. At least, whenever Mr. Yaguichi's on campus."
-                    
-                    n "You think he saw something?"
-                    
-                    kk "Maybe, but you've seen how often that guy looks up from his work. If he had solid evidence, someone would be in trouble by now."
-                    
-                    "He has a point. I've seen him soldering more than I've seen him watching students."
-                    
-                    show kazz oh
-
-                    kk "It's a panopticon. The idea that someone might be watching is enough to deter most people from acting out."
-                    kk "I wonder if the person that did this had a way of knowing when he was watching."
-                    
-                    n "How could they do that?"
-
-                    show kazz sad talk
-                    
-                    kk "I don't know. It's either that or they have brass balls and don't care about getting caught."
-                    
-                    hide kazz
-
-                    jump chapter2_investigation_kazz_loop
-
-                "Magazine Clippings":
-
-                    show kazz worry
-                    
-                    kk "That's one dedicated stalker. Not that Mariko wasn't hauling ass, but this kind of thing takes time to put together."
-                    kk "They must really hate the guy."
-                    
-                    n "Yeah, but so far, I haven't had too many people admit to not liking him."
-                    
-                    show kazz sad talk
-
-                    kk "Well, you're his friend. I'm sure Uitto hasn't heard any of the rumors floating around the Charm department either."
-                    
-                    n "What rumors?"
-
-                    show kazz talk
-                    
-                    kk "That he's faking his proficiency."
-                    kk "Some people have been wondering if he's actually proficient in something like lying or manipulation and is covering it up with spooky stuff to seem cool."
-                    
-                    n "Where'd you hear that from?"
-                    
-                    kk "Dyre." 
-
-                    hide kazz
-                    
-                    jump chapter2_investigation_kazz_loop
-        "Motive":
-
-            show kazz sad talk
-            
-            kk "I've been trying to keep things as chill as possible on my end. The first week of school sucked. Real bummer it's happening again."
-            kk "And Mariko's off who knows where, so it has to be somebody else, right?"
-            
-            n "That's what it seems like."
-            
-            kk "Major buzzkill. I can't say I've ever gone out of my way to interact with Jona; he always avoided me. I have zero clue what would make someone do this."
-            
-            "That might be my fault. I wasn't exactly subtle about why I was transferred to the at risk class, or the people who failed to follow me there."
-            
-            hide kazz
-
-            jump chapter2_investigation_kazz_loop
-
-        "Leave":
-            pass
-
-    show kazz talk
-
-    kk "Is there anything else I can help with?"
-    
-    n "Nothing comes to mind."
-    
-    "Wait, why is he so eager to help? "
-    
-    n "What are you procrastinating on?"
-
-    show kazz sad talk
-    
-    kk "Ugh, busted. Kitsune wants me to redo the entire album we made since my stuff got confiscated."
-    kk "The first time we did it, she was just hyped to finally record. Now she's got standards, and I'm afraid neither of us is skilled enough to meet them."
-    kk "I've retooled the same bridge three times, and she's still not happy with it." 
-    
-    n "Try telling her you're going for authenticity."
-
-    show kazz oh
-    
-    kk "Dude, that's genius."
-    
-    n "Also, no one else is making new stuff at the school right now. It could be a six out of ten, and people would still like it."
-    
-    show kazz sad talk
-
-    kk "I'm not sure about that. This beast isn't for everyone."
-    
-    "He looks back at all the editing he has to do."
-    
-    kk "Alright, I gotta kick you out or I'll keep dragging my feet on this last round of edits." 
-    
-    n "You got this."
-
-    hide kazz
-    
-    return
-
-label chapter2_investigation_dyre:
-
-    scene backgroundlibrary
-
-    "Dyre is sitting at a table, surrounded by piles of books. The covers have pictures of brains on them or bland white textbook covers."
-    "Lots of stuff on brain injuries and personality disorders. He seems kind of frustrated, but then he sees me and puts on that smarmy mask of his."
-    
-    show dyre
-
-    d "To what do I owe the pleasure?"
-    
-    n "I think you know what. Someone stole Jona's sketchbook and of everyone here, you're the only one that's tried to pull pranks on people."
-    
-    show dyre smile
-
-    d "Nagen, I'm no monster. I only jest with people who I know can hang. You haven't been in on the joke in years."
-    
-    n "I certainly don't find this funny. Last time you had an idea of who was harassing us and you chose to say nothing. I'm guessing you have some ideas again."
-    
-    show dyre smirk
-
-    d "Alright, I'll bite. What do you want to know?"
-
-    hide dyre
-
-label chapter2_investigation_dyre_loop:
-
-    menu:
-
-        "Help with the Party":
-
-            $ characters_helping +=1
-
-            show dyre smile talk
-            
-            d "Sure, I guess. What do you need?"
-            
-            n "Trash. There's going to be so much trash when we're done. If you could take the bags to the dumpster, that would be great."
-            
-            show dyre scowl
-
-            d "Hardly a glamorous job."
-            
-            n "That's why no one wants to do it."
-
-            show dyre talk2
-            
-            d "Alright. At least it's easy." 
-
-            hide dyre
-            
-            jump chapter2_investigation_dyre_loop
-
-        "Show Evidence":
-            menu:
-                "Magazine Clippings":
-
-                    show dyre talk
-                    
-                    d "I've seen a lot of people looking at stuff like that."
-                    d "Chisei especially, she likes to have references when writing set descriptions."
-                    d "I don't see her cutting one up anytime soon. Whoever did this probably owned them."
-                    
-                    n "You think?" 
-
-                    show dyre talk2
-                    
-                    d "If it was stolen, we would have heard about it, like with Jona and Kazz's stuff."
-                    d "If it was borrowed, the borrower would get caught as soon as the magazines were given back."
-                    d "If you can find out who was lending them out, you'll be golden."
-                    
-                    hide dyre
-
-                    jump chapter2_investigation_dyre_loop
-
-                "Nail Polish":
-
-                    show dyre smirk
-                    
-                    d "The note is misspelled. Hard to say they caught it when all the nail goop is up by the hair instead."
-                    d "Doesn't look like the letters were moved around at all after they were placed."
-                    d "I wouldn't be surprised if the person laying them down thought of them more as pictures than letters."
-                    
-                    n "So someone artistic?"
-
-                    show dyre smile
-                    
-                    d "Depends on what you consider artistic."
-                    d "I know artists usually have bad handwriting, but there are other things they could have used to make this if art was their thing."
-                    
-                    hide dyre
-
-                    jump chapter2_investigation_dyre_loop
-
-                "Red Hair":
-                    
-                    show dyre talk2
-
-                    d "It isn't mine. I know it looks like I spend hours in the mirror, but that's to try and straighten my hair, not the other way around."
-                    d "Whoever's hair that is, it's naturally straight."
-                    d "Rather than focusing on that, it's really weird how vague the note is. Mariko had a set deadline, but this is open ended and can be interpreted several ways."
-                    
-                    n "Or they didn't know when exactly the dance was happening."
-                    
-                    show dyre talk2
-
-                    d "Also a possibility. I'm guessing they know how you think."
-                    
-                    hide dyre
-
-                    jump chapter2_investigation_dyre_loop
-
-        "Motive":
-
-            show dyre scowl
-            
-            d "People in the Charm department have had an issue with him and his family for years."
-            d "I'm sure you remember this, but his mom wasn't the nicest person when it came to him. She made it everyone's problem when the school tried to classify him as a Charm Major at first."
-            
-            n "That's news to me."
-
-            show dyre sad talk
-            
-            d "Well, Charm Proficiencies can get grandfathered down. Kinda like a peer reviewed ability, but his mom refused to believe he had her ability."
-            d "Kept accusing the staff of trying to curse him. They never could prove one way or another which class he should've been in."
-            d "Though I'm sure if you ask him, he'll double down on being a vision major."
-            
-            n "That's 'cause he is."
-            
-            "He's got the emotional intelligence of a shoe. Most of the time, he's guessing what to do based on auras, but it's not like he has a mood ring guide. "
-            
-            show dyre 
-
-
-            d "Or he could be lying to himself. You'd be surprised what people can convince themselves of when the alternative is violent rejection."
-            
-            "He shrugs."
-
-            show dyre talk2
-            
-            d "It doesn't matter if you think it's true, what matters is that other Charm Majors think it's true."
-            
-            hide dyre
-
-            jump chapter2_investigation_dyre_loop
-
-        "Leave":
-            pass
-    show dyre smile
-
-    "That was surprisingly helpful."
-    
-    n "Thanks."
-
-    show dyre disturbed
-    
-    d "What for?"
-    
-    n "For actually answering my questions."
-
-    show dyre talk2
-    
-    d "I have no horse in this race. Forgive me for being a little defensive of my friend when the last time you took issue with someone, they woke up in a war zone."
-
-    if Hero > Villain:
-
-        show dyre
-
-        d "It seems you learned your lesson."
-
-    else:
-        show dyre scowl
-
-        d "You haven't exactly been acting like someone who won't do it again."
-    
-    show dyre talk2 
-
-    n "Either way, I appreciate it."
-    
-    d "Yeah, whatever."
-    
-    "I leave him to his pile of books."
-
-    hide dyre
-    
-    return
-
-label chapter2_investigation_kitsune:
-
-    scene backgroundstage
-
-    show kistune
-
-    "Kitsune is standing on stage holding a tiny thing up to the stage lights. She tilts and rotates it around with a grim expression."
-    
-    k "Does this look like a rhinestone to you?"
-    
-    n "It looks like a gem."
-    
-    show kitsune smug
-    
-    k "We don't have any, so I'm trying to make due with glue and candy wrappers. The glass ended up being too heavy. It's better than nothing at least."
-    
-    "There are a few other rejected attempts in her pocket. A couple of masks are sitting in the wings."
-    "It seems anything she's thinking about wearing at the dance, she's brought to see how it would look on stage." 
-    
-    n "You're taking this dance really seriously." 
-
-    show kitsune shocked
-    
-    k "Of course! I'd like to keep doing fun things like this, but it only works if everyone's on board. You all have been working so hard, it only makes sense we should too."
-
-    hide kitsune
-
-label chapter2_investigation_kitsune_loop:
-    menu:
-        "Will you go to the dance with me?":
-
-            show kitsune shocked
-
-            k "Get out of here."
-            
-            n "I'm sorry?"
-
-            show kitsune apathetic
-            
-            k "No! I mean, like, you're serious. Like, for real, for real? You want to go to the dance with me?"
-            
-            n "Is that a problem?"
-
-            show kitsune smug
-            
-            k "Are you kidding? Broody bad boys were like, in before the world went to shit."
-            k "Being the only femme there with a date would totally show everyone who's actual prom queen material."
-            
-            "I feel like we're getting off topic."
-            
-            n "Is that a yes?"
-            
-            k "Um, yeah. Of course it's a yes."
-            k "My dress is based on a white peacock, dress accordingly."
-            
-            $ date == True
-            $ dateRise == False
-            $ dateNanase == False
-            $ dateMomoko == False
-            $ dateKitsune == True
-            $ dateChisei == False
-            $ dateHiro == False
-            $ dateYoku == False
-            $ dateMu == False
-            $ dateTaiga == False
-            
-            # kdate = true, date = true, 
-            jump chapter2_investigation_kitsune_loop
-
-        "Help with the Party":
-            $ characters_helping +=1
-
-            show kitsune
-            k "I'll be spending a lot of time getting ready beforehand."
-            k "Is there anything I could do after?"
-            
-            "I'm surprised she didn't ask to sing."
-            
-            n "We'll have a bunch of dishes that'll need to be brought back to the cafe. Think you can manage it?"
-            
-            show kitsune talk2
-
-            k "Of course."
-
-            hide kitsune
-
-            jump chapter2_investigation_kitsune_loop
-
-        "Show Evidence":
-            menu:
-                "Sketchbook Paper":
-
-                    show kitsune talk2
-                    
-                    k "Who cares about that?"
-                    
-                    n "Well, Jona does-"
-
-                    show kitsune apathetic
-                    
-                    k "Hasn't Ichita been acting super weird lately? He's all secretive and scheme-y and he won't tell me anything, called me a blabber mouth."
-                    k "Me? A blabber mouth? Can you imagine?!"
-                    
-                    "Quite easily."
-
-                    show kitsune mad
-                    
-                    k "I think he's up to something. I caught him whispering stuff to Uitto and they stopped talking as soon as they saw me."
-                    
-                    "Well, if Uitto's involved, they're definitely not going to tell you anything." 
-                    
-                    hide kitsune
-
-                    jump chapter2_investigation_kitsune_loop
-
-                "Nail Polish":
-
-                    show kitsune catty
-                    
-                    k "This is why all my colors are plastic."
-                    
-                    "She drills her fake nails against each other."
-
-                    show kitsune sulk
-                    
-                    k "That's a pretty popular color right now. Rise, Rei and Chisei all wanted to wear it."
-                    k "Speaking of Chisei, have you noticed everyone's been avoiding her lately?"
-                    
-                    n "What?"
-
-                    show kitsune talk
-                    
-                    k "All the girls have been whispering behind her back. It's absolutely awful to watch. Be extra nice when you see her next."
-                    k "She doesn't want to go to any of the teachers about it. After the incident with Mariko, she's worried about 'overstating harm'."
-                    k "But I get it, there's not much the teachers can do to make people include her."
-                    
-                    hide kitsune
-
-                    jump chapter2_investigation_kitsune_loop
-
-                "Magazine Clippings":
-
-                    show kitsune talk
-                    
-                    k "That's interesting."
-                    
-                    "She reaches into her backpack and pulls out a fashion magazine with a green cover."
-                    
-                    show kitsune sulk
-
-                    k "Look familiar?" 
-                    
-                    n "Where did you get that?"
-
-                    show kitsune talk
-                    
-                    k "All of us with any taste pooled our collection together so everyone could look over references for the dance."
-                    k "I didn't include this one, because there were already duplicates. Whoever cut that up knew it wasn't the only copy, I guarantee it."
-                    
-                    n "Who else was pooling magazines together?"
-                    
-                    k "Shoma and I, obviously. Momoko had a few, Rise and Rei as well, and Jona actually."
-                    
-                    n "That's odd."
-
-                    show kitsune mad
-                    
-                    k "Kind of calculated if you ask me. As far as I could tell, it was a fun time seeing what everyone managed to fit in their suitcase."
-                    k "It kind of retroactively spoils it if he recognized the pieces like I did."
-                    
-                    hide kitsune
-
-                    jump chapter2_investigation_kitsune_loop
-        "Motive":
-
-            show kitsune sulk
-            
-            k "Ew, why would I go anywhere near that lice factory?"
-            
-            "I didn't realize that was common knowledge. When we were kids, his mom didn't take any of his concerns seriously."
-            "She put him scratching in the same category as crying over shirt tags. That was one of the grosser things Hiro and I had to teach him about."
-            
-            n "That was when we were ten."
-            
-            "She went silent."
-
-            show kitsune apathetic
-            
-            k "My point is, I don't think about him, period. I've got my own things I'm working on."
-            
-            hide kitsune
-
-            jump chapter2_investigation_kitsune_loop
-
-        "Leave":
-            pass
-
-    show kitsune catty
-
-    k "I can't wait until we can buy stuff again. My fosters keep sending me allowance and I have nothing to spend it on."
-    
-    n "You get an allowance?!"
-
-    show kitsune sulk
-    
-    k "Yeah... is that not normal?"
-    
-    n "For foster parents, no."
-
-    show kitsune talk
-    
-    k "Well, it's all going to Shoma as soon as we can buy fabric. I should probably keep that to myself, hunh?"
-    
-    n "I would."
-    
-    "No one gets to know how much this jacket cost."
-    "It's the only birthday present I've gotten, and even that's just because Maimai was overcompensating for the whole getting arrested thing."
-    
-    hide kitsune
-
-    return
-
-label chapter2_investigation_taiga:
-    
-    scene backgroundamp
-    
-    "Taiga is lying on the grass without a care in the world. He looks like he might be asleep."
-    "I approach carefully when a furry head pops up and looks at me."
-    
-    show taiga annoyed
-
-    t "What is it?"
-    
-    "He turns over to look at me."
-
-    show taiga smile talk
-    
-    t "Oh, hey. What are you doing out here? I figured you'd be working your tail off corralling people into volunteering."
-    
-    n "Well, I am doing that. Though I'm mostly looking into who's responsible for what happened to Jona."
-    
-    show taiga gasp
-
-    t "Walked into that one. Alright, shoot."
-
-    hide taiga
-
-label chapter2_investigation_taiga_loop:
-    menu:
-        "Will you do to the dance with me?":
-            if tRep >= 2:
-
-                show taiga grin
-
-                "A huge dopey grin spreads across his face."
-                
-                n "What?"
-                
-                "He keeps grinning at me."
-                
-                n "What?"
-                
-                t "You like me."
-                
-                "I did not come here to get teased."
-                
-                n "Is that a yes or a no?"
-                
-                t "Sure."
-
-                hide taiga
-
-                $ date == True
-                $ dateRise == False
-                $ dateNanase == False
-                $ dateMomoko == False
-                $ dateKitsune == False
-                $ dateChisei == False
-                $ dateHiro == False
-                $ dateYoku == False
-                $ dateMu == False
-                $ dateTaiga == True
-
-            else:
-
-                show taiga grimace
-                
-                t "No."
-                
-                "Well, that was crystal clear."
-                
-                t "Don't take it personally, I just don't plan on sticking around Guwon."
-                t "I'll be out of here soon enough."
-
-                hide taiga
-                
-            jump chapter2_investigation_taiga_loop
-
-        "Help with the Party":
-            
-            $ characters_helping +=1
-
-            show taiga annoyed
-
-            n "We have a bunch of tickets and things that need to be cut out. Would you be able to help out with that?"
-            
-            t "Sounds easy enough." 
-            
-            "He's not exactly thrilled, but at least he's helping."
-
-            hide taiga
-            
-            jump chapter2_investigation_taiga_loop
-
-        "Show Evidence":
-            menu:
-                "Magazine Clippings":
-
-                    show taiga gasp
-                    
-                    t "Hunh, I might've actually seen something."
-                    
-                    "He sits all the way up."
-                    
-                    t "Rise was carrying a stack of magazines exactly like this. She said it was for the party, so I didn't think much of it."
-                    
-                    n "Were any of them cut up?"
-
-                    show taiga grimace
-                    
-                    t "Most of them were. She had a bunch of binders with her too."
-                    
-                    "I'll have to talk to her more about that."
-
-                    hide taiga
-                    
-                    jump chapter2_investigation_taiga_loop
-
-                "Nail Polish":
-
-                    show taiga
-                    
-                    t "I don't wear any. It's not a good idea to have anything that chips when taking care of animals."
-                    t "The bunnies are nice, but they like to nibble."
-                    
-                    n "Do you know anyone who does?"
-                    
-                    t "I don't know. Girls, I guess."
-
-                    hide taiga
-                    
-                    jump chapter2_investigation_taiga_loop
-
-                "Location of Note":
-
-                    show taiga sad talk
-                    
-                    t "Why didn't they put it in his locker?"
-                    
-                    n "Maybe because more people might have seen it."
-                    
-                    t "Not if they did it at night. Guess that means they did it during the day and no one noticed."
-                    
-                    "Not a bad theory, but I have no proof to back that up."
-                    
-                    hide taiga 
-
-                    jump chapter2_investigation_taiga_loop
-
-                "Red Hair":
-
-                    show taiga
-                    
-                    t "Mine's brown."
-                    
-                    n "Yeah, and?"
-                    
-                    t "And what? Congratulations, you found a hair."
-                    t "Try talking to the people it'd match instead."
-
-                    hide taiga
-
-                    jump chapter2_investigation_taiga_loop
-        "Motive":
-
-            show taiga grumpy
-            
-            t "I don't know anyone here. I'm not even supposed to go here, I just got shuffled in with the rest of you."
-            t "Any weird personal beef you guys have going on doesn't involve me."
-            
-            n "Have you heard anyone say anything odd though?"
-
-            show taiga mad talk
-            
-            t "I sleep in class and I mind my own business. You should do the same."
-            
-            hide taiga
-
-            jump chapter2_investigation_taiga_loop
-
-        "Leave":
-            pass
-    
-    show taiga grimace
-
-    "Taiga seems to want to stay out of things. I should consider myself greatful one person is going out of their way to make being at school less of a nightmare."
-    "Still, it sucks to see him all by himself like this."
-    
-    n "You should try, I don't know, hanging out with us?"
-    
-    t "Why would I do that?"
-    
-    n "Most of us are night owls. I think Hiro's the only one actually awake before 11 am."
-    n "I'm sure everyone would love to dote on your little friend. You don't have to, but if you're bored, you could always stop by."
-    n "It sucks not knowing where to go."
-    
-    "His expression softens."
-
-    show taiga
-    
-    t "Thanks. I'll definitely think about it."
-    
-    "I'm sure in a place where everyone already knows each other, it's hard to find an in."
-    "I know Jona and I needed someone to tell us it was okay to be near them. Maybe he's the same way."
-
-    hide taiga
+    $ set_profile_availability("momoko", c_i_profile_unavailable)
 
     return
 
@@ -2795,15 +2102,502 @@ label chapter2_investigation_mu_loop:
     
     hide mu
 
+    $ fake_reveal_panel(1, "panel3")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel3")
+
+    $ fake_reveal_panel(2, "panel5")
+
+    $ current_i_page = 2
+
+    call investigation_unlock
+
+    $ current_i_page = 1
+
+    $ real_reveal_panel(2, "panel5")
+
+    $ set_profile_availability("mu", c_i_profile_unavailable)
+    
+    return
+
+label chapter2_investigation_nanase:
+
+    scene backgroundroof
+    
+    "Nanase is busy getting the dimensions for the roof. In her little notebook is a list of all the outlets and a map of the walkable areas."
+    
+    show nanase surprised
+
+    nk "Goodness, you startled me!"
+    
+    n "Sorry, I just had to ask you a couple of questions."
+
+    hide nanase
+
+label chapter2_investigation_nanase_loop:
+    
+    menu:
+        "Will you go to the dance with me?":
+            if nkRep >= 2:
+
+                show nanase sad smile
+                
+                nk "Yes!"
+                
+                "She's so excited."
+                
+                nk "Oh my goodness, we're going to have so much fun. Are any of your other friends bringing dates?"
+                
+                n "I think it's just us."
+                
+                "Hiro has no problem going stag. Finding a date is probably the last thing on Jona or Uitto's minds."
+                
+                show nanase smile talk
+
+                nk "Oh well. It'll be just us."
+
+                $ date == True
+                $ dateRise == False
+                $ dateNanase == True
+                $ dateMomoko == False
+                $ dateKitsune == False
+                $ dateChisei == False
+                $ dateHiro == False
+                $ dateYoku == False
+                $ dateMu == False
+                $ dateTaiga == False
+
+                hide nanase
+                
+            else:
+
+                show nanase sad2
+                
+                nk "I'd love to, but I'm on door duty, remember?"
+                
+                "Right, she volunteered to take tickets. We already don't have enough people to manage what we have planned."
+                
+                show nanase sad1
+
+                nk "You should ask someone who has time to enjoy the whole dance with you."
+                
+                "She looks disappointed. That makes both of us."
+
+                hide nanase
+
+            jump chapter2_investigation_nanase_loop
+
+        "Help with the Party":
+            $ characters_helping += 1
+
+            show nanase irate
+
+            nk "Oh dear, what are we forgetting?"
+            
+            n "A chaperone."
+
+            show nanase embarrassed
+            
+            nk "Goodness, you're right. We may have gotten permission to be on campus after hours, but we haven't asked any of the teachers to lend a hand."
+            
+            n "Would you be able to ask Ms. Sato to do it?"
+            
+            nk "Wouldn't Professor Inukai be more lax?"
+            
+            n "At the first school event? I think he'd try too hard to follow the rules."
+            n "I imagine that late at night, Ms. Sato would be happy to sit in her chair while we all do our thing."
+            
+            show nanase smile
+
+            nk "Excellent point. I'll draft a proposal once I'm done here." 
+            
+            hide nanase
+
+            jump chapter2_investigation_nanase_loop
+
+        "Show Evidence":
+            menu:
+                "Nail Polish":
+
+                    show nanase surprised
+                    
+                    nk "I almost used that one. It's the most popular color from Rei's collection."
+                    nk "I wanted to see what Shoma did with my mom's old dress before picking a color."
+                    
+                    n "You're not having him make something new?"
+
+                    show nanase sad smile
+                    
+                    nk "He's already overworked as it is."
+                    
+                    n "That's fair. Do you know who's used it?"
+                    
+                    nk "No, sorry."
+
+                    hide nanase
+                    
+                    jump chapter2_investigation_nanase_loop
+
+                "Magazine Clippings":
+
+                    show nanase offended
+                    
+                    nk "Scrapbooking glue."
+
+                    show nanase irate
+                    
+                    "She narrows her eyes."
+                    
+                    n "Not a fan of the hobby?"
+                    
+                    nk "I guess not? It's so strange. As soon as I smelled it, it felt like the room was crowded."
+                    nk "I can only imagine how much of a mess that would cause, all the little bits of paper and useless stuff sitting in piles."
+                    
+                    "She does seem to like to keep things neat and tidy."
+                    
+                    show nanase disappointed
+
+                    nk "Then again, I'm not a fan of clutter in general."
+                    
+                    hide nanase
+
+                    jump chapter2_investigation_nanase_loop
+
+                "Sketchbook Paper":
+                    
+                    show nanase disappointed
+
+                    nk "So it belongs to Jona."
+                    
+                    n "You've seen it before?"
+                    
+                    nk "Kind of. Would you hold on a second?"
+                    
+                    "She left to go riffle through her backpack."
+
+                    show nanase smile
+                    
+                    nk "This is made by the same company."
+                    
+                    "She hands me a hardcover book with blank pages." 
+                    
+                    #(+New Sketchbook)
+                    
+                    nk "I thought it was going to be like a journal. I don't like writing in things without lines."
+                    
+                    "There are a few attempts with slanted handwriting so small that I could barely read it."
+                    
+                    show nanase smile talk
+
+                    nk "He can have it if it'll work as a replacement."
+                    
+                    n "Are you serious?" 
+                    
+                    "I know the guy hates hardbound sketchbooks, but it's better than nothing."
+                    
+                    show nanase sad1
+
+                    nk "It would feel wrong throwing away something I barely used. I'd rather it go to someone who needs it."
+                    
+                    n "Thank you so much."
+
+                    hide nanase
+
+                    jump chapter2_investigation_nanase_loop
+        "Motive":
+
+            show nanase irate
+            
+            nk "I've heard a few people say he deserves this. It's so despicable. I don't see how this kind of retribution helps anyone."
+            
+            n "Who's been saying that?"
+
+            show nanase
+            
+            nk "Dyre mostly."
+            
+            "No surprises there."
+            
+            nk "Even Rise and Yoku agree. They mentioned some kind of cult."
+            
+            n "This isn't the first time Jona has had his art stolen."
+            n "Last time it was for this doomsday cult that hated Vision Majors. Seeing how he is one, that was clearly not what he intended with it."
+            
+            show nanase ashamed
+
+            nk "That's terrible."
+
+            hide nanase
+            
+            jump chapter2_investigation_nanase_loop
+
+        "Leave":
+            pass
+
+    show nanase disappointed
+
+    n "So, do we have enough space?"
+    
+    nk "It'll be a little tight. If we can find some more extension cords, we can move the DJ booth over here and then the snacks could go there."
+    
+    "Her plans sounds more confusing than a football play, but I'll take her word for it."
+    
+    hide nanase
+
+    $ fake_reveal_panel(1, "panel3")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel3")
+
+    $ fake_reveal_panel(2, "panel2")
+
+    $ current_i_page = 2
+
+    call investigation_unlock
+
+    $ current_i_page = 1
+
+    $ real_reveal_panel(2, "panel2")
+
+    $ set_profile_availability("nanase", c_i_profile_unavailable)
+
+    return
+
+label chapter2_investigation_taiga:
+    
+    scene backgroundamp
+    
+    "Taiga is lying on the grass without a care in the world. He looks like he might be asleep."
+    "I approach carefully when a furry head pops up and looks at me."
+    
+    show taiga annoyed
+
+    t "What is it?"
+    
+    "He turns over to look at me."
+
+    show taiga smile talk
+    
+    t "Oh, hey. What are you doing out here? I figured you'd be working your tail off corralling people into volunteering."
+    
+    n "Well, I am doing that. Though I'm mostly looking into who's responsible for what happened to Jona."
+    
+    show taiga gasp
+
+    t "Walked into that one. Alright, shoot."
+
+    hide taiga
+
+label chapter2_investigation_taiga_loop:
+    menu:
+        "Will you do to the dance with me?":
+            if tRep >= 2:
+
+                show taiga grin
+
+                "A huge dopey grin spreads across his face."
+                
+                n "What?"
+                
+                "He keeps grinning at me."
+                
+                n "What?"
+                
+                t "You like me."
+                
+                "I did not come here to get teased."
+                
+                n "Is that a yes or a no?"
+                
+                t "Sure."
+
+                hide taiga
+
+                $ date == True
+                $ dateRise == False
+                $ dateNanase == False
+                $ dateMomoko == False
+                $ dateKitsune == False
+                $ dateChisei == False
+                $ dateHiro == False
+                $ dateYoku == False
+                $ dateMu == False
+                $ dateTaiga == True
+
+            else:
+
+                show taiga grimace
+                
+                t "No."
+                
+                "Well, that was crystal clear."
+                
+                t "Don't take it personally, I just don't plan on sticking around Guwon."
+                t "I'll be out of here soon enough."
+
+                hide taiga
+                
+            jump chapter2_investigation_taiga_loop
+
+        "Help with the Party":
+            
+            $ characters_helping +=1
+
+            show taiga annoyed
+
+            n "We have a bunch of tickets and things that need to be cut out. Would you be able to help out with that?"
+            
+            t "Sounds easy enough." 
+            
+            "He's not exactly thrilled, but at least he's helping."
+
+            hide taiga
+            
+            jump chapter2_investigation_taiga_loop
+
+        "Show Evidence":
+            menu:
+                "Magazine Clippings":
+
+                    show taiga gasp
+                    
+                    t "Hunh, I might've actually seen something."
+                    
+                    "He sits all the way up."
+                    
+                    t "Rise was carrying a stack of magazines exactly like this. She said it was for the party, so I didn't think much of it."
+                    
+                    n "Were any of them cut up?"
+
+                    show taiga grimace
+                    
+                    t "Most of them were. She had a bunch of binders with her too."
+                    
+                    "I'll have to talk to her more about that."
+
+                    hide taiga
+                    
+                    jump chapter2_investigation_taiga_loop
+
+                "Nail Polish":
+
+                    show taiga
+                    
+                    t "I don't wear any. It's not a good idea to have anything that chips when taking care of animals."
+                    t "The bunnies are nice, but they like to nibble."
+                    
+                    n "Do you know anyone who does?"
+                    
+                    t "I don't know. Girls, I guess."
+
+                    hide taiga
+                    
+                    jump chapter2_investigation_taiga_loop
+
+                "Location of Note":
+
+                    show taiga sad talk
+                    
+                    t "Why didn't they put it in his locker?"
+                    
+                    n "Maybe because more people might have seen it."
+                    
+                    t "Not if they did it at night. Guess that means they did it during the day and no one noticed."
+                    
+                    "Not a bad theory, but I have no proof to back that up."
+                    
+                    hide taiga 
+
+                    jump chapter2_investigation_taiga_loop
+
+                "Red Hair":
+
+                    show taiga
+                    
+                    t "Mine's brown."
+                    
+                    n "Yeah, and?"
+                    
+                    t "And what? Congratulations, you found a hair."
+                    t "Try talking to the people it'd match instead."
+
+                    hide taiga
+
+                    jump chapter2_investigation_taiga_loop
+        "Motive":
+
+            show taiga grumpy
+            
+            t "I don't know anyone here. I'm not even supposed to go here, I just got shuffled in with the rest of you."
+            t "Any weird personal beef you guys have going on doesn't involve me."
+            
+            n "Have you heard anyone say anything odd though?"
+
+            show taiga mad talk
+            
+            t "I sleep in class and I mind my own business. You should do the same."
+            
+            hide taiga
+
+            jump chapter2_investigation_taiga_loop
+
+        "Leave":
+            pass
+    
+    show taiga grimace
+
+    "Taiga seems to want to stay out of things. I should consider myself greatful one person is going out of their way to make being at school less of a nightmare."
+    "Still, it sucks to see him all by himself like this."
+    
+    n "You should try, I don't know, hanging out with us?"
+    
+    t "Why would I do that?"
+    
+    n "Most of us are night owls. I think Hiro's the only one actually awake before 11 am."
+    n "I'm sure everyone would love to dote on your little friend. You don't have to, but if you're bored, you could always stop by."
+    n "It sucks not knowing where to go."
+    
+    "His expression softens."
+
+    show taiga
+    
+    t "Thanks. I'll definitely think about it."
+    
+    "I'm sure in a place where everyone already knows each other, it's hard to find an in."
+    "I know Jona and I needed someone to tell us it was okay to be near them. Maybe he's the same way."
+
+    hide taiga
+
+    $ fake_reveal_panel(1, "panel2")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel2")
+
+    $ fake_reveal_panel(2, "panel5")
+
+    $ current_i_page = 2
+
+    call investigation_unlock
+
+    $ current_i_page = 1
+
+    $ real_reveal_panel(2, "panel5")
+
+    $ set_profile_availability("taiga", c_i_profile_unavailable)
+    
     return
 
 label chapter2_investigation_rise:
 
-    scene background cafe
+    scene backgroundcafe
 
     show rise mad
     
-    "Rise is at one for the cafe tables. For once, it isn't for tea."
+    "Rise is at one of the cafe tables. For once, it isn't for tea."
     "She has a bunch of binders and calligraphy pens out with a huge pile of stuff in the middle."
     
     n "Why does no one ever use the art room?"
@@ -2924,7 +2718,7 @@ label chapter2_investigation_rise_loop:
 
                     show rise flirt
                     
-                    r "Ichita, Shoma, Rei, Chisei, and Kitsune. I would like to believe none of them have cut up the issues I leant to them."
+                    r "Ichita, Shoma, Rei, Chisei, and Kitsune. I would like to believe none of them have cut up the issues I lent to them."
                     r "Though I have yet to have any returned to me..."
                     
                     n "I see." 
@@ -2945,7 +2739,7 @@ label chapter2_investigation_rise_loop:
                     r "I prefer a proper french manicure myself."
 
                     "She hides her hands from me."
-                    "There was definately something pink on her hand, but I didn't get a good enough look."
+                    "There was definitely something pink on her hand, but I didn't get a good enough look."
                     "It could have been her nails, or one of the magazine clippings."
 
                     hide rise
@@ -2957,7 +2751,7 @@ label chapter2_investigation_rise_loop:
                     show rise disappointed
                     
                     r "When I found his pens lying in the cafeteria, I turned them in to the teachers. They seemed important to someone."
-                    r "It seems your theif wanted to taunt Jona with their theft with whatever was on hand."
+                    r "It seems your thief wanted to taunt Jona with their theft with whatever was on hand."
                     r "The crafting of it looks like a rush job too."
                     
                     show rise stare
@@ -2984,6 +2778,8 @@ label chapter2_investigation_rise_loop:
                     r "If it was found in the vision class, I'd suggest starting with the students who attend."
                     r "It would not strike people as odd if one of them was there early."
                     
+                    hide rise
+
                     jump chapter2_investigation_rise_loop
 
         "Motive":
@@ -3046,36 +2842,442 @@ label chapter2_investigation_rise_loop:
     show rise flirt
     
     r "But are you shown the same courtesy? If they really are your friends, you should be able to rely on them to do that much." 
-    r "I have said something that upset you, my apologies." 
+    r "If I have said something that upset you, my apologies." 
     
     n "I need to check on the others. Like you said, I'm kind of busy."
     
     hide rise
     
     "I leave without another word."
+
+    $ fake_reveal_panel(1, "panel3")
+    $ fake_reveal_panel(1, "panel6")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel3")
+    $ real_reveal_panel(1, "panel6")
+
+    $ fake_reveal_panel(2, "panel2")
+
+    $ current_i_page = 2
+
+    call investigation_unlock
+
+    $ current_i_page = 1
+
+    $ real_reveal_panel(2, "panel2")
+
+    $ set_profile_availability("rise", c_i_profile_unavailable)
     
     return
 
-# Graveyard?
-label askforhelp2:
+label chapter2_investigation_setsuna:
+    
+    scene backgroundcourtyard
+
+    show setsuna
+    
+    s "How's it going?"
+    
+    n "You know how it's going."
+    
+    s "Aww, don't be such a little baby. This is like, your one chance to prove you're competent."
+    s "I've been dying to see how you do."
+    
+    n "I'm sure you are."
+    
+    "Last time, she was directly involved with what was going on."
+    
+    n "If someone was trying to screw us over, you'd tell me right?"
+
+    show setsuna cringe
+    
+    s "Depends on what you expect me to tell."
+
+    hide setsuna
+
+label chapter2_investigation_setsuna_loop:
+
     menu:
-        "Uitto":
-            u "I don't get along well with most of the people in my class."
-            u "A lot of them have been spreading rumors about Jona. Family stuff."
-            u "Rise was busy with whatever you guys were doing before class started, so she showed up late. Guess not everyone knows how to run in heels."
-            u "I have heard the nail polish color used was popular. You might want to check with Momoko, she's the beauty guru. She'll know more about it than me." 
-        "Hiro":
-            h "I like being the first in the door for class."
-            h "I am the leader after all."
-            h "Shoma said someone slashed up a fashion magazine to make the note we found."
-            h "Rei's just as worried as we are; she told me everyone who might've worn that color of nail polish..."
-            h "I uh, probably should've written that down. Chisei was one of them."
-        "Jona":
-            j "No one in class said they wrote a note."
-            j "They didn't see anyone entering the room either."
-            j "Ichita had the stuco meeting, so he came in a little after everyone else. Not sure if that's much help."
-            j "He said there was nothing in the classroom when he locked up for the night."
-        "Back":
-            #return to menu
+        "Help with the Party":
+            $ characters_helping +=1
+
+            show setsuna impatient
+
+            s "I already am."
+            
+            n "But-"
+            
+            s "Nagen, do you want this thing to balloon even more out of control?"
+            
+            "Definitely not."
+
+            show setsuna embarrassed
+            
+            s "Then my job is to keep everyone's 'great' ideas off of Kietsu's desk."
+            s "I swear to God, all of you are trying so hard to be liked that you're overworking yourselves."
+            s "It's only been a few weeks."
+
+            hide setsuna
+            
+            jump chapter2_investigation_setsuna_loop
+
+        "Show Evidence":
+            menu:
+                "Red Hair":
+
+                    show setsuna mourning
+                    
+                    s "The only people I can think of with red hair are guys and maybe Rei, but it's too short to be her hair."
+                    s "Then again, maybe someone close to them framed the red head. You remember how hard someone tried to make Kazz and Mu look bad."
+                    
+                    n "Yeah, but who'd be able to get a hair without noticing?"
+                    
+                    "She looked down at her sweatshirt and pulled one of her own blond hairs that got shoved through the fibers."
+                    
+                    show setsuna tired talk
+
+                    s "Usually happens in the wash. I'm sure everyone's washed their clothes by now."
+                    
+                    "So they may not have felt it taken off them. A lot of people wear sweatshirts, though."
+                    
+                    hide setsuna
+                    jump chapter2_investigation_setsuna_loop
+
+                "Nail Polish":
+                
+                    show setsuna sad talk
+                    
+                    s "I can't stand the stuff. It's nice for like, one day and then it gets all messed up."
+                    s "Even if you try to patch it up, there'll be a dent."
+                    
+                    n "So if this happened to someone's nails, you'd be able to tell?"
+                    
+                    show setsuna apathetic
+
+                    s "Maybe. It'll either be patched up or redone entirely." 
+                    
+                    n "It'd be easier to find a hair than the nail polish."
+                    hide setsuna
+                    jump chapter2_investigation_setsuna_loop
+
+                "Magazine Clippings":
+                
+                    show setsuna shocked
+                    
+                    s "Ichita's a dead man if these are what I think they are."
+                    
+                    n "You know what magazines they are?"
+                    
+                    s "I recognize the O. He was borrowing them from someone, that's all I know."
+                    
+                    hide setsuna
+
+                    jump chapter2_investigation_setsuna_loop
+
+        "Motive":
+            
+            show setsuna tired talk
+
+            s "If some big dramatic confrontation happens during the dance, that is going to be a ton of paperwork for Nanase and a pain in my ass."
+            s "Why would anyone in the student council gamble what little good will we gained from the student body over some guy we don't know?" 
+            
+            n "Right, you and Kietsu never went to Estella."
+            
+            s "And Nanase barely remembers you were one of the guys responsible for the riots. Or at the very least, she doesn't care."
+            
+            n "Have you heard anyone say they don't like him?"
+            
+            "She thinks a bit."
+
+            show setsuna glare
+            
+            s "A lot of people in the Charm course know of him. I'm not sure if they've made the connection they were told not to like him."
+            
+            n "What do you mean?"
+            
+            s "He pushes people away and he doesn't compromise. You might not have seen it since he's your friend, but trust me, it's a huge issue."
+            
+            "So Charm Majors might not like him. Good to know."
+
+            hide setsuna
+            
+            jump chapter2_investigation_setsuna_loop
+
+        "Leave":
             pass
 
+    show setsuna
+
+    s "I'm disappointed, I thought you were going to ask about something else." 
+    
+    n "Like what?"
+
+    show setsuna cringe
+    
+    s "Like the fact that anyone pierced by Mariko isn't allowed to take them out."
+    
+    n "Wait a minute, what do you mean?"
+    
+    s "With new piercings, you can't take them out or the wound will heal. You're supposed to rotate them though and mine haven't been."
+    s "The nurse told me to have Mr. Yaguchi take a look at them."
+    
+    n "Isn't he, like, a tech guy?"
+
+    show setsuna glare
+    
+    s "Yeah. Something was in them. He told me he 'turned them off' but not to take them out."
+    s "I've done some digging, but no one else has gotten new piercings, so I don't think it'll happen again."
+    s "It is curious. If Mariko had something that could control someone's nervous system, why'd she give it to us and not you guys?"
+    s "It would have been easier to capture you then."
+    
+    n "Were you being controlled during the fight?"
+    
+    s "Yeah. I get why everyone's freaked out about it. Poor Rei can't catch a break. It happened to her twice, and from a friend each time."
+    
+    n "I didn't know an education device could be that small."
+    
+    "The hardware needed for ours required full helmets and other types of equipment. I can't imagine how any of that could fit into a stud."
+    
+    show setsuna
+
+    s "You're not the only one who makes stuff. Well, later, Nagen. Unlike you, I'm busy with other things."
+    
+    hide setsuna
+
+    $ fake_reveal_panel(1, "panel3")
+    $ fake_reveal_panel(1, "panel6")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel3")
+    $ real_reveal_panel(1, "panel6")
+
+    $ fake_reveal_panel(2, "panel1")
+
+    $ current_i_page = 2
+
+    call investigation_unlock
+
+    $ current_i_page = 1
+
+    $ real_reveal_panel(2, "panel1")
+
+    $ set_profile_availability("setsuna", c_i_profile_unavailable)
+
+    return
+
+label chapter2_investigation_yoku:
+
+    scene backgroundcafe
+
+    show yoku furious1
+    
+    "I've never seen someone stare so intently at a menu before."
+    "He's scanning the coffee offerings like a man deciphering hieroglyphics."
+    
+    y "I don't suppose you could explain what the difference between a mocha latte and a latte with mocha sauce is, could you?" 
+    
+    "I look and sure enough, it's on the menu twice for some reason."
+    
+    n "I mean, if what you want is something full of sugar, I'd go with the mocha latte."
+    n "If it's more expensive, it's gotta have more of something in it."
+    
+    show yoku 
+
+    y "That's a fair point. Perhaps the number of pumps is the difference. If you get the other one, we could compare." 
+    
+    "Why do I have to buy one too? ...damn it, now I'm curious."
+    
+    n "Fine."
+    
+    "It'll be easier to ask him questions if we're both waiting for our drinks to cool anyway."
+
+    hide yoku
+
+label chapter2_investigation_yoku_loop:
+
+    menu:
+        "Will you go to the dance with me?":
+            if YokuRep >= 2:
+
+                show yoku blush1
+                
+                "He has no readable expression. I snap my fingers a bit to see if I can pull him out of his head."
+                
+                n "It's an easy question to answer. It's either yes or no."
+                
+                y "I'm just a little shocked is all. Are you sure that's what you want? People have been desperate for something to talk about."
+                
+                n "I don't care. It's just a dance, it'll be fun."
+                
+                y "Yes, fun." 
+                
+                "He takes a sip of coffee."
+
+                show yoku bashful
+                
+                y "Might as well."
+
+                $ date == True
+                $ dateRise == False
+                $ dateNanase == False
+                $ dateMomoko == False
+                $ dateKitsune == False
+                $ dateChisei == False
+                $ dateHiro == False
+                $ dateYoku == True
+                $ dateMu == False
+                $ dateTaiga == False
+
+                hide yoku
+
+            else:
+                show yoku furious2
+
+                y "You must be joking." 
+                
+                n "No, I was just asking-"
+                
+                y "I would never lower myself to be seen arm in arm with the likes of you."
+                
+                "Ow. A simple no would have been fine."
+
+                hide yoku
+                
+            jump chapter2_investigation_yoku_loop
+
+        "Help with the Party":
+            $ characters_helping +=1
+
+            show yoku eyeroll
+
+            y "You want my help?" 
+            
+            n "You're the music guy, aren't you?"
+
+            show yoku bashful
+            
+            y "I figured for a party type setting, you'd prefer Kazz and his little drum machines."
+            
+            n "Kazz can DJ all he wants, but I'd feel more comfortable with a concrete set list. That way we could know when things were wrapping up."
+            
+            y "I would be more than happy to throw my hat in the ring then."
+        
+            hide yoku
+
+            jump chapter2_investigation_yoku_loop
+
+        "Show Evidence":
+            menu:
+                "Magazine Clippings":
+
+                    show yoku furious1
+                    
+                    y "Well, someone fancies themselves intimidating. Though a ransom note typically works best when you have something to ransom."
+                    
+                    n "Like a stolen book?"
+
+                    show yoku
+                    
+                    y "Ah, maybe that's it. I know you've been drawn out to a school yard brawl in the past, but this seems to have nothing to do with you."
+                    y "It may just be in Jona's best interest not to go to the dance. There could be a bucket of trash waiting to get dunked on his head."
+                    
+                    n "I just want to be cautious."
+                    
+                    "After last time, I don't trust the 'it's just bullying' defense."
+                    
+                    hide yoku
+
+                    jump chapter2_investigation_yoku_loop
+
+                "Location of Note":
+
+                    show yoku furious1
+                    
+                    y "Interesting they should mention the dance specifically."
+                    
+                    n "What do you mean?"
+                    
+                    show yoku think
+
+                    y "Well, this was found after we had our meeting. Surely news doesn't cycle around that quickly."
+                    y "All of us were sworn to secrecy until we could confirm that the idea had been greenlit."
+                    y "I doubt anyone could have heard about it, made this, and snuck it into the Vision classroom in the short amount of time between the meeting and class."
+                    
+                    "So either they were in the Vision class, or they knew beforehand."
+                    
+                    n "Who all knew about the dance?"
+
+                    show yoku furious2
+                    
+                    y "Use your head, Nagen. You were at the meeting just as I was."
+                    
+                    hide yoku
+
+                    jump chapter2_investigation_yoku_loop
+
+        "Motive":
+            
+            show yoku think
+
+            y "Jona's family was part of the upper echelon before my family arrived."
+            y "My guess is that we were their replacements, though we did enter at the bottom of the food chain."
+            
+            n "So you benefit from him being where he is?"
+
+            show yoku furious2
+            
+            y "It's more that I don't have to think about him at all. After school, our lives will never cross paths again."
+            y "Whoever did do this had to have gotten a key from one of the class representitives to do it."
+            y "I can't imagine anyone leaving that note in Principal Vivaldi's classroom when she might see it first."
+
+            "That's true. A teacher would have taken it right away."
+
+            hide yoku
+            
+            jump chapter2_investigation_yoku_loop
+
+        "Leave":
+            pass
+
+    show yoku 
+
+    y "Let me try your coffee."
+    
+    "He seems to debate which part of the cup to drink from before making a decision and taking a sip."
+    
+    y "...I can't tell the difference." 
+    
+    "He pushes his cup my way. I try it. I'm no gourmand, but it tastes exactly the same."
+    
+    n "I think you paid extra for no reason."
+
+    show yoku blush1
+    
+    y "I should have trusted my instincts. It's serviceable at least." 
+    
+    "I leave a little poorer and wiser."
+
+    hide yoku
+
+    $ fake_reveal_panel(1, "panel2")
+
+    call investigation_unlock
+
+    $ real_reveal_panel(1, "panel2")
+
+    $ fake_reveal_panel(2, "panel5")
+
+    $ current_i_page = 2
+
+    call investigation_unlock
+
+    $ current_i_page = 1
+
+    $ real_reveal_panel(2, "panel5")
+
+    $ set_profile_availability("yoku", c_i_profile_unavailable)
+
+    return

@@ -200,49 +200,53 @@ screen test:
 define maze = (
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0,
     0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0,
-    0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0,
+    0, 0, 0, 2, 0, 1, 1, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
-    0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0,
+    0, 0, 0, 2, 1, 1, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 )
 
 define wall = 0
 define empty_tile = 1
+define eyes = 2
 
 define starting_position = 60
 default direction = None
 default current_position = None
 
+default valid_left = None
+default valid_forward = None
+default valid_right = None
+
+# Direction Constants
 define west = 0
 define north = 1
 define east = 2
 define south = 3
 
+# Movement Constants
 define move_west = -1
 define move_north = -11
 define move_east = 1
 define move_south = 11
 
-define north_left = move_west
-define north_forward = move_north
-define north_right = move_east
+# Relative Position Offsets - Array of Dictionaries
+define move_offsets = {
+    west:  { "Left": move_south, "Forward": move_west,  "Right": move_north },
+    north: { "Left": move_west,  "Forward": move_north, "Right": move_east  },
+    east:  { "Left": move_north, "Forward": move_east,  "Right": move_south },
+    south: { "Left": move_east,  "Forward": move_south, "Right": move_west  }
+}
 
-define west_left = move_south
-define west_forward = move_west
-define west_right = move_north
-
-define south_left = move_east
-define south_forward = move_south
-define south_right = move_west
-
-define east_left = move_north
-define east_forward = move_east
-define east_right = move_south
+# Relative Direction Offsets
+define turn_left =   { north: west,  west:  south, south: east, east: north }
+define turn_right =  { north: east,  east:  south, south: west, west: north }
+define turn_around = { north: south, south: north, east:  west, west: east  }
 
 image lfr = "images/Interactables/MazeAll.png"
 image lf = "images/Interactables/MazeForwardLeft.png"
@@ -253,141 +257,52 @@ image f = "images/Interactables/MazeForwardBack.png"
 image r = "images/Interactables/MazeRight.png"
 image d = "images/Interactables/Mazedeadend.png"
 
+# Eyeball Wall
+image e = "images/Backgrounds/mazegoalwall.png"
+image e0 = "images/Interactables/MazeForwardWall.png"
+
 label sandbox_ch2_fight:
     $ direction = north
     $ current_position = starting_position
 
 label sandbox_ch2_loop:
-    if direction is north:
-        if maze[current_position + north_left] is empty_tile:
-            if maze[current_position + north_forward] is empty_tile:
-                if maze[current_position + north_right] is empty_tile:
-                    scene lfr
-                else:
-                    scene lf
-            elif maze[current_position + north_right] is empty_tile:
-                scene lr
-            else:
-                scene l
-        elif maze[current_position + north_forward] is empty_tile:
-            if maze[current_position + north_right] is empty_tile:
-                scene fr
-            else:
-                scene f
-        elif maze[current_position + north_right] is empty_tile:
-            scene r
+
+    $ valid_left = maze[current_position + move_offsets[direction]["Left"]] != wall
+    $ valid_forward = maze[current_position + move_offsets[direction]["Forward"]] != wall
+    $ valid_right = maze[current_position + move_offsets[direction]["Right"]] != wall
+
+    if maze[current_position] == eyes:
+        scene e
+    elif valid_left and valid_forward and valid_right:
+        scene lfr
+    elif valid_left and valid_forward:
+        scene lf
+    elif valid_left and valid_right:
+        scene lr
+    elif valid_forward and valid_right:
+        scene fr
+    elif valid_left:
+        scene l
+    elif valid_forward:
+        if maze[current_position + move_offsets[direction]["Forward"]] == eyes:
+            scene e0
         else:
-            scene d
+            scene f
+    elif valid_right:
+        scene r
+    else:
+        scene d
 
-        menu:
-            "Walk Forward" (sensitive = maze[current_position + north_forward] is empty_tile):
-                $ current_position += north_forward
-            "Walk Left" (sensitive = maze[current_position + north_left] is empty_tile):
-                $ current_position += north_left
-                $ direction = west
-            "Walk Right" (sensitive = maze[current_position + north_right] is empty_tile):
-                $ current_position += north_right
-                $ direction = east
-            "Turn Around":
-                $ direction = south
-
-    elif direction is west:
-        if maze[current_position + west_left] is empty_tile:
-            if maze[current_position + west_forward] is empty_tile:
-                if maze[current_position + west_right] is empty_tile:
-                    scene lfr
-                else:
-                    scene lf
-            elif maze[current_position + west_right] is empty_tile:
-                scene lr
-            else:
-                scene l
-        elif maze[current_position + west_forward] is empty_tile:
-            if maze[current_position + west_right] is empty_tile:
-                scene fr
-            else:
-                scene f
-        elif maze[current_position + west_right] is empty_tile:
-            scene r
-        else:
-            scene d
-
-        menu:
-            "Walk Forward" (sensitive = maze[current_position + west_forward] is empty_tile):
-                $ current_position += west_forward
-            "Walk Left" (sensitive = maze[current_position + west_left] is empty_tile):
-                $ current_position += west_left
-                $ direction = south
-            "Walk Right" (sensitive = maze[current_position + west_right] is empty_tile):
-                $ current_position += west_right
-                $ direction = north
-            "Turn Around":
-                $ direction = east
-
-    elif direction is east:
-        if maze[current_position + east_left] is empty_tile:
-            if maze[current_position + east_forward] is empty_tile:
-                if maze[current_position + east_right] is empty_tile:
-                    scene lfr
-                else:
-                    scene lf
-            elif maze[current_position + east_right] is empty_tile:
-                scene lr
-            else:
-                scene l
-        elif maze[current_position + east_forward] is empty_tile:
-            if maze[current_position + east_right] is empty_tile:
-                scene fr
-            else:
-                scene f
-        elif maze[current_position + east_right] is empty_tile:
-            scene r
-        else:
-            scene d
-
-        menu:
-            "Walk Forward" (sensitive = maze[current_position + east_forward] is empty_tile):
-                $ current_position += east_forward
-            "Walk Left" (sensitive = maze[current_position + east_left] is empty_tile):
-                $ current_position += east_left
-                $ direction = north
-            "Walk Right" (sensitive = maze[current_position + east_right] is empty_tile):
-                $ current_position += east_right
-                $ direction = south
-            "Turn Around":
-                $ direction = west
-
-    elif direction is south:
-        if maze[current_position + south_left] is empty_tile:
-            if maze[current_position + south_forward] is empty_tile:
-                if maze[current_position + south_right] is empty_tile:
-                    scene lfr
-                else:
-                    scene lf
-            elif maze[current_position + south_right] is empty_tile:
-                scene lr
-            else:
-                scene l
-        elif maze[current_position + south_forward] is empty_tile:
-            if maze[current_position + south_right] is empty_tile:
-                scene fr
-            else:
-                scene f
-        elif maze[current_position + south_right] is empty_tile:
-            scene r
-        else:
-            scene d
-
-        menu:
-            "Walk Forward" (sensitive = maze[current_position + south_forward] is empty_tile):
-                $ current_position += south_forward
-            "Walk Left" (sensitive = maze[current_position + south_left] is empty_tile):
-                $ current_position += south_left
-                $ direction = east
-            "Walk Right" (sensitive = maze[current_position + south_right] is empty_tile):
-                $ current_position += south_right
-                $ direction = west
-            "Turn Around":
-                $ direction = north
+    menu:
+        "Walk Forward" (sensitive = valid_forward):
+            $ current_position += move_offsets[direction]["Forward"]
+        "Walk Left" (sensitive = valid_left):
+            $ current_position += move_offsets[direction]["Left"]
+            $ direction = turn_left[direction]
+        "Walk Right" (sensitive = valid_right):
+            $ current_position += move_offsets[direction]["Right"]
+            $ direction = turn_right[direction]
+        "Turn Around":
+            $ direction = turn_around[direction]
     
     jump sandbox_ch2_loop

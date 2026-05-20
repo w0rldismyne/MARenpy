@@ -74,7 +74,7 @@ label Momoko1:
             show momoko puzzled
             mh "I guess we both have things we wish we could forget."
         "I didn't.":
-            $ mhRep -= 1:
+            $ mhRep -= 1
             show momoko sad
             n "To be fair, I would've been stuck working with anyone."
             n "No one really liked working with me, they just wanted me to do the work for them"
@@ -105,7 +105,7 @@ label Momoko1:
     show momoko happy
     mh "Tell you what: even though you didn't come here to get your hair fixed, I'll still do it as a group project of sorts."
     mh "We're far out from any store that would sell dye, so I can help keep your roots from showing. It'll be our little secret."
-    n "Really?
+    n "Really?"
     show momoko worry
     mh "Yeah, but I want to do it right. What color were you actually going for?"
     "I pull out a ballpoint pen and scribble on the corner of my homework. She looks at it, then up at my hair and frowns."
@@ -285,7 +285,7 @@ label Momoko3:
             mh "I can't. I don't want people hounding me over something I made trying to save my own skin."
             mh "It doesn't feel right to charge people for that. More good'll come from anyone that needs it getting to use it."
             n "But with something like that, you could be free to do whatever you want. You could be like the guy who invented glue."
-           show momoko manic 
+            show momoko manic 
             mh "I also don't want to make money off of something people are going to turn into a weapon."
         "You'll make other stuff.":
             $mhRep += 1
@@ -474,7 +474,7 @@ label Momoko5:
             n "Both. Is that... Is that okay?"
             mh "Y-yeah. Sorry, my mind's a little blown right now."
             "She glances down at our hands. I haven't let go yet. She turns her hand around so she's holding mine back."
-        "Leave"
+        "Leave":
             $ mhRep -= 1
             show momoko sad
             n "I should go."
