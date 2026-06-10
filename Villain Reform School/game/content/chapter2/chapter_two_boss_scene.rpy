@@ -3,11 +3,16 @@ label chapter2_boss_scene:
 
     #BG: Gym Dark
 
-    "The main lights in the gym are off, but it's not completely dark. The pool is open. Instead of water, there's... furniture? Large, ornate antiques that would look more at home in a mansion than a gym are haphazardly stored in the empty pool."
+    scene backgroundgym
 
-    r "Your cries for attention have fallen on deaf ears, Jona. Quit drawing this out and come out of hiding. It is depressing to watch, especially when no one is bothering to look for you."
+    "The main lights in the gym are off, but it's not completely dark. The pool is open. Instead of water, there's... furniture?"
+    "Large, ornate antiques that would look more at home in a mansion than a gym are haphazardly stored in the empty pool."
 
-    "I see a flash of blond hair between the furniture. Jona must be in there somewhere too. It hasn't been that long since the sketchbook incident; what if he shut down again?"
+    r "Your cries for attention have fallen on deaf ears, Jona. Quit drawing this out and come out of hiding."
+    r "It is depressing to watch, especially when no one is bothering to look for you."
+
+    "I see a flash of blond hair between the furniture. Jona must be in there somewhere too."
+    "It hasn't been that long since the sketchbook incident; what if he shut down again?"
 
     n "You don't speak for us. Of course we're looking for him."
 
@@ -21,25 +26,33 @@ label chapter2_boss_scene:
 
     n "How did you...?"
 
-    r "Impressive, no? It seems this gym was being fitted for simulations of some kind before the funding ran dry. I stumbled across it when they were putting my things in storage."
+    r "Impressive, no? It seems this gym was being fitted for simulations of some kind before the funding ran dry."
+    r "I stumbled across it when they were putting my things in storage."
 
     "I text Uitto and Hiro to get help."
 
     n "Let us go."
 
-    r "Us; that I cannot do, but perhaps an arrangement of some kind can be made? I dispose of the two-faced snake hiding in the grass and in return, you can help me reclaim my father's business. Everyone wins! (5) "
+    r "Us; that I cannot do, but perhaps an arrangement of some kind can be made?"
+    r "I dispose of the two-faced snake hiding in the grass and in return, you can help me reclaim my father's business. Everyone wins!"
 
     n "Everyone except Jona. I'm not selling him out just to get out of here."
 
-    r "You are so afraid of change that you keep clinging to these selfish people. Nagen, they are taking advantage of your desire to be needed and giving you nothing in return. I know how painful cutting ties with such people can feel, but once you experience that freedom, you can live for yourself. I promised to help you; let me keep that promise. (6) "
+    r "You are so afraid of change that you keep clinging to these selfish people."
+    r "Nagen, they are taking advantage of your desire to be needed and giving you nothing in return."
+    r "I know how painful cutting ties with such people can feel, but once you experience that freedom, you can live for yourself."
+    r "I promised to help you; let me keep that promise."
 
     #Insert negotiation here
 
     n "You're only trying to help yourself."
 
-    r "I am sure it seems that way, but I assure you, this is what's best for everyone. You saw the things he drew; it is the same twisted imagery that inspired that cult. Nothing has changed. I wish you would listen to reason, but it seems we're at an impasse."
+    r "I am sure it seems that way, but I assure you, this is what's best for everyone."
+    r "You saw the things he drew; it is the same twisted imagery that inspired that cult."
+    r "Nothing has changed. I wish you would listen to reason, but it seems we're at an impasse."
 
-    "The sudden sound of an engine startles me. Not as much as watching Rise fly up into the air, a jet pack strapped to her back. She reaches behind her and pulls out a crystal perfume bottle."
+    "The sudden sound of an engine startles me. Not as much as watching Rise fly up into the air, a jet pack strapped to her back."
+    "She reaches behind her and pulls out a crystal perfume bottle."
 
     j "Nagen! Run!"
 
@@ -57,43 +70,93 @@ label chapter2_boss_scene:
 
     "I dive into the maze of furniture for cover. The walls of the pool glow as I run to get out of sight."
 
-    "Phase 1 Combat"
+    #"Phase 1 Combat"
 
     #The maze is the main feature; avoid getting hit.
 
-    r "I should have been more clear; this will not kill you. It will just put you to sleep for a while."
-
-    "Like that's any better?!"
-
-    r "Be a dear and step into one of those clouds. I really would like to avoid hurting you."
-
-    "Says the person throwing glass gas bombs all over the place."
-
     r "You are just too close to the situation to realize you are being used. Let me protect you."
 
-    "That again? I never asked for her help or protection and even if I did, this is definitely not helping."
+        menu:
+            "This again?":
+                n "I never asked for your help or protection."
+                n "My friends aren't using me, I'm trying to help them because I want to."
+            "Maybe":
+                #bad end point
+                n "Even if I did want help, this is definitely not helping."
+                n "How do I know you're not going to use me too."
 
     r "You were in my position once, with no one to rely on. Why do you refuse to see the ends justify the means?"
 
-    "This... this isn't the same as back then."
+        menu: 
+            "Not like this":
+                #bad end point
+                n "This... this isn't the same as back then."
+                n "No one was in danger until you started shit again."
+                n "You're hurting way more people than you're helping"
+            "You chose not to rely on anyone":
+                n "You're the one that won't talk to your old friends."
+                n "You didn't even bother to make new ones."
+                n "The reason you think you're alone is you keep choosing to be."
 
-    r "He hurt so many people. He lied to you so you would defend him. My parents may not have been the best people, but they did not deserve to die just because he said so."
+    r "He hurt so many people. He lied to you so you would defend him."
 
-    "Midfight Cutscene"
+        menu:
+            "He didn't have to":
+                #bad end point
+                n "I'd defend him regardless."
+                n "People like you always pick on guys weaker than them."
+            "He doesn't lie":
+                n "He hasn't said anything hoping you'd give up and be normal!"
+                "I didn't think it would work, but he certainly wasn't manipulating me into being here."
+                n "I may not always understand him, but I know he'd never lie to me."
+                n "You're the one making stuff up about my friends."
 
-    "Rise's jet pack stutters. Maybe it started to overheat? She descends to the pool's edge. Jona crawls out from his hiding place and tries to signal for me to run. But Rise's still armed and guarding the stairs out of the pool. It's too risky to climb out now. Where are the others?"
+    r "My parents may not have been the best people, but they did not deserve to die just because he said so. I'm trying to make things better."
+
+        menu:
+            "Yeah, for you":
+                n "Not the best people?"
+                n "They used their money to hurt people on purpose."
+                n "All Jona ever did was point out where 'rich people' were throwing their money."
+                n "If other people thought it was that included your parents, they're the problem, not him."
+            "He didn't mean it":
+                #bad end point
+                n "People took a metaphor out of context."
+                n "He never asked people to literally kill them."
+                n "We all just wanted one thing in Guwon to not be horrible."
+
+    r "I should have been more clear; this will not kill you. It will just put you to sleep for a while."
+    r "Be a dear and step into one of those clouds. I really would like to avoid hurting you."
+
+        menu:
+            "I'm not giving up!":
+                n "I'm not turing a blind eye to this."
+                n "You're blaming someone else for your family's failings."
+            "-hesitate-":
+                #bad end point
+                n "I'm not turing a blind eye to this."
+                n "You're blaming someone else for your family's failings."
+
+    #"Midfight Cutscene"
+
+    "Rise's jet pack stutters. Maybe it started to overheat? She descends to the pool's edge."
+    "Jona crawls out from his hiding place and tries to signal for me to run."
+    "But Rise's still armed and guarding the stairs out of the pool. It's too risky to climb out now. Where are the others?"
 
     j "If this is about your parents, I don't know who they are."
 
     "Jona, what are you doing?!"
 
-    r "Liar! His last name is Oshima, as in Oshima cosmetics. My dad funded the company and my mother modeled for them. Then he has the gall to stir simpletons into a frenzied mob with his art and have them target my family! My home! You villainized your own kind and have the gall to act as if it wasn't your fault people got hurt."
+    r "Liar! His last name is Oshima, as in Oshima cosmetics. My dad funded the company and my mother modeled for them."
+    r "Then he has the gall to stir simpletons into a frenzied mob with his art and have them target my family! My home!"
+    r "You villainized your own kind and have the gall to act as if it wasn't your fault people got hurt."
 
     "Jona's pieces may have lashed out against the upper class, but they made plenty of enemies before him."
 
     #IF Villain
 
-    j "You're still okay, aren't you? If I hated your family so much, do you honestly think I would've let you live? It's not my fault your parents funded Estella's experiments or stole business or made bad laws to protect themselves."
+    j "You're still okay, aren't you? If I hated your family so much, do you honestly think I would've let you live?"
+    j "It's not my fault your parents funded Estella's experiments or stole businesses or made bad laws to protect themselves."
 
     r "They weren't trying to protect themselves, they were protecting me!"
 
@@ -107,15 +170,29 @@ label chapter2_boss_scene:
 
     "It was for her?! That painful medicine... They treated me like a guinea pig to make drugs for rich people?"
 
-    r "I could have before, when my family still had its influence. This furniture is all I have left. Everything else was stolen because of him."
+    r "I could have before, when my family still had its influence. This furniture is all I have left."
+    r "Everything else was stolen because of him."
 
     n "He didn't do anything to you."
 
-    r "I'm living my parent's worst nightmare because of his propaganda, even though I did nothing to deserve it. If I'm going to be punished regardless, I might as well get what I want. Isn't that what you did?"
+    r "I'm living my parent's worst nightmare because of his propaganda, even though I did nothing to deserve it."
+    r "If I'm going to be punished regardless, I might as well get what I want. Isn't that what you did?"
 
     #Jona's CGs shown in reverse order, one image per sentence
 
-    "We just wanted to be the heroes for once. To finally be the ones in control of our own life, our own happiness. All playing by the rules got us was more suffering. We would have been happy to stay with Lethe for the rest of our lives. But they took her from us. So much has already been taken from us by these privileged assholes. What more could they possibly want?"
+    scene background_JFBMeet2
+
+    "We just wanted to be the heroes for once. To finally be the ones in control of our own life, our own happiness."
+    
+    scene background_JFBUniform
+    
+    "All playing by the rules got us was more suffering. We would have been happy to stay with Lethe for the rest of our lives."
+    
+    scene background_Jfb9
+
+    "But they took her from us. So much has already been taken from us by these privileged assholes. What more could they possibly want?"
+
+    #Rise CG
 
     j "All I want is to make sure my friends have happy lives. If you can't accept that, then it's too much of a risk to keep you around."
 
@@ -125,13 +202,16 @@ label chapter2_boss_scene:
 
     #IF Hero
 
-    n "They were corrupt people, Rise. They hurt more people maintaining their power than Jona ever could have. You're smart enough to know that."
+    n "They were corrupt people, Rise. They hurt more people maintaining their power than Jona ever could have."
+    n "You're smart enough to know that."
 
-    r "Yes, but they were corrupt people I had control over. Now my father's companies are in the hands of strangers. Strangers who saw your fathers research and put more money into it instead of shutting it down."
+    r "Yes, but they were corrupt people I had control over. Now my father's companies are in the hands of strangers."
+    r "Strangers who saw your fathers research and put more money into it instead of shutting it down."
 
     n "That's impossible. I destroyed the lab, I know I did."
 
-    r "It won't be long before they rebuild elsewhere under a different name. Only now, I have no way to stop it. There are going to be more children like us while I'm stuck waiting to come of age. We can stop it, if Jona fails out of the program."
+    r "It won't be long before they rebuild elsewhere under a different name. Only now, I have no way to stop it."
+    r "There are going to be more children like us while I'm stuck waiting to come of age. We can stop it, if Jona fails out of the program."
 
     "So she was trying to get him to drop out!"
 
@@ -139,11 +219,23 @@ label chapter2_boss_scene:
 
     n "Who told you to target Jona?"
 
-    r "The same person who contacted Mariko. I imagine there are others as well; hired help to do her dirty work. The reward was too much to ignore. It's a simple trolley problem: the unhappiness of one for the safety of many."
+    r "The same person who contacted Mariko. I imagine there are others as well; hired help to do her dirty work."
+    r "The reward was too much to ignore. It's a simple trolley problem: the unhappiness of one for the safety of many."
 
     #Jona's CGs shown in reverse order, one image per sentence
 
-    "I promised Jona that I'd keep him safe. He doesn't have anyone else to rely on. If I turn my back on him, he'll have no one. Everything he's done, it was for someone else's happiness. If she asked, he may have left on his own just to protect us. Instead, she tried using his art to drive a wedge between us. No matter her end goal, she's needlessly making someone suffer for her own gain."
+    scene background_JFBSleebover3
+    "I promised Jona that I'd keep him safe."
+    scene background_JFBMourn
+    "He doesn't have anyone else to rely on. If I turn my back on him, he'll have no one."
+    scene background_Jfb10
+    "Everything he's done, it was for someone else's happiness. If she asked, he may have left on his own just to protect us."
+    scene background_Jfb5
+    "Instead, she tried using his art to drive a wedge between us."
+    scene background_Jfb3
+    "No matter her end goal, she's needlessly making someone suffer for her own gain."
+
+    #riseCG
 
     r "It seems you've made up your mind."
 
@@ -165,7 +257,8 @@ label chapter2_boss_scene:
 
     r "She was so worried about you and you ghosted her in the middle of a city wide riot. All of us thought you were dead."
 
-    "The walls, did they always have those eyes? Everywhere I look, they're staring at me as if she's watching us. She takes to the sky once more to stay out of reach."
+    "The walls, did they always have those eyes? Everywhere I look, they're staring at me as if she's watching us."
+    "She takes to the sky once more to stay out of reach."
 
     r "It would have been easier if you were."
 
@@ -205,7 +298,8 @@ label chapter2_boss_scene:
 
     n "RISE TURN IT OFF!"
 
-    "She throws the phone down as if it had bit her, all color drained from her face. I run to turn it off as fast as I can. Jona is shuddering with sobs. He had gone back to his house during the riots. We never talked about why."
+    "She throws the phone down as if it had bit her, all color drained from her face. I run to turn it off as fast as I can."
+    "Jona is shuddering with sobs. He had gone back to his house during the riots. We never talked about why."
 
     r "Nagen, I didn't know- Why would she give me something like that?"
 
@@ -225,7 +319,8 @@ label chapter2_boss_scene:
 
     r "The walls have eyes, Nagen, and not just these ones. Be careful who you trust."
 
-    "She pulls a drawing out of her blouse and throws it toward me. Professor Inukai starts to walk her to the principal's office while Mr. Yaguchi disables the glowing walls with a strange looking key."
+    "She pulls a drawing out of her blouse and throws it toward me."
+    "Professor Inukai starts to walk her to the principal's office while Mr. Yaguchi disables the glowing walls with a strange looking key."
 
     ya "If you don't want to get closed into the pool, get the hell out of there."
 
@@ -233,7 +328,8 @@ label chapter2_boss_scene:
 
     #CG: Jona's Portrait
 
-    "An eye for an eye? And a locker combination. I'll have to check Rise's locker when no one's around. But this drawing... is this how Jona sees himself?"
+    "An eye for an eye? And a locker combination."
+    "I'll have to check Rise's locker when no one's around. But this drawing... is this how Jona sees himself?"
 
     #Hide CG
 
@@ -241,15 +337,22 @@ label chapter2_boss_scene:
 
     #"Rise Bad End (+Villian)"
 
-    "I can't hear the phone anymore over the sound of her screaming. Something smells like it's burning. She keeps rubbing at her eyes only to curl in on herself... No way, are those things really connected to her? Jona walks over to the phone where she dropped it and crushes it under his boot."
+    "I can't hear the phone anymore over the sound of her screaming. Something smells like it's burning."
+    "She keeps rubbing at her eyes only to curl in on herself... No way, are those things really connected to her?"
+    "Jona walks over to the phone where she dropped it and crushes it under his boot."
 
     j "Serves you right for meddling in things you don't understand."
 
-    "The doors to the gym finally open. Miss Sato storms in with a look that could kill. She waddles down to where Rise is crumpled on the floor and leans her a hand. Rise has to be led out. I don't think she can see where she's going. Miss Sato glares at us, then whispers something in Rise's ear. Uitto and Hiro motion for Jona and I to climb out of the pool, but something on the floor catches my eye. Rise must have dropped it during the fight."
+    "The doors to the gym finally open. Miss Sato storms in with a look that could kill."
+    "She waddles down to where Rise is crumpled on the floor and leans her a hand. Rise has to be led out."
+    "I don't think she can see where she's going. Miss Sato glares at us, then whispers something in Rise's ear."
+    "Uitto and Hiro motion for Jona and I to climb out of the pool, but something on the floor catches my eye."
+    "Rise must have dropped it during the fight."
 
     #CG: Lethe's Portrait
 
-    "This is it! This is the last picture Jona drew of Lethe before she died. The aura around her, it reminds me of how he described his mom. And those scars on her arms..."
+    "This is it! This is the last picture Jona drew of Lethe before she died."
+    "The aura around her, it reminds me of how he described his mom. And those scars on her arms..."
 
     #CG circles through the burial briefly before disappearing
 
@@ -291,7 +394,11 @@ label chapter2_boss_scene:
 
     #BG: Hallway
 
-    "We're called to the office one at a time to give our account of what happened. While I wait for the others, I go check Rise's locker. There has to be a reason she left her combination where I could find it. Inside is a tape much like the one Mariko had. A photo is taped to it. A bunch of fancily dressed people are sitting in front of a banner for a charity dinner. It looks to be about twenty years old. Two people in green are front and center. They must be her parents. Next to them is Jona's mom and... my parents? They really did know each other."
+    "We're called to the office one at a time to give our account of what happened. While I wait for the others, I go check Rise's locker."
+    "There has to be a reason she left her combination where I could find it. Inside is a tape much like the one Mariko had."
+    "A photo is taped to it. A bunch of fancily dressed people are sitting in front of a banner for a charity dinner."
+    "It looks to be about twenty years old. Two people in green are front and center."
+    "They must be her parents. Next to them is Jona's mom and... my parents? They really did know each other."
 
     #IF Spared Rise
 
@@ -299,7 +406,8 @@ label chapter2_boss_scene:
 
     ###"Note: "See things the way I do."
 
-    "I was never the best with contacts, but if this is the same thing she was wearing earlier, maybe it's connected to a camera. I'll test it out later when the others are asleep."
+    "I was never the best with contacts, but if this is the same thing she was wearing earlier, maybe it's connected to a camera."
+    "I'll test it out later when the others are asleep."
 
     #Return to Main Branch
 

@@ -251,7 +251,8 @@ label Jona2:
     hide jona relaxed
     show jona happy
 
-    j "Well, they won't let me leave campus to comb the junkyard, so this is the next best thing. Not a lot of stuff to go through, unfortunately. These people are hornier for recycling than I am."
+    j "Well, they won't let me leave campus to comb the junkyard, so this is the next best thing. Not a lot of stuff to go through, unfortunately."
+    j "These people are hornier for recycling than I am."
 
     n "...uh hunh, right. And why do you need garbage?"
 
@@ -262,7 +263,8 @@ label Jona2:
 
     n "But why?"
 
-    j "I felt like making something for myself today to pull me out of this funk. Nothing's better than trying to make something with found objects! All my best pieces started that way."
+    j "I felt like making something for myself today to pull me out of this funk."
+    j "Nothing's better than trying to make something with found objects! All my best pieces started that way."
 
     n "Right... so this is a thing you do routinely?"
 
@@ -467,7 +469,9 @@ label Jona2:
 
     j "Not garbage, junk."
 
-    "I don't think we'll ever fully agree on the matter, but at least I can convince him to forgo booby-trapping the dumpsters. For someone so harmless, he can be a real handful."
+    "I don't think we'll ever fully agree on the matter, but at least I can convince him to forgo booby-trapping the dumpsters."
+    "He tossed me a compression wrap from god knows where."
+    "For someone so harmless, he can be a real handful."
 
     hide jona happy
 
