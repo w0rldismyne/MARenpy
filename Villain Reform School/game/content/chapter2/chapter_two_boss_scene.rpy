@@ -3,7 +3,7 @@ label chapter2_boss_scene:
 
     #BG: Gym Dark
 
-    scene backgroundgym
+    scene backgroundCh2_RiseArena
 
     "The main lights in the gym are off, but it's not completely dark. The pool is open. Instead of water, there's... furniture?"
     "Large, ornate antiques that would look more at home in a mansion than a gym are haphazardly stored in the empty pool."
@@ -22,7 +22,10 @@ label chapter2_boss_scene:
 
     r "I see. Well, this is rather disappointing. I had hoped someone else would be baited here instead. Serves me right for aiming for two birds with one stone."
 
+    scene backgroundCh2_RiseReveal
+
     "She snaps her fingers and the doors behind me lock. I can feel her watching me even though her eyes aren't focused."
+    "The sudden sound of an engine startles me. Not as much as watching Rise fly up into the air, a jet pack strapped to her back."
 
     n "How did you...?"
 
@@ -47,11 +50,12 @@ label chapter2_boss_scene:
 
     n "You're only trying to help yourself."
 
+    scene backgroundCh2_RiseCloseup
+
     r "I am sure it seems that way, but I assure you, this is what's best for everyone."
     r "You saw the things he drew; it is the same twisted imagery that inspired that cult."
     r "Nothing has changed. I wish you would listen to reason, but it seems we're at an impasse."
 
-    "The sudden sound of an engine startles me. Not as much as watching Rise fly up into the air, a jet pack strapped to her back."
     "She reaches behind her and pulls out a crystal perfume bottle."
 
     j "Nagen! Run!"
@@ -76,71 +80,74 @@ label chapter2_boss_scene:
 
     r "You are just too close to the situation to realize you are being used. Let me protect you."
 
-        menu:
-            "This again?":
-                n "I never asked for your help or protection."
-                n "My friends aren't using me, I'm trying to help them because I want to."
-            "Maybe":
-                #bad end point
-                n "Even if I did want help, this is definitely not helping."
-                n "How do I know you're not going to use me too."
+    menu:
+        "This again?":
+            n "I never asked for your help or protection."
+            n "My friends aren't using me, I'm trying to help them because I want to."
+        "Maybe":
+            #bad end point
+            n "Even if I did want help, this is definitely not helping."
+            n "How do I know you're not going to use me too."
 
     r "You were in my position once, with no one to rely on. Why do you refuse to see the ends justify the means?"
 
-        menu: 
-            "Not like this":
-                #bad end point
-                n "This... this isn't the same as back then."
-                n "No one was in danger until you started shit again."
-                n "You're hurting way more people than you're helping"
-            "You chose not to rely on anyone":
-                n "You're the one that won't talk to your old friends."
-                n "You didn't even bother to make new ones."
-                n "The reason you think you're alone is you keep choosing to be."
+    menu: 
+        "Not like this":
+            #bad end point
+            n "This... this isn't the same as back then."
+            n "No one was in danger until you started shit again."
+            n "You're hurting way more people than you're helping"
+        "You chose not to rely on anyone":
+            n "You're the one that won't talk to your old friends."
+            n "You didn't even bother to make new ones."
+            n "The reason you think you're alone is you keep choosing to be."
 
     r "He hurt so many people. He lied to you so you would defend him."
 
-        menu:
-            "He didn't have to":
-                #bad end point
-                n "I'd defend him regardless."
-                n "People like you always pick on guys weaker than them."
-            "He doesn't lie":
-                n "He hasn't said anything hoping you'd give up and be normal!"
-                "I didn't think it would work, but he certainly wasn't manipulating me into being here."
-                n "I may not always understand him, but I know he'd never lie to me."
-                n "You're the one making stuff up about my friends."
+    menu:
+        "He didn't have to":
+            #bad end point
+            n "I'd defend him regardless."
+            n "People like you always pick on guys weaker than them."
+        "He doesn't lie":
+            n "He hasn't said anything hoping you'd give up and be normal!"
+            "I didn't think it would work, but he certainly wasn't manipulating me into being here."
+            n "I may not always understand him, but I know he'd never lie to me."
+            n "You're the one making stuff up about my friends."
 
     r "My parents may not have been the best people, but they did not deserve to die just because he said so. I'm trying to make things better."
 
-        menu:
-            "Yeah, for you":
-                n "Not the best people?"
-                n "They used their money to hurt people on purpose."
-                n "All Jona ever did was point out where 'rich people' were throwing their money."
-                n "If other people thought it was that included your parents, they're the problem, not him."
-            "He didn't mean it":
-                #bad end point
-                n "People took a metaphor out of context."
-                n "He never asked people to literally kill them."
-                n "We all just wanted one thing in Guwon to not be horrible."
+    menu:
+        "Yeah, for you":
+            n "Not the best people?"
+            n "They used their money to hurt people on purpose."
+            n "All Jona ever did was point out where 'rich people' were throwing their money."
+            n "If other people thought it was that included your parents, they're the problem, not him."
+        "He didn't mean it":
+            #bad end point
+            n "People took a metaphor out of context."
+            n "He never asked people to literally kill them."
+            n "We all just wanted one thing in Guwon to not be horrible."
 
     r "I should have been more clear; this will not kill you. It will just put you to sleep for a while."
     r "Be a dear and step into one of those clouds. I really would like to avoid hurting you."
 
-        menu:
-            "I'm not giving up!":
-                n "I'm not turing a blind eye to this."
-                n "You're blaming someone else for your family's failings."
-            "-hesitate-":
-                #bad end point
-                n "I'm not turing a blind eye to this."
-                n "You're blaming someone else for your family's failings."
+    menu:
+        "I'm not giving up!":
+            n "I'm not turing a blind eye to this."
+            n "You're blaming someone else for your family's failings."
+        "-hesitate-":
+            #bad end point
+            n "I'm not turing a blind eye to this."
+            n "You're blaming someone else for your family's failings."
 
     #"Midfight Cutscene"
 
     "Rise's jet pack stutters. Maybe it started to overheat? She descends to the pool's edge."
     "Jona crawls out from his hiding place and tries to signal for me to run."
+
+    scene backgroundCh2_RiseReveal2
+
     "But Rise's still armed and guarding the stairs out of the pool. It's too risky to climb out now. Where are the others?"
 
     j "If this is about your parents, I don't know who they are."
@@ -155,91 +162,96 @@ label chapter2_boss_scene:
 
     #IF Villain
 
-    j "You're still okay, aren't you? If I hated your family so much, do you honestly think I would've let you live?"
-    j "It's not my fault your parents funded Estella's experiments or stole businesses or made bad laws to protect themselves."
+    if Villain > Hero:
 
-    r "They weren't trying to protect themselves, they were protecting me!"
+        j "You're still okay, aren't you? If I hated your family so much, do you honestly think I would've let you live?"
+        j "It's not my fault your parents funded Estella's experiments or stole businesses or made bad laws to protect themselves."
 
-    n "They... they funded my dad's research?"
+        r "They weren't trying to protect themselves, they were protecting me!"
 
-    "There's no way..."
+        n "They... they funded my dad's research?"
 
-    n "You're a Charm Major... but, what's your Proficiency?"
+        "There's no way..."
 
-    r "I... I don't have one."
+        n "You're a Charm Major... but, what's your Proficiency?"
 
-    "It was for her?! That painful medicine... They treated me like a guinea pig to make drugs for rich people?"
+        r "I... I don't have one."
 
-    r "I could have before, when my family still had its influence. This furniture is all I have left."
-    r "Everything else was stolen because of him."
+        "It was for her?! That painful medicine... They treated me like a guinea pig to make drugs for rich people?"
 
-    n "He didn't do anything to you."
+        r "I could have before, when my family still had its influence. This furniture is all I have left."
+        r "Everything else was stolen because of him."
 
-    r "I'm living my parent's worst nightmare because of his propaganda, even though I did nothing to deserve it."
-    r "If I'm going to be punished regardless, I might as well get what I want. Isn't that what you did?"
+        n "He didn't do anything to you."
 
-    #Jona's CGs shown in reverse order, one image per sentence
+        r "I'm living my parent's worst nightmare because of his propaganda, even though I did nothing to deserve it."
+        r "If I'm going to be punished regardless, I might as well get what I want. Isn't that what you did?"
 
-    scene background_JFBMeet2
+        #Jona's CGs shown in reverse order, one image per sentence
 
-    "We just wanted to be the heroes for once. To finally be the ones in control of our own life, our own happiness."
-    
-    scene background_JFBUniform
-    
-    "All playing by the rules got us was more suffering. We would have been happy to stay with Lethe for the rest of our lives."
-    
-    scene background_Jfb9
+        scene background_JFBMeet2
 
-    "But they took her from us. So much has already been taken from us by these privileged assholes. What more could they possibly want?"
+        "We just wanted to be the heroes for once. To finally be the ones in control of our own life, our own happiness."
+        
+        scene background_JFBUniform
+        
+        "All playing by the rules got us was more suffering. We would have been happy to stay with Lethe for the rest of our lives."
+        
+        scene background_Jfb9
 
-    #Rise CG
+        "But they took her from us. So much has already been taken from us by these privileged assholes. What more could they possibly want?"
 
-    j "All I want is to make sure my friends have happy lives. If you can't accept that, then it's too much of a risk to keep you around."
+        scene backgroundCh2_RiseCloseup
 
-    r "S-see Nagen! See what happens when that innocent mask starts to crack?"
+        j "All I want is to make sure my friends have happy lives. If you can't accept that, then it's too much of a risk to keep you around."
 
-    n "Of course; who do you think taught him how to 'play nice'?"
+        r "S-see Nagen! See what happens when that innocent mask starts to crack?"
+
+        n "Of course; who do you think taught him how to 'play nice'?"
 
     #IF Hero
+    else:
 
-    n "They were corrupt people, Rise. They hurt more people maintaining their power than Jona ever could have."
-    n "You're smart enough to know that."
+        n "They were corrupt people, Rise. They hurt more people maintaining their power than Jona ever could have."
+        n "You're smart enough to know that."
 
-    r "Yes, but they were corrupt people I had control over. Now my father's companies are in the hands of strangers."
-    r "Strangers who saw your fathers research and put more money into it instead of shutting it down."
+        r "Yes, but they were corrupt people I had control over. Now my father's companies are in the hands of strangers."
+        r "Strangers who saw your fathers research and put more money into it instead of shutting it down."
 
-    n "That's impossible. I destroyed the lab, I know I did."
+        n "That's impossible. I destroyed the lab, I know I did."
 
-    r "It won't be long before they rebuild elsewhere under a different name. Only now, I have no way to stop it."
-    r "There are going to be more children like us while I'm stuck waiting to come of age. We can stop it, if Jona fails out of the program."
+        r "It won't be long before they rebuild elsewhere under a different name. Only now, I have no way to stop it."
+        r "There are going to be more children like us while I'm stuck waiting to come of age. We can stop it, if Jona fails out of the program."
 
-    "So she was trying to get him to drop out!"
+        "So she was trying to get him to drop out!"
 
-    j "You'll say anything to get him on your side, but it's not going to work."
+        j "You'll say anything to get him on your side, but it's not going to work."
 
-    n "Who told you to target Jona?"
+        n "Who told you to target Jona?"
 
-    r "The same person who contacted Mariko. I imagine there are others as well; hired help to do her dirty work."
-    r "The reward was too much to ignore. It's a simple trolley problem: the unhappiness of one for the safety of many."
+        r "The same person who contacted Mariko. I imagine there are others as well; hired help to do her dirty work."
+        r "The reward was too much to ignore. It's a simple trolley problem: the unhappiness of one for the safety of many."
 
-    #Jona's CGs shown in reverse order, one image per sentence
+        #Jona's CGs shown in reverse order, one image per sentence
 
-    scene background_JFBSleebover3
-    "I promised Jona that I'd keep him safe."
-    scene background_JFBMourn
-    "He doesn't have anyone else to rely on. If I turn my back on him, he'll have no one."
-    scene background_Jfb10
-    "Everything he's done, it was for someone else's happiness. If she asked, he may have left on his own just to protect us."
-    scene background_Jfb5
-    "Instead, she tried using his art to drive a wedge between us."
-    scene background_Jfb3
-    "No matter her end goal, she's needlessly making someone suffer for her own gain."
+        scene background_JFBSleebover3
+        "I promised Jona that I'd keep him safe."
+        scene background_JFBMourn
+        "He doesn't have anyone else to rely on. If I turn my back on him, he'll have no one."
+        scene background_Jfb10
+        "Everything he's done, it was for someone else's happiness. If she asked, he may have left on his own just to protect us."
+        scene background_Jfb5
+        "Instead, she tried using his art to drive a wedge between us."
+        scene background_Jfb3
+        "No matter her end goal, she's needlessly making someone suffer for her own gain."
 
-    #riseCG
+        #riseCG
 
-    r "It seems you've made up your mind."
+        scene backgroundCh2_RiseReveal2
 
-    n "I trust him more than I trust you."
+        r "It seems you've made up your mind."
+
+        n "I trust him more than I trust you."
 
     #Return to Main Branch
 
@@ -251,7 +263,7 @@ label chapter2_boss_scene:
 
     "She holds up an old paint-covered flip phone. It looks like the one Jona had when he ran away from home."
 
-    ###"Phone: "First unheard message: I have told you a thousand times you are not allowed to leave this house without permission. Are you trying to make me look like a bad mother?!"
+    phone "First unheard message: I have told you a thousand times you are not allowed to leave this house without permission. Are you trying to make me look like a bad mother?!"
 
     "No, there's no way- but Jona's already shaking."
 
@@ -266,11 +278,11 @@ label chapter2_boss_scene:
 
     #Hit eyes for Rise to drop her guard. Special lines play when the eyes are hit. If player hits x3 in a row without striking Rise, automatic bad/villain end.
 
-    ###"Phone: "Second unheard message: Just tell me where you are, I'll come get you. It's dangerous out there, you could get hurt."
+    phone "Second unheard message: Just tell me where you are, I'll come get you. It's dangerous out there, you could get hurt."
 
-    ###"Phone: "Third unheard message: Where the hell are you? Do you think this is funny? I don't care about what your stupid little friends talked you into doing. Call me back."
+    phone "Third unheard message: Where the hell are you? Do you think this is funny? I don't care about what your stupid little friends talked you into doing. Call me back."
 
-    ###"Phone: "Fourth unheard message: ...I hope you're happy. After all I've done for you, this is how you thank me?"
+    phone "Fourth unheard message: ...I hope you're happy. After all I've done for you, this is how you thank me?"
 
     #"Rise's Impact Lines"
 
@@ -282,13 +294,13 @@ label chapter2_boss_scene:
 
     #"Rise's End Good (+Rep +Hero)"
 
-    ###"Phone: "Fifth unheard message: ..... Don't come home....."
+    phone "Fifth unheard message: ..... Don't come home....."
 
     r "That's strange, this one goes on for twenty minutes."
 
     "It sounds like the phone got dropped on the floor on the other end of the line. What sounds like a chair moving follows shortly after."
 
-    ###"Phone: "CRASH!"
+    phone "CRASH!"
 
     "A sick feeling pools in my stomach."
 
@@ -327,10 +339,12 @@ label chapter2_boss_scene:
     "As if this is our fault?! Hiro and Uitto help get Jona out of the maze. I linger behind and unfold the picture."
 
     #CG: Jona's Portrait
+    show backgroundJonaDraw4
 
     "An eye for an eye? And a locker combination."
     "I'll have to check Rise's locker when no one's around. But this drawing... is this how Jona sees himself?"
 
+    hide backgroundJonaDraw4
     #Hide CG
 
     #Return to Main Branch
@@ -338,6 +352,9 @@ label chapter2_boss_scene:
     #"Rise Bad End (+Villian)"
 
     "I can't hear the phone anymore over the sound of her screaming. Something smells like it's burning."
+
+    scene backgroundCh2_RiseCrash
+
     "She keeps rubbing at her eyes only to curl in on herself... No way, are those things really connected to her?"
     "Jona walks over to the phone where she dropped it and crushes it under his boot."
 
@@ -351,8 +368,12 @@ label chapter2_boss_scene:
 
     #CG: Lethe's Portrait
 
+    show backgroundJonaDraw5
+
     "This is it! This is the last picture Jona drew of Lethe before she died."
     "The aura around her, it reminds me of how he described his mom. And those scars on her arms..."
+
+    hide backgroundJonaDraw5
 
     #CG circles through the burial briefly before disappearing
 
@@ -393,6 +414,7 @@ label chapter2_boss_scene:
     #Return to Main Branch
 
     #BG: Hallway
+    scene backgroundhall1
 
     "We're called to the office one at a time to give our account of what happened. While I wait for the others, I go check Rise's locker."
     "There has to be a reason she left her combination where I could find it. Inside is a tape much like the one Mariko had."
@@ -404,7 +426,7 @@ label chapter2_boss_scene:
 
     "There's a small box with an eye-shaped map printed on it. I open it to find an unopened contact lens along with a small note."
 
-    ###"Note: "See things the way I do."
+    "'See things the way I do.'"
 
     "I was never the best with contacts, but if this is the same thing she was wearing earlier, maybe it's connected to a camera."
     "I'll test it out later when the others are asleep."

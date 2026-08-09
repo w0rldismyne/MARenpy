@@ -1,6 +1,10 @@
 label chapter2_day1_event1:
+    play music "music/TriumphantReturn.mp3"
+    show backgroundCh2_Title
+    with Fade(0.5, 1.0, 0.5)
 
-    scene backgroundroom
+    scene backgroundroom with fade
+    play music "music/CryingOverYou.mp3"
 
     kk "Good morning, brotatos, and welcome to another amazing week at school. To get you in the mood, a request from the heart, it's Innuendo by Queen."
 
@@ -12,6 +16,8 @@ label chapter2_day1_event1:
     scene backgroundstuco at darker
 
     "The lights aren't on. Am I that late? I can't imagine we'd have that much to discuss. As I'm about to leave, the door swings open."
+
+    play music "music/TheChase.mp3"
 
     show nanase surprised
 
@@ -27,6 +33,7 @@ label chapter2_day1_event1:
     ki "I got it, hold on."
 
     scene backgroundstuco
+    play music "music/WeAre.mp3"
 
     show setsuna at left
     show nanase smile
@@ -108,6 +115,8 @@ label chapter2_day1_event1:
     show rise smile at left
     show ichita annoyed
     show yoku at right
+
+    play music "music/TriumphantReturn.mp3"
 
     r "It is almost like deja vu, though thankfully Jona has been replaced with a more pleasing candidate."
 
@@ -217,6 +226,8 @@ label chapter2_day1_event1:
     hide rise smug
     hide ichita grin
 
+    play music "music/Lights.mp3"
+
     "Rise, Hiro, and Ichita leave the room chattering amongst themselves, leaving the rest of us with the aftermath."
 
     show nanase ashamed
@@ -267,6 +278,7 @@ label chapter2_day1_event1:
 label chapter2_classes:
 
     scene backgroundschool
+    play music "music/LoveofAll.mp3"
 
     menu:
         "Vigor":
@@ -317,7 +329,7 @@ label chapter2_vigor:
     
     hide rei irate
     show rei surprised at left
-    
+    #need comedic song
     re "What are you waiting for?"
     
     hide hiro mad
@@ -856,13 +868,16 @@ label chapter2_vision:
     v "I'm sure some of you are familiar with my first case, but... it was the hardest trial I had to speak at."
    
     hide vivaldi sad talk1
-   
+
+    scene backgroundCh2_VisionClass1
     #-CG Vivaldi on the stand-
     v "I had first heard my father's voice at the funeral, all he could do was answer questions with one word,  and the second..."
     #-Add a man to the stan-
+    scene backgroundCh2_VisionClass2
     v "Was when I was helping with the laundry. My uncle failed to notice a blood stain..."
     v "It was the only evidence I had, and if no one believed me, I would have been forced to live with a murderer who watched me testify against him."
     #-CG gone-
+    scene backgroundclass
 
     show vivaldi talk
 
@@ -952,6 +967,7 @@ label chapter2_vision:
 label chapter2_day1_event2:
 
     scene backgroundclass with fade
+    play music "music/TheySay.mp3"
 
     "After class, I go to meet up with Uitto and the others, hoping they might have some ideas. Unfortunately..."
 
@@ -1286,6 +1302,7 @@ label chapter2_point_and_click_objects_smudge:
 label chapter2_day1_event3:
 
     scene backgroundcourtyard
+    play music "music/CosimoFogg.mp3"
 
     show hiro at left
 
@@ -1448,6 +1465,7 @@ label chapter2_day1_event3:
 label chapter2_day1_night:
 
     scene backgroundroomn
+    play music "music/WhereS.mp3"
 
     "So much has happened today."
     "I feel like I barely had a chance to catch my breath."
@@ -1487,6 +1505,7 @@ label chapter2_day2_event1:
     #BG: Nagen's Room Day]
 
     scene backgroundroom with fade
+    play music "music/CryingOverYou.mp3"
 
     kk "Good morning, broquittos!"
     kk "As many of you know, we got a masquerade rager coming up this Monday."
@@ -1661,8 +1680,10 @@ label chapter2_day2_event1:
 label chapter2_day2_event2:
 
     scene backgroundsew
+    play music "music/Lights.mp3"
 
-    "After lunch, I decide to check in on Shoma in his workshop to see what exactly I've been drafted to help with. 'Dress dummy' could mean any number of things."
+    "After lunch, I decide to check in on Shoma in his workshop to see what exactly I've been drafted to help with."
+    "'Dress dummy' could mean any number of things."
 
     #Door greeting plays
 
@@ -1838,6 +1859,7 @@ label chapter2_day2_event3:
     #BG: Nurse's Office
 
     scene backgroundnurse
+    play music "music/Still.mp3"
 
     "Mu said the nurse would be stopping by the school to see me. Though at this point, I feel much better."
     "Still, if I keep avoiding it, he'll chase me down in the halls. I come in to find a stoic woman in a mask manning the desk."
@@ -1914,6 +1936,7 @@ label chapter2_day2_event3:
 label chapter2_day2_event4:
 
     scene backgroundcourtyard
+    play music "music/Leaf.mp3"
 
     "The stone table in the courtyard is an especially sought after gathering spot since it's mostly in the shade."
     "It seems I wasn't quick enough to grab it."
@@ -2170,6 +2193,7 @@ label chapter2_day2_night:
     #BG: Nagen's Dorm Night
 
     scene backgroundroomn
+    play music "music/Nostalgia.mp3"
 
     "I guess I can't be too surprised that Jona's so worried about his art being seen by other people like this."
     "I just hope the reason he's trying to downplay it isn't to spare our feelings. We may be busy with other things, but that doesn't mean we don't care."
@@ -2209,7 +2233,8 @@ label chapter2_day3_event1:
     #"Day 3 Event 1"
 
     #BG: Tba
-    show backgroundroom
+    show backgroundroom with fade
+    play music "music/CryingOverYou.mp3"
 
     kk "Good morning, Bro Peeps!"
 
@@ -2341,6 +2366,7 @@ label chapter2_day3_event2:
 
     #BG: Tba
     scene backgroundcafe
+    play music "music/Lights.mp3"
 
     "I stop to give myself a chance to cool off before hunting down Uitto. If I'm too emotional, she'll have the upper hand and I'll never get to the bottom of this rumor."
 
@@ -2470,6 +2496,7 @@ label chapter2_day3_event3:
 
     #BG: Tba
     scene backgroundcafex
+    play music "music/TheySay.mp3"
 
     "I need to do some damage control; if nothing else, to slow the progress of rumors. And I'm not going to make the same mistake twice."
     "I already got Hiro to promise to run things by me. Now I just have to convince the others to get on the same page."
@@ -2577,6 +2604,7 @@ label chapter2_day3_event4:
     #BG: Roof
 
     scene backgroundroof
+    play music "music/TriumphantReturn.mp3"
 
     "Rise agreed to meet with me on the roof of the school."
     "I don't know why, it gets so cold up here in the evening. She doesn't have her tea set out, though I can see the bag hanging from her back."
@@ -2758,13 +2786,19 @@ label chapter2_day3_night:
     #BG: Nagen's Dorm Night
 
     scene backgroundroomn
+    play music "music/WhereS.mp3"
 
     "It seems like things are starting to fall into place, but I can't quite shake what Yoku and Rise said to me."
-    "I mean, 'willful ignorance'. I'm not trying to avoid thinking about anything. I'm not-"
+    "I mean, 'willful ignorance'."
+
+    play music "music/INeedTo.mp3"
+    
+    "I'm not trying to avoid thinking about anything. I'm not-"
 
     o "She should have a funeral."
 
     scene background_Ofb1
+    play music "music/VHS.mp3"
 
     #Screen abruptly cuts. Odori in front of a watercolor-filled IV set. Pink static.
 
@@ -2777,23 +2811,35 @@ label chapter2_day3_night:
     "I can't do this again. I can't. I can't."
 
     scene backgroundblack
-
+    
+    stop music
 
     j "It's okay, Nagen, I can take care of this. You don't have to stay." #[Sound: Wet cement poured from a bucket.
 
     n "I can't, it's not fair." #[SFx
 
+    play sound "burry1.ogg"
+
     "Jona didn't want Odori to come until she was properly buried, so Uitto stayed behind with her."
     "I had no idea where Hiro ran off to. We already made him clean her. I couldn't leave Jona alone."
 
     j "None of this is fair. Just keep your eyes closed. She wouldn't want you to see her like this." # [SFx
+    play sound "burry2.ogg"
 
     scene background_Jfb10
 
     n "...Why do we have to use cement?" # [SFx
 
+    play sound "burry1.ogg"
+
     j "To keep people from... 'un'burying her. I told you..." #[SFx] 
+    play sound "burry2.ogg"
     j "I've done this twice before."
+
+    play sound "burry1.ogg"
+    #delay?
+    play sound "burry2.ogg"
+    #repeat with a fade out?
 
     scene backgroundblack with fade
 
@@ -2805,7 +2851,9 @@ label chapter2_day4_event1:
 
     #BG: Nagen's Dorm (tba)
 
-    scene backgroundroom
+    scene backgroundroom with fade
+
+    play music "music/CryingOverYou.mp3"
 
     "I wake up before my alarm, nauseous and in a cold sweat. It's been two years, I shouldn't- I thought I moved past this."
     "I have student council in half an hour. Might as well get ready, it's not like I can go back to sleep now."
@@ -2918,6 +2966,7 @@ label chapter2_day4_event2:
     #BG: Cafe
 
     scene backgroundcafe
+    play music "music/Lights.mp3"
 
     "Jona is dominating half the table with ribbons and paints. Judging by the size of the mess, he's been at it for a while."
     "All of these look like the same mask. The rest of us are carefully eating our lunch on the other side of the craft divide."
@@ -3077,6 +3126,7 @@ label chapter2_day4_event3:
     #Day 4 Event 3
 
     scene backgroundnurse
+    play music "music/CosimoFogg.mp3"
 
     #BG: Nurse's Office
 
@@ -3089,6 +3139,7 @@ label chapter2_day4_event3:
     "I take the picture off the wall."
 
     show backgroundJonaDraw2
+    play music "music/Still.mp3"
 
     "That's my port... The details aren't exact, but I'd know that shape anywhere."
     "Not only that, but this thing, it's like a map of everywhere I've had an IV."
@@ -3120,6 +3171,7 @@ label chapter2_day4_night:
     #"Day 4 Night"
 
     scene backgroundroomn
+    play music "music/Nostalgia.mp3"
 
     #BG: Nagen's Dorm Night
 
@@ -3168,6 +3220,7 @@ label chapter2_day5_event1:
     #BG: Nagen's Dorm Day
 
     scene backgroundroom
+    play music "music/CryingOverYou.mp3"
 
     "I wake up and for a brief second, it feels like a normal day. Then Kazz's voice comes blasting through the clock radio."
     "I can barely focus on what he's saying. There's so many things I have to get done and barely enough time to do it and I still haven't talked to Jona about the picture I found."
@@ -3259,6 +3312,7 @@ label chapter2_day5_event1:
 label chapter2_day5_event2:
 
     scene backgroundcafe
+    play music "music/Lights.mp3"
 
     "Jona and Uitto are making a noxious slop out of their leftover food. The theme this time being anything pink."
     "The smell is awful, but at least they waited until after I was done eating before working on today's monstrosity."
@@ -3522,6 +3576,7 @@ label chapter2_day5_event2:
 label chapter2_day5_event3:
 
     scene backgroundlibrary
+    play music "music/TheySay.mp3"
 
     "I had to come to the library to get a break from talking to people."
     "Something about the looming walls of books and tucked away corners feels soothing to me. However, Rei comes up and sits at my table."
@@ -3584,6 +3639,7 @@ label chapter2_day5_event3:
 label chapter2_day5_event4:
 
     scene backgroundamp
+    play music "music/Leaf.mp3"
 
     "Night time is fast approaching and I still haven't asked Jona about the drawing I found."
     "Part of me is afraid of what he'll say. I kind of want to pretend I never found it. But I know if I do that, it'll just keep eating at me."
@@ -3757,6 +3813,7 @@ label chapter2_day5_event4:
 label chapter2_day5_night:
 
     scene backgroundroomn
+    play music "music/WhereS.mp3"
 
     "A small part of me feels better knowing that picture got shredded before anyone else saw it."
     "It's not like I'm keeping it a secret or anything, but I'm not ready to talk about it with people I don't know well."
@@ -3805,6 +3862,7 @@ label chapter2_day6_event1:
     #BG: Nagen's Dorm Day
 
     scene backgroundroom
+    play music "music/CryingOverYou.mp3"
 
     "Usually, I wake up to Kazz's cheery voice setting up another eclectic collection of songs."
     "This morning, it's the constant ringing of my phone. Someone has been trying to call me before my alarm."
@@ -4012,7 +4070,7 @@ label chapter2_day6_event2:
     #"Day 6 Event 2"
 
     scene backgrounddorm
-
+    play music "music/Lights.mp3"
     #BG: Dorms Outside
 
     "We don't have a lot of time between classes. Hiro and I thought it would be best to split up and check on them at the same time."
@@ -4029,6 +4087,7 @@ label chapter2_day6_event2:
 label chapter2_checkuitto:
 
     scene backgrounddorm
+    play music "music/Still.mp3"
 
     #+Uittorep
 
@@ -4099,6 +4158,7 @@ label chapter2_checkjona:
     #"B. Jona (+Jona)"
 
     scene backgrounddorm
+    play music "music/Still.mp3"
 
     "If I send Hiro to check on Jona, he's probably just going to make things worse. As much as I'd like to ask Uitto about those pictures, I should focus on damage control."
     "I text Jona and ask him to let me into my room."
@@ -4170,6 +4230,7 @@ label chapter2_checkjona:
 label chapter2_day6_event3:
 
     scene backgroundhall1
+    play music "music/Leaf.mp3"
 
     "Classes are finally over for the day. There's still so much that needs to get done, but... I'm just so tired."
     "I chugged an energy drink earlier and still, nothing."
@@ -4189,6 +4250,7 @@ label chapter2_day6_night:
     #Fade to black. BG: Nagen's Dorm Night
 
     scene backgroundroomn
+    play music "music/Nostalgia.mp3"
 
     "I guess I nodded off. What time is it? ... 2AM?! I basically wasted a whole day!"
     "There's only one day left to prepare for the dance. I check my phone. Hiro was worried when I didn't make it to dinner."
@@ -4243,6 +4305,7 @@ label chapter2_day7_event1:
     #BG: Nagen's Dorm Day
 
     scene backgroundroom
+    play music "music/CryingOverYou.mp3"
 
     kk "Good morning, bromeleons! I know there's no class today, but who would want to waste such a beautiful day?"
 
@@ -4268,6 +4331,7 @@ label chapter2_day7_event2:
     #BG: Sewing Shop
 
     scene backgroundsew
+    play music "music/Lights.mp3"
 
     "We all agreed to meet up to get our stuff for the dance before lunch. Uitto bursts into the room behind us."
 
@@ -4421,6 +4485,7 @@ label chapter2_day7_event3:
     #BG: StuCo Room
 
     scene backgroundstuco
+    play music "music/Leaf.mp3"
     "The council wanted to have one last meeting before the dance. We all busted our butts trying to get everything together in time."
     show kietsu
     show setsuna apathetic at left
@@ -4604,6 +4669,7 @@ label chapter2_day7_event4:
     #Day 7 Event 4"
 
     scene backgrounddorm
+    play music "music/TheySay.mp3"
 
     "Jona's sketchbook... The person who stole it pulled out very specific pictures, but I wonder..."
 
@@ -4696,6 +4762,7 @@ label chapter2_day7_event4:
 label chapter2_day7_night:
 
     scene backgroundroomn
+    play music "music/WhereS.mp3"
 
     "Tomorrow's the dance; there's nothing more I can do to prepare for it. I can't help but feel nervous about tomorrow. "
 
@@ -4734,6 +4801,7 @@ label chapter2_day8_event1:
     #BG: Nagen's Room Day
 
     scene backgroundroom
+    play music "music/CryingOverYou.mp3"
 
     "Today's the day of the dance, I should check in with the others before I get swept up in setting up."
 
@@ -4828,7 +4896,7 @@ label chapter2_day8_event1:
 
     if date = True:
         if dateMomoko = True:
-
+            play music "music/Unconditionally.mp3"
             "We had agreed to meet up right outside the entrance; something about a surprise."
 
             show momoko happy
@@ -4873,6 +4941,7 @@ label chapter2_day8_event1:
 
             hide momoko
         elif dateKitsune = True:
+            play music "music/AndSo.mp3"
             "Kitsune had been busy up until the last minute trying to campaign for the queen of the dance."
             "She still made time to text me updates in between. Well, that and a list of expectations."
             "Heaven forbid I wear the wrong shoes. We meet up at the front entrance."
@@ -4910,6 +4979,7 @@ label chapter2_day8_event1:
             
             hide kitsune
         elif dateChisei = True:
+            play music "music/Unconditionally.mp3"
 
             "Chisei is already at the entrance waiting for me when I show up. I hope I didn't keep her waiting too long."
 
@@ -4954,7 +5024,7 @@ label chapter2_day8_event1:
             hide chisei
 
         elif dateNanase = True:
-
+            play music "music/AndSo.mp3"
             "Nanase's collecting tickets at the entrance; people are slowly trickling in. Which is fine, I guess, but it's delaying my night. She looks nice in her vintage gown."
 
             show nanase ashamed
@@ -5022,7 +5092,7 @@ label chapter2_day8_event1:
             hide nanase
 
         elif dateRise = True:
-
+            play music "music/#28.mp3"
             "I get a string of texts."
 
             r "I will not be able to meet with you on time."
@@ -5032,6 +5102,7 @@ label chapter2_day8_event1:
 
             "Did I just get stood up?"
         elif dateMu = True:
+            play music "music/Unconditionally.mp3"
             "Mu comes to pick me up and walk me to the dance hall."
             "He's not all that dressed up actually; just a nice blazer and a plain mask and..."
 
@@ -5063,7 +5134,7 @@ label chapter2_day8_event1:
             hide mu
 
         elif dateYoku = True:
-
+            play music "music/AndSo.mp3"
             show yoku bashful
 
             "Yoku is pacing outside of the dance hall. I know Shoma's talented, but there's no way he had time to make a suit and a cape with that much detail. He had to have brought it from home. When he sees me, he relaxes a little."
@@ -5095,6 +5166,7 @@ label chapter2_day8_event1:
             hide yoku
 
         elif dateTaiga = True:
+            play music "music/Unconditionally.mp3"
 
             show taiga grin
                     
@@ -5135,7 +5207,7 @@ label chapter2_day8_event1:
             hide taiga
 
         else:
-
+            play music "music/AndSo.mp3"
             show hiro confess
 
             "Hiro and I are getting ready together. I suppose there isn't a better time than now to give it to him. I hand him a corsage made with blue silk. It doesn't exactly go with his outfit, but it's the best way I could think of to show we're going together."
@@ -5177,6 +5249,8 @@ label chapter2_day8_event1:
         "Let's do this."
 
     scene backgroundparty
+
+    play music "music/SpeedWins.mp3"
 
     "I climb up the stairs to the roof, and man does it look good! Rise did a great job disguising all the junk as decorations."
     "Music is playing, there's food; it actually looks like a dance! Yoku and Kazz are arguing about the music choice."
@@ -5491,6 +5565,7 @@ label chapter2_day8_event2:
     #BG: Nagen's Room
 
     scene backgroundroomn
+    play music "music/CoolNights.mp3"
 
     "Everyone dragged themselves to my room."
     "It's too late for everyone to stay over again, but I doubt anyone could sleep without knowing what was on it."
@@ -5568,7 +5643,9 @@ label chapter2_day8_event2:
 
     "There's no way that many kids lost their proficiencies. It's just a coincidence."
     "Either way, Apex used that fear to target Rise. The whole tone of this tape is different from Mariko's."
-    "It almost sounds like blackmail. The tape sputters to life. This time, Apex is sitting on a lavish throne with a masquerade mask."
+    "It almost sounds like blackmail."
+    play music "music/VHS.mp3"
+    "The tape sputters to life. This time, Apex is sitting on a lavish throne with a masquerade mask."
     "How did she- Did Rise draw inspiration from the tape or are we being watched in the school?"
 
     hide uitto
@@ -5576,6 +5653,7 @@ label chapter2_day8_event2:
     hide jona
 
     scene backgroundCh2_Apex
+    play music "music/#28.mp3"
 
     #IF Villian
 
@@ -5604,6 +5682,7 @@ label chapter2_day8_event2:
     show jona depressed at left
     show uitto sad
     show hiro sad at right
+    play music "music/Intervention.mp3"
 
     j "....."
 
@@ -5727,6 +5806,7 @@ label bonus_Rise_Ch2:
     #"Bonus Rise Flashback [IF Rise=Max
 
     #CG: Rise holding hands with parents of either side
+    play music "music/INeedTo.mp3"
 
     scene backgroundCh2_RiseFB1
 
@@ -5758,26 +5838,10 @@ label bonus_Rise_Ch2:
 
     r "After all that effort, what do I have to show for it? My training was for a different sort of life. What good is a pretty doll without a dollhouse?"
 
-    #"Vision Bonus Scene Day 3 [After event 4
-
-    n "We can't move the dance, I've tried everything I could."
-
-    r "...I see."
-
-    n "I'm surprised you're so against it, seeing how all of this is your idea. You could have picked something a few months out. Then all of us would have more time to prepare."
-
-    r "Hypothetically, if you are given an assignment, do you wait until the last minute to complete it?"
-
-    n "No."
-
-    r "It would make you anxious, correct? Especially if it was the difference between passing or failing. You would want to do everything as quickly and efficiently as possible. I am the same. The longer you put off something, the harder it is to execute."
-
-    n "You're having second thoughts?"
-
-    r "...Nagen, given enough time, I think anyone could convince themselves they could have made a better choice. Not that it helps us much in the present. I would be careful how much I overthink things if I were you. You are too smart to get stuck in your own head."
-
+ 
 label Ch2_Boss_Negotiation:
-    #add to Boss fought
+    #add to Boss fight
+    play music "music/Interloper.mp3"
 
     n "Promising to help me includes helping my friends, whether you like them or not."
 
@@ -6654,9 +6718,10 @@ label chapter2_boss_wrong_culprit:
     n "So if we do something now, then there shouldn't be any problems, right?"
 
     show sato sigh
+    sa "Nagen, I appreciate you coming to me with your concerns, but I’m afraid I don’t follow."
+    sa "While I agree this note was meant to scare your friend, it doesn’t fall in line with how that student deals with conflict."
 
-    sa "Nagen, I understand your first week was... difficult."
-    sa "And while what you said sounds plausible, I think you're jumping to conclusions about who did it."
+    "Damn it, there has to be something I'm missing."
 
     show sato annoyed
 
@@ -6667,11 +6732,25 @@ label chapter2_boss_wrong_culprit:
     sa "If you compare multiple accounts, you'll have a stronger arguement for who did it."
 
     "So if I have more people who agree with me, she'll consider it."
+    
+    sa "It would be easier to help you if I had something concrete to go off of, like where the supplies used to make the note came from."
+    sa "Of course, we could always cancel the dance instead."
+
+    n "No, please don’t do that. Everyone’s looking forward to it. I don’t want to ruin it for everyone else."
+
+    show sato smile talk
+
+    sa "That’s very kind of you."
+    sa "In the meantime, I’ll see if Yaguichi and Inukai will join us."
+    sa "It sounds like we’ll need all the help we can get. It’s your first school event and we all want to see what you’ve been working on."
+
+    "More teachers means it will be harder for someone to pull something. It’s kind of scary how casual she can make beefing up security sound."
 
     n "Any idea who I should talk to?"
 
     sa "The note was found in the Vivaldi's class. Try seeing what her students saw before the note was found."
 
+    n "Thank you."
     hide sato
         
     "Guess I have to keep looking."

@@ -502,6 +502,8 @@ label chapter1_boss_battle_midfight_scene:
         return
 
 label chapter1_boss_spare:
+
+    scene backgroundCh1_MarikoLoose
     
     "I know she wrecked havoc, but I really can't kick a person while they're down."
 
@@ -513,13 +515,23 @@ label chapter1_boss_spare:
 
     "It seems like they aren't going to move at first, but soon Rei releases Uitto in tears."
 
+    scene backgroundmariko
+
+    show rei sad
+
     re "Uitto, I'm so sorry! I- Setsuna, are you still...?"
 
     "Setsuna slowly releases Jona, her hands shaking."
 
+    show setsuna glare at left
+
     s "How could I let this happen?"
 
+    show rei depressed
+
     re "Go get help. I'll stay here."
+
+    hide setsuna
 
     "Uitto and Jona run to free Hiro while I stare down my opponent."
 
@@ -527,13 +539,20 @@ label chapter1_boss_spare:
 
     m "I- I can't tell you. If I say something I shouldn't, they'll come after Rei."
 
-    re "Mariko, I'm more than capable of fighting for myself. You shouldn't have gone behind our backs like this, this isn't helping anyone."
+    re "Mariko, I'm more than capable of fighting for myself."
+    re "You shouldn't have gone behind our backs like this, this isn't helping anyone."
 
-    m "...I left a tape in Hiro's locker like I was told, that's the only thing I can say. Even if you hate me, don't let them get my friends."
+    show mariko boss injured cry at right
 
-    n "No one's ‘getting' anyone. Though it looks like you're in serious trouble with the school."
+    m "...I left a tape in Hiro's locker like I was told, that's the only thing I can say."
+    m "Even if you hate me, don't let them get my friends."
+
+    n "No one's 'getting' anyone. Though it looks like you're in serious trouble with the school."
 
     m "Nagen, school is the least of our worries."
+
+    hide mariko
+    hide rei
 
     "The teachers quickly detain Mariko and her friends for questioning."
 
@@ -541,6 +560,8 @@ label chapter1_boss_spare:
 
 label chapter1_boss_punish:
     
+    scene backgroundCh1_MarikoLoose
+
     n "Of course I'll forgive you, you provided valuable entertainment for everyone."
 
     m "What are you talking about?"
@@ -555,7 +576,13 @@ label chapter1_boss_punish:
 
     m "All I can do is hope my friends don't fall for your bullshit a second time."
 
-    "Mariko snaps her fingers and in an instant, my friends are let go. I can see Setsuna running as far from the field as possible out of the corner of my eye. Uitto and Jona run to help Hiro while Rei lingers behind."
+    "Mariko snaps her fingers and in an instant, my friends are let go."
+    "I can see Setsuna running as far from the field as possible out of the corner of my eye."
+    "Uitto and Jona run to help Hiro while Rei lingers behind."
+
+    scene backgroundmariko
+
+    show rei depressed at right
 
     re "After everything that's happened, I can't believe you'd put us through this again... You..."
 
@@ -563,17 +590,26 @@ label chapter1_boss_punish:
 
     "She turns her back on us and runs to meet the teachers that are coming."
 
+    show mariko boss injured
+
     m "This was the best I could do."
 
     "The teachers quickly detain Mariko and her friends for questioning."
 
+    hide rei
+    hide mariko
+
     "Vivaldi lingers behind, emotionless and ever watchful."
+
+    show vivaldi lecture
 
     v "You all have to come too."
 
     n "What!? I'm the victim here!"
 
     v "That's what everyone thinks when they're in a fight."
+
+    show vivaldi mirgraine
 
     v "I'll talk with the others later. For now, you'll have to come into my office."
 
@@ -582,6 +618,10 @@ label chapter1_boss_punish:
     v "Do you want someone to listen to your side or not?"
 
     n "...Fine."
+
+    hide vivaldi
+
+    scene backgroundprincipal
 
     "I spend over three hours in her office explaining everything in detail. In the end, she says nothing and sends me away."
 
@@ -679,7 +719,9 @@ label mariko_bonus_scene:
 label chapter1_tape_scene:
     #[BG: Outside the Dorm]
     
-    "After all was said and done, Mariko was the one who got in trouble and the rest of us were let go. We still haven't told them about the tape. After all, we don't even know what's on it. I wanted a chance to talk to Hiro before the others come meet up with us to watch it. Hiro doesn't seem so thrilled."
+    "After all was said and done, Mariko was the one who got in trouble and the rest of us were let go."
+    "We still haven't told them about the tape. After all, we don't even know what's on it."
+    "I wanted a chance to talk to Hiro before the others come meet up with us to watch it. Hiro doesn't seem so thrilled."
 
     h "You wanted to yell at me too?"
 

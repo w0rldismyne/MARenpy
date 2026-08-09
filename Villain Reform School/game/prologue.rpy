@@ -95,6 +95,7 @@ label prologue_interrogation:
         "Refuse":
 
             $ hRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
     n "Good cop, bad cop? Really?"
     n "I'm sorry, it's going to take more than a movie cliché to get me to tell anyone anything."
@@ -120,6 +121,7 @@ label prologue_interrogation:
         "I have to protect my teammates": #(+Hero, +Vis)
 
             $ Hero += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             n "I'll plead guilty in court, but I and I alone am guilty of these charges."
             n "I cannot say the same of my friends; they genuinely believed in what Lethe told them..."
@@ -182,6 +184,7 @@ label prologue_interrogation:
         "The one who told us to kill": #(+Chr)
 
             $ jRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             n "Lethe was. She wanted to create a group of youth vigilantes to gain back public support."
             n "It wasn't until after she died that we realized she was the one who started the chaos."
@@ -197,6 +200,7 @@ label prologue_interrogation:
 
             $ hRep += 1
             $ Hero += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             n "Hiro Morine was our leader. He insisted on it constantly."
             n "If it wasn't for him, we wouldn't have gathered nearly as much support."
@@ -209,6 +213,7 @@ label prologue_interrogation:
         "The one who planned the attack": #(+Int)
 
             $ uRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             n "I was. I deliberately withheld information from my peers, knowing it would sway their decision to stay."
             n "In the end, I was the only one standing."
@@ -371,6 +376,7 @@ label prologue_last_question:
         "It was corrupt":
 
             $ Hero += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             n "Guwon's entire economy was based around the manufacturing and propagation of Proficiencies."
             n "They treated us like livestock! We were paraded about as status symbols and meal tickets."
@@ -403,6 +409,7 @@ label prologue_last_question:
         "It was convenient":
 
             $ Villain += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             n "Where else was I supposed to start? Guwon was my home."
             n "I had never been outside of my hometown and it was as good a place as any."
@@ -456,6 +463,7 @@ label prologue_last_question:
         "To end the war":
 
             $ Hero += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             n "Everyone was fighting each other, not just us."
             n "This is just an isolated incident among many that happened during the battle between Lethe and the Karmic Gladiators."

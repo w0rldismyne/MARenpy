@@ -99,7 +99,7 @@ label chapter1_day1_event_morning:
     u "They could care less what I'm wearing, and so should you. This thing you're doing, it's not cute. Just go sit down somewhere, these seats are clearly taken." id chapter1_day1_event_morning_427d34d1
     
     "She sounds so tired. I'm able to grab her attention and silently ask if she knows this girl from before."
-    "Uitto pantomimes a long winded ‘no'. Kitsune, completely oblivious, sits on Jona's other side."
+    "Uitto pantomimes a long winded 'no'. Kitsune, completely oblivious, sits on Jona's other side."
 
     show kitsune apathetic at right
 
@@ -316,7 +316,7 @@ label chapter1_day1_event_morning:
 label chapter1_day1_event1:
     scene backgroundschool
 
-    play music "music/Lights.wav"
+    play music "music/Lights.mp3"
 
     "After the assembly, we're handed our class schedules. I'm stuck with English, P.E., Science, and Proficiency Management."
     "They wanted me to take the Intelligence course, but I can always switch it if I want to."
@@ -1162,6 +1162,7 @@ label chapter1_day1_event1_classes_vision:
         "Trade":
 
             $ jRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show jona happy
     
@@ -1805,7 +1806,7 @@ label chapter1_day2_event1:
     return
 
 label chapter1_day2_event2:
-    play music "music/Lights.wav"
+    play music "music/Lights.mp3"
     scene backgroundclass
 
     "Jona and I have found a quiet corner to hide in for science."
@@ -2237,7 +2238,7 @@ label chapter1_day3_event1:
     return
 
 label chapter1_day3_event2:
-    play music "music/Sappheiros.mp3"
+    play music "music/Lights.mp3"
     scene backgroundnurse
 
     "I can't keep putting off going to the nurse."
@@ -2624,7 +2625,7 @@ label chapter1_day4_event1:
     return
 
 label chapter1_day4_event2:
-    play music "music/Lights.wav"
+    play music "music/Lights.mp3"
     scene backgroundcharm
 
     "I didn't think too many people would be interested in clubs, especially with so few students here."

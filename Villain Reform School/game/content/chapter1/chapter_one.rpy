@@ -317,6 +317,7 @@ label investigation_good_end:
     menu:
         "Yes":
             # (+M, +R, +Ki, +Na)
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"            
 
             "Something scanned me head to toe."
 

@@ -21,6 +21,7 @@ define sh       = Character("Shoma Nishimoto",   window_background = "gui/text_b
 define t        = Character("Taiga Sakurai",     window_background = "gui/text_boxes/TaigaText.png")
 define u        = Character("Uitto Hanatabe",    window_background = "gui/text_boxes/UittoText.png")
 define y        = Character("Yoku Teki",         window_background = "gui/text_boxes/YokuText.png")
+define phone    = Character("Phone",             window_background = "gui/text_boxes/OtherText.png")
 
 # Teachers
 define ik       = Character("Professor Inukai",  window_background = "gui/text_boxes/InukaiText.png")
@@ -369,7 +370,17 @@ image rise smile = "Sprites/Rise/Risesmile.png"
 image rise smug = "Sprites/Rise/Risesmug.png"
 image rise surprised = "Sprites/Rise/Risesurprise.png"
 image rise talk = "Sprites/Rise/Risetalk.png"
-
+image rise boss attack frown = "Sprites/Rise/RiseBoss_Attack_Frown.png"
+image rise boss attack smile = "Sprites/Rise/RiseBoss_Attack_Smile.png"
+image rise boss determined tears = "Sprites/Rise/RiseBoss_Determine_Tears.png"
+image rise boss guard smile  = "Sprites/Rise/RiseBoss_Guard_Determined_Smile.png"
+image rise boss guard talk = "Sprites/Rise/RiseBoss_Guard_Determined_Talk.png"
+image rise boss guard growl = "Sprites/Rise/RiseBoss_Guard_Glare_Growl.png"
+image rise boss guard glare = "Sprites/Rise/RiseBoss_Guard_Glare_Talk.png"
+image rise boss guard tears = "Sprites/Rise/RiseBoss_Guard_Glare_Tears.png"
+image rise boss guard sad = "Sprites/Rise/RiseBoss_Guard_Sad.png"
+image rise boss guard sad tears= "Sprites/Rise/RiseBoss_Guard_Sad_Tears.png"
+image rise boss injured = "Sprites/Rise/riseboss2.png"
 #Setsuna
 image setsuna = "Sprites/Setsuna/setsunabase.png"
 image setsuna annoyed = "Sprites/Setsuna/setsunaannoy.png"
@@ -555,8 +566,10 @@ image backgroundCh2_RiseReveal2 = "Chapter2/Ch2_RiseReveal2.png"
 image backgroundCh2_RiseArena = "Chapter2/Ch2_RisesArena.png"
 image backgroundCh2_Title = "Chapter2/Ch2_Title.png"
 image backgroundCh2_UittoSees = "Chapter2/Ch2_UittoSees.png"
-image backgroundCh2_UittoMemory = "Chapter2/Ch1_UittoMemory.png"
-image backgroundCh2_UittoMemory2 = "Chapter2/Ch1_UittoMemory_2.png"
+image backgroundCh2_UittoMemory = "Chapter2/Ch2_UittoMemory.png"
+image backgroundCh2_UittoMemory2 = "Chapter2/Ch2_UittoMemory_2.png"
+image backgroundCh2_VisionClass1 = "Chapter2/Ch2_VisionClass1.png"
+image backgroundCh2_VisionClass2 = "Chapter2/Ch2_VisionClass2.png"
 image backgroundJonaDraw1 = "Chapter2/JonaDraw1.png"
 image backgroundJonaDraw2 = "Chapter2/JonaDraw2.png"
 image backgroundJonaDraw3 = "Chapter2/JonaDraw3.png"
@@ -754,6 +767,7 @@ default kazzPhoneFound = False
 # Chapter 2 Variables
 default chapter2_solved = False
 default chapter2_interrogation_chance = True
+default Rei_note = False
 
     # Minigame
 default check_paper = False
