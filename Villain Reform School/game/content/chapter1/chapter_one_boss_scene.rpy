@@ -504,6 +504,7 @@ label chapter1_boss_battle_midfight_scene:
 label chapter1_boss_spare:
 
     scene backgroundCh1_MarikoLoose
+    $ chapter1_spare = True
     
     "I know she wrecked havoc, but I really can't kick a person while they're down."
 
@@ -715,81 +716,4 @@ label mariko_bonus_scene:
     m "How long have I been running in circles?"
 
     jump chapter1_boss_player_choice
-
-label chapter1_tape_scene:
-    #[BG: Outside the Dorm]
-    
-    "After all was said and done, Mariko was the one who got in trouble and the rest of us were let go."
-    "We still haven't told them about the tape. After all, we don't even know what's on it."
-    "I wanted a chance to talk to Hiro before the others come meet up with us to watch it. Hiro doesn't seem so thrilled."
-
-    h "You wanted to yell at me too?"
-
-    n "I mean, I could, but I figured Uitto had that covered. You really worried us."
-
-    h "Believe me, I know."
-
-    h "Mariko's already taken care of, so can you please put away the kid gloves?"
-
-    h "We've been apart for two years, but you all act like you're the only ones who got older."
-
-    if Villain >= Hero:
-        n "I figured you'd run your ideas by us before running off and doing something stupid, y'know, like you're supposed to."
-
-        h "And I figured you'd respect the decisions of your old commander instead of undermining me at every turn."
-
-        h "I'm not stupid, Nagen, I know what you've been up to."
-
-        n "What do you mean?"
-
-        "He looks so disappointed, then swallows like he took a bitter pill."
-
-        h "We came here for a fresh start."
-
-        h "I really don't like seeing you act like this when there's no one to impress. It makes it really hard to defend you."
-
-        n "Why are you lecturing me? No one got hurt in the end, not permanently. I just wanted to make sure you were safe."
-
-        h "....."
-
-        n "Hiro, come on, I'd never do something if I thought it would put you in real danger."
-
-        h "I know."
-
-        n "We won. Now's the time to celebrate."
-
-        h "...yeah."
-
-        "He's not back to his usual self yet. Maybe that girl roughed him up more than I realized."
-
-        h "I really hope things change."
-
-        n "Of course they will. Everything just takes a little time."
-
-        return
-
-    #[Return to Main Branch]
-    #[If Hero]
-    else:
-        n "Well, someone's gotta look out for your wellbeing. You're practically addicted to taking the blame for things that have nothing to do with you."
-        n "You're not responsible for everyone's happiness, especially if trying to make everyone happy is going to get you hurt."
-
-        h "Says the guy who jumped into a fight that had nothing to do with him."
-
-        "That's different. She said all our names on the intercom and... and I never told you the truth about what the brainwashing would do."
-        "I didn't want to scare you away from the plan."
-
-        h "......"
-        h "I'm not stupid, Nagen."
-        h "I knew what we were doing was bad. I just- I wanted to believe the ends would justify the means."
-        h "In the end, it looks like we hurt more people than we helped."
-
-        n "We'll never know that for sure. Nothing would have changed if we didn't do something."
-        n "I think we helped people, and we still can, even now. That's why we can't let this shake our resolve."
-        n "Wishing you could do better, that's how you know you can do better in the future."
-
-        h "No one cares that we're trying."
-
-        n "You care, don't you? That's all that should matter. Fuck the people too impatient to wait."
-
-        return
+    return

@@ -63,6 +63,7 @@ label Uitto1:
     menu:
         "List everything":
             $ uRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show uitto serious
 
@@ -138,6 +139,7 @@ label Uitto1:
 
         "You don't know you either":
             $ Charm += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show uitto sigh
 
@@ -268,6 +270,7 @@ label Uitto2:
     menu:
         "Which type are you?":
             $ uRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show uitto sigh
 
@@ -482,6 +485,7 @@ label Uitto3:
     menu:
         "Comedic":
             $ uRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show uitto smile
 
@@ -829,6 +833,7 @@ label Uitto4:
 
         "I've always wanted to try":
             $ uRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show uitto smile
 
@@ -1088,6 +1093,7 @@ label Uitto5:
 
         "Do nothing":
             $ uRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show Uittosadtalk
 

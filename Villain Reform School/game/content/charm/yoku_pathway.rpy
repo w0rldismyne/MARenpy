@@ -79,11 +79,12 @@ hide yoku furious1
 menu:
     "Your playing is fine":
         $ yRep += 1
+        play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
         show yoku furious2
 
         y "Fine isn't good e-enough, I need to master every instrument if I'm ever to rise above pedestrian talent."
-        y "‘Fine' doesn't earn co-ontracts or benefactors."
+        y "'Fine' doesn't earn co-ontracts or benefactors."
 
         n "I thought you were a composer."
         n "I get that you don't like people, but I'm pretty sure directing musicians is part of the job description."
@@ -269,6 +270,7 @@ label Yoku2:
     menu:
         "What are you used too?":
             $ yRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show yoku think
         
@@ -297,7 +299,7 @@ label Yoku2:
             show yoku bummed
 
             y "You didn't miss much. It was a g-glorified auction at best."
-            y "Though, if you'd gone, maybe people would have stopped s-suggesting I was ‘lucky' to attend."
+            y "Though, if you'd gone, maybe people would have stopped s-suggesting I was 'lucky' to attend."
             y "You seem like b-bottom rung material to me."
 
             n "Are you listening to yourself? It's talk like this that fueled Estella's corruption."
@@ -460,6 +462,7 @@ label Yoku3:
             hide yoku bummed
         "Because it was traditional":
             $ yRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show yoku bummed
 
@@ -473,7 +476,7 @@ label Yoku3:
             hide yoku bummed
             show yoku eyeroll
 
-            y "A family's l-legacy can outweigh the individual in many homes. Quite a few of my old ‘friends' were the children of tycoons or p-politicians."
+            y "A family's l-legacy can outweigh the individual in many homes. Quite a few of my old 'friends' were the children of tycoons or p-politicians."
 
             n "Do you really think that?"
 
@@ -485,7 +488,7 @@ label Yoku3:
 
             "At least he has some sense in him."
 
-            n "I wouldn't know the difference. My parents were not big on ‘family values'. They didn't even do enough to rank at mediocre."
+            n "I wouldn't know the difference. My parents were not big on 'family values'. They didn't even do enough to rank at mediocre."
             n "This whole dynasty thing is so alien to me, it sounds like a giant pain."
 
             hide yoku tired
@@ -514,7 +517,7 @@ label Yoku3:
 
             n "You're getting a little too technical on me."
 
-            y "Sorry. Let's just say my per-erceived worth wasn't ‘good'. I had a lot to prove, so the s-sooner I started, the better."
+            y "Sorry. Let's just say my per-erceived worth wasn't 'good'. I had a lot to prove, so the s-sooner I started, the better."
 
             n "That's so messed up. A kid shouldn't have to prove their worth."
             n "Learning how to take care of yourself is enough without piling other crap on."
@@ -661,12 +664,13 @@ label Yoku4:
 
             y "Really, Beethoven's 5th is b-better bass boosted?"
 
-            n "I know you're being sarcastic, but it's literally the first thing that pops up when I search \"bass boosted classical\". Followed by ‘Mozart and Rise of the Valkyries'."
+            n "I know you're being sarcastic, but it's literally the first thing that pops up when I search \"bass boosted classical\". Followed by 'Mozart and Rise of the Valkyries'."
 
             y "That d-doesn't make it better."
 
         "Writing is rewriting":
             $ yRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             n "If this isn't working out, then write something else."
 

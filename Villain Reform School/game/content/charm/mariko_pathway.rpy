@@ -87,6 +87,7 @@ label MarikoP1:
 
         "Aren't you going to eat something?":
             $ mRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show mariko
 
@@ -294,6 +295,7 @@ label Mariko2P:
             hide mariko talk
         "I want to know more about you.":
             $ mRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show mariko upset talk
 
@@ -587,6 +589,7 @@ label Mariko3P:
             hide mariko smile talk
 
         "You're not taking care of yourself.":
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             $ mRep += 1
 
             show mariko talk
@@ -764,6 +767,7 @@ label MarikoP4:
     menu:
         "It's not your fault.":
             $ mRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show mariko talk
 

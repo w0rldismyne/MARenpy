@@ -578,7 +578,7 @@ image backgroundJonaDraw5 = "Chapter2/JonaDraw5.png"
 image backgroundJonaDraw6 = "Chapter2/JonaDraw6.png"
 image backgroundJonaDraw8 = "Chapter2/JonaDraw8.png"
 image backgroundJonaDraw9 = "Chapter2/JonaDraw9.png"
-image backgroundUJath = "Pathways/JPath.png"
+image backgroundJPath = "Pathways/JPath.png"
 image backgroundUPath = "Pathways/UPath.png"
 image backgroundHPath = "Pathways/HPath.png"
 image backgroundHPath2 = "Pathways/HPath2.png"
@@ -750,6 +750,7 @@ default chapter_event = -1
 # Chapter 1 Variables
 default chapter1_solved = False
 default chapter1_interrogation_chance = True
+default chapter1_spare = False
 
 default chapter1_day = 1
 define chapter1_free_time_morning_break = 0
@@ -767,6 +768,7 @@ default kazzPhoneFound = False
 # Chapter 2 Variables
 default chapter2_solved = False
 default chapter2_interrogation_chance = True
+default chapter2_spare = False
 default Rei_note = False
 
     # Minigame

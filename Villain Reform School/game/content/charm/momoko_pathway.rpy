@@ -47,6 +47,7 @@ label Momoko1:
     hide momoko
     menu:
         "Of course I did.":
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             $ mhRep += 1
             show momoko confused
             n "You actually did the work, and early."
@@ -172,6 +173,7 @@ label Momoko2:
             n "I'm good."
             "As it is, I'm a little nervous about trusting her around flammable chemicals."
         "Of course I do.":
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             $ mhRep += 1
             show momoko manic
             n "This is something you like to do, right?" 
@@ -288,6 +290,7 @@ label Momoko3:
             show momoko manic 
             mh "I also don't want to make money off of something people are going to turn into a weapon."
         "You'll make other stuff.":
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             $mhRep += 1
             show momoko
             n "You made something amazing at fifteen. That gives you eighty-five years to make a second thing."
@@ -359,6 +362,7 @@ label Momoko4:
     hide momoko
     menu:
         "What were you running from?":
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             $ mhRep += 1
             show momoko worry
             n "We wanted to help kids run away from home safely. I didn't know everyone's story, but I could see how miserable kids were at school."
@@ -453,6 +457,7 @@ label Momoko5:
     hide momoko
     menu:
         "Be honest":
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             $ mhRep += 1
             show momoko sad
             n "It's my fault you haven't gotten to do any of the things you wanted to do when you got out."
@@ -465,6 +470,7 @@ label Momoko5:
             mh "I appreciate you're trying and that you're my friend. That's all that really matters."
         "Hold her hand":
             $ mhRep += 3
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             show momoko surprised
             n "I'll make another one."
             mh "Nagen? What are you-"

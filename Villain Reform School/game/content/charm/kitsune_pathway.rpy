@@ -59,6 +59,7 @@ label Kitsune1:
     menu:
         "It's too long":
             $krep +=1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             k "By how much?"
             n "By fourteen songs."
             show kitsune teary
@@ -162,6 +163,7 @@ label Kitsune2:
                     k  "As expected of our student council president."
         "Why me?":
             $krep +=1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             show kitsune talk
             k "Weren't you like, the tech guy?"
             k "You and Jona used to tear shit up and put it back together during lunch, but only the ones you messed with ever worked again."
@@ -237,6 +239,7 @@ label Kitsune3:
     k "I don't really want to watch a movie where a guy like that just gets away with it.."
     menu:
         "That's fucked up":
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             $krep +=1
             n "Does he still do that?"
             show kitsune mad
@@ -330,6 +333,7 @@ label Kitsune4:
     menu:
         "What are you the worst at?":
             $krep +=1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             show kitsune talk
             k "Ooo, that's a hard one. Dancing I guess, since I lack any choreography to learn? Or maybe hair styling?"
             k "I figured out how to do a pigtail and then got too scared to keep going."
@@ -440,6 +444,7 @@ label Kitsune5:
             k "Why would going on a date with me make you nervous?"
             n "Cause I like you." 
             if krep >= 3:
+                play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
                 show kitsune shocked
                 k "Really?" 
                 "She shakes her head."
@@ -463,6 +468,7 @@ label Kitsune5:
                 return
         "You're a good friend":
             $ krep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             show kitsune shocked
             k "Who, me?" 
             n "I would have been fine spending fifteen minutes by myself, or however long it took you to change out of your costume."

@@ -52,6 +52,7 @@ label Rise1:
             hide rise
         "My mom wouldn't let me.":
             $rRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             show rise frown
             r "Your mother? Her family was the only reason you had an invitation. Whyever would she turn it down?" 
             n "I don't know, she never really talked to me. She probably didn't think I'd be a good fit or that I would be an embarrassment."
@@ -173,6 +174,7 @@ label Rise2:
             hide rise
         "Family":
             $ rRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             show rise talk
             r "Forgive me, but I was under the impression your parents passed away."
             n "Oh, yeah, I didn't mean them. Uitto, Jona and Hiro; they were the ones I was thinking of."
@@ -238,6 +240,7 @@ label Rise3:
     menu:
         "I knew that.":
             $rRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             show rise surprised
             n "The problem isn't that you didn't let me ask you out, it's that you assumed I wanted to in the first place."
             r "But you kept talking to me."
@@ -321,6 +324,7 @@ label Rise4:
             "There could have been signs. I guess it depends on how involved her parents were."
             hide rise
         "That's great.":
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             $rRep += 1
             show rise surprised
             r "You really think so?" 
@@ -461,6 +465,7 @@ label Rise5:
             r "A maybe, and on the condition you give it your full effort. I have seen what you can do when you put your mind to it."
             hide rise
         "Say we went out...":
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             $ rRep += 1
             show rise surprised
             r "Are you serious?"

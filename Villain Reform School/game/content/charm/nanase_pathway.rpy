@@ -122,6 +122,8 @@ label Nanase1:
         "What do you want to do?":
             $ nkRep += 1
 
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
+
             show nanase embarrassed
 
             nk "I don't know." 
@@ -328,6 +330,8 @@ label Nanase2:
         "Reputation?":
             $ nkRep += 1
 
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
+
             show nanase embarrassed
 
             n "You have a reputation?"
@@ -476,6 +480,7 @@ label Nanase3:
     menu:
         "Want to help?":
             $ nkRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show nanase smile
 
@@ -740,6 +745,7 @@ label Nanase4:
         "Did you find something?":
             
             $ nkRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             show nanase sad smile
 
             nk "I think so. Nagen, you had strict parents right?"
@@ -1010,6 +1016,7 @@ label Nanase5:
             hide nanase
 
         "Why do you keep calling me sir?":
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             $ nkRep +=1 
 
             show nanase surprised
@@ -1263,6 +1270,7 @@ label Nanase6:
     menu:
         "Do you think it's me?":
             $ nkRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show nanase sad smile
 

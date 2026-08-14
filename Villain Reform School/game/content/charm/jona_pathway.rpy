@@ -131,6 +131,7 @@ label Jona1:
 
         "And when she was happy?":
             $ jRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show jona depressed
 
@@ -354,6 +355,7 @@ label Jona2:
 
         "Why that?":
             $ jRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show jona happy
 
@@ -535,6 +537,7 @@ label Jona3:
     menu: 
         "Be yourself":
             $ jRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show jona relaxed
 
@@ -736,8 +739,9 @@ label Jona4:
 
     n "Dude, I'm sorry-"
 
-    hide jona mad
-    show jona depressed
+    hide jona
+
+    scene backgroundJPath
 
     #CG?
 
@@ -760,6 +764,8 @@ label Jona4:
     "I reluctantly tear my eyes away. I'm normally one to stare. What has gotten into me?"
 
     n "You didn't used to cover your face like that."
+
+    show jona depressed
 
     j "I didn't need to before. Well, maybe mom wanted me to hide a lot sooner."
     j "It just didn't bother me as much back then, being able to draw people in without trying, but you know what people say about Charm Majors."
@@ -833,6 +839,8 @@ label Jona4:
             hide jona mad
         "Play along":
             $ jRep += 1
+
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show jona relaxed
 
@@ -935,6 +943,7 @@ label Jona5:
     menu:
         "The future":
             $ jRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show jona relaxed
 

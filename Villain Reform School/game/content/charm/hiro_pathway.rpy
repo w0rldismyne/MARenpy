@@ -160,6 +160,7 @@ label Hiro1:
 
         "I want to switch majors.":
             $ hRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show hiro guilty
 
@@ -416,6 +417,7 @@ label Hiro2:
             hide hiro talk1
         "Shield my friend from the fire.":
             $ hRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show hiro embarrassed
 
@@ -675,6 +677,7 @@ label Hiro3:
 
         "I don't know.":
             $ hRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             show hiro sad fine
 
@@ -938,6 +941,7 @@ label Hiro4:
             menu:
                 "Accept":
                     $ hRep += 5
+                    play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
                     show hiro ashamed
 
@@ -986,6 +990,7 @@ label Hiro4:
         "Probably Not":
 
             $ hRep += 1
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg" 
 
             show hiro wait
 
@@ -1064,7 +1069,7 @@ label Hiro4:
             h "I didn't stop you from doing anything. This... now's not a good time for this."
 
             hide hiro mad fine
-
+    $ hTurn += 1
     show hiro sad smile
 
     h "Shoot! I'm going to be late!"
