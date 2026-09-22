@@ -46,6 +46,9 @@ define Nurse    = Character("School Nurse",      window_background = "gui/text_b
 define PA       = Character("PA",                window_background = "gui/text_boxes/OtherText.png")
 define q        = Character("???",               window_background = "gui/text_boxes/OtherText.png")
 define Ty       = Character("Ty",                window_background = "gui/text_boxes/OtherText.png")
+define TV       = Character("TV",                window_background = "gui/text_boxes/OtherText.png")
+define TaigasMom = Character("Taiga's Mom",      window_background = "gui/text_boxes/OtherText.png")
+
 
 # Needs to be empty for the namebox to not show up
 define g        = Character("",                  window_background = "gui/text_boxes/narratorkun.png")
@@ -743,6 +746,9 @@ default introductionMomokoMet  = False
 default introductionReiMet     = False
 default introductionRiseMet    = False
 default introductionDyreMet    = False
+
+# Pathway Variables
+default shoma_quest = False
 
 # Generic Chapter Variables
 default chapter_event = -1
