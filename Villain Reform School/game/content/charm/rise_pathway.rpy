@@ -39,6 +39,7 @@ label Rise1:
     menu:
         "I was sick":
             $rRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
             show rise mad
             "Usually when I missed out on stuff, I was busy being my dad's lab rat. I went with the same excuse I always did."
             r "For all of them?" 
@@ -160,6 +161,7 @@ label Rise2:
             hide rise
         "Money":
             $ rRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
             show rise disappointed
             n "Maimai got me an in with some rich software engineer. If I don't piss him off, I'll be set for life."
             r "Is that all?" 
@@ -256,6 +258,7 @@ label Rise3:
             hide rise
         "I'm dating someone else.":
             $rRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
             show rise mad
             r "Then why are you talking to me?"
             n "I just want to be friends."
@@ -338,6 +341,7 @@ label Rise4:
             hide rise
         "I doubt that.":
             $rRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
             show rise mad
             r "Exactly. My parents would have known if I had what it took to be an Intel Major. I mean, how would lying about how smart I was benefit them?"
             "A few ideas come to mind, and I don't like any of them."

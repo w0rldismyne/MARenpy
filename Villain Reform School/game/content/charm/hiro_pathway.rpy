@@ -233,6 +233,7 @@ label Hiro1:
 
         "No reason":
             $ hRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show hiro sulk
             
@@ -444,6 +445,7 @@ label Hiro2:
 
         "Refuse to answer.":
             $ hRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show hiro mad
 
@@ -638,6 +640,7 @@ label Hiro3:
     menu:
         "I'm not the problem.":
             $ hRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show hiro guilty
 
@@ -1042,6 +1045,7 @@ label Hiro4:
 
         "I won't forgive you":
             $ hRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show hiro suppress
 

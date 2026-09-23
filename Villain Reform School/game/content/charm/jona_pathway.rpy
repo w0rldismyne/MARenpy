@@ -100,6 +100,7 @@ label Jona1:
     menu:
         "Sounds like my mom.":
             $ jRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show jona frustrated
 
@@ -305,6 +306,7 @@ label Jona2:
     menu:
         "Throw it away":
             $ jRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show jona frustrated
 
@@ -601,6 +603,7 @@ label Jona3:
 
         "They're pricey":
             $ jRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show jona depressed
 
@@ -784,6 +787,7 @@ label Jona4:
     menu:
         "There's no way":
             $ jRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show jona frustrated
 
@@ -1053,6 +1057,7 @@ label Jona5:
             hide jona relaxed
         "Apex":
             $ jRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show jona mad
 

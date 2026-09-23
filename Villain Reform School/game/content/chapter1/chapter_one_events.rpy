@@ -1333,6 +1333,7 @@ label chapter1_day1_event2:
 
         "Stay silent":
             $ Reputation -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show rei sad talk
 
@@ -3272,6 +3273,7 @@ label chapter1_day5_event4:
         if Hero > Villain:
 
             $ hRep += 2
+            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
             n "Yeah. I promised I didn't scare her too bad. I just told her we knew she did it and she should come clean."
             n "It seemed like the best way to avoid a fight."

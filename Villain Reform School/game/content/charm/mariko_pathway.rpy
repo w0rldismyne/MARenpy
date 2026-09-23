@@ -59,6 +59,7 @@ label MarikoP1:
     menu:
         "What are you forcing them to practice?":
             $ mRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show mariko mad talk
 
@@ -259,6 +260,7 @@ label Mariko2P:
     menu:
         "Hell yeah it's about the pom poms.":
             $ mRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show mariko cry
 
@@ -492,6 +494,7 @@ label Mariko3P:
     menu: 
         "None of the girls talk to Mariko.":
             $ mRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show mariko upset talk
 
@@ -810,6 +813,7 @@ label MarikoP4:
 
         "Why are you doing this to yourself?":
             $ mRept -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show mariko smile talk
 

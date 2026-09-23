@@ -157,6 +157,7 @@ menu:
 
     "I'm not easily impressed":
         $ yRep -= 1
+        play sound "752275__ienba__magic-reveal.ogg"
 
         show yoku furious2
 
@@ -312,6 +313,7 @@ label Yoku2:
 
         "Suck it up":
             $ yRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show yoku furious1
 
@@ -437,6 +439,7 @@ label Yoku3:
     menu:
         "Because you weren't accomplished":
             $ yRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show yoku furious1
             
@@ -691,6 +694,7 @@ label Yoku4:
 
         "More cowbell":
             $ yRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             y "......?"
 

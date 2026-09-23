@@ -101,6 +101,7 @@ label Uitto1:
 
         "You're right":
             $ uRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show uitto serious
 
@@ -315,6 +316,7 @@ label Uitto2:
 
         "It's not that bad":
             $ uRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show uitto cringe
 
@@ -559,6 +561,7 @@ label Uitto3:
 
         "Improv":
             $ uRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show uitto smile
 
@@ -796,6 +799,7 @@ label Uitto4:
 
         "And if you lost?":
             $ uRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show uitto sad
 
@@ -1151,6 +1155,7 @@ label Uitto5:
             hide uitto sad
         "Stop crying":
             $ uRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show uitto serious
 

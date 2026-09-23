@@ -71,6 +71,7 @@ label Kitsune1:
             n "Welp, I think that's a decent jumping off point. Now if you'll excuse me-"
         "It's great":
             $krep -=1
+            play sound "752275__ienba__magic-reveal.ogg"
             show kitsune mad
             k "Not you too." 
             n "Hey, I'm trying not to be mean here."
@@ -142,6 +143,7 @@ label Kitsune2:
     menu:
         "Why would I help you?":
             $krep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
             show kitsune apathetic
             k "Hmm, let me think. That's right, it's your fault all of us are stuck here."
             k "Supposedly you're trying to be a better person, but other than Rei, I don't seem to recall you doing anything to help anyone other than yourself."
@@ -257,6 +259,7 @@ label Kitsune3:
             k "So this is like, normal for you too. I, uh, kinda got used to being by myself, so a place this big and empty isn't that scary."       
         "The dad's the villain though":
             $krep -=1
+            play sound "752275__ienba__magic-reveal.ogg"
             n "How does he get away with what he does?"
             show kitsune sulk
             k "I mean, no one stops him when he's acting like a shithead."
@@ -350,6 +353,7 @@ label Kitsune4:
             k "I guess my style is living proof."
         "About that scam...":
             $krep -=1
+            play sound "752275__ienba__magic-reveal.ogg"
             show kitsune mad
             k "Ugh, it was awful. Like two hundred for a head shot awful."
             k "I kept wondering why I wasn't getting any auditions. She spent so much money believing in me when no one else would."

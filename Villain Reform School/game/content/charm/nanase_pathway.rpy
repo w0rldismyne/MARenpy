@@ -100,6 +100,7 @@ label Nanase1:
         "What's with the sweater vest?":
 
             $ nkRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show nanase disappointed
 
@@ -299,6 +300,7 @@ label Nanase2:
     menu:
         "I didn't ask for your help.":
             $ nkRep -= 1 
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show nanase irate
 
@@ -579,6 +581,7 @@ label Nanase3:
 
         "Stand by your statement.":
             $ nkRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show nanase irate
     
@@ -776,6 +779,7 @@ label Nanase4:
         "They bother me too.":
 
             $ nkRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show nanase irate
 
@@ -975,6 +979,7 @@ label Nanase5:
     menu:
         "Why do you keep trying to help me?":
             $ nkRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
 
             show nanase disappointed
 
@@ -1335,7 +1340,7 @@ label Nanase6:
 
         "Can she hear me?":
             $ nkRep =- 1
-
+            play sound "752275__ienba__magic-reveal.ogg"
             show nanase surprised
 
             nk "You mean, the patient?"

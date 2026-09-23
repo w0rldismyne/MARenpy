@@ -76,6 +76,7 @@ label Momoko1:
             mh "I guess we both have things we wish we could forget."
         "I didn't.":
             $ mhRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
             show momoko sad
             n "To be fair, I would've been stuck working with anyone."
             n "No one really liked working with me, they just wanted me to do the work for them"
@@ -195,6 +196,7 @@ label Momoko2:
             "Is it really okay to have all this stuff out and open at the same time?"
         "I don't trust anyone.":
             $ mhRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
             show momoko surprised
             mh "Really?"
             n "I mean, do you blame me?"
@@ -283,6 +285,7 @@ label Momoko3:
             mh "Anytime you make a substitution, things could go sideways, and there's only so much hair you can give me before people start to notice."
         "You should patent it.":
             $ mhRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
             show momoko worry
             mh "I can't. I don't want people hounding me over something I made trying to save my own skin."
             mh "It doesn't feel right to charge people for that. More good'll come from anyone that needs it getting to use it."
@@ -378,6 +381,7 @@ label Momoko4:
             mh "I'm good at shutting it out most days, but today's been pretty bad." 
         "I'd blame me":
             $ mhRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
             show momoko confused
             mh "Really? You don't seem too choked up about the people who didn't make it." 
             n "A lot of people didn't make it. There's not a lot I can do to bring them back, but it does bother me."
@@ -482,6 +486,7 @@ label Momoko5:
             "She glances down at our hands. I haven't let go yet. She turns her hand around so she's holding mine back."
         "Leave":
             $ mhRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
             show momoko sad
             n "I should go."
             mh "Nagen, I'm so sorry." 

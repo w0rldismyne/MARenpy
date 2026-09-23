@@ -26,200 +26,270 @@ label Chisei1:
     "Unfortunately all of these appear to be reference books."
     "I shouldn't be too surprised the teachers would prioritize stuff that could be used for homework, but still, kind of disappointing."
     "Too busy reading the spines, I fail to notice Chisei doing the same."
+    show chisei talk3
     ch "EEK!" 
     "The clipboard she was holding goes flying, as do all her papers."
     n "Shit, I'm sorry."
     "She sits down on her knees to start gathering everything."
     n "Here, let me help."
+    show chisei
     ch "Nagen, really, it is fine." 
     "The papers look like they're from a script of some kind, with specific areas highlighted."
-    "Mixed in is a map of the school with notes in the margins.."
+    "Mixed in is a map of the school with notes in the margins."
+    hide chisei
     menu:
         "Read the script":
+            show chisei talk1
             "It looks like a simple play about knights fighting a dragon."
             "The dialogue is really depressing."
             ch "You seem easily distracted today." 
             n "Sorry!"
+            show chisei talk2
             ch "If you are curious, all you need to do is ask."
             ch "Finding a proofreader is especially difficult nowadays."
             "She looks at the page I'm reading and frowns."
+            show chisei sad talk2
             ch "Nagen, by any chance, are you a 'tough' audience? I had thought this to be one of my better jokes."
             n "Oh, uh, guess I'm missing the context?"
             ch "I shall add that to the books I need."
         "Look at the map":
             $ chRep += 1
             play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
+            show chisei
             n "Is this… Are you writing down where all the sections went?"
+            show chisei smile
             ch "I am trying. I fear many of the sections have been split up arbitrarily, but the books have not gone too far."
             ch "I imagine once we have an idea of where everything used to be, it will be easier to sort them accordingly."
+            show chisei smile talk1
             ch "Such a vast library should not go unused just because no one can find anything."
             n "That's really cool of you."
             ch "Really? Acting in your own self interest is rarely thought of as cool." 
             n "Well, if things actually make sense, more people might look at the books. It's not like there's much else to do here."
+            show chisei smile
             ch "I suppose that is true. In the end, all of us are looking for ways to fill time."
         "Gather it all together"
             $ chRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
+            show chisei talk3
             ch "Wait, I had a-" 
             "I hand her everything that was dropped."
+            show chisei sad talk3
             ch "-system."
             "She takes the stack of papers with her prosthetic and moves it over to one of the nearby tables, her clipboard forgotten."
             "With the table, she fans everything out again and starts rearranging everything."
             n "Sorry, I just didn't want to read anything without asking."
+            show chisei sad talk
             ch "You could have done that by letting me pick them up on my own."
             "Geez, what's her problem?"
     $ chTurn += 1
+    show chisei smile talk1
     n "What were you looking for earlier?"
     ch "I could ask you the same thing."
     n "Escapist fiction. I wasn't even getting my hopes up over the genre."
     n "I figured somewhere in this place, there had to be a standalone or entry point book in a series."
     n "I haven't been sleeping well the past few days."
+    show chisei smile talk2
     ch "I see. Well, maybe we could help each other. I am looking for fantasy comedies to study."
     ch "Everyone has their own sense of humor, but I feel I would improve faster if I had something to take notes on."
     n "Have you never had to do that before?"
+    show chisei sad talk3
     ch "No."
     ch "The tone of one's writing is greatly influenced by which hand is used to write with since each uses a different part of the brain to move."
     ch "I had not thought it would make that much of a difference, but nowadays it seems my left gravitates toward horror and tragedy."
+    show chisei talk1
     ch "I would rather not write something that makes people upset right now. That means relearning some fundamentals."
     n "I see. If there's any way I can help, let me know."
+    show chisei smile talk1
     ch "Just, if you find something funny, please share it with me. It is not like we have a librarian keeping tabs on us now."
+    hide chisei
     return
 label Chisei2: 
     scene backgroundlibrary
     "Chisei asked me to meet her in the library. She has a couple of colorful volumes squirreled away in the corner."
     "She takes out two identical looking ones and sets them on the table."
+    show chisei smile talk
     ch "Look! It is exactly the kind of thing we were looking for."
     ch "Fantasy so you get to have your escapism, and a parody so I can study comedy writing."
     n "We?"
     ch "Well, I was sort of hoping we could read it together. It is lonely being the only one learning about a new story."
+    show chisei talk2
     ch "This way, if something exciting happens, we will have someone to talk to about it!"
     "I'll admit, the only person I could maybe strong-arm into reading with me is Jona, and he'd want to read the last chapter first."
     "I can't handle spoilers."
+    hide chisei
     menu:
         "Sounds fun":
             $ chRep += 1
             play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
+            show chisei smile talk1
             ch "I am so glad you agree. Sometimes it feels like my interests are not, well, interesting."
+            show chisei smile talk2
             ch "Not that anyone has been unkind, but still. I can see their eyes glaze over when I talk about poetry."
             n "I'll always be down for something with a story, but poetry is definitely not my thing."
             "Even if it's a stinker, it'll be fun to make fun of."
+            show chisei talk3
             ch "I am curious, would that include Poe? His poems often told stories."
             n "No."
+            show chisei scheme
             ch "What about Shakespeare?"
             n "Yes, but more because it's hard to read."
             ch "A good actor can help bring the out iambic pentameter in a way that emotionally resonates."
             n "The what?"
+            show chisei smile
             ch "The rhythm of the lines. Shakespeare is like a song; it ebbs and flows."
             ch "If you try to read it without, it can come off a bit like reading a pop song with one hundred percent sincerity."
+            show chisei sad talk1
             ch "It feels wrong." 
             n "You going to try and get me to read Shakespeare with you?"
+            show chisei scheme
             ch "Not without your permission. I am sure the teachers will do that enough for me."
         "Did you want me to read it to you?":
             $ chRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
+            show chisei frown1
             ch "No. If I wanted the book read to me, I would have found an audiobook."
             n "But you said you wanted me to read it with you."
+            show chisei frown2
             ch "Alongside might have been the better word then. I generally do the most of my reading during lulls in class."
             ch "Otherwise, I am busy with other things."
             n "I see."
+            show chisei sad talk1
             ch "When I said I wanted to do this together, I meant the same way a book club would. Not that we could be an official club."
         "I recognize the author":
+            show chisei talk2
             n "This guy is kind of famous, isn't he?"
             "I think he wrote like, fifty some odd books in his day. A couple got turned into movies."
             "The series never took off in Guwon for some reason."
             ch "I would assume so. I found a couple of different books by him, but from what I can tell, this one is the first."
             "She looks so excited. I don't have the heart to tell her that this probably won't help her write comedy better."
             "Not that they aren't funny, but the kind of humor in it might not gel with her target audience."
+            show chisei talk3
             ch "It is a bit dated though. I am interested to see how well it holds up." 
             "At least she's having fun."
     $ chTurn += 1
+    show chisei talk1
     ch "You know, this is the first time I have read something with someone that I did not write."
     n "Really?"
     ch "Yes, classwork does not count. To be fair, I have yet to write something recently that I am proud of."
+    show chisei sad talk1
     ch "All the things I have that are finished are at least four years old."
     "Which means she wrote them when she was about eleven or twelve. I can imagine why she wouldn't want to share those things now."
     ch "They served their purpose at the time, but I would like to make something new."
+    show chisei smile talk1
     ch "Having experienced more now, my characters will be a little richer. I still would like to hone the craft part a bit more."
     ch "After all, it does no good to have compelling characters in the wrong story." 
     n "I guess. Writing's not really my strong suit. With a memory like mine, it's hard to get out of recall mode."
+    show chisei talk3
     ch "Really? That is surprising considering you are rather inventive with other things. When was the last time you tried?"
     n "I think when Ms. Krat was teaching."
     ch "That long?! Well, there is your problem. You simply stopped trying. That does give me an idea, but we should finish the book first."
+    show chisei smile talk1
     ch "How fast can you read?"
     "I feel like I've awakened a beast."
     "Before, she was fairly reserved. and now she's rattling off a timeline of how quickly we can finish the first book together."
     "I hope I haven't made a mistake."
+    hide chisei
     return
 label Chisei3:
     scene backgroundlibrary
     "I came to the library just as we planned. Chisei is sitting with a stack of books next to her and an earmarked notebook. She looks up at me with a frown."
-    ch "Nagen, I have devastating news... I read ahead!" (1)
+    show chisei frown1
+    ch "Nagen, I have devastating news..."
+    show chisei scheme
+    ch "I read ahead!"
     "We were only supposed to read the first three chapters."
+    show chisei frown2
     ch "I did not realize chapter four was so short, so I thought there was no harm in reading it and before I knew it, I was on chapter ten already. I apologize." (2)
     n "I take it that's what the notebook is for?"
+    show chisei scheme
     ch "I would never spoil something for you, but I have so many thoughts and theories about what will happen next. I have no problem waiting until you catch up. It was my fault after all, but I have no one else to talk to about it!" (3)
+    hide chisei
     menu:
         "I'll catch up tonight":
             $ chRep +=1
             play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
+            show chisei smile talk1
             ch "There is no need to rush."
             n "But you're excited to talk about it, right?"
             n "If I don't catch up soon, you won't be able to move onto writing your next play, right?"
+            show chisei talk2
             ch "About that, I have no idea if this will work. As much as I am having fun, my scripts are still stagnant."
             ch "Just thinking about working on them makes me tired."
             n "So taking a break is a good thing then?"
+            show chisei talk3
             ch "I suppose. If there were other things to do here, maybe I would feel less guilty about focusing on other things."
             ch "When the only thing to do is work or nothing, it feels awful to choose nothing."
+            show chisei talk1
             ch "There are many days I am too tired to do anything, so I want to make the most of it when I am able to stay awake."
             "I guess school is harder on her than I thought."
             "She used to be an Intel Major, so I thought all the reading and lectures would be right up her alley."
             n "All puns aside, I get the feeling this is one of those stories where the main character gets dragged around-"
             "She's already trying to hold her tongue."
             n "You're already thinking about a spoiler, aren't you?"
+            show chisei smile talk1
             ch "Yes. I just really think you should give it a chance. The main character reminds me a lot of you."
             n "The fail wizard, really?!"
+            show chisei talk3
             ch "I have already said too much."
         "I haven't started yet":
             $ chRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
+            show chisei frown2
             ch "Why not?"
             n "Well, you know, things have been busy with the student council."
             "Not to mention all the threats against my friends and homework. I'm not really sleeping much either."
+            show chisei frown1
             ch "You could have told me sooner instead of waiting until now." 
             n "Well, yeah, I just didn't know things would stay this busy when I agreed to do it."
             n "I'll get around to it once everything clears up."
+            show chisei talk1
             ch "If that is the case, then am I free to read ahead?"
             ch "There is no point in waiting if you do not know when you will have time to make good on your promise."
             "Ouch."
             n "Yeah, I guess you're right. I'll let you know when I'm done."
             "Looks like she doesn't believe me."
         "I finished it already":
+            show chisei mad1
             n "I haven't been sleeping well and I forgot to grab another book, so I ended up reading all of it."
             ch "Betrayer." 
             n "Hey, you read ahead too!"
+            show chisei mad2
             ch "Was my delivery too dry? That was a joke."
             n "No, I know, I was joking back."
+            show chisei scheme
             ch "I see. Then you have developed a shield to wit, volleying it back instead of succumbing to laughter."
             n "Is that a bad thing?"
+            show chisei smile
             ch "I must change my strategy. You truly are like the hero in this book."
             n "...yeah, I can see that."
             "Though I wish I wasn't."
             "Most of the book was him complaining about the jokes and the adventure, which I honestly couldn't say I wouldn't do."
+            show chisei smile talk1
             ch "Chin up, Nagen. He is one of my favorite characters."
             n "Is that a joke too?"
             ch "No."
     $ chTurn += 1
+    show chisei talk3
     "She opens the notebook and slides it my way. It looks like a script for her next play, but I recognize all the names."
     ch "This will be how I ease back into comedy writing."
     ch "I will adapt the book into a play so everyone will be able to enjoy it, including those who wish not to read."
     n "How's this going to help? It's someone else's thing; all you're doing is adapting it."
+    show chisei talk1
     ch "How to explain?"
     ch "You know how some people will unbuild something before building it again, like a remote or a toy car?"
+    show chisei
     ch "That is what I intend to do, break down my favorite jokes from the book to see how they work."
     ch "Turning a book into a play could ruin it if not done right."
+    show chisei smile
     ch "The lines have to be timed properly, with funny blocking instead of funny descriptions."
+    show chisei talk2
     ch "Thoroughly dissecting this will be the first step. Also, it will be fun."
     "I can't argue with that."
     n "I'd love to take a look at it when you're done."
+    show chisei talk1
     ch "I have no deadline as of yet, but knowing I have a waiting audience is good motivation."
     "I hope she's able to finish it."
+    hide chisei
     return
 label Chisei4:
     #[Must occur chapter 3 night]
@@ -227,9 +297,11 @@ label Chisei4:
     "There is little to work on out here."
     "When the sun sets, any distractions requiring pen and paper are thrown to the wayside and all that is left is to wait."
     "That's when I see Chisei looking up at the stars."
+    show chisei frown2
     "In the dark, she only wears what's comfortable, leaving her bionic arm and face coverings packed away until the sun peaks over the horizon."
     "She flinches when my boots crunch against the gravel."
     n "Sorry, did you want to be alone?"
+    show chisei sad talk3
     ch "No."
     "I take a seat beside her. Lately she's been relying on Mu and Ichita more to do little things."
     "It's not like her to be afraid to use her own hands."
@@ -238,180 +310,262 @@ label Chisei4:
     "Somewhere far back in my memory are things we read for school."
     "A few books Odori recommended, but no one had time to bother reading expect Jona."
     n "I found without a goal, I can't sit through much of anything."
+    show chisei talk3
     ch "I have noticed. Please do not take that the wrong way. I find it comforting."
     n "Oh, well uh, you're welcome, I guess."
+    show chisei sad talk2
     ch "I think I know what wall I am coming up against in my writing, why I dislike sitting still with nothing to do as well."
     "I am the one that does not want to be reminded of Guwon, not the other way around."
+    hide chisei
     menu:
         "Are you going to move?":
             $chRep += 1
             play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
+            show chisei sad talk1
             ch "Cowardly, is it not? Ichita has family in the Philippines and he has offered to take me with him after graduation."
+            show chisei sad talk2
             ch "To think I would be at a point where I would rather learn a new language than go back home."
             n "It's hard to move on when constantly surrounded by reminders. Pretty much all I think about at night."
             "That makes me wonder-"
             n "Am I one of those reminders?"
+            show chisei sad talk1
             ch "In a way, but looking back, you were really sick back then. I can only imagine how hard it was to think with a fever."
             n "You saw me?"
-            ch "It'll burn if we leave it like that', that is what you told the others when you pulled me out of line."
+            show chisei sad talk3
+            ch "'It'll burn if we leave it like that', that is what you told the others when you pulled me out of line."
+            show chise frown1
             ch "No one else understood how liquid could burn a vein."
+            hide chisei
             #[CG]
-            "My hands were shaking. Angry red skin blanched under my fingertips."
+            "My hands were shaking. Her angry red skin blanched under my fingertips."
             "I couldn't tell if it was in the wrong place, or if her body was rejecting it."
             n "I'm sorry."
             "My voice slurred at the time." 
             n "I know this hurts."
             #[CG end]
+            show chisei talk2
             ch "If it is any consolation, the nurses told me all my veins were like that."
-            ch "Your rush job was probably how I was able to break free. I appreciate it nonetheless."
+            ch "Your rush job was probably how I was able to break free."
+            ch "I appreciate the help nonetheless."
         "Are you writing sad things?":
+            show chisei sad talk3
             ch "I am afraid that will be the case."
             ch "While there are plenty of sad things I need to get onto paper, there is no telling if it will let me go back to the writer I once was."
+            show chisei frown1
             ch "I miss putting smiles on people's faces, but lately nothing I make does the trick anymore."
             n "People like you a ton."
+            show chisei talk1
             ch "I know Ichita was behind the whole prom queen thing. Kitsune was quite vocal about how I supposedly cheated."
             "Damn it, Kitsune."
             n "She's just upset people aren't willing to do that for her."
-            ch "She has every right to be. I appreciated the gesture, make no mistake, but I do doubt how organic it was." 
+            show chisei talk3
+            ch "She has every right to be."
+            ch "I appreciated the gesture, make no mistake, but I do doubt how organic it was." 
             n "All Uitto did was find the people who were going to vote for themselves and convinced them to vote for another classmate."
             ch "That is not what I meant."
         "That Guwon is dead"
             $ chRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
+            show chisei frown2
             n "Guwon isn't going to be like it used to be."
             n "I know everyone's fixated on that being a bad thing, but it's the one good thing to come out of all this."
             n "The place that caused everyone so much pain will forever be something else. Though the fact Estella is still alive worries me."
             "The number one person who'd be interested in rebuilding Guwon is the one person we tried to get rid of."
             "That capitalist is worse than a cockroach."
+            show chisei sad talk1
             ch "Rather than that, I just seem to be uneasy around those who know who I used to be."
             ch "The idea of a fresh start where me, as I am, is all they know is appealing to me."
+            show chisei 
             ch "You helped show me that it would not be that scary."
             n "The best thing about being a writer is that you can do it anywhere."
             "I don't want her to go, but I can't fault her for wanting to leave."
             n "It hasn't been a year yet. It's too soon to give up now."
+            show chisei sad talk3
             ch "I know, but having a plan helps."
     $ chTurn += 1
+    show chisei smile talk1
     ch "I showed the girls in my tent what I was working on. Uitto liked it quite a bit, but then Rei said it was depressing."
+    show chisei talk1
     ch "It was not supposed to be. I thought it had been the most lighthearted thing I wrote in a while."
     ch "Even when adapting someone else's work, I seem drawn to a dour tone."
     n "...did Uitto think it was funny?"
+    show chisei talk3
     ch "I am not sure. I did not hear her laugh if that is what you're asking."
     n "No, she wouldn't. There were other people in the room."
     ch "I do not understand."
     n "The problem isn't that what you're writing isn't funny, it's that people are reading it through the wrong lens."
+    show chisei frown2
     n "Uitto's a huge fan of dark comedy. She likes when things make fun of depressing stuff."
+    show chisei smile
     n "You don't need to write it differently, you need to find the right actor to perform it. I think I know just the people."
     "She needs a cheerful character and a dead panned character. I know just the people to do the line reads."
+    show chisei
     n "Don't stop working on it. When we get back to school, we'll do a run through and you'll see what I'm talking about."
+    hide chisei
 label Chisei5:
     scene backgroundstage
     default chiseiRomance = False
+    show chisei frown2 at left
     "Chisei sits in the front row, chewing on her nails while I hand out scripts."
+    show hiro wait 
+    show jona depressed at right
     "It's a bit of type casting on my part, but I think Jona and Hiro can sell what I'm picturing with minimal direction."
     "Well, for the most part. Jona's said several times now that he's not an actor. That's sort of what I'm counting on."
     n "It's just a read through. Hiro, I want you to put all your energy into it. Jona, just read the lines as best you can."
     "Honestly, Uitto would be a better fit for the character, but I don't want to put her on stage."
     "If things go well, I know Chisei will want to perform this for other people."
+    show chisei scheme at left
     ch "Action!"
+    show chisei frown1
+    show hiro sassy
     h "You there. You're a local aren't you?"
+    show jona frustrated at left
     j "No."
+    show hiro smug
     h "Perfect. I'm looking for a guide so I can experience the city authentically, but I need a more worldly guide."
+    show hiro hmm
     h "The last fellow I asked offered me a sword in a dark alley, so I think there was a bit of a language barrier at play."
+    show hiro
     h "He was so upset when I turned him down, but I fear I don't have time to kill myself today. I'm booked solid."
     "Jona looks to me for direction, but it just adds to the character looking for an out."
     "Hiro holds out his palm, pretending there is a pile of gold. Jona finally checks his script and sighs."
+    show jona relaxed
     j "I guess."
+    show chisei frown2 at left
     "We pause the scene. Next to me, Chisei has her hands clasped in front of her lips."
+    show chisei scheme at left
     ch "It is perfect."
+    show hiro sad smile
     h "Really?!"
+    show chisei smile talk2 at left
     ch "It is exactly how I pictured it in my head. Adding 'I'm booked solid' was such a good choice."
+    show chisei smile talk1 at left
     ch "Jona, you did great too. The timing of your lines really elevated the absurdity."
+    show jona happy at right
     j "Oh, um, thanks."
     ch "I think this could really work. I have so much to write first, but now I think I can get past the first scene."
     ch "Thank you all so much!"
+    hide jona
+    hide hiro
+    hide chisei
     "She pulls me aside to talk in private."
+    show chisei smile talk1
     ch "Nagen, thank you. This could have been a really lonely year, but all of you have encouraged me so much."
+    hide chisei
     menu:
         "Does this mean you won't move away":
             $ chRep += 1
             play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
+            show chisei talk3
             ch "Is that why you threw this together so quickly?"
             n "I mean, I could never tell you not to go, but if there was more here to stay for then maybe you wouldn't be so eager to leave."
+            show chisei smile talk1
             ch "Nagen, it is not like I was planning to leave right this second."
             "But with how things are going at the school, we could be separated anyway."
             "I don't want to lose another person I've grown close to."
             n "I know, I know, but you can do what you want to do here. Can't you?"
             "It's selfish to ask that of someone, I know that."
             "I guess I just wanted to show that she could rely on me to make things better, even the silly stuff."
+            show chisei smile talk2
             ch "Nagen, just because I live somewhere else, does not mean we cannot be close."
             "My heart is crushed, but I can't give up."
+            show chisei talk3
             ch "Oh dear, I know that look."
         "I want to see your play":
             $ chRep += 2
             $ chiseiRomance = True
             play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
+            show chisei talk3
             n "I don't know what it's like to love my proficiency, but I admire the fact you still want to do it even if you don't have to anymore."
             "You love writing because you love writing. I want to be able to see what you do first hand."
+            show chisei
             ch "Nagen, it means a lot to hear that. You have been a great help, and I am sure everyone will love the final product.."
             "She still doesn't get it."
             n "I don't care if it's funny."
             n "I mean, I helped because I know you want it to be a comedy, but even if it's not, I still want to see it."
+            show chisei smile
             n "Anytime you talk about something you're excited to make, you glow, and I just-"
             "She blushes, a faint smile on her face."
+            show chisei smile talk1
             n "I want you to smile like this all the time, not just when you're doing things for other people." 
         "I had to make it up to you":
             $ chRep -= 1
+            play sound "752275__ienba__magic-reveal.ogg"
+            show chisei mad2
             ch "You cannot."
             "There's a cold anger in her eye, but her voice is neutral."
             ch "Nothing you do will change what happened and nothing I say will change how you feel about it."
+            show chise mad1
             ch "I have made peace with what I can and cannot do. You are the one who has failed to do that." 
             n "I didn't mean it like that."
+            show chisei mad2
             ch "Oh, I know what you meant. I know you 'mean well', but not once have you asked what I wanted."
+            show chisei sad talk1
             ch "My guess is because you already know the answer and cannot do it."
-            ch "You have always been anxious, Nagen. 'Helping' other people will not make you less anxious."
+            show chisei mad2
+            ch "You have always been anxious, Nagen."
+            ch "'Helping' other people will not make you less anxious."
+            show chisei sad talk1
             ch "Until you can figure that out, I am afraid we will be nothing more than classmates."
     $ chTurn += 1
+    show chisei sad talk3
     n "I finally made a place feel like home, and I want that for you too."
     n "I'll do whatever I can, even if it's just reading a bunch of silly books with you."
     n "As much as I like escaping reality, it feels really good to have a place to come back to too."
     ch "With an attitude like that, you will make a fine student council president."
     if chiseiRomance = True:
+        show chisei talk1
         ch "And a fine boyfriend."
         n "That's not a joke is it?"
+        show chisei smile
         ch "Not this time, no." 
         "I'm over the moon. Her arm digs into my back when she hugs me, but I don't care."
     else:
+        show chisei smile talk1
         ch "I will be cheering for you, Nagen." 
+        show chisei smile talk2
         ch "Nagen… may I ask one more thing. Why do you like me so?"
         n "What do you mean?"
         ch "Some people, even if they do not mean to, think of me as doll-like to put it kindly."
+        show chisei sad talk2
         ch "I am not some treasure to be put on a shelf. Why do you like me?"
-    "She thinks for a while."
+    "She quiet for a long time."
     if Hero > Villain:
+        show chisei talk3
         n "I think you'd make a great hero."
         ch "Me!? You must be joking."
         n "No, I'm serious."
         n "You're so kind to everyone around you, and you've been working so hard to make the school feel like a school in your own way with the plays and sorting the library."
         n "Even the stuff you're writing, you're making it for other people to enjoy."
         n "My favorite Gladiators were the ones that tried to do the most good they could. I feel like that's you to a T."
+        show chisei sad talk2
         ch "Nagen."
         "She might not ever become a hero. It's not like she's ever expressed interest, and the Karmic Gladiators are scattered to the wind now."
         "Still, she's the sort of person I imagined them to be."    
     else:
+        show chisei frown1
         n "You remind me of Lethe."
         ch "I do?"
         "I wish she didn't look hurt by that."
         n "She would edit herself to be the kindest and most caring person so everyone would cherish her."
+        show chisei frown2
         n "I admired her so much for it, but looking back, I wish she had felt safe to be angry or sad."
         "I had seen it ever so briefly when Momoko tried to snatch up Hiro for the gaming club."
         "There's an anger there Chisei's not letting herself feel."
         n "Even the stuff you write, you're trying to make it palatable for other people to enjoy."
+        show chisei talk1
         "I want to see the real you, but I get that it doesn't feel safe to be that right now. I'm the same way."
         "People like us, we're the ones that change the world."      
+    show chisei smile
     "I can be patient. When the dust finally settles, I want to see the extent of what she can do."
     "A good writer that can communicate with the dead is a powerful ally."
+    hide chisei
     return
 label ChiseiF:
+    show chisei talk3
     n "Need a break from writing?"
     ch "Oh my, is that really the time?"
+    show chisei
     "Chisei pulls herself away from her work, and we take a walk around the courtyard."
+    hide chisei
     return
