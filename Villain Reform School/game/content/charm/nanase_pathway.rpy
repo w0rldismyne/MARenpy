@@ -1,3 +1,15 @@
+#waiting for chapter
+#"Nanase's busy helping prepare for the dance."
+# "I should wait until we have more freetime to try and hang out."
+
+#chapter locked
+#scene backgroundstuco
+
+#"I haven't seen Nanase around in a while."
+#"As soon as class is over, she goes straight to her room, saying she's tired."
+#"I hope she's okay."
+
+
 label NanaseVisit:
 
     if nkTurn == 0:
@@ -674,6 +686,7 @@ label Nanase3:
 
     return
 label Nanase4:
+    #only in chapter 3
     scene backgroundclearing
 
     "Nanase has been using every ounce of daylight to flip through the book she always carries."
@@ -772,7 +785,7 @@ label Nanase4:
             nk "There's so many times in here I got mad at my mom for putting something in my room, or using my Proficiency to keep me from cleaning."
             nk "I have no idea how bad it was or if I was just exaggerating things to seem more interesting."
 
-            "It sounds like something a hoarder would do. "
+            "It sounds like something a hoarder would do."
 
             n "You don't do that now from what I've seen. I think you should trust yourself a little more."
 
@@ -820,7 +833,7 @@ label Nanase4:
     nk "Have you ever done something like that?"
 
     if vision == 1:
-        n "Maybe... I'm not sure. I've been trying to figure out why my proficiency's going on the fritz lately."
+        n "Maybe... I'm not sure. I've been trying to figure out why my Proficiency's going on the fritz lately."
         n "It's usually stuff involving other people."
         n "It's not like I have other people's thoughts in my head though, and there's changes in what I say."
         n "So it's not like it's just me being unable to keep straight how I felt about things."
@@ -871,11 +884,11 @@ label Nanase4:
     show nanase cry
 
     nk "You ended up being the person I was hoping for. No one knew how bad the house was."
-    nk "Even I don't anymore, but I finally get to live with my dad again."
+    nk "Even I don't anymore, but I'll finally get to live with my dad again."
     
     show nanase cry smile
 
-    nk "I get to decide what to do with my proficiency instead of having it used against me."
+    nk "I get to decide what to do with my Proficiency instead of having it used against me."
 
     hide nanase
 

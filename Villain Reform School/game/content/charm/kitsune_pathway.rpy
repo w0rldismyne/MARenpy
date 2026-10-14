@@ -1,3 +1,22 @@
+#Chapter locked
+
+# scene backgroundstage
+# show kitsune shocked
+# k "Nagen!"
+# show kitsune smug
+# k "I'm afraid I'm far too busy working on my next album."
+# k "As soon as I get dates for my first signing slash hand-shake event I'll let you know."
+# n "But I'm not-"
+# "A notification pops up on my burner form that I've been added to a newsletter."
+# n "-a fan."
+# k "Don't be so hard on yourself. A fan in the making is fan enough, just wait until the EP comes out before making a decision."
+# k "Now, I need to be on vocal rest for my recording session later."
+# "She takes a drink of lemon water and shoos me away with her other hand."
+# "A fan in the making hunh?"
+# "That's a far cry from friend."
+# g "Pathway locked."
+
+
 label KitsuneVisit:
 
     if kTurn == 0:

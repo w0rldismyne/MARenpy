@@ -1,3 +1,51 @@
+#waiting for chapter
+#"Hiro's after school suspension will be over after spring break."
+
+#chapter locked
+#if hero
+# scene background field
+# show hiro ashamed
+# n "Hey dude, are you free?"
+# h "Um-"
+# h "Well-"
+# n "Something wrong?"
+# show hiro sad smile
+# h "Yeah."
+# show hiro sad talk
+# h "Yeah..."
+# "He won't even look at me."
+# h "Sorry, I'm just going through something right now."
+# h "It's not-"
+# show hiro sad fine
+# h "I mean obviously we're still friends and stuff. It's just going to take me a bit to..."
+# h "I just need space."
+# show hiro ashamed
+# h "I'm sorry."
+# "What the hell happened?"
+# g "Pathway locked."
+
+#if villain
+# scene background field
+# show hiro guilty
+# n "Hey dude, are you free?"
+# h "Nagen, listen..."
+# "Oh no."
+# "Oh no! What's with that look of pity?"
+# show hiro judge
+# h "I've tried to be nice about how you're handling... all of this."
+# show hiro sad talk
+# h "But you've barely talked to me since we've been here unless I'm seeking you out."
+# h "I kinda thought..."
+# h "...that you didn't really like me."
+# n "What? But we're friends!"
+# show hiro sad smile
+# h "Yeah, we are."
+# h "You can be friends with people you don't like."
+# "He shoves his hands in his pockets and leaves."
+# "What the hell?"
+# g "Pathway locked."
+
+
 label HiroVisit:
 
     if hTurn == 0:

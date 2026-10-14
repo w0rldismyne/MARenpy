@@ -1,3 +1,16 @@
+#waiting for chapter 3
+# "I haven't found the phone number Taiga's looking for yet, and I know he'll ask about it."
+# "Before I can go digging through old memories, I need to handle getting the dance in order."
+
+#chapter lock
+# scene backgroundroof
+# "Taiga's back to calling random numbers."
+# "He looks up at me, and then keeps going."
+# "Houdini tugs at his sleeve, but he shrugs off his pet as well."
+# "I... I don't think I'm going to be able to find that number."
+# "If that's the only reason he wants to talk to me..."
+# "I leave, and Taiga says nothing."
+
 label TaigaVisit:
 
     if tTurn == 0:
@@ -371,6 +384,7 @@ label Taiga3:
     n "I- I'll think about it."
     hide taiga
 label Taiga4:
+    #chapter 3 only
     scene backgroundlake
     "Taiga had issues sleeping back when we were at the school and everything was fine."
     "Now he's got a whole new batch of bunnies to worry about on top of the ones he brought with him."
