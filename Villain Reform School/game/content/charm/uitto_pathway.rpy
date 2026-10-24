@@ -1,3 +1,4 @@
+#note Uitto will not be chapter locked
 
 label UittoVisit:
 

@@ -1,4 +1,28 @@
 #Note: Chisei is available in the morning and evening. 
+
+# waiting for chapter lock
+# "It might take a few days for her to finish the draft for her play."
+# "I should wait until after the dance to see if she's made any progress."
+
+#chapter locked
+# scene background library
+# n "Hey Chisei!"
+# show chisei frown1
+# "She looks surprised to see me."
+# n "Is something wrong?"
+# ch "No, I was just waiting for someone else."
+# show ichita grin at left
+# i "Sorry I'm late!"
+# show ichita surprised at left
+# i "Oh, Nagen, did you want to join us? We were just going to-"
+# show chisei mad1
+# ch "NO!"
+# show chisei sad talk3
+# ch "I mean, no thank you. I was hoping it could be the two of us."
+# n "Yeah, no, you guys go have fun. I didn't mean to interupt."
+# "I guess we weren't as close as I thought."
+# g "Pathway locked"
+
 label ChiseiVisit:
 
     if chTurn == 0:

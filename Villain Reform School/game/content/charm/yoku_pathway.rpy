@@ -1,3 +1,32 @@
+#waiting for chapter
+
+#"Yoku's busy with his composition."
+#"I'll try seeing if he's finished after the dance."
+
+#chapter locked
+
+#scene backgroundcourtyarnight
+# "For once, I don't see Yoku playing."
+# "He stares up at the stars with a distant look on his face."
+# y "Where is she?"
+# n "Hunh?"
+# y "Rise, where is she?"
+#   menu:
+#       a "Detention"
+#           y "That's what the teachers said."
+#           y "But *where* is she? Why can't I see her."
+#       b "I don't know"
+#           y "Sure."
+# y "This was my last chance to show her what I could do."
+# y "Now no one knows where she is."
+# "His wrist is wrapped up in a brace."
+# n "What happenend!?"
+# y "Injury."
+# y "C-can't play for three months."
+# y "...I'll see you around."
+# "For the first time in weeks, when I go to bed, there is nothing but the silence of the night."
+# g "Pathway Locked."
+
 label YokuVisit:
 
     if yTurn == 0:

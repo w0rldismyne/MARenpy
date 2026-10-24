@@ -1,3 +1,5 @@
+#Mariko can't be chapter locked
+
 label MarikoVisit:
 
     if mTurn == 0:
