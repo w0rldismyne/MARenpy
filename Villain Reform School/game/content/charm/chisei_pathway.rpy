@@ -67,7 +67,7 @@ label Chisei1:
             n "Well, if things actually make sense, more people might look at the books. It's not like there's much else to do here."
             show chisei smile
             ch "I suppose that is true. In the end, all of us are looking for ways to fill time."
-        "Gather it all together"
+        "Gather it all together":
             $ chRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
             show chisei talk3
@@ -363,7 +363,7 @@ label Chisei4:
             ch "I appreciated the gesture, make no mistake, but I do doubt how organic it was." 
             n "All Uitto did was find the people who were going to vote for themselves and convinced them to vote for another classmate."
             ch "That is not what I meant."
-        "That Guwon is dead"
+        "That Guwon is dead":
             $ chRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
             show chisei frown2
@@ -513,7 +513,8 @@ label Chisei5:
     n "I'll do whatever I can, even if it's just reading a bunch of silly books with you."
     n "As much as I like escaping reality, it feels really good to have a place to come back to too."
     ch "With an attitude like that, you will make a fine student council president."
-    if chiseiRomance = True:
+
+    if chiseiRomance == True:
         show chisei talk1
         ch "And a fine boyfriend."
         n "That's not a joke is it?"

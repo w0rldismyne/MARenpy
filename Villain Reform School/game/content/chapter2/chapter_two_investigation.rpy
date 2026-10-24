@@ -216,7 +216,7 @@ label chapter2_investigation_chisei_loop:
 
     hide chisei
 
-    $ fake_reveal_panel(2, "panel1")
+    $ fake_reveal_panel(2, "panel1", ch2_p2panel1r)
 
     $ current_i_page = 2
 
@@ -415,7 +415,9 @@ label chapter2_investigation_dyre_loop:
 
     hide dyre
 
-    $ fake_reveal_panel(1, "panel1")
+    $ fake_reveal_panel(1, "panel1", ch2_p1panel1)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
@@ -614,11 +616,25 @@ label chapter2_investigation_ichita_loop:
     
     hide ichita
 
-    $ fake_reveal_panel(1, "panel2")
+    $ fake_reveal_panel(1, "panel2", ch2_p1panel2)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
     $ real_reveal_panel(1, "panel2")
+
+    $ fake_reveal_panel(2, "panel3", ch2_p2panel3)
+    $ fake_reveal_panel(2, "panel4", ch2_p2panel4)
+
+    $ current_i_page = 2
+
+    call investigation_unlock
+
+    $ current_i_page = 1
+
+    $ real_reveal_panel(2, "panel3")
+    $ real_reveal_panel(2, "panel4")
 
     $ set_profile_availability("ichita", c_i_profile_unavailable)
 
@@ -810,13 +826,17 @@ label chapter2_investigation_kazz_loop:
 
     hide kazz
 
-    $ fake_reveal_panel(1, "panel6")
+    $ fake_reveal_panel(1, "panel5", ch2_p1panel5)
+    $ fake_reveal_panel(1, "panel6", ch2_p1panel6r)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
+    $ real_reveal_panel(1, "panel5")
     $ real_reveal_panel(1, "panel6")
 
-    $ fake_reveal_panel(2, "panel1")
+    $ fake_reveal_panel(2, "panel1", ch2_p2panel1r)
 
     $ current_i_page = 2
 
@@ -1010,13 +1030,17 @@ label chapter2_investigation_kietsu_loop:
 
     hide kietsu
 
-    $ fake_reveal_panel(1, "panel2")
+    $ fake_reveal_panel(1, "panel2", ch2_p1panel2)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
     $ real_reveal_panel(1, "panel2")
 
-    $ fake_reveal_panel(2, "panel5")
+    $ fake_reveal_panel(2, "panel3", ch2_p2panel3)
+    $ fake_reveal_panel(2, "panel4", ch2_p2panel4)
+    $ fake_reveal_panel(2, "panel5", ch2_p2panel5)
 
     $ current_i_page = 2
 
@@ -1024,11 +1048,12 @@ label chapter2_investigation_kietsu_loop:
 
     $ current_i_page = 1
 
+    $ real_reveal_panel(2, "panel3")
+    $ real_reveal_panel(2, "panel4")
     $ real_reveal_panel(2, "panel5")
 
     $ set_profile_availability("kietsu", c_i_profile_unavailable)
 
-    
     return
 
 label chapter2_investigation_kitsune:
@@ -1251,8 +1276,10 @@ label chapter2_investigation_kitsune_loop:
     
     hide kitsune
 
-    $ fake_reveal_panel(1, "panel1")
-    $ fake_reveal_panel(1, "panel4")
+    $ fake_reveal_panel(1, "panel1", ch2_p1panel1)
+    $ fake_reveal_panel(1, "panel4", ch2_p1panel4)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
@@ -1453,12 +1480,16 @@ label chapter2_investigation_rei_loop:
 
     hide rei
 
-    $ fake_reveal_panel(1, "panel3")
-    $ fake_reveal_panel(1, "panel6")
+    $ fake_reveal_panel(1, "panel3", ch2_p1panel3r)
+    $ fake_reveal_panel(1, "panel5", ch2_p1panel5)
+    $ fake_reveal_panel(1, "panel6", ch2_p1panel6r)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
     $ real_reveal_panel(1, "panel3")
+    $ real_reveal_panel(1, "panel5")
     $ real_reveal_panel(1, "panel6")
 
     $ set_profile_availability("rei", c_i_profile_unavailable)
@@ -1631,7 +1662,9 @@ label chapter2_investigation_shoma_loop:
 
     hide shoma
 
-    $ fake_reveal_panel(1, "panel4")
+    $ fake_reveal_panel(1, "panel4", ch2_p1panel4)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
@@ -1844,7 +1877,8 @@ label chapter2_investigation_momoko_loop:
     
     "After the mess is cleaned up, we're given a stern lecture about not turning our backs on active chemicals."
 
-    $ fake_reveal_panel(2, "panel1")
+    $ fake_reveal_panel(2, "panel1", ch2_p2panel1i)
+    $ fake_reveal_panel(2, "panel1", ch2_p2panel1r)
 
     $ current_i_page = 2
 
@@ -2087,7 +2121,7 @@ label chapter2_investigation_mu_loop:
     
     n "I promise, whatever the hell is going on, you guys aren't going to get punished for it." 
     
-    show mu talk
+    show mu talk1
 
     mu "Nagen, I don't think that's something you have any control over."
     
@@ -2102,13 +2136,15 @@ label chapter2_investigation_mu_loop:
     
     hide mu
 
-    $ fake_reveal_panel(1, "panel3")
+    $ fake_reveal_panel(1, "panel3", ch2_p1panel3r)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
     $ real_reveal_panel(1, "panel3")
 
-    $ fake_reveal_panel(2, "panel5")
+    $ fake_reveal_panel(2, "panel5", ch2_p2panel5)
 
     $ current_i_page = 2
 
@@ -2346,13 +2382,17 @@ label chapter2_investigation_nanase_loop:
     
     hide nanase
 
-    $ fake_reveal_panel(1, "panel3")
+    $ fake_reveal_panel(1, "panel3", ch2_p1panel3r)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
     $ real_reveal_panel(1, "panel3")
 
-    $ fake_reveal_panel(2, "panel2")
+    $ fake_reveal_panel(2, "panel2", ch2_p2panel2)
+    $ fake_reveal_panel(2, "panel3", ch2_p2panel3)
+    $ fake_reveal_panel(2, "panel4", ch2_p2panel4)
 
     $ current_i_page = 2
 
@@ -2361,6 +2401,8 @@ label chapter2_investigation_nanase_loop:
     $ current_i_page = 1
 
     $ real_reveal_panel(2, "panel2")
+    $ real_reveal_panel(2, "panel3")
+    $ real_reveal_panel(2, "panel4")
 
     $ set_profile_availability("nanase", c_i_profile_unavailable)
 
@@ -2571,13 +2613,15 @@ label chapter2_investigation_taiga_loop:
 
     hide taiga
 
-    $ fake_reveal_panel(1, "panel2")
+    $ fake_reveal_panel(1, "panel2", ch2_p1panel2)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
     $ real_reveal_panel(1, "panel2")
 
-    $ fake_reveal_panel(2, "panel5")
+    $ fake_reveal_panel(2, "panel5", ch2_p2panel5)
 
     $ current_i_page = 2
 
@@ -2850,15 +2894,19 @@ label chapter2_investigation_rise_loop:
     
     "I leave without another word."
 
-    $ fake_reveal_panel(1, "panel3")
-    $ fake_reveal_panel(1, "panel6")
+    $ fake_reveal_panel(1, "panel3", ch2_p1panel3i)
+    $ fake_reveal_panel(1, "panel6", ch2_p1panel6i)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
     $ real_reveal_panel(1, "panel3")
     $ real_reveal_panel(1, "panel6")
 
-    $ fake_reveal_panel(2, "panel2")
+    $ fake_reveal_panel(2, "panel1", ch2_p2panel1i)
+    $ fake_reveal_panel(2, "panel3", ch2_p2panel3)
+    $ fake_reveal_panel(2, "panel4", ch2_p2panel4)
 
     $ current_i_page = 2
 
@@ -2866,7 +2914,9 @@ label chapter2_investigation_rise_loop:
 
     $ current_i_page = 1
 
-    $ real_reveal_panel(2, "panel2")
+    $ real_reveal_panel(2, "panel1")
+    $ real_reveal_panel(2, "panel3")
+    $ real_reveal_panel(2, "panel4")
 
     $ set_profile_availability("rise", c_i_profile_unavailable)
     
@@ -3046,15 +3096,19 @@ label chapter2_investigation_setsuna_loop:
     
     hide setsuna
 
-    $ fake_reveal_panel(1, "panel3")
-    $ fake_reveal_panel(1, "panel6")
+    $ fake_reveal_panel(1, "panel3", ch2_p1panel3i)
+    $ fake_reveal_panel(1, "panel6", ch2_p1panel6i)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
     $ real_reveal_panel(1, "panel3")
     $ real_reveal_panel(1, "panel6")
 
-    $ fake_reveal_panel(2, "panel1")
+    $ fake_reveal_panel(2, "panel1", ch2_p2panel1i)
+    $ fake_reveal_panel(2, "panel3", ch2_p2panel3)
+    $ fake_reveal_panel(2, "panel4", ch2_p2panel4)
 
     $ current_i_page = 2
 
@@ -3063,6 +3117,8 @@ label chapter2_investigation_setsuna_loop:
     $ current_i_page = 1
 
     $ real_reveal_panel(2, "panel1")
+    $ real_reveal_panel(2, "panel3")
+    $ real_reveal_panel(2, "panel4")
 
     $ set_profile_availability("setsuna", c_i_profile_unavailable)
 
@@ -3262,13 +3318,15 @@ label chapter2_investigation_yoku_loop:
 
     hide yoku
 
-    $ fake_reveal_panel(1, "panel2")
+    $ fake_reveal_panel(1, "panel2", ch1_p1panel2)
+
+    $ current_i_page = 1
 
     call investigation_unlock
 
     $ real_reveal_panel(1, "panel2")
 
-    $ fake_reveal_panel(2, "panel5")
+    $ fake_reveal_panel(2, "panel5", ch2_p2panel5)
 
     $ current_i_page = 2
 

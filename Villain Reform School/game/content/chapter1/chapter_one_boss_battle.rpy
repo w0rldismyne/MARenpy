@@ -1,9 +1,4 @@
 # Boss Sprites
-default boss_active = "images/Sprites/Mariko/Boss1.png"
-default boss_idle = "images/Sprites/Mariko/Boss1.png"
-default boss_attack = "images/Sprites/Mariko/4.png"
-default boss_hurt = "images/Sprites/Mariko/3.png"
-
 define boss_idle_p1 = "images/Sprites/Mariko/Boss1.png"
 define boss_attack_p1 = "images/Sprites/Mariko/4.png"
 define boss_hurt_p1 = "images/Sprites/Mariko/3.png"
@@ -11,15 +6,8 @@ define boss_idle_p2 = "images/Sprites/Mariko/Boss1injured.png"
 define boss_attack_p2 = "images/Sprites/Mariko/4injured.png"
 define boss_hurt_p2 = "images/Sprites/Mariko/3injured.png"
 
-# UI Panels
-default info_overlay = "New Assets/Fight/fight_frame.png"
-
 # Attributes
 default chapter1_nagen = Character_Stats()
-default nagen_current_health = -1
-default nagen_health = -1
-default nagen_attack = -1
-default nagen_defense = -1
 
 default mariko_current_health = 25
 define mariko_health = 25
@@ -35,16 +23,6 @@ define mariko_weak_attack = 0
 define mariko_strong_attack = 1
 default mariko_halfway = False
 default mariko_attack_line = ""
-
-default turn_order = 0
-define nagen_turn = 0
-define mariko_turn = 1
-define round_end = 2
-
-# Fight Resolution
-default fight_end_state = -1
-define lose = 0
-define win = 1
 
 screen boss_mariko_s1(variation=False):
 
@@ -82,42 +60,6 @@ screen boss_mariko:
         xysize 949, 1401
         if boss_active is boss_hurt:
             at hit_shake
-
-screen boss_overlay:
-
-    image "[info_overlay]"
-
-screen nagen_hp_bars:
-
-    image "New Assets/Fight/name_nagen.png":
-        xanchor 0.0
-        yanchor 0.5
-        pos 124, 1032
-
-    text "Nagen":
-        color "#000000"
-        xanchor 0.0
-        yanchor 0.5
-        pos 134, 1036
-
-    # Nagen's Health
-    bar:
-        xanchor 0.0
-        yanchor 0.5
-        pos 60, 945
-        xysize 814, 89
-        value nagen_current_health
-        range nagen_health
-        left_bar "New Assets/Fight/mc_hp_full.png"
-        right_bar "New Assets/Fight/mc_hp_empty.png"
-        left_gutter 156
-        right_gutter 15
-
-    text "[nagen_current_health]/[nagen_health]":
-        xanchor 1.0
-        yanchor 0.5
-        pos 829, 949
-        size 40
 
 screen mariko_hp_bars:
 
@@ -255,7 +197,7 @@ label chapter1_boss_battle_loop:
             call nagen_turn
             call post_nagen_turn
 
-        elif turn_order is mariko_turn:
+        elif turn_order is boss_turn:
 
             call mariko_turn
             call post_mariko_turn
@@ -372,7 +314,7 @@ label nagen_turn:
     call screen chapter1_boss_battle_menu
 
 label nagen_turn_end:
-    $ turn_order = mariko_turn
+    $ turn_order = boss_turn
 
     return
 

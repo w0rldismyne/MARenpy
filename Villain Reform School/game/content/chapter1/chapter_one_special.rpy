@@ -1,4 +1,5 @@
 label chapter1_interrogation:
+    $ chapter1_interrogation_chance = False
 
     scene backgroundclass
 
@@ -370,6 +371,8 @@ label chapter1_interrogation_b2:
 
 label chapter1_interrogation_success:
 
+    $ chapter1_solved = True
+
     show mariko judge
 
     m "So?"
@@ -445,6 +448,7 @@ label chapter1_interrogation_success:
             $ mRep -= 1
 
         "Protect you":
+            $ chapter1_spare = True
 
             $ Hero += 1   
 
@@ -495,8 +499,6 @@ label chapter1_interrogation_success:
     
     "Mariko hands me an unmarked VHS tape from her bag."
 
-    $ chapter1_solved = True
-
     m "On the roof, the guys found an old CRT TV."
     m "You should go there when you get the chance."
 
@@ -513,9 +515,6 @@ label chapter1_interrogation_success:
     
 
 label chapter1_interrogation_unsuccessful:
-
-    $ chapter1_interrogation_chance = False
-    $ investigation_solve = False
 
     show mariko glare
     

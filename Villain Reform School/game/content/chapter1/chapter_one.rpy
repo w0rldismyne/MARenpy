@@ -112,19 +112,30 @@ label chapter_one:
     call chapter1_day5_event3
     
     # Dusk
+    if chapter1_solved == True:
+        call chapter1_day5_event4_alt
 
-    call chapter1_day5_event4
+    else:
+        call chapter1_day5_event4
 
-    if chapter1_solved is False:
         # Boss Battle
         call chapter1_boss_scene
 
     call chapter1_day5_event_night
 
+    if chapter1_solved == True:
+        call ch1_investigation_good_end
+    
+    scene backgroundC1_E with fade
+
+    g "Chapter One End"
+
+    scene backgroundwhite with dissolve
+
     # Chapter 2
     jump chapter_two
 
-label investigation_good_end:
+label ch1_investigation_good_end:
     #(Investigation ending successful, bypass boss battle to tape scene then this goes after sleepover scene in chapter 1!)
 
     #Bg forbidden door
@@ -143,7 +154,7 @@ label investigation_good_end:
     "There arre rows of dead monitors, the room lacking the telltale hum of machinery."
     "At the end of the room is another light."
     menu:
-        "Fuck this":
+        "Hell no, I am out of here":
             "I've seen too many horror movies to go blindly into strange places. I should just go to bed."
             # (end scene)
             return
@@ -171,7 +182,7 @@ label investigation_good_end:
 
     #(if punish = yes)
 
-    if chapter1_solved is False:
+    if chapter1_spare is False:
 
         "She turns away from me.."
         "The teachers said she was in detention, not that she's been detained."
@@ -293,7 +304,7 @@ label investigation_good_end:
 
     ci "Chiriyo!"
 
-    n "...right... but are you a demon bunny?"
+    n "...Right... but are you a demon bunny?"
 
     show chiriyo smile
 
@@ -345,6 +356,7 @@ label investigation_good_end:
     #(The final part of Mariko's pathway is unlocked)
 
     return
+
 label investigation_fail_add:
 
     #(Investigation failure. 0 items found AND 0 visits with Mariko, goes before Day 5 event 4. Ability to guess who done it is locked?)

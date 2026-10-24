@@ -3146,7 +3146,7 @@ label chapter1_day5_event3:
     hide uitto yell
     show uitto talk
 
-    u "...you asked the head cheerleader to be friends with me?"
+    u "...You asked the head cheerleader to be friends with me?"
 
     n "Wait, if she didn't tell you, then who?"
 
@@ -3254,140 +3254,147 @@ label chapter1_day5_event3:
     return
 
 label chapter1_day5_event4:
+
     play music "music/Interloper.mp3"
     scene backgroundcafexn
 
-    if chapter1_solved is True :
-        $ Reputation += 5
+    "Jona and I are on the way to the cafeteria when we run into Uitto."
 
-        "Hiro runs up to me."
+    show uitto sad talk
+    
+    "She seems scared."
 
-        show hiro guilty
+    u "Where's Hiro?"
 
-        h "Did you hear? Mariko turned herself in to the principal's office, she confessed to everything."
+    show jona depressed at left
 
-        "Glad to see she kept her word."
+    j "He's supposed to be with you. You're the one that shares last period with him."
 
-        h "Nagen, did you have anything to do with this?"
+    u "I know that, but he didn't show. I thought he ditched class to hide with you guys."
 
-        if Hero > Villain:
+    "I haven't seen him all day. I just assumed Uitto had been with him instead."
+    "Unease settles into my stomach as I dial his number on my burner phone. No answer."
 
-            $ hRep += 2
-            play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
+    n "Did that idiot really try and turn himself in?"
 
-            n "Yeah. I promised I didn't scare her too bad. I just told her we knew she did it and she should come clean."
-            n "It seemed like the best way to avoid a fight."
+    "Uitto goes pale."
 
-            show hiro blush
+    hide jona depressed
+    show jona relaxed at left
 
-            h "Wow, Nagen. That's like, the kind of hero stuff they'd do on tv."
+    j "I'm sure someone has seen him. Before we panic, we should try finding him first."
 
-            n "What do you mean?"
+    hide uitto sad talk
+    show uitto serious
 
-            show hiro smug
+    u "Right, we'll cover more ground if we split up. Whoever finds him should call the others."
 
-            h "You like, took down someone's evil scheme. That's pretty cool."
+    hide uitto serious
+    hide jona relaxed
 
-            n "Come on, you'd do the same for me."
+    "Before I can get a word in, they run off. By now, he should be at the field where we were supposed to surrender."
+    "The question is, who's behind this?"
 
-            "I don't know how successful he'd be, but he would try."
-            "He's right though, I think this is the first time I've stopped a crime from happening."
-            "It feels pretty good."
+    scene backgroundblack with fade
 
-        else:
+    return
 
-            n "I did what I had to. You were going to turn yourself in."
+label chapter1_day5_event4_alt:
 
-            show hiro suppress
+    play music "music/Interloper.mp3"
+    scene backgroundcafexn
 
-            n "I knew it!"
+    $ Reputation += 5
 
-            h "She needed closure man, if I could give that to her-"
+    "Hiro runs up to me."
 
-            n "She wanted to hurt you."
-            n "She thinks you're the evil mastermind, and you know what 'heroes' do to evil masterminds."
+    show hiro guilty
 
-            show hiro sad talk
+    h "Did you hear? Mariko turned herself in to the principal's office, she confessed to everything."
 
-            h "I guess."
+    "Glad to see she kept her word."
 
-            n "Besides, if nothing happens, that means everyone else doesn't care enough to do anything. We took care of the one person who tried to pick a fight."
+    h "Nagen, did you have anything to do with this?"
 
-            show hiro sad smile
+    if Hero > Villain:
 
-            h "Yeah."
+        $ hRep += 2
+        play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
 
-            show hiro
+        n "Yeah. I promised I didn't scare her too bad. I just told her we knew she did it and she should come clean."
+        n "It seemed like the best way to avoid a fight."
 
-            h "Yeah! This it probably for the best."
-        
-        show hiro happy
+        show hiro blush
 
-        h "We should celebrate!"
+        h "Wow, Nagen. That's like, the kind of hero stuff they'd do on tv."
 
-        n "Really?"
+        n "What do you mean?"
 
-        h "Yeah, back home when we hit a milestone, we celebrate with little rewards."
-        h "You did something really cool."
+        show hiro smug
 
-        "He spots Uitto and Jona coming up the path."
+        h "You like, took down someone's evil scheme. That's pretty cool."
 
-        h "Hey, guys! Party at Nagen's dorm!"
+        n "Come on, you'd do the same for me."
 
-        n "Keep it down!"
-        n "Seriously man, we could get in trouble for this."
+        "I don't know how successful he'd be, but he would try."
+        "He's right though, I think this is the first time I've stopped a crime from happening."
+        "It feels pretty good."
 
-        "It's too late, the others are just as excited to sleepover at my dorm."
-        "Hopefully none of the teachers heard."
-
-        return
     else:
 
-        "Jona and I are on the way to the cafeteria when we run into Uitto."
+        n "I did what I had to. You were going to turn yourself in."
 
-        show uitto sad talk
-        
-        "She seems scared."
+        show hiro suppress
 
-        u "Where's Hiro?"
+        n "I knew it!"
 
-        show jona depressed at left
+        h "She needed closure man, if I could give that to her-"
 
-        j "He's supposed to be with you. You're the one that shares last period with him."
+        n "She wanted to hurt you."
+        n "She thinks you're the evil mastermind, and you know what 'heroes' do to evil masterminds."
 
-        u "I know that, but he didn't show. I thought he ditched class to hide with you guys."
+        show hiro sad talk
 
-        "I haven't seen him all day. I just assumed Uitto had been with him instead."
-        "Unease settles into my stomach as I dial his number on my burner phone. No answer."
+        h "I guess."
 
-        n "Did that idiot really try and turn himself in?"
+        n "Besides, if nothing happens, that means everyone else doesn't care enough to do anything. We took care of the one person who tried to pick a fight."
 
-        "Uitto goes pale."
+        show hiro sad smile
 
-        hide jona depressed
-        show jona relaxed at left
+        h "Yeah."
 
-        j "I'm sure someone has seen him. Before we panic, we should try finding him first."
+        show hiro
 
-        hide uitto sad talk
-        show uitto serious
+        h "Yeah! This it probably for the best."
 
-        u "Right, we'll cover more ground if we split up. Whoever finds him should call the others."
+    show hiro happy
 
-        hide uitto serious
-        hide jona relaxed
+    h "We should celebrate!"
 
-        "Before I can get a word in, they run off. By now, he should be at the field where we were supposed to surrender."
-        "The question is, who's behind this?"
+    n "Really?"
 
-        scene backgroundblack with fade
+    h "Yeah, back home when we hit a milestone, we celebrate with little rewards."
+    h "You did something really cool."
 
-        return
+    "He spots Uitto and Jona coming up the path."
+
+    h "Hey, guys! Party at Nagen's dorm!"
+
+    n "Keep it down!"
+    n "Seriously man, we could get in trouble for this."
+
+    "It's too late, the others are just as excited to sleepover at my dorm."
+    "Hopefully none of the teachers heard."
+
+    hide hiro
+
+    return
+
 label chapter1_day5_event_night:
-    #[BG: Outside the Dorm, night]
+
     scene backgrounddorm at darker("#1870dba4")
 
-    play song "music/CoolNights.mp3"
+    play music "music/CoolNights.mp3"
     
     "After all was said and done, Mariko was the one who got in trouble and the rest of us were let go."
     "We still haven't told the teachers about the tape. After all, we don't even know what's on it."
@@ -3440,7 +3447,7 @@ label chapter1_day5_event_night:
 
         show hiro serious
 
-        h "...yeah."
+        h "...Yeah."
 
         "He's not back to his usual self yet. Maybe that girl roughed him up more than I realized."
 
@@ -3448,7 +3455,6 @@ label chapter1_day5_event_night:
 
         n "Of course they will. Everything just takes a little time."
 
-        hide hiro
         return
 
     #[Return to Main Branch]
@@ -3464,11 +3470,14 @@ label chapter1_day5_event_night:
         "That's different. She said all our names on the intercom and... and I never told you the truth about what the brainwashing would do."
         "I didn't want to scare you away from the plan."
 
-        show hiro sad
+        show hiro sad smile
+
         h "......"
         h "I'm not stupid, Nagen."
         h "I knew what we were doing was bad. I just- I wanted to believe the ends would justify the means."
-        show hiro guilt
+        
+        show hiro guilty
+        
         h "In the end, it looks like we hurt more people than we helped."
 
         n "We'll never know that for sure. Nothing would have changed if we didn't do something."
@@ -3480,8 +3489,6 @@ label chapter1_day5_event_night:
         h "No one cares that we're trying."
 
         n "You care, don't you? That's all that should matter. Fuck the people too impatient to wait."
-
-        hide hiro
         
     play music "music/TheySay.mp3"
     scene backgrounddorm at darker("#1870dba4")
@@ -3511,7 +3518,7 @@ label chapter1_day5_event_night:
 
         "I know they wanted to have a party, but this looks supiciously like..."
         
-        show uitto smug
+        show uitto smirk
 
         u "Sleepover!"
     
@@ -3717,14 +3724,5 @@ label chapter1_day5_event_night:
     hide hiro smile
     hide jona happy
     hide uitto smile
-
-    if chapter1_solved is True :
-        jump investigation_good_end
-    
-    scene backgroundC1_E
-
-    g "Chapter One End"
-
-    scene backgroundblack with fade
 
     return

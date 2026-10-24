@@ -1222,7 +1222,7 @@ label introduction_uitto:
 
     n "You're in heels!"
 
-    u "I'm 5' 7” without them." id introduction_uitto_c4d82eac
+    u "I'm 5' 7\" without them." id introduction_uitto_c4d82eac
 
     n "....."
 
@@ -1319,7 +1319,7 @@ label introduction_uitto:
 
         "It doesn't matter":
 
-            $ uRep " 1
+            $ uRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show uitto
@@ -1497,7 +1497,7 @@ label introduction_kitsune:
     menu:
         "That's not a talent":
 
-            $ kRep " 1
+            $ kRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
             show kitsune mad
 
@@ -1775,7 +1775,7 @@ label introduction_kazz:
 
         "I didn't bail":
 
-            $ kkRep " 1
+            $ kkRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show kazz talk
@@ -1946,7 +1946,7 @@ label introduction_oshin:
 
         "You should have TA'd":
 
-            $ muRep " 1
+            $ muRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show mu angry
@@ -2157,7 +2157,7 @@ label introduction_ichita:
 
         "Hiro said you do":
 
-            $ iRep " 1
+            $ iRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show ichita lecture
@@ -2361,7 +2361,7 @@ label introduction_taiga:
 
         "Pets are forbidden":
 
-            $ tRep " 1
+            $ tRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show taiga sad talk1
@@ -2530,7 +2530,7 @@ label introduction_chisei:
 
         "I'm so sorry":
 
-            $ chRep " 1
+            $ chRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show chisei frown2
@@ -2793,7 +2793,7 @@ label introduction_shoma:
 
         "This is boring":
 
-            $ shRep " 1
+            $ shRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show shoma observe
@@ -3006,7 +3006,7 @@ label introduction_setsuna:
 
         "Something interesting":
 
-            $ sRep " 1
+            $ sRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show setsuna glare
@@ -3163,7 +3163,7 @@ label introduction_kietsu:
     menu:
         "What's wrong with you?":
 
-            $ kiRep " 1
+            $ kiRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show kietsu serious
@@ -3424,7 +3424,7 @@ label introduction_momoko:
 
         "What happened to you?":
 
-            $ mhRep " 1
+            $ mhRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show momoko sad
@@ -3671,7 +3671,7 @@ label introduction_rei:
 
         "Aren't they heavy?":
 
-            $ reRep " 1
+            $ reRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show rei disappointed
@@ -3950,7 +3950,7 @@ label introduction_rise:
                     
         "Decline":
 
-            $ rRep " 1
+            $ rRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show rise frown
@@ -4144,7 +4144,7 @@ label introduction_dyre:
 
         "Of course":
 
-            $ dRep " 1
+            $ dRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show dyre disturbed
@@ -4388,7 +4388,7 @@ label introduction_jona:
 
         "Look for an exit":
 
-            $ jRep " 1
+            $ jRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             n "You're the one who walked up to me."
@@ -4680,8 +4680,8 @@ label Meeting:
     menu:
         "Forget her":
 
-            $ uRep " 1
-            $ jRep " 1
+            $ uRep -= 1
+            $ jRep -= 1
             play sound "752275__ienba__magic-reveal.ogg"
 
             show hiro guilty at left_center

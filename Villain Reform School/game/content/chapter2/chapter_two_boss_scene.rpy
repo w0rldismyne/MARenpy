@@ -3,7 +3,9 @@ label chapter2_boss_scene:
 
     #BG: Gym Dark
 
-    scene backgroundCh2_RiseArena
+    scene backgroundCh2_RiseArena:
+        yalign 1.0 xalign 0.0
+        linear 4.0 yalign 0.0 zoom 0.75
 
     "The main lights in the gym are off, but it's not completely dark. The pool is open. Instead of water, there's... furniture?"
     "Large, ornate antiques that would look more at home in a mansion than a gym are haphazardly stored in the empty pool."
@@ -72,74 +74,38 @@ label chapter2_boss_scene:
 
     r "I apologize, but this will hurt a bit."
 
+    show backgroundCh2_RiseCloseup with dissolve:
+        zoom 1.0
+        linear 0.5 zoom 2.0
+
     "I dive into the maze of furniture for cover. The walls of the pool glow as I run to get out of sight."
+
+    window hide
+    show backgroundblack with dissolve
+
+    hide backgroundCh2_RiseCloseup
+
+    show f1 with Dissolve(4.0):
+        subpixel True
+        xanchor 0.5 yanchor 0.5
+        xalign 0.5 yalign 0.5
+        zoom 1.2
+        pause 2.0
+        linear 1.0 zoom 1.0
+
+    show backgroundblack zorder -1
+
+    show mazerose zorder -1 with Dissolve(0.2)
+
+    hide backgroundblack
+
+    jump chapter2_boss_battle_initial
 
     #"Phase 1 Combat"
 
     #The maze is the main feature; avoid getting hit.
 
-    r "You are just too close to the situation to realize you are being used. Let me protect you."
-
-    menu:
-        "This again?":
-            n "I never asked for your help or protection."
-            n "My friends aren't using me, I'm trying to help them because I want to."
-        "Maybe":
-            #bad end point
-            n "Even if I did want help, this is definitely not helping."
-            n "How do I know you're not going to use me too."
-
-    r "You were in my position once, with no one to rely on. Why do you refuse to see the ends justify the means?"
-
-    menu: 
-        "Not like this":
-            #bad end point
-            n "This... this isn't the same as back then."
-            n "No one was in danger until you started shit again."
-            n "You're hurting way more people than you're helping"
-        "You chose not to rely on anyone":
-            n "You're the one that won't talk to your old friends."
-            n "You didn't even bother to make new ones."
-            n "The reason you think you're alone is you keep choosing to be."
-
-    r "He hurt so many people. He lied to you so you would defend him."
-
-    menu:
-        "He didn't have to":
-            #bad end point
-            n "I'd defend him regardless."
-            n "People like you always pick on guys weaker than them."
-        "He doesn't lie":
-            n "He hasn't said anything hoping you'd give up and be normal!"
-            "I didn't think it would work, but he certainly wasn't manipulating me into being here."
-            n "I may not always understand him, but I know he'd never lie to me."
-            n "You're the one making stuff up about my friends."
-
-    r "My parents may not have been the best people, but they did not deserve to die just because he said so. I'm trying to make things better."
-
-    menu:
-        "Yeah, for you":
-            n "Not the best people?"
-            n "They used their money to hurt people on purpose."
-            n "All Jona ever did was point out where 'rich people' were throwing their money."
-            n "If other people thought it was that included your parents, they're the problem, not him."
-        "He didn't mean it":
-            #bad end point
-            n "People took a metaphor out of context."
-            n "He never asked people to literally kill them."
-            n "We all just wanted one thing in Guwon to not be horrible."
-
-    r "I should have been more clear; this will not kill you. It will just put you to sleep for a while."
-    r "Be a dear and step into one of those clouds. I really would like to avoid hurting you."
-
-    menu:
-        "I'm not giving up!":
-            n "I'm not turing a blind eye to this."
-            n "You're blaming someone else for your family's failings."
-        "-hesitate-":
-            #bad end point
-            n "I'm not turing a blind eye to this."
-            n "You're blaming someone else for your family's failings."
+#------
 
     #"Midfight Cutscene"
 

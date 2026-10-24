@@ -448,7 +448,7 @@ label Yoku3:
             y "What five year old's done a-anything noteworthy? Don't go making baseless assumptions."
 
             n "True, but your parents didn't think you'd do anything, did they? You're an intelligence major, aren't you?"
-            n "That means your Proficiency probably didn't surface until school, around the same time they made you go.”"
+            n "That means your Proficiency probably didn't surface until school, around the same time they made you go."
 
             "I started laughing, I couldn't help it, picturing some snob disappointed that all their kid could do was hear well."
 

@@ -3,6 +3,9 @@ label chapter_two:
     # Intro
     $ current_chapter = c_chapter_two
 
+    # Funny visual bug if this is not here during the next flashback
+    call investigation_check
+
     $ set_profile_availability("chisei", c_i_profile_available)
     $ set_profile_availability("dyre", c_i_profile_available)
     $ set_profile_availability("ichita", c_i_profile_available)
@@ -19,6 +22,11 @@ label chapter_two:
     $ set_profile_availability("shoma", c_i_profile_available)
     $ set_profile_availability("taiga", c_i_profile_available)
     $ set_profile_availability("yoku", c_i_profile_available)
+
+    play music "music/TriumphantReturn.mp3"
+    show backgroundCh2_Title
+    with dissolve
+    pause
 
     call chapter2_day1_event1
 
@@ -110,6 +118,8 @@ label chapter_two:
 
     call freetime
 
+    call chapter2_day6_event3
+
     call chapter2_day6_night
 
     call chapter2_day7_event1
@@ -132,14 +142,24 @@ label chapter_two:
 
     call chapter2_day8_event1
 
-    call freetime
+    if chapter2_solved == True:
+        pass
+    else:
+        call chapter2_boss_scene
 
     call chapter2_day8_event2
+
+    # Replace with Ch2 Ending
+    #scene backgroundC1_E with fade
+
+    g "Chapter Two End"
+
+    scene backgroundwhite with dissolve
 
     # Chapter 3
     return
 
-label investigation_good_end_Ch2:
+label ch2_investigation_good_end:
     scene backgrounddoor
 
     "Detention."
@@ -154,7 +174,7 @@ label investigation_good_end_Ch2:
             "It looks like she's finally allowed to stand without Chiriyo yelling at her, though her ankle is still casted up."
             m "God, we need to get a bell on you or something. It's way too easy to get snuck up on in here." 
             "An impressive feat considering one of her walls is a glass window."
-            if Rei_note = True:
+            if Rei_note == True:
                 n "I brought you something."
                 "I unfold the note and hold it up to the glass. She squints a bit, reading it over."
                 m "Oh my God." 

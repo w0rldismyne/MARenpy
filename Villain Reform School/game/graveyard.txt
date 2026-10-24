@@ -1676,3 +1676,19 @@ transform profile_4_slide_up:
                     #SetVariable("profile_page", 1),
                     #SetScreenVariable("clipboard_reset", False)
                 #]
+
+    #if temp_culprit_list:
+    #    vbox:
+    #        xpos 1.0
+    #        ypos 0.5
+    #        xanchor 0.1
+    #        yanchor 0.5
+
+    #        for character, data in i_profile_list.items():
+    #            textbutton data["name"]:
+    #                xanchor 1.0
+    #                yanchor 0.5
+    #                text_size 50
+    #                action Jump("chapter1_investigation_fail")
+    #                if character == "mariko":
+    #                    action Jump("chapter1_interrogation")

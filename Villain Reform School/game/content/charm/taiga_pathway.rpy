@@ -266,8 +266,8 @@ label Taiga3:
             show taiga grin
             t "Does it matter?"
             "I don't know what all will count toward finalizing my sentence. I got careless."
-        "I miss knowing what to do":	
-            $tRep += 1
+        "I miss knowing what to do":
+            $ tRep += 1
             play sound "823594__happypizzabread__game-ui-sfx-practice-9.ogg"
             show taiga grimace
             n "It sounds stupid to you I'm sure, but back then I knew what I was doing because the school required it and what I was doing for myself."
@@ -432,7 +432,7 @@ label Taiga4:
             #Unlocks bonus interaction with Shoma)
             t "Yeah. It didn't matter that I didn't go to school with you guys, I got scooped up with everyone else. I didn't get this from it, though." (13)
             #[If talked to Shoma first]
-            if $shoma_quest = True:
+            if shoma_quest == True:
                 "This was the kid that saved Shoma's life."
                 t "What's so funny?"
                 n "Well, Cinderella, someone's been desperate to find you. You're a hero."
@@ -446,7 +446,7 @@ label Taiga4:
                     n "But you brought a costume from home, didn't you?"
                     t "Forget that part, what do you mean he's been sitting on a confession?"
                     "Sorry, Shoma. It's for the greater good."
-                    n "Taiga, come on. He's in love with you.
+                    n "Taiga, come on. He's in love with you."
                     n "If you go up to him and say who you are, he'll be over the moon, instant boyfriend."
                     n "I guarantee it."
                     t "He doesn't even know me!"
@@ -454,24 +454,24 @@ label Taiga4:
                     t "You're crazy."
                     "Hopefully that means he'll think about it."
                 else:
-                t "Aw man. Not that I'm not flattered, but I don't know him." 
-                n "Sure you do."
-                t "I mean, he's never wanted to hang out or anything."
-                t "I think the only time I talked to him was when he was preparing for the dance, and even then..."
-                t "It sounds like he's in love with an idea."
-                n "I guess, but don't all relationships start out that way? You don't really know someone, and then you do?"
-                t "Yeah. You and I have been getting to know each other pretty well. You don't have to worry about some rival."
-                n "I didn't mean it like that!"
-                t "Sure you didn't." 
+                    t "Aw man. Not that I'm not flattered, but I don't know him." 
+                    n "Sure you do."
+                    t "I mean, he's never wanted to hang out or anything."
+                    t "I think the only time I talked to him was when he was preparing for the dance, and even then..."
+                    t "It sounds like he's in love with an idea."
+                    n "I guess, but don't all relationships start out that way? You don't really know someone, and then you do?"
+                    t "Yeah. You and I have been getting to know each other pretty well. You don't have to worry about some rival."
+                    n "I didn't mean it like that!"
+                    t "Sure you didn't." 
             else:
-            n "Why didn't you say something sooner?"
-            t "I mean, didn't everyone get caught up in it? I wasn't special."
-            n "I don't know, everyone else got a chance to yell at me for dabbling in mind control."
-            "When he said he wasn't from here, I assumed that meant he wasn't involved."
-            t "Nagen, I wasn't mind controlled."
-            n "Hunh?"
-            t "I noticed that kids with the helmets weren't attacking each other, so I put on a dud and pretended I was one of you guys until I could figure out what the hell was going on."
-            t "I still don't get it, but hey, I'm alive aren't I?"
+                n "Why didn't you say something sooner?"
+                t "I mean, didn't everyone get caught up in it? I wasn't special."
+                n "I don't know, everyone else got a chance to yell at me for dabbling in mind control."
+                "When he said he wasn't from here, I assumed that meant he wasn't involved."
+                t "Nagen, I wasn't mind controlled."
+                n "Hunh?"
+                t "I noticed that kids with the helmets weren't attacking each other, so I put on a dud and pretended I was one of you guys until I could figure out what the hell was going on."
+                t "I still don't get it, but hey, I'm alive aren't I?"
     "He shrugs and disappears into the water. A few seconds later, his head pops up."
     show taiga sad talk1
     t "Wh-what are you w-waiting f-f-for?" 
@@ -498,6 +498,7 @@ label Taiga4:
     ik "It's not safe to go in the water without someone on lifeguard duty. Drowning happens faster than you think."
     "We get lectured the rest of the way back to camp."
     hide taiga
+
 label Taiga5:
     scene backgroundroomn
     "I promised Taiga I'd dig through all my memories, even the unpleasant ones, to see if I could find that circus number. I even tried looking it up during vacation, but I got nothing."
@@ -645,7 +646,7 @@ label Taiga5:
     n "Jona would love something like that."
     "Next time he tries to draw me, it'll be with big window eyes."
     hide taiga
-label Taiga5:
+label Taiga6:
     #(Chapter 5, before going on the mission, with a maxed out rep)
     #(Characters: Nagen, Taiga, Taiga's Mom, Maimai)
     scene backgroundschoolnoon

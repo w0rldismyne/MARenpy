@@ -1037,7 +1037,7 @@ label life_1:
     "I mean, she was the leader of the Karmic Gladiators; she devoted her life to helping people that everyone thought couldn't be helped."
     "She was everyone's hero, especially mine..."
 
-    play music "music/Sappheiros.mp3"
+    play music "music/Lights.mp3"
 
     window hide
     scene backgroundP1 with fade:
@@ -1383,5 +1383,7 @@ label life_1:
     "I can see other kids unloading their luggage and milling about the grounds. Now would be a good chance to find my friends."
 
     stop music
+
+    scene backgroundwhite with dissolve
 
     jump chapter_one

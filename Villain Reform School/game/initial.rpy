@@ -1,3 +1,5 @@
+define config.log = "log.txt"
+
 # Students
 define a        = Character("Apex",              window_background = "gui/text_boxes/ApexText.png")
 define ch       = Character("Chisei Jikoma",     window_background = "gui/text_boxes/ChiseiText.png")
@@ -55,7 +57,7 @@ define g        = Character("",                  window_background = "gui/text_b
 
 #backgrounds
 image backgroundpolice         = "Backgrounds/PoliceRoom.png"
-image backgroundblack          = "Backgrounds/black.png"
+image backgroundblack          = "#000000"
 image backgroundwhite          = "#ffffff"
 image backgroundamp            = "Backgrounds/ampetheater.jpg"
 image backgroundavroom         = "Backgrounds/AVRoom.jpg"
@@ -70,7 +72,7 @@ image backgroundclass          = "Backgrounds/class.jpeg"
 image backgroundcourtyard      = "Backgrounds/Courtyard.png"
 image backgroundcourtyardnight = "Backgrounds/CourtyardN.png"
 image backgroundtown           = "Backgrounds/devestation.png"
-image backgrounddetention      = "Backgrounds/denetion.png"
+image backgrounddetention      = "Backgrounds/detention.png"
 image backgrounddorm           = "Backgrounds/Dorms.jpeg"
 image backgrounddoor           = "Backgrounds/Door.jpg"
 image backgroundfield          = "Backgrounds/Field.png"
@@ -207,7 +209,7 @@ image ichita sad talk2 = "Sprites/Ichita/ichitasadtalk2.png"
 image ichita shout = "Sprites/Ichita/ichitaschout.png"
 image ichita scowl = "Sprites/Ichita/ichitascowl.png"
 image ichita talk1 = "Sprites/Ichita/ichitatalk.png"
-image ichita talk2 = "Sprites/Ichita/ichitatalk.png"
+image ichita talk2 = "Sprites/Ichita/ichitatalk2.png"
 image ichita tease = "Sprites/Ichita/ichitatease.png"
 
 #Jona
@@ -530,13 +532,13 @@ image yaguchi talk3 = "Sprites/Yaguchi/yaguchitalk3.png"
 image yaguchi yell = "Sprites/Yaguchi/yaguchiyell.png"
 
 #Chiriyo
-image chiriyo = "Sprites/Chiriryo/base.png"
-image chiriyo smile = "Sprites/Chiriryo/chiriyosmile2.png"
-image chiriyo cry = "Sprites/Chiriryo/cryglitch.png"
-image chiriyo happy = "Sprites/Chiriryo/happy.png"
-image chiriyo pout = "Sprites/Chiriryo/pout.png"
-image chiriyo sad talk = "Sprites/Chiriryo/sadtalk.png"
-image chiriyo talk = "Sprites/Chiriryo/talk.png"
+image chiriyo = "Sprites/Chiriyo/base.png"
+image chiriyo smile = "Sprites/Chiriyo/chiriyosmile2.png"
+image chiriyo cry = "Sprites/Chiriyo/cryglitch.png"
+image chiriyo happy = "Sprites/Chiriyo/happy.png"
+image chiriyo pout = "Sprites/Chiriyo/pout.png"
+image chiriyo sad talk = "Sprites/Chiriyo/sadtalk.png"
+image chiriyo talk = "Sprites/Chiriyo/talk.png"
 
 #Clues
 
@@ -814,6 +816,11 @@ default promChisei = False
 default promKit = False
 default promMu = False
 
+# Chapter 3 Variables
+default chapter3_solved = False
+default chapter3_interrogation_chance = True
+default chapter3_spare = False
+
 init python:
     listOfDirectories = ["Apex",
         "Chisei",
@@ -856,6 +863,15 @@ init python:
 
     config.auto_voice = extendedSearchVoice
 
+    config.keymap['screenshot'].remove('noshift_K_s')
+
+    config.keymap['director'].remove('noshift_K_d')
+
+    # This version
+    config.keymap['accessibility'].remove('K_a')
+
+    config.keymap['director'].append('shift_K_d')
+
 # THE GAME STARTS HERE!
 label start:
     camera:
@@ -865,6 +881,7 @@ label start:
     #$ i_chapter_layouts[c_chapter_one][1]["panel1"]["state"] = c_i_to_be_revealed
     #call profile_cards_setup
     #call inventory
+    call investigation_initial_preset
 
     #jump prologue
 

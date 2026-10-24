@@ -172,7 +172,7 @@ label chapter1_investigation_chisei_loop:
 
     "I came here looking for answers, but Chisei ended up cheering me up instead."
 
-    $ fake_reveal_panel(1, "panel5")
+    $ fake_reveal_panel(1, "panel5", ch1_p1panel5)
 
     call investigation_unlock
 
@@ -182,7 +182,6 @@ label chapter1_investigation_chisei_loop:
 
     $ set_profile_availability("ichita", c_i_profile_available)
     $ set_profile_availability("mu", c_i_profile_available)
-
 
     #$ reveal_flag5 = True
 #
@@ -374,7 +373,7 @@ label chapter1_investigation_dyre_loop:
     "Just who does he think he is anyway? I can't let him get to me."
     "I should leave before I get caught."
 
-    $ fake_reveal_panel(1, "panel5")
+    $ fake_reveal_panel(1, "panel5", ch1_p1panel5)
 
     call investigation_unlock
 
@@ -574,7 +573,7 @@ label chapter1_investigation_ichita_loop:
 
     "Damn, that was fast. I should go now."
 
-    $ fake_reveal_panel(1, "panel2")
+    $ fake_reveal_panel(1, "panel2", ch1_p1panel2)
 
     call investigation_unlock
 
@@ -981,11 +980,13 @@ label chapter1_investigation_kazz_loop:
     "He shoves his hands in his pockets and leaves without another word."
     "Does he think I'm not going to fight or does he just not care what happens to me? Whatever, I got what I needed anyway."
     
-    $ fake_reveal_panel(1, "panel1")
+    $ fake_reveal_panel(1, "panel1", ch1_p1panel1)
+    $ fake_reveal_panel(1, "panel6", ch1_p1panel6)
 
     call investigation_unlock
 
     $ real_reveal_panel(1, "panel1")
+    $ real_reveal_panel(1, "panel6")
 
     $ set_profile_availability("kazz", c_i_profile_unavailable)
 
@@ -1358,8 +1359,8 @@ label chapter1_investigation_kitsune_loop:
     "She hobbles out of the room and leaves me behind."
     "I'm the only one left in the library."
 
-    $ fake_reveal_panel(1, "panel2")
-    $ fake_reveal_panel(1, "panel3")
+    $ fake_reveal_panel(1, "panel2", ch1_p1panel2)
+    $ fake_reveal_panel(1, "panel3", ch1_p1panel3)
 
     call investigation_unlock
 
@@ -1379,6 +1380,172 @@ label chapter1_investigation_kitsune_loop:
     #call investigation_profile_set(profile_kitsune, False)
 
     return
+
+label chapter1_investigation_mariko:
+
+    scene backgroundclass
+
+    show mariko
+    
+    "I find Mariko in the art room. She has various pencils and markers scattered about the table."
+    "Scraps of paper litter the floor and she seems to be pasting together various concepts for posters."
+
+    n "You really do work without rest."
+
+    "She visibly jumps and looks over at me with wide eyes."
+
+    show mariko mad talk
+
+    m "Nagen! For the love of- Why do you always sneak up on me?"
+
+    n "...You're facing the door. I can't help it if you're not paying attention to your surroundings."
+    n "Though you seemed pretty preoccupied by all of this."
+
+    "I gesture to the looming piles of art supplies."
+
+    show mariko judge
+
+    m "Yeah, I'm not exactly the best at art stuff, but I think I made something half decent."
+
+    "She holds up a sticky page, one of the shapes getting slowly pulled down by the weight of gravity."
+    "It's certainly eye-catching, which I guess is the goal so..."
+
+    n "It looks like you put a lot of work into it."
+
+    show mariko grin
+
+    m "Thanks!"
+
+    n "Maybe you should take a break."
+
+    show mariko talk
+
+    m "...Sure... I take it you want to talk then?"
+    m "Well, go ahead, grab a seat. No point in haunting the doorway now."
+
+    "I clear a spot for myself under her watchful eye."
+
+    hide mariko
+
+label chapter1_investigation_mariko_loop:
+
+    menu:
+        "Alibi":
+
+            show mariko sad talk
+
+            m "It was a long drive out here, so I didn't have as much time to practice for the assembly as I would have liked."
+            m "Trying to remember a three year old routine while everyone stares at you silently- It was a nightmare."
+            m "And then to have Mu and Rei drag me off the stage? I've never been so humiliated."
+
+            n "Is your ankle okay?"
+
+            show mariko smile talk
+
+            m "It's a little swollen, but it's fine. You people worry too much."
+            m "I barely got the cheer ad in time as it is."
+
+            n "Why not get another cheerleader to drop it off for you?"
+
+            show mariko talk
+
+            m "Only club leaders are allowed in Kazz's precious booth."
+            m "At least, that's what I was told. Though I'm sure if he had it his way, no one would be allowed in."
+            m "Thank goodness he trusts me in there." #(+Cheer Ad)
+            
+            hide mariko
+            
+            #$ inventory.ShowClue(clue_cheerad)
+
+            jump chapter1_investigation_mariko_loop
+
+        "Missing Phone":
+
+            show mariko upset talk
+
+            "Mariko falters and looks away."
+
+            m "Yeah, he told me about that. He's really upset about it too..."
+            m "Still, it's not like it's gone forever, right? I'm sure it'll turn up somewhere."
+            m "You know what they say; 'It's always in the last place you think to look'."
+
+            n "Isn't that because people stop looking once they find what they were looking for?"
+
+            show mariko cry
+
+            m "I-I don't know. Maybe?"
+
+            n "You sure you haven't seen anyone with it? If someone stole it-"
+
+            show mariko sad talk
+
+            m "I mean, I saw Kitsune with something that might be Kazz's, but I couldn't get a good look at it."
+            m "I don't want to accuse anyone of stealing, but... It's probably in the lost and found or something."
+            m "I'm sure he's just avoiding asking the teachers about it."
+
+            "She refused to look at me the entire time she spoke."
+            
+            #-Other-   
+            #m "That's Kazz's, I don't know much about it."
+            
+            hide mariko
+
+            jump chapter1_investigation_mariko_loop
+
+        "Leave":
+            pass
+            #call MarikoCheck
+#label MarikoCheck:
+    #if Intel >= 3:
+        #call MarikoInt
+    #else:
+        #call MarikoOutro
+
+    show mariko cry
+
+    m "Sorry I couldn't be more help."
+    m "I've been so busy with my own stuff, I haven't had time to really look around or talk to people."
+
+    n "You seem to know a lot of people here though."
+
+    show mariko sad talk
+
+    m "Yeah, but that's just in passing. It's not the same."
+
+    "I guess that's why she's working on posters alone."
+
+    show mariko judge
+
+    m "I don't get why you're so hung up on this. In a couple of weeks, it won't even matter. People will move on."
+
+    n "Exactly. If I don't do something now, people might forget what they saw."
+    n "People who could help. I can't just sit by when someone's threatened my friend."
+
+    m "I see... I hope, for your sake, you don't get hurt over this."
+    m "We've all been through enough without adding to the body count."
+    m "I can see where you're coming from, though. You're a good friend."
+
+    n "Uhh... thanks, I guess."
+
+    "If I stick around any longer, I'll get roped into making posters for a club I'm not in. I should go."
+
+    hide mariko
+
+    call investigation_unlock
+
+    $ set_profile_availability("mariko", c_i_profile_unavailable)
+
+    $ set_profile_availability("kitsune", c_i_profile_available)
+    $ set_profile_availability("rei", c_i_profile_available)
+
+
+    #call investigation_progress_update
+#
+    #call investigation_profile_set(profile_mariko, False)
+    #call investigation_profile_set(profile_kitsune, True)
+    #call investigation_profile_set(profile_rei, True)
+
+    return #connect to main game loop
 
 label chapter1_investigation_momoko:
 
@@ -1527,7 +1694,7 @@ label chapter1_investigation_momoko_loop:
 
     "I should probably go."
 
-    $ fake_reveal_panel(1, "panel5")
+    $ fake_reveal_panel(1, "panel5", ch1_p1panel5)
 
     call investigation_unlock
 
@@ -1736,7 +1903,7 @@ label chapter1_investigation_mu_loop:
 
     hide mu
 
-    $ fake_reveal_panel(1, "panel4")
+    $ fake_reveal_panel(1, "panel4", ch1_p1panel4)
 
     call investigation_unlock
 
@@ -1744,15 +1911,7 @@ label chapter1_investigation_mu_loop:
 
     $ set_profile_availability("mu", c_i_profile_unavailable)
 
-    #$ reveal_flag4 = True
-#
-    #call investigation_progress_update
-#
-    #$ reveal4 = True
-    #
-    #call investigation_profile_set(profile_mu, False)
-
-    return #connect to loop
+    return
 
 label NanaseInv1:
 
@@ -2169,7 +2328,7 @@ label chapter1_investigation_rei_loop:
 
     hide rei
 
-    $ fake_reveal_panel(1, "panel3")
+    $ fake_reveal_panel(1, "panel3", ch1_p1panel3)
 
     call investigation_unlock
 
@@ -2507,7 +2666,7 @@ label chapter1_investigation_setsuna_loop:
 
     hide setsuna
 
-    $ fake_reveal_panel(1, "panel4")
+    $ fake_reveal_panel(1, "panel4", ch1_p1panel4)
 
     call investigation_unlock
 
@@ -2905,169 +3064,3 @@ label YokuInvestigation1:
     "Shit, I better get out of here."
 
     return  
-
-label chapter1_investigation_mariko:
-
-    scene backgroundclass
-
-    show mariko
-    
-    "I find Mariko in the art room. She has various pencils and markers scattered about the table."
-    "Scraps of paper litter the floor and she seems to be pasting together various concepts for posters."
-
-    n "You really do work without rest."
-
-    "She visibly jumps and looks over at me with wide eyes."
-
-    show mariko mad talk
-
-    m "Nagen! For the love of- Why do you always sneak up on me?"
-
-    n "...You're facing the door. I can't help it if you're not paying attention to your surroundings."
-    n "Though you seemed pretty preoccupied by all of this."
-
-    "I gesture to the looming piles of art supplies."
-
-    show mariko judge
-
-    m "Yeah, I'm not exactly the best at art stuff, but I think I made something half decent."
-
-    "She holds up a sticky page, one of the shapes getting slowly pulled down by the weight of gravity."
-    "It's certainly eye-catching, which I guess is the goal so..."
-
-    n "It looks like you put a lot of work into it."
-
-    show mariko grin
-
-    m "Thanks!"
-
-    n "Maybe you should take a break."
-
-    show mariko talk
-
-    m "...Sure... I take it you want to talk then?"
-    m "Well, go ahead, grab a seat. No point in haunting the doorway now."
-
-    "I clear a spot for myself under her watchful eye."
-
-    hide mariko
-
-label chapter1_investigation_mariko_loop:
-
-    menu:
-        "Alibi":
-
-            show mariko sad talk
-
-            m "It was a long drive out here, so I didn't have as much time to practice for the assembly as I would have liked."
-            m "Trying to remember a three year old routine while everyone stares at you silently- It was a nightmare."
-            m "And then to have Mu and Rei drag me off the stage? I've never been so humiliated."
-
-            n "Is your ankle okay?"
-
-            show mariko smile talk
-
-            m "It's a little swollen, but it's fine. You people worry too much."
-            m "I barely got the cheer ad in time as it is."
-
-            n "Why not get another cheerleader to drop it off for you?"
-
-            show mariko talk
-
-            m "Only club leaders are allowed in Kazz's precious booth."
-            m "At least, that's what I was told. Though I'm sure if he had it his way, no one would be allowed in."
-            m "Thank goodness he trusts me in there." #(+Cheer Ad)
-            
-            hide mariko
-            
-            #$ inventory.ShowClue(clue_cheerad)
-
-            jump chapter1_investigation_mariko_loop
-
-        "Missing Phone":
-
-            show mariko upset talk
-
-            "Mariko falters and looks away."
-
-            m "Yeah, he told me about that. He's really upset about it too..."
-            m "Still, it's not like it's gone forever, right? I'm sure it'll turn up somewhere."
-            m "You know what they say; 'It's always in the last place you think to look'."
-
-            n "Isn't that because people stop looking once they find what they were looking for?"
-
-            show mariko cry
-
-            m "I-I don't know. Maybe?"
-
-            n "You sure you haven't seen anyone with it? If someone stole it-"
-
-            show mariko sad talk
-
-            m "I mean, I saw Kitsune with something that might be Kazz's, but I couldn't get a good look at it."
-            m "I don't want to accuse anyone of stealing, but... It's probably in the lost and found or something."
-            m "I'm sure he's just avoiding asking the teachers about it."
-
-            "She refused to look at me the entire time she spoke."
-            
-            #-Other-   
-            #m "That's Kazz's, I don't know much about it."
-            
-            hide mariko
-
-            jump chapter1_investigation_mariko_loop
-
-        "Leave":
-            pass
-            #call MarikoCheck
-#label MarikoCheck:
-    #if Intel >= 3:
-        #call MarikoInt
-    #else:
-        #call MarikoOutro
-
-    show mariko cry
-
-    m "Sorry I couldn't be more help."
-    m "I've been so busy with my own stuff, I haven't had time to really look around or talk to people."
-
-    n "You seem to know a lot of people here though."
-
-    show mariko sad talk
-
-    m "Yeah, but that's just in passing. It's not the same."
-
-    "I guess that's why she's working on posters alone."
-
-    show mariko judge
-
-    m "I don't get why you're so hung up on this. In a couple of weeks, it won't even matter. People will move on."
-
-    n "Exactly. If I don't do something now, people might forget what they saw."
-    n "People who could help. I can't just sit by when someone's threatened my friend."
-
-    m "I see... I hope, for your sake, you don't get hurt over this."
-    m "We've all been through enough without adding to the body count."
-    m "I can see where you're coming from, though. You're a good friend."
-
-    n "Uhh... thanks, I guess."
-
-    "If I stick around any longer, I'll get roped into making posters for a club I'm not in. I should go."
-
-    hide mariko
-
-    call investigation_unlock
-
-    $ set_profile_availability("mariko", c_i_profile_unavailable)
-
-    $ set_profile_availability("kitsune", c_i_profile_available)
-    $ set_profile_availability("rei", c_i_profile_available)
-
-
-    #call investigation_progress_update
-#
-    #call investigation_profile_set(profile_mariko, False)
-    #call investigation_profile_set(profile_kitsune, True)
-    #call investigation_profile_set(profile_rei, True)
-
-    return #connect to main game loop

@@ -4,6 +4,8 @@ init python:
             return pitchblack
         elif panel_state is c_i_to_be_revealed:
             return reveal_panel
+        elif panel_state is c_i_dual:
+            return dual_panel
         else:
             return None
 
@@ -11,24 +13,62 @@ init python:
         i_profile_list[name]["available"] = value
         return
 
-    def fake_reveal_panel(page, panel_name):
-        if i_chapter_layouts[current_chapter][page][panel_name]["state"] is c_i_hidden:
-            i_chapter_layouts[current_chapter][page][panel_name]["state"] = c_i_to_be_revealed
+    def fake_reveal_panel(page, panel_key, panel_name):
+        if panel_name.discovered:
+            return
+        else:
+            panel_name.discovered = True
+            current_panel_slot = i_chapter_layouts[current_chapter][page][panel_key]
+            
+            if current_panel_slot.state is c_i_hidden:
+                current_panel_slot.state = c_i_to_be_revealed
+            
+            if current_panel_slot.discovered_count > 0:
+                current_panel_slot.state = c_i_dual
+            else:
+                current_panel_slot.display = panel_name
+            
+            current_panel_slot.possible.append(panel_name)
+            current_panel_slot.discovered_count += 1
+
         return
 
-    def real_reveal_panel(page, panel_name):
-        i_chapter_layouts[current_chapter][page][panel_name]["state"] = c_i_revealed
+    def real_reveal_panel(page, panel_key):
+        current_panel_slot = i_chapter_layouts[current_chapter][page][panel_key]
+        if current_panel_slot.state is c_i_to_be_revealed:
+            current_panel_slot.state = c_i_revealed
         return
 
-# Chapter Constant
+    class PanelSlot:
+        def __init__(self):
+            self.display = None
+            self.possible = []
+            self.discovered_count = 0
+            self.state = c_i_hidden
+
+        def swap(self):
+            position = self.possible.index(self.display)
+            position+= 1
+            if position == self.discovered_count:
+                position = 0
+            self.display = self.possible[position]
+            return
+
+    class Panel:
+        def __init__(self, image):
+            self.discovered = False
+            self.image = image
+
+# Chapter Constants
 define c_chapter_prologue = 0
 define c_chapter_one = 1
 define c_chapter_two = 2
 
-# Investigation States Constants
+# Investigation Panels Constants
 define c_i_hidden = -1
 define c_i_to_be_revealed = 0
 define c_i_revealed = 1
+define c_i_dual = 2
 
 # Profile States
 define c_i_profile_available = 1
@@ -41,9 +81,6 @@ define profile_animation_lock = False
 default clipboard_opened_state = False
 define profile_page = 1
 
-
-define temp_culprit_list = False
-
 # region UI Elements - Investigation
 image clipboard_idle:
     "images/Interactables/clipboard_interactable.png"
@@ -51,6 +88,13 @@ image clipboard_idle:
 image clipboard_hover:
     "images/Interactables/clipboard_interactable.png"
     matrixcolor BrightnessMatrix(0.1)
+
+image page_flaps_idle:
+    "images/Interactables/Manga page corners.png"
+
+image page_flaps_hover:
+    "images/Interactables/Manga page corners.png"
+    matrixcolor ColorizeMatrix("#f00","#ffffff")
 
 image tab_pi_idle:
     "images/Interactables/TabPinkFalse.png"
@@ -273,63 +317,63 @@ image i_profile_yoku_inactive:
 
 # region Panels
 # Ch 1 Panels
-define ch1_panel1 = "images/Interactables/Manga_Ch1_Panel_1.png"
-define ch1_panel2 = "images/Interactables/Manga_Ch1_Panel_2.png"
-define ch1_panel3 = "images/Interactables/Manga_Ch1_Panel_3.png"
-define ch1_panel4 = "images/Interactables/Manga_Ch1_Panel_4.png"
-define ch1_panel5 = "images/Interactables/Manga_Ch1_Panel_5.png"
+default ch1_p1panel1 = Panel("images/Interactables/Manga_Ch1_Panel_1.png")
+default ch1_p1panel2 = Panel("images/Interactables/Manga_Ch1_Panel_2.png")
+default ch1_p1panel3 = Panel("images/Interactables/Manga_Ch1_Panel_3.png")
+default ch1_p1panel4 = Panel("images/Interactables/Manga_Ch1_Panel_4.png")
+default ch1_p1panel5 = Panel("images/Interactables/Manga_Ch1_Panel_5.png")
+default ch1_p1panel6 = Panel("images/Interactables/Manga_Ch1_Panel_6.png")
 
 # Ch 2 Panels
-define ch2_p1panel1  = "images/Interactables/Manga_Ch2_Page1_Panel_1.png"
-define ch2_p1panel2  = "images/Interactables/Manga_Ch2_Page1_Panel_2.png"
-define ch2_p1panel3i = "images/Interactables/Manga_Ch2_Page1_Panel_3_I.png"
-define ch2_p1panel3r = "images/Interactables/Manga_Ch2_Page1_Panel_3_R.png"
-define ch2_p1panel4  = "images/Interactables/Manga_Ch2_Page1_Panel_4.png"
-define ch2_p1panel5  = "images/Interactables/Manga_Ch2_Page1_Panel_5.png"
-define ch2_p1panel6i = "images/Interactables/Manga_Ch2_Page1_Panel_6_I.png"
-define ch2_p1panel6r = "images/Interactables/Manga_Ch2_Page1_Panel_6_R.png"
+default ch2_p1panel1  = Panel("images/Interactables/Manga_Ch2_Page1_Panel_1.png")
+default ch2_p1panel2  = Panel("images/Interactables/Manga_Ch2_Page1_Panel_2.png")
+default ch2_p1panel3i = Panel("images/Interactables/Manga_Ch2_Page1_Panel_3_I.png")
+default ch2_p1panel3r = Panel("images/Interactables/Manga_Ch2_Page1_Panel_3_R.png")
+default ch2_p1panel4  = Panel("images/Interactables/Manga_Ch2_Page1_Panel_4.png")
+default ch2_p1panel5  = Panel("images/Interactables/Manga_Ch2_Page1_Panel_5.png")
+default ch2_p1panel6i = Panel("images/Interactables/Manga_Ch2_Page1_Panel_6_I.png")
+default ch2_p1panel6r = Panel("images/Interactables/Manga_Ch2_Page1_Panel_6_R.png")
 
-define ch2_p2panel1i  = "images/Interactables/Manga_Ch2_Page2_Panel_1_I.png"
-define ch2_p2panel1r  = "images/Interactables/Manga_Ch2_Page2_Panel_1_R.png"
-define ch2_p2panel2  = "images/Interactables/Manga_Ch2_Page2_Panel_2.png"
-define ch2_p2panel3 = "images/Interactables/Manga_Ch2_Page2_Panel_3.png"
-define ch2_p2panel4  = "images/Interactables/Manga_Ch2_Page2_Panel_4.png"
-define ch2_p2panel5  = "images/Interactables/Manga_Ch2_Page2_Panel_5.png"
-define ch2_p2panel6 = "images/Interactables/Manga_Ch2_Page2_Panel_6.png"
+default ch2_p2panel1i = Panel("images/Interactables/Manga_Ch2_Page2_Panel_1_I.png")
+default ch2_p2panel1r = Panel("images/Interactables/Manga_Ch2_Page2_Panel_1_R.png")
+default ch2_p2panel2  = Panel("images/Interactables/Manga_Ch2_Page2_Panel_2.png")
+default ch2_p2panel3  = Panel("images/Interactables/Manga_Ch2_Page2_Panel_3.png")
+default ch2_p2panel4  = Panel("images/Interactables/Manga_Ch2_Page2_Panel_4.png")
+default ch2_p2panel5  = Panel("images/Interactables/Manga_Ch2_Page2_Panel_5.png")
+default ch2_p2panel6  = Panel("images/Interactables/Manga_Ch2_Page2_Panel_6.png")
 
 # Ch 3 Panels
 # endregion
 
-# Investigation Layout Rules & Flags
-# EXTRA
-
+# region Investigation Layout Rules & Flags
 default i_chapter_layouts = {
     c_chapter_one: {
         1: {
-            "panel1": {"state": c_i_hidden, "image": ch1_panel1, "discovered": False, "group": None},
-            "panel2": {"state": c_i_hidden, "image": ch1_panel2, "discovered": False, "group": None},
-            "panel3": {"state": c_i_hidden, "image": ch1_panel3, "discovered": False, "group": None},
-            "panel4": {"state": c_i_hidden, "image": ch1_panel4, "discovered": False, "group": None},
-            "panel5": {"state": c_i_hidden, "image": ch1_panel5, "discovered": False, "group": None}
+            "panel1": PanelSlot(),
+            "panel2": PanelSlot(),
+            "panel3": PanelSlot(),
+            "panel4": PanelSlot(),
+            "panel5": PanelSlot(),
+            "panel6": PanelSlot()
         }
     },
 
     c_chapter_two: {
         1: {
-            "panel1":  {"state": c_i_hidden, "image": ch2_p1panel1,  "discovered": False, "group": None},
-            "panel2":  {"state": c_i_hidden, "image": ch2_p1panel2,  "discovered": False, "group": None},
-            "panel3":  {"state": c_i_hidden, "image": ch2_p1panel3i, "discovered": False, "group": 213},
-            "panel4":  {"state": c_i_hidden, "image": ch2_p1panel4,  "discovered": False, "group": None},
-            "panel5":  {"state": c_i_hidden, "image": ch2_p1panel5,  "discovered": False, "group": None},
-            "panel6":  {"state": c_i_hidden, "image": ch2_p1panel6i, "discovered": False, "group": 216}
+            "panel1":  PanelSlot(),
+            "panel2":  PanelSlot(),
+            "panel3":  PanelSlot(),
+            "panel4":  PanelSlot(),
+            "panel5":  PanelSlot(),
+            "panel6":  PanelSlot()
         },
         2: {
-            "panel1":  {"state": c_i_hidden, "image": ch2_p2panel1i, "discovered": False, "group": 221},
-            "panel2":  {"state": c_i_hidden, "image": ch2_p2panel2,  "discovered": False, "group": None},
-            "panel3":  {"state": c_i_hidden, "image": ch2_p2panel3,  "discovered": False, "group": None},
-            "panel4":  {"state": c_i_hidden, "image": ch2_p2panel4,  "discovered": False, "group": None},
-            "panel5":  {"state": c_i_hidden, "image": ch2_p2panel5,  "discovered": False, "group": None},
-            "panel6":  {"state": c_i_hidden, "image": ch2_p2panel6,  "discovered": False, "group": None}
+            "panel1":  PanelSlot(),
+            "panel2":  PanelSlot(),
+            "panel3":  PanelSlot(),
+            "panel4":  PanelSlot(),
+            "panel5":  PanelSlot(),
+            "panel6":  PanelSlot()
         }
     }
 }
@@ -366,6 +410,46 @@ define i_profile_layouts = {
     3: {"y":-0.35, "y2": 0.55},
     4: {"y":-0.18, "y2": 0.72}
 }
+# endregion
+
+# region Initial Setup
+label investigation_initial_preset:
+    # Runs once to fill with black panels
+
+    $ current_chapter = 1
+    $ current_i_page = 1
+
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel1"].display = ch1_p1panel1
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel2"].display = ch1_p1panel2
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel3"].display = ch1_p1panel3
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel4"].display = ch1_p1panel4
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel5"].display = ch1_p1panel5
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel6"].display = ch1_p1panel6
+
+    $ current_chapter = 2
+    # Page 1
+
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel1"].display = ch2_p1panel1
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel2"].display = ch2_p1panel2
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel3"].display = ch2_p1panel3r
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel4"].display = ch2_p1panel4
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel5"].display = ch2_p1panel5
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel6"].display = ch2_p1panel6r
+
+    $ current_i_page = 2
+
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel1"].display = ch2_p2panel1r
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel2"].display = ch2_p2panel2
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel3"].display = ch2_p2panel3
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel4"].display = ch2_p2panel4
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel5"].display = ch2_p2panel5
+    $ i_chapter_layouts[current_chapter][current_i_page]["panel6"].display = ch2_p2panel6
+
+    $ current_chapter = None
+    $ current_i_page = 1
+
+    return
+# endregion
 
 # Progress
 default investigation_solve = False
@@ -374,10 +458,12 @@ define current_i_page = 1
 
 label investigation_board:
 
+    scene backgroundwhite
+
     $ investigation_first_enter = True
     $ clipboard_opened_state = False
 
-    $ temp_culprit_list = False
+    $ current_i_page = 1
 
     call investigation_check
     call screen investigation_board()
@@ -385,18 +471,16 @@ label investigation_board:
 label investigation_check:
     python:
         investigation_solve = all(
-            data["discovered"] is True
-            for page, panels in i_chapter_layouts[current_chapter].items()
+            data.discovered_count # Returns False if 0 is found
+            for pages, panels in i_chapter_layouts[current_chapter].items()
             for panel, data in panels.items()
         )
 
     return
-
+# Flashback
 label investigation_unlock:
     $ investigation_first_enter = True
     $ clipboard_opened_state = False
-
-    $ temp_culprit_list = False
 
     show screen investigation_board()
     call screen block_interaction()
@@ -424,58 +508,62 @@ screen investigation_board():
 
     for panels, data in i_chapter_layouts[current_chapter][current_i_page].items():
     
-        $ new_image = data["image"]
+        $ new_image = data.display.image
 
-        # REorganize layout by each slot -> 1 image only
-
-        image new_image:
+        imagebutton:
+            focus_mask True
+            idle new_image
+            hover None
             xpos 0.5
             xanchor 0.5
-            at panel_transforms(data["state"])
+            at panel_transforms(data.state)
+            if (data.state == c_i_dual):
+                action data.swap, renpy.restart_interaction
+            else:
+                action None
+    
+    if current_chapter == 2:
+        imagebutton:
+            focus_mask True
+            idle "page_flaps_idle"
+            hover "page_flaps_hover"
+            xpos 0.5
+            xanchor 0.5
+            if current_i_page == 1:
+                action SetVariable("current_i_page", 2), renpy.restart_interaction
+            else:
+                action SetVariable("current_i_page", 1), renpy.restart_interaction
 
-    textbutton "O":
-        xpos 0.7625
-        ypos 0.7125
-        xanchor 0.5
-        yanchor 0.5
-        text_size 55
-        if current_i_page == 1:
-            action SetVariable("current_i_page", 2), renpy.restart_interaction
-        else:
-            action SetVariable("current_i_page", 1), renpy.restart_interaction
-
-    textbutton "S O L V E":
-        xpos 0.5
-        ypos 0.85
-        xanchor 0.5
-        yanchor 0.5
-        text_size 55
+    if eval("chapter" + str(current_chapter) + "_interrogation_chance") == True:
         if investigation_solve:
-            action SetVariable("temp_culprit_list", True), renpy.restart_interaction
-
-    if temp_culprit_list:
-        vbox:
-            xpos 1.0
-            ypos 0.5
-            xanchor 0.1
+            textbutton "SOLVE":
+                xpos 0.5
+                ypos 0.85
+                xanchor 0.5
+                yanchor 0.5
+                text_size 75
+                action Jump(f"chapter{current_chapter}_investigation_narration")
+    
+    elif eval("chapter" + str(current_chapter) + "_solved") == True:
+        text "Investigation Solved":
+            xpos 0.5
+            ypos 0.85
+            xanchor 0.5
             yanchor 0.5
+            size 55
 
-            for character, data in i_profile_list.items():
-                textbutton data["name"]:
-                    xanchor 1.0
-                    yanchor 0.5
-                    text_size 50
-                    action Jump("chapter1_investigation_fail")
-                    if character == "mariko":
-                        action Jump("chapter1_interrogation")
+    else:
+        text "Investigation Unsuccessful":
+            xpos 0.5
+            ypos 0.85
+            xanchor 0.5
+            yanchor 0.5
+            size 55
 
     use investigation_board_interactives
 
 screen investigation_board_interactives():
-    # buttons and clipboards
-
-    # For Closing Animation
-    #default clipboard_reset = True
+    # Clipboard
 
     # Profile Variables
     default profile_count = None
@@ -592,6 +680,13 @@ screen investigation_board_interactives():
 transform reveal_panel:
     matrixcolor TintMatrix("#000000FF")
     easein 2.0 matrixcolor TintMatrix("#00000000")
+
+transform dual_panel:
+    easein 4.0 matrixcolor BrightnessMatrix(0.1)
+    pause 2.0
+    easein 4.0 matrixcolor BrightnessMatrix(-0.4)
+    pause 2.0
+    repeat
 
 transform vertical_slide(h_initial=0.0,h_dest=0.0,delta=0.0):
     ypos h_initial
