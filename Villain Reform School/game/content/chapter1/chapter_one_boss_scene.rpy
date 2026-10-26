@@ -543,7 +543,7 @@ label chapter1_boss_spare:
     re "Mariko, I'm more than capable of fighting for myself."
     re "You shouldn't have gone behind our backs like this, this isn't helping anyone."
 
-    show mariko boss injured cry at right
+    show mariko boss injured cry small at right
 
     m "...I left a tape in Hiro's locker like I was told, that's the only thing I can say."
     m "Even if you hate me, don't let them get my friends."
@@ -557,7 +557,7 @@ label chapter1_boss_spare:
 
     "The teachers quickly detain Mariko and her friends for questioning."
 
-    jump chapter1_tape_scene
+    jump chapter1_day5_event_night
 
 label chapter1_boss_punish:
     
@@ -591,8 +591,8 @@ label chapter1_boss_punish:
 
     "She turns her back on us and runs to meet the teachers that are coming."
 
-    show mariko boss injured
-
+    show mariko boss injured small
+    
     m "This was the best I could do."
 
     "The teachers quickly detain Mariko and her friends for questioning."
