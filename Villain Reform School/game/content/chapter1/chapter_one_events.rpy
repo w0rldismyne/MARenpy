@@ -3491,9 +3491,8 @@ label chapter1_day5_event_night:
         n "You care, don't you? That's all that should matter. Fuck the people too impatient to wait."
         
     play music "music/TheySay.mp3"
-    scene backgrounddorm at darker("#1870dba4")
 
-    show hiro happy at right
+    show hiro at right
     show uitto smile
     
     u "Knock, knock! Ready for 'movie' night?"

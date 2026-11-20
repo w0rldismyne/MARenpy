@@ -82,47 +82,63 @@ screen chapter2_boss_battle_menu():
 
     # Attack Button
     imagebutton action Hide("chapter2_boss_battle_menu"), Jump("ch2_nagen_attacks"):
+        focus_mask True
         idle "New Assets/Fight/attack_idle.png"
         hover "New Assets/Fight/attack_hover.png"
         xanchor 0.0
         yanchor 0.5
-        pos 40, 630
+        ypos 630
         xysize 405, 132
-        at attack_button
+        at attack_button2
 
     # Dodge Button
     imagebutton action Hide("chapter2_boss_battle_menu"), Jump("ch2_nagen_dodges"):
-        idle "New Assets/Fight/defend_idle.png"
-        hover "New Assets/Fight/defend_hover.png"
+        focus_mask True
+        idle "New Assets/Fight/blank_button_idle.png"
+        hover "New Assets/Fight/blank_hover.png"
         xanchor 0.0
         yanchor 0.5
-        pos 45, 735
-        xysize 371, 87
+        ypos 735
+        xysize 437, 165
         at dodge_button
 
     # Flee Button
     imagebutton action Hide("chapter2_boss_battle_menu"), Jump("ch2_nagen_flees"):
+        focus_mask True
         idle "New Assets/Fight/defend_idle.png"
         hover "New Assets/Fight/defend_hover.png"
         xanchor 0.0
         yanchor 0.5
-        pos 50, 840
-        xysize 371, 87
+        ypos 860
+        xysize 405, 132
         at flee_button
+
+    text "Dodge":
+        xanchor 0.0
+        yanchor 0.5
+        size 80
+        pos 180, 760
+
+    text "Flee":
+        color "#000000"
+        xanchor 0.0
+        yanchor 0.5
+        size 80
+        pos 180, 850
 
 transform attack_button2:
     alpha 0.0 xpos -405
     linear 0.15 alpha 1.0 xpos 40
 
 transform dodge_button:
-    alpha 0.0 xpos -376
+    alpha 0.0 xpos -381 rotate 3
     pause 0.07
-    linear 0.13 alpha 1.0 xpos 45
+    linear 0.13 alpha 1.0 xpos 30
 
 transform flee_button:
-    alpha 0.0 xpos -371
+    alpha 0.0 xpos -361
     pause 0.14
-    linear 0.13 alpha 1.0 xpos 50
+    linear 0.13 alpha 1.0 xpos 60
 
 # Attributes
 default jona_current_mp = 100
@@ -134,56 +150,84 @@ default rise_hp = 100
 default rise_encounter = -1
 default encounter_questions = 5
 
+default current_maze = maze
+
+default rise_eyes = {
+    48: fine,
+    57: fine,
+    83: fine,
+    85: fine
+}
+
+define fine = 0
+define hurt = 1
+define badly_hurt = 2
+
 # Fight Resolution
 
 # Location
 define maze = (
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
-    0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0,
-    0, 1, 0, 2, 0, 1, 1, 0, 0, 0, 0,
-    0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0,
-    0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0,
-    0, 2, 0, 1, 0, 1, 0, 1, 1, 2, 0,
-    0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0,
-    0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
-    0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 1, 1, 1, 0, 2, 0, 0, 0, 0, 0,
+    0, 1, 2, 1, 2, 1, 2, 2, 0, 0, 0,
+    0, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0,
+    0, 1, 0, 2, 3, 0, 1, 2, 0, 0, 0,
+    0, 1, 3, 0, 0, 1, 1, 1, 2, 0, 0,
+    0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0,
+    0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0,
+    0, 0, 1, 1, 1, 2, 1, 1, 0, 0, 0,
+    0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 )
 
 define maze2 = (
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0,
+    0, 1, 2, 1, 2, 1, 2, 2, 1, 1, 0,
+    0, 1, 1, 1, 1, 1, 1, 1, 2, 1, 0,
+    0, 1, 0, 2, 3, 0, 1, 2, 0, 1, 0,
+    0, 1, 3, 0, 0, 1, 1, 1, 2, 1, 0,
+    0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0,
+    0, 1, 2, 0, 1, 0, 3, 0, 3, 1, 0,
+    0, 1, 1, 1, 1, 2, 1, 1, 0, 1, 0,
+    0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 )
 
 define maze_region = (
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0,
-    0, 2, 0, 2, 2, 2, 0, 0, 0, 0, 0,
-    0, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0,
-    0, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0,
-    0, 0, 2, 2, 1, 1, 1, 1, 0, 0, 0,
-    0, 0, 0, 3, 0, 1, 0, 1, 1, 0, 0,
-    0, 3, 0, 3, 0, 1, 1, 1, 0, 0, 0,
-    0, 3, 3, 3, 3, 1, 0, 0, 0, 0, 0,
-    0, 0, 3, 0, 0, 1, 1, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 3, 3, 3, 1, 1, 4, 4, 4, 0, 0,
+    0, 3, 0, 3, 0, 1, 0, 0, 4, 4, 0,
+    0, 3, 3, 3, 1, 1, 1, 1, 0, 4, 0,
+    0, 3, 0, 0, 0, 0, 1, 0, 0, 4, 0,
+    0, 3, 0, 0, 0, 1, 1, 1, 0, 4, 0,
+    0, 3, 0, 1, 1, 1, 0, 1, 0, 4, 0,
+    0, 3, 0, 0, 1, 0, 0, 0, 0, 4, 0,
+    0, 2, 2, 2, 1, 0, 2, 2, 0, 4, 0,
+    0, 2, 0, 2, 2, 2, 2, 2, 2, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 )
+
+default maze_minimap = [
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+]
 
 define wall = 0
 define empty_tile = 1
-define eyes = 2
+define not_eyes = 2
+define eyes = 3
 
-define starting_position = 71
+define starting_position = 61
 default direction = None
 default current_position = None
 default region = None
@@ -247,8 +291,7 @@ image r3 = "images/Interactables/Maze/MazeRightWarm.png"
 #image d3 = "images/Interactables/Maze/MazedeadendWarm.png"
 
 # Eyeball Wall
-image e = "images/Backgrounds/mazegoalwall.png"
-image e0 = "images/Interactables/Maze/MazeForwardWall.png"
+image e4 = "images/Interactables/Maze/MazeForwardWall.png"
 image e1 = "images/Interactables/Maze/MazeForwardWallDark.png"
 image e2 = "images/Interactables/Maze/MazeForwardWallPale.png"
 image e3 = "images/Interactables/Maze/MazeForwardWallWarm.png"
@@ -261,18 +304,66 @@ define move_offsets = {
     south: { "Left": move_east,  "Forward": move_south, "Right": move_west,  "Backward": move_north}
 }
 
+screen maze_minimap_display():
+    frame:
+        xsize 425
+        ysize 425
+        xpos 0.95
+        ypos 0.85
+        xanchor 1.0
+        yanchor 1.0
+        padding (0, 0)
+        background "images/Interactables/Maze/map_frame.png"
+        fixed:
+            xsize 395
+            ysize 395
+            xalign 0.5
+            yalign 0.5
+            grid 11 11:
+                xalign 0.5
+                yalign 0.5
+                spacing 1
+                for tile in maze_minimap:
+                    if tile == 1:
+                        image "images/Interactables/Maze/maze_tile.png":
+                            xsize 35
+                            ysize 35
+                    elif tile == 2:
+                        image "images/Interactables/Maze/maze_tile.png" at darker:
+                            xsize 35
+                            ysize 35
+                    else:
+                        null
+            add "images/Interactables/Maze/maze_observer_large.png":
+                xsize 34
+                ysize 34
+                xanchor 0.5
+                yanchor 0.5
+                xoffset 17.5
+                yoffset 17.5
+                xpos current_position%11 * 36
+                ypos int(current_position/11) * 36
+                if direction == 0:
+                    rotate -90
+                elif direction == 1:
+                    rotate 0
+                elif direction == 2:
+                    rotate 90
+                else:
+                    rotate 180
+
 screen maze_control():
 
     if valid_forward:
         key "w" action Return("Move Forward")
-    if valid_left:
-        key "a" action Return("Move Left")
-    if valid_back:
-        key "s" action Return("Move Backward")
-    if valid_right:
-        key "d" action Return("Move Right")
-    key "q" action Return("Turn Left")
-    key "e" action Return("Turn Right")
+    #if valid_left:
+    #    key "a" action Return("Move Left")
+    #if valid_back:
+    #    key "s" action Return("Move Backward")
+    #if valid_right:
+    #    key "d" action Return("Move Right")
+    key "a" action Return("Turn Left")
+    key "d" action Return("Turn Right")
 
 # Question Setup
 default questions = []
@@ -289,22 +380,29 @@ label chapter2_boss_battle_initial:
 
     $ rise_encounter = renpy.random.randint(12, 18)
 
-    $ nagen_health = 12
-    $ nagen_current_health = 12
+    $ nagen_hp = 12
+    $ nagen_current_hp = 12
 
-    show screen nagen_hp_bars
-    show screen rise_hp_bars
+    show screen nagen_hp_bars()
+    show screen rise_hp_bars()
     with Dissolve(0.1)
+
+    show screen maze_minimap_display()
+    $ maze_minimap[current_position] = 1
 
     jump chapter2_boss_battle_explore_loop
 
 label chapter2_boss_maze_background:
-    $ valid_left = maze[current_position + move_offsets[direction]["Left"]] == empty_tile
-    $ valid_forward = maze[current_position + move_offsets[direction]["Forward"]] == empty_tile
-    $ valid_right = maze[current_position + move_offsets[direction]["Right"]] == empty_tile
-    $ valid_back = maze[current_position + move_offsets[direction]["Backward"]] == empty_tile
+    $ valid_left = current_maze[current_position + move_offsets[direction]["Left"]] != wall
+    $ valid_forward = current_maze[current_position + move_offsets[direction]["Forward"]] != wall
+    $ valid_right = current_maze[current_position + move_offsets[direction]["Right"]] != wall
+    $ valid_back = current_maze[current_position + move_offsets[direction]["Backward"]] == empty_tile
 
-    if maze[current_position] == eyes:
+    if current_maze[current_position] == eyes:
+        show mazegoalwall
+    elif current_maze[current_position] == not_eyes:
+        show mazerose
+    elif current_maze[current_position + move_offsets[direction]["Forward"]] == eyes or current_maze[current_position + move_offsets[direction]["Forward"]] == not_eyes:
         show expression ("e" + "[region]")
     elif valid_left and valid_forward and valid_right:
         show expression ("lfr" + "[region]")
@@ -317,10 +415,7 @@ label chapter2_boss_maze_background:
     elif valid_left:
         show expression ("l" + "[region]")
     elif valid_forward:
-        if maze[current_position + move_offsets[direction]["Forward"]] == eyes:
-            show e0
-        else:
-            show expression ("f" + "[region]")
+        show expression ("f" + "[region]")
     elif valid_right:
         show expression ("r" + "[region]")
     else:
@@ -328,30 +423,53 @@ label chapter2_boss_maze_background:
 
     return
 
+    #if maze[current_position + move_offsets[direction]["Forward"]] == eyes:
+    #    show e0
+    #else:
+
 label chapter2_boss_battle_explore_loop:
 
-    scene mazerose
+    if current_maze[current_position + move_offsets[direction]["Forward"]] == eyes:
+        if rise_eyes[current_position + move_offsets[direction]["Forward"]] != fine:
+            scene mazeeyes
+        else:
+            scene mazegoalwall
+    else:
+        scene mazerose
     call chapter2_boss_maze_background
 
-    if rise_encounter == 0:
+    if rise_encounter <= 0 and current_maze[current_position] == empty_tile:
         $ rise_encounter = renpy.random.randint(8, 18)
         $ encounter_type = renpy.random.randint(1, 2)
+        hide screen maze_minimap_display with dissolve
         if encounter_type == 1 and encounter_questions > 0:
             call chapter2_boss_battle_encounter1
         else:
             call chapter2_boss_battle_encounter2_initial
+        show screen maze_minimap_display() with dissolve
 
-    $ input = renpy.call_screen("maze_control")
+    if current_maze[current_position] == eyes or current_maze[current_position] == not_eyes:
+        hide screen maze_minimap_display with dissolve
+        $ maze_minimap[current_position] = 2
+        call chapter2_boss_battle_eye()
+        show screen maze_minimap_display() with dissolve
+    else:
+        $ maze_minimap[current_position] = 1
+        $ input = renpy.call_screen("maze_control")
+
+    $ renpy.restart_interaction()
 
     if input == "Move Forward":
         $ current_position += move_offsets[direction]["Forward"]
         $ rise_encounter-= 1
-    elif input == "Move Left":
-        $ current_position += move_offsets[direction]["Left"]
-        $ rise_encounter-= 1
-    elif input == "Move Right":
-        $ current_position += move_offsets[direction]["Right"]
-        $ rise_encounter-= 1
+    #elif input == "Move Left":
+    #    $ current_position += move_offsets[direction]["Left"]
+    #    $ rise_encounter-= 1
+    #elif input == "Move Right":
+    #    $ current_position += move_offsets[direction]["Right"]
+    #    $ rise_encounter-= 1
+
+        # Required for moving back in eye scenes
     elif input == "Move Backward":
         $ current_position += move_offsets[direction]["Backward"]
         $ rise_encounter-= 1
@@ -363,6 +481,34 @@ label chapter2_boss_battle_explore_loop:
     $ region = maze_region[current_position]
     
     jump chapter2_boss_battle_explore_loop
+
+label chapter2_boss_battle_eye:
+    if current_position in rise_eyes:
+        if rise_eyes[current_position] != fine:
+            scene mazeeyes
+    menu:
+        "Inspect the wall":
+            if current_maze[current_position] == eyes:
+                n "I am getting the feeling that something is watching me."
+            else:
+                n "I don't see anything out of the ordinary here."
+            jump chapter2_boss_battle_eye
+        "Attack the wall":
+            if current_maze[current_position] == eyes:
+                scene mazeeyes with Dissolve(0.2)
+                if current_position == 85:
+                    jump chapter2_day8_event2
+                    # JUMPS INTO ENDING SCENES should move this somewhere else
+                call chapter2_boss_battle_encounter3_initial
+                jump chapter2_boss_battle_eye
+            else:
+                g "Nothing happens."
+                jump chapter2_boss_battle_eye
+        "Go back":
+            $ input = "Move Backward"
+            return
+    return
+
 
 label chapter2_boss_battle_encounter1:
     #Question
@@ -610,6 +756,46 @@ label ch2_nagen_flees:
 
     return
 
+label chapter2_boss_battle_encounter3_initial:
+
+    if rise_eyes[current_position] == fine:
+        r "Ow! Stupid contacts."
+        $ rise_eyes[current_position] = hurt
+    elif rise_eyes[current_position] == hurt:
+        r "Nagen, stop! It burns! Please!"
+        $ rise_eyes[current_position] = badly_hurt
+    else:
+        r "F-fuck, I can't get them out! I-I can't see. It hurts so much."
+
+    #show screen boss_rise_s2(True) zorder -1
+
+    #pause 0.5
+
+    #hide screen boss_rise_s2
+    #show screen boss_rise_s2() zorder -1
+    #
+    #show screen boss_overlay() zorder -1
+    #with dissolve
+    #
+    #$ turn_order = nagen_turn
+
+    #jump chapter2_boss_battle_encounter2_loop
+    if rise_eyes[48] != fine:
+        if rise_eyes[57] != fine:
+            if rise_eyes[83] != fine:
+                $ ch2_midfight = True
+            else:
+                $ ch2_midfight = False
+        else:
+            $ ch2_midfight = False
+    else:
+        $ ch2_midfight = False
+
+    if ch2_midfight == True:
+        call chapter2_boss_battle_midfight_scene
+        $ current_maze = maze2
+    return
+
 #label ch2_rise_turn:
 #    return
 
@@ -617,8 +803,6 @@ label ch2_nagen_flees:
     # Attack/Flee/Ask Jona/Hit Eye
     # Ask questions -> wrong answer depletes Jona's mp
     # If Rise catches nagen, make them run back to spawn
-    # Hit Rise's wall too much -> game over, normally flying so can't hit, hit eye wall once will bring her down
-    # total of 3 eye walls in the first phase
     # nagen can choose to either dodge or tank hits from rise's flying bomb attack, will always make nagen change direction, dodging will move nagen 1-2 spaces from where he was attacked
     # Phase 2 (post mid fight cutscene)
     # Event counter, events will always fire near the exit
@@ -629,4 +813,3 @@ label ch2_nagen_flees:
     # jona will provide hints maybe more detailed after finishing the event questions
     # only 1 eye wall in phase 2
     # around 4 events for the questions in phase 2
-    # the map gets bigger, more like an extension from phase 1-> phase 2 post mid fight cutscene

@@ -59,7 +59,7 @@ label chapter1_investigation_narration:
 
     show screen investigation_panel_narration() with dissolve
 
-    "To recall the situation ..."
+    "To recall the situation..."
 
     $ panel_counter += 1
     $ renpy.restart_interaction()
@@ -115,7 +115,7 @@ label chapter2_investigation_narration:
 
     show screen investigation_panel_narration() with dissolve
 
-    "To recall the situation ..."
+    "To recall the situation..."
 
     $ panel_counter += 1
     $ renpy.restart_interaction()
@@ -175,7 +175,7 @@ label chapter2_investigation_narration:
 
 
     if i_chapter_layouts[current_chapter][current_i_page]["panel1"].display == ch2_p2panel1i:
-        "The culprit panicked and added pink to the page to further disguise who made it, then tried to cover up the evidence by moving the magazine pieces as best they could before the glue dried ... "
+        "The culprit panicked and added pink to the page to further disguise who made it, then tried to cover up the evidence by moving the magazine pieces as best they could before the glue dried..."
         "But then why was Uitto so certain it was nail polish? We don't have pink paint here and a marker wouldn't look pearly pink."
 
         hide screen investigation_panel_narration with fade

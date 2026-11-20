@@ -3572,7 +3572,7 @@ label chapter2_day5_event2:
     show uitto talk
 
     u "Diva-dumbass confidentiality goes for you too, don't worry."
-    u "Just ... let me know if something changes."
+    u "Just... let me know if something changes."
 
     hide uitto talk
 
@@ -4520,7 +4520,7 @@ label chapter2_day7_event3:
 
         ki "Good job findin' the extra help, Nagen."
 
-        n "Oh ... uh, thanks."
+        n "Oh... uh, thanks."
 
         show setsuna relaxed at left
 
@@ -5566,6 +5566,28 @@ label chapter2_day8_event1:
     
 #Tape
 label chapter2_day8_event2:
+
+    scene backgroundhall1
+
+    "We're called to the office one at a time to give our account of what happened. While I wait for the others, I go check Rise's locker."
+    "There has to be a reason she left her combination where I could find it. Inside is a tape much like the one Mariko had."
+    "A photo is taped to it. A bunch of fancily dressed people are sitting in front of a banner for a charity dinner."
+    "It looks to be about twenty years old. Two people in green are front and center."
+    "They must be her parents. Next to them is Jona's mom and... my parents? They really did know each other."
+
+    #IF Spared Rise
+
+    "There's a small box with an eye-shaped map printed on it. I open it to find an unopened contact lens along with a small note."
+
+    "'See things the way I do.'"
+
+    "I was never the best with contacts, but if this is the same thing she was wearing earlier, maybe it's connected to a camera."
+    "I'll test it out later when the others are asleep."
+
+    "I should let the others know I found another tape."
+
+    #-----
+
     #"Chapter 2 Tape Scene"
 
     #BG: Nagen's Room

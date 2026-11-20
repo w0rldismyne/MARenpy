@@ -182,7 +182,7 @@ label chapter1_boss_scene:
 
         n "You don't have to take on everything yourself. No one's blaming you for what happened, but trying to fix things by yourself, it just makes things worse."
 
-        #[If Vision > ?] For later ...
+        #[If Vision > ?] For later...
         #
         #n "Believe me, I've tried to get this right so many times."
 
@@ -390,7 +390,9 @@ label chapter1_boss_battle_midfight_scene:
     hide backgroundwhite
     with dissolve
 
-    scene backgroundB5 with fade:
+    pause(0.5)
+
+    scene backgroundB5 with dissolve:
         size (1920, 1080) crop (320, 360, 1280, 720)
         linear 2.5 crop (0, 0, 1920, 1080)
 
@@ -503,7 +505,7 @@ label chapter1_boss_battle_midfight_scene:
 
 label chapter1_boss_spare:
 
-    scene backgroundCh1_MarikoLoose
+    scene backgroundCh1_MarikoLose
     $ chapter1_spare = True
     
     "I know she wrecked havoc, but I really can't kick a person while they're down."
@@ -557,11 +559,11 @@ label chapter1_boss_spare:
 
     "The teachers quickly detain Mariko and her friends for questioning."
 
-    jump chapter1_day5_event_night
+    return
 
 label chapter1_boss_punish:
     
-    scene backgroundCh1_MarikoLoose
+    scene backgroundCh1_MarikoLose
 
     n "Of course I'll forgive you, you provided valuable entertainment for everyone."
 
@@ -628,7 +630,7 @@ label chapter1_boss_punish:
 
     "I don't think I'm in trouble, at least not directly, but I'm definitely worried she'll call my fosters and tell them what happened."
 
-    jump chapter1_tape_scene 
+    return
 
 label mariko_bonus_scene:
 

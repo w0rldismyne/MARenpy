@@ -7,10 +7,8 @@ define boss_attack_p2 = "images/Sprites/Mariko/4injured.png"
 define boss_hurt_p2 = "images/Sprites/Mariko/3injured.png"
 
 # Attributes
-default chapter1_nagen = Character_Stats()
-
-default mariko_current_health = 25
-define mariko_health = 25
+default mariko_current_hp = 25
+define mariko_hp = 25
 default mariko_fatigue = 0
 define mariko_fatigue_max = 100
 
@@ -79,8 +77,8 @@ screen mariko_hp_bars:
         yanchor 0.5
         pos 1340, 80
         xysize 511,57
-        value mariko_current_health
-        range mariko_health
+        value mariko_current_hp
+        range mariko_hp
         left_bar "New Assets/Fight/enemy_hp_full.png"
         right_bar "New Assets/Fight/enemy_hp_empty.png"
         left_gutter 130
@@ -98,7 +96,7 @@ screen mariko_hp_bars:
         left_gutter 130
         right_gutter 15
 
-    text "[mariko_current_health]/[mariko_health]":
+    text "[mariko_current_hp]/[mariko_hp]":
         xanchor 1.0
         yanchor 0.5
         pos 1816, 84
@@ -144,14 +142,11 @@ transform defend_button:
 label chapter1_boss_battle_initial:
 
     # Nagen's Stats
-    $ chapter1_nagen.AutoConfigure()
-    $ nagen_health = chapter1_nagen.HP
-    $ nagen_attack = chapter1_nagen.ATK
-    $ nagen_defense = chapter1_nagen.Secondary
-    $ nagen_current_health = nagen_health
+    $ nagen_hp = 20
+    $ nagen_current_hp = 20
 
     # Mariko's Stats
-    $ mariko_current_health = mariko_health
+    $ mariko_current_hp = mariko_hp
     $ mariko_fatigue = 0
     $ mariko_next_attack = mariko_weak_attack
     $ turns_passed = 0
@@ -181,7 +176,7 @@ label chapter1_boss_battle_initial:
     with dissolve
 
     hide screen boss_mariko_s2
-    show screen boss_mariko
+    show screen boss_mariko zorder -1
 
     # Temporary?
     g "Nagen gets first action!"
@@ -292,7 +287,7 @@ transform boss_hint2:
 
 screen floating_text:
     if turns_passed % 3 == 1:
-        text "Mariko brandishes her claws ...":
+        text "Mariko brandishes her claws...":
             xanchor 0.5
             yanchor 0.5
             xpos 710
@@ -324,9 +319,10 @@ label nagen_attacks:
 
     $ boss_active = boss_hurt
 
-    $ nagen_damage = renpy.random.randint(nagen_attack - 1, nagen_attack)
+    #$ nagen_damage = renpy.random.randint(nagen_attack - 1, nagen_attack)
+    $ nagen_damage = renpy.random.randint(1, 3)
 
-    $ mariko_current_health -= nagen_damage
+    $ mariko_current_hp -= nagen_damage
 
     g "Hit Mariko for [nagen_damage] Damage!"
 
@@ -336,7 +332,7 @@ label nagen_attacks:
 
 label nagen_defends:
 
-    g "Nagen prepares himself for Mariko's next attack ..."
+    g "Nagen prepares himself for Mariko's next attack..."
 
     $ nagen_defending = True
 
@@ -383,7 +379,7 @@ label mariko_turn:
 
         $ nagen_defending = False
 
-        $ mariko_damage -= nagen_defense
+        $ mariko_damage -= 6
 
         if mariko_damage < 0:
 
@@ -393,7 +389,7 @@ label mariko_turn:
 
         else:
 
-            $ nagen_current_health -= mariko_damage
+            $ nagen_current_hp -= mariko_damage
 
             g "Nagen was prepared and blocks most of the attack!"
 
@@ -401,7 +397,7 @@ label mariko_turn:
 
     else:
 
-        $ nagen_current_health -= mariko_damage
+        $ nagen_current_hp -= mariko_damage
 
         g "Nagen is hit for [mariko_damage] damage!"
 
@@ -416,12 +412,12 @@ label chapter1_boss_battle_conditions:
 
     $ boss_active = boss_idle
 
-    if nagen_current_health <= 0:
+    if nagen_current_hp <= 0:
 
         $ turn_order = round_end
         $ fight_end_state = lose
 
-    if mariko_current_health <= 12 or mariko_fatigue >= 50:
+    if mariko_current_hp <= 12 or mariko_fatigue >= 50:
 
         if mariko_halfway is False:
             
@@ -455,9 +451,9 @@ label chapter1_boss_battle_conditions:
             with dissolve
 
             hide screen boss_mariko_s2
-            show screen boss_mariko
+            show screen boss_mariko zorder -1
         
-        if mariko_current_health <= 0:
+        if mariko_current_hp <= 0:
 
             $ turn_order = round_end
             $ fight_end_state = lose
@@ -477,15 +473,15 @@ label chapter1_boss_battle_evaluations:
 
     else:
 
-        if nagen_current_health <= 0:
+        if nagen_current_hp <= 0:
 
-            "Crap, I am too hurt ..."
+            "Crap, I am too hurt..."
 
             g "You Lose!"
 
             $ renpy.full_restart()
 
-        elif mariko_current_health <= 0:
+        elif mariko_current_hp <= 0:
 
             jump chapter1_boss_player_choice
     

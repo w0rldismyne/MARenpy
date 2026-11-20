@@ -85,7 +85,7 @@ label chapter2_boss_scene:
 
     hide backgroundCh2_RiseCloseup
 
-    show f1 with Dissolve(4.0):
+    show lfr1 with Dissolve(4.0):
         subpixel True
         xanchor 0.5 yanchor 0.5
         xalign 0.5 yalign 0.5
@@ -101,18 +101,13 @@ label chapter2_boss_scene:
 
     jump chapter2_boss_battle_initial
 
-    #"Phase 1 Combat"
-
-    #The maze is the main feature; avoid getting hit.
-
 #------
 
-    #"Midfight Cutscene"
-
-    "Rise's jet pack stutters. Maybe it started to overheat? She descends to the pool's edge."
-    "Jona crawls out from his hiding place and tries to signal for me to run."
+label chapter2_boss_battle_midfight_scene:
 
     scene backgroundCh2_RiseReveal2
+    "Rise's jet pack stutters. Maybe it started to overheat? She descends to the pool's edge."
+    "Jona crawls out from his hiding place and tries to signal for me to run."
 
     "But Rise's still armed and guarding the stairs out of the pool. It's too risky to climb out now. Where are the others?"
 
@@ -219,7 +214,9 @@ label chapter2_boss_scene:
 
         n "I trust him more than I trust you."
 
-    #Return to Main Branch
+    return
+
+label chapter2_boss_battle_tile_event1:
 
     r "I tried to end things civilly, but you've left me with no choice."
 
@@ -240,24 +237,27 @@ label chapter2_boss_scene:
 
     r "It would have been easier if you were."
 
-    #"Phase 2 Combat"
+    return
 
-    #Hit eyes for Rise to drop her guard. Special lines play when the eyes are hit. If player hits x3 in a row without striking Rise, automatic bad/villain end.
+label chapter2_boss_battle_tile_event2:
 
     phone "Second unheard message: Just tell me where you are, I'll come get you. It's dangerous out there, you could get hurt."
 
+    return
+
+label chapter2_boss_battle_tile_event3:
+
     phone "Third unheard message: Where the hell are you? Do you think this is funny? I don't care about what your stupid little friends talked you into doing. Call me back."
+
+    return
+
+label chapter2_boss_battle_tile_event4:
 
     phone "Fourth unheard message: ...I hope you're happy. After all I've done for you, this is how you thank me?"
 
-    #"Rise's Impact Lines"
+    return
 
-    r "Ow! Stupid contacts."
-
-    r "Nagen, stop! It burns! Please!"
-
-    r "F-fuck, I can't get them out! I-I can't see. It hurts so much."
-
+label chapter2_boss_spare:
     #"Rise's End Good (+Rep +Hero)"
 
     phone "Fifth unheard message: ..... Don't come home....."
@@ -315,9 +315,15 @@ label chapter2_boss_scene:
 
     #Return to Main Branch
 
+    return
+
     #"Rise Bad End (+Villian)"
 
+label chapter2_boss_punish:
+
     "I can't hear the phone anymore over the sound of her screaming. Something smells like it's burning."
+
+    # BAD END starts here
 
     scene backgroundCh2_RiseCrash
 
@@ -379,25 +385,8 @@ label chapter2_boss_scene:
 
     #Return to Main Branch
 
+    return
+
     #BG: Hallway
-    scene backgroundhall1
 
-    "We're called to the office one at a time to give our account of what happened. While I wait for the others, I go check Rise's locker."
-    "There has to be a reason she left her combination where I could find it. Inside is a tape much like the one Mariko had."
-    "A photo is taped to it. A bunch of fancily dressed people are sitting in front of a banner for a charity dinner."
-    "It looks to be about twenty years old. Two people in green are front and center."
-    "They must be her parents. Next to them is Jona's mom and... my parents? They really did know each other."
-
-    #IF Spared Rise
-
-    "There's a small box with an eye-shaped map printed on it. I open it to find an unopened contact lens along with a small note."
-
-    "'See things the way I do.'"
-
-    "I was never the best with contacts, but if this is the same thing she was wearing earlier, maybe it's connected to a camera."
-    "I'll test it out later when the others are asleep."
-
-    #Return to Main Branch
-
-    "I should let the others know I found another tape."
-
+    #CONVERGENT ENDING

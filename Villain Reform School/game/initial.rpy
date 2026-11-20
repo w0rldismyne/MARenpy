@@ -556,7 +556,7 @@ image backgroundC1_3 = "Chapter1/Ch1_3.png"
 image backgroundC1_4 = "Chapter1/Ch1_4.png"
 image backgroundC1_T = "Chapter1/Ch1_T.png"
 image backgroundC1_E = "Chapter1/Ch1_E.png"
-image backgroundCh1_MarikoLoose = "Chapter1/Ch1_MarikoLoose.png"
+image backgroundCh1_MarikoLose = "Chapter1/Ch1_MarikoLose.png"
 image backgroundCh1_MarikoWin = "Chapter1/Ch1_MarikoWin.png"
 image backgroundB1 = "Chapter1/Boss1_1.png"
 image backgroundB2 = "Chapter1/Boss1_2.png"
@@ -904,8 +904,20 @@ label start:
                 "Boss Battle":
                     jump chapter1_boss_scene
         "Chapter Two":
-            jump chapter_two
-        #chapter3
+            menu:
+                g "Where in Chapter Two?"
+                "Beginning":
+                    jump chapter_two
+                "Boss Midfight Cutscene":
+                    jump chapter2_boss_battle_midfight_scene
+                "Boss Spare":
+                    jump chapter2_boss_spare
+                "Boss Punish":
+                    jump chapter2_boss_punish
+                "Tape Found + Ch2Day8Event2":
+                    jump chapter2_day8_event2
+        "Chapter Three":
+            return
         "Sandbox":
             jump sandbox
 
