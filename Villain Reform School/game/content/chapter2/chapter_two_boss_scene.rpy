@@ -107,6 +107,7 @@ label chapter2_boss_battle_midfight_scene:
 
     scene backgroundCh2_RiseReveal2
     "Rise's jet pack stutters. Maybe it started to overheat? She descends to the pool's edge."
+    scene backgroundCh2_RiseReveal2_Zoom
     "Jona crawls out from his hiding place and tries to signal for me to run."
 
     "But Rise's still armed and guarding the stairs out of the pool. It's too risky to climb out now. Where are the others?"
@@ -117,13 +118,18 @@ label chapter2_boss_battle_midfight_scene:
 
     r "Liar! His last name is Oshima, as in Oshima cosmetics. My dad funded the company and my mother modeled for them."
     r "Then he has the gall to stir simpletons into a frenzied mob with his art and have them target my family! My home!"
-    r "You villainized your own kind and have the gall to act as if it wasn't your fault people got hurt."
+    r "You villainized your own kind and dare to act as if it wasn't your fault people got hurt."
 
     "Jona's pieces may have lashed out against the upper class, but they made plenty of enemies before him."
 
     #IF Villain
 
     if Villain > Hero:
+
+        scene backgroundmazemidfight
+
+        show jona mad at left
+        show rise boss guard sad at right
 
         j "You're still okay, aren't you? If I hated your family so much, do you honestly think I would've let you live?"
         j "It's not my fault your parents funded Estella's experiments or stole businesses or made bad laws to protect themselves."
@@ -136,18 +142,26 @@ label chapter2_boss_battle_midfight_scene:
 
         n "You're a Charm Major... but, what's your Proficiency?"
 
+        show rise boss guard sad tears at left
+
         r "I... I don't have one."
 
         "It was for her?! That painful medicine... They treated me like a guinea pig to make drugs for rich people?"
+
+        show rise boss guard smile at left
 
         r "I could have before, when my family still had its influence. This furniture is all I have left."
         r "Everything else was stolen because of him."
 
         n "He didn't do anything to you."
 
+        show rise boss guard glare at left
+
         r "I'm living my parent's worst nightmare because of his propaganda, even though I did nothing to deserve it."
         r "If I'm going to be punished regardless, I might as well get what I want. Isn't that what you did?"
 
+        hide rise
+        hide jona
         #Jona's CGs shown in reverse order, one image per sentence
 
         scene background_JFBMeet2
@@ -172,6 +186,10 @@ label chapter2_boss_battle_midfight_scene:
 
     #IF Hero
     else:
+        scene backgroundmazemidfight
+
+        show rise boss attack smile at left
+        show jona mad at right
 
         n "They were corrupt people, Rise. They hurt more people maintaining their power than Jona ever could have."
         n "You're smart enough to know that."
@@ -180,6 +198,8 @@ label chapter2_boss_battle_midfight_scene:
         r "Strangers who saw your fathers research and put more money into it instead of shutting it down."
 
         n "That's impossible. I destroyed the lab, I know I did."
+
+        show rise boss guard talk at left
 
         r "It won't be long before they rebuild elsewhere under a different name. Only now, I have no way to stop it."
         r "There are going to be more children like us while I'm stuck waiting to come of age. We can stop it, if Jona fails out of the program."
@@ -190,9 +210,13 @@ label chapter2_boss_battle_midfight_scene:
 
         n "Who told you to target Jona?"
 
+        show rise boss guard growl at left
+
         r "The same person who contacted Mariko. I imagine there are others as well; hired help to do her dirty work."
         r "The reward was too much to ignore. It's a simple trolley problem: the unhappiness of one for the safety of many."
 
+        hide rise
+        hide jona
         #Jona's CGs shown in reverse order, one image per sentence
 
         scene background_JFBSleebover3
@@ -208,7 +232,7 @@ label chapter2_boss_battle_midfight_scene:
 
         #riseCG
 
-        scene backgroundCh2_RiseReveal2
+        scene backgroundCh2_RiseReveal2_Zoom
 
         r "It seems you've made up your mind."
 
@@ -260,13 +284,41 @@ label chapter2_boss_battle_tile_event4:
 label chapter2_boss_spare:
     #"Rise's End Good (+Rep +Hero)"
 
-    phone "Fifth unheard message: ..... Don't come home....."
+    phone "Fifth unheard message:"
+    phone "..... Don't come home....."
+
+    scene backgroundstatic
 
     r "That's strange, this one goes on for twenty minutes."
 
-    "It sounds like the phone got dropped on the floor on the other end of the line. What sounds like a chair moving follows shortly after."
+    "It sounds like the phone got dropped on the floor on the other end of the line."
+    play sound "banana hits face 1.ogg"
+
+    scene background_JFBCouch2
+    with dissolve
+    pause
+
+    "What sounds like a chair moving follows shortly after."
+    play sound "848683__al3x-k__sfx_chair_scrape_02.ogg"
+
+    scene background_Jfb10
+    with dissolve
+    pause
+
+    scene backgroundstatic
+
+    play sound "fall.ogg"
 
     phone "CRASH!"
+
+    #text box needs to not be on screen.
+    
+    play sound "choke.ogg"
+
+
+    show backgroundJonaDraw8
+    with dissolve
+    pause
 
     "A sick feeling pools in my stomach."
 
@@ -276,8 +328,21 @@ label chapter2_boss_spare:
 
     n "RISE TURN IT OFF!"
 
-    "She throws the phone down as if it had bit her, all color drained from her face. I run to turn it off as fast as I can."
+    stop sound
+
+    #nightfilter?
+
+    scene backgroundgym
+
+    show rise boss attack frown at left
+    show jona depressed at right
+
+    "She throws the phone down as if it had bit her, all color drained from her face."
+    play sound "banana hits face 1.ogg"
+    "I run to turn it off as fast as I can."
     "Jona is shuddering with sobs. He had gone back to his house during the riots. We never talked about why."
+
+    show rise boss guard sad at left
 
     r "Nagen, I didn't know- Why would she give me something like that?"
 
@@ -285,27 +350,43 @@ label chapter2_boss_spare:
 
     "The doors finally open and thank God, there are teachers. Hiro runs around to the steps, but Uitto's quicker."
 
+    show uitto yell
+
     u "Nagen, get away from him."
 
     "She wraps him in a hug so tight I think she might crush him."
 
+    show jona frustrated at right
+
     j "I'm sorry! I couldn't stop it. I couldn't-"
+
+    show uitto sad
 
     u "Hey, I'm not mad, no one here's mad. It'll pass. I'm just glad you're safe."
 
     "Rise surrenders herself willingly. She still looks sick."
 
+    show rise boss attack frown at left
+
     r "The walls have eyes, Nagen, and not just these ones. Be careful who you trust."
 
     "She pulls a drawing out of her blouse and throws it toward me."
+
+    hide rise
+    hide uitto
+    hide jona 
     "Professor Inukai starts to walk her to the principal's office while Mr. Yaguchi disables the glowing walls with a strange looking key."
+
+    show yaguchi mad
 
     ya "If you don't want to get closed into the pool, get the hell out of there."
 
     "As if this is our fault?! Hiro and Uitto help get Jona out of the maze. I linger behind and unfold the picture."
 
+    hide yaguchi
     #CG: Jona's Portrait
     show backgroundJonaDraw4
+    pause
 
     "An eye for an eye? And a locker combination."
     "I'll have to check Rise's locker when no one's around. But this drawing... is this how Jona sees himself?"
@@ -321,26 +402,41 @@ label chapter2_boss_spare:
 
 label chapter2_boss_punish:
 
-    "I can't hear the phone anymore over the sound of her screaming. Something smells like it's burning."
+    scene backgroundCh2_RiseCrash
+    "I can't hear anything over the sound of her screaming. Something smells like it's burning."
 
     # BAD END starts here
-
-    scene backgroundCh2_RiseCrash
 
     "She keeps rubbing at her eyes only to curl in on herself... No way, are those things really connected to her?"
     "Jona walks over to the phone where she dropped it and crushes it under his boot."
 
     j "Serves you right for meddling in things you don't understand."
 
+    #night filter
+
+    scene backgroundgym
+
+    show sato annoyed
+    show rise boss guard tears at left
+
     "The doors to the gym finally open. Miss Sato storms in with a look that could kill."
     "She waddles down to where Rise is crumpled on the floor and leans her a hand. Rise has to be led out."
     "I don't think she can see where she's going. Miss Sato glares at us, then whispers something in Rise's ear."
+
+    hide sato
+    hide rise
+    show uitto sad at left
+    show jona depressed
     "Uitto and Hiro motion for Jona and I to climb out of the pool, but something on the floor catches my eye."
     "Rise must have dropped it during the fight."
+
+    hide jona
+    hide uitto
 
     #CG: Lethe's Portrait
 
     show backgroundJonaDraw5
+    pause
 
     "This is it! This is the last picture Jona drew of Lethe before she died."
     "The aura around her, it reminds me of how he described his mom. And those scars on her arms..."
@@ -349,6 +445,7 @@ label chapter2_boss_punish:
 
     #CG circles through the burial briefly before disappearing
 
+    show jona mad
     j "Nagen, don't look at that!"
 
     "He takes the portrait from me. On the back is a locker code."
@@ -356,6 +453,8 @@ label chapter2_boss_punish:
     j "She..."
 
     "The picture creases under his grip, but it seems he can't bring himself to destroy it like the other pictures."
+
+    show jona depressed
 
     j "This isn't how she'd want you to remember her."
 
@@ -365,13 +464,19 @@ label chapter2_boss_punish:
 
     n "You don't have to keep babying me about it."
 
+    show jona frustrated
+
     j "Yeah, well, two years isn't enough time."
 
     h "Isn't enough time for what?"
 
+    show jona depressed
+
     j "Nothing."
 
     "He hesitates when he sees Uitto."
+
+    show uitto sad talk at left
 
     u "Are you okay?"
 
@@ -379,9 +484,15 @@ label chapter2_boss_punish:
 
     u "Not especially, but-"
 
+    show yaguchi mad at right
+
     ya "Hey! If you don't want to get locked in here, get the hell out!"
 
     h "Yes sir!"
+
+    hide yaguchi
+    hide uitto
+    hide jona
 
     #Return to Main Branch
 

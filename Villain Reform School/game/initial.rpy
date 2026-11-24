@@ -101,7 +101,7 @@ image backgroundstuco          = "Backgrounds/stuco.png"
 image backgroundMansion        = "Backgrounds/Mansion.jpg"
 image backgroundgym            = "Backgrounds/gym.jpg"
 image backgroundyoffice        = "Backgrounds/yoffice.jpg"
-
+image backgroundmazemidfight   = "Backgrounds/mazemidfight.png"
 ### Character Sprites ###
 
 #Koe
@@ -578,7 +578,7 @@ image backgroundCh2_Nurse2 = "Chapter2/Ch2_Nurse2.png"
 image backgroundCh2_Nurse3 = "Chapter2/Ch2_Nurse3.png"
 image backgroundCh2_RiseCloseup = "Chapter2/Ch2_RiseCloseup.png"
 image backgroundCh2_RiseCloseup_Zoom = "Chapter2/Ch2_RiseCloseup_zoom.png"
-image backgroundCh2_RiseCrash = "Chatper2/Ch2_RiseCrash.png"
+image backgroundCh2_RiseCrash = "Chapter2/Ch2_RiseCrash.png"
 image backgroundCh2_RiseReveal = "Chapter2/Ch2_RiseReveal.png"
 image backgroundCh2_RiseReveal2 = "Chapter2/Ch2_RiseReveal2.png"
 image backgroundCh2_RiseReveal2_Zoom = "Chapter2/Ch2_RiseReveal2_zoom.png"

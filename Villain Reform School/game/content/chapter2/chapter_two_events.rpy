@@ -5599,9 +5599,9 @@ label chapter2_day8_event2:
     "It's too late for everyone to stay over again, but I doubt anyone could sleep without knowing what was on it."
     "Hiro and I are a little anxious about Uitto and Jona being in the same room again, but..."
 
-    show hiro guilt at left
+    show hiro guilty at right
     show uitto sigh
-    show jona relaxed
+    show jona relaxed at left
 
     u "You can draw me if, and only if, you ask me to model for you first. Otherwise, it's not really a picture of me, is it?"
 
@@ -5613,19 +5613,30 @@ label chapter2_day8_event2:
     "Like a racehorse out of the gate, Jona is consumed by sketching. She's not going to be able to move from that spot for a while, I hope she knows that."
     "I cue up the tape and take a seat on the floor next to Hiro. The Karmic Gladiators' logo comes on screen."
 
-    a "Rise Kisaki. Despite not having a real proficiency, you were able to make the social elite grovel for your approval. It would be a shame to let such talents go to waste; that's why we'd like to give you a second chance. We will help maintain the lie your parents set in motion and forge the information you need to keep your false pedigree. In exchange, you will help us eliminate an equally powerful influence. This is your chance to rewrite history, don't pass it up. Sincerely, Apex of the Karmic Gladiators."
+    hide uitto
+    hide hiro
+    hide jona
+
+    scene backgroundstatic
+
+    a "Rise Kisaki. Despite not having a real proficiency, you were able to make the social elite grovel for your approval."
+    a "It would be a shame to let such talents go to waste; that's why we'd like to give you a second chance."
+    a "We will help maintain the lie your parents set in motion and forge the information you need to keep your false pedigree."
+    a "In exchange, you will help us eliminate an equally powerful influence."
+    a "This is your chance to rewrite history, don't pass it up."
+    a "Sincerely, Apex of the Karmic Gladiators."
 
     scene backgroundstatic
 
     "The video cuts to static."
 
-    h "You need to be more careful."
-
     scene backgroundroomn
 
     show uitto talk
-    show hiro grump at right
+    show hiro grumpy at right
     show jona depressed at left
+
+    h "You need to be more careful."
 
     u "He spent half the week in his room, can't get more careful than that."
 
@@ -5672,13 +5683,17 @@ label chapter2_day8_event2:
     "There's no way that many kids lost their proficiencies. It's just a coincidence."
     "Either way, Apex used that fear to target Rise. The whole tone of this tape is different from Mariko's."
     "It almost sounds like blackmail."
-    play music "music/VHS.mp3"
-    "The tape sputters to life. This time, Apex is sitting on a lavish throne with a masquerade mask."
-    "How did she- Did Rise draw inspiration from the tape or are we being watched in the school?"
 
     hide uitto
     hide hiro
     hide jona
+
+
+    scene backgroundstatic
+    play music "music/VHS.mp3"
+    "The tape sputters to life. This time, Apex is sitting on a lavish throne with a masquerade mask."
+    "How did she- Did Rise draw inspiration from the tape or are we being watched in the school?"
+
 
     scene backgroundCh2_Apex
     play music "music/#28.mp3"
@@ -5709,7 +5724,7 @@ label chapter2_day8_event2:
 
     show jona depressed at left
     show uitto sad
-    show hiro sad at right
+    show hiro sad talk at right
     play music "music/Intervention.mp3"
 
     j "....."
@@ -5734,7 +5749,7 @@ label chapter2_day8_event2:
 
     n "Okay? What do you mean okay?"
 
-    show hiro guilt at right
+    show hiro guilty at right
 
     h "I think what Jona's trying to say is it'd be easier to predict the enemy if we knew what weaknesses they might target."
 
