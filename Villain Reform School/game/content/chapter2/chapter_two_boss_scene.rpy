@@ -7,6 +7,8 @@ label chapter2_boss_scene:
         yalign 1.0 xalign 0.0
         linear 4.0 yalign 0.0 zoom 0.75
 
+    pause
+
     "The main lights in the gym are off, but it's not completely dark. The pool is open. Instead of water, there's... furniture?"
     "Large, ornate antiques that would look more at home in a mansion than a gym are haphazardly stored in the empty pool."
 
@@ -186,7 +188,7 @@ label chapter2_boss_battle_midfight_scene:
 
     #IF Hero
     else:
-        scene backgroundmazemidfight
+        scene mazeeyes
 
         show rise boss attack smile at left
         show jona mad at right
@@ -310,12 +312,9 @@ label chapter2_boss_spare:
     play sound "fall.ogg"
 
     phone "CRASH!"
-
-    #text box needs to not be on screen.
     
     play sound "choke.ogg"
-
-
+    window hide
     show backgroundJonaDraw8
     with dissolve
     pause
@@ -330,9 +329,7 @@ label chapter2_boss_spare:
 
     stop sound
 
-    #nightfilter?
-
-    scene backgroundgym
+    scene backgroundgym with darker
 
     show rise boss attack frown at left
     show jona depressed at right
@@ -412,9 +409,7 @@ label chapter2_boss_punish:
 
     j "Serves you right for meddling in things you don't understand."
 
-    #night filter
-
-    scene backgroundgym
+    scene backgroundgym with darker
 
     show sato annoyed
     show rise boss guard tears at left
@@ -435,6 +430,7 @@ label chapter2_boss_punish:
 
     #CG: Lethe's Portrait
 
+    window hide
     show backgroundJonaDraw5
     pause
 

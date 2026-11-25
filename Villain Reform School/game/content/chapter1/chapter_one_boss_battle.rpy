@@ -155,7 +155,6 @@ label chapter1_boss_battle_initial:
 
     # Battle Order
     $ turn_order = nagen_turn
-    $ fight_end_state = -1
 
     # Mariko's Sprites
     $ boss_idle = boss_idle_p1

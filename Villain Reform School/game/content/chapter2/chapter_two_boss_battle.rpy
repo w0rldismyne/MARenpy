@@ -91,16 +91,42 @@ screen chapter2_boss_battle_menu():
         xysize 405, 132
         at attack_button2
 
-    # Dodge Button
-    imagebutton action Hide("chapter2_boss_battle_menu"), Jump("ch2_nagen_dodges"):
-        focus_mask True
-        idle "New Assets/Fight/blank_button_idle.png"
-        hover "New Assets/Fight/blank_hover.png"
-        xanchor 0.0
-        yanchor 0.5
-        ypos 735
-        xysize 437, 165
-        at dodge_button
+    if rise_vulnerable == False:
+
+        # Hide Button
+        imagebutton action Hide("chapter2_boss_battle_menu"), Jump("ch2_nagen_hides"):
+            focus_mask True
+            idle "New Assets/Fight/blank_button_idle.png"
+            hover "New Assets/Fight/blank_hover.png"
+            xanchor 0.0
+            yanchor 0.5
+            ypos 735
+            xysize 437, 165
+            at hide_button
+
+        text "Hide":
+            xanchor 0.0
+            yanchor 0.5
+            size 80
+            pos 180, 760
+
+    else:
+        # Defend Button
+        imagebutton action Hide("chapter2_boss_battle_menu"), Jump("ch2_nagen_defends"):
+            focus_mask True
+            idle "New Assets/Fight/blank_button_idle.png"
+            hover "New Assets/Fight/blank_hover.png"
+            xanchor 0.0
+            yanchor 0.5
+            ypos 735
+            xysize 437, 165
+            at hide_button
+
+        text "Defend":
+            xanchor 0.0
+            yanchor 0.5
+            size 80
+            pos 180, 760
 
     # Flee Button
     imagebutton action Hide("chapter2_boss_battle_menu"), Jump("ch2_nagen_flees"):
@@ -113,12 +139,6 @@ screen chapter2_boss_battle_menu():
         xysize 405, 132
         at flee_button
 
-    text "Dodge":
-        xanchor 0.0
-        yanchor 0.5
-        size 80
-        pos 180, 760
-
     text "Flee":
         color "#000000"
         xanchor 0.0
@@ -130,7 +150,7 @@ transform attack_button2:
     alpha 0.0 xpos -405
     linear 0.15 alpha 1.0 xpos 40
 
-transform dodge_button:
+transform hide_button:
     alpha 0.0 xpos -381 rotate 3
     pause 0.07
     linear 0.13 alpha 1.0 xpos 30
@@ -149,6 +169,8 @@ default rise_hp = 100
 # Fight State Variables
 default rise_encounter = -1
 default encounter_questions = 5
+default rise_vulnerable = False
+default rise_halfway = False
 
 default current_maze = maze
 
@@ -157,6 +179,13 @@ default rise_eyes = {
     57: fine,
     83: fine,
     85: fine
+}
+
+default tile_events = {
+    1: False,
+    2: False,
+    3: False,
+    4: False
 }
 
 define fine = 0
@@ -383,23 +412,36 @@ label chapter2_boss_battle_initial:
     $ nagen_hp = 12
     $ nagen_current_hp = 12
 
+    $ fight_end_state = -1
+
     show screen nagen_hp_bars()
     show screen rise_hp_bars()
+    show screen maze_minimap_display()
     with Dissolve(0.1)
 
-    show screen maze_minimap_display()
     $ maze_minimap[current_position] = 1
 
     jump chapter2_boss_battle_explore_loop
 
 label chapter2_boss_maze_background:
+    if current_maze[current_position + move_offsets[direction]["Forward"]] == eyes:
+        if rise_eyes[current_position + move_offsets[direction]["Forward"]] != fine:
+            scene mazeeyes
+        else:
+            scene mazegoalwall
+    else:
+        scene mazerose
+
     $ valid_left = current_maze[current_position + move_offsets[direction]["Left"]] != wall
     $ valid_forward = current_maze[current_position + move_offsets[direction]["Forward"]] != wall
     $ valid_right = current_maze[current_position + move_offsets[direction]["Right"]] != wall
     $ valid_back = current_maze[current_position + move_offsets[direction]["Backward"]] == empty_tile
 
     if current_maze[current_position] == eyes:
-        show mazegoalwall
+        if rise_eyes[current_position] != fine:
+            show mazeeyes
+        else:
+            show mazegoalwall
     elif current_maze[current_position] == not_eyes:
         show mazerose
     elif current_maze[current_position + move_offsets[direction]["Forward"]] == eyes or current_maze[current_position + move_offsets[direction]["Forward"]] == not_eyes:
@@ -423,24 +465,27 @@ label chapter2_boss_maze_background:
 
     return
 
-    #if maze[current_position + move_offsets[direction]["Forward"]] == eyes:
-    #    show e0
-    #else:
-
 label chapter2_boss_battle_explore_loop:
 
-    if current_maze[current_position + move_offsets[direction]["Forward"]] == eyes:
-        if rise_eyes[current_position + move_offsets[direction]["Forward"]] != fine:
-            scene mazeeyes
-        else:
-            scene mazegoalwall
-    else:
-        scene mazerose
     call chapter2_boss_maze_background
+
+    $ encounter_type = renpy.random.randint(1, 2)
+
+    if current_position == 19 and tile_events[1] == False:
+        $ rise_encounter = 0
+        $ encounter_type = 1
+    elif current_position == 31 and tile_events[2] == False:
+        $ rise_encounter = 0
+        $ encounter_type = 1
+    elif current_position == 53 and tile_events[3] == False:
+        $ rise_encounter = 0
+        $ encounter_type = 1
+    elif current_position == 75 and tile_events[4] == False:
+        $ rise_encounter = 0
+        $ encounter_type = 1
 
     if rise_encounter <= 0 and current_maze[current_position] == empty_tile:
         $ rise_encounter = renpy.random.randint(8, 18)
-        $ encounter_type = renpy.random.randint(1, 2)
         hide screen maze_minimap_display with dissolve
         if encounter_type == 1 and encounter_questions > 0:
             call chapter2_boss_battle_encounter1
@@ -458,6 +503,14 @@ label chapter2_boss_battle_explore_loop:
         $ input = renpy.call_screen("maze_control")
 
     $ renpy.restart_interaction()
+
+    if fight_end_state != -1:
+        hide screen boss_rise_s2
+        hide screen boss_overlay
+        hide screen nagen_hp_bars
+        hide screen rise_hp_bars
+        hide screen maze_minimap_display
+        jump chapter2_boss_battle_resolutions
 
     if input == "Move Forward":
         $ current_position += move_offsets[direction]["Forward"]
@@ -496,11 +549,9 @@ label chapter2_boss_battle_eye:
         "Attack the wall":
             if current_maze[current_position] == eyes:
                 scene mazeeyes with Dissolve(0.2)
-                if current_position == 85:
-                    jump chapter2_day8_event2
-                    # JUMPS INTO ENDING SCENES should move this somewhere else
-                call chapter2_boss_battle_encounter3_initial
-                jump chapter2_boss_battle_eye
+                $ rise_vulnerable = True
+                call chapter2_boss_battle_encounter2_initial
+                $ input = "None"
             else:
                 g "Nothing happens."
                 jump chapter2_boss_battle_eye
@@ -509,14 +560,15 @@ label chapter2_boss_battle_eye:
             return
     return
 
-
 label chapter2_boss_battle_encounter1:
     #Question
 
+    show rise boss guard talk with dissolve
+    if rise_halfway == True:
+        jump phone_events
+
     $ question = questions.pop()
     $ encounter_questions -= 1
-
-    show rise boss guard talk with dissolve
 
     if question == 1:
         
@@ -533,7 +585,10 @@ label chapter2_boss_battle_encounter1:
                 n "My friends aren't using me, I'm trying to help them because I want to."
             
             "Maybe":
-                #bad end point
+                $ jona_current_mp -= 35
+                if jona_current_mp <= 0:
+                    $ jona_current_mp = 0
+                    $ fight_end_state = lose
                 n "Even if I did want help, this is definitely not helping."
                 n "How do I know you're not going to use me too."
 
@@ -547,7 +602,10 @@ label chapter2_boss_battle_encounter1:
             "Not like this":
 
                 show rise boss guard talk
-                #bad end point
+                $ jona_current_mp -= 35
+                if jona_current_mp <= 0:
+                    $ jona_current_mp = 0
+                    $ fight_end_state = lose
                 n "This... this isn't the same as back then."
                 n "No one was in danger until you started shit again."
                 n "You're hurting way more people than you're helping"
@@ -570,7 +628,10 @@ label chapter2_boss_battle_encounter1:
             "He didn't have to":
 
                 show rise boss guard talk
-                #bad end point
+                $ jona_current_mp -= 35
+                if jona_current_mp <= 0:
+                    $ jona_current_mp = 0
+                    $ fight_end_state = lose
                 n "I'd defend him regardless."
                 n "People like you always pick on guys weaker than them."
             
@@ -602,7 +663,10 @@ label chapter2_boss_battle_encounter1:
 
                 show rise boss guard talk
 
-                #bad end point
+                $ jona_current_mp -= 35
+                if jona_current_mp <= 0:
+                    $ jona_current_mp = 0
+                    $ fight_end_state = lose
                 n "I'm not turing a blind eye to this."
                 n "You're blaming someone else for your family's failings."
 
@@ -626,7 +690,10 @@ label chapter2_boss_battle_encounter1:
 
                 show rise boss guard talk
 
-                #bad end point
+                $ jona_current_mp -= 35
+                if jona_current_mp <= 0:
+                    $ jona_current_mp = 0
+                    $ fight_end_state = lose
                 n "People took a metaphor out of context."
                 n "He never asked people to literally kill them."
                 n "We all just wanted one thing in Guwon to not be horrible."
@@ -635,9 +702,48 @@ label chapter2_boss_battle_encounter1:
 
     return
 
+label phone_events:
+    if tile_events[1] == False:
+        call chapter2_boss_battle_tile_event1
+        $ tile_events[1] = True
+        hide rise
+        return
+    elif tile_events[2] == False:
+        call chapter2_boss_battle_tile_event2
+        $ tile_events[2] = True
+        hide rise
+        return
+    elif tile_events[3] == False:
+        call chapter2_boss_battle_tile_event3
+        $ tile_events[3] = True
+        hide rise
+        return
+    elif tile_events[4] == False:
+        call chapter2_boss_battle_tile_event4
+        $ tile_events[4] = True
+        hide rise
+        return
+
 label chapter2_boss_battle_encounter2_initial:
 
-    r "I found you!"
+    if rise_vulnerable is True:
+        if rise_eyes[current_position] == fine:
+            r "Ow! Stupid contacts."
+            $ rise_eyes[current_position] = hurt
+            $ rise_current_hp -= 10
+        elif rise_eyes[current_position] == hurt:
+            r "Nagen, stop! It burns! Please!"
+            $ rise_eyes[current_position] = badly_hurt
+            $ rise_current_hp -= 25
+        else:
+            r "F-fuck, I can't get them out! I-I can't see. It hurts so much."
+            $ rise_current_hp -= 100
+        if rise_current_hp <= 0:
+            $ rise_current_hp = 0
+            $ fight_end_state = lose
+            return
+    else:
+        r "I found you!"
 
     show screen boss_rise_s2(True) zorder -1
 
@@ -656,15 +762,34 @@ label chapter2_boss_battle_encounter2_initial:
 label chapter2_boss_battle_encounter2_loop:
     while turn_order is not round_end:
         call ch2_nagen_turn
-
+    $ rise_vulnerable = False
+    call chapter2_boss_battle_evaluations
     return
 
-#label chapter2_boss_battle_encounter2_resolution:
-#
-#    hide screen boss_overlay
-#    with dissolve
-#
-#    return
+label chapter2_boss_battle_evaluations:
+
+    if rise_current_hp <= 0:
+        $ fight_end_state = lose
+    elif rise_eyes[85] != fine:
+        $ fight_end_state = win
+    elif rise_eyes[48] != fine and rise_eyes[57] != fine and rise_eyes[83] != fine and rise_halfway == False:
+        $ rise_halfway = True
+
+        call chapter2_boss_battle_midfight_scene
+
+        $ current_maze = maze2
+        $ temp_counter = 0
+        while temp_counter < len(maze_minimap):
+            if maze_minimap[temp_counter] == 2:
+                $ maze_minimap[temp_counter] = 0
+            $ temp_counter += 1
+    return
+
+label chapter2_boss_battle_resolutions:
+    if fight_end_state == lose:
+        jump chapter2_boss_punish
+    elif fight_end_state == win:
+        jump chapter2_boss_spare
 
 label ch2_nagen_turn:
 
@@ -674,60 +799,87 @@ label ch2_nagen_attacks:
 
     g "Nagen focuses and tries to punch Rise..."
 
-    g "...but Nagen misses!"
+    if rise_vulnerable == True:
 
-    g "Rise lightly kicks Nagen in response."
+        $ rise_current_hp -= 5
 
-    $ rise_damage = renpy.random.randint(1, 2)
+        if rise_current_hp <= 0:
+            $ rise_current_hp = 0
 
-    $ nagen_current_hp -= rise_damage
+        g "It hits, dealing 5 damage!"
 
-    g "Nagen is hit for [rise_damage] damage!"
+        if rise_current_hp <= 0:
+            $ turn_order = round_end
+            return
 
-    "The jetpack is making it too hard for me to hit her..."
+        jump rise_post_vulnerable
 
-    return
+    else:
 
-label ch2_nagen_dodges:
+        g "...but Nagen misses!"
+
+        g "Rise lightly kicks Nagen in response."
+
+        $ rise_damage = renpy.random.randint(1, 2)
+
+        $ nagen_current_hp -= rise_damage
+
+        g "Nagen is hit for [rise_damage] damage!"
+
+        "The jetpack is making it too hard for me to hit her..."
+
+        return
+
+label ch2_nagen_hides:
 
     g "Nagen waits for an opportunity..."
 
     g "Rise throws a grenade and it explodes!"
 
-    $ rise_damage = renpy.random.randint(1, 2)
+    $ rise_damage = renpy.random.randint(1, 3)
+    $ nagen_current_hp -= rise_damage
 
     g "Nagen is partially hit for [rise_damage] damage!"
 
     hide screen boss_rise_s2
     hide screen boss_overlay
     show backgroundblack zorder 1
+    show smoke zorder 1
     with dissolve
 
-    $ possible_tiles = []
-    if valid_forward:
-        $ possible_tiles.append(move_offsets[direction]["Forward"])
-    if valid_left:
-        $ possible_tiles.append(move_offsets[direction]["Left"])
-    if valid_back:
-        $ possible_tiles.append(move_offsets[direction]["Backward"])
-    if valid_right:
-        $ possible_tiles.append(move_offsets[direction]["Right"])
-    
-    $ current_position += renpy.random.choice(possible_tiles)
     $ direction = renpy.random.randint(0, 3)
-    $ region = maze_region[current_position]
 
     call chapter2_boss_maze_background
+    show backgroundblack zorder 1
+    show smoke zorder 1
 
     g "Nagen hides nearby using the explosion's smoke."
 
+    $ maze_minimap[current_position - 12] = 0
+    $ maze_minimap[current_position - 11] = 0
+    $ maze_minimap[current_position - 10] = 0
+    $ maze_minimap[current_position - 1] = 0
+    $ maze_minimap[current_position + 1] = 0
+    $ maze_minimap[current_position + 10] = 0
+    $ maze_minimap[current_position + 11] = 0
+    $ maze_minimap[current_position + 12] = 0
+
     hide backgroundblack with dissolve
+
+    hide smoke with dissolve
 
     g "Rise flies away."
 
     $ turn_order = round_end
 
     return
+
+label ch2_nagen_defends:
+    g "Nagen braces himself for Rise's next attacks..."
+    
+    g "However..."
+
+    jump rise_post_vulnerable
 
 label ch2_nagen_flees:
 
@@ -738,73 +890,47 @@ label ch2_nagen_flees:
     show backgroundblack zorder 1
     with dissolve
 
-    $ renpy.pause(2.5, hard = True)
+    $ renpy.pause(2.0, hard = True)
 
     g "After a while, Nagen manages to lose Rise in the maze."
 
-    $ direction = north
-    $ current_position = starting_position
+    $ direction = renpy.random.randint(0, 3)
+    $ current_position = renpy.random.randint(0, 120)
+    while maze[current_position] != 1:
+        $ current_position = renpy.random.randint(0, 120)
     $ region = maze_region[current_position]
 
     call chapter2_boss_maze_background
+    show backgroundblack zorder 1
 
     hide backgroundblack with dissolve
 
-    "This place seems familiar..."
+    "I should be safer now."
 
     $ turn_order = round_end
 
     return
 
-label chapter2_boss_battle_encounter3_initial:
+label rise_post_vulnerable:
 
-    if rise_eyes[current_position] == fine:
-        r "Ow! Stupid contacts."
-        $ rise_eyes[current_position] = hurt
-    elif rise_eyes[current_position] == hurt:
-        r "Nagen, stop! It burns! Please!"
-        $ rise_eyes[current_position] = badly_hurt
-    else:
-        r "F-fuck, I can't get them out! I-I can't see. It hurts so much."
+    hide screen boss_rise_s2
+    hide screen boss_overlay
+    show backgroundblack zorder 1
+    with dissolve
 
-    #show screen boss_rise_s2(True) zorder -1
+    g "Rise recovers and flies away promptly."
 
-    #pause 0.5
+    hide backgroundblack with dissolve
 
-    #hide screen boss_rise_s2
-    #show screen boss_rise_s2() zorder -1
-    #
-    #show screen boss_overlay() zorder -1
-    #with dissolve
-    #
-    #$ turn_order = nagen_turn
+    $ turn_order = round_end
 
-    #jump chapter2_boss_battle_encounter2_loop
-    if rise_eyes[48] != fine:
-        if rise_eyes[57] != fine:
-            if rise_eyes[83] != fine:
-                $ ch2_midfight = True
-            else:
-                $ ch2_midfight = False
-        else:
-            $ ch2_midfight = False
-    else:
-        $ ch2_midfight = False
-
-    if ch2_midfight == True:
-        call chapter2_boss_battle_midfight_scene
-        $ current_maze = maze2
     return
 
 #label ch2_rise_turn:
 #    return
 
 #screen ch2_boss_sandbox_actions:
-    # Attack/Flee/Ask Jona/Hit Eye
     # Ask questions -> wrong answer depletes Jona's mp
-    # If Rise catches nagen, make them run back to spawn
-    # nagen can choose to either dodge or tank hits from rise's flying bomb attack, will always make nagen change direction, dodging will move nagen 1-2 spaces from where he was attacked
-    # Phase 2 (post mid fight cutscene)
     # Event counter, events will always fire near the exit
     # Ask questions -> damages Jona's MP -> correct answer restores Jona's MP
     # Rise will never fly down, Rise will only fly down during the last boss fight

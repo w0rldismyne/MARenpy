@@ -53,7 +53,7 @@ screen freetime:
             hover "Hangout_Hover"
             hovered SetVariable("selected_freetime_action", "Hang Out"), renpy.restart_interaction
             unhovered SetVariable("selected_freetime_action", ""), renpy.restart_interaction
-            action Return()
+            action Jump("hangout_area")
 
 image Investigate_Hover:
     xysize (501, 486)
@@ -81,3 +81,48 @@ image Hangout_Hover:
         "images/Interactables/Hangout_Highlight_2.png"
         pause 0.7
         repeat
+
+label hangout_area:
+    scene nagenhouse
+    "Who should I hang out with right now?"
+
+    $ choice_many_choices = True
+
+    menu:
+        extend ""
+        "By Myself":
+            $ choice_many_choices = False
+            return
+        "Chisei":
+            $ choice_many_choices = False
+            jump ChiseiVisit
+        "Hiro":
+            $ choice_many_choices = False
+            jump HiroVisit
+        "Jona":
+            $ choice_many_choices = False
+            jump JonaVisit
+        "Kitsune":
+            $ choice_many_choices = False
+            jump KitsuneVisit
+        "Mariko":
+            $ choice_many_choices = False
+            jump MarikoVisit
+        "Momoko":
+            $ choice_many_choices = False
+            jump MomokoVisit
+        "Nanase":
+            $ choice_many_choices = False
+            jump NanaseVisit
+        "Rise":
+            $ choice_many_choices = False
+            jump RiseVisit
+        "Taiga":
+            $ choice_many_choices = False
+            jump TaigaVisit
+        "Uitto":
+            $ choice_many_choices = False
+            jump UittoVisit
+        "Yoku":
+            $ choice_many_choices = False
+            jump YokuVisit
