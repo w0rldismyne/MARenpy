@@ -419,6 +419,8 @@ label chapter2_boss_battle_initial:
     show screen maze_minimap_display()
     with Dissolve(0.1)
 
+    show screen ch2_tutorial()
+
     $ maze_minimap[current_position] = 1
 
     jump chapter2_boss_battle_explore_loop
@@ -505,6 +507,7 @@ label chapter2_boss_battle_explore_loop:
     $ renpy.restart_interaction()
 
     if fight_end_state != -1:
+        hide screen ch2_tutorial
         hide screen boss_rise_s2
         hide screen boss_overlay
         hide screen nagen_hp_bars

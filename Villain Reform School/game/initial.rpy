@@ -922,4 +922,8 @@ label start:
             jump sandbox
 
 screen debug():
-    text "Current Chapter: [current_chapter]"
+    #text "Current Chapter: [current_chapter]"
+    null
+
+screen ch2_tutorial():
+    text "W to move forward, A/D to turn left/right"
